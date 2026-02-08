@@ -548,7 +548,7 @@ class EnhancedWebsiteMonitor:
             
             # Count gallery items
             gallery_item_count = content.count("gallery-item")
-            if gallery_item_count < 4:
+            if gallery_item_count < 9:
                 self.log(f"⚠️  Only {gallery_item_count} gallery items found (expected 4+)", "WARNING")
                 self.issues_found += 1
                 return False
@@ -557,7 +557,7 @@ class EnhancedWebsiteMonitor:
             image_dir = os.path.join(self.website_dir, "images", "user_photos")
             if os.path.exists(image_dir):
                 image_files = [f for f in os.listdir(image_dir) if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))]
-                if len(image_files) < 4:
+                if len(image_files) < 9:
                     self.log(f"⚠️  Only {len(image_files)} user photos found in images/user_photos/", "WARNING")
                     self.issues_found += 1
                     return False

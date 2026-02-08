@@ -1337,72 +1337,62 @@
         </div>
     </section>
 
-    <!-- News Section -->
-    <section id="news" class="py-5">
+    <!-- Destinations Section -->
+    <section id="destinations" class="py-5">
         <div class="container">
-            <h2 class="section-title text-center">Latest China Travel News</h2>
-            <p class="text-center text-muted mb-4">Stay updated with the latest travel policies, tips, and destination updates</p>
-                        <div class="row">
-
+            <h2 class="section-title text-center">Popular Destinations</h2>
+            <div class="row">
                 <div class="col-md-4">
-                    <div class="news-card card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <div class="news-date text-muted small mb-2">
-                                <i class="fas fa-calendar me-1"></i> Feb 07, 2026
+                    <div class="destination-card">
+                        <div class="row g-0">
+                            <div class="col-md-8">
+                                <div class="p-3">
+                                    <h4>Chengdu, China</h4>
+                                    <p>Home of giant pandas, spicy Sichuan cuisine, and ancient Shu culture.</p>
+                                </div>
                             </div>
-                            <h5 class="card-title">Digital Visa Application Launch</h5>
-                            <p class="card-text">New online visa application system reduces paperwork and speeds up approval process for China travel.</p>
-                            <div class="news-tags mt-3">
-                                <span class="badge bg-primary me-1">Visa</span><span class="badge bg-primary me-1">Digital</span>
+                            <div class="col-md-4">
+                                <img src="https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
+                                     alt="Chengdu" class="img-fluid rounded-end" style="height: 100%; object-fit: cover;">
                             </div>
-                        </div>
-                        <div class="card-footer bg-transparent border-top-0">
-                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-4">
-                    <div class="news-card card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <div class="news-date text-muted small mb-2">
-                                <i class="fas fa-calendar me-1"></i> Feb 05, 2026
+                    <div class="destination-card">
+                        <div class="row g-0">
+                            <div class="col-md-8">
+                                <div class="p-3">
+                                    <h4>Beijing, China</h4>
+                                    <p>China's capital with the Great Wall, Forbidden City, and rich history.</p>
+                                </div>
                             </div>
-                            <h5 class="card-title">Traditional Festival Calendar 2026</h5>
-                            <p class="card-text">Complete schedule of traditional Chinese festivals and cultural events open to international visitors.</p>
-                            <div class="news-tags mt-3">
-                                <span class="badge bg-warning me-1">Culture</span><span class="badge bg-warning me-1">Festival</span>
+                            <div class="col-md-4">
+                                <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
+                                     alt="Beijing" class="img-fluid rounded-end" style="height: 100%; object-fit: cover;">
                             </div>
-                        </div>
-                        <div class="card-footer bg-transparent border-top-0">
-                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-4">
-                    <div class="news-card card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <div class="news-date text-muted small mb-2">
-                                <i class="fas fa-calendar me-1"></i> Feb 03, 2026
+                    <div class="destination-card">
+                        <div class="row g-0">
+                            <div class="col-md-8">
+                                <div class="p-3">
+                                    <h4>Guilin, China</h4>
+                                    <p>Stunning karst mountains, Li River cruises, and picturesque landscapes.</p>
+                                </div>
                             </div>
-                            <h5 class="card-title">Great Wall Restoration Complete</h5>
-                            <p class="card-text">Major restoration projects finished on popular sections of the Great Wall, improving visitor access and safety.</p>
-                            <div class="news-tags mt-3">
-                                <span class="badge bg-danger me-1">Beijing</span><span class="badge bg-danger me-1">Heritage</span>
+                            <div class="col-md-4">
+                                <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
+                                     alt="Guilin" class="img-fluid rounded-end" style="height: 100%; object-fit: cover;">
                             </div>
-                        </div>
-                        <div class="card-footer bg-transparent border-top-0">
-                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="text-center mt-4">
-                <a href="#" class="btn btn-primary">View All News</a>
             </div>
         </div>
-    </section>>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-5 bg-light">

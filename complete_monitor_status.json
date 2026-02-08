@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-02-07T23:57:33.515273",
+  "check_results": {
+    "checks": {
+      "images": "FAILED",
+      "pages": "PASSED",
+      "layout": "FAILED",
+      "navigation": "FAILED"
+    },
+    "issues": 57,
+    "fixes": 57,
+    "output": "n.html: No link back to home page\n[2026-02-07 23:57:33] [INFO]    \u2022 shanghai.html: No link back to home page\n[2026-02-07 23:57:33] [ERROR] \u274c Navigation Links: FAILED\n[2026-02-07 23:57:33] [INFO] \n\ud83d\udd27 RUNNING IMPROVEMENTS\n[2026-02-07 23:57:33] [INFO] ----------------------------------------\n[2026-02-07 23:57:33] [INFO] Checking image consistency...\n[2026-02-07 23:57:33] [INFO] \n\ud83d\udd27 Improvements applied:\n[2026-02-07 23:57:33] [INFO]    \u2022 Fixed image inconsistencies\n[2026-02-07 23:57:33] [INFO] \n======================================================================\n[2026-02-07 23:57:33] [INFO] ENHANCED CHECK SUMMARY\n[2026-02-07 23:57:33] [INFO] ======================================================================\n[2026-02-07 23:57:33] [INFO] Checks passed: 1/4 (25.0%)\n[2026-02-07 23:57:33] [INFO] Issues found: 20\n[2026-02-07 23:57:33] [INFO] Improvements made: 1\n[2026-02-07 23:57:33] [INFO] \n\ud83d\udd27 WEBSITE STATUS: IMPROVED\n[2026-02-07 23:57:33] [INFO]    Issues were found and fixed automatically\n"
+  },
+  "detailed_status": {
+    "timestamp": "2026-02-07T23:57:33.513509",
+    "checks": [
+      {
+        "name": "Images",
+        "status": "needs_fixing",
+        "details": [
+          "5 cities need images",
+          "Cities: Beijing, Shanghai, Chengdu +2"
+        ],
+        "fixes": [
+          "Image search attempted"
+        ]
+      },
+      {
+        "name": "Pages",
+        "status": "fixed",
+        "details": [],
+        "fixes": [
+          "All 12 city pages exist"
+        ]
+      },
+      {
+        "name": "Navigation",
+        "status": "needs_fixing",
+        "details": [
+          "Links need verification"
+        ],
+        "fixes": [
+          "Navigation fixes applied"
+        ]
+      },
+      {
+        "name": "Layout",
+        "status": "fixed",
+        "details": [],
+        "fixes": [
+          "Colors consistent"
+        ]
+      }
+    ]
+  },
+  "message_sent": true
+}

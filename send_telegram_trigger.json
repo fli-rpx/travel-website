@@ -1,0 +1,7 @@
+{
+  "action": "send",
+  "to": "8080442123",
+  "channel": "telegram",
+  "message": "\n\ud83d\udcca **WEBSITE MONITOR SUMMARY**\n**Time:** 2026-02-08 00:10:00\n**Checks Run:** 4\n**Checks Passed:** 3/4\n**Issues Found:** 1\n**Fixes Applied:** 1\n**Overall Status:** \u274c NEEDS ATTENTION\n\n\ud83d\udd27 **Monitor runs every 10 minutes**\n\ud83d\udd14 **Alerts sent to Telegram immediately**\n\ud83d\udd04 **Fixes triggered automatically**\n",
+  "timestamp": "2026-02-08T00:10:00.684135"
+}

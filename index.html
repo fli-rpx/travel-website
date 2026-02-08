@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveling China like your home yard - Your Personal China Travel Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Modern Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            /* Modern Travel Color Palette */
+            --primary: #2563eb;      /* Vibrant blue - trust, reliability */
+            --secondary: #1e40af;    /* Deep blue - sophistication */
+            --accent: #f59e0b;       /* Warm amber - energy, warmth */
+            --light: #f8fafc;        /* Light background */
+            --dark: #1e293b;         /* Dark text */
+            --gray-light: #e2e8f0;   /* Light gray */
+            --gray-medium: #94a3b8;  /* Medium gray */
+            --success: #10b981;      /* Success green */
+            --warning: #f59e0b;      /* Warning amber */
+            --danger: #ef4444;       /* Danger red */
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .display-4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--gray-medium);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.85) 0%, rgba(37, 99, 235, 0.85) 100%), 
+                        url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 120px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero .lead {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        /* Navigation Styles */
+        .navbar {
+            padding: 20px 0;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95) !important;
+        }
+        
+        .navbar.scrolled {
+            padding: 12px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            font-size: 1.75rem !important;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark) !important;
+            margin: 0 8px;
+            padding: 8px 16px !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary) !important;
+        }
+        
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 8px;
+            border-radius: 8px;
+            background: var(--light);
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        section:nth-child(even) {
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        .section-intro {
+            font-size: 1.25rem;
+            color: var(--gray-medium);
+            max-width: 700px;
+            margin: 0 auto 60px;
+            text-align: center;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+        
+        .service-card {
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+            z-index: 2;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 24px;
+            transition: transform 0.4s ease, color 0.4s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            color: var(--accent);
+        }
+        
+        .destination-card {
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--gray-light);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            height: 200px;
+            background: white;
+            position: relative;
+        }
+        
+        .destination-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(245, 158, 11, 0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary);
+        }
+        
+        .destination-card:hover::after {
+            opacity: 1;
+        }
+        
+        .destination-card img {
+            transition: transform 0.6s ease;
+        }
+        
+        .destination-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Button Styles */
+        .btn {
+            border-radius: 8px;
+            font-weight: 600;
+            padding: 12px 32px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: none;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+        
+        .btn-lg {
+            padding: 16px 40px;
+            font-size: 1.125rem;
+        }
+        
+        .btn-outline-primary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+        }
+        
+        /* Elegant News Ticker Styles */
+        .news-ticker-wrapper {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .news-ticker {
+            background: rgba(255, 255, 255, 0.1); /* Light transparent glass */
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px); /* Safari support */
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .news-ticker::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.6), 
+                transparent);
+        }
+        
+        .news-ticker::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.08) 0%,
+                rgba(255, 255, 255, 0.04) 50%,
+                rgba(255, 255, 255, 0.08) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .news-label {
+            font-weight: 600;
+            color: white;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .news-date {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            font-weight: 500;
+        }
+        
+        .news-content {
+            position: relative;
+            height: 60px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            z-index: 2;
+        }
+        
+        .news-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 2;
+        }
+        
+        .news-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .news-badge {
+            font-size: 0.75rem;
+            padding: 6px 12px;
+            border-radius: 20px;
+            flex-shrink: 0;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .badge.bg-primary {
+            background: rgba(37, 99, 235, 0.3) !important;
+            color: white;
+            border-color: rgba(37, 99, 235, 0.5);
+        }
+        
+        .badge.bg-accent {
+            background: rgba(245, 158, 11, 0.3) !important;
+            color: white;
+            border-color: rgba(245, 158, 11, 0.5);
+        }
+        
+        .badge.bg-success {
+            background: rgba(16, 185, 129, 0.3) !important;
+            color: white;
+            border-color: rgba(16, 185, 129, 0.5);
+        }
+        
+        .news-text {
+            font-size: 1rem;
+            color: white;
+            line-height: 1.5;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .news-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .news-nav-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+        
+        .news-nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+        
+        .news-dots {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .dot::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .dot.active {
+            background: rgba(255, 255, 255, 0.8);
+            transform: scale(1.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .dot.active::before {
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Rotating Cities Ticker Styles */
+        .cities-ticker-wrapper {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .cities-ticker {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .cities-ticker::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.6), 
+                transparent);
+        }
+        
+        .cities-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cities-label {
+            font-weight: 600;
+            color: white;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .cities-count {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            font-weight: 500;
+        }
+        
+        .cities-content {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            z-index: 2;
+        }
+        
+        .cities-group {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .cities-group.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .city-card {
+            flex: 1;
+            max-width: 200px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .city-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .city-card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            height: 100%;
+        }
+        
+        .city-card-link:hover {
+            color: inherit;
+        }
+        
+        .city-card-link::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
+        }
+        
+        .city-image {
+            height: 120px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 15px;
+        }
+        
+        .city-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            z-index: 1;
+        }
+        
+        .city-name {
+            position: relative;
+            z-index: 2;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .city-tag {
+            padding: 10px 15px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+        .cities-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cities-nav-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+        
+        .cities-nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+        
+        .cities-dots {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .city-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .city-dot.active {
+            background: rgba(255, 255, 255, 0.8);
+            transform: scale(1.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* News Section Styles */
+        .news-card {
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .news-card .card-title {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .news-card .card-text {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .news-date {
+            color: #888;
+        }
+        
+        .news-tags .badge {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 48px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--gray-light);
+            animation: fadeInUp 0.6s ease-out 0.4s both;
+        }
+        
+        .contact-form .form-control {
+            border: 2px solid var(--gray-light);
+            border-radius: 10px;
+            padding: 14px 20px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--light);
+        }
+        
+        .contact-form .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            background: white;
+        }
+        
+        .contact-form .form-control::placeholder {
+            color: var(--gray-medium);
+        }
+        
+        .contact-form label {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.75rem;
+            }
+            
+            .hero .lead {
+                font-size: 1.25rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-news-items {
+                height: 160px;
+            }
+            
+            .destination-card {
+                height: auto;
+                margin-bottom: 24px;
+            }
+            
+            .destination-card .row.g-0 {
+                flex-direction: column;
+            }
+            
+            .destination-card .col-md-8,
+            .destination-card .col-md-4 {
+                width: 100%;
+            }
+            
+            .destination-card img {
+                height: 200px;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 0 0 16px 16px;
+            }
+            
+            /* Cities Ticker Responsive */
+            .cities-content {
+                height: 200px;
+            }
+            
+            .city-card {
+                max-width: 180px;
+            }
+            
+            .city-image {
+                height: 110px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0 60px;
+                background-attachment: scroll;
+            }
+            
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+                margin-bottom: 30px;
+            }
+            
+            .contact-form {
+                padding: 32px 24px;
+            }
+            
+            .hero-news .card-body {
+                padding: 24px !important;
+            }
+            
+            .hero-news-items {
+                height: 180px;
+            }
+            
+            .hero-news-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            /* Cities Ticker Responsive */
+            .cities-content {
+                height: 220px;
+            }
+            
+            .cities-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .city-card {
+                max-width: 250px;
+                width: 100%;
+            }
+            
+            .city-image {
+                height: 100px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.875rem;
+            }
+            
+            .hero .lead {
+                font-size: 1.125rem;
+            }
+            
+            .btn-lg {
+                padding: 14px 32px;
+                font-size: 1rem;
+            }
+            
+            .hero-news-items {
+                height: 200px;
+            }
+            
+            .service-card,
+            .destination-card {
+                margin-bottom: 20px;
+            }
+            
+            /* Cities Ticker Responsive */
+            .cities-ticker {
+                padding: 15px;
+            }
+            
+            .cities-content {
+                height: 240px;
+            }
+            
+            .city-card {
+                max-width: 100%;
+            }
+            
+            .city-image {
+                height: 90px;
+            }
+            
+            .city-name {
+                font-size: 1rem;
+            }
+            
+            .city-tag {
+                font-size: 0.75rem;
+                padding: 8px 12px;
+            }
+            
+            .cities-nav-btn {
+                width: 36px;
+                height: 36px;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .hero-news,
+            .btn,
+            .contact-form {
+                display: none;
+            }
+            
+            section {
+                padding: 20px 0;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#" style="color: var(--primary);">
+                <i class="fas fa-globe-americas me-2"></i>Traveling China like your home yard
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Experience Authentic China</h1>
+            <p class="lead mb-4">Personal travel assistance with cultural introductions and complete arrangements for your China journey.</p>
+            
+            <!-- Rotating China Cities Display -->
+            <div class="cities-ticker-wrapper mb-5">
+                <div class="cities-ticker">
+                    <div class="cities-header">
+                        <span class="cities-label">
+                            <i class="fas fa-city me-2"></i>Explore China Cities
+                        </span>
+                        <span class="cities-count">12 Cities</span>
+                    </div>
+                    <div class="cities-content">
+                        <!-- Group 1: Chengdu, Beijing, Wuxi -->
+                        <div class="cities-group active">
+                            <div class="city-card">
+                                <a href="/travel-website/cities/chengdu.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('/travel-website/images/user_photos/chengdu.jpg');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Chengdu</span>
+                                    </div>
+                                    <div class="city-tag">Pandas & Spicy Cuisine</div>
+                                </a>
+                            </div>
+                            <div class="city-card">
+                                <a href="/travel-website/cities/beijing.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Beijing</span>
+                                    </div>
+                                    <div class="city-tag">Great Wall & Forbidden City</div>
+                                </a>
+                            </div>
+                            <div class="city-card">
+                                <a href="/travel-website/cities/wuxi.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Wuxi</span>
+                                    </div>
+                                    <div class="city-tag">Taihu Lake & Gardens</div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Group 2: Qingdao, Xiamen, Harbin -->
+                        <div class="cities-group">
+                            <div class="city-card">
+                                <a href="/travel-website/cities/qingdao.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Qingdao</span>
+                                    </div>
+                                    <div class="city-tag">Beer & Beaches</div>
+                                </a>
+                            </div>
+                            <div class="city-card">
+                                <a href="/travel-website/cities/xiamen.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Xiamen</span>
+                                    </div>
+                                    <div class="city-tag">Gulangyu Island & Beaches</div>
+                                </a>
+                            </div>
+                            <div class="city-card">
+                                <a href="/travel-website/cities/harbin.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1517299321609-52687d1bc55a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Harbin</span>
+                                    </div>
+                                    <div class="city-tag">Ice Festival & Russian Architecture</div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Group 3: Shanghai, Nanjing, Shenzhen -->
+                        <div class="cities-group">
+                            <div class="city-card">
+                                <a href="/travel-website/cities/shanghai.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1578645510447-e4b5c5d90673?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Shanghai</span>
+                                    </div>
+                                    <div class="city-tag">The Bund & Skyscrapers</div>
+                                </a>
+                            </div>
+                            <div class="city-card">
+                                <a href="/travel-website/cities/nanjing.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1599576838688-8a6c1137febb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Nanjing</span>
+                                    </div>
+                                    <div class="city-tag">Ancient Capital & Yangtze River</div>
+                                </a>
+                            </div>
+                            <div class="city-card">
+                                <a href="/travel-website/cities/shenzhen.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1518834103328-93d45986dce1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Shenzhen</span>
+                                    </div>
+                                    <div class="city-tag">Tech Hub & Theme Parks</div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Group 4: Guangzhou, Hong Kong, Chongqing -->
+                        <div class="cities-group">
+                            <div class="city-card">
+                                <a href="/travel-website/cities/guangzhou.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1591261730799-ee4e6c2d16d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Guangzhou</span>
+                                    </div>
+                                    <div class="city-tag">Cantonese Food & Trade Center</div>
+                                </a>
+                            </div>
+                            <div class="city-card">
+                                <a href="/travel-website/cities/hongkong.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Hongkong</span>
+                                    </div>
+                                    <div class="city-tag">Victoria Harbour & Skyline</div>
+                                </a>
+                            </div>
+                            <div class="city-card">
+                                <a href="/travel-website/cities/chongqing.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Chongqing</span>
+                                    </div>
+                                    <div class="city-tag">Mountain City & Hot Pot</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cities-nav">
+                        <button class="cities-nav-btn prev-cities">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="cities-dots">
+                            <span class="city-dot active"></span>
+                            <span class="city-dot"></span>
+                            <span class="city-dot"></span>
+                            <span class="city-dot"></span>
+                        </div>
+                        <button class="cities-nav-btn next-cities">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#contact" class="btn btn-primary btn-lg">Plan Your Trip</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">About Us</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Your Personal China Travel Guide</h3>
+                    <p class="mb-4">We specialize in helping travelers experience authentic China with personalized assistance and cultural introductions.</p>
+                    <p class="mb-4">Our team of China experts provides complete travel arrangements and connects you with local cultural experiences.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Personal China travel assistance</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Cultural introductions & local experiences</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Complete travel arrangements</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 24/7 support during your China journey</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1547981609-4b6bf67b7d46?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
+                         alt="China Travel Experts" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card card bg-white p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h4>Personal China Itineraries</h4>
+                        <p>Custom travel plans tailored to your interests with local cultural experiences.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card card bg-white p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Cultural Introductions</h4>
+                        <p>Connect with local experts for authentic cultural experiences and insights.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card card bg-white p-4 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-concierge-bell"></i>
+                        </div>
+                        <h4>Travel Arrangements</h4>
+                        <p>Complete travel logistics including flights, hotels, and local transportation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Latest China Travel News</h2>
+            <p class="text-center text-muted mb-4">Stay updated with the latest travel policies, tips, and destination updates</p>
+                        <div class="row">
+
+                <div class="col-md-4">
+                    <div class="news-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="news-date text-muted small mb-2">
+                                <i class="fas fa-calendar me-1"></i> Feb 07, 2026
+                            </div>
+                            <h5 class="card-title">Digital Visa Application Launch</h5>
+                            <p class="card-text">New online visa application system reduces paperwork and speeds up approval process for China travel.</p>
+                            <div class="news-tags mt-3">
+                                <span class="badge bg-primary me-1">Visa</span><span class="badge bg-primary me-1">Digital</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="news-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="news-date text-muted small mb-2">
+                                <i class="fas fa-calendar me-1"></i> Feb 05, 2026
+                            </div>
+                            <h5 class="card-title">Traditional Festival Calendar 2026</h5>
+                            <p class="card-text">Complete schedule of traditional Chinese festivals and cultural events open to international visitors.</p>
+                            <div class="news-tags mt-3">
+                                <span class="badge bg-warning me-1">Culture</span><span class="badge bg-warning me-1">Festival</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="news-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="news-date text-muted small mb-2">
+                                <i class="fas fa-calendar me-1"></i> Feb 03, 2026
+                            </div>
+                            <h5 class="card-title">Great Wall Restoration Complete</h5>
+                            <p class="card-text">Major restoration projects finished on popular sections of the Great Wall, improving visitor access and safety.</p>
+                            <div class="news-tags mt-3">
+                                <span class="badge bg-danger me-1">Beijing</span><span class="badge bg-danger me-1">Heritage</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">View All News</a>
+            </div>
+        </div>
+    </section>>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Contact Us</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Subject">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                        </form>
+                        <div class="mt-4 text-center">
+                            <p class="mb-2"><i class="fas fa-phone me-2"></i> +1 (555) 123-4567</p>
+                            <p class="mb-2"><i class="fas fa-envelope me-2"></i> info@wanderlustadventures.com</p>
+                            <p><i class="fas fa-map-marker-alt me-2"></i> 123 Travel Street, Adventure City</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Traveling China like your home yard</h4>
+                    <p>Helping you travel China comfortably like your own home yard.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="#about" class="text-white text-decoration-none">About</a></li>
+                        <li><a href="#services" class="text-white text-decoration-none">Services</a></li>
+                        <li><a href="#destinations" class="text-white text-decoration-none">Destinations</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-white my-4">
+            <div class="text-center">
+                <p>&copy; 2026 Traveling China like your home yard. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Rotating Cities Display
+        document.addEventListener('DOMContentLoaded', function() {
+            const cityGroups = document.querySelectorAll('.cities-group');
+            const cityDots = document.querySelectorAll('.city-dot');
+            const prevBtn = document.querySelector('.prev-cities');
+            const nextBtn = document.querySelector('.next-cities');
+            let currentIndex = 0;
+            
+            function showCityGroup(index) {
+                // Hide all city groups
+                cityGroups.forEach(group => {
+                    group.classList.remove('active');
+                });
+                
+                // Remove active from all dots
+                cityDots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Show selected city group
+                cityGroups[index].classList.add('active');
+                cityDots[index].classList.add('active');
+                currentIndex = index;
+            }
+            
+            // Next button click
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    let nextIndex = currentIndex + 1;
+                    if (nextIndex >= cityGroups.length) {
+                        nextIndex = 0;
+                    }
+                    showCityGroup(nextIndex);
+                });
+            }
+            
+            // Previous button click
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    let prevIndex = currentIndex - 1;
+                    if (prevIndex < 0) {
+                        prevIndex = cityGroups.length - 1;
+                    }
+                    showCityGroup(prevIndex);
+                });
+            }
+            
+            // Dot click
+            cityDots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    showCityGroup(index);
+                });
+            });
+            
+            // Auto-rotate cities every 5 seconds
+            if (cityGroups.length > 0) {
+                setInterval(function() {
+                    let nextIndex = currentIndex + 1;
+                    if (nextIndex >= cityGroups.length) {
+                        nextIndex = 0;
+                    }
+                    showCityGroup(nextIndex);
+                }, 5000);
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

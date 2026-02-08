@@ -396,121 +396,150 @@
             box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
         }
         
-        /* Hero News Styles */
-        .hero-news {
-            max-width: 900px;
+        /* Elegant News Ticker Styles */
+        .news-ticker-wrapper {
+            max-width: 700px;
             margin: 0 auto 40px;
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
         
-        .hero-news .card {
+        .news-ticker {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative;
             overflow: hidden;
         }
         
-        .hero-news .card::before {
+        .news-ticker::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--primary));
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
         }
         
-        .hero-news-icon {
-            color: var(--primary);
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(245, 158, 11, 0.1));
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+        .news-header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            transition: transform 0.4s ease;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
         
-        .hero-news:hover .hero-news-icon {
-            transform: rotate(10deg) scale(1.1);
+        .news-label {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
-        .hero-news-items {
+        .news-date {
+            font-size: 0.85rem;
+            color: var(--gray-medium);
+            background: var(--light);
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+        
+        .news-content {
             position: relative;
-            height: 140px;
+            height: 60px;
             overflow: hidden;
+            margin-bottom: 16px;
         }
         
-        .hero-news-item {
+        .news-item {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
         
-        .hero-news-item.active {
+        .news-item.active {
             opacity: 1;
             transform: translateY(0);
         }
         
-        .hero-news-controls {
+        .news-badge {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+        
+        .badge.bg-accent {
+            background-color: var(--accent) !important;
+            color: #000;
+        }
+        
+        .badge.bg-success {
+            background-color: var(--success) !important;
+        }
+        
+        .news-text {
+            font-size: 1rem;
+            color: var(--dark);
+            line-height: 1.5;
+        }
+        
+        .news-nav {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 16px;
         }
         
-        .news-indicator {
-            display: flex;
-            gap: 12px;
-        }
-        
-        .news-indicator span {
-            width: 12px;
-            height: 12px;
+        .news-nav-btn {
+            background: var(--light);
+            border: none;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
-            background-color: var(--gray-light);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .news-indicator span::before {
-            content: '';
-            position: absolute;
-            top: -4px;
-            left: -4px;
-            right: -4px;
-            bottom: -4px;
-            border-radius: 50%;
-            border: 2px solid transparent;
-            transition: border-color 0.3s ease;
-        }
-        
-        .news-indicator span.active {
-            background-color: var(--primary);
-            transform: scale(1.2);
-        }
-        
-        .news-indicator span.active::before {
-            border-color: var(--primary);
-        }
-        
-        .hero-news-controls .btn {
-            padding: 8px 16px;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--primary);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .news-nav-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .news-dots {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gray-light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
         }
         
         /* News Section Styles */
@@ -741,62 +770,41 @@
             <h1 class="display-4 fw-bold mb-4">Experience Authentic China</h1>
             <p class="lead mb-4">Personal travel assistance with cultural introductions and complete arrangements for your China journey.</p>
             
-            <!-- Hero News Ticker -->
-            <div class="hero-news mb-5">
-                <div class="card border-0 shadow-lg">
-                    <div class="card-body p-4">
-                        <div class="row align-items-center">
-                            <div class="col-md-2 text-center mb-3 mb-md-0">
-                                <div class="hero-news-icon">
-                                    <i class="fas fa-newspaper fa-3x text-primary"></i>
-                                </div>
-                                <div class="mt-2">
-                                    <span class="badge bg-primary">Latest</span>
-                                </div>
-                            </div>
-                            <div class="col-md-10">
-                                <h4 class="mb-3">China Travel News Updates</h4>
-                                <div class="hero-news-items">
-                                    <div class="hero-news-item active">
-                                        <h5 class="mb-2">New Visa Policies Simplified</h5>
-                                        <p class="mb-0 text-muted">Processing time reduced by 30% for frequent travelers to China.</p>
-                                        <div class="mt-2">
-                                            <span class="badge bg-secondary me-1">Visa</span>
-                                            <span class="badge bg-secondary">Policy</span>
-                                        </div>
-                                    </div>
-                                    <div class="hero-news-item">
-                                        <h5 class="mb-2">Spring Festival Travel Tips</h5>
-                                        <p class="mb-0 text-muted">Best practices for traveling during Chinese New Year celebrations.</p>
-                                        <div class="mt-2">
-                                            <span class="badge bg-secondary me-1">Tips</span>
-                                            <span class="badge bg-secondary">Festival</span>
-                                        </div>
-                                    </div>
-                                    <div class="hero-news-item">
-                                        <h5 class="mb-2">High-Speed Rail Expansion</h5>
-                                        <p class="mb-0 text-muted">New routes connect more Chinese cities with faster travel times.</p>
-                                        <div class="mt-2">
-                                            <span class="badge bg-secondary me-1">Transport</span>
-                                            <span class="badge bg-secondary">Update</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="hero-news-controls mt-3">
-                                    <button class="btn btn-sm btn-outline-primary me-2 prev-news">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </button>
-                                    <span class="news-indicator">
-                                        <span class="active"></span>
-                                        <span></span>
-                                        <span></span>
-                                    </span>
-                                    <button class="btn btn-sm btn-outline-primary ms-2 next-news">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </button>
-                                </div>
-                            </div>
+            <!-- Elegant News Ticker -->
+            <div class="news-ticker-wrapper mb-5">
+                <div class="news-ticker">
+                    <div class="news-header">
+                        <span class="news-label">
+                            <i class="fas fa-bell me-2"></i>Latest Updates
+                        </span>
+                        <span class="news-date">Today</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-item active">
+                            <span class="news-badge badge bg-primary">New</span>
+                            <span class="news-text">Visa processing time reduced by 30% for China travel</span>
                         </div>
+                        <div class="news-item">
+                            <span class="news-badge badge bg-accent">Tip</span>
+                            <span class="news-text">Spring Festival travel tips now available</span>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-badge badge bg-success">Update</span>
+                            <span class="news-text">High-speed rail network expanded to 10 new cities</span>
+                        </div>
+                    </div>
+                    <div class="news-nav">
+                        <button class="news-nav-btn prev-news">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="news-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <button class="news-nav-btn next-news">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1003,10 +1011,10 @@
             }
         });
 
-        // Hero News Slider
+        // Elegant News Ticker
         document.addEventListener('DOMContentLoaded', function() {
-            const newsItems = document.querySelectorAll('.hero-news-item');
-            const indicators = document.querySelectorAll('.news-indicator span');
+            const newsItems = document.querySelectorAll('.news-item');
+            const dots = document.querySelectorAll('.dot');
             const prevBtn = document.querySelector('.prev-news');
             const nextBtn = document.querySelector('.next-news');
             let currentIndex = 0;
@@ -1017,14 +1025,14 @@
                     item.classList.remove('active');
                 });
                 
-                // Remove active from all indicators
-                indicators.forEach(indicator => {
-                    indicator.classList.remove('active');
+                // Remove active from all dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
                 });
                 
                 // Show selected news item
                 newsItems[index].classList.add('active');
-                indicators[index].classList.add('active');
+                dots[index].classList.add('active');
                 currentIndex = index;
             }
             
@@ -1050,9 +1058,9 @@
                 });
             }
             
-            // Indicator click
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', function() {
+            // Dot click
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
                     showNews(index);
                 });
             });

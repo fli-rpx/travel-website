@@ -710,10 +710,32 @@
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s ease;
+            position: relative;
         }
         
         .city-card:hover {
             transform: translateY(-5px);
+        }
+        
+        .city-card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            height: 100%;
+        }
+        
+        .city-card-link:hover {
+            color: inherit;
+        }
+        
+        .city-card-link::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
         }
         
         .city-image {
@@ -1112,18 +1134,22 @@
                         <!-- Group 1: Chengdu, Beijing, Wuxi -->
                         <div class="cities-group active">
                             <div class="city-card">
-                                <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                                    <div class="city-overlay"></div>
-                                    <span class="city-name">Chengdu</span>
-                                </div>
-                                <div class="city-tag">Pandas & Spicy Cuisine</div>
+                                <a href="cities/chengdu.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Chengdu</span>
+                                    </div>
+                                    <div class="city-tag">Pandas & Spicy Cuisine</div>
+                                </a>
                             </div>
                             <div class="city-card">
-                                <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                                    <div class="city-overlay"></div>
-                                    <span class="city-name">Beijing</span>
-                                </div>
-                                <div class="city-tag">Great Wall & Forbidden City</div>
+                                <a href="cities/beijing.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Beijing</span>
+                                    </div>
+                                    <div class="city-tag">Great Wall & Forbidden City</div>
+                                </a>
                             </div>
                             <div class="city-card">
                                 <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">

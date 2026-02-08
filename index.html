@@ -93,6 +93,47 @@
             border-color: var(--secondary);
         }
         
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* News Section Styles */
+        .news-card {
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .news-card .card-title {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .news-card .card-text {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .news-date {
+            color: #888;
+        }
+        
+        .news-tags .badge {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+        }
+        
         .contact-form {
             background: var(--light);
             padding: 40px;
@@ -134,6 +175,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -262,6 +304,70 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Latest Travel News</h2>
+            <p class="text-center mb-5">Stay updated with the latest China travel information and updates</p>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="news-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="news-date text-muted small mb-2">
+                                <i class="fas fa-calendar me-1"></i> Feb 5, 2026
+                            </div>
+                            <h5 class="card-title">New Visa Policies for China Travel</h5>
+                            <p class="card-text">Simplified visa procedures now available for frequent travelers to China. Processing time reduced by 30%.</p>
+                            <div class="news-tags">
+                                <span class="badge bg-primary me-1">Visa</span>
+                                <span class="badge bg-secondary">Policy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="news-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="news-date text-muted small mb-2">
+                                <i class="fas fa-calendar me-1"></i> Jan 28, 2026
+                            </div>
+                            <h5 class="card-title">Spring Festival Travel Tips</h5>
+                            <p class="card-text">Best practices for traveling during Chinese New Year celebrations. Avoid crowds and enjoy authentic experiences.</p>
+                            <div class="news-tags">
+                                <span class="badge bg-primary me-1">Tips</span>
+                                <span class="badge bg-secondary">Festival</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="news-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="news-date text-muted small mb-2">
+                                <i class="fas fa-calendar me-1"></i> Jan 15, 2026
+                            </div>
+                            <h5 class="card-title">New High-Speed Rail Routes</h5>
+                            <p class="card-text">Expanded high-speed rail network connects more Chinese cities. Faster travel between major destinations.</p>
+                            <div class="news-tags">
+                                <span class="badge bg-primary me-1">Transport</span>
+                                <span class="badge bg-secondary">Update</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#contact" class="btn btn-outline-primary">
+                    <i class="fas fa-newspaper me-2"></i>Subscribe to News Updates
+                </a>
             </div>
         </div>
     </section>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Background Syntax</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test {
+            height: 200px;
+            margin: 20px 0;
+            border: 2px solid #333;
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+        .test::after {
+            content: attr(data-label);
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            padding: 5px;
+            font-size: 12px;
+        }
+        .result {
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid;
+        }
+        .success { border-color: green; background: #e8f5e8; }
+        .error { border-color: red; background: #ffe8e8; }
+    </style>
+</head>
+<body>
+    <h1>Test Background Syntax Variations</h1>
+    
+    <h2>Test 1: Current Syntax (center/cover)</h2>
+    <div class="test" data-label="Test 1" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/user_photos/harbin.jpg') center/cover;">
+        <p>background: linear-gradient(...), url(...) <strong>center/cover</strong>;</p>
+    </div>
+    
+    <h2>Test 2: Separate Properties</h2>
+    <div class="test" data-label="Test 2" style="
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/user_photos/harbin.jpg');
+        background-size: cover;
+        background-position: center;
+    ">
+        <p>Separate properties:<br>
+        background-image: linear-gradient(...), url(...);<br>
+        background-size: cover;<br>
+        background-position: center;</p>
+    </div>
+    
+    <h2>Test 3: Background Shorthand with Explicit Position/Size</h2>
+    <div class="test" data-label="Test 3" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/user_photos/harbin.jpg') center center / cover;">
+        <p>background: linear-gradient(...), url(...) <strong>center center / cover</strong>;</p>
+    </div>
+    
+    <h2>Test 4: No Gradient (Just Image)</h2>
+    <div class="test" data-label="Test 4" style="background: url('images/user_photos/harbin.jpg') center/cover;">
+        <p>background: url(...) <strong>center/cover</strong>; (no gradient)</p>
+    </div>
+    
+    <h2>Test 5: Simple Background-Image</h2>
+    <div class="test" data-label="Test 5" style="background-image: url('images/user_photos/harbin.jpg'); background-size: cover; background-position: center;">
+        <p>Simple background-image with separate size/position</p>
+    </div>
+    
+    <h2>Test 6: Direct Image Tag (Reference)</h2>
+    <img src="images/user_photos/harbin.jpg" alt="Harbin" style="max-width: 300px; display: block; margin: 10px 0;">
+    <p>Direct image tag for comparison</p>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tests = document.querySelectorAll('.test');
+            tests.forEach((test, index) => {
+                const bg = window.getComputedStyle(test).backgroundImage;
+                const result = document.createElement('div');
+                result.className = 'result';
+                
+                if (bg.includes('harbin.jpg')) {
+                    result.className += ' success';
+                    result.innerHTML = `✅ Test ${index + 1}: Background image set correctly`;
+                } else {
+                    result.className += ' error';
+                    result.innerHTML = `❌ Test ${index + 1}: Background image NOT set. Got: ${bg}`;
+                }
+                
+                test.parentNode.insertBefore(result, test.nextSibling);
+            });
+        });
+    </script>
+</body>
+</html>

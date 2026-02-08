@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Hero Image</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-box {
+            border: 2px solid #333;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .hero-test {
+            height: 300px;
+            color: white;
+            padding: 20px;
+            margin: 10px 0;
+        }
+        .result {
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid;
+        }
+        .success { border-color: green; background: #e8f5e8; }
+        .error { border-color: red; background: #ffe8e8; }
+        .warning { border-color: orange; background: #fff8e8; }
+    </style>
+</head>
+<body>
+    <h1>Debug Hero Image Issue</h1>
+    
+    <div class="test-box">
+        <h2>Test 1: Direct Image Load</h2>
+        <div id="test1-result" class="result warning">Testing...</div>
+        <img id="test1-img" src="images/user_photos/harbin.jpg" alt="Harbin" style="max-width: 300px; display: block; margin: 10px 0;">
+    </div>
+    
+    <div class="test-box">
+        <h2>Test 2: Background Image (No Gradient)</h2>
+        <div id="test2-result" class="result warning">Testing...</div>
+        <div class="hero-test" id="test2" style="background-image: url('images/user_photos/harbin.jpg'); background-size: cover;">
+            <h3>Background Image Test</h3>
+        </div>
+    </div>
+    
+    <div class="test-box">
+        <h2>Test 3: Background Image with Gradient (Current Fix)</h2>
+        <div id="test3-result" class="result warning">Testing...</div>
+        <div class="hero-test" id="test3" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/user_photos/harbin.jpg'); background-size: cover; background-position: center;">
+            <h3>Background with Gradient Test</h3>
+        </div>
+    </div>
+    
+    <div class="test-box">
+        <h2>Test 4: Exact City Page Style</h2>
+        <div id="test4-result" class="result warning">Testing...</div>
+        <section class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/user_photos/harbin.jpg'); background-size: cover; background-position: center; color: white; padding: 120px 0 80px;">
+            <div class="container">
+                <h1>Harbin Debug</h1>
+                <p class="lead">Testing exact city page style</p>
+            </div>
+        </section>
+    </div>
+    
+    <div class="test-box">
+        <h2>Diagnostics</h2>
+        <div id="diagnostics" class="result warning">Running diagnostics...</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Running diagnostics...');
+            
+            // Test 1: Direct image load
+            const img = document.getElementById('test1-img');
+            img.onload = function() {
+                document.getElementById('test1-result').className = 'result success';
+                document.getElementById('test1-result').innerHTML = '✅ Image loads successfully';
+                console.log('Test 1: Image loads successfully');
+            };
+            img.onerror = function() {
+                document.getElementById('test1-result').className = 'result error';
+                document.getElementById('test1-result').innerHTML = '❌ Image failed to load';
+                console.error('Test 1: Image failed to load');
+            };
+            
+            // Test background images by checking computed style
+            setTimeout(function() {
+                // Test 2
+                const test2 = document.getElementById('test2');
+                const bg2 = window.getComputedStyle(test2).backgroundImage;
+                document.getElementById('test2-result').innerHTML = 'Background: ' + bg2;
+                if (bg2.includes('harbin.jpg')) {
+                    document.getElementById('test2-result').className = 'result success';
+                    console.log('Test 2: Background image set correctly');
+                } else {
+                    document.getElementById('test2-result').className = 'result error';
+                    console.error('Test 2: Background image not set');
+                }
+                
+                // Test 3
+                const test3 = document.getElementById('test3');
+                const bg3 = window.getComputedStyle(test3).backgroundImage;
+                document.getElementById('test3-result').innerHTML = 'Background: ' + bg3;
+                if (bg3.includes('harbin.jpg')) {
+                    document.getElementById('test3-result').className = 'result success';
+                    console.log('Test 3: Background with gradient set correctly');
+                } else {
+                    document.getElementById('test3-result').className = 'result error';
+                    console.error('Test 3: Background with gradient not set');
+                }
+                
+                // Test 4
+                const test4 = document.querySelector('.city-hero');
+                const bg4 = window.getComputedStyle(test4).backgroundImage;
+                document.getElementById('test4-result').innerHTML = 'Background: ' + bg4;
+                if (bg4.includes('harbin.jpg')) {
+                    document.getElementById('test4-result').className = 'result success';
+                    console.log('Test 4: City page style set correctly');
+                } else {
+                    document.getElementById('test4-result').className = 'result error';
+                    console.error('Test 4: City page style not set');
+                }
+                
+                // Diagnostics
+                const diagnostics = [
+                    'User Agent: ' + navigator.userAgent,
+                    'Viewport: ' + window.innerWidth + 'x' + window.innerHeight,
+                    'CSS Support: ' + (CSS.supports('background-image', 'linear-gradient(red, blue)') ? 'Yes' : 'No'),
+                    'Image URL: images/user_photos/harbin.jpg',
+                    'Full URL: ' + new URL('images/user_photos/harbin.jpg', window.location.href).href
+                ];
+                document.getElementById('diagnostics').className = 'result success';
+                document.getElementById('diagnostics').innerHTML = diagnostics.join('<br>');
+                
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

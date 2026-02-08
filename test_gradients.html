@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Gradient Options</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .gradient-test {
+            height: 200px;
+            margin: 20px 0;
+            border: 2px solid #333;
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+        .gradient-test::after {
+            content: attr(data-label);
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            padding: 5px;
+            font-size: 12px;
+        }
+        .no-gradient {
+            background: url('../images/user_photos/harbin.jpg') center/cover;
+        }
+        .gradient-70 {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/user_photos/harbin.jpg') center/cover;
+        }
+        .gradient-50 {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/user_photos/harbin.jpg') center/cover;
+        }
+        .gradient-40 {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/user_photos/harbin.jpg') center/cover;
+        }
+        .gradient-30 {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/user_photos/harbin.jpg') center/cover;
+        }
+        .gradient-20 {
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../images/user_photos/harbin.jpg') center/cover;
+        }
+        .gradient-10 {
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('../images/user_photos/harbin.jpg') center/cover;
+        }
+        .info {
+            background: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #666;
+        }
+        .current {
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Gradient Overlay Options</h1>
+    
+    <div class="info">
+        <p><strong>Current setting:</strong> 30% opacity (rgba(0,0,0,0.3)) - marked with red border</p>
+        <p><strong>Goal:</strong> Find the right balance between image visibility and text readability.</p>
+    </div>
+    
+    <h2>Option 1: No Gradient (0%)</h2>
+    <div class="gradient-test no-gradient" data-label="No Gradient">
+        <h3>Harbin</h3>
+        <p>Text without gradient overlay</p>
+        <p><strong>Issue:</strong> Text might be hard to read on bright parts of image</p>
+    </div>
+    
+    <h2>Option 2: Very Light (10%)</h2>
+    <div class="gradient-test gradient-10" data-label="10% Opacity">
+        <h3>Harbin</h3>
+        <p>Text with very light gradient</p>
+    </div>
+    
+    <h2>Option 3: Light (20%)</h2>
+    <div class="gradient-test gradient-20" data-label="20% Opacity">
+        <h3>Harbin</h3>
+        <p>Text with light gradient</p>
+    </div>
+    
+    <h2>Option 4: Current (30%)</h2>
+    <div class="gradient-test gradient-30 current" data-label="30% Opacity (Current)">
+        <h3>Harbin</h3>
+        <p>Text with current gradient (30%)</p>
+    </div>
+    
+    <h2>Option 5: Medium (40%)</h2>
+    <div class="gradient-test gradient-40" data-label="40% Opacity">
+        <h3>Harbin</h3>
+        <p>Text with medium gradient</p>
+    </div>
+    
+    <h2>Option 6: Dark (50%)</h2>
+    <div class="gradient-test gradient-50" data-label="50% Opacity">
+        <h3>Harbin</h3>
+        <p>Text with dark gradient</p>
+    </div>
+    
+    <h2>Option 7: Very Dark (70%) - Original</h2>
+    <div class="gradient-test gradient-70" data-label="70% Opacity (Original)">
+        <h3>Harbin</h3>
+        <p>Text with very dark gradient (original)</p>
+    </div>
+    
+    <div class="info">
+        <h3>Recommendation:</h3>
+        <p><strong>For best balance:</strong> Try 20% or 10% opacity</p>
+        <p><strong>For maximum image visibility:</strong> No gradient, but use text shadow instead</p>
+        <p><strong>Current issue:</strong> 30% might still be too dark for your images</p>
+    </div>
+    
+    <h2>Direct Image Reference:</h2>
+    <img src="../images/user_photos/harbin.jpg" alt="Harbin" style="max-width: 300px; display: block; margin: 10px 0;">
+    <p>Original image without any gradient for comparison.</p>
+
+    <script>
+        // Let user click to select preferred gradient
+        document.addEventListener('DOMContentLoaded', function() {
+            const tests = document.querySelectorAll('.gradient-test');
+            tests.forEach(test => {
+                test.addEventListener('click', function() {
+                    const label = this.getAttribute('data-label');
+                    const opacity = label.match(/(\d+)%/);
+                    if (opacity) {
+                        alert(`Selected: ${label}\n\nThis would use: rgba(0,0,0,0.${parseInt(opacity[1])/100})`);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minimal Test</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; }
+        
+        .test-hero {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/user_photos/harbin.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            min-height: 400px;
+            border: 5px solid red; /* To see the bounds */
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .debug-info {
+            background: rgba(0,0,0,0.8);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minimal Hero Image Test</h1>
+    
+    <div class="test-hero">
+        <div class="container">
+            <h2>Harbin Test</h2>
+            <p>This should show the Harbin image with gradient overlay.</p>
+            
+            <div class="debug-info">
+                <h3>Debug Info:</h3>
+                <p><strong>Image URL:</strong> images/user_photos/harbin.jpg</p>
+                <p><strong>Full URL:</strong> <span id="full-url"></span></p>
+                <p><strong>Image Status:</strong> <span id="image-status">Checking...</span></p>
+                <p><strong>Computed Background:</strong> <span id="computed-bg">Checking...</span></p>
+            </div>
+        </div>
+    </div>
+    
+    <div style="padding: 20px;">
+        <h3>Direct Image Test:</h3>
+        <img src="images/user_photos/harbin.jpg" alt="Harbin" style="max-width: 300px; display: block; margin: 10px 0;">
+        <p>If this image shows, then the image file is accessible.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show full URL
+            const fullUrl = new URL('images/user_photos/harbin.jpg', window.location.href).href;
+            document.getElementById('full-url').textContent = fullUrl;
+            
+            // Test image load
+            const img = new Image();
+            img.onload = function() {
+                document.getElementById('image-status').textContent = '✅ Loads successfully';
+                document.getElementById('image-status').style.color = 'green';
+            };
+            img.onerror = function() {
+                document.getElementById('image-status').textContent = '❌ Failed to load';
+                document.getElementById('image-status').style.color = 'red';
+            };
+            img.src = 'images/user_photos/harbin.jpg';
+            
+            // Get computed background
+            const hero = document.querySelector('.test-hero');
+            const computedBg = window.getComputedStyle(hero).backgroundImage;
+            document.getElementById('computed-bg').textContent = computedBg;
+            
+            console.log('Computed background:', computedBg);
+            console.log('Image URL test:', img.src);
+        });
+    </script>
+</body>
+</html>

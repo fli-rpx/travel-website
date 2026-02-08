@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test with Navigation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; }
+        
+        /* Navigation styles from city pages */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1e293b;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+        
+        /* Hero styles */
+        .test-hero {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/user_photos/harbin.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            min-height: 400px;
+            margin-top: 70px; /* For fixed nav */
+            border: 5px solid red;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .debug-info {
+            background: rgba(0,0,0,0.8);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        
+        /* Add some body padding to see if it affects hero */
+        body {
+            /* Try with and without this padding */
+            /* padding-top: 20px; */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (like city pages) -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">TravelChina</a>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Cities</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div style="padding: 20px; margin-top: 70px;">
+        <h1>Test with Navigation</h1>
+        <p>This adds navigation like the real city pages.</p>
+    </div>
+    
+    <div class="test-hero">
+        <div class="container">
+            <h2>Harbin Test with Navigation</h2>
+            <p>This should show the Harbin image with gradient overlay.</p>
+            
+            <div class="debug-info">
+                <h3>Debug Info:</h3>
+                <p><strong>Image URL:</strong> images/user_photos/harbin.jpg</p>
+                <p><strong>Computed Background:</strong> <span id="computed-bg">Checking...</span></p>
+                <p><strong>Hero Section Height:</strong> <span id="hero-height">Checking...</span>px</p>
+                <p><strong>Has Background Image:</strong> <span id="has-bg">Checking...</span></p>
+            </div>
+        </div>
+    </div>
+    
+    <div style="padding: 20px;">
+        <h3>Direct Image Test:</h3>
+        <img src="images/user_photos/harbin.jpg" alt="Harbin" style="max-width: 300px; display: block; margin: 10px 0;">
+        <p>If this image shows, then the image file is accessible.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get computed background
+            const hero = document.querySelector('.test-hero');
+            const computedBg = window.getComputedStyle(hero).backgroundImage;
+            document.getElementById('computed-bg').textContent = computedBg;
+            
+            // Get hero height
+            const heroHeight = hero.offsetHeight;
+            document.getElementById('hero-height').textContent = heroHeight;
+            
+            // Check if background image is set
+            const hasBackground = computedBg.includes('harbin.jpg');
+            document.getElementById('has-bg').textContent = hasBackground ? '✅ Yes' : '❌ No';
+            document.getElementById('has-bg').style.color = hasBackground ? 'green' : 'red';
+            
+            console.log('Computed background:', computedBg);
+            console.log('Hero height:', heroHeight, 'px');
+            console.log('Has background image:', hasBackground);
+            
+            // Also check for any CSS that might override background
+            const allStyles = window.getComputedStyle(hero);
+            console.log('All background properties:');
+            console.log('- background:', allStyles.background);
+            console.log('- backgroundImage:', allStyles.backgroundImage);
+            console.log('- backgroundColor:', allStyles.backgroundColor);
+            console.log('- backgroundSize:', allStyles.backgroundSize);
+            console.log('- backgroundPosition:', allStyles.backgroundPosition);
+        });
+    </script>
+</body>
+</html>

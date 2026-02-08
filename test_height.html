@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Height Issue</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test {
+            border: 2px dashed #666;
+            margin: 20px 0;
+            position: relative;
+        }
+        .test::after {
+            content: 'Test Area';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            padding: 5px;
+            font-size: 12px;
+        }
+        .info {
+            background: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test: Does Hero Section Have Height?</h1>
+    
+    <div class="info">
+        <p><strong>Issue:</strong> Hero section might not have enough height to show background image.</p>
+        <p><strong>Current city-hero style:</strong> Only has padding (120px top, 80px bottom), no explicit height.</p>
+    </div>
+    
+    <h2>Test 1: Current City Style (Padding Only)</h2>
+    <div class="test" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/user_photos/harbin.jpg') center/cover; color: white; padding: 120px 0 80px;">
+        <h3>City Name</h3>
+        <p>Description text here. This is what a city page looks like.</p>
+        <p><strong>Height:</strong> Only from content + padding (no explicit height)</p>
+    </div>
+    
+    <h2>Test 2: With Minimum Height (400px)</h2>
+    <div class="test" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/user_photos/harbin.jpg') center/cover; color: white; padding: 120px 0 80px; min-height: 400px;">
+        <h3>City Name</h3>
+        <p>Description text here. This is what a city page looks like.</p>
+        <p><strong>Height:</strong> min-height: 400px + padding</p>
+    </div>
+    
+    <h2>Test 3: With Fixed Height (500px)</h2>
+    <div class="test" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/user_photos/harbin.jpg') center/cover; color: white; padding: 120px 0 80px; height: 500px;">
+        <h3>City Name</h3>
+        <p>Description text here.</p>
+        <p><strong>Height:</strong> height: 500px (fixed)</p>
+    </div>
+    
+    <h2>Test 4: Like Test 3 (That Worked)</h2>
+    <div class="test" style="background-image: url('images/user_photos/harbin.jpg'); background-size: cover; height: 300px; color: white; padding: 20px;">
+        <h3>Like Test 3 (No Gradient)</h3>
+        <p><strong>Height:</strong> height: 300px (fixed)</p>
+    </div>
+    
+    <div class="info">
+        <p><strong>Observation:</strong> Test 3 that worked has explicit <code>height: 300px</code>. City pages don't have explicit height.</p>
+        <p><strong>Possible fix:</strong> Add <code>min-height: 400px</code> or <code>height: 500px</code> to hero section.</p>
+    </div>
+    
+    <script>
+        // Measure actual heights
+        document.addEventListener('DOMContentLoaded', function() {
+            const tests = document.querySelectorAll('.test');
+            tests.forEach((test, index) => {
+                const height = test.offsetHeight;
+                const info = document.createElement('p');
+                info.innerHTML = `<strong>Actual height:</strong> ${height}px`;
+                test.appendChild(info);
+                console.log(`Test ${index + 1} height: ${height}px`);
+            });
+        });
+    </script>
+</body>
+</html>

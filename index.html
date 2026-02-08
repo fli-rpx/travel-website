@@ -1092,6 +1092,29 @@
                 page-break-inside: avoid;
             }
         }
+    
+        /* FIX: Prevent non-active city groups from intercepting clicks */
+        .cities-group:not(.active) {
+            pointer-events: none !important;
+            z-index: 1 !important;
+        }
+        
+        .cities-group.active {
+            pointer-events: auto !important;
+            z-index: 2 !important;
+        }
+        
+        /* Ensure city cards don't overlap */
+        .city-card {
+            position: relative !important;
+            z-index: 3 !important;
+        }
+        
+        /* Make sure links work correctly */
+        .city-card-link {
+            position: relative !important;
+            z-index: 4 !important;
+        }
     </style>
 </head>
 <body>
@@ -1571,6 +1594,46 @@
             alert('Thank you for your message! We will get back to you soon.');
             this.reset();
         });
+    
+    // FIX: Ensure carousel groups don't overlap
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Applying carousel overlap fix...');
+        
+        // Function to update pointer events
+        function updateCarouselInteractivity() {
+            const groups = document.querySelectorAll('.cities-group');
+            groups.forEach(group => {
+                if (group.classList.contains('active')) {
+                    group.style.pointerEvents = 'auto';
+                    group.style.zIndex = '2';
+                } else {
+                    group.style.pointerEvents = 'none';
+                    group.style.zIndex = '1';
+                }
+            });
+        }
+        
+        // Update initially
+        updateCarouselInteractivity();
+        
+        // Also update when carousel changes (if there's a carousel function)
+        // We'll override the existing showCityGroup function if it exists
+        if (typeof showCityGroup === 'function') {
+            const originalShowCityGroup = showCityGroup;
+            window.showCityGroup = function(index) {
+                originalShowCityGroup(index);
+                setTimeout(updateCarouselInteractivity, 50); // Wait for transition
+            };
+        }
+        
+        // Log for debugging
+        const guangzhouLink = document.querySelector('a[href*="guangzhou.html"]');
+        const chongqingLink = document.querySelector('a[href*="chongqing.html"]');
+        if (guangzhouLink && chongqingLink) {
+            console.log('Guangzhou link found:', guangzhouLink.href);
+            console.log('Chongqing link found:', chongqingLink.href);
+        }
+    });
     </script>
 </body>
 </html>

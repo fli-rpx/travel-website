@@ -226,3 +226,41 @@ footer a:hover {
         background-position: -200% 0;
     }
 }
+/* News Card Styles */
+.news-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.news-card .card-title {
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.news-card .card-text {
+    color: var(--dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.news-date {
+    font-size: 0.85rem;
+    color: var(--gray-medium);
+}
+
+.news-tags {
+    margin-top: 15px;
+}
+
+.news-tags .badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 20px;
+}

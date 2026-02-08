@@ -415,7 +415,8 @@ class EnhancedWebsiteMonitor:
             ("Images Readiness", self.check_images_readiness),
             ("Pages Readiness", self.check_pages_readiness),
             ("Layout & Color Consistency", self.check_layout_color_consistency),
-            ("Navigation Links", self.check_navigation_links)
+            ("Navigation Links", self.check_navigation_links),
+            ("News Section", self.check_news_section)
         ]
         
         results = {}
@@ -472,7 +473,50 @@ class EnhancedWebsiteMonitor:
         
         return all_passed
     
-    def save_status(self, results, all_passed):
+    
+    def check_news_section(self):
+        """Check if news section exists and has content."""
+        self.log("📰 Checking news section...")
+        
+        index_path = os.path.join(self.website_dir, "index.html")
+        
+        if not os.path.exists(index_path):
+            self.log("❌ index.html not found", "ERROR")
+            return False
+        
+        try:
+            with open(index_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Check for news section
+            has_news_section = "Latest China Travel News" in content
+            has_news_cards = "news-card" in content
+            has_news_date = "news-date" in content
+            
+            if not has_news_section:
+                self.log("❌ News section not found in website", "ERROR")
+                self.issues_found += 1
+                return False
+            
+            if not has_news_cards:
+                self.log("❌ News cards not found", "ERROR")
+                self.issues_found += 1
+                return False
+            
+            # Count news cards
+            news_card_count = content.count("news-card")
+            if news_card_count < 3:
+                self.log(f"⚠️  Only {news_card_count} news cards found (expected 3+)", "WARNING")
+                self.issues_found += 1
+                return False
+            
+            self.log(f"✅ News section found with {news_card_count} news cards")
+            return True
+            
+        except Exception as e:
+            self.log(f"❌ Error checking news section: {e}", "ERROR")
+            return False
+def save_status(self, results, all_passed):
         """Save monitoring status."""
         status = {
             "last_check": datetime.now().isoformat(),

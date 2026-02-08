@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Carousel Links</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .city-test {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            border: 3px solid;
+            overflow: hidden;
+        }
+        .city-test a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: white;
+        }
+        .city-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .city-name {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        .city-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .debug-info {
+            background: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #666;
+        }
+        .guangzhou { border-color: blue; }
+        .chongqing { border-color: red; }
+    </style>
+</head>
+<body>
+    <h1>Test Carousel Links</h1>
+    
+    <div class="debug-info">
+        <p><strong>Issue:</strong> Clicking Guangzhou image goes to Chongqing page</p>
+        <p><strong>Test:</strong> These are simple, non-carousel versions of the city cards</p>
+        <p><strong>Instructions:</strong> Click each image and check which page opens</p>
+    </div>
+    
+    <h2>Test 1: Simple City Cards (No Carousel)</h2>
+    <div class="test-container">
+        <div class="city-test guangzhou">
+            <a href="/travel-website/cities/guangzhou.html" target="_blank">
+                <div class="city-image" style="background-image: url('images/user_photos/guangzhou.jpg');">
+                    <div class="city-name">Guangzhou</div>
+                    <div class="city-tag">Cantonese Food & Trade Center</div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="city-test chongqing">
+            <a href="/travel-website/cities/chongqing.html" target="_blank">
+                <div class="city-image" style="background-image: url('images/user_photos/chongqing.jpg');">
+                    <div class="city-name">Chongqing</div>
+                    <div class="city-tag">Mountain City & Hot Pot</div>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+    <div class="debug-info">
+        <h3>What to check:</h3>
+        <ol>
+            <li>Click the <strong style="color: blue;">blue-bordered Guangzhou</strong> image</li>
+            <li>It should open: <code>https://fli-rpx.github.io/travel-website/cities/guangzhou.html</code></li>
+            <li>Click the <strong style="color: red;">red-bordered Chongqing</strong> image</li>
+            <li>It should open: <code>https://fli-rpx.github.io/travel-website/cities/chongqing.html</code></li>
+        </ol>
+        
+        <p><strong>If these work correctly:</strong> The issue is with the carousel JavaScript/CSS</p>
+        <p><strong>If these also don't work:</strong> There's a different issue</p>
+    </div>
+    
+    <h2>Test 2: Check Actual Home Page</h2>
+    <p>Also test the actual home page carousel:</p>
+    <ul>
+        <li><a href="index.html" target="_blank">Open Home Page</a></li>
+        <li>Find Guangzhou in the carousel (Group 4)</li>
+        <li>Click it and see which page opens</li>
+    </ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.city-test a');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const city = this.querySelector('.city-name').textContent;
+                    const url = this.getAttribute('href');
+                    console.log(`Clicked ${city}, going to: ${url}`);
+                    
+                    // Let the link open normally
+                });
+            });
+        });
+    </script>
+</body>
+</html>

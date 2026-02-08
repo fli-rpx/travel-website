@@ -416,7 +416,8 @@ class EnhancedWebsiteMonitor:
             ("Pages Readiness", self.check_pages_readiness),
             ("Layout & Color Consistency", self.check_layout_color_consistency),
             ("Navigation Links", self.check_navigation_links),
-            ("News Section", self.check_news_section)
+            ("News Section", self.check_news_section),
+            ("Gallery Section", self.check_gallery_section)
         ]
         
         results = {}
@@ -515,6 +516,61 @@ class EnhancedWebsiteMonitor:
             
         except Exception as e:
             self.log(f"❌ Error checking news section: {e}", "ERROR")
+            return False
+
+    def check_gallery_section(self):
+        """Check if gallery section exists and has images."""
+        self.log("🖼️  Checking gallery section...")
+        
+        index_path = os.path.join(self.website_dir, "index.html")
+        
+        if not os.path.exists(index_path):
+            self.log("❌ index.html not found", "ERROR")
+            return False
+        
+        try:
+            with open(index_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Check for gallery section
+            has_gallery_section = "Travel Photo Gallery" in content
+            has_gallery_items = "gallery-item" in content
+            
+            if not has_gallery_section:
+                self.log("❌ Gallery section not found in website", "ERROR")
+                self.issues_found += 1
+                return False
+            
+            if not has_gallery_items:
+                self.log("❌ Gallery items not found", "ERROR")
+                self.issues_found += 1
+                return False
+            
+            # Count gallery items
+            gallery_item_count = content.count("gallery-item")
+            if gallery_item_count < 4:
+                self.log(f"⚠️  Only {gallery_item_count} gallery items found (expected 4+)", "WARNING")
+                self.issues_found += 1
+                return False
+            
+            # Check if image files exist
+            image_dir = os.path.join(self.website_dir, "images", "user_photos")
+            if os.path.exists(image_dir):
+                image_files = [f for f in os.listdir(image_dir) if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))]
+                if len(image_files) < 4:
+                    self.log(f"⚠️  Only {len(image_files)} user photos found in images/user_photos/", "WARNING")
+                    self.issues_found += 1
+                    return False
+            else:
+                self.log("❌ User photos directory not found: images/user_photos/", "ERROR")
+                self.issues_found += 1
+                return False
+            
+            self.log(f"✅ Gallery section found with {gallery_item_count} items and {len(image_files)} user photos")
+            return True
+            
+        except Exception as e:
+            self.log(f"❌ Error checking gallery section: {e}", "ERROR")
             return False
 def save_status(self, results, all_passed):
         """Save monitoring status."""

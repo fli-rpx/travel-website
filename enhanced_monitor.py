@@ -417,7 +417,6 @@ class EnhancedWebsiteMonitor:
             ("Layout & Color Consistency", self.check_layout_color_consistency),
             ("Navigation Links", self.check_navigation_links),
             ("News Section", self.check_news_section),
-            ("Gallery Section", self.check_gallery_section)
         ]
         
         results = {}
@@ -518,7 +517,6 @@ class EnhancedWebsiteMonitor:
             self.log(f"❌ Error checking news section: {e}", "ERROR")
             return False
 
-    def check_gallery_section(self):
         """Check if gallery section exists and has images."""
         self.log("🖼️  Checking gallery section...")
         

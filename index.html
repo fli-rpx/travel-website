@@ -73,12 +73,32 @@
             transition: transform 0.3s;
             border: 1px solid rgba(0,0,0,0.1);
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            height: 180px; /* Fixed height for consistency */
         }
-        
+
         .destination-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .destination-card .destination-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .destination-card .destination-img {
+            height: 250px;
+            object-fit: cover;
+            width: 100%;
+            border-radius: 0 10px 10px 0;
+        }
+
+        @media (max-width: 767.98px) {
+            .destination-card .destination-img {
+                border-radius: 10px 10px 0 0;
+                height: 200px;
+            }
         }
         
         .btn-primary {
@@ -213,51 +233,49 @@
     <section id="destinations" class="py-5">
         <div class="container">
             <h2 class="section-title text-center">Popular Destinations</h2>
-            <div class="row">
-                <div class="col-md-4">
+            <div class="row mb-4">
+                <div class="col-12">
                     <div class="destination-card">
-                        <div class="row g-0">
-                            <div class="col-md-8">
-                                <div class="p-3">
-                                    <h4>Chengdu, China</h4>
-                                    <p>Home of giant pandas, spicy Sichuan cuisine, and ancient Shu culture.</p>
-                                </div>
+                        <div class="row g-0 align-items-stretch">
+                            <div class="col-md-7 destination-text">
+                                <h4>Chengdu, China</h4>
+                                <p>Home of giant pandas, spicy Sichuan cuisine, and ancient Shu culture.</p>
                             </div>
-                            <div class="col-md-4">
-                                <img src="https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
-                                     alt="Chengdu" class="img-fluid rounded-end" style="height: 100%; object-fit: cover;">
+                            <div class="col-md-5">
+                                <img src="https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                                     alt="Chengdu" class="destination-img">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+            </div>
+            <div class="row mb-4">
+                <div class="col-12">
                     <div class="destination-card">
-                        <div class="row g-0">
-                            <div class="col-md-8">
-                                <div class="p-3">
-                                    <h4>Beijing, China</h4>
-                                    <p>China's capital with the Great Wall, Forbidden City, and rich history.</p>
-                                </div>
+                        <div class="row g-0 align-items-stretch">
+                            <div class="col-md-7 destination-text">
+                                <h4>Beijing, China</h4>
+                                <p>China's capital with the Great Wall, Forbidden City, and rich history.</p>
                             </div>
-                            <div class="col-md-4">
-                                <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
-                                     alt="Beijing" class="img-fluid rounded-end" style="height: 100%; object-fit: cover;">
+                            <div class="col-md-5">
+                                <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                                     alt="Beijing" class="destination-img">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+            </div>
+            <div class="row mb-4">
+                <div class="col-12">
                     <div class="destination-card">
-                        <div class="row g-0">
-                            <div class="col-md-8">
-                                <div class="p-3">
-                                    <h4>Guilin, China</h4>
-                                    <p>Stunning karst mountains, Li River cruises, and picturesque landscapes.</p>
-                                </div>
+                        <div class="row g-0 align-items-stretch">
+                            <div class="col-md-7 destination-text">
+                                <h4>Guilin, China</h4>
+                                <p>Stunning karst mountains, Li River cruises, and picturesque landscapes.</p>
                             </div>
-                            <div class="col-md-4">
-                                <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
-                                     alt="Guilin" class="img-fluid rounded-end" style="height: 100%; object-fit: cover;">
+                            <div class="col-md-5">
+                                <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                                     alt="Guilin" class="destination-img">
                             </div>
                         </div>
                     </div>

@@ -609,6 +609,204 @@
             border-color: rgba(255, 255, 255, 0.5);
         }
         
+        /* Rotating Cities Ticker Styles */
+        .cities-ticker-wrapper {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .cities-ticker {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .cities-ticker::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.6), 
+                transparent);
+        }
+        
+        .cities-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cities-label {
+            font-weight: 600;
+            color: white;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .cities-count {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            font-weight: 500;
+        }
+        
+        .cities-content {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            z-index: 2;
+        }
+        
+        .cities-group {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .cities-group.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .city-card {
+            flex: 1;
+            max-width: 200px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .city-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .city-image {
+            height: 120px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 15px;
+        }
+        
+        .city-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            z-index: 1;
+        }
+        
+        .city-name {
+            position: relative;
+            z-index: 2;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .city-tag {
+            padding: 10px 15px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+        .cities-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cities-nav-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+        
+        .cities-nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+        
+        .cities-dots {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .city-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .city-dot.active {
+            background: rgba(255, 255, 255, 0.8);
+            transform: scale(1.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
         /* News Section Styles */
         .news-card {
             border-radius: 10px;
@@ -730,6 +928,19 @@
                 object-fit: cover;
                 border-radius: 0 0 16px 16px;
             }
+            
+            /* Cities Ticker Responsive */
+            .cities-content {
+                height: 200px;
+            }
+            
+            .city-card {
+                max-width: 180px;
+            }
+            
+            .city-image {
+                height: 110px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -768,6 +979,26 @@
                 height: 60px;
                 font-size: 1.5rem;
             }
+            
+            /* Cities Ticker Responsive */
+            .cities-content {
+                height: 220px;
+            }
+            
+            .cities-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .city-card {
+                max-width: 250px;
+                width: 100%;
+            }
+            
+            .city-image {
+                height: 100px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -791,6 +1022,37 @@
             .service-card,
             .destination-card {
                 margin-bottom: 20px;
+            }
+            
+            /* Cities Ticker Responsive */
+            .cities-ticker {
+                padding: 15px;
+            }
+            
+            .cities-content {
+                height: 240px;
+            }
+            
+            .city-card {
+                max-width: 100%;
+            }
+            
+            .city-image {
+                height: 90px;
+            }
+            
+            .city-name {
+                font-size: 1rem;
+            }
+            
+            .city-tag {
+                font-size: 0.75rem;
+                padding: 8px 12px;
+            }
+            
+            .cities-nav-btn {
+                width: 36px;
+                height: 36px;
             }
         }
         
@@ -837,39 +1099,127 @@
             <h1 class="display-4 fw-bold mb-4">Experience Authentic China</h1>
             <p class="lead mb-4">Personal travel assistance with cultural introductions and complete arrangements for your China journey.</p>
             
-            <!-- Elegant News Ticker -->
-            <div class="news-ticker-wrapper mb-5">
-                <div class="news-ticker">
-                    <div class="news-header">
-                        <span class="news-label">
-                            <i class="fas fa-bell me-2"></i>Latest Updates
+            <!-- Rotating China Cities Display -->
+            <div class="cities-ticker-wrapper mb-5">
+                <div class="cities-ticker">
+                    <div class="cities-header">
+                        <span class="cities-label">
+                            <i class="fas fa-city me-2"></i>Explore China Cities
                         </span>
-                        <span class="news-date">Today</span>
+                        <span class="cities-count">12 Cities</span>
                     </div>
-                    <div class="news-content">
-                        <div class="news-item active">
-                            <span class="news-badge badge bg-primary">New</span>
-                            <span class="news-text">Visa processing time reduced by 30% for China travel</span>
+                    <div class="cities-content">
+                        <!-- Group 1: Chengdu, Beijing, Wuxi -->
+                        <div class="cities-group active">
+                            <div class="city-card">
+                                <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="city-overlay"></div>
+                                    <span class="city-name">Chengdu</span>
+                                </div>
+                                <div class="city-tag">Pandas & Spicy Cuisine</div>
+                            </div>
+                            <div class="city-card">
+                                <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="city-overlay"></div>
+                                    <span class="city-name">Beijing</span>
+                                </div>
+                                <div class="city-tag">Great Wall & Forbidden City</div>
+                            </div>
+                            <div class="city-card">
+                                <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="city-overlay"></div>
+                                    <span class="city-name">Wuxi</span>
+                                </div>
+                                <div class="city-tag">Taihu Lake & Gardens</div>
+                            </div>
                         </div>
-                        <div class="news-item">
-                            <span class="news-badge badge bg-accent">Tip</span>
-                            <span class="news-text">Spring Festival travel tips now available</span>
+                        
+                        <!-- Group 2: Qingdao, Xiamen, Harbin -->
+                        <div class="cities-group">
+                            <div class="city-card">
+                                <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1552465011-b4e30bf7349d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="city-overlay"></div>
+                                    <span class="city-name">Qingdao</span>
+                                </div>
+                                <div class="city-tag">Beaches & Tsingtao Beer</div>
+                            </div>
+                            <div class="city-card">
+                                <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1578645510447-e4b5c5d90673?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="city-overlay"></div>
+                                    <span class="city-name">Xiamen</span>
+                                </div>
+                                <div class="city-tag">Gulangyu Island & Beaches</div>
+                            </div>
+                            <div class="city-card">
+                                <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="city-overlay"></div>
+                                    <span class="city-name">Harbin</span>
+                                </div>
+                                <div class="city-tag">Ice Festival & Russian Architecture</div>
+                            </div>
                         </div>
-                        <div class="news-item">
-                            <span class="news-badge badge bg-success">Update</span>
-                            <span class="news-text">High-speed rail network expanded to 10 new cities</span>
+                        
+                        <!-- Group 3: Shanghai, Nanjing, Shenzhen -->
+                        <div class="cities-group">
+                            <div class="city-card">
+                                <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="city-overlay"></div>
+                                    <span class="city-name">Shanghai</span>
+                                </div>
+                                <div class="city-tag">The Bund & Skyscrapers</div>
+                            </div>
+                            <div class="city-card">
+                                <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="city-overlay"></div>
+                                    <span class="city-name">Nanjing</span>
+                                </div>
+                                <div class="city-tag">Ancient Capital & Yangtze River</div>
+                            </div>
+                            <div class="city-card">
+                                <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1552465011-b4e30bf7349d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="city-overlay"></div>
+                                    <span class="city-name">Shenzhen</span>
+                                </div>
+                                <div class="city-tag">Tech Hub & Modern Architecture</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Group 4: Guangzhou, XiangGang, Chongqing -->
+                        <div class="cities-group">
+                            <div class="city-card">
+                                <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1578645510447-e4b5c5d90673?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="city-overlay"></div>
+                                    <span class="city-name">Guangzhou</span>
+                                </div>
+                                <div class="city-tag">Cantonese Food & Trade Center</div>
+                            </div>
+                            <div class="city-card">
+                                <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="city-overlay"></div>
+                                    <span class="city-name">XiangGang</span>
+                                </div>
+                                <div class="city-tag">Victoria Harbour & Skyline</div>
+                            </div>
+                            <div class="city-card">
+                                <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                    <div class="city-overlay"></div>
+                                    <span class="city-name">Chongqing</span>
+                                </div>
+                                <div class="city-tag">Mountain City & Hot Pot</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="news-nav">
-                        <button class="news-nav-btn prev-news">
+                    <div class="cities-nav">
+                        <button class="cities-nav-btn prev-cities">
                             <i class="fas fa-chevron-left"></i>
                         </button>
-                        <div class="news-dots">
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
+                        <div class="cities-dots">
+                            <span class="city-dot active"></span>
+                            <span class="city-dot"></span>
+                            <span class="city-dot"></span>
+                            <span class="city-dot"></span>
                         </div>
-                        <button class="news-nav-btn next-news">
+                        <button class="cities-nav-btn next-cities">
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
@@ -1078,28 +1428,28 @@
             }
         });
 
-        // Elegant News Ticker
+        // Rotating Cities Display
         document.addEventListener('DOMContentLoaded', function() {
-            const newsItems = document.querySelectorAll('.news-item');
-            const dots = document.querySelectorAll('.dot');
-            const prevBtn = document.querySelector('.prev-news');
-            const nextBtn = document.querySelector('.next-news');
+            const cityGroups = document.querySelectorAll('.cities-group');
+            const cityDots = document.querySelectorAll('.city-dot');
+            const prevBtn = document.querySelector('.prev-cities');
+            const nextBtn = document.querySelector('.next-cities');
             let currentIndex = 0;
             
-            function showNews(index) {
-                // Hide all news items
-                newsItems.forEach(item => {
-                    item.classList.remove('active');
+            function showCityGroup(index) {
+                // Hide all city groups
+                cityGroups.forEach(group => {
+                    group.classList.remove('active');
                 });
                 
                 // Remove active from all dots
-                dots.forEach(dot => {
+                cityDots.forEach(dot => {
                     dot.classList.remove('active');
                 });
                 
-                // Show selected news item
-                newsItems[index].classList.add('active');
-                dots[index].classList.add('active');
+                // Show selected city group
+                cityGroups[index].classList.add('active');
+                cityDots[index].classList.add('active');
                 currentIndex = index;
             }
             
@@ -1107,10 +1457,10 @@
             if (nextBtn) {
                 nextBtn.addEventListener('click', function() {
                     let nextIndex = currentIndex + 1;
-                    if (nextIndex >= newsItems.length) {
+                    if (nextIndex >= cityGroups.length) {
                         nextIndex = 0;
                     }
-                    showNews(nextIndex);
+                    showCityGroup(nextIndex);
                 });
             }
             
@@ -1119,27 +1469,27 @@
                 prevBtn.addEventListener('click', function() {
                     let prevIndex = currentIndex - 1;
                     if (prevIndex < 0) {
-                        prevIndex = newsItems.length - 1;
+                        prevIndex = cityGroups.length - 1;
                     }
-                    showNews(prevIndex);
+                    showCityGroup(prevIndex);
                 });
             }
             
             // Dot click
-            dots.forEach((dot, index) => {
+            cityDots.forEach((dot, index) => {
                 dot.addEventListener('click', function() {
-                    showNews(index);
+                    showCityGroup(index);
                 });
             });
             
-            // Auto-rotate news every 5 seconds
-            if (newsItems.length > 0) {
+            // Auto-rotate cities every 5 seconds
+            if (cityGroups.length > 0) {
                 setInterval(function() {
                     let nextIndex = currentIndex + 1;
-                    if (nextIndex >= newsItems.length) {
+                    if (nextIndex >= cityGroups.length) {
                         nextIndex = 0;
                     }
-                    showNews(nextIndex);
+                    showCityGroup(nextIndex);
                 }, 5000);
             }
         });

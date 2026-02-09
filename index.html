@@ -814,10 +814,11 @@
         
         // Get elements
         const track = document.getElementById('carouselTrack');
-        const slides = document.querySelectorAll('.carousel-slide');
+                const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dot');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
+        const track = document.querySelector('.carousel-track');
         
         let currentSlide = 0;
         const totalSlides = slides.length;
@@ -838,103 +839,36 @@
             slides.forEach((slide, index) => {
                 slide.classList.toggle('active', index === currentSlide);
             });
+            
+            // Preload next slide images for smoother transitions
+            setTimeout(preloadNextSlide, 100);
         }
         
-        // Next button
-        nextBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
-        });
-        
-        // Previous button
-        prevBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-        });
-        
-        // Dot buttons
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentSlide = index;
-                updateCarousel();
-            });
-        });
-        
-        // Auto-rotate
-        let autoRotate = setInterval(() => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
-        }, 5000);
-        
-        // Pause on hover
-        track.addEventListener('mouseenter', () => {
-            clearInterval(autoRotate);
-        });
-        
-        track.addEventListener('mouseleave', () => {
-            autoRotate = setInterval(() => {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateCarousel();
-            }, 5000);
-        });
-        
-        // Initialize
-        updateCarousel();
-        console.log('✅ Clean carousel ready! Slides:', totalSlides);
-    // Enhanced image loading
-    function loadImages() {
-        const headers = document.querySelectorAll('.city-header');
-        headers.forEach(header => {
-            const bg = header.style.backgroundImage;
-            if (bg) {
-                const imgUrl = bg.replace(/url\(["']?(.*?)["']?\)/, '$1');
-                const img = new Image();
-                img.onload = function() {
-                    header.classList.add('loaded');
-                    header.classList.remove('loading');
-                };
-                img.onerror = function() {
-                    header.classList.remove('loading');
-                    // Keep fallback color
-                };
-                img.src = imgUrl;
-                header.classList.add('loading');
+        // Preload next slide images
+        function preloadNextSlide() {
+            const nextSlideIndex = (currentSlide + 1) % totalSlides;
+            const nextSlide = slides[nextSlideIndex];
+            if (nextSlide) {
+                const headers = nextSlide.querySelectorAll('.city-header');
+                headers.forEach(header => {
+                    const bg = header.style.backgroundImage;
+                    if (bg && bg !== 'none') {
+                        const imgUrl = bg.replace(/url\(["']?(.*?)["']?\)/, '$1');
+                        const img = new Image();
+                        img.src = imgUrl;
+                    }
+                });
             }
-        });
-    }
-    
-    // Call after carousel initialization
-    setTimeout(loadImages, 100);
-    
-    // Preload next slide images
-    function preloadNextSlide() {
-        const nextSlideIndex = (currentSlide + 1) % totalSlides;
-        const nextSlide = slides[nextSlideIndex];
-        if (nextSlide) {
-            const headers = nextSlide.querySelectorAll('.city-header');
+        }
+        
+        // Load images with loading states
+        function loadImages() {
+            const headers = document.querySelectorAll('.city-header');
             headers.forEach(header => {
                 const bg = header.style.backgroundImage;
-                if (bg) {
+                if (bg && bg !== 'none') {
                     const imgUrl = bg.replace(/url\(["']?(.*?)["']?\)/, '$1');
-                    const img = new Image();
-                    img.src = imgUrl;
-                }
-            });
-        }
-    }
-    
-    // Update carousel to preload next slide
-    const originalUpdateCarousel = updateCarousel;
-    updateCarousel = function() {
-        originalUpdateCarousel();
-        setTimeout(preloadNextSlide, 100);
-    };
-    
-    console.log('✨ Enhanced version loaded with 12 cities');
-    
-        
-        // Verify layout
-        setTimeout(() => {
+                    const i{
             console.log('=== LAYOUT VERIFICATION ===');
             const cards = document.querySelectorAll('.city-card');
             console.log('City cards:', cards.length);
@@ -952,23 +886,7 @@
         }, 100);
     
     // Image loading optimization
-    window.addEventListener('load', function() {
-        console.log('✅ All images loaded');
-        
-        // Preload next slide images for smoother transitions
-        const preloadNextSlide = function() {
-            const nextSlideIndex = (currentSlide + 1) % totalSlides;
-            const nextSlide = slides[nextSlideIndex];
-            if (nextSlide) {
-                const images = nextSlide.querySelectorAll('.city-header');
-                images.forEach(img => {
-                    const bg = window.getComputedStyle(img).backgroundImage;
-                    if (bg && bg !== 'none') {
-                        const imgUrl = bg.replace(/url\(["']?(.*?)["']?\)/, '$1');
-                        const preload = new Image();
-                        preload.src = imgUrl;
-                    }
-                });
+    ;
             }
         };
         

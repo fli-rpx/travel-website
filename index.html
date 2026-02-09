@@ -829,6 +829,83 @@
         float: none !important;
         display: block !important;
     }
+    
+    /* EMERGENCY CSS - Manual grid fallback */
+    .cities-grid {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        margin: 20px 0 !important;
+        padding: 0 !important;
+        /* Clear any floats */
+        overflow: hidden !important;
+        clear: both !important;
+    }
+    
+    /* Manual grid columns */
+    .city-card {
+        display: block !important;
+        position: absolute !important; /* MANUAL POSITIONING */
+        width: 250px !important; /* Fixed width */
+        height: 280px !important; /* Fixed height */
+        margin: 0 !important;
+        padding: 0 !important;
+        /* Visual */
+        background: white !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+    }
+    
+    /* JavaScript will set top/left positions */
+    
+    .city-card-link {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        text-decoration: none !important;
+        color: inherit !important;
+    }
+    
+    .city-image {
+        height: 160px !important;
+        width: 100% !important;
+        background-size: cover !important;
+        background-position: center !important;
+        position: relative !important;
+        background-color: #f0f0f0 !important;
+    }
+    
+    .city-overlay {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%) !important;
+    }
+    
+    .city-name {
+        position: absolute !important;
+        bottom: 15px !important;
+        left: 15px !important;
+        color: white !important;
+        font-size: 1.2rem !important;
+        font-weight: bold !important;
+        z-index: 2 !important;
+    }
+    
+    .city-tag {
+        padding: 12px 15px !important;
+        background: white !important;
+        color: #475569 !important;
+        font-size: 0.85rem !important;
+        border-top: 1px solid #e2e8f0 !important;
+        display: block !important;
+        width: 100% !important;
+        height: 60px !important; /* Fixed height for consistency */
+        overflow: hidden !important;
+    }
     </style>
 </head>
 <body>
@@ -1693,6 +1770,198 @@
             }
         }
     }, 1000);
+    
+    // 🚨 EMERGENCY MANUAL GRID LAYOUT
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('🚨 EMERGENCY MANUAL GRID INITIALIZING...');
+        
+        const grid = document.querySelector('.cities-grid');
+        if (!grid) {
+            console.log('❌ No grid found');
+            return;
+        }
+        
+        const cards = document.querySelectorAll('.city-card');
+        console.log('Cards to position:', cards.length);
+        
+        if (cards.length === 0) {
+            console.log('❌ No cards found');
+            return;
+        }
+        
+        // Get container dimensions
+        const containerWidth = grid.clientWidth;
+        console.log('Container width:', containerWidth, 'px');
+        
+        // Grid configuration
+        const CARD_WIDTH = 250; // Fixed width
+        const CARD_HEIGHT = 280; // Fixed height
+        const GAP = 25;
+        
+        // Calculate how many cards fit per row
+        const cardsPerRow = Math.floor((containerWidth + GAP) / (CARD_WIDTH + GAP));
+        console.log('Cards per row:', cardsPerRow);
+        
+        if (cardsPerRow < 1) {
+            console.log('❌ Container too narrow for cards');
+            return;
+        }
+        
+        // Calculate starting position (centered)
+        const totalRowWidth = (cardsPerRow * CARD_WIDTH) + ((cardsPerRow - 1) * GAP);
+        const startX = (containerWidth - totalRowWidth) / 2;
+        
+        console.log('Manual grid layout:');
+        console.log('- Card width:', CARD_WIDTH, 'px');
+        console.log('- Card height:', CARD_HEIGHT, 'px');
+        console.log('- Gap:', GAP, 'px');
+        console.log('- Start X:', startX, 'px');
+        
+        // Position each card manually
+        cards.forEach((card, index) => {
+            const row = Math.floor(index / cardsPerRow);
+            const col = index % cardsPerRow;
+            
+            const x = startX + (col * (CARD_WIDTH + GAP));
+            const y = row * (CARD_HEIGHT + GAP);
+            
+            // Apply manual positioning
+            card.style.position = 'absolute';
+            card.style.left = x + 'px';
+            card.style.top = y + 'px';
+            card.style.width = CARD_WIDTH + 'px';
+            card.style.height = CARD_HEIGHT + 'px';
+            card.style.margin = '0';
+            card.style.padding = '0';
+            card.style.zIndex = '1';
+            
+            console.log(`Card ${index + 1}: row=${row}, col=${col}, x=${x}px, y=${y}px`);
+        });
+        
+        // Set grid height to fit all cards
+        const totalRows = Math.ceil(cards.length / cardsPerRow);
+        const totalHeight = (totalRows * CARD_HEIGHT) + ((totalRows - 1) * GAP);
+        grid.style.height = totalHeight + 'px';
+        grid.style.position = 'relative';
+        
+        console.log('Total rows:', totalRows);
+        console.log('Total height:', totalHeight, 'px');
+        console.log('🚨 EMERGENCY MANUAL GRID COMPLETE');
+        
+        // Verify layout
+        setTimeout(function() {
+            console.log('\n=== EMERGENCY LAYOUT VERIFICATION ===');
+            let allCorrect = true;
+            
+            cards.forEach((card, index) => {
+                const rect = card.getBoundingClientRect();
+                const gridRect = grid.getBoundingClientRect();
+                
+                // Check if card is within grid
+                const isInGrid = (
+                    rect.left >= gridRect.left &&
+                    rect.right <= gridRect.right &&
+                    rect.top >= gridRect.top &&
+                    rect.bottom <= gridRect.bottom
+                );
+                
+                // Check card dimensions
+                const correctWidth = Math.abs(rect.width - CARD_WIDTH) < 5;
+                const correctHeight = Math.abs(rect.height - CARD_HEIGHT) < 5;
+                
+                if (!isInGrid || !correctWidth || !correctHeight) {
+                    console.log(`❌ Card ${index + 1} problem:`, {
+                        inGrid: isInGrid,
+                        width: rect.width + 'px (expected: ' + CARD_WIDTH + 'px)',
+                        height: rect.height + 'px (expected: ' + CARD_HEIGHT + 'px)',
+                        left: rect.left,
+                        top: rect.top
+                    });
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                console.log('✅ EMERGENCY SUCCESS: All cards manually positioned correctly!');
+                console.log('Cards are in a grid layout (manually created).');
+            } else {
+                console.log('❌ EMERGENCY WARNING: Some cards not positioned correctly');
+            }
+            
+            // Check for stacking
+            const stacked = cards.length > 0 && cards[0].getBoundingClientRect().width >= containerWidth * 0.9;
+            if (stacked) {
+                console.log('❌ CRITICAL: Cards still full width! Manual positioning failed.');
+                
+                // LAST RESORT: Use flexbox as fallback
+                console.log('Applying LAST RESORT flexbox fallback...');
+                grid.style.display = 'flex';
+                grid.style.flexWrap = 'wrap';
+                grid.style.justifyContent = 'center';
+                grid.style.gap = GAP + 'px';
+                grid.style.height = 'auto';
+                
+                cards.forEach(card => {
+                    card.style.position = 'relative';
+                    card.style.left = 'auto';
+                    card.style.top = 'auto';
+                    card.style.width = CARD_WIDTH + 'px';
+                    card.style.flex = '0 0 auto';
+                });
+                
+                console.log('Applied flexbox fallback layout');
+            }
+            
+        }, 100);
+    });
+    
+    // Handle window resize
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+            console.log('Window resized, reapplying emergency layout...');
+            // Re-trigger the layout (simplified)
+            const grid = document.querySelector('.cities-grid');
+            const cards = document.querySelectorAll('.city-card');
+            if (grid && cards.length > 0) {
+                // Quick flexbox fallback on resize
+                grid.style.display = 'flex';
+                grid.style.flexWrap = 'wrap';
+                grid.style.justifyContent = 'center';
+                grid.style.gap = '25px';
+                grid.style.height = 'auto';
+                
+                cards.forEach(card => {
+                    card.style.position = 'relative';
+                    card.style.left = 'auto';
+                    card.style.top = 'auto';
+                    card.style.width = '250px';
+                    card.style.flex = '0 0 auto';
+                });
+            }
+        }, 250);
+    });
+    
+    // Initial diagnostic
+    console.log('🚨 EMERGENCY GRID SCRIPT LOADED');
+    console.log('This will manually position cards in a grid layout.');
     </script>
-</body>
+
+    <!-- EMERGENCY FALLBACK: If JavaScript fails, use simple centered layout -->
+    <noscript>
+        <style>
+            .cities-grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 25px;
+            }
+            .city-card {
+                width: 250px;
+                flex: 0 0 auto;
+            }
+        </style>
+    </noscript>
+    </body>
 </html>

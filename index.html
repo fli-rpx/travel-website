@@ -854,7 +854,31 @@
     .city-link:hover {
         color: #2563eb;
         text-decoration: underline;
-    }</style>
+    }
+        /* Clickable city header */
+        .city-header-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+        
+        .city-header-link:hover .city-header {
+            opacity: 0.9;
+            transform: scale(1.02);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        .city-header-link:active .city-header {
+            transform: scale(0.98);
+        }
+        
+        /* Ensure city-header inside link has proper display */
+        .city-header-link .city-header {
+            display: block;
+            height: 100%;
+        }
+        </style>
 </head>
 <body>
     <!-- HERO SECTION -->
@@ -877,8 +901,8 @@
                     <div class="carousel-slide active">
                         <!-- Beijing -->
                         <div class="city-card">
-                            <div class="city-header" style="background-image: url('images/user_photos/beijing.jpg');">
-                                <div class="city-name">Beijing</div>
+                            <a href="/travel-website/cities/beijing.html" class="city-header-link"><div class="city-header" style="background-image: url('images/user_photos/beijing.jpg');">
+                                <div class="city-name">Beijing</div></a>
                                 <div class="city-tag">Great Wall & Forbidden City</div>
                             </div>
                             <div class="city-details">
@@ -891,8 +915,8 @@
                         
                         <!-- Shanghai -->
                         <div class="city-card">
-                            <div class="city-header" style="background-image: url('images/user_photos/shanghai.jpg');">
-                                <div class="city-name">Shanghai</div>
+                            <a href="/travel-website/cities/shanghai.html" class="city-header-link"><div class="city-header" style="background-image: url('images/user_photos/shanghai.jpg');">
+                                <div class="city-name">Shanghai</div></a>
                                 <div class="city-tag">The Bund & Skyscrapers</div>
                             </div>
                             <div class="city-details">
@@ -905,8 +929,8 @@
                         
                         <!-- Chengdu -->
                         <div class="city-card">
-                            <div class="city-header" style="background-image: url('images/user_photos/chengdu.jpg');">
-                                <div class="city-name">Chengdu</div>
+                            <a href="/travel-website/cities/chengdu.html" class="city-header-link"><div class="city-header" style="background-image: url('images/user_photos/chengdu.jpg');">
+                                <div class="city-name">Chengdu</div></a>
                                 <div class="city-tag">Pandas & Sichuan Cuisine</div>
                             </div>
                             <div class="city-details">
@@ -922,8 +946,8 @@
                     <div class="carousel-slide">
                         <!-- Qingdao -->
                         <div class="city-card">
-                            <div class="city-header" style="background-image: url('images/user_photos/qingdao.jpg');">
-                                <div class="city-name">Qingdao</div>
+                            <a href="/travel-website/cities/qingdao.html" class="city-header-link"><div class="city-header" style="background-image: url('images/user_photos/qingdao.jpg');">
+                                <div class="city-name">Qingdao</div></a>
                                 <div class="city-tag">Beer & Beaches</div>
                             </div>
                             <div class="city-details">
@@ -936,8 +960,8 @@
                         
                         <!-- Xiamen -->
                         <div class="city-card">
-                            <div class="city-header" style="background-image: url('images/user_photos/xiamen.jpg');">
-                                <div class="city-name">Xiamen</div>
+                            <a href="/travel-website/cities/xiamen.html" class="city-header-link"><div class="city-header" style="background-image: url('images/user_photos/xiamen.jpg');">
+                                <div class="city-name">Xiamen</div></a>
                                 <div class="city-tag">Gulangyu Island</div>
                             </div>
                             <div class="city-details">
@@ -950,8 +974,8 @@
                         
                         <!-- Wuxi -->
                         <div class="city-card">
-                            <div class="city-header" style="background-image: url('images/user_photos/wuxi.jpg');">
-                                <div class="city-name">Wuxi</div>
+                            <a href="/travel-website/cities/wuxi.html" class="city-header-link"><div class="city-header" style="background-image: url('images/user_photos/wuxi.jpg');">
+                                <div class="city-name">Wuxi</div></a>
                                 <div class="city-tag">Taihu Lake & Grand Buddha</div>
                             </div>
                             <div class="city-details">
@@ -967,8 +991,8 @@
                     <div class="carousel-slide">
                         <!-- Hong Kong -->
                         <div class="city-card">
-                            <div class="city-header" style="background-image: url('images/user_photos/hongkong.jpg');">
-                                <div class="city-name">Hong Kong</div>
+                            <a href="/travel-website/cities/hongkong.html" class="city-header-link"><div class="city-header" style="background-image: url('images/user_photos/hongkong.jpg');">
+                                <div class="city-name">Hong Kong</div></a>
                                 <div class="city-tag">Victoria Harbour</div>
                             </div>
                             <div class="city-details">
@@ -981,8 +1005,8 @@
                         
                         <!-- Chongqing -->
                         <div class="city-card">
-                            <div class="city-header" style="background-image: url('images/user_photos/chongqing.jpg');">
-                                <div class="city-name">Chongqing</div>
+                            <a href="/travel-website/cities/chongqing.html" class="city-header-link"><div class="city-header" style="background-image: url('images/user_photos/chongqing.jpg');">
+                                <div class="city-name">Chongqing</div></a>
                                 <div class="city-tag">Mountain City & Hot Pot</div>
                             </div>
                             <div class="city-details">
@@ -995,8 +1019,8 @@
                         
                         <!-- Harbin -->
                         <div class="city-card">
-                            <div class="city-header" style="background-image: url('images/user_photos/harbin.jpg');">
-                                <div class="city-name">Harbin</div>
+                            <a href="/travel-website/cities/harbin.html" class="city-header-link"><div class="city-header" style="background-image: url('images/user_photos/harbin.jpg');">
+                                <div class="city-name">Harbin</div></a>
                                 <div class="city-tag">Ice Festival</div>
                             </div>
                             <div class="city-details">
@@ -1012,8 +1036,8 @@
                     <div class="carousel-slide">
                         <!-- Guangzhou -->
                         <div class="city-card">
-                            <div class="city-header" style="background-image: url('images/user_photos/guangzhou.jpg');">
-                                <div class="city-name">Guangzhou</div>
+                            <a href="/travel-website/cities/guangzhou.html" class="city-header-link"><div class="city-header" style="background-image: url('images/user_photos/guangzhou.jpg');">
+                                <div class="city-name">Guangzhou</div></a>
                                 <div class="city-tag">Cantonese Food</div>
                             </div>
                             <div class="city-details">
@@ -1026,8 +1050,8 @@
                         
                         <!-- Shenzhen -->
                         <div class="city-card">
-                            <div class="city-header" style="background-image: url('images/user_photos/shenzhen.jpg');">
-                                <div class="city-name">Shenzhen</div>
+                            <a href="/travel-website/cities/shenzhen.html" class="city-header-link"><div class="city-header" style="background-image: url('images/user_photos/shenzhen.jpg');">
+                                <div class="city-name">Shenzhen</div></a>
                                 <div class="city-tag">Tech Hub</div>
                             </div>
                             <div class="city-details">
@@ -1040,8 +1064,8 @@
                         
                         <!-- Nanjing -->
                         <div class="city-card">
-                            <div class="city-header" style="background-image: url('images/user_photos/nanjing.jpg');">
-                                <div class="city-name">Nanjing</div>
+                            <a href="/travel-website/cities/nanjing.html" class="city-header-link"><div class="city-header" style="background-image: url('images/user_photos/nanjing.jpg');">
+                                <div class="city-name">Nanjing</div></a>
                                 <div class="city-tag">Ancient Capital</div>
                             </div>
                             <div class="city-details">

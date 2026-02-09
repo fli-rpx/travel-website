@@ -1115,6 +1115,26 @@
             position: relative !important;
             z-index: 4 !important;
         }
+    
+        /* SIMPLE FIX: Show all city groups at once */
+        .cities-group {
+            display: flex !important;
+            opacity: 1 !important;
+            position: relative !important;
+            transform: none !important;
+            pointer-events: auto !important;
+        }
+        
+        .cities-content {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 20px !important;
+        }
+        
+        /* Hide navigation since we're showing everything */
+        .cities-nav, .cities-dots {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
@@ -1633,6 +1653,36 @@
             console.log('Guangzhou link found:', guangzhouLink.href);
             console.log('Chongqing link found:', chongqingLink.href);
         }
+    });
+    
+    // SIMPLE FIX: Disable carousel, show all cities
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Applying simple carousel fix...');
+        
+        // Show all city groups
+        const groups = document.querySelectorAll('.cities-group');
+        groups.forEach(group => {
+            group.style.display = 'flex';
+            group.style.opacity = '1';
+            group.style.position = 'relative';
+            group.style.transform = 'none';
+        });
+        
+        // Hide navigation
+        const nav = document.querySelector('.cities-nav');
+        const dots = document.querySelector('.cities-dots');
+        if (nav) nav.style.display = 'none';
+        if (dots) dots.style.display = 'none';
+        
+        // Make cities-content a grid
+        const content = document.querySelector('.cities-content');
+        if (content) {
+            content.style.display = 'grid';
+            content.style.gridTemplateColumns = 'repeat(4, 1fr)';
+            content.style.gap = '20px';
+        }
+        
+        console.log('Simple fix applied: All cities visible, carousel disabled');
     });
     </script>
 </body>

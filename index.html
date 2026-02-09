@@ -847,6 +847,53 @@
             background: #94a3b8;
         }
         /* ===== END CLEAN CAROUSEL CSS ===== */
+    
+        /* FINAL GRID FIX - Prevent any stacking */
+        .cities-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+            gap: 25px !important;
+            margin-top: 20px !important;
+            position: relative !important;
+            z-index: 1 !important;
+            width: 100% !important;
+            /* Prevent any float/position issues */
+            clear: both !important;
+            float: none !important;
+        }
+        
+        /* Force city cards to behave */
+        .city-card {
+            display: block !important;
+            position: relative !important;
+            width: 100% !important;
+            height: auto !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            /* Prevent any stacking */
+            z-index: auto !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            /* Layout containment */
+            contain: layout style paint;
+        }
+        
+        /* Fix image containers */
+        .city-image {
+            height: 160px !important;
+            min-height: 160px !important;
+            background-size: cover !important;
+            background-position: center !important;
+            position: relative !important;
+            background-color: #f0f0f0 !important;
+            /* Prevent image loading shifts */
+            aspect-ratio: 16/9;
+        }
+        
+        /* Ensure no overlapping */
+        * {
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
@@ -1575,6 +1622,91 @@
         
         console.log('Image optimization complete');
     });
+    
+    // FINAL VERIFICATION - Check for stacking
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('=== FINAL LAYOUT VERIFICATION ===');
+        
+        // Wait for images to load
+        window.addEventListener('load', function() {
+            console.log('Page fully loaded, checking layout...');
+            
+            const grid = document.querySelector('.cities-grid');
+            const cards = document.querySelectorAll('.city-card');
+            
+            if (!grid) {
+                console.log('❌ No grid found');
+                return;
+            }
+            
+            // Check grid display
+            const gridStyle = window.getComputedStyle(grid);
+            console.log('Grid display:', gridStyle.display);
+            console.log('Grid template:', gridStyle.gridTemplateColumns);
+            console.log('Total cards:', cards.length);
+            
+            // Check for overlapping
+            setTimeout(function() {
+                const overlaps = [];
+                const cardRects = [];
+                
+                cards.forEach((card, i) => {
+                    const rect = card.getBoundingClientRect();
+                    cardRects.push({index: i, rect: rect});
+                });
+                
+                // Check each pair for overlap
+                for (let i = 0; i < cardRects.length; i++) {
+                    for (let j = i + 1; j < cardRects.length; j++) {
+                        const rect1 = cardRects[i].rect;
+                        const rect2 = cardRects[j].rect;
+                        
+                        const overlap = !(
+                            rect1.right < rect2.left || 
+                            rect1.left > rect2.right || 
+                            rect1.bottom < rect2.top || 
+                            rect1.top > rect2.bottom
+                        );
+                        
+                        if (overlap) {
+                            overlaps.push(`Cards ${i + 1} and ${j + 1} overlap`);
+                        }
+                    }
+                }
+                
+                console.log('=== OVERLAP CHECK ===');
+                if (overlaps.length === 0) {
+                    console.log('✅ SUCCESS: No overlapping cards!');
+                    console.log('Layout is correct.');
+                } else {
+                    console.log('❌ PROBLEM: Found overlaps:', overlaps);
+                    console.log('This indicates stacking issue.');
+                }
+                
+                // Log card positions
+                console.log('=== CARD POSITIONS ===');
+                cardRects.forEach((item, i) => {
+                    console.log(`Card ${i + 1}:`, {
+                        left: Math.round(item.rect.left),
+                        top: Math.round(item.rect.top),
+                        width: Math.round(item.rect.width),
+                        height: Math.round(item.rect.height)
+                    });
+                });
+                
+            }, 500); // Wait a bit for final layout
+        });
+        
+        // Check initial state
+        console.log('Initial check - cards found:', document.querySelectorAll('.city-card').length);
+    });
+    
+    // Force layout recalculation if needed
+    setTimeout(function() {
+        if (document.querySelector('.cities-grid')) {
+            document.querySelector('.cities-grid').style.display = 'grid';
+        }
+    }, 100);
     </script>
 </body>
 </html>

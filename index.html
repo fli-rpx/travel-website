@@ -809,136 +809,115 @@
 
     <!-- SIMPLE JAVASCRIPT -->
     <script>
-        // SIMPLE CAROUSEL - GUARANTEED TO WORK
-        console.log('✅ Clean carousel loading...');
+    // ULTRA-SIMPLE GUARANTEED WORKING CAROUSEL
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('🚀 Starting ultra-simple carousel...');
         
-        // Get elements
-        const track = document.getElementById('carouselTrack');
-                const slides = document.querySelectorAll('.carousel-slide');
+        // Get all elements
+        const track = document.querySelector('.carousel-track');
+        const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dot');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
-        const track = document.querySelector('.carousel-track');
+        
+        // Debug: log what we found
+        console.log('🔍 Elements found:', {
+            track: !!track,
+            slides: slides.length,
+            dots: dots.length,
+            prevBtn: !!prevBtn,
+            nextBtn: !!nextBtn
+        });
+        
+        // Check if we have everything
+        if (!track || slides.length === 0 || !prevBtn || !nextBtn) {
+            console.error('❌ Missing essential carousel elements');
+            return;
+        }
         
         let currentSlide = 0;
         const totalSlides = slides.length;
         
-        // Function to update carousel position
+        // SIMPLE update function
         function updateCarousel() {
-            console.log('Showing slide', currentSlide + 1, 'of', totalSlides);
+            console.log('🔄 Moving to slide', currentSlide + 1, 'of', totalSlides);
             
-            // Move track
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            // Simple transform - this WILL work
+            const translateX = -(currentSlide * 100);
+            track.style.transform = 'translateX(' + translateX + '%)';
+            track.style.transition = 'transform 0.5s ease';
             
-            // Update dots
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
-            
-            // Update slides
-            slides.forEach((slide, index) => {
-                slide.classList.toggle('active', index === currentSlide);
-            });
-            
-            // Preload next slide images for smoother transitions
-            setTimeout(preloadNextSlide, 100);
-        }
-        
-        // Preload next slide images
-        function preloadNextSlide() {
-            const nextSlideIndex = (currentSlide + 1) % totalSlides;
-            const nextSlide = slides[nextSlideIndex];
-            if (nextSlide) {
-                const headers = nextSlide.querySelectorAll('.city-header');
-                headers.forEach(header => {
-                    const bg = header.style.backgroundImage;
-                    if (bg && bg !== 'none') {
-                        const imgUrl = bg.replace(/url\(["']?(.*?)["']?\)/, '$1');
-                        const img = new Image();
-                        img.src = imgUrl;
+            // Update dots if they exist
+            if (dots.length > 0) {
+                dots.forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
                     }
                 });
             }
-        }
-        
-        // Load images with loading states
-        function loadImages() {
-            const headers = document.querySelectorAll('.city-header');
-            headers.forEach(header => {
-                const bg = header.style.backgroundImage;
-                if (bg && bg !== 'none') {
-                    const imgUrl = bg.replace(/url\(["']?(.*?)["']?\)/, '$1');
-                    const i{
-            console.log('=== LAYOUT VERIFICATION ===');
-            const cards = document.querySelectorAll('.city-card');
-            console.log('City cards:', cards.length);
             
-            cards.forEach((card, i) => {
-                const rect = card.getBoundingClientRect();
-                console.log(`Card ${i+1}: ${Math.round(rect.width)}px wide`);
-                
-                if (rect.width > 300) {
-                    console.log(`⚠️ Card ${i+1} might be too wide: ${rect.width}px`);
+            // Update slides
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
                 }
             });
-            
-            console.log('✅ Clean version should be working perfectly!');
-        }, 100);
-    
-    // Image loading optimization
-    ;
-            }
-        };
-        
-        // Preload next slide after current slide is shown
-        setTimeout(preloadNextSlide, 100);
-    });
-    
-    // Update footer note
-    document.querySelector('footer p').textContent = '12 Chinese Cities • Latest News • Contact Us • Working Carousel';
-    
-    // Contact form handling
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        
-        // Simple validation
-        if (!name || !email) {
-            alert('Please fill in required fields');
-            return;
         }
         
-        // Show success message
-        const submitBtn = this.querySelector('.submit-btn');
-        const originalText = submitBtn.textContent;
+        // SIMPLE event handlers
+        nextBtn.addEventListener('click', function() {
+            console.log('👉 Next button clicked');
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        });
         
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
+        prevBtn.addEventListener('click', function() {
+            console.log('👈 Prev button clicked');
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
         
-        // Simulate API call
-        setTimeout(() => {
-            submitBtn.textContent = '✓ Message Sent!';
-            submitBtn.style.background = '#10b981';
+        // SIMPLE dot handlers (if dots exist)
+        if (dots.length > 0) {
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    console.log('🔘 Dot', index, 'clicked');
+                    currentSlide = index;
+                    updateCarousel();
+                });
+            });
+        }
+        
+        // SIMPLE auto-rotate
+        let autoInterval = setInterval(function() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }, 5000);
+        
+        // SIMPLE hover pause
+        if (track) {
+            track.addEventListener('mouseenter', function() {
+                console.log('⏸️ Pausing auto-rotate');
+                clearInterval(autoInterval);
+            });
             
-            // Reset form
-            this.reset();
-            
-            // Reset button after 3 seconds
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                submitBtn.style.background = '';
-            }, 3000);
-            
-            console.log('Contact form submitted:', { name, email });
-        }, 1500);
+            track.addEventListener('mouseleave', function() {
+                console.log('▶️ Resuming auto-rotate');
+                autoInterval = setInterval(function() {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    updateCarousel();
+                }, 5000);
+            });
+        }
+        
+        // Initialize
+        updateCarousel();
+        console.log('🎉 Ultra-simple carousel ready! Total slides:', totalSlides);
     });
-    
-    console.log('📰 News and Contact sections loaded');
     </script>
 </body>
 </html>

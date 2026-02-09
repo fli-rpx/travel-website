@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>China Travel Guide - Working Carousel</title>
+    <!-- Version: 1770601828 -->
     <style>
         /* RESET AND BASICS */
         * {
@@ -888,110 +892,131 @@
 
     <!-- SIMPLE JAVASCRIPT -->
     <script>
-    // WORKING CAROUSEL - SIMPLE AND RELIABLE
-    window.addEventListener('load', function() {
-        console.log('🎯 Page loaded, starting carousel...');
-        
-        // Short delay to ensure everything is ready
-        setTimeout(initCarousel, 100);
-    });
+    // ULTRA ROBUST CAROUSEL - WILL WORK
+    console.log('🔄 Loading ultra robust carousel...');
     
-    function initCarousel() {
-        console.log('🚀 Initializing carousel...');
+    // Multiple initialization methods
+    function initializeCarousel() {
+        console.log('🎯 Attempting to initialize carousel...');
         
-        // Get elements
-        const track = document.querySelector('.carousel-track');
-        const slides = document.querySelectorAll('.carousel-slide');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const dots = document.querySelectorAll('.carousel-dot');
+        // METHOD 1: Try to get elements immediately
+        let track = document.querySelector('.carousel-track');
+        let slides = document.querySelectorAll('.carousel-slide');
+        let prevBtn = document.getElementById('prevBtn');
+        let nextBtn = document.getElementById('nextBtn');
+        let dots = document.querySelectorAll('.carousel-dot');
         
-        console.log('📋 Elements found:', {
-            track: track ? 'YES' : 'NO',
+        console.log('🔍 Initial element check:', {
+            track: track ? 'FOUND' : 'NOT FOUND',
             slides: slides.length,
-            prevBtn: prevBtn ? 'YES' : 'NO',
-            nextBtn: nextBtn ? 'YES' : 'NO',
+            prevBtn: prevBtn ? 'FOUND' : 'NOT FOUND',
+            nextBtn: nextBtn ? 'FOUND' : 'NOT FOUND',
             dots: dots.length
         });
         
-        // Essential check
+        // If elements not found, wait and try again
         if (!track || slides.length === 0) {
-            console.error('❌ Cannot start carousel: missing track or slides');
+            console.log('⏳ Elements not ready, waiting 200ms...');
+            setTimeout(initializeCarousel, 200);
             return;
         }
         
+        console.log('✅ All elements found! Starting carousel...');
+        
+        // CAROUSEL LOGIC
         let currentSlide = 0;
         const totalSlides = slides.length;
-        let autoInterval;
+        let autoInterval = null;
         
-        // Move carousel to current slide
+        // Update carousel display
         function updateCarousel() {
-            console.log('🔄 Showing slide', currentSlide + 1, 'of', totalSlides);
+            console.log('📊 Moving to slide', currentSlide + 1, 'of', totalSlides);
             
-            // Calculate position
+            // Calculate position (0%, -100%, -200%, -300%)
             const position = -(currentSlide * 100);
             track.style.transform = `translateX(${position}%)`;
-            track.style.transition = 'transform 0.5s ease';
+            track.style.transition = 'transform 0.5s ease-in-out';
             
             // Update dots
             dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
             });
             
             // Update slides
             slides.forEach((slide, index) => {
-                slide.classList.toggle('active', index === currentSlide);
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
             });
         }
         
         // Next slide
-        function nextSlide() {
+        function goNext() {
             currentSlide = (currentSlide + 1) % totalSlides;
             updateCarousel();
         }
         
         // Previous slide
-        function prevSlide() {
+        function goPrev() {
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             updateCarousel();
         }
         
         // Go to specific slide
         function goToSlide(index) {
-            currentSlide = index;
-            updateCarousel();
-        }
-        
-        // Start auto-rotation
-        function startAutoRotate() {
-            autoInterval = setInterval(nextSlide, 5000);
-        }
-        
-        // Stop auto-rotation
-        function stopAutoRotate() {
-            if (autoInterval) {
-                clearInterval(autoInterval);
+            if (index >= 0 && index < totalSlides) {
+                currentSlide = index;
+                updateCarousel();
             }
         }
         
-        // Event listeners
+        // Auto-rotate
+        function startAutoRotate() {
+            if (autoInterval) clearInterval(autoInterval);
+            autoInterval = setInterval(goNext, 5000);
+        }
+        
+        function stopAutoRotate() {
+            if (autoInterval) {
+                clearInterval(autoInterval);
+                autoInterval = null;
+            }
+        }
+        
+        // EVENT LISTENERS
+        // Next button
         if (nextBtn) {
-            nextBtn.addEventListener('click', function() {
-                console.log('👉 Next button clicked');
-                nextSlide();
+            nextBtn.addEventListener('click', function(e) {
+                console.log('👉 NEXT button clicked');
+                e.stopPropagation();
+                goNext();
             });
+        } else {
+            console.warn('⚠️ Next button not found');
         }
         
+        // Previous button
         if (prevBtn) {
-            prevBtn.addEventListener('click', function() {
-                console.log('👈 Previous button clicked');
-                prevSlide();
+            prevBtn.addEventListener('click', function(e) {
+                console.log('👈 PREV button clicked');
+                e.stopPropagation();
+                goPrev();
             });
+        } else {
+            console.warn('⚠️ Previous button not found');
         }
         
+        // Dot buttons
         dots.forEach((dot, index) => {
-            dot.addEventListener('click', function() {
-                console.log('🔘 Dot', index + 1, 'clicked');
+            dot.addEventListener('click', function(e) {
+                console.log('🔘 DOT', index + 1, 'clicked');
+                e.stopPropagation();
                 goToSlide(index);
             });
         });
@@ -1006,8 +1031,61 @@
         updateCarousel();
         startAutoRotate();
         
-        console.log('✅ Carousel ready! Click buttons to test.');
+        console.log('🎉 CAROUSEL READY AND WORKING!');
+        console.log('👉 Click the arrow buttons or dots to test.');
+        
+        // Also expose functions for debugging
+        window.debugCarousel = {
+            goNext: goNext,
+            goPrev: goPrev,
+            goToSlide: goToSlide,
+            currentSlide: () => currentSlide,
+            totalSlides: totalSlides
+        };
     }
+    
+    // Multiple initialization triggers
+    document.addEventListener('DOMContentLoaded', initializeCarousel);
+    window.addEventListener('load', initializeCarousel);
+    
+    // Fallback: try after 1 second
+    setTimeout(initializeCarousel, 1000);
+    
+    console.log('🚀 Carousel initialization scheduled');
     </script>
-</body>
+<!-- DEBUG INFO -->
+    <div id="carouselDebug" style="display: none; background: #fef3c7; border: 1px solid #f59e0b; padding: 10px; margin: 10px 0; border-radius: 5px; font-family: monospace;">
+        <strong>Carousel Debug Info:</strong>
+        <div id="debugOutput"></div>
+    </div>
+    
+    <script>
+    // Debug helper
+    function showDebugInfo() {
+        const debugDiv = document.getElementById('carouselDebug');
+        const output = document.getElementById('debugOutput');
+        
+        if (debugDiv && output) {
+            const track = document.querySelector('.carousel-track');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dots = document.querySelectorAll('.carousel-dot');
+            
+            output.innerHTML = `
+                Track: ${track ? 'FOUND' : 'MISSING'}<br>
+                Slides: ${slides.length}<br>
+                Prev Button: ${prevBtn ? 'FOUND' : 'MISSING'}<br>
+                Next Button: ${nextBtn ? 'FOUND' : 'MISSING'}<br>
+                Dots: ${dots.length}<br>
+                Window loaded: ${document.readyState}
+            `;
+            
+            debugDiv.style.display = 'block';
+        }
+    }
+    
+    // Show debug after 2 seconds
+    setTimeout(showDebugInfo, 2000);
+    </script></body>
 </html>

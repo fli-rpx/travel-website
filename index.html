@@ -782,6 +782,80 @@
         .carousel-slide::-webkit-scrollbar {
             display: none;
         }
+    }
+    /* Enhanced city details styling */
+    .city-details {
+        padding: 15px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto; /* Allow scrolling if content is long */
+        max-height: 180px; /* Limit height for consistency */
+    }
+    
+    .city-details::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    .city-details::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 2px;
+    }
+    
+    .city-details::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 2px;
+    }
+    
+    .city-details::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+    
+    .city-details p {
+        margin-bottom: 6px;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        color: #475569;
+        display: flex;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .city-details p::before {
+        content: "•";
+        color: #3b82f6;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+    
+    .city-name {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #1e293b;
+    }
+    
+    .city-tag {
+        font-size: 0.9rem;
+        color: #64748b;
+        margin-bottom: 12px;
+        font-style: italic;
+    }
+    
+    .city-link {
+        margin-top: auto;
+        padding-top: 10px;
+        display: inline-block;
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+    
+    .city-link:hover {
+        color: #2563eb;
+        text-decoration: underline;
     }</style>
 </head>
 <body>
@@ -790,14 +864,14 @@
         <div class="container">
             <h1>Experience Authentic China</h1>
             <p>Personal travel assistance with cultural introductions and complete arrangements for your China journey.</p>
-            <a href="#cities" class="hero-btn">Explore Cities</a>
+            <a href="#cities" class="hero-btn">Explore Cities in Detail</a>
         </div>
     </section>
 
     <!-- SIMPLE CAROUSEL -->
     <section id="cities" class="carousel-section">
         <div class="container">
-            <h2 class="section-title">Explore China Cities</h2>
+            <h2 class="section-title">Explore China Cities - Detailed Guide</h2>
             
             <div class="simple-carousel">
                 <div class="carousel-track" id="carouselTrack">
@@ -810,9 +884,11 @@
                                 <div class="city-tag">Great Wall & Forbidden City</div>
                             </div>
                             <div class="city-details">
-                                <p>🇨🇳 China's capital with 3,000 years of history</p>
-                                <p>🏯 UNESCO World Heritage sites</p>
-                                <p>🍜 Peking duck & imperial cuisine</p>
+                                <p>🇨🇳 Capital with 3,000+ years of history</p>
+                                <p>🏯 Forbidden City & Temple of Heaven</p>
+                                <p>🐉 Summer Palace & Ming Tombs</p>
+                                <p>🍜 Peking duck, zhajiangmian noodles</p>
+                                <p>🎭 Peking opera & traditional tea houses</p>
                                 <a href="/travel-website/cities/beijing.html" class="city-link">Explore Beijing</a>
                             </div>
                         </div>
@@ -824,9 +900,11 @@
                                 <div class="city-tag">The Bund & Skyscrapers</div>
                             </div>
                             <div class="city-details">
-                                <p>🏙️ Global financial hub & modern architecture</p>
-                                <p>🌉 Historic Bund & futuristic Pudong</p>
-                                <p>🛍️ Shopping, dining & vibrant nightlife</p>
+                                <p>🏙️ Global financial center & tallest skyscrapers</p>
+                                <p>🌉 The Bund - colonial architecture walk</p>
+                                <p>🎡 Oriental Pearl Tower & Jin Mao Tower</p>
+                                <p>🍜 Xiaolongbao, hairy crab, Shanghainese soup</p>
+                                <p>🎨 M50 art district & French Concession</p>
                                 <a href="/travel-website/cities/shanghai.html" class="city-link">Explore Shanghai</a>
                             </div>
                         </div>
@@ -838,9 +916,11 @@
                                 <div class="city-tag">Pandas & Spicy Cuisine</div>
                             </div>
                             <div class="city-details">
-                                <p>🐼 Giant Panda Research & breeding center</p>
-                                <p>🌶️ Famous Sichuan hot pot & spicy dishes</p>
-                                <p>🎋 Relaxed tea house culture</p>
+                                <p>🐼 Chengdu Panda Base - see baby pandas</p>
+                                <p>🌶️ Sichuan hot pot & mapo tofu</p>
+                                <p>🎭 Sichuan opera with face-changing</p>
+                                <p>🏮 Jinli Ancient Street & Wuhou Temple</p>
+                                <p>🍵 Traditional tea houses & mahjong culture</p>
                                 <a href="/travel-website/cities/chengdu.html" class="city-link">Explore Chengdu</a>
                             </div>
                         </div>
@@ -855,9 +935,11 @@
                                 <div class="city-tag">Beer & Beaches</div>
                             </div>
                             <div class="city-details">
-                                <p>🍺 Tsingtao Beer brewery & museum</p>
-                                <p>🏖️ Golden Beach & coastal scenery</p>
-                                <p>🏛️ German colonial architecture</p>
+                                <p>🍺 Tsingtao Beer Museum & brewery tour</p>
+                                <p>🏖️ Golden Beach - 3.5km sandy coastline</p>
+                                <p>🏛️ German architecture in Badaguan area</p>
+                                <p>⛰️ Laoshan Mountain - Taoist sacred site</p>
+                                <p>🦐 Fresh seafood & Qingdao-style barbecue</p>
                                 <a href="/travel-website/cities/qingdao.html" class="city-link">Explore Qingdao</a>
                             </div>
                         </div>
@@ -869,9 +951,11 @@
                                 <div class="city-tag">Gulangyu Island</div>
                             </div>
                             <div class="city-details">
-                                <p>🏝️ Gulangyu Island - car-free UNESCO site</p>
-                                <p>🏛️ European architecture & piano museums</p>
-                                <p>🍜 Seafood & Fujian cuisine</p>
+                                <p>🏝️ Gulangyu Island - UNESCO, no cars allowed</p>
+                                <p>🎹 Piano Museum & organ museum</p>
+                                <p>🏛️ European colonial architecture</p>
+                                <p>🌴 Xiamen University - most beautiful campus</p>
+                                <p>🍜 Seafood, oyster omelette, Fujian noodles</p>
                                 <a href="/travel-website/cities/xiamen.html" class="city-link">Explore Xiamen</a>
                             </div>
                         </div>
@@ -883,9 +967,11 @@
                                 <div class="city-tag">Taihu Lake</div>
                             </div>
                             <div class="city-details">
-                                <p>🏞️ Taihu Lake - third largest freshwater lake</p>
-                                <p>🎋 Lingshan Grand Buddha - 88m tall statue</p>
-                                <p>🏮 Ancient water towns & canals</p>
+                                <p>🏞️ Taihu Lake - 3rd largest freshwater lake</p>
+                                <p>🙏 Lingshan Grand Buddha - 88m bronze statue</p>
+                                <p>🏮 Huishan Ancient Town & clay figurines</p>
+                                <p>🎋 Li Garden & Yuantouzhu scenic area</p>
+                                <p>🍜 Wuxi spare ribs & sweet cuisine</p>
                                 <a href="/travel-website/cities/wuxi.html" class="city-link">Explore Wuxi</a>
                             </div>
                         </div>
@@ -899,9 +985,11 @@
                                 <div class="city-tag">Victoria Harbour</div>
                             </div>
                             <div class="city-details">
-                                <p>🌆 Iconic skyline & Victoria Harbour</p>
-                                <p>🚠 Peak Tram for panoramic views</p>
-                                <p>🛍️ Shopping paradise & dim sum</p>
+                                <p>🌆 Victoria Harbour & Symphony of Lights</p>
+                                <p>🚠 Peak Tram to Victoria Peak</p>
+                                <p>🎡 Tian Tan Buddha & Po Lin Monastery</p>
+                                <p>🛍️ Causeway Bay & Temple Street Night Market</p>
+                                <p>🍜 Dim sum, egg tarts, pineapple buns</p>
                                 <a href="/travel-website/cities/hongkong.html" class="city-link">Explore Hong Kong</a>
                             </div>
                         </div>
@@ -913,9 +1001,11 @@
                                 <div class="city-tag">Mountain City & Hot Pot</div>
                             </div>
                             <div class="city-details">
-                                <p>🏔️ Mountain city on Yangtze River</p>
+                                <p>🏔️ Mountain city with unique topography</p>
                                 <p>🌶️ Birthplace of Sichuan hot pot</p>
-                                <p>🚠 Cable cars & unique topography</p>
+                                <p>🚠 Yangtze River cable car & monorail</p>
+                                <p>🏮 Ciqikou Ancient Town & Hongya Cave</p>
+                                <p>🍜 Chongqing noodles & spicy street food</p>
                                 <a href="/travel-website/cities/chongqing.html" class="city-link">Explore Chongqing</a>
                             </div>
                         </div>
@@ -927,9 +1017,11 @@
                                 <div class="city-tag">Ice Festival</div>
                             </div>
                             <div class="city-details">
-                                <p>❄️ World-famous Ice & Snow Festival</p>
-                                <p>🏛️ Russian architecture influence</p>
-                                <p>🍖 Northeastern Chinese cuisine</p>
+                                <p>❄️ Harbin Ice Festival - Jan-Feb each year</p>
+                                <p>🏛️ St. Sophia Cathedral & Russian architecture</p>
+                                <p>🎿 Yabuli Ski Resort - best skiing in China</p>
+                                <p>🍖 Dongbei cuisine & Harbin beer</p>
+                                <p>🎭 Siberian Tiger Park & Sun Island</p>
                                 <a href="/travel-website/cities/harbin.html" class="city-link">Explore Harbin</a>
                             </div>
                         </div>
@@ -944,9 +1036,11 @@
                                 <div class="city-tag">Cantonese Food</div>
                             </div>
                             <div class="city-details">
-                                <p>🍜 Birthplace of Cantonese cuisine</p>
-                                <p>🏢 Modern trade & business hub</p>
-                                <p>🎡 Canton Tower & Pearl River</p>
+                                <p>🍜 Birthplace of Cantonese (Yue) cuisine</p>
+                                <p>🎡 Canton Tower - 600m tall, world's 3rd tallest</p>
+                                <p>🏮 Chen Clan Ancestral Hall & Temple of Six Banyan Trees</p>
+                                <p>🛍️ Shangxiajiu Pedestrian Street & wholesale markets</p>
+                                <p>🍵 Morning tea with dim sum & pastries</p>
                                 <a href="/travel-website/cities/guangzhou.html" class="city-link">Explore Guangzhou</a>
                             </div>
                         </div>
@@ -958,9 +1052,11 @@
                                 <div class="city-tag">Tech Innovation</div>
                             </div>
                             <div class="city-details">
-                                <p>💻 China's Silicon Valley & tech hub</p>
-                                <p>🎢 Theme parks & modern attractions</p>
-                                <p>🛍️ Shopping & electronics markets</p>
+                                <p>💻 China's Silicon Valley - tech innovation hub</p>
+                                <p>🎢 Window of the World & Happy Valley theme parks</p>
+                                <p>🏙️ Ping An Finance Centre - 2nd tallest in China</p>
+                                <p>🛍️ Huaqiangbei electronics market & malls</p>
+                                <p>🌊 Dameisha & Xiaomeisha beaches</p>
                                 <a href="/travel-website/cities/shenzhen.html" class="city-link">Explore Shenzhen</a>
                             </div>
                         </div>
@@ -972,9 +1068,11 @@
                                 <div class="city-tag">Ancient Capital</div>
                             </div>
                             <div class="city-details">
-                                <p>🏯 Former capital with rich history</p>
-                                <p>🌉 Yangtze River & ancient city walls</p>
-                                <p>🎋 Confucius Temple & Ming tombs</p>
+                                <p>🏯 Former capital of 6 dynasties</p>
+                                <p>🌉 Yangtze River Bridge & ancient city walls</p>
+                                <p>🎋 Confucius Temple & Qinhuai River</p>
+                                <p>🕊️ Sun Yat-sen Mausoleum & Ming Xiaoling Mausoleum</p>
+                                <p>🍜 Nanjing salted duck & tangbao soup dumplings</p>
                                 <a href="/travel-website/cities/nanjing.html" class="city-link">Explore Nanjing</a>
                             </div>
                         </div>

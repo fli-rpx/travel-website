@@ -809,11 +809,11 @@
 
     <!-- SIMPLE JAVASCRIPT -->
     <script>
-    // ULTRA-SIMPLE GUARANTEED WORKING CAROUSEL
+    // CLEAN CAROUSEL - NO DUPLICATE VARIABLES
     document.addEventListener('DOMContentLoaded', function() {
-        console.log('🚀 Starting ultra-simple carousel...');
+        console.log('🚀 Starting clean carousel...');
         
-        // Get all elements
+        // SINGLE DECLARATION of all variables
         const track = document.querySelector('.carousel-track');
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dot');
@@ -837,12 +837,13 @@
         
         let currentSlide = 0;
         const totalSlides = slides.length;
+        let autoInterval;
         
-        // SIMPLE update function
+        // SINGLE update function
         function updateCarousel() {
             console.log('🔄 Moving to slide', currentSlide + 1, 'of', totalSlides);
             
-            // Simple transform - this WILL work
+            // Simple transform
             const translateX = -(currentSlide * 100);
             track.style.transform = 'translateX(' + translateX + '%)';
             track.style.transition = 'transform 0.5s ease';
@@ -868,7 +869,7 @@
             });
         }
         
-        // SIMPLE event handlers
+        // Event handlers
         nextBtn.addEventListener('click', function() {
             console.log('👉 Next button clicked');
             currentSlide = (currentSlide + 1) % totalSlides;
@@ -881,7 +882,7 @@
             updateCarousel();
         });
         
-        // SIMPLE dot handlers (if dots exist)
+        // Dot handlers (if dots exist)
         if (dots.length > 0) {
             dots.forEach((dot, index) => {
                 dot.addEventListener('click', function() {
@@ -892,31 +893,37 @@
             });
         }
         
-        // SIMPLE auto-rotate
-        let autoInterval = setInterval(function() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
-        }, 5000);
-        
-        // SIMPLE hover pause
-        if (track) {
-            track.addEventListener('mouseenter', function() {
-                console.log('⏸️ Pausing auto-rotate');
-                clearInterval(autoInterval);
-            });
-            
-            track.addEventListener('mouseleave', function() {
-                console.log('▶️ Resuming auto-rotate');
-                autoInterval = setInterval(function() {
-                    currentSlide = (currentSlide + 1) % totalSlides;
-                    updateCarousel();
-                }, 5000);
-            });
+        // Start auto-rotate
+        function startAutoRotate() {
+            autoInterval = setInterval(function() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateCarousel();
+            }, 5000);
         }
+        
+        // Stop auto-rotate
+        function stopAutoRotate() {
+            if (autoInterval) {
+                clearInterval(autoInterval);
+                autoInterval = null;
+            }
+        }
+        
+        // Hover pause
+        track.addEventListener('mouseenter', function() {
+            console.log('⏸️ Pausing auto-rotate');
+            stopAutoRotate();
+        });
+        
+        track.addEventListener('mouseleave', function() {
+            console.log('▶️ Resuming auto-rotate');
+            startAutoRotate();
+        });
         
         // Initialize
         updateCarousel();
-        console.log('🎉 Ultra-simple carousel ready! Total slides:', totalSlides);
+        startAutoRotate();
+        console.log('🎉 Clean carousel ready! Total slides:', totalSlides);
     });
     </script>
 </body>

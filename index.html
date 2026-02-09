@@ -740,15 +740,30 @@
         }
         
         /* SIMPLE FIX: display:none for inactive, display:flex for active */
+        
+        /* FORCEFUL FIX: Override ANY other CSS */
         .cities-group {
-            display: none;
-            justify-content: center;
-            gap: 20px;
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            position: static !important;
+            height: 0 !important;
+            width: 0 !important;
+            overflow: hidden !important;
+            pointer-events: none !important;
         }
         
         .cities-group.active {
-            display: flex;
+            display: flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: relative !important;
+            height: auto !important;
+            width: 100% !important;
+            overflow: visible !important;
+            pointer-events: auto !important;
         }
+    
         
         /* City Cards */
         .city-card {
@@ -1282,41 +1297,30 @@
     document.addEventListener('DOMContentLoaded', function() {
         console.log('Initializing clean carousel...');
         
-        const cityGroups = document.querySelectorAll('.cities-group');
-        const cityDots = document.querySelectorAll('.city-dot');
-        const nextBtn = document.querySelector('.next-cities');
-        const prevBtn = document.querySelector('.prev-cities');
-        let currentIndex = 0;
-        
-        // Function to show specific city group
-        function showCityGroup(index) {
-            // Validate index
-            if (index < 0) index = cityGroups.length - 1;
-            if (index >= cityGroups.length) index = 0;
-            
-            console.log('SIMPLE FIX: Showing city group', index + 1, 'of', cityGroups.length);
-            
-            // Hide all groups (display: none)
-            cityGroups.forEach(group => {
-                group.classList.remove('active');
-                group.style.display = 'none';
-            });
-            
-            // Remove active from all dots
-            cityDots.forEach(dot => {
-                dot.classList.remove('active');
-            });
-            
-            // Show selected city group (display: flex)
-            cityGroups[index].classList.add('active');
-            cityGroups[index].style.display = 'flex';
-            cityDots[index].classList.add('active');
-            currentIndex = index;
-            
-            // Debug: Log what's visible
-            const visibleGroups = document.querySelectorAll('.cities-group.active');
-            console.log('Visible groups:', visibleGroups.length, 'should be 1');
+        const cityGroups = document.querySelectorAll('
+        /* FORCEFUL FIX: Override ANY other CSS */
+        .cities-group {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            position: static !important;
+            height: 0 !important;
+            width: 0 !important;
+            overflow: hidden !important;
+            pointer-events: none !important;
         }
+        
+        .cities-group.active {
+            display: flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: relative !important;
+            height: auto !important;
+            width: 100% !important;
+            overflow: visible !important;
+            pointer-events: auto !important;
+        }
+    
         
         // Next button click
         if (nextBtn) {
@@ -1358,9 +1362,77 @@
             }, 5000);
         }
         
-        // Initialize with first group
         
-        // Initialize with first group
+        // FORCEFUL INITIALIZATION
+        console.log('Forceful carousel initialization...');
+        
+        // First, hide ALL groups with inline styles
+        cityGroups.forEach((group, i) => {
+            if (i === 0) {
+                group.classList.add('active');
+                group.style.display = 'flex';
+                group.style.visibility = 'visible';
+                group.style.opacity = '1';
+                group.style.height = 'auto';
+                group.style.width = '100%';
+            } else {
+                group.classList.remove('active');
+                group.style.display = 'none';
+                group.style.visibility = 'hidden';
+                group.style.opacity = '0';
+                group.style.height = '0';
+                group.style.width = '0';
+            }
+        });
+        
+        // Initialize dots
+        cityDots.forEach((dot, i) => {
+            if (i === 0) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+        
+        currentIndex = 0;
+        console.log('Forceful initialization complete');
+    
+        
+        
+        // FORCEFUL INITIALIZATION
+        console.log('Forceful carousel initialization...');
+        
+        // First, hide ALL groups with inline styles
+        cityGroups.forEach((group, i) => {
+            if (i === 0) {
+                group.classList.add('active');
+                group.style.display = 'flex';
+                group.style.visibility = 'visible';
+                group.style.opacity = '1';
+                group.style.height = 'auto';
+                group.style.width = '100%';
+            } else {
+                group.classList.remove('active');
+                group.style.display = 'none';
+                group.style.visibility = 'hidden';
+                group.style.opacity = '0';
+                group.style.height = '0';
+                group.style.width = '0';
+            }
+        });
+        
+        // Initialize dots
+        cityDots.forEach((dot, i) => {
+            if (i === 0) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+        
+        currentIndex = 0;
+        console.log('Forceful initialization complete');
+    
         showCityGroup(0);
         
         // Force initial display
@@ -1387,35 +1459,60 @@
     
     // Test: Check if carousel elements exist
     setTimeout(function() {
-        const groups = document.querySelectorAll('.cities-group');
-        const activeGroups = document.querySelectorAll('.cities-group.active');
-        console.log('Carousel test:');
-        console.log('- Total groups:', groups.length);
-        console.log('- Active groups:', activeGroups.length);
+        const groups = document.querySelectorAll('
+        /* FORCEFUL FIX: Override ANY other CSS */
+        .cities-group {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            position: static !important;
+            height: 0 !important;
+            width: 0 !important;
+            overflow: hidden !important;
+            pointer-events: none !important;
+        }
         
-        if (groups.length > 0 && activeGroups.length === 1) {
-            console.log('✅ Carousel appears to be working correctly');
-        } else {
+        .cities-group.active {
+            display: flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: relative !important;
+            height: auto !important;
+            width: 100% !important;
+            overflow: visible !important;
+            pointer-events: auto !important;
+        }
+     else {
             console.log('❌ Carousel might have issues');
         }
     }, 1000);
     
     // Test: Verify carousel works
     setTimeout(function() {
-        const allGroups = document.querySelectorAll('.cities-group');
-        const activeGroups = document.querySelectorAll('.cities-group.active');
-        const visibleGroups = Array.from(allGroups).filter(g => 
-            window.getComputedStyle(g).display !== 'none'
-        );
+        const allGroups = document.querySelectorAll('
+        /* FORCEFUL FIX: Override ANY other CSS */
+        .cities-group {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            position: static !important;
+            height: 0 !important;
+            width: 0 !important;
+            overflow: hidden !important;
+            pointer-events: none !important;
+        }
         
-        console.log('=== CAROUSEL TEST ===');
-        console.log('Total groups:', allGroups.length);
-        console.log('Active groups (class):', activeGroups.length);
-        console.log('Visible groups (display):', visibleGroups.length);
-        
-        if (visibleGroups.length === 1 && activeGroups.length === 1) {
-            console.log('✅ SUCCESS: Carousel working correctly!');
-        } else {
+        .cities-group.active {
+            display: flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: relative !important;
+            height: auto !important;
+            width: 100% !important;
+            overflow: visible !important;
+            pointer-events: auto !important;
+        }
+     else {
             console.log('❌ PROBLEM: Carousel not working correctly');
             console.log('All groups display styles:');
             allGroups.forEach((g, i) => {
@@ -1428,6 +1525,49 @@
             });
         }
     }, 1000);
+    
+    // IMMEDIATE DIAGNOSTIC
+    setTimeout(function() {
+        console.log('=== IMMEDIATE CAROUSEL DIAGNOSTIC ===');
+        
+        const allGroups = document.querySelectorAll('.cities-group');
+        console.log('Total .cities-group elements:', allGroups.length);
+        
+        allGroups.forEach((group, i) => {
+            const computed = window.getComputedStyle(group);
+            const inline = group.style;
+            console.log(`\nGroup ${i + 1}:`);
+            console.log('  Class:', group.className);
+            console.log('  Computed display:', computed.display);
+            console.log('  Inline display:', inline.display || '(none)');
+            console.log('  Computed visibility:', computed.visibility);
+            console.log('  Inline visibility:', inline.visibility || '(none)');
+            console.log('  Computed opacity:', computed.opacity);
+            console.log('  Inline opacity:', inline.opacity || '(none)');
+            console.log('  Computed position:', computed.position);
+            console.log('  Inline position:', inline.position || '(none)');
+            console.log('  Computed height:', computed.height);
+            console.log('  Inline height:', inline.height || '(none)');
+        });
+        
+        // Count actually visible groups
+        const visibleGroups = Array.from(allGroups).filter(g => {
+            const display = window.getComputedStyle(g).display;
+            return display === 'flex' || display === 'block' || display === 'grid';
+        });
+        
+        console.log('\n=== SUMMARY ===');
+        console.log('Total groups:', allGroups.length);
+        console.log('Visible groups (by display):', visibleGroups.length);
+        
+        if (visibleGroups.length === 1) {
+            console.log('✅ SUCCESS: Exactly one group is visible!');
+        } else if (visibleGroups.length === 0) {
+            console.log('❌ PROBLEM: NO groups are visible!');
+        } else {
+            console.log(`❌ PROBLEM: ${visibleGroups.length} groups are visible (should be 1)!`);
+        }
+    }, 500);
     </script>
 </body>
 </html>

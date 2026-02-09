@@ -268,10 +268,13 @@
             animation: pulse 1.5s infinite;
         }
     
-    /* NEWS SECTION */
+    /* NEWS SECTION - FIXED VISIBILITY */
     .news-section {
         padding: 60px 20px;
         background: white;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     .news-grid {
@@ -327,10 +330,13 @@
         text-decoration: underline;
     }
     
-    /* CONTACT SECTION */
+    /* CONTACT SECTION - FIXED VISIBILITY */
     .contact-section {
         padding: 60px 20px;
         background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     .contact-content {
@@ -495,6 +501,17 @@
     
     .compact-content {
         margin-top: 20px !important;
+    }
+    /* Ensure sections are visible */
+    .news-section,
+    .contact-section {
+        position: relative;
+        z-index: 10;
+    }
+    
+    /* Fix any potential overflow issues */
+    body {
+        overflow-x: hidden;
     }</style>
 </head>
 <body>
@@ -693,7 +710,7 @@
                             </div>
                         </div>
                     </div>
-    <!-- NEWS SECTION -->
+    </div><!-- NEWS SECTION -->
     <section id="news" class="news-section">
         <div class="container">
             <h2 class="section-title">Latest Travel News</h2>

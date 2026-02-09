@@ -1158,21 +1158,35 @@
             position: relative !important;
             z-index: 4 !important;
         }
-        /* Carousel transitions */
+        /* Carousel transitions - FIXED */
         .cities-group {
             transition: opacity 0.5s ease, transform 0.5s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
         
         .cities-group:not(.active) {
             opacity: 0;
             transform: translateX(30px);
             pointer-events: none;
+            visibility: hidden;
         }
         
         .cities-group.active {
             opacity: 1;
             transform: translateX(0);
             pointer-events: auto;
+            visibility: visible;
+            position: relative;
+        }
+        
+        /* Make sure cities-content has proper positioning */
+        .cities-content {
+            position: relative;
+            min-height: 300px;
         }
         </style>
 </head>
@@ -1679,67 +1693,42 @@
         // We'll override the existing showCityGroup function if it exists
         if (typeof showCityGroup === 'function') {
             const originalShowCityGroup = showCityGroup;
-            window.showCityGroup = function(index) {
-                originalShowCityGroup(index);
-                setTimeout(updateCarouselInteractivity, 50); // Wait for transition
-            ;
-        
-        
-        // Log for debugging
-        const guangzhouLink = document.querySelector('a[href*="guangzhou.html"]');
-        const chongqingLink = document.querySelector('a[href*="chongqing.html"]');
-        if (guangzhouLink && chongqingLink) {
-            console.log('Guangzhou link found:', guangzhouLink.href);
-            console.log('Chongqing link found:', chongqingLink.href);
-        
-    );
-    
-    // SIMPLE FIX: Disable carousel, show all cities
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('Applying simple carousel fix...');
-        
-        // Show all city groups
-        const groups = document.querySelectorAll('.cities-group');
-        groups.forEach(group => {
-            group.style.display = 'flex';
-            group.style.opacity = '1';
-            group.style.position = 'relative';
-            group.style.transform = 'none';
-        );
-        
-        // Hide navigation
-        const nav = document.querySelector('.cities-nav');
-        const dots = document.querySelector('.cities-dots');
-        if (nav) nav.style.display = 'none';
-        if (dots) dots.style.display = 'none';
-        
-        // Make cities-content a grid
-        const content = document.querySelector('.cities-content');
-        if (content) {
-            content.style.display = 'grid';
-            content.style.gridTemplateColumns = 'repeat(4, 1fr)';
-            content.style.gap = '20px';
-        
-        
-        console.log('Simple fix applied: All cities visible, carousel disabled');
-    );
-    
-    // FIX: Ensure carousel groups don't overlap
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('Applying carousel overlap fix...');
-        
-        // Function to update pointer events
-        function updateCarouselInteractivity() {
-            const groups = document.querySelectorAll('.cities-group');
-            groups.forEach(group => {
-                if (group.classList.contains('active')) {
-                    group.style.pointerEvents = 'auto';
-                    group.style.zIndex = '2';
-                } else {
-                    group.style.pointerEvents = 'none';
-                    group.style.zIndex = '1';
-                }
+            
+        // Update the showCityGroup function to properly manage visibility
+        window.showCityGroup = function(index) {
+            // Validate index
+            if (index < 0) index = cityGroups.length - 1;
+            if (index >= cityGroups.length) index = 0;
+            
+            // Hide all groups
+            cityGroups.forEach(group => {
+                group.classList.remove('active');
+                group.style.opacity = '0';
+                group.style.transform = 'translateX(30px)';
+                group.style.pointerEvents = 'none';
+                group.style.visibility = 'hidden';
+                group.style.position = 'absolute';
             });
+            
+            // Remove active from all dots
+            cityDots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Show selected city group
+            cityGroups[index].classList.add('active');
+            cityGroups[index].style.opacity = '1';
+            cityGroups[index].style.transform = 'translateX(0)';
+            cityGroups[index].style.pointerEvents = 'auto';
+            cityGroups[index].style.visibility = 'visible';
+            cityGroups[index].style.position = 'relative';
+            
+            cityDots[index].classList.add('active');
+            currentIndex = index;
+            
+            console.log('Showing city group', index + 1, 'of', cityGroups.length);
+        }
+    );
         }
         
         // Update initially

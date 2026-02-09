@@ -697,455 +697,9 @@
             justify-content: center;
         
         
-        .cities-group.active {
-            opacity: 1;
-            transform: translateX(0);
         
         
-        .city-card {
-            flex: 1;
-            max-width: 200px;
-            border-radius: 12px;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
-            position: relative;
         
-        
-        .city-card:hover {
-            transform: translateY(-5px);
-        
-        
-        .city-card-link {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            height: 100%;
-        
-        
-        .city-card-link:hover {
-            color: inherit;
-        
-        
-        .city-card-link::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 3;
-        
-        
-        .city-image {
-            height: 120px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            display: flex;
-            align-items: flex-end;
-            padding: 15px;
-        
-        
-        .city-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-            z-index: 1;
-        
-        
-        .city-name {
-            position: relative;
-            z-index: 2;
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: white;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-        
-        
-        .city-tag {
-            padding: 10px 15px;
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.9);
-            text-align: center;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(5px);
-        
-        
-        .cities-nav {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            position: relative;
-            z-index: 2;
-        
-        
-        .cities-nav-btn {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-        
-        
-        .cities-nav-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-        
-        
-        .cities-dots {
-            display: flex;
-            gap: 12px;
-        
-        
-        .city-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        
-        
-        .city-dot.active {
-            background: rgba(255, 255, 255, 0.8);
-            transform: scale(1.3);
-            border-color: rgba(255, 255, 255, 0.5);
-        
-        
-        /* News Section Styles */
-        .news-card {
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid rgba(0,0,0,0.05);
-        
-        
-        .news-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        
-        
-        .news-card .card-title {
-            color: var(--secondary);
-            margin-bottom: 15px;
-        
-        
-        .news-card .card-text {
-            color: #666;
-            margin-bottom: 15px;
-        
-        
-        .news-date {
-            color: #888;
-        
-        
-        .news-tags .badge {
-            font-size: 0.75rem;
-            padding: 4px 8px;
-        
-        
-        .contact-form {
-            background: white;
-            padding: 48px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-            border: 1px solid var(--gray-light);
-            animation: fadeInUp 0.6s ease-out 0.4s both;
-        
-        
-        .contact-form .form-control {
-            border: 2px solid var(--gray-light);
-            border-radius: 10px;
-            padding: 14px 20px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: var(--light);
-        
-        
-        .contact-form .form-control:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-            background: white;
-        
-        
-        .contact-form .form-control::placeholder {
-            color: var(--gray-medium);
-        
-        
-        .contact-form label {
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 8px;
-            display: block;
-        
-        
-        footer {
-            background: var(--secondary);
-            color: white;
-            padding: 40px 0;
-        
-        
-        .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s;
-        
-        
-        .social-icons a:hover {
-            color: var(--accent);
-        
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.75rem;
-            
-            
-            .hero .lead {
-                font-size: 1.25rem;
-            
-            
-            .section-title {
-                font-size: 2rem;
-            
-            
-            .hero-news-items {
-                height: 160px;
-            
-            
-            .destination-card {
-                height: auto;
-                margin-bottom: 24px;
-            
-            
-            .destination-card .row.g-0 {
-                flex-direction: column;
-            
-            
-            .destination-card .col-md-8,
-            .destination-card .col-md-4 {
-                width: 100%;
-            
-            
-            .destination-card img {
-                height: 200px;
-                width: 100%;
-                object-fit: cover;
-                border-radius: 0 0 16px 16px;
-            
-            
-            /* Cities Ticker Responsive */
-            
-                height: 200px;
-            
-            
-            .city-card {
-                max-width: 180px;
-            
-            
-            .city-image {
-                height: 110px;
-            
-        
-        
-        @media (max-width: 768px) {
-            .hero {
-                padding: 80px 0 60px;
-                background-attachment: scroll;
-            
-            
-            .hero h1 {
-                font-size: 2.25rem;
-            
-            
-            section {
-                padding: 60px 0;
-            
-            
-            .section-title {
-                font-size: 1.75rem;
-                margin-bottom: 30px;
-            
-            
-            .contact-form {
-                padding: 32px 24px;
-            
-            
-            .hero-news .card-body {
-                padding: 24px !important;
-            
-            
-            .hero-news-items {
-                height: 180px;
-            
-            
-            .hero-news-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            
-            
-            /* Cities Ticker Responsive */
-            
-                height: 220px;
-            
-            
-            
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            
-            
-            .city-card {
-                max-width: 250px;
-                width: 100%;
-            
-            
-            .city-image {
-                height: 100px;
-            
-        
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 1.875rem;
-            
-            
-            .hero .lead {
-                font-size: 1.125rem;
-            
-            
-            .btn-lg {
-                padding: 14px 32px;
-                font-size: 1rem;
-            
-            
-            .hero-news-items {
-                height: 200px;
-            
-            
-            .service-card,
-            .destination-card {
-                margin-bottom: 20px;
-            
-            
-            /* Cities Ticker Responsive */
-            .cities-ticker {
-                padding: 15px;
-            
-            
-            
-                height: 240px;
-            
-            
-            .city-card {
-                max-width: 100%;
-            
-            
-            .city-image {
-                height: 90px;
-            
-            
-            .city-name {
-                font-size: 1rem;
-            
-            
-            .city-tag {
-                font-size: 0.75rem;
-                padding: 8px 12px;
-            
-            
-            .cities-nav-btn {
-                width: 36px;
-                height: 36px;
-            
-        
-        
-        /* Print Styles */
-        @media print {
-            .hero-news,
-            .btn,
-            .contact-form {
-                display: none;
-            
-            
-            section {
-                padding: 20px 0;
-                page-break-inside: avoid;
-            
-        
-    
-        /* FIX: Prevent non-active city groups from intercepting clicks */
-        .cities-group:not(.active) {
-            pointer-events: none !important;
-            z-index: 1 !important;
-        
-        
-        .cities-group.active {
-        
-            z-index: 2 !important;
-        
-        
-        /* Ensure city cards don't overlap */
-        .city-card {
-        
-            z-index: 3 !important;
-        
-        
-        /* Make sure links work correctly */
-        .city-card-link {
-        
-            z-index: 4 !important;
-        
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-/* FIX: Prevent non-active city groups from intercepting clicks */
-        .cities-group:not(.active) {
-            pointer-events: none !important;
-            z-index: 1 !important;
-        }
-        
-        .cities-group.active {
-            pointer-events: auto !important;
-            z-index: 2 !important;
-        }
         
         /* Ensure city cards don't overlap */
         .city-card {
@@ -1159,36 +713,170 @@
             z-index: 4 !important;
         }
         /* Carousel transitions - FIXED */
-        .cities-group {
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
         
-        .cities-group:not(.active) {
-            opacity: 0;
-            transform: translateX(30px);
-            pointer-events: none;
-            visibility: hidden;
-        }
         
-        .cities-group.active {
-            opacity: 1;
-            transform: translateX(0);
-            pointer-events: auto;
-            visibility: visible;
-            position: relative;
-        }
+        
+        
+        
         
         /* Make sure cities-content has proper positioning */
         .cities-content {
             position: relative;
             min-height: 300px;
         }
-        </style>
+        
+        /* ===== CLEAN CAROUSEL CSS ===== */
+        /* Cities Showcase Container */
+        .cities-showcase {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        /* Cities Content Area */
+        .cities-content {
+            position: relative;
+            min-height: 300px;
+            overflow: hidden;
+        }
+        
+        /* City Groups (Carousel Slides) */
+        .cities-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transform: translateX(30px);
+            pointer-events: none;
+            visibility: hidden;
+        }
+        
+        /* Active City Group (Visible Slide) */
+        .cities-group.active {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+            visibility: visible;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* City Cards */
+        .city-card {
+            flex: 1;
+            max-width: 200px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .city-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .city-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .city-image {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .city-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        .city-name {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+        
+        .city-tag {
+            padding: 12px 15px;
+            background: white;
+            color: #475569;
+            font-size: 0.85rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        /* Carousel Navigation */
+        .cities-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .cities-nav-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: white;
+            color: #475569;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .cities-nav-btn:hover {
+            background: #3b82f6;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        /* Carousel Dots */
+        .cities-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        
+        .city-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .city-dot.active {
+            background: #3b82f6;
+            transform: scale(1.3);
+        }
+        
+        .city-dot:hover {
+            background: #94a3b8;
+        }
+        /* ===== END CLEAN CAROUSEL CSS ===== */
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -1668,46 +1356,31 @@
             this.reset();
         );
     
-    // FIX: Ensure carousel groups don't overlap
+    :', chongqingLink.href);
+        }
+    });
+    
+    // ===== CLEAN CAROUSEL JAVASCRIPT =====
     document.addEventListener('DOMContentLoaded', function() {
-        console.log('Applying carousel overlap fix...');
+        console.log('Initializing clean carousel...');
         
-        // Function to update pointer events
-        function updateCarouselInteractivity() {
-            const groups = document.querySelectorAll('.cities-group');
-            groups.forEach(group => {
-                if (group.classList.contains('active')) {
-                    group.style.pointerEvents = 'auto';
-                    group.style.zIndex = '2';
-                 else {
-                    group.style.pointerEvents = 'none';
-                    group.style.zIndex = '1';
-                
-            );
+        const cityGroups = document.querySelectorAll('.cities-group');
+        const cityDots = document.querySelectorAll('.city-dot');
+        const nextBtn = document.querySelector('.next-cities');
+        const prevBtn = document.querySelector('.prev-cities');
+        let currentIndex = 0;
         
-        
-        // Update initially
-        updateCarouselInteractivity();
-        
-        // Also update when carousel changes (if there's a carousel function)
-        // We'll override the existing showCityGroup function if it exists
-        if (typeof showCityGroup === 'function') {
-            const originalShowCityGroup = showCityGroup;
-            
-        // Update the showCityGroup function to properly manage visibility
-        window.showCityGroup = function(index) {
+        // Function to show specific city group
+        function showCityGroup(index) {
             // Validate index
             if (index < 0) index = cityGroups.length - 1;
             if (index >= cityGroups.length) index = 0;
             
+            console.log('Showing city group', index + 1, 'of', cityGroups.length);
+            
             // Hide all groups
             cityGroups.forEach(group => {
                 group.classList.remove('active');
-                group.style.opacity = '0';
-                group.style.transform = 'translateX(30px)';
-                group.style.pointerEvents = 'none';
-                group.style.visibility = 'hidden';
-                group.style.position = 'absolute';
             });
             
             // Remove active from all dots
@@ -1717,41 +1390,61 @@
             
             // Show selected city group
             cityGroups[index].classList.add('active');
-            cityGroups[index].style.opacity = '1';
-            cityGroups[index].style.transform = 'translateX(0)';
-            cityGroups[index].style.pointerEvents = 'auto';
-            cityGroups[index].style.visibility = 'visible';
-            cityGroups[index].style.position = 'relative';
-            
             cityDots[index].classList.add('active');
             currentIndex = index;
-            
-            console.log('Showing city group', index + 1, 'of', cityGroups.length);
-        }
-    );
         }
         
-        // Update initially
-        updateCarouselInteractivity();
-        
-        // Also update when carousel changes (if there's a carousel function)
-        // We'll override the existing showCityGroup function if it exists
-        if (typeof showCityGroup === 'function') {
-            const originalShowCityGroup = showCityGroup;
-            window.showCityGroup = function(index) {
-                originalShowCityGroup(index);
-                setTimeout(updateCarouselInteractivity, 50); // Wait for transition
-            };
+        // Next button click
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function() {
+                let nextIndex = currentIndex + 1;
+                if (nextIndex >= cityGroups.length) {
+                    nextIndex = 0;
+                }
+                showCityGroup(nextIndex);
+            });
         }
         
-        // Log for debugging
-        const guangzhouLink = document.querySelector('a[href*="guangzhou.html"]');
-        const chongqingLink = document.querySelector('a[href*="chongqing.html"]');
-        if (guangzhouLink && chongqingLink) {
-            console.log('Guangzhou link found:', guangzhouLink.href);
-            console.log('Chongqing link found:', chongqingLink.href);
+        // Previous button click
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function() {
+                let prevIndex = currentIndex - 1;
+                if (prevIndex < 0) {
+                    prevIndex = cityGroups.length - 1;
+                }
+                showCityGroup(prevIndex);
+            });
         }
+        
+        // Dot click
+        cityDots.forEach((dot, index) => {
+            dot.addEventListener('click', function() {
+                showCityGroup(index);
+            });
+        });
+        
+        // Auto-rotate cities every 5 seconds
+        if (cityGroups.length > 1) {
+            setInterval(function() {
+                let nextIndex = currentIndex + 1;
+                if (nextIndex >= cityGroups.length) {
+                    nextIndex = 0;
+                }
+                showCityGroup(nextIndex);
+            }, 5000);
+        }
+        
+        // Initialize with first group
+        showCityGroup(0);
+        
+        // Debug info
+        console.log('Carousel initialized:');
+        console.log('- Groups:', cityGroups.length);
+        console.log('- Dots:', cityDots.length);
+        console.log('- Next button:', nextBtn ? 'Found' : 'Not found');
+        console.log('- Prev button:', prevBtn ? 'Found' : 'Not found');
     });
+    // ===== END CLEAN CAROUSEL JAVASCRIPT =====
     </script>
 </body>
 </html>

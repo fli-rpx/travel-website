@@ -1286,6 +1286,26 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+    // JavaScript syntax validation
+    (function() {
+        try {
+            // Test basic JavaScript syntax
+            eval('true');
+            console.log('✅ JavaScript syntax is valid');
+        } catch (error) {
+            console.error('❌ JavaScript syntax error detected:', error.message);
+            // Try to identify the error
+            const scripts = document.getElementsByTagName('script');
+            for (let i = 0; i < scripts.length; i++) {
+                try {
+                    eval(scripts[i].innerHTML);
+                } catch (err) {
+                    console.error('Error in script', i, ':', err.message);
+                }
+            }
+        }
+    })();
+    
     // Syntax error check
     try {
         console.log('✅ JavaScript syntax is valid');
@@ -1300,7 +1320,12 @@
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
-                navbar.classList.remove('scrolled');
+            }
+        
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                
             
         );
 
@@ -1313,21 +1338,18 @@
                     window.scrollTo({
                         top: target.offsetTop - 70,
                         behavior: 'smooth'
-                    );
-                
-            );
+                    
         );
 
         // Form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        );
+            this.reset(
     
     :', chongqingLink.href);
         }
-    });
+    
     
     // ===== CLEAN CAROUSEL JAVASCRIPT =====
     document.addEventListener('DOMContentLoaded', function() {
@@ -1341,19 +1363,19 @@
     
         
         
-            });
+            
         }
         
         
-            });
+            
         }
         
         // Dot click
         cityDots.forEach((dot, index) => {
             dot.addEventListener('click', function() {
                 showCityGroup(index);
-            });
-        });
+            
+        
         
         // Auto-rotate cities every 5 seconds
         if (cityGroups.length > 1) {
@@ -1382,7 +1404,7 @@
             } else {
                 group.style.display = 'none';
             }
-        });
+        
     
         
         // Debug info
@@ -1391,7 +1413,7 @@
         console.log('- Dots:', cityDots.length);
         console.log('- Next button:', nextBtn ? 'Found' : 'Not found');
         console.log('- Prev button:', prevBtn ? 'Found' : 'Not found');
-    });
+    
     // ===== END CLEAN CAROUSEL JAVASCRIPT =====
     
     // Test: Log when page loads
@@ -1425,8 +1447,8 @@
                     display: window.getComputedStyle(g).display,
                     opacity: window.getComputedStyle(g).opacity,
                     visibility: window.getComputedStyle(g).visibility
-                });
-            });
+                
+            
         }
     }, 1000);
     
@@ -1446,13 +1468,13 @@
             console.log('  Inline position:', inline.position || '(none)');
             console.log('  Computed height:', computed.height);
             console.log('  Inline height:', inline.height || '(none)');
-        });
+        
         
         // Count actually visible groups
         const visibleGroups = Array.from(allGroups).filter(g => {
             const display = window.getComputedStyle(g).display;
             return display === 'flex' || display === 'block' || display === 'grid';
-        });
+        
         
         console.log('\n=== SUMMARY ===');
         console.log('Total groups:', allGroups.length);
@@ -1482,7 +1504,7 @@
         if (visibleCards.length === 12) {
             console.log('✅ SUCCESS: All 12 cities visible in grid layout!');
         }
-    });
+    
     
     // FORCEFUL GRID DIAGNOSTIC
     document.addEventListener('DOMContentLoaded', function() {
@@ -1522,12 +1544,12 @@
                 margin: computed.margin,
                 width: computed.width,
                 height: computed.height
-            });
+            
             
             // Check for stacking
             const rect = card.getBoundingClientRect();
             console.log(`Card ${i + 1} position:`, rect.left, rect.top, rect.width, rect.height);
-        });
+        
         
         // Check for overlapping
         setTimeout(function() {
@@ -1559,7 +1581,7 @@
                 console.log('❌ Overlapping cards:', overlaps);
             }
         }, 100);
-    });
+    
     
     // Image loading optimization
     document.addEventListener('DOMContentLoaded', function() {
@@ -1578,10 +1600,10 @@
                 preload.href = url;
                 document.head.appendChild(preload);
             }
-        });
+        
         
         console.log('Image optimization complete');
-    });
+    
     
     // FINAL VERIFICATION - Check for stacking
     document.addEventListener('DOMContentLoaded', function() {
@@ -1612,8 +1634,8 @@
                 
                 cards.forEach((card, i) => {
                     const rect = card.getBoundingClientRect();
-                    cardRects.push({index: i, rect: rect});
-                });
+                    cardRects.push({index: i, rect: rect
+                
                 
                 // Check each pair for overlap
                 for (let i = 0; i < cardRects.length; i++) {
@@ -1651,15 +1673,15 @@
                         top: Math.round(item.rect.top),
                         width: Math.round(item.rect.width),
                         height: Math.round(item.rect.height)
-                    });
-                });
+                    
+                
                 
             }, 500); // Wait a bit for final layout
-        });
+        
         
         // Check initial state
         console.log('Initial check - cards found:', document.querySelectorAll('.city-card').length);
-    });
+    
     
     // Force layout recalculation if needed
     setTimeout(function() {
@@ -1698,8 +1720,8 @@
                 width: style.width,
                 margin: style.margin,
                 float: style.float
-            });
-        });
+            
+        
         
         // Check for full-width cards (the problem)
         setTimeout(function() {
@@ -1712,7 +1734,7 @@
                 const isFullWidth = rect.width >= (containerWidth * 0.95); // 95% of container
                 
                 console.log(`Card ${i + 1}: width=${Math.round(rect.width)}px, ${isFullWidth ? '❌ FULL WIDTH (BAD)' : '✅ Normal width (GOOD)'}`);
-            });
+            
             
             // Check for vertical stacking
             console.log('\n=== STACKING CHECK ===');
@@ -1727,7 +1749,7 @@
                 }
                 
                 prevBottom = rect.bottom;
-            });
+            
             
             if (isStacked && cards.length > 1) {
                 console.log('❌ PROBLEM: Cards are stacked vertically (full width, one after another)');
@@ -1743,7 +1765,7 @@
             }
             
         }, 100);
-    });
+    
     
     // NUCLEAR FALLBACK: If grid still not working after 1 second
     setTimeout(function() {
@@ -1772,7 +1794,7 @@
                     card.style.width = '100%';
                     card.style.margin = '0';
                     card.style.padding = '0';
-                });
+                
                 
                 console.log('Applied nuclear fallback fix');
             }
@@ -1844,7 +1866,7 @@
             card.style.zIndex = '1';
             
             console.log(`Card ${index + 1}: row=${row}, col=${col}, x=${x}px, y=${y}px`);
-        });
+        
         
         // Set grid height to fit all cards
         const totalRows = Math.ceil(cards.length / cardsPerRow);
@@ -1884,10 +1906,10 @@
                         height: rect.height + 'px (expected: ' + CARD_HEIGHT + 'px)',
                         left: rect.left,
                         top: rect.top
-                    });
+                    
                     allCorrect = false;
                 }
-            });
+            
             
             if (allCorrect) {
                 console.log('✅ EMERGENCY SUCCESS: All cards manually positioned correctly!');
@@ -1915,13 +1937,13 @@
                     card.style.top = 'auto';
                     card.style.width = CARD_WIDTH + 'px';
                     card.style.flex = '0 0 auto';
-                });
+                
                 
                 console.log('Applied flexbox fallback layout');
             }
             
         }, 100);
-    });
+    
     
     // Handle window resize
     let resizeTimeout;
@@ -1946,15 +1968,15 @@
                     card.style.top = 'auto';
                     card.style.width = '250px';
                     card.style.flex = '0 0 auto';
-                });
+                
             }
         }, 250);
-    });
+    
     
     // Initial diagnostic
     console.log('🚨 EMERGENCY GRID SCRIPT LOADED');
     console.log('This will manually position cards in a grid layout.');
-    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}</script>
+    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}</script>
 
     <!-- EMERGENCY FALLBACK: If JavaScript fails, use simple centered layout -->
     <noscript>

@@ -730,104 +730,7 @@
         
         }
     
-    /* NUCLEAR GRID FIX - ONLY GRID, NOTHING ELSE */
-    .cities-grid {
-        display: grid !important;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
-        gap: 25px !important;
-        margin: 20px 0 !important;
-        padding: 0 !important;
-        width: 100% !important;
-        position: relative !important;
-        z-index: 1 !important;
-        /* Remove any potential conflicts */
-        float: none !important;
-        clear: both !important;
-        overflow: visible !important;
-    }
     
-    .city-card {
-        display: block !important;
-        position: relative !important;
-        width: 100% !important;
-        height: auto !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        /* Ensure no stacking */
-        float: none !important;
-        clear: both !important;
-        /* Visual styling */
-        background: white !important;
-        border-radius: 12px !important;
-        overflow: hidden !important;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
-        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-    }
-    
-    .city-card:hover {
-        transform: translateY(-5px) !important;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
-    }
-    
-    .city-card-link {
-        text-decoration: none !important;
-        color: inherit !important;
-        display: block !important;
-        width: 100% !important;
-        height: 100% !important;
-    }
-    
-    .city-image {
-        height: 160px !important;
-        min-height: 160px !important;
-        background-size: cover !important;
-        background-position: center !important;
-        position: relative !important;
-        background-color: #f0f0f0 !important;
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    .city-overlay {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%) !important;
-    }
-    
-    .city-name {
-        position: absolute !important;
-        bottom: 15px !important;
-        left: 15px !important;
-        color: white !important;
-        font-size: 1.2rem !important;
-        font-weight: bold !important;
-        z-index: 2 !important;
-    }
-    
-    .city-tag {
-        padding: 12px 15px !important;
-        background: white !important;
-        color: #475569 !important;
-        font-size: 0.85rem !important;
-        border-top: 1px solid #e2e8f0 !important;
-        display: block !important;
-        width: 100% !important;
-    }
-    
-    /* NUCLEAR RESET for cities section */
-    .cities-content {
-        position: relative !important;
-        width: 100% !important;
-        overflow: visible !important;
-    }
-    
-    .cities-content > * {
-        position: relative !important;
-        float: none !important;
-        display: block !important;
     }
     
     /* EMERGENCY CSS - Manual grid fallback */
@@ -905,6 +808,69 @@
         width: 100% !important;
         height: 60px !important; /* Fixed height for consistency */
         overflow: hidden !important;
+    }
+    
+    /* SIMPLE GRID CSS */
+    .cities-grid {
+        position: relative;
+        width: 100%;
+        margin: 20px 0;
+    }
+    
+    .city-card {
+        position: absolute;
+        width: 250px;
+        height: 280px;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .city-card-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .city-image {
+        height: 160px;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        background-color: #f0f0f0;
+    }
+    
+    .city-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+    }
+    
+    .city-name {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        z-index: 2;
+    }
+    
+    .city-tag {
+        padding: 12px 15px;
+        background: white;
+        color: #475569;
+        font-size: 0.85rem;
+        border-top: 1px solid #e2e8f0;
+        height: 60px;
+        overflow: hidden;
     }
     </style>
 </head>
@@ -1286,697 +1252,71 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-    // JavaScript syntax validation
-    (function() {
+    // SIMPLE JAVASCRIPT - NO SYNTAX ERRORS
+    
+    // Syntax validation
+    console.log('✅ JavaScript loaded successfully');
+    
+    // Emergency manual grid positioning
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('🚨 EMERGENCY GRID: Starting...');
+        
         try {
-            // Test basic JavaScript syntax
-            eval('true');
-            console.log('✅ JavaScript syntax is valid');
-        } catch (error) {
-            console.error('❌ JavaScript syntax error detected:', error.message);
-            // Try to identify the error
-            const scripts = document.getElementsByTagName('script');
-            for (let i = 0; i < scripts.length; i++) {
-                try {
-                    eval(scripts[i].innerHTML);
-                } catch (err) {
-                    console.error('Error in script', i, ':', err.message);
-                }
-            }
-        }
-    })();
-    
-    // Syntax error check
-    try {
-        console.log('✅ JavaScript syntax is valid');
-    } catch (error) {
-        console.log('❌ JavaScript syntax error:', error.message);
-    }
-    
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                
-            
-        );
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 70,
-                        behavior: 'smooth'
-                    
-        );
-
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset(
-    
-    :', chongqingLink.href);
-        }
-    
-    
-    // ===== CLEAN CAROUSEL JAVASCRIPT =====
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('Initializing clean carousel...');
-        
-        const cityGroups = document.querySelectorAll('
-        /* FORCEFUL FIX: Override ANY other CSS */
-        
-        
-        
-    
-        
-        
-            
-        }
-        
-        
-            
-        }
-        
-        // Dot click
-        cityDots.forEach((dot, index) => {
-            dot.addEventListener('click', function() {
-                showCityGroup(index);
-            
-        
-        
-        // Auto-rotate cities every 5 seconds
-        if (cityGroups.length > 1) {
-            setInterval(function() {
-                let nextIndex = currentIndex + 1;
-                if (nextIndex >= cityGroups.length) {
-                    nextIndex = 0;
-                }
-                showCityGroup(nextIndex);
-            }, 5000);
-        }
-        
-        
-        
-    
-        
-        
-        
-    
-        showCityGroup(0);
-        
-        // Force initial display
-        cityGroups.forEach((group, i) => {
-            if (i === 0) {
-                group.style.display = 'flex';
-            } else {
-                group.style.display = 'none';
-            }
-        
-    
-        
-        // Debug info
-        console.log('Carousel initialized:');
-        console.log('- Groups:', cityGroups.length);
-        console.log('- Dots:', cityDots.length);
-        console.log('- Next button:', nextBtn ? 'Found' : 'Not found');
-        console.log('- Prev button:', prevBtn ? 'Found' : 'Not found');
-    
-    // ===== END CLEAN CAROUSEL JAVASCRIPT =====
-    
-    // Test: Log when page loads
-    console.log('Page loaded successfully');
-    
-    // Test: Check if carousel elements exist
-    setTimeout(function() {
-        const groups = document.querySelectorAll('
-        /* FORCEFUL FIX: Override ANY other CSS */
-        
-        
-        
-     else {
-            console.log('❌ Carousel might have issues');
-        }
-    }, 1000);
-    
-    // Test: Verify carousel works
-    setTimeout(function() {
-        const allGroups = document.querySelectorAll('
-        /* FORCEFUL FIX: Override ANY other CSS */
-        
-        
-        
-     else {
-            console.log('❌ PROBLEM: Carousel not working correctly');
-            console.log('All groups display styles:');
-            allGroups.forEach((g, i) => {
-                console.log(`Group ${i}:`, {
-                    active: g.classList.contains('active'),
-                    display: window.getComputedStyle(g).display,
-                    opacity: window.getComputedStyle(g).opacity,
-                    visibility: window.getComputedStyle(g).visibility
-                
-            
-        }
-    }, 1000);
-    
-    // IMMEDIATE DIAGNOSTIC
-    setTimeout(function() {
-        console.log('=== IMMEDIATE CAROUSEL DIAGNOSTIC ===');
-        
-        const allGroups = document.querySelectorAll(':`);
-            console.log('  Class:', group.className);
-            console.log('  Computed display:', computed.display);
-            console.log('  Inline display:', inline.display || '(none)');
-            console.log('  Computed visibility:', computed.visibility);
-            console.log('  Inline visibility:', inline.visibility || '(none)');
-            console.log('  Computed opacity:', computed.opacity);
-            console.log('  Inline opacity:', inline.opacity || '(none)');
-            console.log('  Computed position:', computed.position);
-            console.log('  Inline position:', inline.position || '(none)');
-            console.log('  Computed height:', computed.height);
-            console.log('  Inline height:', inline.height || '(none)');
-        
-        
-        // Count actually visible groups
-        const visibleGroups = Array.from(allGroups).filter(g => {
-            const display = window.getComputedStyle(g).display;
-            return display === 'flex' || display === 'block' || display === 'grid';
-        
-        
-        console.log('\n=== SUMMARY ===');
-        console.log('Total groups:', allGroups.length);
-        console.log('Visible groups (by display):', visibleGroups.length);
-        
-        if (visibleGroups.length === 1) {
-            console.log('✅ SUCCESS: Exactly one group is visible!');
-        } else if (visibleGroups.length === 0) {
-            console.log('❌ PROBLEM: NO groups are visible!');
-        } else {
-            console.log(`❌ PROBLEM: ${visibleGroups.length} groups are visible (should be 1)!`);
-        }
-    }, 500);
-    
-    // Simple static grid loaded
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('✅ Static grid loaded - all 12 cities visible');
-        const cityCards = document.querySelectorAll('.city-card');
-        console.log('City cards found:', cityCards.length);
-        
-        // Verify all cards are visible
-        const visibleCards = Array.from(cityCards).filter(card => 
-            window.getComputedStyle(card).display !== 'none'
-        );
-        console.log('Visible city cards:', visibleCards.length);
-        
-        if (visibleCards.length === 12) {
-            console.log('✅ SUCCESS: All 12 cities visible in grid layout!');
-        }
-    
-    
-    // FORCEFUL GRID DIAGNOSTIC
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('=== FORCEFUL GRID DIAGNOSTIC ===');
-        
-        // Check grid
-        const grid = document.querySelector('.cities-grid');
-        if (grid) {
-            const computed = window.getComputedStyle(grid);
-            console.log('Grid display:', computed.display);
-            console.log('Grid gridTemplateColumns:', computed.gridTemplateColumns);
-            console.log('Grid position:', computed.position);
-            console.log('Grid zIndex:', computed.zIndex);
-            
-            // Check if grid is actually grid
-            if (computed.display === 'grid') {
-                console.log('✅ Grid is display: grid');
-            } else {
-                console.log('❌ Grid is NOT display: grid (it is:', computed.display, ')');
-                // Force it
-                grid.style.display = 'grid !important';
-            }
-        } else {
-            console.log('❌ No .cities-grid found!');
-        }
-        
-        // Check city cards
-        const cards = document.querySelectorAll('.city-card');
-        console.log('City cards found:', cards.length);
-        
-        cards.forEach((card, i) => {
-            const computed = window.getComputedStyle(card);
-            console.log(`Card ${i + 1}:`, {
-                display: computed.display,
-                position: computed.position,
-                float: computed.float,
-                margin: computed.margin,
-                width: computed.width,
-                height: computed.height
-            
-            
-            // Check for stacking
-            const rect = card.getBoundingClientRect();
-            console.log(`Card ${i + 1} position:`, rect.left, rect.top, rect.width, rect.height);
-        
-        
-        // Check for overlapping
-        setTimeout(function() {
-            console.log('\n=== OVERLAP CHECK ===');
-            const cards = document.querySelectorAll('.city-card');
-            const overlaps = [];
-            
-            for (let i = 0; i < cards.length; i++) {
-                for (let j = i + 1; j < cards.length; j++) {
-                    const rect1 = cards[i].getBoundingClientRect();
-                    const rect2 = cards[j].getBoundingClientRect();
-                    
-                    const overlap = !(
-                        rect1.right < rect2.left || 
-                        rect1.left > rect2.right || 
-                        rect1.bottom < rect2.top || 
-                        rect1.top > rect2.bottom
-                    );
-                    
-                    if (overlap) {
-                        overlaps.push(`Cards ${i + 1} and ${j + 1} overlap`);
-                    }
-                }
-            }
-            
-            if (overlaps.length === 0) {
-                console.log('✅ No overlapping cards found');
-            } else {
-                console.log('❌ Overlapping cards:', overlaps);
-            }
-        }, 100);
-    
-    
-    // Image loading optimization
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('Optimizing image loading...');
-        
-        // Preload critical images
-        const cityImages = document.querySelectorAll('.city-image');
-        cityImages.forEach(img => {
-            // Force background image to load
-            const bg = window.getComputedStyle(img).backgroundImage;
-            if (bg && bg !== 'none') {
-                const url = bg.replace(/url\(["']?(.*?)["']?\)/, '$1');
-                const preload = document.createElement('link');
-                preload.rel = 'preload';
-                preload.as = 'image';
-                preload.href = url;
-                document.head.appendChild(preload);
-            }
-        
-        
-        console.log('Image optimization complete');
-    
-    
-    // FINAL VERIFICATION - Check for stacking
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('=== FINAL LAYOUT VERIFICATION ===');
-        
-        // Wait for images to load
-        window.addEventListener('load', function() {
-            console.log('Page fully loaded, checking layout...');
-            
             const grid = document.querySelector('.cities-grid');
             const cards = document.querySelectorAll('.city-card');
             
-            if (!grid) {
-                console.log('❌ No grid found');
+            if (!grid || cards.length === 0) {
+                console.log('No grid or cards found');
                 return;
             }
             
-            // Check grid display
-            const gridStyle = window.getComputedStyle(grid);
-            console.log('Grid display:', gridStyle.display);
-            console.log('Grid template:', gridStyle.gridTemplateColumns);
-            console.log('Total cards:', cards.length);
+            console.log('Found grid and', cards.length, 'cards');
             
-            // Check for overlapping
-            setTimeout(function() {
-                const overlaps = [];
-                const cardRects = [];
+            // Simple grid calculation
+            const cardWidth = 250;
+            const cardHeight = 280;
+            const gap = 25;
+            const containerWidth = grid.clientWidth;
+            
+            // Cards per row
+            const cardsPerRow = Math.max(1, Math.floor(containerWidth / (cardWidth + gap)));
+            console.log('Cards per row:', cardsPerRow);
+            
+            // Position cards
+            cards.forEach(function(card, index) {
+                const row = Math.floor(index / cardsPerRow);
+                const col = index % cardsPerRow;
                 
-                cards.forEach((card, i) => {
-                    const rect = card.getBoundingClientRect();
-                    cardRects.push({index: i, rect: rect
+                const x = col * (cardWidth + gap);
+                const y = row * (cardHeight + gap);
                 
+                card.style.position = 'absolute';
+                card.style.left = x + 'px';
+                card.style.top = y + 'px';
+                card.style.width = cardWidth + 'px';
+                card.style.height = cardHeight + 'px';
                 
-                // Check each pair for overlap
-                for (let i = 0; i < cardRects.length; i++) {
-                    for (let j = i + 1; j < cardRects.length; j++) {
-                        const rect1 = cardRects[i].rect;
-                        const rect2 = cardRects[j].rect;
-                        
-                        const overlap = !(
-                            rect1.right < rect2.left || 
-                            rect1.left > rect2.right || 
-                            rect1.bottom < rect2.top || 
-                            rect1.top > rect2.bottom
-                        );
-                        
-                        if (overlap) {
-                            overlaps.push(`Cards ${i + 1} and ${j + 1} overlap`);
-                        }
-                    }
-                }
-                
-                console.log('=== OVERLAP CHECK ===');
-                if (overlaps.length === 0) {
-                    console.log('✅ SUCCESS: No overlapping cards!');
-                    console.log('Layout is correct.');
-                } else {
-                    console.log('❌ PROBLEM: Found overlaps:', overlaps);
-                    console.log('This indicates stacking issue.');
-                }
-                
-                // Log card positions
-                console.log('=== CARD POSITIONS ===');
-                cardRects.forEach((item, i) => {
-                    console.log(`Card ${i + 1}:`, {
-                        left: Math.round(item.rect.left),
-                        top: Math.round(item.rect.top),
-                        width: Math.round(item.rect.width),
-                        height: Math.round(item.rect.height)
-                    
-                
-                
-            }, 500); // Wait a bit for final layout
-        
-        
-        // Check initial state
-        console.log('Initial check - cards found:', document.querySelectorAll('.city-card').length);
-    
-    
-    // Force layout recalculation if needed
-    setTimeout(function() {
-        if (document.querySelector('.cities-grid')) {
-            document.querySelector('.cities-grid').style.display = 'grid';
+                console.log('Positioned card', index + 1, 'at', x, y);
+            });
+            
+            // Set grid height
+            const rows = Math.ceil(cards.length / cardsPerRow);
+            grid.style.height = (rows * cardHeight + (rows - 1) * gap) + 'px';
+            grid.style.position = 'relative';
+            
+            console.log('✅ Emergency grid complete');
+            
+        } catch (error) {
+            console.log('❌ Error in emergency grid:', error.message);
         }
-    }, 100);
+    });
     
-    // NUCLEAR GRID VERIFICATION
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('=== NUCLEAR GRID VERIFICATION ===');
-        
-        const grid = document.querySelector('.cities-grid');
-        if (!grid) {
-            console.log('❌ CRITICAL: No .cities-grid found!');
-            return;
-        }
-        
-        // Check grid properties
-        const gridStyle = window.getComputedStyle(grid);
-        console.log('Grid display:', gridStyle.display);
-        console.log('Grid template:', gridStyle.gridTemplateColumns);
-        console.log('Grid gap:', gridStyle.gap);
-        console.log('Grid width:', gridStyle.width);
-        
-        // Check city cards
-        const cards = document.querySelectorAll('.city-card');
-        console.log('City cards found:', cards.length);
-        
-        // Log each card's computed style
-        cards.forEach((card, i) => {
-            const style = window.getComputedStyle(card);
-            console.log(`Card ${i + 1}:`, {
-                display: style.display,
-                position: style.position,
-                width: style.width,
-                margin: style.margin,
-                float: style.float
-            
-        
-        
-        // Check for full-width cards (the problem)
-        setTimeout(function() {
-            console.log('\n=== WIDTH CHECK ===');
-            const container = grid.parentElement;
-            const containerWidth = container ? container.getBoundingClientRect().width : 0;
-            
-            cards.forEach((card, i) => {
-                const rect = card.getBoundingClientRect();
-                const isFullWidth = rect.width >= (containerWidth * 0.95); // 95% of container
-                
-                console.log(`Card ${i + 1}: width=${Math.round(rect.width)}px, ${isFullWidth ? '❌ FULL WIDTH (BAD)' : '✅ Normal width (GOOD)'}`);
-            
-            
-            // Check for vertical stacking
-            console.log('\n=== STACKING CHECK ===');
-            let prevBottom = -1;
-            let isStacked = true;
-            
-            cards.forEach((card, i) => {
-                const rect = card.getBoundingClientRect();
-                
-                if (i > 0 && rect.top < prevBottom) {
-                    isStacked = false; // Cards overlap = not vertically stacked
-                }
-                
-                prevBottom = rect.bottom;
-            
-            
-            if (isStacked && cards.length > 1) {
-                console.log('❌ PROBLEM: Cards are stacked vertically (full width, one after another)');
-                console.log('This means grid is NOT working.');
-                
-                // Emergency fix: force grid with JavaScript
-                grid.style.display = 'grid';
-                grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(250px, 1fr))';
-                grid.style.gap = '25px';
-                console.log('Applied emergency JavaScript grid fix');
-            } else {
-                console.log('✅ Cards are NOT vertically stacked (grid is working)');
-            }
-            
-        }, 100);
+    // Simple error handler
+    window.addEventListener('error', function(event) {
+        console.log('JavaScript error:', event.message, 'at', event.filename, ':', event.lineno);
+    });
     
-    
-    // NUCLEAR FALLBACK: If grid still not working after 1 second
-    setTimeout(function() {
-        const grid = document.querySelector('.cities-grid');
-        if (grid) {
-            const style = window.getComputedStyle(grid);
-            if (style.display !== 'grid') {
-                console.log('❌ NUCLEAR FALLBACK: Grid still not display:grid, applying maximum force');
-                
-                // Remove ALL classes and styles, rebuild from scratch
-                grid.className = 'cities-grid-nuclear';
-                grid.style.cssText = '';
-                grid.style.display = 'grid';
-                grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(250px, 1fr))';
-                grid.style.gap = '25px';
-                grid.style.width = '100%';
-                grid.style.margin = '20px 0';
-                grid.style.padding = '0';
-                grid.style.position = 'relative';
-                
-                // Also fix cards
-                document.querySelectorAll('.city-card').forEach(card => {
-                    card.style.cssText = '';
-                    card.style.display = 'block';
-                    card.style.position = 'relative';
-                    card.style.width = '100%';
-                    card.style.margin = '0';
-                    card.style.padding = '0';
-                
-                
-                console.log('Applied nuclear fallback fix');
-            }
-        }
-    }, 1000);
-    
-    // 🚨 EMERGENCY MANUAL GRID LAYOUT
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('🚨 EMERGENCY MANUAL GRID INITIALIZING...');
-        
-        const grid = document.querySelector('.cities-grid');
-        if (!grid) {
-            console.log('❌ No grid found');
-            return;
-        }
-        
-        const cards = document.querySelectorAll('.city-card');
-        console.log('Cards to position:', cards.length);
-        
-        if (cards.length === 0) {
-            console.log('❌ No cards found');
-            return;
-        }
-        
-        // Get container dimensions
-        const containerWidth = grid.clientWidth;
-        console.log('Container width:', containerWidth, 'px');
-        
-        // Grid configuration
-        const CARD_WIDTH = 250; // Fixed width
-        const CARD_HEIGHT = 280; // Fixed height
-        const GAP = 25;
-        
-        // Calculate how many cards fit per row
-        const cardsPerRow = Math.floor((containerWidth + GAP) / (CARD_WIDTH + GAP));
-        console.log('Cards per row:', cardsPerRow);
-        
-        if (cardsPerRow < 1) {
-            console.log('❌ Container too narrow for cards');
-            return;
-        }
-        
-        // Calculate starting position (centered)
-        const totalRowWidth = (cardsPerRow * CARD_WIDTH) + ((cardsPerRow - 1) * GAP);
-        const startX = (containerWidth - totalRowWidth) / 2;
-        
-        console.log('Manual grid layout:');
-        console.log('- Card width:', CARD_WIDTH, 'px');
-        console.log('- Card height:', CARD_HEIGHT, 'px');
-        console.log('- Gap:', GAP, 'px');
-        console.log('- Start X:', startX, 'px');
-        
-        // Position each card manually
-        cards.forEach((card, index) => {
-            const row = Math.floor(index / cardsPerRow);
-            const col = index % cardsPerRow;
-            
-            const x = startX + (col * (CARD_WIDTH + GAP));
-            const y = row * (CARD_HEIGHT + GAP);
-            
-            // Apply manual positioning
-            card.style.position = 'absolute';
-            card.style.left = x + 'px';
-            card.style.top = y + 'px';
-            card.style.width = CARD_WIDTH + 'px';
-            card.style.height = CARD_HEIGHT + 'px';
-            card.style.margin = '0';
-            card.style.padding = '0';
-            card.style.zIndex = '1';
-            
-            console.log(`Card ${index + 1}: row=${row}, col=${col}, x=${x}px, y=${y}px`);
-        
-        
-        // Set grid height to fit all cards
-        const totalRows = Math.ceil(cards.length / cardsPerRow);
-        const totalHeight = (totalRows * CARD_HEIGHT) + ((totalRows - 1) * GAP);
-        grid.style.height = totalHeight + 'px';
-        grid.style.position = 'relative';
-        
-        console.log('Total rows:', totalRows);
-        console.log('Total height:', totalHeight, 'px');
-        console.log('🚨 EMERGENCY MANUAL GRID COMPLETE');
-        
-        // Verify layout
-        setTimeout(function() {
-            console.log('\n=== EMERGENCY LAYOUT VERIFICATION ===');
-            let allCorrect = true;
-            
-            cards.forEach((card, index) => {
-                const rect = card.getBoundingClientRect();
-                const gridRect = grid.getBoundingClientRect();
-                
-                // Check if card is within grid
-                const isInGrid = (
-                    rect.left >= gridRect.left &&
-                    rect.right <= gridRect.right &&
-                    rect.top >= gridRect.top &&
-                    rect.bottom <= gridRect.bottom
-                );
-                
-                // Check card dimensions
-                const correctWidth = Math.abs(rect.width - CARD_WIDTH) < 5;
-                const correctHeight = Math.abs(rect.height - CARD_HEIGHT) < 5;
-                
-                if (!isInGrid || !correctWidth || !correctHeight) {
-                    console.log(`❌ Card ${index + 1} problem:`, {
-                        inGrid: isInGrid,
-                        width: rect.width + 'px (expected: ' + CARD_WIDTH + 'px)',
-                        height: rect.height + 'px (expected: ' + CARD_HEIGHT + 'px)',
-                        left: rect.left,
-                        top: rect.top
-                    
-                    allCorrect = false;
-                }
-            
-            
-            if (allCorrect) {
-                console.log('✅ EMERGENCY SUCCESS: All cards manually positioned correctly!');
-                console.log('Cards are in a grid layout (manually created).');
-            } else {
-                console.log('❌ EMERGENCY WARNING: Some cards not positioned correctly');
-            }
-            
-            // Check for stacking
-            const stacked = cards.length > 0 && cards[0].getBoundingClientRect().width >= containerWidth * 0.9;
-            if (stacked) {
-                console.log('❌ CRITICAL: Cards still full width! Manual positioning failed.');
-                
-                // LAST RESORT: Use flexbox as fallback
-                console.log('Applying LAST RESORT flexbox fallback...');
-                grid.style.display = 'flex';
-                grid.style.flexWrap = 'wrap';
-                grid.style.justifyContent = 'center';
-                grid.style.gap = GAP + 'px';
-                grid.style.height = 'auto';
-                
-                cards.forEach(card => {
-                    card.style.position = 'relative';
-                    card.style.left = 'auto';
-                    card.style.top = 'auto';
-                    card.style.width = CARD_WIDTH + 'px';
-                    card.style.flex = '0 0 auto';
-                
-                
-                console.log('Applied flexbox fallback layout');
-            }
-            
-        }, 100);
-    
-    
-    // Handle window resize
-    let resizeTimeout;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function() {
-            console.log('Window resized, reapplying emergency layout...');
-            // Re-trigger the layout (simplified)
-            const grid = document.querySelector('.cities-grid');
-            const cards = document.querySelectorAll('.city-card');
-            if (grid && cards.length > 0) {
-                // Quick flexbox fallback on resize
-                grid.style.display = 'flex';
-                grid.style.flexWrap = 'wrap';
-                grid.style.justifyContent = 'center';
-                grid.style.gap = '25px';
-                grid.style.height = 'auto';
-                
-                cards.forEach(card => {
-                    card.style.position = 'relative';
-                    card.style.left = 'auto';
-                    card.style.top = 'auto';
-                    card.style.width = '250px';
-                    card.style.flex = '0 0 auto';
-                
-            }
-        }, 250);
-    
-    
-    // Initial diagnostic
-    console.log('🚨 EMERGENCY GRID SCRIPT LOADED');
-    console.log('This will manually position cards in a grid layout.');
-    }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}</script>
+    </script>
 
     <!-- EMERGENCY FALLBACK: If JavaScript fails, use simple centered layout -->
     <noscript>

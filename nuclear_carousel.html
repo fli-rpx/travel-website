@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NUCLEAR CAROUSEL TEST</title>
+    <style>
+        /* NUCLEAR RESET - Remove ALL potential conflicts */
+        * {
+            margin: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+            position: static !important;
+            float: none !important;
+            display: block !important;
+        }
+        
+        /* Force body to be simple */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        
+        h1 {
+            color: red;
+            margin: 20px 0 !important;
+            text-align: center;
+        }
+        
+        /* NUCLEAR CAROUSEL - Absolute minimum */
+        .nuclear-carousel {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 5px solid blue;
+            padding: 20px;
+            background: white;
+        }
+        
+        .nuclear-slide {
+            display: none !important;
+            justify-content: center;
+            gap: 20px;
+            border: 2px solid green;
+            padding: 10px;
+            margin: 10px 0 !important;
+        }
+        
+        .nuclear-slide.active {
+            display: flex !important;
+            border-color: red;
+        }
+        
+        .nuclear-card {
+            width: 200px;
+            height: 250px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .nuclear-image {
+            height: 150px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            display: flex;
+            align-items: flex-end;
+            padding: 15px;
+        }
+        
+        .nuclear-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .nuclear-tag {
+            padding: 10px;
+            background: white;
+            color: #333;
+            font-size: 0.9rem;
+        }
+        
+        .nuclear-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .nuclear-btn {
+            padding: 10px 20px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .nuclear-debug {
+            background: #333;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>NUCLEAR CAROUSEL TEST</h1>
+    <p style="text-align: center; margin: 10px 0;">This page has NO external CSS/JS. Everything is self-contained.</p>
+    
+    <div class="nuclear-carousel">
+        <!-- Slide 1 -->
+        <div class="nuclear-slide active" id="slide1">
+            <div class="nuclear-card">
+                <div class="nuclear-image">
+                    <div class="nuclear-name">Beijing</div>
+                </div>
+                <div class="nuclear-tag">Great Wall & Forbidden City</div>
+            </div>
+            <div class="nuclear-card">
+                <div class="nuclear-image">
+                    <div class="nuclear-name">Shanghai</div>
+                </div>
+                <div class="nuclear-tag">The Bund & Skyscrapers</div>
+            </div>
+            <div class="nuclear-card">
+                <div class="nuclear-image">
+                    <div class="nuclear-name">Chengdu</div>
+                </div>
+                <div class="nuclear-tag">Pandas & Spicy Cuisine</div>
+            </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="nuclear-slide" id="slide2">
+            <div class="nuclear-card">
+                <div class="nuclear-image">
+                    <div class="nuclear-name">Chongqing</div>
+                </div>
+                <div class="nuclear-tag">Mountain City & Hot Pot</div>
+            </div>
+            <div class="nuclear-card">
+                <div class="nuclear-image">
+                    <div class="nuclear-name">Harbin</div>
+                </div>
+                <div class="nuclear-tag">Ice Festival & Architecture</div>
+            </div>
+            <div class="nuclear-card">
+                <div class="nuclear-image">
+                    <div class="nuclear-name">Wuxi</div>
+                </div>
+                <div class="nuclear-tag">Taihu Lake & Gardens</div>
+            </div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="nuclear-slide" id="slide3">
+            <div class="nuclear-card">
+                <div class="nuclear-image">
+                    <div class="nuclear-name">Qingdao</div>
+                </div>
+                <div class="nuclear-tag">Beer & Beaches</div>
+            </div>
+            <div class="nuclear-card">
+                <div class="nuclear-image">
+                    <div class="nuclear-name">Xiamen</div>
+                </div>
+                <div class="nuclear-tag">Gulangyu Island</div>
+            </div>
+            <div class="nuclear-card">
+                <div class="nuclear-image">
+                    <div class="nuclear-name">Nanjing</div>
+                </div>
+                <div class="nuclear-tag">Ancient Capital</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="nuclear-controls">
+        <button class="nuclear-btn" onclick="showNuclearSlide(0)">Slide 1</button>
+        <button class="nuclear-btn" onclick="showNuclearSlide(1)">Slide 2</button>
+        <button class="nuclear-btn" onclick="showNuclearSlide(2)">Slide 3</button>
+        <button class="nuclear-btn" onclick="nextNuclearSlide()">Next</button>
+        <button class="nuclear-btn" onclick="autoNuclearRotate()">Auto</button>
+    </div>
+    
+    <div class="nuclear-debug">
+        <h3>Debug Info:</h3>
+        <div id="nuclear-debug-output">Loading...</div>
+    </div>
+
+    <script>
+        // NUCLEAR CAROUSEL - Self-contained, no external dependencies
+        const nuclearSlides = document.querySelectorAll('.nuclear-slide');
+        let nuclearCurrent = 0;
+        
+        function showNuclearSlide(index) {
+            console.log('NUCLEAR: Showing slide', index);
+            
+            // Hide all with inline styles
+            nuclearSlides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.style.display = 'none';
+                slide.style.visibility = 'hidden';
+                slide.style.opacity = '0';
+                slide.style.position = 'static';
+                slide.style.zIndex = '1';
+            });
+            
+            // Show selected
+            if (nuclearSlides[index]) {
+                nuclearSlides[index].classList.add('active');
+                nuclearSlides[index].style.display = 'flex';
+                nuclearSlides[index].style.visibility = 'visible';
+                nuclearSlides[index].style.opacity = '1';
+                nuclearSlides[index].style.position = 'relative';
+                nuclearSlides[index].style.zIndex = '2';
+                nuclearCurrent = index;
+            }
+            
+            updateNuclearDebug();
+        }
+        
+        function nextNuclearSlide() {
+            let next = nuclearCurrent + 1;
+            if (next >= nuclearSlides.length) next = 0;
+            showNuclearSlide(next);
+        }
+        
+        function autoNuclearRotate() {
+            setInterval(nextNuclearSlide, 2000);
+        }
+        
+        function updateNuclearDebug() {
+            const debug = document.getElementById('nuclear-debug-output');
+            let html = '<p>Current slide: ' + (nuclearCurrent + 1) + '</p>';
+            html += '<p>Visible slides: ';
+            
+            nuclearSlides.forEach((slide, i) => {
+                const computed = window.getComputedStyle(slide);
+                html += `<br>Slide ${i + 1}: display="${computed.display}", visible="${computed.visibility}"`;
+            });
+            
+            html += '</p>';
+            
+            // Check for stacking
+            const visibleSlides = Array.from(nuclearSlides).filter(s => 
+                window.getComputedStyle(s).display !== 'none'
+            );
+            html += `<p>Visible slides count: ${visibleSlides.length} (should be 1)</p>`;
+            
+            if (visibleSlides.length === 1) {
+                html += '<p style="color: green;">✅ SUCCESS: No stacking!</p>';
+            } else {
+                html += `<p style="color: red;">❌ PROBLEM: ${visibleSlides.length} slides visible!</p>`;
+            }
+            
+            debug.innerHTML = html;
+        }
+        
+        // Initialize
+        showNuclearSlide(0);
+        
+        // Log everything
+        console.log('=== NUCLEAR CAROUSEL STARTED ===');
+        console.log('Total slides:', nuclearSlides.length);
+        
+        // Force verification
+        setTimeout(() => {
+            const visible = Array.from(nuclearSlides).filter(s => 
+                window.getComputedStyle(s).display !== 'none'
+            );
+            console.log('Visible slides after init:', visible.length);
+            
+            if (visible.length === 1) {
+                console.log('✅ NUCLEAR TEST: SUCCESS! No stacking.');
+                console.log('This proves the approach works when isolated.');
+            } else {
+                console.log('❌ NUCLEAR TEST: FAILED!', visible.length, 'slides visible.');
+                console.log('This would mean something is fundamentally broken.');
+            }
+        }, 100);
+    </script>
+    
+    <div style="margin-top: 30px; padding: 20px; background: #ffebee; border: 2px solid red; text-align: center;">
+        <h2>TEST THIS PAGE:</h2>
+        <p><strong>URL:</strong> <a href="https://fli-rpx.github.io/travel-website/nuclear_carousel.html" target="_blank">Nuclear Carousel Test</a></p>
+        
+        <h3>WHAT TO CHECK:</h3>
+        <ol style="text-align: left; display: inline-block;">
+            <li>Open the page above</li>
+            <li>Open DevTools (F12) → Console</li>
+            <li>Should see ONLY 3 blue cards (Slide 1)</li>
+            <li>Click "Next" button - should switch to Slide 2</li>
+            <li>Check Console for success/failure messages</li>
+        </ol>
+        
+        <h3>EXPECTED:</h3>
+        <p>Only ONE slide visible at a time (red border).<br>
+        Console shows "✅ SUCCESS: No stacking!"</p>
+        
+        <h3>IF THIS WORKS:</h3>
+        <p>The problem is 100% CSS/JS conflicts on main page.</p>
+        
+        <h3>IF THIS DOESN'T WORK:</h3>
+        <p>Something is fundamentally broken in your browser/environment.</p>
+    </div>
+</body>
+</html>

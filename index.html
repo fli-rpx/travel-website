@@ -1553,6 +1553,28 @@
             }
         }, 100);
     });
+    
+    // Image loading optimization
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Optimizing image loading...');
+        
+        // Preload critical images
+        const cityImages = document.querySelectorAll('.city-image');
+        cityImages.forEach(img => {
+            // Force background image to load
+            const bg = window.getComputedStyle(img).backgroundImage;
+            if (bg && bg !== 'none') {
+                const url = bg.replace(/url\(["']?(.*?)["']?\)/, '$1');
+                const preload = document.createElement('link');
+                preload.rel = 'preload';
+                preload.as = 'image';
+                preload.href = url;
+                document.head.appendChild(preload);
+            }
+        });
+        
+        console.log('Image optimization complete');
+    });
     </script>
 </body>
 </html>

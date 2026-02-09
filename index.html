@@ -739,31 +739,15 @@
             overflow: hidden;
         }
         
-        /* City Groups (Carousel Slides) */
+        /* SIMPLE FIX: display:none for inactive, display:flex for active */
         .cities-group {
-            display: flex;
+            display: none;
             justify-content: center;
             gap: 20px;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transform: translateX(30px);
-            pointer-events: none;
-            visibility: hidden;
         }
         
-        /* Active City Group (Visible Slide) */
         .cities-group.active {
-            opacity: 1;
-            transform: translateX(0);
-            pointer-events: auto;
-            visibility: visible;
-            position: relative;
-            z-index: 2;
+            display: flex;
         }
         
         /* City Cards */
@@ -1310,11 +1294,12 @@
             if (index < 0) index = cityGroups.length - 1;
             if (index >= cityGroups.length) index = 0;
             
-            console.log('Showing city group', index + 1, 'of', cityGroups.length);
+            console.log('SIMPLE FIX: Showing city group', index + 1, 'of', cityGroups.length);
             
-            // Hide all groups
+            // Hide all groups (display: none)
             cityGroups.forEach(group => {
                 group.classList.remove('active');
+                group.style.display = 'none';
             });
             
             // Remove active from all dots
@@ -1322,10 +1307,15 @@
                 dot.classList.remove('active');
             });
             
-            // Show selected city group
+            // Show selected city group (display: flex)
             cityGroups[index].classList.add('active');
+            cityGroups[index].style.display = 'flex';
             cityDots[index].classList.add('active');
             currentIndex = index;
+            
+            // Debug: Log what's visible
+            const visibleGroups = document.querySelectorAll('.cities-group.active');
+            console.log('Visible groups:', visibleGroups.length, 'should be 1');
         }
         
         // Next button click
@@ -1369,7 +1359,19 @@
         }
         
         // Initialize with first group
+        
+        // Initialize with first group
         showCityGroup(0);
+        
+        // Force initial display
+        cityGroups.forEach((group, i) => {
+            if (i === 0) {
+                group.style.display = 'flex';
+            } else {
+                group.style.display = 'none';
+            }
+        });
+    
         
         // Debug info
         console.log('Carousel initialized:');
@@ -1395,6 +1397,35 @@
             console.log('✅ Carousel appears to be working correctly');
         } else {
             console.log('❌ Carousel might have issues');
+        }
+    }, 1000);
+    
+    // Test: Verify carousel works
+    setTimeout(function() {
+        const allGroups = document.querySelectorAll('.cities-group');
+        const activeGroups = document.querySelectorAll('.cities-group.active');
+        const visibleGroups = Array.from(allGroups).filter(g => 
+            window.getComputedStyle(g).display !== 'none'
+        );
+        
+        console.log('=== CAROUSEL TEST ===');
+        console.log('Total groups:', allGroups.length);
+        console.log('Active groups (class):', activeGroups.length);
+        console.log('Visible groups (display):', visibleGroups.length);
+        
+        if (visibleGroups.length === 1 && activeGroups.length === 1) {
+            console.log('✅ SUCCESS: Carousel working correctly!');
+        } else {
+            console.log('❌ PROBLEM: Carousel not working correctly');
+            console.log('All groups display styles:');
+            allGroups.forEach((g, i) => {
+                console.log(`Group ${i}:`, {
+                    active: g.classList.contains('active'),
+                    display: window.getComputedStyle(g).display,
+                    opacity: window.getComputedStyle(g).opacity,
+                    visibility: window.getComputedStyle(g).visibility
+                });
+            });
         }
     }, 1000);
     </script>

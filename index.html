@@ -512,7 +512,64 @@
     /* Fix any potential overflow issues */
     body {
         overflow-x: hidden;
-    }</style>
+    }
+        /* CAROUSEL NAVIGATION */
+        .carousel-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+        
+        .carousel-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #3b82f6;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .carousel-btn:hover {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+            transform: scale(1.1);
+        }
+        
+        .carousel-dots {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+        
+        .carousel-dot.active {
+            background: #3b82f6;
+            transform: scale(1.2);
+        }
+        
+        .carousel-dot:hover {
+            background: #94a3b8;
+            transform: scale(1.1);
+        }</style>
 </head>
 <body>
     <!-- HERO SECTION -->
@@ -710,7 +767,29 @@
                             </div>
                         </div>
                     </div>
-    </div><!-- NEWS SECTION -->
+    </div>
+            </div>
+            
+            <!-- CAROUSEL NAVIGATION -->
+            <div class="carousel-navigation">
+                <button class="carousel-btn prev" id="prevBtn" aria-label="Previous slide">
+                    ←
+                </button>
+                
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                    <button class="carousel-dot" data-slide="1" aria-label="Go to slide 2"></button>
+                    <button class="carousel-dot" data-slide="2" aria-label="Go to slide 3"></button>
+                    <button class="carousel-dot" data-slide="3" aria-label="Go to slide 4"></button>
+                </div>
+                
+                <button class="carousel-btn next" id="nextBtn" aria-label="Next slide">
+                    →
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- NEWS SECTION --><!-- NEWS SECTION -->
     <section id="news" class="news-section">
         <div class="container">
             <h2 class="section-title">Latest Travel News</h2>
@@ -809,29 +888,35 @@
 
     <!-- SIMPLE JAVASCRIPT -->
     <script>
-    // CLEAN CAROUSEL - NO DUPLICATE VARIABLES
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('🚀 Starting clean carousel...');
+    // WORKING CAROUSEL - SIMPLE AND RELIABLE
+    window.addEventListener('load', function() {
+        console.log('🎯 Page loaded, starting carousel...');
         
-        // SINGLE DECLARATION of all variables
+        // Short delay to ensure everything is ready
+        setTimeout(initCarousel, 100);
+    });
+    
+    function initCarousel() {
+        console.log('🚀 Initializing carousel...');
+        
+        // Get elements
         const track = document.querySelector('.carousel-track');
         const slides = document.querySelectorAll('.carousel-slide');
-        const dots = document.querySelectorAll('.carousel-dot');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
+        const dots = document.querySelectorAll('.carousel-dot');
         
-        // Debug: log what we found
-        console.log('🔍 Elements found:', {
-            track: !!track,
+        console.log('📋 Elements found:', {
+            track: track ? 'YES' : 'NO',
             slides: slides.length,
-            dots: dots.length,
-            prevBtn: !!prevBtn,
-            nextBtn: !!nextBtn
+            prevBtn: prevBtn ? 'YES' : 'NO',
+            nextBtn: nextBtn ? 'YES' : 'NO',
+            dots: dots.length
         });
         
-        // Check if we have everything
-        if (!track || slides.length === 0 || !prevBtn || !nextBtn) {
-            console.error('❌ Missing essential carousel elements');
+        // Essential check
+        if (!track || slides.length === 0) {
+            console.error('❌ Cannot start carousel: missing track or slides');
             return;
         }
         
@@ -839,92 +924,90 @@
         const totalSlides = slides.length;
         let autoInterval;
         
-        // SINGLE update function
+        // Move carousel to current slide
         function updateCarousel() {
-            console.log('🔄 Moving to slide', currentSlide + 1, 'of', totalSlides);
+            console.log('🔄 Showing slide', currentSlide + 1, 'of', totalSlides);
             
-            // Simple transform
-            const translateX = -(currentSlide * 100);
-            track.style.transform = 'translateX(' + translateX + '%)';
+            // Calculate position
+            const position = -(currentSlide * 100);
+            track.style.transform = `translateX(${position}%)`;
             track.style.transition = 'transform 0.5s ease';
             
-            // Update dots if they exist
-            if (dots.length > 0) {
-                dots.forEach((dot, index) => {
-                    if (index === currentSlide) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
-                });
-            }
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
             
             // Update slides
             slides.forEach((slide, index) => {
-                if (index === currentSlide) {
-                    slide.classList.add('active');
-                } else {
-                    slide.classList.remove('active');
-                }
+                slide.classList.toggle('active', index === currentSlide);
             });
         }
         
-        // Event handlers
-        nextBtn.addEventListener('click', function() {
-            console.log('👉 Next button clicked');
+        // Next slide
+        function nextSlide() {
             currentSlide = (currentSlide + 1) % totalSlides;
             updateCarousel();
-        });
+        }
         
-        prevBtn.addEventListener('click', function() {
-            console.log('👈 Prev button clicked');
+        // Previous slide
+        function prevSlide() {
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             updateCarousel();
-        });
-        
-        // Dot handlers (if dots exist)
-        if (dots.length > 0) {
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', function() {
-                    console.log('🔘 Dot', index, 'clicked');
-                    currentSlide = index;
-                    updateCarousel();
-                });
-            });
         }
         
-        // Start auto-rotate
+        // Go to specific slide
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+        
+        // Start auto-rotation
         function startAutoRotate() {
-            autoInterval = setInterval(function() {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateCarousel();
-            }, 5000);
+            autoInterval = setInterval(nextSlide, 5000);
         }
         
-        // Stop auto-rotate
+        // Stop auto-rotation
         function stopAutoRotate() {
             if (autoInterval) {
                 clearInterval(autoInterval);
-                autoInterval = null;
             }
         }
         
-        // Hover pause
-        track.addEventListener('mouseenter', function() {
-            console.log('⏸️ Pausing auto-rotate');
-            stopAutoRotate();
+        // Event listeners
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function() {
+                console.log('👉 Next button clicked');
+                nextSlide();
+            });
+        }
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function() {
+                console.log('👈 Previous button clicked');
+                prevSlide();
+            });
+        }
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', function() {
+                console.log('🔘 Dot', index + 1, 'clicked');
+                goToSlide(index);
+            });
         });
         
-        track.addEventListener('mouseleave', function() {
-            console.log('▶️ Resuming auto-rotate');
-            startAutoRotate();
-        });
+        // Hover to pause
+        if (track) {
+            track.addEventListener('mouseenter', stopAutoRotate);
+            track.addEventListener('mouseleave', startAutoRotate);
+        }
         
         // Initialize
         updateCarousel();
         startAutoRotate();
-        console.log('🎉 Clean carousel ready! Total slides:', totalSlides);
-    });
+        
+        console.log('✅ Carousel ready! Click buttons to test.');
+    }
     </script>
 </body>
 </html>

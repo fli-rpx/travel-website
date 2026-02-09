@@ -54,7 +54,7 @@
         
         /* SIMPLE CAROUSEL */
         .carousel-section {
-            padding: 30px 20px;
+            padding: 20px 20px;
         }
         
         .section-title {
@@ -65,35 +65,41 @@
         }
         
         .simple-carousel {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
+    position: relative;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 12px;
+}
         
         .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 380px; /* Reduced from taller height */
+}
         
         .carousel-slide {
-            flex: 0 0 100%;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
+    flex: 0 0 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+    min-height: 360px; /* Reduced height */
+}
         
         /* CITY CARDS - NO IMAGES */
         .city-card {
-            flex: 0 0 250px;
-            background: white;
-            border-radius: 12px;
-            padding: 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            border: 2px solid #e2e8f0;
-        }
+    flex: 0 0 300px;
+    background: white;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border: 2px solid #e2e8f0;
+    height: 350px; /* Fixed height */
+    display: flex;
+    flex-direction: column;
+}
         
         .city-card:hover {
             transform: translateY(-5px);
@@ -102,18 +108,19 @@
         }
         
         .city-header {
-            height: 140px;
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 15px;
-            border-radius: 10px 10px 0 0;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            text-align: left;
-        }
+    height: 160px; /* Reduced from taller */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: left;
+    flex-shrink: 0;
+}
         
         .city-header::before {
             content: '';
@@ -144,8 +151,33 @@
         }
         
         .city-details {
-            padding: 15px;
-        }
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.city-details p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.city-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.city-tag {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.city-link {
+    margin-top: auto;
+    padding-top: 10px;
+}
         
         .city-details p {
             margin-bottom: 15px;
@@ -573,7 +605,83 @@
         .carousel-dot:hover {
             background: #94a3b8;
             transform: scale(1.1);
-        }</style>
+        }
+    /* Responsive adjustments */
+    @media (max-width: 1100px) {
+        .city-card {
+            flex: 0 0 280px;
+            height: 340px;
+        }
+        
+        .city-header {
+            height: 150px;
+        }
+        
+        .carousel-track {
+            height: 360px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .simple-carousel {
+            max-width: 100%;
+            margin: 0 10px;
+        }
+        
+        .carousel-slide {
+            gap: 15px;
+            padding: 10px 5px;
+            min-height: 320px;
+        }
+        
+        .city-card {
+            flex: 0 0 250px;
+            height: 320px;
+        }
+        
+        .city-header {
+            height: 140px;
+            padding: 12px;
+        }
+        
+        .city-details {
+            padding: 12px;
+        }
+        
+        .city-name {
+            font-size: 1.2rem;
+        }
+        
+        .carousel-track {
+            height: 340px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .carousel-slide {
+            gap: 10px;
+            min-height: 300px;
+        }
+        
+        .city-card {
+            flex: 0 0 220px;
+            height: 300px;
+        }
+        
+        .city-header {
+            height: 130px;
+        }
+        
+        .carousel-track {
+            height: 320px;
+        }
+        
+        .carousel-btn {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+        }
+    }</style>
 </head>
 <body>
     <!-- HERO SECTION -->

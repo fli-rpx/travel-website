@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ULTIMATE TEST - Will This Work?</title>
+    <style>
+        /* ULTIMATE SIMPLICITY */
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial;
+            background: #f0f0f0;
+        }
+        
+        h1 {
+            color: red;
+            text-align: center;
+        }
+        
+        /* MANUAL GRID - NO CSS GRID */
+        .manual-grid {
+            width: 100%;
+            position: relative;
+            background: yellow;
+            border: 5px solid blue;
+            min-height: 400px;
+        }
+        
+        .manual-card {
+            position: absolute;
+            width: 200px;
+            height: 250px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .manual-image {
+            height: 150px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            position: relative;
+        }
+        
+        .manual-name {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .manual-tag {
+            padding: 10px;
+            background: white;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>ULTIMATE TEST - Manual Positioning</h1>
+    <p style="text-align: center;">This page has NO external dependencies. Everything is self-contained.</p>
+    
+    <div class="manual-grid" id="manualGrid">
+        <!-- Cards will be positioned by JavaScript -->
+        <div class="manual-card" id="card1">
+            <div class="manual-image">
+                <div class="manual-name">Beijing</div>
+            </div>
+            <div class="manual-tag">Great Wall</div>
+        </div>
+        
+        <div class="manual-card" id="card2">
+            <div class="manual-image">
+                <div class="manual-name">Shanghai</div>
+            </div>
+            <div class="manual-tag">The Bund</div>
+        </div>
+        
+        <div class="manual-card" id="card3">
+            <div class="manual-image">
+                <div class="manual-name">Chengdu</div>
+            </div>
+            <div class="manual-tag">Pandas</div>
+        </div>
+        
+        <div class="manual-card" id="card4">
+            <div class="manual-image">
+                <div class="manual-name">Chongqing</div>
+            </div>
+            <div class="manual-tag">Hot Pot</div>
+        </div>
+    </div>
+    
+    <div style="margin-top: 20px; padding: 20px; background: #ffebee; border: 2px solid red; text-align: center;">
+        <h2>WHAT YOU SHOULD SEE:</h2>
+        <p>4 white cards in a 2x2 grid inside the yellow box with blue border.</p>
+        <p>Cards should be 200px wide (NOT full width).</p>
+        <p>Open DevTools (F12) → Console to see positioning.</p>
+    </div>
+
+    <script>
+        // ULTIMATE SIMPLE POSITIONING
+        console.log('=== ULTIMATE TEST STARTING ===');
+        
+        function positionCards() {
+            console.log('Positioning cards...');
+            
+            const grid = document.getElementById('manualGrid');
+            const cards = document.querySelectorAll('.manual-card');
+            
+            if (!grid || cards.length === 0) {
+                console.log('ERROR: No grid or cards found');
+                return;
+            }
+            
+            // Grid configuration
+            const CARD_WIDTH = 200;
+            const CARD_HEIGHT = 250;
+            const GAP = 20;
+            const CARDS_PER_ROW = 2; // Always 2 columns
+            
+            // Calculate positions
+            cards.forEach((card, index) => {
+                const row = Math.floor(index / CARDS_PER_ROW);
+                const col = index % CARDS_PER_ROW;
+                
+                const x = col * (CARD_WIDTH + GAP);
+                const y = row * (CARD_HEIGHT + GAP);
+                
+                // Apply positioning
+                card.style.left = x + 'px';
+                card.style.top = y + 'px';
+                card.style.width = CARD_WIDTH + 'px';
+                card.style.height = CARD_HEIGHT + 'px';
+                
+                console.log(`Card ${index + 1}: x=${x}px, y=${y}px, width=${CARD_WIDTH}px`);
+            });
+            
+            // Set grid size
+            const totalRows = Math.ceil(cards.length / CARDS_PER_ROW);
+            const totalHeight = (totalRows * CARD_HEIGHT) + ((totalRows - 1) * GAP);
+            grid.style.height = totalHeight + 'px';
+            
+            console.log('Cards positioned. Grid height:', totalHeight + 'px');
+            
+            // Verify
+            setTimeout(function() {
+                console.log('=== VERIFICATION ===');
+                let allGood = true;
+                
+                cards.forEach((card, index) => {
+                    const rect = card.getBoundingClientRect();
+                    console.log(`Card ${index + 1}:`, {
+                        width: rect.width + 'px',
+                        height: rect.height + 'px',
+                        left: rect.left + 'px',
+                        top: rect.top + 'px'
+                    });
+                    
+                    if (rect.width > 250) {
+                        console.log(`❌ Card ${index + 1} is TOO WIDE: ${rect.width}px`);
+                        allGood = false;
+                    }
+                });
+                
+                if (allGood) {
+                    console.log('✅ SUCCESS: All cards correctly positioned!');
+                    document.body.style.backgroundColor = '#d4edda'; // Green background for success
+                } else {
+                    console.log('❌ FAILURE: Cards not positioned correctly');
+                    document.body.style.backgroundColor = '#f8d7da'; // Red background for failure
+                }
+            }, 100);
+        }
+        
+        // Run on load
+        window.addEventListener('load', positionCards);
+        
+        // Also run immediately
+        positionCards();
+        
+        console.log('Ultimate test script loaded.');
+    </script>
+    
+    <div style="margin-top: 30px; padding: 20px; background: #333; color: white; border-radius: 10px;">
+        <h3 style="color: white;">TEST INSTRUCTIONS:</h3>
+        <ol>
+            <li>Open this page: <a href="https://fli-rpx.github.io/travel-website/ultimate_test.html" style="color: #3b82f6;">Ultimate Test</a></li>
+            <li>Open DevTools (F12) → Console tab</li>
+            <li>Look at the yellow box with blue border</li>
+            <li>Should see 4 white cards in a 2x2 grid</li>
+            <li>Cards should be 200px wide (NOT full width)</li>
+            <li>Console should show positioning details</li>
+        </ol>
+        
+        <h3 style="color: white;">EXPECTED RESULT:</h3>
+        <p>4 cards in a grid, each 200px wide, inside yellow box.</p>
+        
+        <h3 style="color: white;">IF THIS WORKS:</h3>
+        <p>The approach is correct, but something is wrong with main page.</p>
+        
+        <h3 style="color: white;">IF THIS DOESN'T WORK:</h3>
+        <p>Something is fundamentally broken in your browser/environment.</p>
+    </div>
+</body>
+</html>

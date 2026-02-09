@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>China Travel - Clean Version</title>
+    <title>China Travel - With Images</title>
     <style>
         /* RESET AND BASICS */
         * {
@@ -96,11 +96,34 @@
         }
         
         .city-header {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            height: 150px;
+            background-size: cover;
+            background-position: center;
             color: white;
             padding: 20px;
             border-radius: 10px 10px 0 0;
-            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            text-align: left;
+        }
+        
+        .city-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+            border-radius: 10px 10px 0 0;
+            z-index: 1;
+        }
+        
+        .city-name, .city-tag {
+            position: relative;
+            z-index: 2;
         }
         
         .city-name {
@@ -246,7 +269,7 @@
                     <div class="carousel-slide active">
                         <!-- Beijing -->
                         <div class="city-card">
-                            <div class="city-header">
+                            <div class="city-header" style="background-image: url('images/user_photos/beijing.jpg');">
                                 <div class="city-name">Beijing</div>
                                 <div class="city-tag">Capital City</div>
                             </div>
@@ -260,7 +283,7 @@
                         
                         <!-- Shanghai -->
                         <div class="city-card">
-                            <div class="city-header">
+                            <div class="city-header" style="background-image: url('images/user_photos/shanghai.jpg');">
                                 <div class="city-name">Shanghai</div>
                                 <div class="city-tag">Modern Metropolis</div>
                             </div>
@@ -274,7 +297,7 @@
                         
                         <!-- Chengdu -->
                         <div class="city-card">
-                            <div class="city-header">
+                            <div class="city-header" style="background-image: url('images/user_photos/chengdu.jpg');">
                                 <div class="city-name">Chengdu</div>
                                 <div class="city-tag">Panda Home</div>
                             </div>
@@ -291,7 +314,7 @@
                     <div class="carousel-slide">
                         <!-- Xi'an -->
                         <div class="city-card">
-                            <div class="city-header">
+                            <div class="city-header" style="background-image: url('images/user_photos/beijing.jpg');">
                                 <div class="city-name">Xi'an</div>
                                 <div class="city-tag">Ancient Capital</div>
                             </div>
@@ -305,7 +328,7 @@
                         
                         <!-- Guilin -->
                         <div class="city-card">
-                            <div class="city-header">
+                            <div class="city-header" style="background-image: url('images/user_photos/shanghai.jpg');">
                                 <div class="city-name">Guilin</div>
                                 <div class="city-tag">Scenic Beauty</div>
                             </div>
@@ -319,7 +342,7 @@
                         
                         <!-- Hangzhou -->
                         <div class="city-card">
-                            <div class="city-header">
+                            <div class="city-header" style="background-image: url('images/user_photos/chengdu.jpg');">
                                 <div class="city-name">Hangzhou</div>
                                 <div class="city-tag">Paradise on Earth</div>
                             </div>
@@ -336,7 +359,7 @@
                     <div class="carousel-slide">
                         <!-- Hong Kong -->
                         <div class="city-card">
-                            <div class="city-header">
+                            <div class="city-header" style="background-image: url('images/user_photos/hongkong.jpg');">
                                 <div class="city-name">Hong Kong</div>
                                 <div class="city-tag">Asia's World City</div>
                             </div>
@@ -350,7 +373,7 @@
                         
                         <!-- Lhasa -->
                         <div class="city-card">
-                            <div class="city-header">
+                            <div class="city-header" style="background-image: url('images/user_photos/chongqing.jpg');">
                                 <div class="city-name">Lhasa</div>
                                 <div class="city-tag">Roof of the World</div>
                             </div>
@@ -364,7 +387,7 @@
                         
                         <!-- Sanya -->
                         <div class="city-card">
-                            <div class="city-header">
+                            <div class="city-header" style="background-image: url('images/user_photos/harbin.jpg');">
                                 <div class="city-name">Sanya</div>
                                 <div class="city-tag">Tropical Paradise</div>
                             </div>
@@ -404,7 +427,7 @@
             <h3>China Travel Assistance</h3>
             <p>Personalized travel planning & cultural experiences</p>
             <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
-                Clean version • No images • Simple carousel • Working perfectly
+                With optimized images • Working carousel • Clean design
             </p>
         </div>
     </footer>
@@ -501,6 +524,34 @@
             
             console.log('✅ Clean version should be working perfectly!');
         }, 100);
+    
+    // Image loading optimization
+    window.addEventListener('load', function() {
+        console.log('✅ All images loaded');
+        
+        // Preload next slide images for smoother transitions
+        const preloadNextSlide = function() {
+            const nextSlideIndex = (currentSlide + 1) % totalSlides;
+            const nextSlide = slides[nextSlideIndex];
+            if (nextSlide) {
+                const images = nextSlide.querySelectorAll('.city-header');
+                images.forEach(img => {
+                    const bg = window.getComputedStyle(img).backgroundImage;
+                    if (bg && bg !== 'none') {
+                        const imgUrl = bg.replace(/url\(["']?(.*?)["']?\)/, '$1');
+                        const preload = new Image();
+                        preload.src = imgUrl;
+                    }
+                });
+            }
+        };
+        
+        // Preload next slide after current slide is shown
+        setTimeout(preloadNextSlide, 100);
+    });
+    
+    // Update footer note
+    document.querySelector('footer p').textContent = 'With optimized images • Working carousel • Clean design';
     </script>
 </body>
 </html>

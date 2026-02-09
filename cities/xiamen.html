@@ -141,7 +141,23 @@
             transform: translateY(-3px);
             border-color: var(--primary);
         }
-    </style>
+    
+        .back-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }</style>
 </head>
 <body>
     <!-- Navigation -->
@@ -164,6 +180,9 @@
             </div>
         </div>
     </nav>
+    <div class="container mt-3">
+        <a href="../index.html" class="back-link"><i class="fas fa-arrow-left me-2"></i>Back to Cities</a>
+    </div>
 
     <!-- City Hero Section -->
     <section class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('../images/user_photos/xiamen.jpg'); background-size: cover; background-position: center; color: white; padding: 120px 0 80px; min-height: 400px;">
@@ -192,11 +211,11 @@
                         <h2>Must-See Highlights</h2>
                         <div class="city-highlight">
                             <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
-                            <p>ATTRACTION_1, ATTRACTION_2, ATTRACTION_3</p>
+                            <p>Gulangyu Island, Nanputuo Temple, Hulishan Fortress, Xiamen University</p>
                         </div>
                         <div class="city-highlight">
                             <h3><i class="fas fa-utensils me-2"></i>Local Cuisine</h3>
-                            <p>FOOD_1, FOOD_2, FOOD_3</p>
+                            <p>Seafood, Oyster Omelette, Peanut Soup, Shacha Noodles</p>
                         </div>
                         <div class="city-highlight">
                             <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>

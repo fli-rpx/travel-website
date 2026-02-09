@@ -135,7 +135,23 @@
             transform: translateY(-3px);
             border-color: var(--primary);
         }
-    </style>
+    
+        .back-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }</style>
 </head>
 <body>
     <!-- Navigation -->
@@ -158,6 +174,9 @@
             </div>
         </div>
     </nav>
+    <div class="container mt-3">
+        <a href="../index.html" class="back-link"><i class="fas fa-arrow-left me-2"></i>Back to Cities</a>
+    </div>
 
     <!-- City Hero Section -->
     <section class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('../images/user_photos/shanghai.jpg'); background-size: cover; background-position: center; color: white; padding: 120px 0 80px; min-height: 400px;">
@@ -225,7 +244,7 @@
                         <div class="city-highlight">
                             <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
                             <p><strong>Airport:</strong> Shanghai Pudong International Airport (PVG) / Shanghai Hongqiao International Airport (SHA)</p>
-                            <p><strong>Train:</strong> High-speed rail from MAJOR_CITIES</p>
+                            <p><strong>Train:</strong> High-speed rail from Beijing, Hangzhou, Nanjing (1-5 hours)</p>
                             <p><strong>Best Transport:</strong> Metro, Maglev train, buses, and taxis</p>
                         </div>
                     </div>

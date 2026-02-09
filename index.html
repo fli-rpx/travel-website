@@ -75,7 +75,8 @@
         .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    height: 380px; /* Reduced from taller height */
+    height: 380px;
+    width: 100%; /* Ensure full width */
 }
         
         .carousel-slide {
@@ -83,22 +84,26 @@
     display: flex;
     gap: 20px;
     justify-content: center;
+    align-items: flex-start; /* Align items at top */
     padding: 10px;
-    min-height: 360px; /* Reduced height */
+    min-height: 360px;
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding in width */
 }
         
         /* CITY CARDS - NO IMAGES */
         .city-card {
-    flex: 0 0 300px;
+    flex: 0 0 300px; /* Fixed width, won't grow or shrink */
     background: white;
     border-radius: 12px;
     padding: 0;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
     border: 2px solid #e2e8f0;
-    height: 350px; /* Fixed height */
+    height: 350px;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0; /* Prevent shrinking */
 }
         
         .city-card:hover {
@@ -714,6 +719,69 @@
     
     .city-header.loaded {
         animation: fadeIn 0.5s ease-in;
+    }
+    /* ANTI-STACKING RULES - Ensure cities stay side-by-side */
+    .simple-carousel {
+        overflow: hidden !important;
+        width: 100% !important;
+    }
+    
+    .carousel-container {
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+    
+    /* Force flex items to stay in row */
+    .carousel-slide > * {
+        flex-shrink: 0 !important;
+    }
+    
+    /* Prevent any column layout on slides */
+    .carousel-slide {
+        flex-direction: row !important;
+    }
+    
+    /* Media query adjustments */
+    @media (max-width: 1100px) {
+        .city-card {
+            flex: 0 0 280px !important;
+        }
+    }
+    
+    @media (max-width: 900px) {
+        .city-card {
+            flex: 0 0 250px !important;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .carousel-slide {
+            gap: 15px !important;
+        }
+        
+        .city-card {
+            flex: 0 0 220px !important;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .carousel-slide {
+            justify-content: flex-start !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            overflow-x: auto !important; /* Allow horizontal scroll on mobile */
+            scroll-snap-type: x mandatory !important;
+        }
+        
+        .city-card {
+            flex: 0 0 200px !important;
+            scroll-snap-align: start !important;
+        }
+        
+        /* Hide scrollbar but keep functionality */
+        .carousel-slide::-webkit-scrollbar {
+            display: none;
+        }
     }</style>
 </head>
 <body>
@@ -1218,7 +1286,34 @@
     setTimeout(initializeCarousel, 1000);
     
     console.log('🚀 Carousel initialization scheduled');
-    </script>
+    
+    // Verify carousel layout
+    function verifyCarouselLayout() {
+        const track = document.querySelector('.carousel-track');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const cityCards = document.querySelectorAll('.city-card');
+        
+        if (!track || slides.length === 0) return;
+        
+        console.log('🔍 Carousel Layout Check:');
+        console.log('- Track display:', window.getComputedStyle(track).display);
+        console.log('- Track flexDirection:', window.getComputedStyle(track).flexDirection);
+        console.log('- Slide display:', window.getComputedStyle(slides[0]).display);
+        console.log('- Slide flexDirection:', window.getComputedStyle(slides[0]).flexDirection);
+        console.log('- City cards per slide:', cityCards.length / slides.length);
+        console.log('- First city card width:', window.getComputedStyle(cityCards[0]).width);
+        
+        // Force correct layout if needed
+        if (window.getComputedStyle(slides[0]).flexDirection === 'column') {
+            console.warn('⚠️  Slide has column layout - forcing row');
+            slides.forEach(slide => {
+                slide.style.flexDirection = 'row';
+            });
+        }
+    }
+    
+    // Run verification after carousel init
+    setTimeout(verifyCarouselLayout, 500);</script>
 <!-- DEBUG INFO -->
     <div id="carouselDebug" style="display: none; background: #fef3c7; border: 1px solid #f59e0b; padding: 10px; margin: 10px 0; border-radius: 5px; font-family: monospace;">
         <strong>Carousel Debug Info:</strong>

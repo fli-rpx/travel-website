@@ -291,7 +291,9 @@
         }
     
         /* Loading states */
-        
+        .city-header {
+            background-color: #f0f0f0; /* Fallback while loading */
+        }
         
         .city-header.loaded {
             background-color: transparent;
@@ -616,7 +618,9 @@
             height: 340px;
         }
         
-        
+        .city-header {
+            height: 150px;
+        }
         
         .carousel-track {
             height: 360px;
@@ -640,9 +644,14 @@
             height: 320px;
         }
         
+        .city-header {
+            height: 140px;
+            padding: 12px;
+        }
         
-        
-        
+        .city-details {
+            padding: 12px;
+        }
         
         .city-name {
             font-size: 1.2rem;
@@ -664,7 +673,9 @@
             height: 300px;
         }
         
-        
+        .city-header {
+            height: 130px;
+        }
         
         .carousel-track {
             height: 320px;
@@ -677,7 +688,12 @@
         }
     }
     /* Image loading optimization */
-    
+    .city-header {
+        background-color: #f0f0f0;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
     
     .city-header::before {
         content: '';
@@ -768,478 +784,667 @@
         }
     }
     /* Enhanced city details styling */
+    .city-details {
+        padding: 15px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto; /* Allow scrolling if content is long */
+        max-height: 180px; /* Limit height for consistency */
+    }
     
+    .city-details::-webkit-scrollbar {
+        width: 4px;
+    }
     
+    .city-details::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 2px;
+    }
     
-
+    .city-details::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 2px;
+    }
     
+    .city-details::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+    
+    .city-details p {
+        margin-bottom: 6px;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        color: #475569;
+        display: flex;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .city-details p::before {
+        content: "•";
+        color: #3b82f6;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+    
+    .city-name {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #1e293b;
+    }
+    
+    .city-tag {
+        font-size: 0.9rem;
+        color: #64748b;
+        margin-bottom: 12px;
+        font-style: italic;
+    }
+    
+    .city-link {
+        margin-top: auto;
+        padding-top: 10px;
+        display: inline-block;
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+    
+    .city-link:hover {
+        color: #2563eb;
+        text-decoration: underline;
+    }</style>
+</head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <!-- HERO SECTION -->
+    <section class="hero">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-3" href="#" style="color: var(--primary);">
-                <i class="fas fa-globe-americas me-2"></i>Traveling China like your home yard
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
+            <h1>Experience Authentic China</h1>
+            <p>Personal travel assistance with cultural introductions and complete arrangements for your China journey.</p>
+            <a href="#cities" class="hero-btn">Explore Cities in Detail</a>
         </div>
-    </nav>
+    </section>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+    <!-- SIMPLE CAROUSEL -->
+    <section id="cities" class="carousel-section">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-4">Experience Authentic China</h1>
-            <p class="lead mb-4">Personal travel assistance with cultural introductions and complete arrangements for your China journey.</p>
+            <h2 class="section-title">Explore China Cities - Detailed Guide</h2>
             
-            <!-- Rotating China Cities Display -->
-            <div class="cities-ticker-wrapper mb-5">
-                <div class="cities-ticker">
-                    <div class="cities-header">
-                        <span class="cities-label">
-                            <i class="fas fa-city me-2"></i>Explore China Cities
-                        </span>
-                        <span class="cities-count">12 Cities</span>
-                    </div>
-                    <div class="cities-content">
-                        <!-- Group 1: Chengdu, Beijing, Wuxi -->
-                        <div class="cities-group active">
-                            <div class="city-card">
-                                <a href="/travel-website/cities/chengdu.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Chengdu</span>
-                                    </div>
-                                    <div class="city-tag">Pandas & Spicy Cuisine</div>
-                                </a>
+            <div class="simple-carousel">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- SLIDE 1 -->
+                    <div class="carousel-slide active">
+                        <!-- Beijing -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/beijing.jpg');">
+                                <div class="city-name">Beijing</div>
+                                <div class="city-tag">Great Wall & Forbidden City</div>
                             </div>
-                            <div class="city-card">
-                                <a href="/travel-website/cities/beijing.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Beijing</span>
-                                    </div>
-                                    <div class="city-tag">Great Wall & Forbidden City</div>
-                                </a>
-                            </div>
-                            <div class="city-card">
-                                <a href="/travel-website/cities/wuxi.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Wuxi</span>
-                                    </div>
-                                    <div class="city-tag">Taihu Lake & Gardens</div>
-                                </a>
+                            <div class="city-details">
+                                <p>🇨🇳 Capital with 3,000+ years of history</p>
+                                <p>🏯 Forbidden City & Temple of Heaven</p>
+                                <p>🐉 Summer Palace & Ming Tombs</p>
+                                <p>🍜 Peking duck, zhajiangmian noodles</p>
+                                <p>🎭 Peking opera & traditional tea houses</p>
+                                <a href="/travel-website/cities/beijing.html" class="city-link">Explore Beijing</a>
                             </div>
                         </div>
                         
-                        <!-- Group 2: Qingdao, Xiamen, Harbin -->
-                        <div class="cities-group">
-                            <div class="city-card">
-                                <a href="/travel-website/cities/qingdao.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Qingdao</span>
-                                    </div>
-                                    <div class="city-tag">Beer & Beaches</div>
-                                </a>
+                        <!-- Shanghai -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/shanghai.jpg');">
+                                <div class="city-name">Shanghai</div>
+                                <div class="city-tag">The Bund & Skyscrapers</div>
                             </div>
-                            <div class="city-card">
-                                <a href="/travel-website/cities/xiamen.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Xiamen</span>
-                                    </div>
-                                    <div class="city-tag">Gulangyu Island & Beaches</div>
-                                </a>
-                            </div>
-                            <div class="city-card">
-                                <a href="/travel-website/cities/harbin.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1517299321609-52687d1bc55a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Harbin</span>
-                                    </div>
-                                    <div class="city-tag">Ice Festival & Russian Architecture</div>
-                                </a>
+                            <div class="city-details">
+                                <p>🏙️ Global financial center & tallest skyscrapers</p>
+                                <p>🌉 The Bund - colonial architecture walk</p>
+                                <p>🎡 Oriental Pearl Tower & Jin Mao Tower</p>
+                                <p>🍜 Xiaolongbao, hairy crab, Shanghainese soup</p>
+                                <p>🎨 M50 art district & French Concession</p>
+                                <a href="/travel-website/cities/shanghai.html" class="city-link">Explore Shanghai</a>
                             </div>
                         </div>
                         
-                        <!-- Group 3: Shanghai, Nanjing, Shenzhen -->
-                        <div class="cities-group">
-                            <div class="city-card">
-                                <a href="/travel-website/cities/shanghai.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1578645510447-e4b5c5d90673?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Shanghai</span>
-                                    </div>
-                                    <div class="city-tag">The Bund & Skyscrapers</div>
-                                </a>
+                        <!-- Chengdu -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/chengdu.jpg');">
+                                <div class="city-name">Chengdu</div>
+                                <div class="city-tag">Pandas & Spicy Cuisine</div>
                             </div>
-                            <div class="city-card">
-                                <a href="/travel-website/cities/nanjing.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1599576838688-8a6c1137febb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Nanjing</span>
-                                    </div>
-                                    <div class="city-tag">Ancient Capital & Yangtze River</div>
-                                </a>
+                            <div class="city-details">
+                                <p>🐼 Chengdu Panda Base - see baby pandas</p>
+                                <p>🌶️ Sichuan hot pot & mapo tofu</p>
+                                <p>🎭 Sichuan opera with face-changing</p>
+                                <p>🏮 Jinli Ancient Street & Wuhou Temple</p>
+                                <p>🍵 Traditional tea houses & mahjong culture</p>
+                                <a href="/travel-website/cities/chengdu.html" class="city-link">Explore Chengdu</a>
                             </div>
-                            <div class="city-card">
-                                <a href="/travel-website/cities/shenzhen.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1518834103328-93d45986dce1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Shenzhen</span>
-                                    </div>
-                                    <div class="city-tag">Tech Hub & Theme Parks</div>
-                                </a>
+                        </div>
+                    </div>
+                    
+                                        <!-- SLIDE 2 -->
+                    <div class="carousel-slide">
+                        <!-- Qingdao -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/qingdao.jpg');">
+                                <div class="city-name">Qingdao</div>
+                                <div class="city-tag">Beer & Beaches</div>
+                            </div>
+                            <div class="city-details">
+                                <p>🍺 Tsingtao Beer Museum & brewery tour</p>
+                                <p>🏖️ Golden Beach - 3.5km sandy coastline</p>
+                                <p>🏛️ German architecture in Badaguan area</p>
+                                <p>⛰️ Laoshan Mountain - Taoist sacred site</p>
+                                <p>🦐 Fresh seafood & Qingdao-style barbecue</p>
+                                <a href="/travel-website/cities/qingdao.html" class="city-link">Explore Qingdao</a>
                             </div>
                         </div>
                         
-                        <!-- Group 4: Guangzhou, Hong Kong, Chongqing -->
-                        <div class="cities-group">
-                            <div class="city-card">
-                                <a href="/travel-website/cities/guangzhou.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1591261730799-ee4e6c2d16d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Guangzhou</span>
-                                    </div>
-                                    <div class="city-tag">Cantonese Food & Trade Center</div>
-                                </a>
+                        <!-- Xiamen -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/xiamen.jpg');">
+                                <div class="city-name">Xiamen</div>
+                                <div class="city-tag">Gulangyu Island</div>
                             </div>
-                            <div class="city-card">
-                                <a href="/travel-website/cities/hongkong.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Hongkong</span>
-                                    </div>
-                                    <div class="city-tag">Victoria Harbour & Skyline</div>
-                                </a>
+                            <div class="city-details">
+                                <p>🏝️ Gulangyu Island - UNESCO, no cars allowed</p>
+                                <p>🎹 Piano Museum & organ museum</p>
+                                <p>🏛️ European colonial architecture</p>
+                                <p>🌴 Xiamen University - most beautiful campus</p>
+                                <p>🍜 Seafood, oyster omelette, Fujian noodles</p>
+                                <a href="/travel-website/cities/xiamen.html" class="city-link">Explore Xiamen</a>
                             </div>
-                            <div class="city-card">
-                                <a href="/travel-website/cities/chongqing.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Chongqing</span>
-                                    </div>
-                                    <div class="city-tag">Mountain City & Hot Pot</div>
-                                </a>
+                        </div>
+                        
+                        <!-- Wuxi -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/wuxi.jpg');">
+                                <div class="city-name">Wuxi</div>
+                                <div class="city-tag">Taihu Lake</div>
+                            </div>
+                            <div class="city-details">
+                                <p>🏞️ Taihu Lake - 3rd largest freshwater lake</p>
+                                <p>🙏 Lingshan Grand Buddha - 88m bronze statue</p>
+                                <p>🏮 Huishan Ancient Town & clay figurines</p>
+                                <p>🎋 Li Garden & Yuantouzhu scenic area</p>
+                                <p>🍜 Wuxi spare ribs & sweet cuisine</p>
+                                <a href="/travel-website/cities/wuxi.html" class="city-link">Explore Wuxi</a>
                             </div>
                         </div>
                     </div>
-                    <div class="cities-nav">
-                        <button class="cities-nav-btn prev-cities">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <div class="cities-dots">
-                            <span class="city-dot active"></span>
-                            <span class="city-dot"></span>
-                            <span class="city-dot"></span>
-                            <span class="city-dot"></span>
+    <!-- SLIDE 3 -->
+                    <div class="carousel-slide">
+                        <!-- Hong Kong -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/hongkong.jpg');">
+                                <div class="city-name">Hong Kong</div>
+                                <div class="city-tag">Victoria Harbour</div>
+                            </div>
+                            <div class="city-details">
+                                <p>🌆 Victoria Harbour & Symphony of Lights</p>
+                                <p>🚠 Peak Tram to Victoria Peak</p>
+                                <p>🎡 Tian Tan Buddha & Po Lin Monastery</p>
+                                <p>🛍️ Causeway Bay & Temple Street Night Market</p>
+                                <p>🍜 Dim sum, egg tarts, pineapple buns</p>
+                                <a href="/travel-website/cities/hongkong.html" class="city-link">Explore Hong Kong</a>
+                            </div>
                         </div>
-                        <button class="cities-nav-btn next-cities">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
+                        
+                        <!-- Chongqing -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/chongqing.jpg');">
+                                <div class="city-name">Chongqing</div>
+                                <div class="city-tag">Mountain City & Hot Pot</div>
+                            </div>
+                            <div class="city-details">
+                                <p>🏔️ Mountain city with unique topography</p>
+                                <p>🌶️ Birthplace of Sichuan hot pot</p>
+                                <p>🚠 Yangtze River cable car & monorail</p>
+                                <p>🏮 Ciqikou Ancient Town & Hongya Cave</p>
+                                <p>🍜 Chongqing noodles & spicy street food</p>
+                                <a href="/travel-website/cities/chongqing.html" class="city-link">Explore Chongqing</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Harbin -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/harbin.jpg');">
+                                <div class="city-name">Harbin</div>
+                                <div class="city-tag">Ice Festival</div>
+                            </div>
+                            <div class="city-details">
+                                <p>❄️ Harbin Ice Festival - Jan-Feb each year</p>
+                                <p>🏛️ St. Sophia Cathedral & Russian architecture</p>
+                                <p>🎿 Yabuli Ski Resort - best skiing in China</p>
+                                <p>🍖 Dongbei cuisine & Harbin beer</p>
+                                <p>🎭 Siberian Tiger Park & Sun Island</p>
+                                <a href="/travel-website/cities/harbin.html" class="city-link">Explore Harbin</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    
+                    <!-- SLIDE 4 -->
+                    <div class="carousel-slide">
+                        <!-- Guangzhou -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/guangzhou.jpg');">
+                                <div class="city-name">Guangzhou</div>
+                                <div class="city-tag">Cantonese Food</div>
+                            </div>
+                            <div class="city-details">
+                                <p>🍜 Birthplace of Cantonese (Yue) cuisine</p>
+                                <p>🎡 Canton Tower - 600m tall, world's 3rd tallest</p>
+                                <p>🏮 Chen Clan Ancestral Hall & Temple of Six Banyan Trees</p>
+                                <p>🛍️ Shangxiajiu Pedestrian Street & wholesale markets</p>
+                                <p>🍵 Morning tea with dim sum & pastries</p>
+                                <a href="/travel-website/cities/guangzhou.html" class="city-link">Explore Guangzhou</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Shenzhen -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/shenzhen.jpg');">
+                                <div class="city-name">Shenzhen</div>
+                                <div class="city-tag">Tech Innovation</div>
+                            </div>
+                            <div class="city-details">
+                                <p>💻 China's Silicon Valley - tech innovation hub</p>
+                                <p>🎢 Window of the World & Happy Valley theme parks</p>
+                                <p>🏙️ Ping An Finance Centre - 2nd tallest in China</p>
+                                <p>🛍️ Huaqiangbei electronics market & malls</p>
+                                <p>🌊 Dameisha & Xiaomeisha beaches</p>
+                                <a href="/travel-website/cities/shenzhen.html" class="city-link">Explore Shenzhen</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Nanjing -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/nanjing.jpg');">
+                                <div class="city-name">Nanjing</div>
+                                <div class="city-tag">Ancient Capital</div>
+                            </div>
+                            <div class="city-details">
+                                <p>🏯 Former capital of 6 dynasties</p>
+                                <p>🌉 Yangtze River Bridge & ancient city walls</p>
+                                <p>🎋 Confucius Temple & Qinhuai River</p>
+                                <p>🕊️ Sun Yat-sen Mausoleum & Ming Xiaoling Mausoleum</p>
+                                <p>🍜 Nanjing salted duck & tangbao soup dumplings</p>
+                                <a href="/travel-website/cities/nanjing.html" class="city-link">Explore Nanjing</a>
+                            </div>
+                        </div>
+                    </div>
+    </div>
             </div>
             
-            <a href="#contact" class="btn btn-primary btn-lg">Plan Your Trip</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">About Us</h2>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h3 class="mb-4">Your Personal China Travel Guide</h3>
-                    <p class="mb-4">We specialize in helping travelers experience authentic China with personalized assistance and cultural introductions.</p>
-                    <p class="mb-4">Our team of China experts provides complete travel arrangements and connects you with local cultural experiences.</p>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Personal China travel assistance</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Cultural introductions & local experiences</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Complete travel arrangements</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 24/7 support during your China journey</li>
-                    </ul>
+            <!-- CAROUSEL NAVIGATION -->
+            <div class="carousel-navigation">
+                <button class="carousel-btn prev" id="prevBtn" aria-label="Previous slide">
+                    ←
+                </button>
+                
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                    <button class="carousel-dot" data-slide="1" aria-label="Go to slide 2"></button>
+                    <button class="carousel-dot" data-slide="2" aria-label="Go to slide 3"></button>
+                    <button class="carousel-dot" data-slide="3" aria-label="Go to slide 4"></button>
                 </div>
-                <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1547981609-4b6bf67b7d46?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
-                         alt="China Travel Experts" class="img-fluid rounded shadow">
+                
+                <button class="carousel-btn next" id="nextBtn" aria-label="Next slide">
+                    →
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- NEWS SECTION --><!-- NEWS SECTION -->
+    <section id="news" class="news-section">
+        <div class="container">
+            <h2 class="section-title">Latest Travel News</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-date">Feb 8, 2026</div>
+                    <h3 class="news-title">China Reopens Popular Tourist Routes</h3>
+                    <p class="news-excerpt">Several historic routes including the Silk Road and Tea Horse Road have been reopened with improved facilities for international travelers.</p>
+                    <a href="#" class="news-link">Read more →</a>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-date">Feb 5, 2026</div>
+                    <h3 class="news-title">New High-Speed Rail Connects Major Cities</h3>
+                    <p class="news-excerpt">The new Beijing-Shanghai-Guangzhou line reduces travel time between major cities by 40%, making multi-city tours more convenient.</p>
+                    <a href="#" class="news-link">Read more →</a>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-date">Jan 30, 2026</div>
+                    <h3 class="news-title">Cultural Festival Calendar 2026 Released</h3>
+                    <p class="news-excerpt">Plan your trip around major festivals including Spring Festival, Mid-Autumn Festival, and regional cultural celebrations.</p>
+                    <a href="#" class="news-link">Read more →</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Cities: Beijing, Shanghai, Chengdu, Qingdao, Xiamen, Wuxi, Hong Kong, Chongqing, Harbin, Guangzhou, Shenzhen, Nanjing --></section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Plan Your China Journey</h3>
+                    <p>Our team of China travel experts is ready to help you create the perfect itinerary with personalized cultural experiences.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>travel@china-assist.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <h4>WeChat</h4>
+                                <p>ChinaTravelExpert</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div>
+                                <h4>Hours</h4>
+                                <p>Mon-Fri: 9AM-6PM (China Time)<br>24/7 emergency support for travelers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Travel Dates (e.g., March 2026)">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Tell us about your travel interests..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title text-center">Our Services</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="service-card card bg-white p-4 text-center">
-                        <div class="service-icon">
-                            <i class="fas fa-map-marked-alt"></i>
-                        </div>
-                        <h4>Personal China Itineraries</h4>
-                        <p>Custom travel plans tailored to your interests with local cultural experiences.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card card bg-white p-4 text-center">
-                        <div class="service-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h4>Cultural Introductions</h4>
-                        <p>Connect with local experts for authentic cultural experiences and insights.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card card bg-white p-4 text-center">
-                        <div class="service-icon">
-                            <i class="fas fa-concierge-bell"></i>
-                        </div>
-                        <h4>Travel Arrangements</h4>
-                        <p>Complete travel logistics including flights, hotels, and local transportation.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Destinations Section -->
-    <section id="destinations" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">Popular Destinations</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="destination-card">
-                        <div class="row g-0">
-                            <div class="col-md-8">
-                                <div class="p-3">
-                                    <h4>Chengdu, China</h4>
-                                    <p>Home of giant pandas, spicy Sichuan cuisine, and ancient Shu culture.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
-                                     alt="Chengdu" class="img-fluid rounded-end" style="height: 100%; object-fit: cover;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="destination-card">
-                        <div class="row g-0">
-                            <div class="col-md-8">
-                                <div class="p-3">
-                                    <h4>Beijing, China</h4>
-                                    <p>China's capital with the Great Wall, Forbidden City, and rich history.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
-                                     alt="Beijing" class="img-fluid rounded-end" style="height: 100%; object-fit: cover;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="destination-card">
-                        <div class="row g-0">
-                            <div class="col-md-8">
-                                <div class="p-3">
-                                    <h4>Guilin, China</h4>
-                                    <p>Stunning karst mountains, Li River cruises, and picturesque landscapes.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
-                                     alt="Guilin" class="img-fluid rounded-end" style="height: 100%; object-fit: cover;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title text-center">Contact Us</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="contact-form">
-                        <form id="contactForm">
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="email" class="form-control" placeholder="Your Email" required>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Subject">
-                            </div>
-                            <div class="mb-3">
-                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
-                        </form>
-                        <div class="mt-4 text-center">
-                            <p class="mb-2"><i class="fas fa-phone me-2"></i> +1 (555) 123-4567</p>
-                            <p class="mb-2"><i class="fas fa-envelope me-2"></i> info@wanderlustadventures.com</p>
-                            <p><i class="fas fa-map-marker-alt me-2"></i> 123 Travel Street, Adventure City</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Traveling China like your home yard</h4>
-                    <p>Helping you travel China comfortably like your own home yard.</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Quick Links</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="#home" class="text-white text-decoration-none">Home</a></li>
-                        <li><a href="#about" class="text-white text-decoration-none">About</a></li>
-                        <li><a href="#services" class="text-white text-decoration-none">Services</a></li>
-                        <li><a href="#destinations" class="text-white text-decoration-none">Destinations</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h4>Connect With Us</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="bg-white my-4">
-            <div class="text-center">
-                <p>&copy; 2026 Traveling China like your home yard. All rights reserved.</p>
-            </div>
+            <h3>China Travel Assistance</h3>
+            <p>Personalized travel planning & cultural experiences</p>
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                12 Chinese Cities • Latest News • Contact Us • Working Carousel
+            </p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SIMPLE JAVASCRIPT -->
     <script>
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+    // ULTRA ROBUST CAROUSEL - WILL WORK
+    console.log('🔄 Loading ultra robust carousel...');
+    
+    // Multiple initialization methods
+    function initializeCarousel() {
+        console.log('🎯 Attempting to initialize carousel...');
+        
+        // METHOD 1: Try to get elements immediately
+        let track = document.querySelector('.carousel-track');
+        let slides = document.querySelectorAll('.carousel-slide');
+        let prevBtn = document.getElementById('prevBtn');
+        let nextBtn = document.getElementById('nextBtn');
+        let dots = document.querySelectorAll('.carousel-dot');
+        
+        console.log('🔍 Initial element check:', {
+            track: track ? 'FOUND' : 'NOT FOUND',
+            slides: slides.length,
+            prevBtn: prevBtn ? 'FOUND' : 'NOT FOUND',
+            nextBtn: nextBtn ? 'FOUND' : 'NOT FOUND',
+            dots: dots.length
         });
-
-        // Rotating Cities Display
-        document.addEventListener('DOMContentLoaded', function() {
-            const cityGroups = document.querySelectorAll('.cities-group');
-            const cityDots = document.querySelectorAll('.city-dot');
-            const prevBtn = document.querySelector('.prev-cities');
-            const nextBtn = document.querySelector('.next-cities');
-            let currentIndex = 0;
+        
+        // If elements not found, wait and try again
+        if (!track || slides.length === 0) {
+            console.log('⏳ Elements not ready, waiting 200ms...');
+            setTimeout(initializeCarousel, 200);
+            return;
+        }
+        
+        console.log('✅ All elements found! Starting carousel...');
+        
+        // CAROUSEL LOGIC
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        let autoInterval = null;
+        
+        // Update carousel display
+        function updateCarousel() {
+            console.log('📊 Moving to slide', currentSlide + 1, 'of', totalSlides);
             
-            function showCityGroup(index) {
-                // Hide all city groups
-                cityGroups.forEach(group => {
-                    group.classList.remove('active');
-                });
-                
-                // Remove active from all dots
-                cityDots.forEach(dot => {
+            // Calculate position (0%, -100%, -200%, -300%)
+            const position = -(currentSlide * 100);
+            track.style.transform = `translateX(${position}%)`;
+            track.style.transition = 'transform 0.5s ease-in-out';
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
                     dot.classList.remove('active');
-                });
-                
-                // Show selected city group
-                cityGroups[index].classList.add('active');
-                cityDots[index].classList.add('active');
-                currentIndex = index;
-            }
-            
-            // Next button click
-            if (nextBtn) {
-                nextBtn.addEventListener('click', function() {
-                    let nextIndex = currentIndex + 1;
-                    if (nextIndex >= cityGroups.length) {
-                        nextIndex = 0;
-                    }
-                    showCityGroup(nextIndex);
-                });
-            }
-            
-            // Previous button click
-            if (prevBtn) {
-                prevBtn.addEventListener('click', function() {
-                    let prevIndex = currentIndex - 1;
-                    if (prevIndex < 0) {
-                        prevIndex = cityGroups.length - 1;
-                    }
-                    showCityGroup(prevIndex);
-                });
-            }
-            
-            // Dot click
-            cityDots.forEach((dot, index) => {
-                dot.addEventListener('click', function() {
-                    showCityGroup(index);
-                });
-            });
-            
-            // Auto-rotate cities every 5 seconds
-            if (cityGroups.length > 0) {
-                setInterval(function() {
-                    let nextIndex = currentIndex + 1;
-                    if (nextIndex >= cityGroups.length) {
-                        nextIndex = 0;
-                    }
-                    showCityGroup(nextIndex);
-                }, 5000);
-            }
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
                 }
             });
+            
+            // Update slides
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+    
+    // Load and optimize images
+    function loadCityImages() {
+        const cityHeaders = document.querySelectorAll('.city-header');
+        cityHeaders.forEach(header => {
+            const bgImage = header.style.backgroundImage;
+            if (bgImage && bgImage !== 'none') {
+                const imgUrl = bgImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
+                const img = new Image();
+                img.onload = function() {
+                    header.classList.add('loaded');
+                    console.log('✅ Image loaded:', imgUrl);
+                };
+                img.onerror = function() {
+                    console.warn('⚠️ Failed to load image:', imgUrl);
+                    // Use fallback color
+                    header.style.backgroundColor = '#3b82f6';
+                };
+                img.src = imgUrl;
+            }
         });
-
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
+    }
+    
+    // Call after carousel initialization
+    setTimeout(loadCityImages, 500);
+        
+        // Next slide
+        function goNext() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+        
+        // Previous slide
+        function goPrev() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+        
+        // Go to specific slide
+        function goToSlide(index) {
+            if (index >= 0 && index < totalSlides) {
+                currentSlide = index;
+                updateCarousel();
+            }
+        }
+        
+        // Auto-rotate
+        function startAutoRotate() {
+            if (autoInterval) clearInterval(autoInterval);
+            autoInterval = setInterval(goNext, 5000);
+        }
+        
+        function stopAutoRotate() {
+            if (autoInterval) {
+                clearInterval(autoInterval);
+                autoInterval = null;
+            }
+        }
+        
+        // EVENT LISTENERS
+        // Next button
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function(e) {
+                console.log('👉 NEXT button clicked');
+                e.stopPropagation();
+                goNext();
+            });
+        } else {
+            console.warn('⚠️ Next button not found');
+        }
+        
+        // Previous button
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function(e) {
+                console.log('👈 PREV button clicked');
+                e.stopPropagation();
+                goPrev();
+            });
+        } else {
+            console.warn('⚠️ Previous button not found');
+        }
+        
+        // Dot buttons
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', function(e) {
+                console.log('🔘 DOT', index + 1, 'clicked');
+                e.stopPropagation();
+                goToSlide(index);
+            });
         });
-    </script>
-</body>
+        
+        // Hover to pause
+        if (track) {
+            track.addEventListener('mouseenter', stopAutoRotate);
+            track.addEventListener('mouseleave', startAutoRotate);
+        }
+        
+        // Initialize
+        updateCarousel();
+        startAutoRotate();
+        
+        console.log('🎉 CAROUSEL READY AND WORKING!');
+        console.log('👉 Click the arrow buttons or dots to test.');
+        
+        // Also expose functions for debugging
+        window.debugCarousel = {
+            goNext: goNext,
+            goPrev: goPrev,
+            goToSlide: goToSlide,
+            currentSlide: () => currentSlide,
+            totalSlides: totalSlides
+        };
+    }
+    
+    // Multiple initialization triggers
+    document.addEventListener('DOMContentLoaded', initializeCarousel);
+    window.addEventListener('load', initializeCarousel);
+    
+    // Fallback: try after 1 second
+    setTimeout(initializeCarousel, 1000);
+    
+    console.log('🚀 Carousel initialization scheduled');
+    
+    // Verify carousel layout
+    function verifyCarouselLayout() {
+        const track = document.querySelector('.carousel-track');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const cityCards = document.querySelectorAll('.city-card');
+        
+        if (!track || slides.length === 0) return;
+        
+        console.log('🔍 Carousel Layout Check:');
+        console.log('- Track display:', window.getComputedStyle(track).display);
+        console.log('- Track flexDirection:', window.getComputedStyle(track).flexDirection);
+        console.log('- Slide display:', window.getComputedStyle(slides[0]).display);
+        console.log('- Slide flexDirection:', window.getComputedStyle(slides[0]).flexDirection);
+        console.log('- City cards per slide:', cityCards.length / slides.length);
+        console.log('- First city card width:', window.getComputedStyle(cityCards[0]).width);
+        
+        // Force correct layout if needed
+        if (window.getComputedStyle(slides[0]).flexDirection === 'column') {
+            console.warn('⚠️  Slide has column layout - forcing row');
+            slides.forEach(slide => {
+                slide.style.flexDirection = 'row';
+            });
+        }
+    }
+    
+    // Run verification after carousel init
+    setTimeout(verifyCarouselLayout, 500);</script>
+<!-- DEBUG INFO -->
+    <div id="carouselDebug" style="display: none; background: #fef3c7; border: 1px solid #f59e0b; padding: 10px; margin: 10px 0; border-radius: 5px; font-family: monospace;">
+        <strong>Carousel Debug Info:</strong>
+        <div id="debugOutput"></div>
+    </div>
+    
+    <script>
+    // Debug helper
+    function showDebugInfo() {
+        const debugDiv = document.getElementById('carouselDebug');
+        const output = document.getElementById('debugOutput');
+        
+        if (debugDiv && output) {
+            const track = document.querySelector('.carousel-track');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dots = document.querySelectorAll('.carousel-dot');
+            
+            output.innerHTML = `
+                Track: ${track ? 'FOUND' : 'MISSING'}<br>
+                Slides: ${slides.length}<br>
+                Prev Button: ${prevBtn ? 'FOUND' : 'MISSING'}<br>
+                Next Button: ${nextBtn ? 'FOUND' : 'MISSING'}<br>
+                Dots: ${dots.length}<br>
+                Window loaded: ${document.readyState}
+            `;
+            
+            debugDiv.style.display = 'block';
+        }
+    }
+    
+    // Show debug after 2 seconds
+    setTimeout(showDebugInfo, 2000);
+    </script></body>
 </html>

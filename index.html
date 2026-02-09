@@ -1157,7 +1157,24 @@
         .city-card-link {
             position: relative !important;
             z-index: 4 !important;
-        }</style>
+        }
+        /* Carousel transitions */
+        .cities-group {
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .cities-group:not(.active) {
+            opacity: 0;
+            transform: translateX(30px);
+            pointer-events: none;
+        }
+        
+        .cities-group.active {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+        </style>
 </head>
 <body>
     <!-- Navigation -->

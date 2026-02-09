@@ -739,29 +739,64 @@
             overflow: hidden;
         }
         
-        /* SIMPLE FIX: display:none for inactive, display:flex for active */
-        
-        /* FORCEFUL FIX: Override ANY other CSS */
-        .cities-group {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-            position: static !important;
-            height: 0 !important;
-            width: 0 !important;
-            overflow: hidden !important;
-            pointer-events: none !important;
+        /* SIMPLE GRID LAYOUT */
+        .cities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
         }
         
-        .cities-group.active {
-            display: flex !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            position: relative !important;
-            height: auto !important;
-            width: 100% !important;
-            overflow: visible !important;
-            pointer-events: auto !important;
+        .city-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .city-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .city-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .city-image {
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .city-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        .city-name {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .city-tag {
+            padding: 12px 15px;
+            background: white;
+            color: #475569;
+            font-size: 0.85rem;
+            border-top: 1px solid #e2e8f0;
         }
     
         
@@ -821,57 +856,6 @@
             border-top: 1px solid #e2e8f0;
         }
         
-        /* Carousel Navigation */
-        .cities-nav {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 30px;
-        }
-        
-        .cities-nav-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: none;
-            background: white;
-            color: #475569;
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .cities-nav-btn:hover {
-            background: #3b82f6;
-            color: white;
-            transform: scale(1.1);
-        }
-        
-        /* Carousel Dots */
-        .cities-dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 20px;
-        }
-        
-        .city-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #cbd5e1;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .city-dot.active {
-            background: #3b82f6;
-            transform: scale(1.3);
-        }
-        
-        .city-dot:hover {
             background: #94a3b8;
         }
         /* ===== END CLEAN CAROUSEL CSS ===== */
@@ -915,17 +899,8 @@
                         <span class="cities-count">12 Cities</span>
                     </div>
                     <div class="cities-content">
-                        <!-- Group 1: Chengdu, Beijing, Wuxi -->
-                        <div class="cities-group active">
-                            <div class="city-card">
-                                <a href="/travel-website/cities/chengdu.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('images/user_photos/chengdu.jpg');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Chengdu</span>
-                                    </div>
-                                    <div class="city-tag">Pandas & Spicy Cuisine</div>
-                                </a>
-                            </div>
+                        <div class="cities-grid">
+                            <!-- Beijing -->
                             <div class="city-card">
                                 <a href="/travel-website/cities/beijing.html" class="city-card-link">
                                     <div class="city-image" style="background-image: url('images/user_photos/beijing.jpg');">
@@ -935,50 +910,8 @@
                                     <div class="city-tag">Great Wall & Forbidden City</div>
                                 </a>
                             </div>
-                            <div class="city-card">
-                                <a href="/travel-website/cities/wuxi.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('images/user_photos/wuxi.jpg');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Wuxi</span>
-                                    </div>
-                                    <div class="city-tag">Taihu Lake & Gardens</div>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <!-- Group 2: Qingdao, Xiamen, Harbin -->
-                        <div class="cities-group">
-                            <div class="city-card">
-                                <a href="/travel-website/cities/qingdao.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('images/user_photos/qingdao.jpg');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Qingdao</span>
-                                    </div>
-                                    <div class="city-tag">Beer & Beaches</div>
-                                </a>
-                            </div>
-                            <div class="city-card">
-                                <a href="/travel-website/cities/xiamen.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('images/user_photos/xiamen.jpg');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Xiamen</span>
-                                    </div>
-                                    <div class="city-tag">Gulangyu Island & Beaches</div>
-                                </a>
-                            </div>
-                            <div class="city-card">
-                                <a href="/travel-website/cities/harbin.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('images/user_photos/harbin.jpg');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Harbin</span>
-                                    </div>
-                                    <div class="city-tag">Ice Festival & Russian Architecture</div>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <!-- Group 3: Shanghai, Nanjing, Shenzhen -->
-                        <div class="cities-group">
+                            
+                            <!-- Shanghai -->
                             <div class="city-card">
                                 <a href="/travel-website/cities/shanghai.html" class="city-card-link">
                                     <div class="city-image" style="background-image: url('images/user_photos/shanghai.jpg');">
@@ -988,46 +921,19 @@
                                     <div class="city-tag">The Bund & Skyscrapers</div>
                                 </a>
                             </div>
+                            
+                            <!-- Chengdu -->
                             <div class="city-card">
-                                <a href="/travel-website/cities/nanjing.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('images/user_photos/nanjing.jpg');">
+                                <a href="/travel-website/cities/chengdu.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('images/user_photos/chengdu.jpg');">
                                         <div class="city-overlay"></div>
-                                        <span class="city-name">Nanjing</span>
+                                        <span class="city-name">Chengdu</span>
                                     </div>
-                                    <div class="city-tag">Ancient Capital & Yangtze River</div>
+                                    <div class="city-tag">Pandas & Spicy Cuisine</div>
                                 </a>
                             </div>
-                            <div class="city-card">
-                                <a href="/travel-website/cities/shenzhen.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('images/user_photos/shenzhen.jpg');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Shenzhen</span>
-                                    </div>
-                                    <div class="city-tag">Tech Hub & Theme Parks</div>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <!-- Group 4: Guangzhou, Hong Kong, Chongqing -->
-                        <div class="cities-group">
-                            <div class="city-card">
-                                <a href="/travel-website/cities/guangzhou.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('images/user_photos/guangzhou.jpg');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Guangzhou</span>
-                                    </div>
-                                    <div class="city-tag">Cantonese Food & Trade Center</div>
-                                </a>
-                            </div>
-                            <div class="city-card">
-                                <a href="/travel-website/cities/hongkong.html" class="city-card-link">
-                                    <div class="city-image" style="background-image: url('images/user_photos/hongkong.jpg');">
-                                        <div class="city-overlay"></div>
-                                        <span class="city-name">Hongkong</span>
-                                    </div>
-                                    <div class="city-tag">Victoria Harbour & Skyline</div>
-                                </a>
-                            </div>
+                            
+                            <!-- Chongqing -->
                             <div class="city-card">
                                 <a href="/travel-website/cities/chongqing.html" class="city-card-link">
                                     <div class="city-image" style="background-image: url('images/user_photos/chongqing.jpg');">
@@ -1037,21 +943,95 @@
                                     <div class="city-tag">Mountain City & Hot Pot</div>
                                 </a>
                             </div>
+                            
+                            <!-- Harbin -->
+                            <div class="city-card">
+                                <a href="/travel-website/cities/harbin.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('images/user_photos/harbin.jpg');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Harbin</span>
+                                    </div>
+                                    <div class="city-tag">Ice Festival & Russian Architecture</div>
+                                </a>
+                            </div>
+                            
+                            <!-- Wuxi -->
+                            <div class="city-card">
+                                <a href="/travel-website/cities/wuxi.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('images/user_photos/wuxi.jpg');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Wuxi</span>
+                                    </div>
+                                    <div class="city-tag">Taihu Lake & Gardens</div>
+                                </a>
+                            </div>
+                            
+                            <!-- Qingdao -->
+                            <div class="city-card">
+                                <a href="/travel-website/cities/qingdao.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('images/user_photos/qingdao.jpg');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Qingdao</span>
+                                    </div>
+                                    <div class="city-tag">Beer & Beaches</div>
+                                </a>
+                            </div>
+                            
+                            <!-- Xiamen -->
+                            <div class="city-card">
+                                <a href="/travel-website/cities/xiamen.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('images/user_photos/xiamen.jpg');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Xiamen</span>
+                                    </div>
+                                    <div class="city-tag">Gulangyu Island & Beaches</div>
+                                </a>
+                            </div>
+                            
+                            <!-- Nanjing -->
+                            <div class="city-card">
+                                <a href="/travel-website/cities/nanjing.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('images/user_photos/nanjing.jpg');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Nanjing</span>
+                                    </div>
+                                    <div class="city-tag">Ancient Capital & Yangtze River</div>
+                                </a>
+                            </div>
+                            
+                            <!-- Shenzhen -->
+                            <div class="city-card">
+                                <a href="/travel-website/cities/shenzhen.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('images/user_photos/shenzhen.jpg');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Shenzhen</span>
+                                    </div>
+                                    <div class="city-tag">Tech Hub & Theme Parks</div>
+                                </a>
+                            </div>
+                            
+                            <!-- Guangzhou -->
+                            <div class="city-card">
+                                <a href="/travel-website/cities/guangzhou.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('images/user_photos/guangzhou.jpg');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Guangzhou</span>
+                                    </div>
+                                    <div class="city-tag">Cantonese Food & Trade Center</div>
+                                </a>
+                            </div>
+                            
+                            <!-- Hong Kong -->
+                            <div class="city-card">
+                                <a href="/travel-website/cities/hongkong.html" class="city-card-link">
+                                    <div class="city-image" style="background-image: url('images/user_photos/hongkong.jpg');">
+                                        <div class="city-overlay"></div>
+                                        <span class="city-name">Hong Kong</span>
+                                    </div>
+                                    <div class="city-tag">Victoria Harbour & Skyline</div>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="cities-nav">
-                        <button class="cities-nav-btn prev-cities">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <div class="cities-dots">
-                            <span class="city-dot active"></span>
-                            <span class="city-dot"></span>
-                            <span class="city-dot"></span>
-                            <span class="city-dot"></span>
-                        </div>
-                        <button class="cities-nav-btn next-cities">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
                     </div>
                 </div>
             </div>
@@ -1322,25 +1302,11 @@
         }
     
         
-        // Next button click
-        if (nextBtn) {
-            nextBtn.addEventListener('click', function() {
-                let nextIndex = currentIndex + 1;
-                if (nextIndex >= cityGroups.length) {
-                    nextIndex = 0;
-                }
-                showCityGroup(nextIndex);
+        
             });
         }
         
-        // Previous button click
-        if (prevBtn) {
-            prevBtn.addEventListener('click', function() {
-                let prevIndex = currentIndex - 1;
-                if (prevIndex < 0) {
-                    prevIndex = cityGroups.length - 1;
-                }
-                showCityGroup(prevIndex);
+        
             });
         }
         
@@ -1363,75 +1329,11 @@
         }
         
         
-        // FORCEFUL INITIALIZATION
-        console.log('Forceful carousel initialization...');
         
-        // First, hide ALL groups with inline styles
-        cityGroups.forEach((group, i) => {
-            if (i === 0) {
-                group.classList.add('active');
-                group.style.display = 'flex';
-                group.style.visibility = 'visible';
-                group.style.opacity = '1';
-                group.style.height = 'auto';
-                group.style.width = '100%';
-            } else {
-                group.classList.remove('active');
-                group.style.display = 'none';
-                group.style.visibility = 'hidden';
-                group.style.opacity = '0';
-                group.style.height = '0';
-                group.style.width = '0';
-            }
-        });
-        
-        // Initialize dots
-        cityDots.forEach((dot, i) => {
-            if (i === 0) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
-        });
-        
-        currentIndex = 0;
-        console.log('Forceful initialization complete');
     
         
         
-        // FORCEFUL INITIALIZATION
-        console.log('Forceful carousel initialization...');
         
-        // First, hide ALL groups with inline styles
-        cityGroups.forEach((group, i) => {
-            if (i === 0) {
-                group.classList.add('active');
-                group.style.display = 'flex';
-                group.style.visibility = 'visible';
-                group.style.opacity = '1';
-                group.style.height = 'auto';
-                group.style.width = '100%';
-            } else {
-                group.classList.remove('active');
-                group.style.display = 'none';
-                group.style.visibility = 'hidden';
-                group.style.opacity = '0';
-                group.style.height = '0';
-                group.style.width = '0';
-            }
-        });
-        
-        // Initialize dots
-        cityDots.forEach((dot, i) => {
-            if (i === 0) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
-        });
-        
-        currentIndex = 0;
-        console.log('Forceful initialization complete');
     
         showCityGroup(0);
         
@@ -1568,6 +1470,23 @@
             console.log(`❌ PROBLEM: ${visibleGroups.length} groups are visible (should be 1)!`);
         }
     }, 500);
+    
+    // Simple static grid loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('✅ Static grid loaded - all 12 cities visible');
+        const cityCards = document.querySelectorAll('.city-card');
+        console.log('City cards found:', cityCards.length);
+        
+        // Verify all cards are visible
+        const visibleCards = Array.from(cityCards).filter(card => 
+            window.getComputedStyle(card).display !== 'none'
+        );
+        console.log('Visible city cards:', visibleCards.length);
+        
+        if (visibleCards.length === 12) {
+            console.log('✅ SUCCESS: All 12 cities visible in grid layout!');
+        }
+    });
     </script>
 </body>
 </html>

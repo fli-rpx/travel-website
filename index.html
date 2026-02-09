@@ -681,6 +681,39 @@
             height: 40px;
             font-size: 16px;
         }
+    }
+    /* Image loading optimization */
+    .city-header {
+        background-color: #f0f0f0;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    
+    .city-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+        z-index: 1;
+    }
+    
+    .city-name, .city-tag {
+        position: relative;
+        z-index: 2;
+    }
+    
+    /* Fade in effect for images */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    .city-header.loaded {
+        animation: fadeIn 0.5s ease-in;
     }</style>
 </head>
 <body>
@@ -749,42 +782,42 @@
                     <div class="carousel-slide">
                         <!-- Xi'an -->
                         <div class="city-card">
-                            <div class="city-header" style="background-image: url('images/user_photos/beijing.jpg');">
+                            <div class="city-header" style="background-image: url('images/user_photos/qingdao.jpg');"
                                 <div class="city-name">Xi'an</div>
                                 <div class="city-tag">Terracotta Army</div>
                             </div>
                             <div class="city-details">
-                                <p>🗿 Terracotta Warriors archaeological site</p>
-                                <p>🏮 Ancient city walls & Muslim Quarter</p>
-                                <p>🍜 Noodle dishes & street food</p>
+                                <p>🗿 Terracotta Warriors - 8,000 life-sized figures</p>
+                                <p>🏮 Ancient city walls from Ming Dynasty</p>
+                                <p>🍜 Biangbiang noodles & Muslim Quarter food</p>
                                 <a href="#" class="city-link">Explore Xi'an</a>
                             </div>
                         </div>
                         
                         <!-- Guilin -->
                         <div class="city-card">
-                            <div class="city-header" style="background-image: url('images/user_photos/shanghai.jpg');">
+                            <div class="city-header" style="background-image: url('images/user_photos/xiamen.jpg');"
                                 <div class="city-name">Guilin</div>
                                 <div class="city-tag">Li River Scenery</div>
                             </div>
                             <div class="city-details">
-                                <p>🏞️ Stunning karst mountain landscapes</p>
-                                <p>🎋 Li River cruise & bamboo rafting</p>
-                                <p>📸 Iconic Chinese scenery & photography</p>
+                                <p>🏞️ Karst mountains along Li River</p>
+                                <p>🎋 Bamboo rafting through stunning scenery</p>
+                                <p>📸 Most photographed landscape in China</p>
                                 <a href="#" class="city-link">Explore Guilin</a>
                             </div>
                         </div>
                         
                         <!-- Hangzhou -->
                         <div class="city-card">
-                            <div class="city-header" style="background-image: url('images/user_photos/chengdu.jpg');">
+                            <div class="city-header" style="background-image: url('images/user_photos/wuxi.jpg');"
                                 <div class="city-name">Hangzhou</div>
                                 <div class="city-tag">West Lake Paradise</div>
                             </div>
                             <div class="city-details">
-                                <p>🏞️ UNESCO West Lake scenic area</p>
-                                <p>🍵 Longjing tea plantations & tasting</p>
-                                <p>🎋 Ancient temples & pagodas</p>
+                                <p>🏞️ UNESCO West Lake with pagodas</p>
+                                <p>🍵 Dragon Well tea plantations</p>
+                                <p>🎋 Lingyin Temple & ancient gardens</p>
                                 <a href="#" class="city-link">Explore Hangzhou</a>
                             </div>
                         </div>
@@ -1063,6 +1096,31 @@
                 }
             });
         }
+    
+    // Load and optimize images
+    function loadCityImages() {
+        const cityHeaders = document.querySelectorAll('.city-header');
+        cityHeaders.forEach(header => {
+            const bgImage = header.style.backgroundImage;
+            if (bgImage && bgImage !== 'none') {
+                const imgUrl = bgImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
+                const img = new Image();
+                img.onload = function() {
+                    header.classList.add('loaded');
+                    console.log('✅ Image loaded:', imgUrl);
+                };
+                img.onerror = function() {
+                    console.warn('⚠️ Failed to load image:', imgUrl);
+                    // Use fallback color
+                    header.style.backgroundColor = '#3b82f6';
+                };
+                img.src = imgUrl;
+            }
+        });
+    }
+    
+    // Call after carousel initialization
+    setTimeout(loadCityImages, 500);
         
         // Next slide
         function goNext() {

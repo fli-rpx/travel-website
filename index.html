@@ -1269,72 +1269,6 @@
             
         );
 
-        // Rotating Cities Display
-        document.addEventListener('DOMContentLoaded', function() {
-            const cityGroups = document.querySelectorAll('.cities-group');
-            const cityDots = document.querySelectorAll('.city-dot');
-            const prevBtn = document.querySelector('.prev-cities');
-            const nextBtn = document.querySelector('.next-cities');
-            let currentIndex = 0;
-            
-            function showCityGroup(index) {
-                // Hide all city groups
-                cityGroups.forEach(group => {
-                    group.classList.remove('active');
-                );
-                
-                // Remove active from all dots
-                cityDots.forEach(dot => {
-                    dot.classList.remove('active');
-                );
-                
-                // Show selected city group
-                cityGroups[index].classList.add('active');
-                cityDots[index].classList.add('active');
-                currentIndex = index;
-            
-            
-            // Next button click
-            if (nextBtn) {
-                nextBtn.addEventListener('click', function() {
-                    let nextIndex = currentIndex + 1;
-                    if (nextIndex >= cityGroups.length) {
-                        nextIndex = 0;
-                    
-                    showCityGroup(nextIndex);
-                );
-            
-            
-            // Previous button click
-            if (prevBtn) {
-                prevBtn.addEventListener('click', function() {
-                    let prevIndex = currentIndex - 1;
-                    if (prevIndex < 0) {
-                        prevIndex = cityGroups.length - 1;
-                    
-                    showCityGroup(prevIndex);
-                );
-            
-            
-            // Dot click
-            cityDots.forEach((dot, index) => {
-                dot.addEventListener('click', function() {
-                    showCityGroup(index);
-                );
-            );
-            
-            // Auto-rotate cities every 5 seconds
-            if (cityGroups.length > 0) {
-                setInterval(function() {
-                    let nextIndex = currentIndex + 1;
-                    if (nextIndex >= cityGroups.length) {
-                        nextIndex = 0;
-                    
-                    showCityGroup(nextIndex);
-                , 5000);
-            
-        );
-
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1445,6 +1379,24 @@
         console.log('- Prev button:', prevBtn ? 'Found' : 'Not found');
     });
     // ===== END CLEAN CAROUSEL JAVASCRIPT =====
+    
+    // Test: Log when page loads
+    console.log('Page loaded successfully');
+    
+    // Test: Check if carousel elements exist
+    setTimeout(function() {
+        const groups = document.querySelectorAll('.cities-group');
+        const activeGroups = document.querySelectorAll('.cities-group.active');
+        console.log('Carousel test:');
+        console.log('- Total groups:', groups.length);
+        console.log('- Active groups:', activeGroups.length);
+        
+        if (groups.length > 0 && activeGroups.length === 1) {
+            console.log('✅ Carousel appears to be working correctly');
+        } else {
+            console.log('❌ Carousel might have issues');
+        }
+    }, 1000);
     </script>
 </body>
 </html>

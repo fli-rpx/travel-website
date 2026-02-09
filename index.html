@@ -791,7 +791,80 @@
         max-height: 180px; /* Limit height for consistency */
     }
     
+    .city-details::-webkit-scrollbar {
+        width: 4px;
+    }
     
+    .city-details::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 2px;
+    }
+    
+    .city-details::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 2px;
+    }
+    
+    .city-details::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+    
+    .city-details p {
+        margin-bottom: 6px;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        color: #475569;
+        display: flex;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .city-details p::before {
+        content: "•";
+        color: #3b82f6;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+    
+    .city-name {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #1e293b;
+    }
+    
+    .city-tag {
+        font-size: 0.9rem;
+        color: #64748b;
+        margin-bottom: 12px;
+        font-style: italic;
+    }
+    
+    .city-link {
+        margin-top: auto;
+        padding-top: 10px;
+        display: inline-block;
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+    
+    .city-link:hover {
+        color: #2563eb;
+        text-decoration: underline;
+    }</style>
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>Experience Authentic China</h1>
+            <p>Personal travel assistance with cultural introductions and complete arrangements for your China journey.</p>
+            <a href="#cities" class="hero-btn">Explore Cities in Detail</a>
+        </div>
+    </section>
 
     <!-- SIMPLE CAROUSEL -->
     <section id="cities" class="carousel-section">
@@ -809,10 +882,20 @@
                                 <div class="city-tag">Great Wall & Forbidden City</div>
                             </div>
                             <div class="city-details">
-                            <p>🏯 Forbidden City & Temple of Heaven</p>
-                                <p>🐉 Summer Palace & Great Wall</p>
-                                <p>🍜 Peking duck & imperial cuisine</p>
+                                <p>🇨🇳 Capital with 3,000+ years of history</p>
+                                <p>🏯 Forbidden City & Temple of Heaven</p>
+                                <p>🐉 Summer Palace & Ming Tombs</p>
+                                <p>🍜 Peking duck, zhajiangmian noodles</p>
+                                <p>🎭 Peking opera & traditional tea houses</p>
                                 <a href="/travel-website/cities/beijing.html" class="city-link">Explore Beijing</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Shanghai -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/shanghai.jpg');">
+                                <div class="city-name">Shanghai</div>
+                                <div class="city-tag">The Bund & Skyscrapers</div>
                             </div>
                             <div class="city-details">
                                 <p>🏙️ Global financial center & tallest skyscrapers</p>
@@ -831,11 +914,23 @@
                                 <div class="city-tag">Pandas & Spicy Cuisine</div>
                             </div>
                             <div class="city-details">
-                            <p>🐼 Giant Panda Research Center</p>
-                                <p>🌶️ Sichuan hot pot & spicy cuisine</p>
+                                <p>🐼 Chengdu Panda Base - see baby pandas</p>
+                                <p>🌶️ Sichuan hot pot & mapo tofu</p>
                                 <p>🎭 Sichuan opera with face-changing</p>
+                                <p>🏮 Jinli Ancient Street & Wuhou Temple</p>
+                                <p>🍵 Traditional tea houses & mahjong culture</p>
                                 <a href="/travel-website/cities/chengdu.html" class="city-link">Explore Chengdu</a>
                             </div>
+                        </div>
+                    </div>
+                    
+                                        <!-- SLIDE 2 -->
+                    <div class="carousel-slide">
+                        <!-- Qingdao -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/qingdao.jpg');">
+                                <div class="city-name">Qingdao</div>
+                                <div class="city-tag">Beer & Beaches</div>
                             </div>
                             <div class="city-details">
                                 <p>🍺 Tsingtao Beer Museum & brewery tour</p>
@@ -854,10 +949,20 @@
                                 <div class="city-tag">Gulangyu Island</div>
                             </div>
                             <div class="city-details">
-                            <p>🏝️ Gulangyu Island - UNESCO site</p>
-                                <p>🎹 Piano museums & European architecture</p>
-                                <p>🍜 Seafood & Fujian cuisine</p>
+                                <p>🏝️ Gulangyu Island - UNESCO, no cars allowed</p>
+                                <p>🎹 Piano Museum & organ museum</p>
+                                <p>🏛️ European colonial architecture</p>
+                                <p>🌴 Xiamen University - most beautiful campus</p>
+                                <p>🍜 Seafood, oyster omelette, Fujian noodles</p>
                                 <a href="/travel-website/cities/xiamen.html" class="city-link">Explore Xiamen</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Wuxi -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/wuxi.jpg');">
+                                <div class="city-name">Wuxi</div>
+                                <div class="city-tag">Taihu Lake</div>
                             </div>
                             <div class="city-details">
                                 <p>🏞️ Taihu Lake - 3rd largest freshwater lake</p>
@@ -878,10 +983,20 @@
                                 <div class="city-tag">Victoria Harbour</div>
                             </div>
                             <div class="city-details">
-                            <p>🌆 Victoria Harbour skyline</p>
+                                <p>🌆 Victoria Harbour & Symphony of Lights</p>
                                 <p>🚠 Peak Tram to Victoria Peak</p>
-                                <p>🍜 Dim sum & egg tarts</p>
-                                <a href="/travel-website/cities/hong kong.html" class="city-link">Explore Hong Kong</a>
+                                <p>🎡 Tian Tan Buddha & Po Lin Monastery</p>
+                                <p>🛍️ Causeway Bay & Temple Street Night Market</p>
+                                <p>🍜 Dim sum, egg tarts, pineapple buns</p>
+                                <a href="/travel-website/cities/hongkong.html" class="city-link">Explore Hong Kong</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Chongqing -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/chongqing.jpg');">
+                                <div class="city-name">Chongqing</div>
+                                <div class="city-tag">Mountain City & Hot Pot</div>
                             </div>
                             <div class="city-details">
                                 <p>🏔️ Mountain city with unique topography</p>
@@ -900,11 +1015,23 @@
                                 <div class="city-tag">Ice Festival</div>
                             </div>
                             <div class="city-details">
-                            <p>❄️ World-famous Ice Festival</p>
-                                <p>🏛️ Russian architecture influence</p>
-                                <p>🍖 Northeastern Chinese cuisine</p>
+                                <p>❄️ Harbin Ice Festival - Jan-Feb each year</p>
+                                <p>🏛️ St. Sophia Cathedral & Russian architecture</p>
+                                <p>🎿 Yabuli Ski Resort - best skiing in China</p>
+                                <p>🍖 Dongbei cuisine & Harbin beer</p>
+                                <p>🎭 Siberian Tiger Park & Sun Island</p>
                                 <a href="/travel-website/cities/harbin.html" class="city-link">Explore Harbin</a>
                             </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SLIDE 4 -->
+                    <div class="carousel-slide">
+                        <!-- Guangzhou -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/guangzhou.jpg');">
+                                <div class="city-name">Guangzhou</div>
+                                <div class="city-tag">Cantonese Food</div>
                             </div>
                             <div class="city-details">
                                 <p>🍜 Birthplace of Cantonese (Yue) cuisine</p>
@@ -923,10 +1050,20 @@
                                 <div class="city-tag">Tech Innovation</div>
                             </div>
                             <div class="city-details">
-                            <p>💻 China's Silicon Valley tech hub</p>
-                                <p>🎢 Window of the World theme park</p>
-                                <p>🛍️ Huaqiangbei electronics market</p>
+                                <p>💻 China's Silicon Valley - tech innovation hub</p>
+                                <p>🎢 Window of the World & Happy Valley theme parks</p>
+                                <p>🏙️ Ping An Finance Centre - 2nd tallest in China</p>
+                                <p>🛍️ Huaqiangbei electronics market & malls</p>
+                                <p>🌊 Dameisha & Xiaomeisha beaches</p>
                                 <a href="/travel-website/cities/shenzhen.html" class="city-link">Explore Shenzhen</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Nanjing -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/nanjing.jpg');">
+                                <div class="city-name">Nanjing</div>
+                                <div class="city-tag">Ancient Capital</div>
                             </div>
                             <div class="city-details">
                                 <p>🏯 Former capital of 6 dynasties</p>

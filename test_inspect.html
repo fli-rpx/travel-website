@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inspect Actual City Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #333;
+            margin: 20px 0;
+        }
+        .instructions {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        code {
+            background: #e0e0e0;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inspect Actual City Page</h1>
+    
+    <div class="instructions">
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Right-click on the hero section below (red border area)</li>
+            <li>Select <code>Inspect</code> or <code>Inspect Element</code></li>
+            <li>In the DevTools, look at the <strong>Styles</strong> panel</li>
+            <li>Check what CSS is being applied to the <code>.city-hero</code> element</li>
+            <li>Look for any <strong>overridden</strong> or <strong>crossed-out</strong> styles</li>
+        </ol>
+        
+        <p><strong>Key things to check:</strong></p>
+        <ul>
+            <li>Is the <code>background-image</code> property present?</li>
+            <li>Is it <strong>crossed out</strong> (overridden by another rule)?</li>
+            <li>What is the <strong>computed value</strong> of <code>background-image</code>?</li>
+            <li>Are there any <strong>!important</strong> rules overriding it?</li>
+        </ul>
+    </div>
+    
+    <h2>Actual Harbin Page (in iframe):</h2>
+    <iframe src="cities/harbin.html" id="city-frame"></iframe>
+    
+    <div class="instructions">
+        <h3>If you can't inspect the iframe:</h3>
+        <p>Open the actual page directly: <a href="cities/harbin.html" target="_blank">Harbin City Page</a></p>
+        <p>Then right-click on the hero section and inspect it.</p>
+    </div>
+    
+    <h2>What to report back:</h2>
+    <ul>
+        <li>Is the <code>background-image</code> property visible in the Styles panel?</li>
+        <li>Is it crossed out (strikethrough)?</li>
+        <li>What's the computed value shown?</li>
+        <li>Are there any error messages in the Console?</li>
+    </ul>
+
+    <script>
+        // Add some time for iframe to load
+        setTimeout(function() {
+            console.log('Iframe loaded. Right-click on hero section and select "Inspect".');
+        }, 2000);
+    </script>
+</body>
+</html>

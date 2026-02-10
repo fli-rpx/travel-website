@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diagnose Carousel</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .diagnostic {
+            background: #f0f0f0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .test-area {
+            border: 3px dashed #666;
+            padding: 20px;
+            margin: 20px 0;
+            min-height: 200px;
+            position: relative;
+        }
+        .city-box {
+            width: 100px;
+            height: 100px;
+            background: #3b82f6;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .absolute {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+        }
+        .relative {
+            position: relative !important;
+        }
+        .visible {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        .invisible {
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>Carousel Diagnostic Tool</h1>
+    
+    <div class="diagnostic">
+        <h3>Test 1: CSS Positioning</h3>
+        <p>This tests if absolute/relative positioning works:</p>
+        <div class="test-area">
+            <div class="city-box absolute invisible" style="top: 20px; left: 20px;">Absolute Hidden</div>
+            <div class="city-box relative visible" style="top: 40px; left: 40px;">Relative Visible</div>
+            <div class="city-box absolute invisible" style="top: 60px; left: 60px;">Absolute Hidden</div>
+        </div>
+        <p><strong>Expected:</strong> Only "Relative Visible" box should be visible</p>
+    </div>
+    
+    <div class="diagnostic">
+        <h3>Test 2: Check Actual Home Page</h3>
+        <p>Open browser DevTools (F12) and check:</p>
+        <ol>
+            <li>Elements tab: Look for <code>.cities-group</code> elements</li>
+            <li>Check which have <code>.active</code> class</li>
+            <li>Check computed styles for each group</li>
+            <li>Look for <code>position</code>, <code>opacity</code>, <code>visibility</code></li>
+        </ol>
+        
+        <button onclick="checkCarousel()">Check Carousel State</button>
+        <div id="carousel-state"></div>
+    </div>
+    
+    <div class="diagnostic">
+        <h3>Test 3: Direct Inspection</h3>
+        <p>Please check these in your browser:</p>
+        <ol>
+            <li>Right-click on a city image → "Inspect"</li>
+            <li>Look at the parent elements until you find <code>.cities-group</code></li>
+            <li>Check if it has <code>class="cities-group active"</code> or just <code>class="cities-group"</code></li>
+            <li>In Styles panel, check what CSS is applied</li>
+        </ol>
+    </div>
+
+    <script>
+        function checkCarousel() {
+            const result = document.getElementById('carousel-state');
+            result.innerHTML = '<p>Loading home page carousel state...</p>';
+            
+            // Try to access the home page carousel via iframe
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = 'index.html';
+            document.body.appendChild(iframe);
+            
+            iframe.onload = function() {
+                try {
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    const groups = iframeDoc.querySelectorAll('.cities-group');
+                    const activeGroups = iframeDoc.querySelectorAll('.cities-group.active');
+                    
+                    let html = `<h4>Carousel State:</h4>`;
+                    html += `<p>Total groups: ${groups.length}</p>`;
+                    html += `<p>Active groups: ${activeGroups.length}</p>`;
+                    
+                    groups.forEach((group, index) => {
+                        const isActive = group.classList.contains('active');
+                        const style = window.getComputedStyle(group);
+                        html += `<p>Group ${index + 1}: ${isActive ? 'ACTIVE' : 'INACTIVE'}</p>`;
+                        html += `<ul>`;
+                        html += `<li>position: ${style.position}</li>`;
+                        html += `<li>opacity: ${style.opacity}</li>`;
+                        html += `<li>visibility: ${style.visibility}</li>`;
+                        html += `<li>display: ${style.display}</li>`;
+                        html += `</ul>`;
+                    });
+                    
+                    result.innerHTML = html;
+                } catch (e) {
+                    result.innerHTML = `<p>Error: ${e.message}</p>`;
+                }
+                
+                document.body.removeChild(iframe);
+            };
+        }
+        
+        // Also check current page's carousel if it exists
+        document.addEventListener('DOMContentLoaded', function() {
+            const groups = document.querySelectorAll('.cities-group');
+            if (groups.length > 0) {
+                console.log('Found carousel groups on this page:', groups.length);
+                groups.forEach((group, index) => {
+                    const style = window.getComputedStyle(group);
+                    console.log(`Group ${index}:`, {
+                        active: group.classList.contains('active'),
+                        position: style.position,
+                        opacity: style.opacity,
+                        visibility: style.visibility,
+                        display: style.display
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

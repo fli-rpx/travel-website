@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>China Travel Guide - Working Carousel</title>
+    <!-- Version: 1770601828 -->
+    <style>
+        /* RESET AND BASICS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HERO SECTION - COMPACT */
+        .hero {
+            text-align: center;
+            padding: 40px 20px 50px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+        }
+        
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 25px;
+            line-height: 1.5;
+        }
+        
+        /* SIMPLE CAROUSEL */
+        .carousel-section {
+            padding: 20px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #1e293b;
+        }
+        
+        .simple-carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+        
+        .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 380px;
+    width: 100%; /* Ensure full width */
+}
+        
+        .carousel-slide {
+    flex: 0 0 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start; /* Align items at top */
+    padding: 10px;
+    min-height: 360px;
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding in width */
+}
+        
+        /* CITY CARDS - NO IMAGES */
+        .city-card {
+    flex: 0 0 300px; /* Fixed width, won't grow or shrink */
+    background: white;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border: 2px solid #e2e8f0;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+        
+        .city-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-color: #3b82f6;
+        }
+        
+        .city-header {
+    height: 160px; /* Reduced from taller */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: left;
+    flex-shrink: 0;
+}
+        
+        .city-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.02), rgba(0,0,0,0.08));
+            border-radius: 10px 10px 0 0;
+            z-index: 1;
+        }
+        
+        .city-name, .city-tag {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.95) !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8) !important;
+    position: relative;
+    z-index: 2;
+}
+        
+        .city-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white !important;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.9) !important;
+    position: relative;
+    z-index: 2;
+}
+        
+        .city-tag {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .city-details {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.city-details p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.city-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.city-tag {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.city-link {
+    margin-top: auto;
+    padding-top: 10px;
+}
+        
+        .city-details p {
+            margin-bottom: 15px;
+            color: #475569;
+        }
+        
+        .city-link {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        
+        .city-link:hover {
+            background: #2563eb;
+        }
+        
+        /* CAROUSEL CONTROLS */
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .carousel-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        
+        .carousel-btn:hover {
+            background: #2563eb;
+        }
+        
+        .carousel-dots {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .carousel-dot.active {
+            background: #3b82f6;
+        }
+        
+        .carousel-dot:hover {
+            background: #94a3b8;
+        }
+        
+        /* AUTO-ROTATE NOTICE */
+        .auto-notice {
+            text-align: center;
+            margin-top: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            background: #1e293b;
+            color: white;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .carousel-slide {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .city-card {
+                flex: 0 0 90%;
+                max-width: 300px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    
+        /* Loading states */
+        .city-header {
+            background-color: #f0f0f0; /* Fallback while loading */
+        }
+        
+        .city-header.loaded {
+            background-color: transparent;
+        }
+        
+        /* Loading animation */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .loading {
+            animation: pulse 1.5s infinite;
+        }
+    
+    /* NEWS SECTION - FIXED VISIBILITY */
+    .news-section {
+        padding: 60px 20px;
+        background: white;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .news-card {
+        background: #f8fafc;
+        border-radius: 12px;
+        padding: 30px;
+        border: 1px solid #e2e8f0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        border-color: #3b82f6;
+    }
+    
+    .news-date {
+        color: #64748b;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+    
+    .news-title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: #1e293b;
+    }
+    
+    .news-excerpt {
+        color: #475569;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    
+    .news-link {
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .news-link:hover {
+        color: #2563eb;
+        text-decoration: underline;
+    }
+    
+    /* CONTACT SECTION - FIXED VISIBILITY */
+    .contact-section {
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        margin-top: 40px;
+    }
+    
+    @media (max-width: 768px) {
+        .contact-content {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+    
+    .contact-info h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: #1e293b;
+    }
+    
+    .contact-info p {
+        color: #475569;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+    
+    .contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .contact-item {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .contact-icon {
+        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .contact-item h4 {
+        margin-bottom: 5px;
+        color: #1e293b;
+    }
+    
+    .contact-item p {
+        margin: 0;
+        color: #64748b;
+        font-size: 0.95rem;
+    }
+    
+    .contact-form {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    
+    .contact-form h3 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+        color: #1e293b;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    
+    .submit-btn {
+        background: #3b82f6;
+        color: white;
+        border: none;
+        padding: 14px 30px;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: background 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+        background: #2563eb;
+    }
+    
+    /* Update section title consistency */
+    .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #1e293b;
+        position: relative;
+        padding-bottom: 15px;
+    }
+    
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: #3b82f6;
+        border-radius: 2px;
+    }
+            .hero-btn {
+            display: inline-block;
+            background: white;
+            color: #3b82f6;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+        }
+    /* Compact spacing */
+    .compact-section {
+        margin-bottom: 20px !important;
+    }
+    
+    .compact-title {
+        margin-bottom: 15px !important;
+    }
+    
+    .compact-content {
+        margin-top: 20px !important;
+    }
+    /* Ensure sections are visible */
+    .news-section,
+    .contact-section {
+        position: relative;
+        z-index: 10;
+    }
+    
+    /* Fix any potential overflow issues */
+    body {
+        overflow-x: hidden;
+    }
+        /* CAROUSEL NAVIGATION */
+        .carousel-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+        
+        .carousel-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #3b82f6;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .carousel-btn:hover {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+            transform: scale(1.1);
+        }
+        
+        .carousel-dots {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+        
+        .carousel-dot.active {
+            background: #3b82f6;
+            transform: scale(1.2);
+        }
+        
+        .carousel-dot:hover {
+            background: #94a3b8;
+            transform: scale(1.1);
+        }
+    /* Responsive adjustments */
+    @media (max-width: 1100px) {
+        .city-card {
+            flex: 0 0 280px;
+            height: 340px;
+        }
+        
+        .city-header {
+            height: 150px;
+        }
+        
+        .carousel-track {
+            height: 360px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .simple-carousel {
+            max-width: 100%;
+            margin: 0 10px;
+        }
+        
+        .carousel-slide {
+            gap: 15px;
+            padding: 10px 5px;
+            min-height: 320px;
+        }
+        
+        .city-card {
+            flex: 0 0 250px;
+            height: 320px;
+        }
+        
+        .city-header {
+            height: 140px;
+            padding: 12px;
+        }
+        
+        .city-details {
+            padding: 12px;
+        }
+        
+        .city-name {
+            font-size: 1.2rem;
+        }
+        
+        .carousel-track {
+            height: 340px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .carousel-slide {
+            gap: 10px;
+            min-height: 300px;
+        }
+        
+        .city-card {
+            flex: 0 0 220px;
+            height: 300px;
+        }
+        
+        .city-header {
+            height: 130px;
+        }
+        
+        .carousel-track {
+            height: 320px;
+        }
+        
+        .carousel-btn {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+        }
+    }
+    /* Image loading optimization */
+    .city-header {
+        background-color: #f0f0f0;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    
+    
+    
+    .city-name, .city-tag {
+        position: relative;
+        z-index: 2;
+    }
+    
+    /* Fade in effect for images */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    .city-header.loaded {
+        animation: fadeIn 0.5s ease-in;
+    }
+    /* ANTI-STACKING RULES - Ensure cities stay side-by-side */
+    .simple-carousel {
+        overflow: hidden !important;
+        width: 100% !important;
+    }
+    
+    .carousel-container {
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+    
+    /* Force flex items to stay in row */
+    .carousel-slide > * {
+        flex-shrink: 0 !important;
+    }
+    
+    /* Prevent any column layout on slides */
+    .carousel-slide {
+        flex-direction: row !important;
+    }
+    
+    /* Media query adjustments */
+    @media (max-width: 1100px) {
+        .city-card {
+            flex: 0 0 280px !important;
+        }
+    }
+    
+    @media (max-width: 900px) {
+        .city-card {
+            flex: 0 0 250px !important;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .carousel-slide {
+            gap: 15px !important;
+        }
+        
+        .city-card {
+            flex: 0 0 220px !important;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .carousel-slide {
+            justify-content: flex-start !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            overflow-x: auto !important; /* Allow horizontal scroll on mobile */
+            scroll-snap-type: x mandatory !important;
+        }
+        
+        .city-card {
+            flex: 0 0 200px !important;
+            scroll-snap-align: start !important;
+        }
+        
+        /* Hide scrollbar but keep functionality */
+        .carousel-slide::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    /* Enhanced city details styling */
+    .city-details {
+        padding: 15px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto; /* Allow scrolling if content is long */
+        max-height: 180px; /* Limit height for consistency */
+    }
+    
+    .city-details::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    .city-details::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 2px;
+    }
+    
+    .city-details::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 2px;
+    }
+    
+    .city-details::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+    
+    .city-details p {
+        margin-bottom: 6px;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        color: #475569;
+        display: flex;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .city-details p::before {
+        content: "•";
+        color: #3b82f6;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+    
+    .city-name {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #1e293b;
+    }
+    
+    .city-tag {
+        font-size: 0.9rem;
+        color: #64748b;
+        margin-bottom: 12px;
+        font-style: italic;
+    }
+    
+    .city-link {
+        margin-top: auto;
+        padding-top: 10px;
+        display: inline-block;
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+    
+    .city-link:hover {
+        color: #2563eb;
+        text-decoration: underline;
+    }</style>
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>Experience Authentic China</h1>
+            <p>Personal travel assistance with cultural introductions and complete arrangements for your China journey.</p>
+            <a href="#cities" class="hero-btn">Explore Cities in Detail</a>
+        </div>
+    </section>
+
+    <!-- SIMPLE CAROUSEL -->
+    <section id="cities" class="carousel-section">
+        <div class="container">
+            <h2 class="section-title">Explore China Cities - Detailed Guide</h2>
+            
+            <div class="simple-carousel">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- SLIDE 1 -->
+                    <div class="carousel-slide active">
+                        <!-- Beijing -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/beijing.jpg');">
+                                <div class="city-name">Beijing</div>
+                                <div class="city-tag">Great Wall & Forbidden City</div>
+                            </div>
+                            <div class="city-details">
+                                <p>🏯 Forbidden City & Temple of Heaven</p>
+                                <p>🐉 Summer Palace & Great Wall</p>
+                                <p>🍜 Peking duck & imperial cuisine</p>
+                                <a href="/travel-website/cities/beijing.html" class="city-link">Explore Beijing</a>
+                            </div>
+                            <div class="city-details">
+                                <p>🏙️ The Bund & futuristic skyscrapers</p>
+                                <p>🎡 Oriental Pearl Tower observation</p>
+                                <p>🍜 Xiaolongbao & Shanghainese soup</p>
+                                <a href="/travel-website/cities/shanghai.html" class="city-link">Explore Shanghai</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Chengdu -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/chengdu.jpg');">
+                                <div class="city-name">Chengdu</div>
+                                <div class="city-tag">Pandas & Spicy Cuisine</div>
+                            </div>
+                            <div class="city-details">
+                                <p>🐼 Chengdu Panda Base - see baby pandas</p>
+                                <p>🌶️ Sichuan hot pot & mapo tofu</p>
+                                <p>🎭 Sichuan opera with face-changing</p>
+                                <p>🏮 Jinli Ancient Street & Wuhou Temple</p>
+                                <p>🍵 Traditional tea houses & mahjong culture</p>
+                                <a href="/travel-website/cities/chengdu.html" class="city-link">Explore Chengdu</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                                        <!-- SLIDE 2 -->
+                    <div class="carousel-slide">
+                        <!-- Qingdao -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/qingdao.jpg');">
+                                <div class="city-name">Qingdao</div>
+                                <div class="city-tag">Beer & Beaches</div>
+                            </div>
+                            <div class="city-details">
+                                <p>🍺 Tsingtao Beer Museum & brewery tour</p>
+                                <p>🏖️ Golden Beach - 3.5km sandy coastline</p>
+                                <p>🏛️ German architecture in Badaguan area</p>
+                                <p>⛰️ Laoshan Mountain - Taoist sacred site</p>
+                                <p>🦐 Fresh seafood & Qingdao-style barbecue</p>
+                                <a href="/travel-website/cities/qingdao.html" class="city-link">Explore Qingdao</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Xiamen -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/xiamen.jpg');">
+                                <div class="city-name">Xiamen</div>
+                                <div class="city-tag">Gulangyu Island</div>
+                            </div>
+                            <div class="city-details">
+                                <p>🏝️ Gulangyu Island - UNESCO, no cars allowed</p>
+                                <p>🎹 Piano Museum & organ museum</p>
+                                <p>🏛️ European colonial architecture</p>
+                                <p>🌴 Xiamen University - most beautiful campus</p>
+                                <p>🍜 Seafood, oyster omelette, Fujian noodles</p>
+                                <a href="/travel-website/cities/xiamen.html" class="city-link">Explore Xiamen</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Wuxi -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/wuxi.jpg');">
+                                <div class="city-name">Wuxi</div>
+                                <div class="city-tag">Taihu Lake</div>
+                            </div>
+                            <div class="city-details">
+                                <p>🏞️ Taihu Lake - 3rd largest freshwater lake</p>
+                                <p>🙏 Lingshan Grand Buddha - 88m bronze statue</p>
+                                <p>🏮 Huishan Ancient Town & clay figurines</p>
+                                <p>🎋 Li Garden & Yuantouzhu scenic area</p>
+                                <p>🍜 Wuxi spare ribs & sweet cuisine</p>
+                                <a href="/travel-website/cities/wuxi.html" class="city-link">Explore Wuxi</a>
+                            </div>
+                        </div>
+                    </div>
+    <!-- SLIDE 3 -->
+                    <div class="carousel-slide">
+                        <!-- Hong Kong -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/hongkong.jpg');">
+                                <div class="city-name">Hong Kong</div>
+                                <div class="city-tag">Victoria Harbour</div>
+                            </div>
+                            <div class="city-details">
+                                <p>🌆 Victoria Harbour & Symphony of Lights</p>
+                                <p>🚠 Peak Tram to Victoria Peak</p>
+                                <p>🎡 Tian Tan Buddha & Po Lin Monastery</p>
+                                <p>🛍️ Causeway Bay & Temple Street Night Market</p>
+                                <p>🍜 Dim sum, egg tarts, pineapple buns</p>
+                                <a href="/travel-website/cities/hongkong.html" class="city-link">Explore Hong Kong</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Chongqing -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/chongqing.jpg');">
+                                <div class="city-name">Chongqing</div>
+                                <div class="city-tag">Mountain City & Hot Pot</div>
+                            </div>
+                            <div class="city-details">
+                                <p>🏔️ Mountain city with unique topography</p>
+                                <p>🌶️ Birthplace of Sichuan hot pot</p>
+                                <p>🚠 Yangtze River cable car & monorail</p>
+                                <p>🏮 Ciqikou Ancient Town & Hongya Cave</p>
+                                <p>🍜 Chongqing noodles & spicy street food</p>
+                                <a href="/travel-website/cities/chongqing.html" class="city-link">Explore Chongqing</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Harbin -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/harbin.jpg');">
+                                <div class="city-name">Harbin</div>
+                                <div class="city-tag">Ice Festival</div>
+                            </div>
+                            <div class="city-details">
+                                <p>❄️ Harbin Ice Festival - Jan-Feb each year</p>
+                                <p>🏛️ St. Sophia Cathedral & Russian architecture</p>
+                                <p>🎿 Yabuli Ski Resort - best skiing in China</p>
+                                <p>🍖 Dongbei cuisine & Harbin beer</p>
+                                <p>🎭 Siberian Tiger Park & Sun Island</p>
+                                <a href="/travel-website/cities/harbin.html" class="city-link">Explore Harbin</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SLIDE 4 -->
+                    <div class="carousel-slide">
+                        <!-- Guangzhou -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/guangzhou.jpg');">
+                                <div class="city-name">Guangzhou</div>
+                                <div class="city-tag">Cantonese Food</div>
+                            </div>
+                            <div class="city-details">
+                                <p>🍜 Birthplace of Cantonese (Yue) cuisine</p>
+                                <p>🎡 Canton Tower - 600m tall, world's 3rd tallest</p>
+                                <p>🏮 Chen Clan Ancestral Hall & Temple of Six Banyan Trees</p>
+                                <p>🛍️ Shangxiajiu Pedestrian Street & wholesale markets</p>
+                                <p>🍵 Morning tea with dim sum & pastries</p>
+                                <a href="/travel-website/cities/guangzhou.html" class="city-link">Explore Guangzhou</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Shenzhen -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/shenzhen.jpg');">
+                                <div class="city-name">Shenzhen</div>
+                                <div class="city-tag">Tech Innovation</div>
+                            </div>
+                            <div class="city-details">
+                                <p>💻 China's Silicon Valley - tech innovation hub</p>
+                                <p>🎢 Window of the World & Happy Valley theme parks</p>
+                                <p>🏙️ Ping An Finance Centre - 2nd tallest in China</p>
+                                <p>🛍️ Huaqiangbei electronics market & malls</p>
+                                <p>🌊 Dameisha & Xiaomeisha beaches</p>
+                                <a href="/travel-website/cities/shenzhen.html" class="city-link">Explore Shenzhen</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Nanjing -->
+                        <div class="city-card">
+                            <div class="city-header" style="background-image: url('images/user_photos/nanjing.jpg');">
+                                <div class="city-name">Nanjing</div>
+                                <div class="city-tag">Ancient Capital</div>
+                            </div>
+                            <div class="city-details">
+                                <p>🏯 Former capital of 6 dynasties</p>
+                                <p>🌉 Yangtze River Bridge & ancient city walls</p>
+                                <p>🎋 Confucius Temple & Qinhuai River</p>
+                                <p>🕊️ Sun Yat-sen Mausoleum & Ming Xiaoling Mausoleum</p>
+                                <p>🍜 Nanjing salted duck & tangbao soup dumplings</p>
+                                <a href="/travel-website/cities/nanjing.html" class="city-link">Explore Nanjing</a>
+                            </div>
+                        </div>
+                    </div>
+    </div>
+            </div>
+            
+            <!-- CAROUSEL NAVIGATION -->
+            <div class="carousel-navigation">
+                <button class="carousel-btn prev" id="prevBtn" aria-label="Previous slide">
+                    ←
+                </button>
+                
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                    <button class="carousel-dot" data-slide="1" aria-label="Go to slide 2"></button>
+                    <button class="carousel-dot" data-slide="2" aria-label="Go to slide 3"></button>
+                    <button class="carousel-dot" data-slide="3" aria-label="Go to slide 4"></button>
+                </div>
+                
+                <button class="carousel-btn next" id="nextBtn" aria-label="Next slide">
+                    →
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- NEWS SECTION --><!-- NEWS SECTION -->
+    <section id="news" class="news-section">
+        <div class="container">
+            <h2 class="section-title">Latest Travel News</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-date">Feb 8, 2026</div>
+                    <h3 class="news-title">China Reopens Popular Tourist Routes</h3>
+                    <p class="news-excerpt">Several historic routes including the Silk Road and Tea Horse Road have been reopened with improved facilities for international travelers.</p>
+                    <a href="#" class="news-link">Read more →</a>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-date">Feb 5, 2026</div>
+                    <h3 class="news-title">New High-Speed Rail Connects Major Cities</h3>
+                    <p class="news-excerpt">The new Beijing-Shanghai-Guangzhou line reduces travel time between major cities by 40%, making multi-city tours more convenient.</p>
+                    <a href="#" class="news-link">Read more →</a>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-date">Jan 30, 2026</div>
+                    <h3 class="news-title">Cultural Festival Calendar 2026 Released</h3>
+                    <p class="news-excerpt">Plan your trip around major festivals including Spring Festival, Mid-Autumn Festival, and regional cultural celebrations.</p>
+                    <a href="#" class="news-link">Read more →</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Cities: Beijing, Shanghai, Chengdu, Qingdao, Xiamen, Wuxi, Hong Kong, Chongqing, Harbin, Guangzhou, Shenzhen, Nanjing --></section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Plan Your China Journey</h3>
+                    <p>Our team of China travel experts is ready to help you create the perfect itinerary with personalized cultural experiences.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>travel@china-assist.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <h4>WeChat</h4>
+                                <p>ChinaTravelExpert</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div>
+                                <h4>Hours</h4>
+                                <p>Mon-Fri: 9AM-6PM (China Time)<br>24/7 emergency support for travelers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Travel Dates (e.g., March 2026)">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Tell us about your travel interests..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <h3>China Travel Assistance</h3>
+            <p>Personalized travel planning & cultural experiences</p>
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                12 Chinese Cities • Latest News • Contact Us • Working Carousel
+            </p>
+        </div>
+    </footer>
+
+    <!-- SIMPLE JAVASCRIPT -->
+    <script>
+    // ULTRA ROBUST CAROUSEL - WILL WORK
+    console.log('🔄 Loading ultra robust carousel...');
+    
+    // Multiple initialization methods
+    function initializeCarousel() {
+        console.log('🎯 Attempting to initialize carousel...');
+        
+        // METHOD 1: Try to get elements immediately
+        let track = document.querySelector('.carousel-track');
+        let slides = document.querySelectorAll('.carousel-slide');
+        let prevBtn = document.getElementById('prevBtn');
+        let nextBtn = document.getElementById('nextBtn');
+        let dots = document.querySelectorAll('.carousel-dot');
+        
+        console.log('🔍 Initial element check:', {
+            track: track ? 'FOUND' : 'NOT FOUND',
+            slides: slides.length,
+            prevBtn: prevBtn ? 'FOUND' : 'NOT FOUND',
+            nextBtn: nextBtn ? 'FOUND' : 'NOT FOUND',
+            dots: dots.length
+        });
+        
+        // If elements not found, wait and try again
+        if (!track || slides.length === 0) {
+            console.log('⏳ Elements not ready, waiting 200ms...');
+            setTimeout(initializeCarousel, 200);
+            return;
+        }
+        
+        console.log('✅ All elements found! Starting carousel...');
+        
+        // CAROUSEL LOGIC
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        let autoInterval = null;
+        
+        // Update carousel display
+        function updateCarousel() {
+            console.log('📊 Moving to slide', currentSlide + 1, 'of', totalSlides);
+            
+            // Calculate position (0%, -100%, -200%, -300%)
+            const position = -(currentSlide * 100);
+            track.style.transform = `translateX(${position}%)`;
+            track.style.transition = 'transform 0.5s ease-in-out';
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+            
+            // Update slides
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+    
+    // Load and optimize images
+    function loadCityImages() {
+        const cityHeaders = document.querySelectorAll('.city-header');
+        cityHeaders.forEach(header => {
+            const bgImage = header.style.backgroundImage;
+            if (bgImage && bgImage !== 'none') {
+                const imgUrl = bgImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
+                const img = new Image();
+                img.onload = function() {
+                    header.classList.add('loaded');
+                    console.log('✅ Image loaded:', imgUrl);
+                };
+                img.onerror = function() {
+                    console.warn('⚠️ Failed to load image:', imgUrl);
+                    // Use fallback color
+                    header.style.backgroundColor = '#3b82f6';
+                };
+                img.src = imgUrl;
+            }
+        });
+    }
+    
+    // Call after carousel initialization
+    setTimeout(loadCityImages, 500);
+        
+        // Next slide
+        function goNext() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+        
+        // Previous slide
+        function goPrev() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+        
+        // Go to specific slide
+        function goToSlide(index) {
+            if (index >= 0 && index < totalSlides) {
+                currentSlide = index;
+                updateCarousel();
+            }
+        }
+        
+        // Auto-rotate
+        function startAutoRotate() {
+            if (autoInterval) clearInterval(autoInterval);
+            autoInterval = setInterval(goNext, 5000);
+        }
+        
+        function stopAutoRotate() {
+            if (autoInterval) {
+                clearInterval(autoInterval);
+                autoInterval = null;
+            }
+        }
+        
+        // EVENT LISTENERS
+        // Next button
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function(e) {
+                console.log('👉 NEXT button clicked');
+                e.stopPropagation();
+                goNext();
+            });
+        } else {
+            console.warn('⚠️ Next button not found');
+        }
+        
+        // Previous button
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function(e) {
+                console.log('👈 PREV button clicked');
+                e.stopPropagation();
+                goPrev();
+            });
+        } else {
+            console.warn('⚠️ Previous button not found');
+        }
+        
+        // Dot buttons
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', function(e) {
+                console.log('🔘 DOT', index + 1, 'clicked');
+                e.stopPropagation();
+                goToSlide(index);
+            });
+        });
+        
+        // Hover to pause
+        if (track) {
+            track.addEventListener('mouseenter', stopAutoRotate);
+            track.addEventListener('mouseleave', startAutoRotate);
+        }
+        
+        // Initialize
+        updateCarousel();
+        startAutoRotate();
+        
+        console.log('🎉 CAROUSEL READY AND WORKING!');
+        console.log('👉 Click the arrow buttons or dots to test.');
+        
+        // Also expose functions for debugging
+        window.debugCarousel = {
+            goNext: goNext,
+            goPrev: goPrev,
+            goToSlide: goToSlide,
+            currentSlide: () => currentSlide,
+            totalSlides: totalSlides
+        };
+    }
+    
+    // Multiple initialization triggers
+    document.addEventListener('DOMContentLoaded', initializeCarousel);
+    window.addEventListener('load', initializeCarousel);
+    
+    // Fallback: try after 1 second
+    setTimeout(initializeCarousel, 1000);
+    
+    console.log('🚀 Carousel initialization scheduled');
+    
+    // Verify carousel layout
+    function verifyCarouselLayout() {
+        const track = document.querySelector('.carousel-track');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const cityCards = document.querySelectorAll('.city-card');
+        
+        if (!track || slides.length === 0) return;
+        
+        console.log('🔍 Carousel Layout Check:');
+        console.log('- Track display:', window.getComputedStyle(track).display);
+        console.log('- Track flexDirection:', window.getComputedStyle(track).flexDirection);
+        console.log('- Slide display:', window.getComputedStyle(slides[0]).display);
+        console.log('- Slide flexDirection:', window.getComputedStyle(slides[0]).flexDirection);
+        console.log('- City cards per slide:', cityCards.length / slides.length);
+        console.log('- First city card width:', window.getComputedStyle(cityCards[0]).width);
+        
+        // Force correct layout if needed
+        if (window.getComputedStyle(slides[0]).flexDirection === 'column') {
+            console.warn('⚠️  Slide has column layout - forcing row');
+            slides.forEach(slide => {
+                slide.style.flexDirection = 'row';
+            });
+        }
+    }
+    
+    // Run verification after carousel init
+    setTimeout(verifyCarouselLayout, 500);</script>
+<!-- DEBUG INFO -->
+    <div id="carouselDebug" style="display: none; background: #fef3c7; border: 1px solid #f59e0b; padding: 10px; margin: 10px 0; border-radius: 5px; font-family: monospace;">
+        <strong>Carousel Debug Info:</strong>
+        <div id="debugOutput"></div>
+    </div>
+    
+    <script>
+    // Debug helper
+    function showDebugInfo() {
+        const debugDiv = document.getElementById('carouselDebug');
+        const output = document.getElementById('debugOutput');
+        
+        if (debugDiv && output) {
+            const track = document.querySelector('.carousel-track');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dots = document.querySelectorAll('.carousel-dot');
+            
+            output.innerHTML = `
+                Track: ${track ? 'FOUND' : 'MISSING'}<br>
+                Slides: ${slides.length}<br>
+                Prev Button: ${prevBtn ? 'FOUND' : 'MISSING'}<br>
+                Next Button: ${nextBtn ? 'FOUND' : 'MISSING'}<br>
+                Dots: ${dots.length}<br>
+                Window loaded: ${document.readyState}
+            `;
+            
+            debugDiv.style.display = 'block';
+        }
+    }
+    
+    // Show debug after 2 seconds
+    setTimeout(showDebugInfo, 2000);
+    </script></body>
+</html>

@@ -5,7 +5,7 @@ A modern travel website for Chinese cities with automated monitoring, AI image g
 ## Features
 
 - 12 complete city pages (Beijing, Shanghai, Chengdu, Harbin, Chongqing, etc.)
-- Latest China Travel News section with daily updates
+- Latest Travel News section with daily updates
 - Automated monitoring system (runs every 10 minutes)
 - AI image generation ready
 - Self-improving capabilities
@@ -18,7 +18,7 @@ This site is deployed via GitHub Pages at: https://fli-rpx.github.io/travel-webs
 
 ## News Section
 
-The website features a dynamic "Latest China Travel News" section that:
+The website features a dynamic "Latest Travel News" section that:
 - Replaces the static Popular Destinations section
 - Shows 3 updated news cards daily
 - Includes travel policies, tips, and destination updates

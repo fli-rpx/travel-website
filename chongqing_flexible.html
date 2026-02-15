@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chongqing - Flexible Path Test</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .test { margin: 20px 0; padding: 15px; border: 1px solid #ccc; }
+        .success { background: #d4edda; }
+        .error { background: #f8d7da; }
+        img { max-width: 200px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Chongqing Image Path Test</h1>
+    
+    <div class="test">
+        <h3>Test 1: Absolute Path (/travel-website/images/user_photos/chongqing.jpg)</h3>
+        <img id="img1" src="/travel-website/images/user_photos/chongqing.jpg" alt="Test 1" 
+             onload="this.parentElement.className='test success'; document.getElementById('status1').innerHTML='✅ Loaded'"
+             onerror="this.parentElement.className='test error'; document.getElementById('status1').innerHTML='❌ Failed'">
+        <p id="status1">Testing...</p>
+    </div>
+    
+    <div class="test">
+        <h3>Test 2: Relative Path (../images/user_photos/chongqing.jpg)</h3>
+        <img id="img2" src="../images/user_photos/chongqing.jpg" alt="Test 2"
+             onload="this.parentElement.className='test success'; document.getElementById('status2').innerHTML='✅ Loaded'"
+             onerror="this.parentElement.className='test error'; document.getElementById('status2').innerHTML='❌ Failed'">
+        <p id="status2">Testing...</p>
+    </div>
+    
+    <div class="test">
+        <h3>Test 3: Root Relative (images/user_photos/chongqing.jpg)</h3>
+        <img id="img3" src="images/user_photos/chongqing.jpg" alt="Test 3"
+             onload="this.parentElement.className='test success'; document.getElementById('status3').innerHTML='✅ Loaded'"
+             onerror="this.parentElement.className='test error'; document.getElementById('status3').innerHTML='❌ Failed'">
+        <p id="status3">Testing...</p>
+    </div>
+    
+    <div class="test">
+        <h3>Test 4: Full file:// URL</h3>
+        <img id="img4" src="file:///Users/fudongli/clawd/travel-website/images/user_photos/chongqing.jpg" alt="Test 4"
+             onload="this.parentElement.className='test success'; document.getElementById('status4').innerHTML='✅ Loaded'"
+             onerror="this.parentElement.className='test error'; document.getElementById('status4').innerHTML='❌ Failed'">
+        <p id="status4">Testing...</p>
+    </div>
+    
+    <h2>Current Location Analysis:</h2>
+    <pre id="locationInfo">Calculating...</pre>
+    
+    <script>
+        // Analyze current location
+        const info = `
+Current URL: ${window.location.href}
+Protocol: ${window.location.protocol}
+Host: ${window.location.host}
+Pathname: ${window.location.pathname}
+File being viewed: ${window.location.pathname.split('/').pop()}
+
+Working directory structure:
+- If viewing locally (file://): Paths are relative to file location
+- If on web server (http://): Paths depend on server configuration
+
+Recommended path based on current location:
+${getRecommendedPath()}
+        `;
+        
+        document.getElementById('locationInfo').textContent = info;
+        
+        function getRecommendedPath() {
+            const protocol = window.location.protocol;
+            const pathname = window.location.pathname;
+            
+            if (protocol === 'file:') {
+                // Local file - use relative paths
+                if (pathname.includes('/cities/')) {
+                    return 'Use: ../images/user_photos/chongqing.jpg';
+                } else if (pathname.includes('/travel-website/')) {
+                    return 'Use: images/user_photos/chongqing.jpg';
+                } else {
+                    return 'Use full path or adjust based on location';
+                }
+            } else {
+                // Web server - check if in travel-website directory
+                if (pathname.includes('/travel-website/')) {
+                    return 'Use: /travel-website/images/user_photos/chongqing.jpg';
+                } else {
+                    return 'Use absolute path from root or relative path';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

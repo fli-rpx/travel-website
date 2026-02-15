@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Chongqing Images</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .image-container { margin: 20px 0; border: 2px solid #ccc; padding: 10px; }
+        img { max-width: 300px; margin: 10px; }
+        .status { padding: 10px; margin: 10px 0; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>Test Chongqing Images</h1>
+    
+    <div class="status" id="status1">
+        Testing image: ../images/user_photos/chongqing.jpg
+    </div>
+    <div class="image-container">
+        <img id="img1" src="../images/user_photos/chongqing.jpg" alt="Test Chongqing 1" onload="document.getElementById('status1').className='status success'; document.getElementById('status1').innerHTML='✅ LOADED: ../images/user_photos/chongqing.jpg'" onerror="document.getElementById('status1').className='status error'; document.getElementById('status1').innerHTML='❌ FAILED: ../images/user_photos/chongqing.jpg - ' + this.src">
+    </div>
+    
+    <div class="status" id="status2">
+        Testing image: ../images/user_photos/chongqing-1.jpg
+    </div>
+    <div class="image-container">
+        <img id="img2" src="../images/user_photos/chongqing-1.jpg" alt="Test Chongqing 2" onload="document.getElementById('status2').className='status success'; document.getElementById('status2').innerHTML='✅ LOADED: ../images/user_photos/chongqing-1.jpg'" onerror="document.getElementById('status2').className='status error'; document.getElementById('status2').innerHTML='❌ FAILED: ../images/user_photos/chongqing-1.jpg - ' + this.src">
+    </div>
+    
+    <div class="status" id="status3">
+        Testing image: ../images/user_photos/chongqing-2.jpg
+    </div>
+    <div class="image-container">
+        <img id="img3" src="../images/user_photos/chongqing-2.jpg" alt="Test Chongqing 3" onload="document.getElementById('status3').className='status success'; document.getElementById('status3').innerHTML='✅ LOADED: ../images/user_photos/chongqing-2.jpg'" onerror="document.getElementById('status3').className='status error'; document.getElementById('status3').innerHTML='❌ FAILED: ../images/user_photos/chongqing-2.jpg - ' + this.src">
+    </div>
+    
+    <div class="status" id="status4">
+        Testing image: ../images/user_photos/chongqing-3.jpg
+    </div>
+    <div class="image-container">
+        <img id="img4" src="../images/user_photos/chongqing-3.jpg" alt="Test Chongqing 4" onload="document.getElementById('status4').className='status success'; document.getElementById('status4').innerHTML='✅ LOADED: ../images/user_photos/chongqing-3.jpg'" onerror="document.getElementById('status4').className='status error'; document.getElementById('status4').innerHTML='❌ FAILED: ../images/user_photos/chongqing-3.jpg - ' + this.src">
+    </div>
+    
+    <h2>Current Directory Structure:</h2>
+    <pre id="structure"></pre>
+    
+    <script>
+        // Show current directory structure
+        const structure = `Travel Website Root: ${window.location.pathname.split('/').slice(0, -1).join('/')}
+        
+Files:
+- test_chongqing_images.html (this file)
+- cities/chongqing.html
+- images/user_photos/chongqing.jpg
+- images/user_photos/chongqing-1.jpg
+- images/user_photos/chongqing-2.jpg
+- images/user_photos/chongqing-3.jpg
+
+Relative paths from cities/ directory:
+- ../images/user_photos/chongqing.jpg
+- ../images/user_photos/chongqing-1.jpg
+etc.`;
+        
+        document.getElementById('structure').textContent = structure;
+    </script>
+</body>
+</html>

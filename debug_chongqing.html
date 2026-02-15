@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Chongqing Page</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        .section { background: white; padding: 20px; margin: 20px 0; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1, h2 { color: #333; margin-bottom: 15px; }
+        .test-result { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .loading { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        img { max-width: 300px; margin: 10px; border: 2px solid #ddd; }
+        .image-grid { display: flex; flex-wrap: wrap; gap: 20px; }
+        .image-container { text-align: center; }
+        code { background: #eee; padding: 2px 5px; border-radius: 3px; font-family: monospace; }
+        pre { background: #2d2d2d; color: #fff; padding: 15px; border-radius: 5px; overflow: auto; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Chongqing Page Debugger</h1>
+    
+    <div class="section">
+        <h2>1. Current Location Analysis</h2>
+        <div id="location-analysis">
+            <div class="loading">Analyzing...</div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>2. Image File Tests</h2>
+        <div class="image-grid">
+            <div class="image-container">
+                <h3>chongqing.jpg</h3>
+                <img id="test-img1" src="/travel-website/images/user_photos/chongqing.jpg" alt="Test 1">
+                <div id="result1" class="test-result loading">Testing...</div>
+            </div>
+            <div class="image-container">
+                <h3>chongqing-1.jpg</h3>
+                <img id="test-img2" src="/travel-website/images/user_photos/chongqing-1.jpg" alt="Test 2">
+                <div id="result2" class="test-result loading">Testing...</div>
+            </div>
+            <div class="image-container">
+                <h3>chongqing-2.jpg</h3>
+                <img id="test-img3" src="/travel-website/images/user_photos/chongqing-2.jpg" alt="Test 3">
+                <div id="result3" class="test-result loading">Testing...</div>
+            </div>
+            <div class="image-container">
+                <h3>chongqing-3.jpg</h3>
+                <img id="test-img4" src="/travel-website/images/user_photos/chongqing-3.jpg" alt="Test 4">
+                <div id="result4" class="test-result loading">Testing...</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>3. Alternative Path Tests</h2>
+        <div class="image-grid">
+            <div class="image-container">
+                <h3>Relative Path</h3>
+                <img id="alt-img1" src="../images/user_photos/chongqing.jpg" alt="Alt 1">
+                <div id="alt-result1" class="test-result loading">Testing...</div>
+            </div>
+            <div class="image-container">
+                <h3>File URL</h3>
+                <img id="alt-img2" src="file:///Users/fudongli/clawd/travel-website/images/user_photos/chongqing.jpg" alt="Alt 2">
+                <div id="alt-result2" class="test-result loading">Testing...</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>4. File System Check</h2>
+        <pre id="file-check">Checking files...</pre>
+    </div>
+    
+    <div class="section">
+        <h2>5. Recommendations</h2>
+        <div id="recommendations">
+            <div class="loading">Generating recommendations...</div>
+        </div>
+    </div>
+
+    <script>
+        // Analyze current location
+        function analyzeLocation() {
+            const loc = window.location;
+            const analysis = `
+URL: ${loc.href}
+Protocol: ${loc.protocol}
+Host: ${loc.host || '(none - local file)'}
+Pathname: ${loc.pathname}
+File: ${loc.pathname.split('/').pop() || 'index.html'}
+
+Viewing Method: ${loc.protocol === 'file:' ? 'Local file (file://)' : 'Web server (http/https)'}
+Directory: ${loc.pathname.includes('/cities/') ? 'In cities/ folder' : 
+             loc.pathname.includes('/travel-website/') ? 'In travel-website folder' : 
+             'Unknown location'}
+            `;
+            
+            document.getElementById('location-analysis').innerHTML = 
+                `<pre>${analysis}</pre>`;
+        }
+        
+        // Test image loading
+        function testImage(imgId, resultId, src) {
+            const img = document.getElementById(imgId);
+            const result = document.getElementById(resultId);
+            
+            img.onload = function() {
+                result.className = 'test-result success';
+                result.innerHTML = `✅ Loaded (${this.naturalWidth}x${this.naturalHeight})`;
+            };
+            
+            img.onerror = function() {
+                result.className = 'test-result error';
+                result.innerHTML = `❌ Failed to load<br><code>${src}</code>`;
+            };
+            
+            // Trigger load/error
+            img.src = src + '?t=' + new Date().getTime(); // Cache bust
+        }
+        
+        // Check files
+        function checkFiles() {
+            const files = [
+                '/travel-website/images/user_photos/chongqing.jpg',
+                '/travel-website/images/user_photos/chongqing-1.jpg',
+                '/travel-website/images/user_photos/chongqing-2.jpg',
+                '/travel-website/images/user_photos/chongqing-3.jpg',
+                '../images/user_photos/chongqing.jpg',
+                'file:///Users/fudongli/clawd/travel-website/images/user_photos/chongqing.jpg'
+            ];
+            
+            let fileCheck = 'File existence check:\n\n';
+            
+            // We can't check file existence from browser due to security
+            // But we can show what paths we're testing
+            files.forEach(file => {
+                fileCheck += `Testing: ${file}\n`;
+            });
+            
+            fileCheck += '\nNote: Browser security prevents checking local files.\n';
+            fileCheck += 'If all tests fail, the paths may be incorrect for your viewing method.';
+            
+            document.getElementById('file-check').textContent = fileCheck;
+        }
+        
+        // Generate recommendations
+        function generateRecommendations() {
+            const protocol = window.location.protocol;
+            const pathname = window.location.pathname;
+            let recommendations = '';
+            
+            if (protocol === 'file:') {
+                recommendations = `
+<strong>You are viewing locally (file://)</strong>
+                
+<strong>If viewing from cities/ folder:</strong>
+Use: <code>../images/user_photos/chongqing.jpg</code>
+
+<strong>If viewing from travel-website/ folder:</strong>
+Use: <code>images/user_photos/chongqing.jpg</code>
+
+<strong>Current best guess:</strong>
+You should use: <code>../images/user_photos/chongqing.jpg</code>
+                `;
+            } else {
+                recommendations = `
+<strong>You are viewing via web server (${protocol})</strong>
+                
+<strong>If site is at root (e.g., http://localhost/):</strong>
+Use: <code>/travel-website/images/user_photos/chongqing.jpg</code>
+
+<strong>If site is in subdirectory:</strong>
+Use path relative to your current location.
+
+<strong>Try opening browser console (F12) to see 404 errors.</strong>
+                `;
+            }
+            
+            recommendations += `
+<hr>
+<strong>Immediate Actions:</strong>
+1. Open browser console (F12) → Console tab
+2. Look for 404 errors or failed loads
+3. Try opening image directly: <code>file:///Users/fudongli/clawd/travel-website/images/user_photos/chongqing.jpg</code>
+4. Clear browser cache (Ctrl+Shift+Delete)
+            `;
+            
+            document.getElementById('recommendations').innerHTML = recommendations;
+        }
+        
+        // Initialize tests
+        analyzeLocation();
+        
+        // Test main images
+        testImage('test-img1', 'result1', '/travel-website/images/user_photos/chongqing.jpg');
+        testImage('test-img2', 'result2', '/travel-website/images/user_photos/chongqing-1.jpg');
+        testImage('test-img3', 'result3', '/travel-website/images/user_photos/chongqing-2.jpg');
+        testImage('test-img4', 'result4', '/travel-website/images/user_photos/chongqing-3.jpg');
+        
+        // Test alternative paths
+        testImage('alt-img1', 'alt-result1', '../images/user_photos/chongqing.jpg');
+        testImage('alt-img2', 'alt-result2', 'file:///Users/fudongli/clawd/travel-website/images/user_photos/chongqing.jpg');
+        
+        checkFiles();
+        generateRecommendations();
+        
+        // Log to console for debugging
+        console.log('Chongqing Debug Page Loaded');
+        console.log('Location:', window.location.href);
+        console.log('Testing image paths...');
+    </script>
+</body>
+</html>

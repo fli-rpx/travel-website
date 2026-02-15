@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Chongqing Test</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        h2 { color: #333; }
+        .gallery { display: flex; gap: 20px; flex-wrap: wrap; }
+        .gallery img { width: 300px; height: 200px; object-fit: cover; border-radius: 10px; }
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/travel-website/images/user_photos/chongqing.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Chongqing Page Test</h1>
+    
+    <div class="hero">
+        <h2>Chongqing, China</h2>
+        <p>Testing hero background image</p>
+    </div>
+    
+    <h2>Gallery Test</h2>
+    <div class="gallery">
+        <img src="/travel-website/images/user_photos/chongqing-1.jpg" alt="Chongqing 1">
+        <img src="/travel-website/images/user_photos/chongqing-2.jpg" alt="Chongqing 2">
+        <img src="/travel-website/images/user_photos/chongqing-3.jpg" alt="Chongqing 3">
+    </div>
+    
+    <h2>Direct Image Links:</h2>
+    <ul>
+        <li><a href="/travel-website/images/user_photos/chongqing.jpg" target="_blank">chongqing.jpg</a></li>
+        <li><a href="/travel-website/images/user_photos/chongqing-1.jpg" target="_blank">chongqing-1.jpg</a></li>
+        <li><a href="/travel-website/images/user_photos/chongqing-2.jpg" target="_blank">chongqing-2.jpg</a></li>
+        <li><a href="/travel-website/images/user_photos/chongqing-3.jpg" target="_blank">chongqing-3.jpg</a></li>
+    </ul>
+    
+    <h2>Debug Info:</h2>
+    <pre id="debug"></pre>
+    
+    <script>
+        // Test image loading
+        const images = [
+            '/travel-website/images/user_photos/chongqing.jpg',
+            '/travel-website/images/user_photos/chongqing-1.jpg',
+            '/travel-website/images/user_photos/chongqing-2.jpg',
+            '/travel-website/images/user_photos/chongqing-3.jpg'
+        ];
+        
+        let debugInfo = 'Image Loading Test:\n\n';
+        
+        images.forEach((src, index) => {
+            const img = new Image();
+            img.onload = function() {
+                debugInfo += `✅ ${src} - Loaded successfully (${this.width}x${this.height})\n`;
+                updateDebug();
+            };
+            img.onerror = function() {
+                debugInfo += `❌ ${src} - Failed to load\n`;
+                updateDebug();
+            };
+            img.src = src;
+        });
+        
+        function updateDebug() {
+            document.getElementById('debug').textContent = debugInfo;
+        }
+        
+        // Initial debug info
+        debugInfo += `Current URL: ${window.location.href}\n`;
+        debugInfo += `Path to images: /travel-website/images/user_photos/\n`;
+        updateDebug();
+    </script>
+</body>
+</html>

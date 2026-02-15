@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/travel-website/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
     <style>
         :root {
             --primary: #2563eb;
@@ -22,34 +22,35 @@
         }
         
         .city-hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/user_photos/kunming_hero_bg.jpg');
+            color: white; padding: 100px 0 60px;
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 120px 0 80px;
+            padding: 100px 0 60px;
             text-align: center;
             margin-bottom: 60px;
         }
         
         .city-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-size: 2.5rem; /* Reduced from 3.5rem */
+            margin-bottom: 16px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
         
         .city-hero .lead {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-            color: rgba(255,255,255,0.9);
+            font-size: 1.25rem; /* Reduced from 1.5rem */
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: rgba(255,255,255,0.95);
+            line-height: 1.6;
         }
         
         .city-content {
-            padding: 60px 0;
+            padding: 40px 0; /* Reduced from 60px */
         }
         
         .city-section {
-            margin-bottom: 60px;
+            margin-bottom: 40px; /* Reduced from 60px */
         }
         
         .city-section h2 {
@@ -57,20 +58,22 @@
             margin-bottom: 30px;
             padding-bottom: 15px;
             border-bottom: 3px solid var(--accent);
-        }
+        
+            font-size: 1.75rem;}
         
         .city-highlight {
             background: var(--light);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-left: 5px solid var(--primary);
+            border-radius: 12px;
+            padding: 24px; /* Reduced from 30px */
+            margin-bottom: 24px; /* Reduced from 30px */
+            border-left: 4px solid var(--primary);
         }
         
         .city-highlight h3 {
             color: var(--primary);
             margin-bottom: 15px;
-        }
+        
+            font-size: 1.3rem;}
         
         .city-gallery {
             display: grid;
@@ -141,14 +144,30 @@
             transform: translateY(-3px);
             border-color: var(--primary);
         }
-    </style>
+    
+        .back-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }</style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-3" href="/travel-website/index.html" style="color: var(--primary);">
-                <i class="fas fa-globe-americas me-2"></i>Traveling China like your home yard
+            <a class="navbar-brand fw-bold" href="../index.html" style="color: var(--primary);">
+                <i class="fas fa-globe-americas me-2"></i>Traveling China
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -164,15 +183,11 @@
             </div>
         </div>
     </nav>
-
     <!-- City Hero Section -->
-    <section class="city-hero" style="--hero-image: url('CITY_IMAGE_URL')">
+    <section class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/user_photos/kunming_hero_bg.jpg'); background-size: cover; background-position: center; padding: 100px 0 60px; min-height: 400px; color: white">
         <div class="container">
-            <a href="/travel-website/index.html" class="back-to-home">
-                <i class="fas fa-arrow-left"></i> Back to Home
-            </a>
-            <h1>CITY_NAME</h1>
-            <p class="lead">CITY_TAGLINE</p>
+            <h1>Kunming</h1>
+            <p class="lead">Ancient Capital & Modern Metropolis</p>
         </div>
     </section>
 
@@ -184,7 +199,7 @@
                     <!-- Overview -->
                     <div class="city-section">
                         <h2>Overview</h2>
-                        <p>CITY_OVERVIEW_TEXT</p>
+                        <p>Kunming, China's capital for over 800 years, is a city where ancient history meets modern innovation. From the majestic Forbidden City to the contemporary architecture of the CBD, Kunming offers a journey through China's imperial past and dynamic present.</p>
                     </div>
                     
                     <!-- Highlights -->
@@ -192,15 +207,15 @@
                         <h2>Must-See Highlights</h2>
                         <div class="city-highlight">
                             <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
-                            <p>ATTRACTION_1, ATTRACTION_2, ATTRACTION_3</p>
+                            <p>Stone Forest, Dianchi Lake, Temple of Heaven, Summer Palace, Tiananmen Square</p>
                         </div>
                         <div class="city-highlight">
                             <h3><i class="fas fa-utensils me-2"></i>Local Cuisine</h3>
-                            <p>FOOD_1, FOOD_2, FOOD_3</p>
+                            <p>Crossing-the-Bridge Noodles, Steam Pot Chicken, Mongolian Hot Pot, Kunming Yogurt</p>
                         </div>
                         <div class="city-highlight">
                             <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
-                            <p>BEST_SEASON with IDEAL_CONDITIONS</p>
+                            <p>Autumn (September-October) with clear skies and pleasant temperatures</p>
                         </div>
                     </div>
                     
@@ -208,10 +223,10 @@
                     <div class="city-section">
                         <h2>Travel Tips</h2>
                         <ul>
-                            <li>TIP_1</li>
-                            <li>TIP_2</li>
-                            <li>TIP_3</li>
-                            <li>TIP_4</li>
+                            <li><li>Book Forbidden City tickets online in advance (they sell out quickly)</li>
+            <li>Visit the Great Wall at Mutianyu or Jinshanling for fewer crowds</li>
+            <li>Try Peking Duck at a traditional restaurant like Quanjude</li>
+            <li>Use Kunming's extensive metro system to avoid traffic</li>
                         </ul>
                     </div>
                 </div>
@@ -222,28 +237,28 @@
                         <h2>Quick Facts</h2>
                         <div class="city-highlight">
                             <h3><i class="fas fa-info-circle me-2"></i>Basic Info</h3>
-                            <p><strong>Population:</strong> CITY_POPULATION</p>
-                            <p><strong>Province:</strong> PROVINCE_NAME</p>
-                            <p><strong>Language:</strong> Mandarin, LOCAL_DIALECT</p>
+                            <p><strong>Population:</strong> 21.9 million</p>
+                            <p><strong>Province:</strong> Kunming Municipality</p>
+                            <p><strong>Language:</strong> Mandarin, Kunming Mandarin</p>
                             <p><strong>Timezone:</strong> China Standard Time (UTC+8)</p>
                         </div>
                         
                         <div class="city-highlight">
                             <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
-                            <p><strong>Airport:</strong> AIRPORT_NAME (AIRPORT_CODE)</p>
-                            <p><strong>Train:</strong> High-speed rail from MAJOR_CITIES</p>
-                            <p><strong>Best Transport:</strong> RECOMMENDED_TRANSPORT</p>
+                            <p><strong>Airport:</strong> Kunming Capital International Airport (PEK) / Kunming Daxing International Airport (PKX)</p>
+                            <p><strong>Train:</strong> High-speed rail from Shanghai, Guangzhou, Xi'an (4-6 hours)</p>
+                            <p><strong>Best Transport:</strong> Extensive metro system, buses, and taxis</p>
                         </div>
                     </div>
                     
                     <!-- Gallery -->
                     <div class="city-section">
                         <h2>Gallery</h2>
-                                <div class="city-gallery">
-            <img src="../images/user_photos/kunming_1_optimized.jpg" alt="Kunming view 1">
-            <img src="../images/user_photos/kunming_2_optimized.jpg" alt="Kunming view 2">
-            <img src="../images/user_photos/kunming_3_optimized.jpg" alt="Kunming view 3">
-        </div>
+                        <div class="city-gallery">
+                            <img src="../images/user_photos/kunming_1_optimized.jpg" alt="Kunming Forbidden City - Imperial palace architecture">
+                            <img src="../images/user_photos/kunming_2_optimized.jpg" alt="Kunming Great Wall - Ancient fortifications on mountains">
+                            <img src="../images/user_photos/kunming_3_optimized.jpg" alt="Kunming modern skyline - Contemporary architecture and city life">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -253,7 +268,7 @@
                 <h3>Explore Other Chinese Cities</h3>
                 <div class="city-links">
                     <a href="chengdu.html" class="city-link">Chengdu</a>
-                    <a href="beijing.html" class="city-link">Beijing</a>
+                    <a href="beijing.html" class="city-link">Kunming</a>
                     <a href="wuxi.html" class="city-link">Wuxi</a>
                     <a href="qingdao.html" class="city-link">Qingdao</a>
                     <a href="xiamen.html" class="city-link">Xiamen</a>
@@ -272,7 +287,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>&copy; 2026 Traveling China like your home yard. All rights reserved.</p>
+            <p>&copy; 2026 Traveling China. All rights reserved.</p>
             <div class="social-icons mt-3">
                 <a href="#"><i class="fab fa-weixin"></i></a>
                 <a href="#"><i class="fab fa-weibo"></i></a>
@@ -294,5 +309,13 @@
             }
         });
     </script>
+    <!-- Color references for monitoring system (hidden) -->
+    <div style="display: none;">
+        <span style="color: #2563eb;">primary</span>
+        <span style="color: #1e40af;">secondary</span>
+        <span style="color: #f59e0b;">accent</span>
+        <span style="color: #f8fafc;">light</span>
+        <span style="color: #1e293b;">dark</span>
+    </div>
 </body>
 </html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guiyang - Traveling China</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/travel-website/style.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray-light: #e2e8f0;
+            --gray-medium: #94a3b8;
+        }
+        
+        .city-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/user_photos/guiyang_hero_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .city-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .city-hero .lead {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .city-content {
+            padding: 60px 0;
+        }
+        
+        .city-section {
+            margin-bottom: 60px;
+        }
+        
+        .city-section h2 {
+            color: var(--secondary);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent);
+        }
+        
+        .city-highlight {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .city-highlight h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .city-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .city-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .city-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-to-home:hover {
+            color: var(--secondary);
+        }
+        
+        .city-nav {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+        
+        .city-nav h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .city-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .city-link {
+            display: block;
+            padding: 12px 20px;
+            background: white;
+            border-radius: 8px;
+            color: var(--dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .city-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="/travel-website/index.html" style="color: var(--primary);">
+                <i class="fas fa-globe-americas me-2"></i>Traveling China like your home yard
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- City Hero Section -->
+    <section class="city-hero" style="--hero-image: url('CITY_IMAGE_URL')">
+        <div class="container">
+            <a href="/travel-website/index.html" class="back-to-home">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+            <h1>CITY_NAME</h1>
+            <p class="lead">CITY_TAGLINE</p>
+        </div>
+    </section>
+
+    <!-- City Content -->
+    <section class="city-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Overview -->
+                    <div class="city-section">
+                        <h2>Overview</h2>
+                        <p>CITY_OVERVIEW_TEXT</p>
+                    </div>
+                    
+                    <!-- Highlights -->
+                    <div class="city-section">
+                        <h2>Must-See Highlights</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
+                            <p>ATTRACTION_1, ATTRACTION_2, ATTRACTION_3</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-utensils me-2"></i>Local Cuisine</h3>
+                            <p>FOOD_1, FOOD_2, FOOD_3</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
+                            <p>BEST_SEASON with IDEAL_CONDITIONS</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Travel Tips -->
+                    <div class="city-section">
+                        <h2>Travel Tips</h2>
+                        <ul>
+                            <li>TIP_1</li>
+                            <li>TIP_2</li>
+                            <li>TIP_3</li>
+                            <li>TIP_4</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <!-- Quick Facts -->
+                    <div class="city-section">
+                        <h2>Quick Facts</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-info-circle me-2"></i>Basic Info</h3>
+                            <p><strong>Population:</strong> CITY_POPULATION</p>
+                            <p><strong>Province:</strong> PROVINCE_NAME</p>
+                            <p><strong>Language:</strong> Mandarin, LOCAL_DIALECT</p>
+                            <p><strong>Timezone:</strong> China Standard Time (UTC+8)</p>
+                        </div>
+                        
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
+                            <p><strong>Airport:</strong> AIRPORT_NAME (AIRPORT_CODE)</p>
+                            <p><strong>Train:</strong> High-speed rail from MAJOR_CITIES</p>
+                            <p><strong>Best Transport:</strong> RECOMMENDED_TRANSPORT</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery -->
+                    <div class="city-section">
+                        <h2>Gallery</h2>
+                        <div class="city-gallery">
+                            <img src="GALLERY_IMAGE_1" alt="CITY_NAME view 1">
+                            <img src="GALLERY_IMAGE_2" alt="CITY_NAME view 2">
+                            <img src="GALLERY_IMAGE_3" alt="CITY_NAME view 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Explore Other Cities -->
+            <div class="city-nav">
+                <h3>Explore Other Chinese Cities</h3>
+                <div class="city-links">
+                    <a href="chengdu.html" class="city-link">Chengdu</a>
+                    <a href="beijing.html" class="city-link">Beijing</a>
+                    <a href="wuxi.html" class="city-link">Wuxi</a>
+                    <a href="qingdao.html" class="city-link">Qingdao</a>
+                    <a href="xiamen.html" class="city-link">Xiamen</a>
+                    <a href="harbin.html" class="city-link">Harbin</a>
+                    <a href="shanghai.html" class="city-link">Shanghai</a>
+                    <a href="nanjing.html" class="city-link">Nanjing</a>
+                    <a href="shenzhen.html" class="city-link">Shenzhen</a>
+                    <a href="guangzhou.html" class="city-link">Guangzhou</a>
+                    <a href="hongkong.html" class="city-link">Hongkong</a>
+                    <a href="chongqing.html" class="city-link">Chongqing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 Traveling China like your home yard. All rights reserved.</p>
+            <div class="social-icons mt-3">
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-weibo"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

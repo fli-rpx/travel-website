@@ -307,8 +307,8 @@ class EnhancedWebsiteMonitor:
         """Extract CSS colors from HTML/CSS content."""
         colors = set()
         
-        # Look for hex colors
-        hex_pattern = r'#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})'
+        # Look for hex colors - check for 6-digit first, then 3-digit
+        hex_pattern = r'#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})'
         hex_matches = re.findall(hex_pattern, content)
         for match in hex_matches:
             if len(match) == 3:
@@ -489,7 +489,7 @@ class EnhancedWebsiteMonitor:
                 content = f.read()
             
             # Check for news section
-            has_news_section = "Latest China Travel News" in content
+            has_news_section = "Latest Travel News" in content
             has_news_cards = "news-card" in content
             has_news_date = "news-date" in content
             
@@ -570,7 +570,8 @@ class EnhancedWebsiteMonitor:
         except Exception as e:
             self.log(f"❌ Error checking gallery section: {e}", "ERROR")
             return False
-def save_status(self, results, all_passed):
+    
+    def save_status(self, results, all_passed):
         """Save monitoring status."""
         status = {
             "last_check": datetime.now().isoformat(),

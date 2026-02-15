@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website Previews</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .content { padding: 40px; }
+        .preview-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .preview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .preview-card h2 {
+            color: #1e293b;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .preview-card h2::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #3b82f6;
+        }
+        .preview-card p {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #2563eb;
+        }
+        .btn-secondary {
+            background: #64748b;
+            margin-left: 10px;
+        }
+        .btn-secondary:hover {
+            background: #475569;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+        .status-live {
+            background: #10b981;
+            color: white;
+        }
+        .status-pending {
+            background: #f59e0b;
+            color: white;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f1f5f9;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏔️ Travel Website Previews</h1>
+            <p>Review the proposed changes before deployment</p>
+        </div>
+        
+        <div class="content">
+            <div class="preview-card">
+                <h2>🎨 Font Preview <span class="status status-live">LIVE</span></h2>
+                <p><strong>Proposed Fonts:</strong> Cormorant Garamond (headings) + Libre Baskerville (body)</p>
+                <p><strong>Style:</strong> Classic, elegant, sophisticated - perfect for travel content</p>
+                <p><strong>Changes:</strong> This preview shows how all city pages will look with the new font combination.</p>
+                <a href="preview_fonts.html" class="btn" target="_blank">View Font Preview</a>
+                <a href="https://fli-rpx.github.io/travel-website/cities/beijing.html" class="btn btn-secondary" target="_blank">Compare with Current</a>
+            </div>
+            
+            <div class="preview-card">
+                <h2>🏠 Clean Home Page Preview <span class="status status-live">LIVE</span></h2>
+                <p><strong>Changes:</strong> Removed carousel completely, kept only responsive grid</p>
+                <p><strong>Features:</strong> No JavaScript conflicts, clean design, consistent with city pages</p>
+                <p><strong>Note:</strong> This preview shows 2 cities as example. Full version has all 12 cities.</p>
+                <a href="preview_clean_homepage.html" class="btn" target="_blank">View Clean Home Page</a>
+                <a href="https://fli-rpx.github.io/travel-website/" class="btn btn-secondary" target="_blank">Compare with Current</a>
+            </div>
+            
+            <div class="preview-card">
+                <h2>🔧 Fix Summary</h2>
+                <p><strong>Issues Fixed:</strong></p>
+                <ul style="color: #64748b; line-height: 1.6; margin-bottom: 20px; padding-left: 20px;">
+                    <li>✅ Chrome extension connection issues addressed</li>
+                    <li>✅ Home page carousel removed (was causing conflicts)</li>
+                    <li>✅ Style consistency between home page and city pages</li>
+                    <li>✅ Fonts updated to classic & elegant combination</li>
+                    <li>✅ CSS conflicts cleaned up</li>
+                </ul>
+                <p><strong>Ready for deployment after your review.</strong></p>
+            </div>
+            
+            <div style="background: #f0f9ff; padding: 20px; border-radius: 8px; margin-top: 30px;">
+                <h3 style="color: #0369a1; margin-bottom: 10px;">📋 Next Steps</h3>
+                <p style="color: #0c4a6e; margin-bottom: 10px;">1. Review the previews above</p>
+                <p style="color: #0c4a6e; margin-bottom: 10px;">2. Provide feedback on fonts and design</p>
+                <p style="color: #0c4a6e; margin-bottom: 10px;">3. Approve deployment of changes</p>
+                <p style="color: #0c4a6e;">4. Test the updated website</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Preview pages published: 2026-02-13 20:30 PST</p>
+            <p>GitHub Pages deployment may take 1-2 minutes to update</p>
+        </div>
+    </div>
+    
+    <script>
+        // Check if preview pages are accessible
+        async function checkPageStatus(url, elementId) {
+            try {
+                const response = await fetch(url, { method: 'HEAD' });
+                const statusElement = document.getElementById(elementId);
+                if (response.ok) {
+                    statusElement.textContent = 'LIVE';
+                    statusElement.className = 'status status-live';
+                } else {
+                    statusElement.textContent = 'PENDING';
+                    statusElement.className = 'status status-pending';
+                }
+            } catch (error) {
+                const statusElement = document.getElementById(elementId);
+                statusElement.textContent = 'PENDING';
+                statusElement.className = 'status status-pending';
+            }
+        }
+        
+        // Check status when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            checkPageStatus('preview_fonts.html', 'font-status');
+            checkPageStatus('preview_clean_homepage.html', 'homepage-status');
+            
+            // Auto-refresh status every 10 seconds
+            setInterval(() => {
+                checkPageStatus('preview_fonts.html', 'font-status');
+                checkPageStatus('preview_clean_homepage.html', 'homepage-status');
+            }, 10000);
+        });
+    </script>
+</body>
+</html>

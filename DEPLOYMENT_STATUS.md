@@ -5,7 +5,7 @@
 ## ✅ CHANGES DEPLOYED TO GIT
 
 ### 1. **Website Updates** (Commit: 469bd9c)
-- **index.html**: Replaced Popular Destinations with Latest China Travel News
+- **index.html**: Replaced Popular Destinations with Latest Travel News
   - Added 3 news cards with dynamic content
   - Each card includes date, title, content, and color-coded tags
   - Added "View All News" button
@@ -89,7 +89,7 @@ The news section can be easily updated by:
 To verify the deployment:
 1. Visit: https://fli-rpx.github.io/travel-website/
 2. Scroll to where Popular Destinations used to be
-3. Verify "Latest China Travel News" section appears
+3. Verify "Latest Travel News" section appears
 4. Check that 3 news cards are displayed with proper styling
 5. Confirm responsive design works on mobile/desktop
 

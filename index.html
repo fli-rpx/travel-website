@@ -64,28 +64,27 @@
             color: #1e293b;
         }
         
-        .simple-carousel {
-    position: relative;
-    overflow: hidden;
-    max-width: 1000px;
-    margin: 0 auto;
-    border-radius: 12px;
-}
+            .simple-carousel {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
         
-            .carousel-track {
+                .carousel-track {
         display: flex;
         width: 500%; /* 5 slides × 100% */
         transition: transform 0.5s ease-in-out;
     }
         
-                .carousel-slide {
+                    .carousel-slide {
         display: flex;
-        justify-content: center;
-        align-items: stretch;
         width: 20%; /* 100% ÷ 5 slides = 20% */
         min-height: 400px;
         padding: 10px;
         box-sizing: border-box;
+        flex-shrink: 0; /* Prevent shrinking */
+        justify-content: space-around; /* Distribute space evenly */
+        align-items: stretch;
     }
         
         /* CITY CARDS - NO IMAGES */
@@ -271,14 +270,15 @@
         
         /* RESPONSIVE */
         @media (max-width: 768px) {
-                    .carousel-slide {
+                        .carousel-slide {
         display: flex;
-        justify-content: center;
-        align-items: stretch;
         width: 20%; /* 100% ÷ 5 slides = 20% */
         min-height: 400px;
         padding: 10px;
         box-sizing: border-box;
+        flex-shrink: 0; /* Prevent shrinking */
+        justify-content: space-around; /* Distribute space evenly */
+        align-items: stretch;
     }
             
                     .city-card {
@@ -639,7 +639,7 @@
             height: 150px;
         }
         
-            .carousel-track {
+                .carousel-track {
         display: flex;
         width: 500%; /* 5 slides × 100% */
         transition: transform 0.5s ease-in-out;
@@ -647,19 +647,21 @@
     }
     
     @media (max-width: 768px) {
-        .simple-carousel {
-            max-width: 100%;
-            margin: 0 10px;
-        }
+            .simple-carousel {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
         
-                .carousel-slide {
+                    .carousel-slide {
         display: flex;
-        justify-content: center;
-        align-items: stretch;
         width: 20%; /* 100% ÷ 5 slides = 20% */
         min-height: 400px;
         padding: 10px;
         box-sizing: border-box;
+        flex-shrink: 0; /* Prevent shrinking */
+        justify-content: space-around; /* Distribute space evenly */
+        align-items: stretch;
     }
         
                 .city-card {
@@ -688,7 +690,7 @@
             font-size: 1.2rem;
         }
         
-            .carousel-track {
+                .carousel-track {
         display: flex;
         width: 500%; /* 5 slides × 100% */
         transition: transform 0.5s ease-in-out;
@@ -696,14 +698,15 @@
     }
     
     @media (max-width: 480px) {
-                .carousel-slide {
+                    .carousel-slide {
         display: flex;
-        justify-content: center;
-        align-items: stretch;
         width: 20%; /* 100% ÷ 5 slides = 20% */
         min-height: 400px;
         padding: 10px;
         box-sizing: border-box;
+        flex-shrink: 0; /* Prevent shrinking */
+        justify-content: space-around; /* Distribute space evenly */
+        align-items: stretch;
     }
         
                 .city-card {
@@ -723,7 +726,7 @@
             height: 130px;
         }
         
-            .carousel-track {
+                .carousel-track {
         display: flex;
         width: 500%; /* 5 slides × 100% */
         transition: transform 0.5s ease-in-out;
@@ -769,9 +772,10 @@
         animation: fadeIn 0.5s ease-in;
     }
     /* ANTI-STACKING RULES - Ensure cities stay side-by-side */
-    .simple-carousel {
-        overflow: hidden !important;
-        width: 100% !important;
+        .simple-carousel {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
     }
     
     .carousel-container {
@@ -785,14 +789,15 @@
     }
     
     /* Prevent any column layout on slides */
-            .carousel-slide {
+                .carousel-slide {
         display: flex;
-        justify-content: center;
-        align-items: stretch;
         width: 20%; /* 100% ÷ 5 slides = 20% */
         min-height: 400px;
         padding: 10px;
         box-sizing: border-box;
+        flex-shrink: 0; /* Prevent shrinking */
+        justify-content: space-around; /* Distribute space evenly */
+        align-items: stretch;
     }
     
     /* Media query adjustments */
@@ -827,14 +832,15 @@
     }
     
     @media (max-width: 768px) {
-                .carousel-slide {
+                    .carousel-slide {
         display: flex;
-        justify-content: center;
-        align-items: stretch;
         width: 20%; /* 100% ÷ 5 slides = 20% */
         min-height: 400px;
         padding: 10px;
         box-sizing: border-box;
+        flex-shrink: 0; /* Prevent shrinking */
+        justify-content: space-around; /* Distribute space evenly */
+        align-items: stretch;
     }
         
                 .city-card {
@@ -852,14 +858,15 @@
     }
     
     @media (max-width: 600px) {
-                .carousel-slide {
+                    .carousel-slide {
         display: flex;
-        justify-content: center;
-        align-items: stretch;
         width: 20%; /* 100% ÷ 5 slides = 20% */
         min-height: 400px;
         padding: 10px;
         box-sizing: border-box;
+        flex-shrink: 0; /* Prevent shrinking */
+        justify-content: space-around; /* Distribute space evenly */
+        align-items: stretch;
     }
         
                 .city-card {

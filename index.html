@@ -76,7 +76,7 @@
         transition: transform 0.5s ease-in-out;
     }
         
-                        .carousel-slide {
+                            .carousel-slide {
         display: flex;
         width: 20%;
         min-height: 400px;
@@ -88,28 +88,8 @@
     }
         
         /* CITY CARDS - NO IMAGES */
-                .city-card {
-        flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
-        display: flex;
-        flex-direction: column;
-        background: white;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        margin: 10px;
-        height: 380px;
-    }
-    /* Clickable city cards */
-    .city-card-link {
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        flex: 0 0 18%; /* Match city-card width */
-        margin: 0 1%; /* Match city-card margin */
-    }
-    
-    .city-card {
+                    .city-card {
+        flex: 0 0 18%;
         display: flex;
         flex-direction: column;
         background: white;
@@ -118,13 +98,36 @@
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         height: 380px;
+        margin: 0 1%;
         cursor: pointer;
     }
     
-    .city-card-link:hover .city-card {
+    .city-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
+    
+    
+        .city-card {
+        flex: 0 0 18%;
+        display: flex;
+        flex-direction: column;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 380px;
+        margin: 0 1%;
+        cursor: pointer;
+    }
+    
+    .city-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    
     
     /* Remove any old button styles */
     .city-link {
@@ -137,8 +140,23 @@
     }
     
     /* But allow text selection */
-    .city-card {
-        user-select: text;
+        .city-card {
+        flex: 0 0 18%;
+        display: flex;
+        flex-direction: column;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 380px;
+        margin: 0 1%;
+        cursor: pointer;
+    }
+    
+    .city-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
     /* Simple hover effect - no brightness change */
     .city-card:hover {
@@ -415,7 +433,7 @@
         
         /* RESPONSIVE */
         @media (max-width: 768px) {
-                            .carousel-slide {
+                                .carousel-slide {
         display: flex;
         width: 20%;
         min-height: 400px;
@@ -426,17 +444,23 @@
         align-items: stretch;
     }
             
-                    .city-card {
-        flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
+                        .city-card {
+        flex: 0 0 18%;
         display: flex;
         flex-direction: column;
         background: white;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        margin: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         height: 380px;
+        margin: 0 1%;
+        cursor: pointer;
+    }
+    
+    .city-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
             
             .hero h1 {
@@ -771,17 +795,23 @@
         }
     /* Responsive adjustments */
     @media (max-width: 1100px) {
-                .city-card {
-        flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
+                    .city-card {
+        flex: 0 0 18%;
         display: flex;
         flex-direction: column;
         background: white;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        margin: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         height: 380px;
+        margin: 0 1%;
+        cursor: pointer;
+    }
+    
+    .city-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
         
             .city-header {
@@ -806,7 +836,7 @@
         
     }
         
-                        .carousel-slide {
+                            .carousel-slide {
         display: flex;
         width: 20%;
         min-height: 400px;
@@ -817,17 +847,23 @@
         align-items: stretch;
     }
         
-                .city-card {
-        flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
+                    .city-card {
+        flex: 0 0 18%;
         display: flex;
         flex-direction: column;
         background: white;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        margin: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         height: 380px;
+        margin: 0 1%;
+        cursor: pointer;
+    }
+    
+    .city-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
         
             .city-header {
@@ -854,7 +890,7 @@
     }
     
     @media (max-width: 480px) {
-                        .carousel-slide {
+                            .carousel-slide {
         display: flex;
         width: 20%;
         min-height: 400px;
@@ -865,17 +901,23 @@
         align-items: stretch;
     }
         
-                .city-card {
-        flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
+                    .city-card {
+        flex: 0 0 18%;
         display: flex;
         flex-direction: column;
         background: white;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        margin: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         height: 380px;
+        margin: 0 1%;
+        cursor: pointer;
+    }
+    
+    .city-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
         
             .city-header {
@@ -941,7 +983,7 @@
     }
     
     /* Prevent any column layout on slides */
-                    .carousel-slide {
+                        .carousel-slide {
         display: flex;
         width: 20%;
         min-height: 400px;
@@ -954,37 +996,49 @@
     
     /* Media query adjustments */
     @media (max-width: 1100px) {
-                .city-card {
-        flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
+                    .city-card {
+        flex: 0 0 18%;
         display: flex;
         flex-direction: column;
         background: white;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        margin: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         height: 380px;
+        margin: 0 1%;
+        cursor: pointer;
+    }
+    
+    .city-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
     }
     
     @media (max-width: 900px) {
-                .city-card {
-        flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
+                    .city-card {
+        flex: 0 0 18%;
         display: flex;
         flex-direction: column;
         background: white;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        margin: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         height: 380px;
+        margin: 0 1%;
+        cursor: pointer;
+    }
+    
+    .city-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
     }
     
     @media (max-width: 768px) {
-                        .carousel-slide {
+                            .carousel-slide {
         display: flex;
         width: 20%;
         min-height: 400px;
@@ -995,22 +1049,28 @@
         align-items: stretch;
     }
         
-                .city-card {
-        flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
+                    .city-card {
+        flex: 0 0 18%;
         display: flex;
         flex-direction: column;
         background: white;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        margin: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         height: 380px;
+        margin: 0 1%;
+        cursor: pointer;
+    }
+    
+    .city-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
     }
     
     @media (max-width: 600px) {
-                        .carousel-slide {
+                            .carousel-slide {
         display: flex;
         width: 20%;
         min-height: 400px;
@@ -1021,17 +1081,23 @@
         align-items: stretch;
     }
         
-                .city-card {
-        flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
+                    .city-card {
+        flex: 0 0 18%;
         display: flex;
         flex-direction: column;
         background: white;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        margin: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         height: 380px;
+        margin: 0 1%;
+        cursor: pointer;
+    }
+    
+    .city-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
         
         /* Hide scrollbar but keep functionality */
@@ -1114,24 +1180,15 @@
         text-decoration: underline;
     }
     /* Visual feedback for clickable cards */
-    .city-card-link:active .city-card {
-        transform: translateY(-2px) scale(0.98);
-        transition: transform 0.1s ease;
-    }
+    
     
     /* Focus styles for accessibility */
-    .city-card-link:focus {
-        outline: 2px solid #3b82f6;
-        outline-offset: 2px;
-        border-radius: 12px;
-    }
+    
     
     /* Remove default link styles */
-    .city-card-link {
-        text-decoration: none;
-    }
+    
     /* Fix for clickable city cards in flex layout */
-    .carousel-slide {
+        .carousel-slide {
         display: flex;
         width: 20%;
         min-height: 400px;
@@ -1142,15 +1199,10 @@
         align-items: stretch;
     }
     
-    .city-card-link {
-        flex: 0 0 18%;
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        margin: 0 1%;
-    }
     
-    .city-card {
+    
+        .city-card {
+        flex: 0 0 18%;
         display: flex;
         flex-direction: column;
         background: white;
@@ -1159,13 +1211,16 @@
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         height: 380px;
-        width: 100%;
+        margin: 0 1%;
+        cursor: pointer;
     }
     
-    .city-card-link:hover .city-card {
+    .city-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
+    
+    
     
     /* Ensure proper card content */
     .city-header {
@@ -1218,7 +1273,7 @@
         <div class="container">
             <h1>Experience Authentic China</h1>
             <p>Personal travel assistance with cultural introductions and complete arrangements for your China journey.</p>
-            <a href="#cities" class="hero-btn">Explore Cities in Detail</a>
+            <a href="#cities" class="hero-btn">Explore Cities in Detail
         </div>
     </section>
 
@@ -1232,8 +1287,7 @@
                     <!-- SLIDE 1 -->
                     <div class="carousel-slide">
                         <!-- SLIDE -->
-                        <a href="cities/slide.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="slide.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/slide.jpg');">
                                     <div class="city-name">SLIDE</div>
                                     <div class="city-tag">Beautiful Chinese City</div>
@@ -1242,10 +1296,9 @@
                                     
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Beijing -->
-                        <a href="cities/beijing.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="beijing.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/beijing.jpg?v=1770598466');">
                                     <div class="city-name">Beijing</div>
                                     <div class="city-tag">Great Wall & Forbidden City</div>
@@ -1256,10 +1309,9 @@
 <p>🍜 Peking duck, zhajiangmian noodles</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Chengdu -->
-                        <a href="cities/chengdu.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="chengdu.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/chengdu.jpg?v=1770598466');">
                                     <div class="city-name">Chengdu</div>
                                     <div class="city-tag">Pandas & Spicy Cuisine</div>
@@ -1270,10 +1322,9 @@
 <p>🎭 Sichuan opera with face-changing</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Chongqing -->
-                        <a href="cities/chongqing.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="chongqing.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/chongqing.jpg?v=1771172179');">
                                     <div class="city-name">Chongqing</div>
                                     <div class="city-tag">Mountain City & Hot Pot</div>
@@ -1284,10 +1335,9 @@
 <p>🌉 Hongya Cave & Yangtze River Cable Car</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Dali -->
-                        <a href="cities/dali.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="dali.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/dali_hero_bg.jpg?v=1771198094');">
                                     <div class="city-name">Dali</div>
                                     <div class="city-tag">Ancient Town & Erhai Lake</div>
@@ -1298,13 +1348,12 @@
 <p>🗼 Three Pagodas - 1,000+ years old</p>
                                 </div>
                             </div>
-                        </a>
+                        
                     </div>
                     <!-- SLIDE 2 -->
                     <div class="carousel-slide">
                         <!-- Datong -->
-                        <a href="cities/datong.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="datong.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/datong_hero_bg.jpg?v=1771202090');">
                                     <div class="city-name">Datong</div>
                                     <div class="city-tag">Buddhist Grottoes & History</div>
@@ -1315,10 +1364,9 @@
 <p>🏛️ Ancient city walls & Nine Dragon Screen</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- SLIDE -->
-                        <a href="cities/slide.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="slide.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/slide.jpg');">
                                     <div class="city-name">SLIDE</div>
                                     <div class="city-tag">Beautiful Chinese City</div>
@@ -1327,10 +1375,9 @@
                                     
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Guangzhou -->
-                        <a href="cities/guangzhou.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="guangzhou.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/guangzhou.jpg?v=1770598466');">
                                     <div class="city-name">Guangzhou</div>
                                     <div class="city-tag">Canton City & Culinary Capital</div>
@@ -1341,10 +1388,9 @@
 <p>🏛️ Chen Clan Ancestral Hall</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Guilin -->
-                        <a href="cities/guilin.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="guilin.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/guilin_hero_bg.jpg?v=1771196281');">
                                     <div class="city-name">Guilin</div>
                                     <div class="city-tag">Karst Landscape & Li River</div>
@@ -1355,10 +1401,9 @@
 <p>🕳️ Reed Flute Cave - colorful limestone</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Guiyang -->
-                        <a href="cities/guiyang.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="guiyang.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/guiyang_hero_bg.jpg?v=1771196767');">
                                     <div class="city-name">Guiyang</div>
                                     <div class="city-tag">Forest City & Minority Culture</div>
@@ -1369,13 +1414,12 @@
 <p>🍲 Sour fish soup - Guizhou specialty</p>
                                 </div>
                             </div>
-                        </a>
+                        
                     </div>
                     <!-- SLIDE 3 -->
                     <div class="carousel-slide">
                         <!-- Hangzhou -->
-                        <a href="cities/hangzhou.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="hangzhou.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/hangzhou_hero_bg.jpg?v=1771219016');">
                                     <div class="city-name">Hangzhou</div>
                                     <div class="city-tag">West Lake & Paradise on Earth</div>
@@ -1386,10 +1430,9 @@
 <p>🍵 Longjing tea - best in China</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Harbin -->
-                        <a href="cities/harbin.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="harbin.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/harbin.jpg?v=1770598466');">
                                     <div class="city-name">Harbin</div>
                                     <div class="city-tag">Ice City & Russian Architecture</div>
@@ -1400,10 +1443,9 @@
 <p>🏰 Central Street - European architecture</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- SLIDE -->
-                        <a href="cities/slide.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="slide.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/slide.jpg');">
                                     <div class="city-name">SLIDE</div>
                                     <div class="city-tag">Beautiful Chinese City</div>
@@ -1412,10 +1454,9 @@
                                     
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Hongkong -->
-                        <a href="cities/hongkong.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="hongkong.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/hongkong.jpg?v=1771184412');">
                                     <div class="city-name">Hongkong</div>
                                     <div class="city-tag">Asia's World City</div>
@@ -1426,10 +1467,9 @@
 <p>🍜 Dim sum & egg waffles</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Jinan -->
-                        <a href="cities/jinan.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="jinan.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/jinan_hero_bg.jpg?v=1771199979');">
                                     <div class="city-name">Jinan</div>
                                     <div class="city-tag">City of Springs</div>
@@ -1440,13 +1480,12 @@
 <p>🏯 Thousand Buddha Mountain</p>
                                 </div>
                             </div>
-                        </a>
+                        
                     </div>
                     <!-- SLIDE 4 -->
                     <div class="carousel-slide">
                         <!-- Kashi -->
-                        <a href="cities/kashi.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="kashi.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/kashi_hero_bg.jpg?v=1771221241');">
                                     <div class="city-name">Kashi</div>
                                     <div class="city-tag">Silk Road Gateway</div>
@@ -1457,10 +1496,9 @@
 <p>🍖 Lamb kebabs & naan bread</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Kunming -->
-                        <a href="cities/kunming.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="kunming.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/kunming_hero_bg.jpg?v=1771197761');">
                                     <div class="city-name">Kunming</div>
                                     <div class="city-tag">Spring City & Flower Capital</div>
@@ -1471,10 +1509,9 @@
 <p>🏞️ Dianchi Lake - largest in Yunnan</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Linyi -->
-                        <a href="cities/linyi.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="linyi.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/linyi_hero_bg.jpg?v=1771200340');">
                                     <div class="city-name">Linyi</div>
                                     <div class="city-tag">Revolutionary Base & Nature</div>
@@ -1485,10 +1522,9 @@
 <p>🏯 Wang Xizhi's Former Residence</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- SLIDE -->
-                        <a href="cities/slide.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="slide.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/slide.jpg');">
                                     <div class="city-name">SLIDE</div>
                                     <div class="city-tag">Beautiful Chinese City</div>
@@ -1497,10 +1533,9 @@
                                     
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Nanjing -->
-                        <a href="cities/nanjing.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="nanjing.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/nanjing.jpg?v=1770598466');">
                                     <div class="city-name">Nanjing</div>
                                     <div class="city-tag">Ancient Capital & Modern City</div>
@@ -1511,13 +1546,12 @@
 <p>🦆 Nanjing salted duck</p>
                                 </div>
                             </div>
-                        </a>
+                        
                     </div>
                     <!-- SLIDE 5 -->
                     <div class="carousel-slide">
                         <!-- Qingdao -->
-                        <a href="cities/qingdao.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="qingdao.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/qingdao.jpg?v=1771183735');">
                                     <div class="city-name">Qingdao</div>
                                     <div class="city-tag">Beer & Beaches</div>
@@ -1528,10 +1562,9 @@
 <p>🏛️ German architecture area</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Shanghai -->
-                        <a href="cities/shanghai.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="shanghai.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/shanghai.jpg?v=1771184412');">
                                     <div class="city-name">Shanghai</div>
                                     <div class="city-tag">The Bund & Skyscrapers</div>
@@ -1542,10 +1575,9 @@
 <p>🥟 Xiaolongbao - soup dumplings</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Shenzhen -->
-                        <a href="cities/shenzhen.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="shenzhen.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/shenzhen.jpg?v=1771184412');">
                                     <div class="city-name">Shenzhen</div>
                                     <div class="city-tag">Tech Hub & Modern City</div>
@@ -1556,10 +1588,9 @@
 <p>🛍️ Luohu Commercial City</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Suzhou -->
-                        <a href="cities/suzhou.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="suzhou.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/suzhou_hero_bg.jpg?v=1771222098');">
                                     <div class="city-name">Suzhou</div>
                                     <div class="city-tag">Venice of the East</div>
@@ -1570,10 +1601,9 @@
 <p>🍜 Suzhou noodles & sweet dumplings</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- SLIDE -->
-                        <a href="cities/slide.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="slide.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/slide.jpg');">
                                     <div class="city-name">SLIDE</div>
                                     <div class="city-tag">Beautiful Chinese City</div>
@@ -1582,13 +1612,12 @@
                                     
                                 </div>
                             </div>
-                        </a>
+                        
                     </div>
                     <!-- SLIDE 6 -->
                     <div class="carousel-slide">
                         <!-- Taiyuan -->
-                        <a href="cities/taiyuan.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="taiyuan.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/taiyuan_hero_bg.jpg?v=1771201568');">
                                     <div class="city-name">Taiyuan</div>
                                     <div class="city-tag">Ancient Capital & Industry</div>
@@ -1599,10 +1628,9 @@
 <p>🍜 Taiyuan noodles & vinegar dishes</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Urumqi -->
-                        <a href="cities/urumqi.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="urumqi.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/wulumuqi_hero_bg.jpg?v=1771204332');">
                                     <div class="city-name">Urumqi</div>
                                     <div class="city-tag">Gateway to Xinjiang</div>
@@ -1613,10 +1641,9 @@
 <p>🍖 Lamb kebabs & Xinjiang cuisine</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Wuhan -->
-                        <a href="cities/wuhan.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="wuhan.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/wuhan_hero_bg.jpg?v=1771221844');">
                                     <div class="city-name">Wuhan</div>
                                     <div class="city-tag">River City & Transportation Hub</div>
@@ -1627,10 +1654,9 @@
 <p>🍜 Hot dry noodles - local specialty</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Wuxi -->
-                        <a href="cities/wuxi.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="wuxi.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/wuxi.jpg?v=1771184412');">
                                     <div class="city-name">Wuxi</div>
                                     <div class="city-tag">Lake City & Industry</div>
@@ -1641,10 +1667,9 @@
 <p>🍖 Wuxi spareribs - sweet & savory</p>
                                 </div>
                             </div>
-                        </a>
+                        
                         <!-- Xiamen -->
-                        <a href="cities/xiamen.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="xiamen.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/xiamen.jpg?v=1771183741');">
                                     <div class="city-name">Xiamen</div>
                                     <div class="city-tag">Garden Island & Coastal City</div>
@@ -1655,13 +1680,12 @@
 <p>🦐 Seafood & peanut soup</p>
                                 </div>
                             </div>
-                        </a>
+                        
                     </div>
                     <!-- SLIDE 7 -->
                     <div class="carousel-slide">
                         <!-- FOOTER -->
-                        <a href="cities/footer.html" class="city-card-link">
-                            <div class="city-card">
+                        <div class="city-card"> data-city-page="footer.html"
                                 <div class="city-header" style="background-image: url('images/user_photos/footer.jpg');">
                                     <div class="city-name">FOOTER</div>
                                     <div class="city-tag">Beautiful Chinese City</div>
@@ -1670,7 +1694,7 @@
                                     
                                 </div>
                             </div>
-                        </a>
+                        
                     </div>
                 </div>
                 
@@ -1691,21 +1715,21 @@
                     <div class="news-date">Feb 8, 2026</div>
                     <h3 class="news-title">China Reopens Popular Tourist Routes</h3>
                     <p class="news-excerpt">Several historic routes including the Silk Road and Tea Horse Road have been reopened with improved facilities for international travelers.</p>
-                    <a href="#" class="news-link">Read more →</a>
+                    <a href="#" class="news-link">Read more →
                 </div>
                 
                 <div class="news-card">
                     <div class="news-date">Feb 5, 2026</div>
                     <h3 class="news-title">New High-Speed Rail Connects Major Cities</h3>
                     <p class="news-excerpt">The new Beijing-Shanghai-Guangzhou line reduces travel time between major cities by 40%, making multi-city tours more convenient.</p>
-                    <a href="#" class="news-link">Read more →</a>
+                    <a href="#" class="news-link">Read more →
                 </div>
                 
                 <div class="news-card">
                     <div class="news-date">Jan 30, 2026</div>
                     <h3 class="news-title">Cultural Festival Calendar 2026 Released</h3>
                     <p class="news-excerpt">Plan your trip around major festivals including Spring Festival, Mid-Autumn Festival, and regional cultural celebrations.</p>
-                    <a href="#" class="news-link">Read more →</a>
+                    <a href="#" class="news-link">Read more →
                 </div>
             </div>
         </div>
@@ -1981,6 +2005,38 @@
                 img.src = imgUrl;
             }
         });
+    });</script>
+
+    <script>
+    /* Simple click handler for city cards */
+    document.addEventListener('DOMContentLoaded', function() {
+        const cityCards = document.querySelectorAll('.city-card[data-city-page]');
+        
+        cityCards.forEach(card => {
+            // Make card look clickable
+            card.style.cursor = 'pointer';
+            
+            // Add click handler
+            card.addEventListener('click', function() {
+                const cityPage = this.getAttribute('data-city-page');
+                if (cityPage) {
+                    window.location.href = 'cities/' + cityPage;
+                }
+            });
+            
+            // Add hover effect
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            });
+        });
+        
+        console.log('✅ City cards made clickable:', cityCards.length);
     });</script>
 </body>
 </html>

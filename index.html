@@ -121,61 +121,55 @@
     text-align: left;
     flex-shrink: 0;
 }
-        /* Fix for dark images - lighter gradient and more brightness */
+            /* Bright carousel images - no gradient overlay */
     .city-header {
         position: relative;
-    }
-    
-    .city-header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
-        z-index: 1;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        filter: brightness(1.4); /* 40% brighter */
     }
     
     .city-name, .city-tag {
         position: relative;
-        z-index: 2;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+        text-shadow: 0 2px 6px rgba(0,0,0,0.8);
     }
     
-    /* Ensure images cover properly */
-    .city-header {
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
+    /* Make text very visible */
+    .city-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
     }
-    
-    
-    /* Fallback for extremely dark images */
-    .city-header {
-        background-color: #3b82f6; /* Blue fallback color */
-        background-blend-mode: overlay;
-    }
-    
     /* Ensure text is always readable */
     .city-name {
-        text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        text-shadow: 0 2px 8px rgba(0,0,0,1);
+        font-weight: 800;
     }
     
     .city-tag {
-        text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+        text-shadow: 0 1px 6px rgba(0,0,0,1);
+        font-weight: 600;
+        opacity: 0.95;
     }
     
-    /* Add subtle animation on hover */
+    .city-tag {
+        font-size: 0.95rem;
+        color: rgba(255,255,255,0.95);
+        font-weight: 500;
+    }
+    
+    /* Even brighter on hover */
     .city-card:hover .city-header {
-        filter: brightness(1.4);
+        filter: brightness(1.6);
         transition: filter 0.3s ease;
-    }/* Brighten images significantly */
-    .city-header {
-        filter: brightness(1.3);
     }
     
-    /* Remove gradient on hover for full brightness */
+    /* Fallback for extremely dark images */
+    .city-header {
+        background-color: #2563eb; /* Bright blue fallback */
+        background-blend-mode: screen; /* Lighten blend mode */
+    }    /* Remove gradient on hover for full brightness */
     .city-card:hover .city-header::before {
         opacity: 0.5;
     }

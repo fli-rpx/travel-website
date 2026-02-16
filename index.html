@@ -107,74 +107,72 @@
             border-color: #3b82f6;
         }
         
-        .city-header {
-    height: 160px; /* Reduced from taller */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 15px;
-    border-radius: 10px 10px 0 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-align: left;
-    flex-shrink: 0;
-}
-            /* Bright carousel images - no gradient overlay */
-    .city-header {
+            .city-header {
         position: relative;
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-        filter: brightness(1.4); /* 40% brighter */
+        filter: brightness(1.02); /* Just 2% brighter if needed */
+    }
+                /* Carousel images with 10% gradient overlay */
+        .city-header {
+        position: relative;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        filter: brightness(1.02); /* Just 2% brighter if needed */
+    }
+    
+    /* Very subtle 10% gradient overlay for text readability */
+    .city-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, 
+            rgba(0,0,0,0.05) 0%,      /* 5% at top */
+            rgba(0,0,0,0.1) 50%,      /* 10% in middle */
+            rgba(0,0,0,0.15) 100%     /* 15% at bottom */
+        );
+        z-index: 1;
+        pointer-events: none; /* Don't interfere with clicks */
     }
     
     .city-name, .city-tag {
         position: relative;
-        text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+        z-index: 2; /* Above gradient */
     }
     
-    /* Make text very visible */
+    /* Make text very visible with minimal gradient */
     .city-name {
         font-size: 1.5rem;
         font-weight: bold;
         color: white;
-    }
-    /* Ensure text is always readable */
-    .city-name {
-        text-shadow: 0 2px 8px rgba(0,0,0,1);
-        font-weight: 800;
-    }
-    
-    .city-tag {
-        text-shadow: 0 1px 6px rgba(0,0,0,1);
-        font-weight: 600;
-        opacity: 0.95;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.7);
     }
     
     .city-tag {
         font-size: 0.95rem;
         color: rgba(255,255,255,0.95);
         font-weight: 500;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.7);
     }
     
-    /* Even brighter on hover */
-    .city-card:hover .city-header {
-        filter: brightness(1.6);
-        transition: filter 0.3s ease;
+    /* Slight brightness on hover */
+    .city-card:hover     .city-header {
+        position: relative;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        filter: brightness(1.02); /* Just 2% brighter if needed */
     }
     
-    /* Fallback for extremely dark images */
-    .city-header {
-        background-color: #2563eb; /* Bright blue fallback */
-        background-blend-mode: screen; /* Lighten blend mode */
-    }    /* Remove gradient on hover for full brightness */
+    /* Remove gradient on hover for cleaner look */
     .city-card:hover .city-header::before {
-        opacity: 0.5;
-    }
-    
-    /* Make text even more visible */
+        opacity: 0.7; /* Reduce gradient on hover */
+    }    /* Make text even more visible */
     .city-name {
         font-size: 1.5rem;
         font-weight: bold;
@@ -205,15 +203,21 @@
     }
     
     /* Ensure images cover properly */
-    .city-header {
+        .city-header {
+        position: relative;
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
+        filter: brightness(1.02); /* Just 2% brighter if needed */
     }
     
     /* Brighten dark images */
-    .city-header {
-        filter: brightness(1.1);
+        .city-header {
+        position: relative;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        filter: brightness(1.02); /* Just 2% brighter if needed */
     }
         
         .city-header::before {
@@ -394,9 +398,13 @@
         }
     
         /* Loading states */
-        .city-header {
-            background-color: #f0f0f0; /* Fallback while loading */
-        }
+            .city-header {
+        position: relative;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        filter: brightness(1.02); /* Just 2% brighter if needed */
+    }
         
         .city-header.loaded {
             background-color: transparent;
@@ -729,9 +737,13 @@
         height: 380px;
     }
         
-        .city-header {
-            height: 150px;
-        }
+            .city-header {
+        position: relative;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        filter: brightness(1.02); /* Just 2% brighter if needed */
+    }
         
                 .carousel-track {
         display: flex;
@@ -771,10 +783,13 @@
         height: 380px;
     }
         
-        .city-header {
-            height: 140px;
-            padding: 12px;
-        }
+            .city-header {
+        position: relative;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        filter: brightness(1.02); /* Just 2% brighter if needed */
+    }
         
         .city-details {
             padding: 12px;
@@ -816,9 +831,13 @@
         height: 380px;
     }
         
-        .city-header {
-            height: 130px;
-        }
+            .city-header {
+        position: relative;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        filter: brightness(1.02); /* Just 2% brighter if needed */
+    }
         
                 .carousel-track {
         display: flex;
@@ -833,11 +852,12 @@
         }
     }
     /* Image loading optimization */
-    .city-header {
-        background-color: #f0f0f0;
-        background-size: cover;
-        background-position: center;
+        .city-header {
         position: relative;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        filter: brightness(1.02); /* Just 2% brighter if needed */
     }
     
     .city-header::before {

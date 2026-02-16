@@ -72,25 +72,24 @@
     border-radius: 12px;
 }
         
-        .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 380px;
-    width: 100%; /* Ensure full width */
-}
+            .carousel-track {
+        display: flex;
+        width: 500%; /* 5 slides × 100% */
+        transition: transform 0.5s ease-in-out;
+    }
         
-            .carousel-slide {
+                .carousel-slide {
         display: flex;
         justify-content: center;
         align-items: stretch;
-        width: 100%;
+        width: 20%; /* 100% ÷ 5 slides = 20% */
         min-height: 400px;
         padding: 10px;
         box-sizing: border-box;
     }
         
         /* CITY CARDS - NO IMAGES */
-            .city-card {
+                .city-card {
         flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
         display: flex;
         flex-direction: column;
@@ -272,17 +271,17 @@
         
         /* RESPONSIVE */
         @media (max-width: 768px) {
-                .carousel-slide {
+                    .carousel-slide {
         display: flex;
         justify-content: center;
         align-items: stretch;
-        width: 100%;
+        width: 20%; /* 100% ÷ 5 slides = 20% */
         min-height: 400px;
         padding: 10px;
         box-sizing: border-box;
     }
             
-                .city-card {
+                    .city-card {
         flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
         display: flex;
         flex-direction: column;
@@ -623,7 +622,7 @@
         }
     /* Responsive adjustments */
     @media (max-width: 1100px) {
-            .city-card {
+                .city-card {
         flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
         display: flex;
         flex-direction: column;
@@ -640,9 +639,11 @@
             height: 150px;
         }
         
-        .carousel-track {
-            height: 360px;
-        }
+            .carousel-track {
+        display: flex;
+        width: 500%; /* 5 slides × 100% */
+        transition: transform 0.5s ease-in-out;
+    }
     }
     
     @media (max-width: 768px) {
@@ -651,17 +652,17 @@
             margin: 0 10px;
         }
         
-            .carousel-slide {
+                .carousel-slide {
         display: flex;
         justify-content: center;
         align-items: stretch;
-        width: 100%;
+        width: 20%; /* 100% ÷ 5 slides = 20% */
         min-height: 400px;
         padding: 10px;
         box-sizing: border-box;
     }
         
-            .city-card {
+                .city-card {
         flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
         display: flex;
         flex-direction: column;
@@ -687,23 +688,25 @@
             font-size: 1.2rem;
         }
         
-        .carousel-track {
-            height: 340px;
-        }
+            .carousel-track {
+        display: flex;
+        width: 500%; /* 5 slides × 100% */
+        transition: transform 0.5s ease-in-out;
+    }
     }
     
     @media (max-width: 480px) {
-            .carousel-slide {
+                .carousel-slide {
         display: flex;
         justify-content: center;
         align-items: stretch;
-        width: 100%;
+        width: 20%; /* 100% ÷ 5 slides = 20% */
         min-height: 400px;
         padding: 10px;
         box-sizing: border-box;
     }
         
-            .city-card {
+                .city-card {
         flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
         display: flex;
         flex-direction: column;
@@ -720,9 +723,11 @@
             height: 130px;
         }
         
-        .carousel-track {
-            height: 320px;
-        }
+            .carousel-track {
+        display: flex;
+        width: 500%; /* 5 slides × 100% */
+        transition: transform 0.5s ease-in-out;
+    }
         
         .carousel-btn {
             width: 40px;
@@ -780,11 +785,11 @@
     }
     
     /* Prevent any column layout on slides */
-        .carousel-slide {
+            .carousel-slide {
         display: flex;
         justify-content: center;
         align-items: stretch;
-        width: 100%;
+        width: 20%; /* 100% ÷ 5 slides = 20% */
         min-height: 400px;
         padding: 10px;
         box-sizing: border-box;
@@ -792,7 +797,7 @@
     
     /* Media query adjustments */
     @media (max-width: 1100px) {
-            .city-card {
+                .city-card {
         flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
         display: flex;
         flex-direction: column;
@@ -807,7 +812,7 @@
     }
     
     @media (max-width: 900px) {
-            .city-card {
+                .city-card {
         flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
         display: flex;
         flex-direction: column;
@@ -822,17 +827,17 @@
     }
     
     @media (max-width: 768px) {
-            .carousel-slide {
+                .carousel-slide {
         display: flex;
         justify-content: center;
         align-items: stretch;
-        width: 100%;
+        width: 20%; /* 100% ÷ 5 slides = 20% */
         min-height: 400px;
         padding: 10px;
         box-sizing: border-box;
     }
         
-            .city-card {
+                .city-card {
         flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
         display: flex;
         flex-direction: column;
@@ -847,17 +852,17 @@
     }
     
     @media (max-width: 600px) {
-            .carousel-slide {
+                .carousel-slide {
         display: flex;
         justify-content: center;
         align-items: stretch;
-        width: 100%;
+        width: 20%; /* 100% ÷ 5 slides = 20% */
         min-height: 400px;
         padding: 10px;
         box-sizing: border-box;
     }
         
-            .city-card {
+                .city-card {
         flex: 0 0 calc(20% - 20px); /* 5 cards: 100% ÷ 5 = 20% */
         display: flex;
         flex-direction: column;
@@ -1317,221 +1322,154 @@
                 </div>
             </div>
         </div>
-    </section><!-- SIMPLE JAVASCRIPT -->
+    </section>    <!-- SIMPLE JAVASCRIPT -->
     <script>
-    // ULTRA ROBUST CAROUSEL - WILL WORK
-    console.log('🔄 Loading ultra robust carousel...');
+    // SIMPLE WORKING CAROUSEL FOR 5 SLIDES
+    console.log('🚀 Loading simple carousel...');
     
-    // Multiple initialization methods
-    function initializeCarousel() {
-        console.log('🎯 Attempting to initialize carousel...');
+    let currentSlide = 0;
+    let totalSlides = 5;
+    let track = null;
+    let slides = [];
+    let autoInterval = null;
+    
+    // Initialize carousel
+    function initCarousel() {
+        console.log('🎯 Initializing carousel...');
         
-        // METHOD 1: Try to get elements immediately
-        let track = document.querySelector('.carousel-track');
-        let slides = document.querySelectorAll('.carousel-slide');
-        let prevBtn = document.getElementById('prevBtn');
-        let nextBtn = document.getElementById('nextBtn');
-        let dots = document.querySelectorAll('.carousel-dot');
+        track = document.querySelector('.carousel-track');
+        slides = document.querySelectorAll('.carousel-slide');
+        totalSlides = slides.length;
         
-        console.log('🔍 Initial element check:', {
-            track: track ? 'FOUND' : 'NOT FOUND',
-            slides: slides.length,
-            prevBtn: prevBtn ? 'FOUND' : 'NOT FOUND',
-            nextBtn: nextBtn ? 'FOUND' : 'NOT FOUND',
-            dots: dots.length
-        });
+        console.log(`Found ${totalSlides} slides, ${slides.length} slide elements`);
         
-        // If elements not found, wait and try again
         if (!track || slides.length === 0) {
-            console.log('⏳ Elements not ready, waiting 200ms...');
-            setTimeout(initializeCarousel, 200);
+            console.log('⏳ Waiting for elements...');
+            setTimeout(initCarousel, 100);
             return;
         }
         
-        console.log('✅ All elements found! Starting carousel...');
-        
-        // CAROUSEL LOGIC
-        let currentSlide = 0;
-        const totalSlides = slides.length;
-        let autoInterval = null;
-        
-        // Update carousel display
-        function updateCarousel() {
-            console.log('📊 Moving to slide', currentSlide + 1, 'of', totalSlides);
-            
-            // Calculate position (0%, -100%, -200%, -300%)
-            const position = -(currentSlide * 100);
-            track.style.transform = `translateX(${position}%)`;
-            track.style.transition = 'transform 0.5s ease-in-out';
-            
-            // Update dots
-            dots.forEach((dot, index) => {
-                if (index === currentSlide) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
-            
-            // Update slides
-            slides.forEach((slide, index) => {
-                if (index === currentSlide) {
-                    slide.classList.add('active');
-                } else {
-                    slide.classList.remove('active');
-                }
-            });
-        }
-    
-    // Load and optimize images
-    function loadCityImages() {
-        const cityHeaders = document.querySelectorAll('.city-header');
-        cityHeaders.forEach(header => {
-            const bgImage = header.style.backgroundImage;
-            if (bgImage && bgImage !== 'none') {
-                const imgUrl = bgImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
-                const img = new Image();
-                img.onload = function() {
-                    header.classList.add('loaded');
-                    console.log('✅ Image loaded:', imgUrl);
-                };
-                img.onerror = function() {
-                    console.warn('⚠️ Failed to load image:', imgUrl);
-                    // Use fallback color
-                    header.style.backgroundColor = '#3b82f6';
-                };
-                img.src = imgUrl;
-            }
-        });
-    }
-    
-    // Call after carousel initialization
-    setTimeout(loadCityImages, 500);
-        
-        // Next slide
-        function goNext() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
-        }
-        
-        // Previous slide
-        function goPrev() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-        }
-        
-        // Go to specific slide
-        function goToSlide(index) {
-            if (index >= 0 && index < totalSlides) {
-                currentSlide = index;
-                updateCarousel();
-            }
-        }
-        
-        // Auto-rotate
-        function startAutoRotate() {
-            if (autoInterval) clearInterval(autoInterval);
-            autoInterval = setInterval(goNext, 5000);
-        }
-        
-        function stopAutoRotate() {
-            if (autoInterval) {
-                clearInterval(autoInterval);
-                autoInterval = null;
-            }
-        }
-        
-        // EVENT LISTENERS
-        // Next button
-        if (nextBtn) {
-            nextBtn.addEventListener('click', function(e) {
-                console.log('👉 NEXT button clicked');
-                e.stopPropagation();
-                goNext();
-            });
-        } else {
-            console.warn('⚠️ Next button not found');
-        }
-        
-        // Previous button
-        if (prevBtn) {
-            prevBtn.addEventListener('click', function(e) {
-                console.log('👈 PREV button clicked');
-                e.stopPropagation();
-                goPrev();
-            });
-        } else {
-            console.warn('⚠️ Previous button not found');
-        }
-        
-        // Dot buttons
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', function(e) {
-                console.log('🔘 DOT', index + 1, 'clicked');
-                e.stopPropagation();
-                goToSlide(index);
-            });
-        });
-        
-        // Hover to pause
-        if (track) {
-            track.addEventListener('mouseenter', stopAutoRotate);
-            track.addEventListener('mouseleave', startAutoRotate);
-        }
-        
-        // Initialize
+        // Set initial position
         updateCarousel();
+        
+        // Create dots if needed
+        createDots();
+        
+        // Start auto-rotate
         startAutoRotate();
         
-        console.log('🎉 CAROUSEL READY AND WORKING!');
-        console.log('👉 Click the arrow buttons or dots to test.');
-        
-        // Also expose functions for debugging
-        window.debugCarousel = {
-            goNext: goNext,
-            goPrev: goPrev,
-            goToSlide: goToSlide,
-            currentSlide: () => currentSlide,
-            totalSlides: totalSlides
-        };
+        console.log('✅ Carousel initialized successfully!');
     }
     
-    // Multiple initialization triggers
-    document.addEventListener('DOMContentLoaded', initializeCarousel);
-    window.addEventListener('load', initializeCarousel);
-    
-    // Fallback: try after 1 second
-    setTimeout(initializeCarousel, 1000);
-    
-    console.log('🚀 Carousel initialization scheduled');
-    
-    // Verify carousel layout
-    function verifyCarouselLayout() {
-        const track = document.querySelector('.carousel-track');
-        const slides = document.querySelectorAll('.carousel-slide');
-        const cityCards = document.querySelectorAll('.city-card');
+    // Create navigation dots
+    function createDots() {
+        const dotsContainer = document.querySelector('.carousel-dots');
+        if (!dotsContainer) return;
         
-        if (!track || slides.length === 0) return;
+        // Clear existing dots
+        dotsContainer.innerHTML = '';
         
-        console.log('🔍 Carousel Layout Check:');
-        console.log('- Track display:', window.getComputedStyle(track).display);
-        console.log('- Track flexDirection:', window.getComputedStyle(track).flexDirection);
-        console.log('- Slide display:', window.getComputedStyle(slides[0]).display);
-        console.log('- Slide flexDirection:', window.getComputedStyle(slides[0]).flexDirection);
-        console.log('- City cards per slide:', cityCards.length / slides.length);
-        console.log('- First city card width:', window.getComputedStyle(cityCards[0]).width);
-        
-        // Force correct layout if needed
-        if (window.getComputedStyle(slides[0]).flexDirection === 'column') {
-            console.warn('⚠️  Slide has column layout - forcing row');
-            slides.forEach(slide => {
-                slide.style.flexDirection = 'row';
-            });
+        // Create 5 dots for 5 slides
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot';
+            if (i === 0) dot.classList.add('active');
+            dot.setAttribute('data-slide', i);
+            dot.innerHTML = '•';
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
         }
     }
     
-    // Run verification after carousel init
-    setTimeout(verifyCarouselLayout, 500);</script>
+    // Update carousel position
+    function updateCarousel() {
+        if (!track) return;
+        
+        // For 5 slides: 0%, -20%, -40%, -60%, -80%
+        const position = -(currentSlide * 100);
+        track.style.transform = `translateX(${position / totalSlides}%)`;
+        track.style.transition = 'transform 0.5s ease-in-out';
+        
+        // Update dots
+        updateDots();
+        
+        console.log(`📊 Slide ${currentSlide + 1} of ${totalSlides}`);
+    }
+    
+    // Update dot states
+    function updateDots() {
+        const dots = document.querySelectorAll('.carousel-dot');
+        dots.forEach((dot, index) => {
+            if (index === currentSlide) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+    
+    // Go to specific slide
+    function goToSlide(slideIndex) {
+        if (slideIndex < 0 || slideIndex >= totalSlides) return;
+        
+        currentSlide = slideIndex;
+        updateCarousel();
+        resetAutoRotate();
+    }
+    
+    // Next slide function (called by button onclick)
+    function nextSlide() {
+        console.log('👉 Next button clicked');
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+        resetAutoRotate();
+    }
+    
+    // Previous slide function (called by button onclick)
+    function prevSlide() {
+        console.log('👈 Previous button clicked');
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+        resetAutoRotate();
+    }
+    
+    // Auto-rotate functions
+    function startAutoRotate() {
+        if (autoInterval) clearInterval(autoInterval);
+        autoInterval = setInterval(nextSlide, 5000); // Change every 5 seconds
+    }
+    
+    function stopAutoRotate() {
+        if (autoInterval) {
+            clearInterval(autoInterval);
+            autoInterval = null;
+        }
+    }
+    
+    function resetAutoRotate() {
+        stopAutoRotate();
+        startAutoRotate();
+    }
+    
+    // Pause on hover
+    function setupHoverPause() {
+        if (!track) return;
+        
+        track.addEventListener('mouseenter', stopAutoRotate);
+        track.addEventListener('mouseleave', startAutoRotate);
+    }
+    
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        initCarousel();
+        setupHoverPause();
+    });
+    
+    // Also try after a short delay
+    setTimeout(initCarousel, 500);
+    
+    console.log('🎉 Carousel script loaded!');
+    </script>
 <!-- DEBUG INFO -->
     <div id="carouselDebug" style="display: none; background: #fef3c7; border: 1px solid #f59e0b; padding: 10px; margin: 10px 0; border-radius: 5px; font-family: monospace;">
         <strong>Carousel Debug Info:</strong>

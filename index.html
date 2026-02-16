@@ -100,6 +100,46 @@
         margin: 10px;
         height: 380px;
     }
+    /* Clickable city cards */
+    .city-card-link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        flex: 0 0 18%; /* Match city-card width */
+        margin: 0 1%; /* Match city-card margin */
+    }
+    
+    .city-card {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 380px;
+        cursor: pointer;
+    }
+    
+    .city-card-link:hover .city-card {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    /* Remove any old button styles */
+    .city-link {
+        display: none;
+    }
+    
+    /* Ensure card content doesn't have pointer events */
+    .city-card > * {
+        pointer-events: none;
+    }
+    
+    /* But allow text selection */
+    .city-card {
+        user-select: text;
+    }
     /* Simple hover effect - no brightness change */
     .city-card:hover {
         transform: translateY(-5px);
@@ -1072,6 +1112,23 @@
     .city-link:hover {
         color: #2563eb;
         text-decoration: underline;
+    }
+    /* Visual feedback for clickable cards */
+    .city-card-link:active .city-card {
+        transform: translateY(-2px) scale(0.98);
+        transition: transform 0.1s ease;
+    }
+    
+    /* Focus styles for accessibility */
+    .city-card-link:focus {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+        border-radius: 12px;
+    }
+    
+    /* Remove default link styles */
+    .city-card-link {
+        text-decoration: none;
     }</style>
     <!-- Prevent caching -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -1098,340 +1155,390 @@
                     <!-- SLIDE -->
                     <div class="carousel-slide">
                         <!-- Beijing -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/beijing.jpg?v=1770598466');">
                                 <div class="city-name">Beijing</div>
+                        </a>
                                 <div class="city-tag">Great Wall & Forbidden City</div>
                             </div>
                             <div class="city-details">
                                 <p>🇨🇳 Capital with 3,000+ years of history</p>
                                 <p>🏯 Forbidden City & Temple of Heaven</p>
                                 <p>🍜 Peking duck, zhajiangmian noodles</p>
-                                <a href="cities/beijing.html" class="city-link">Explore Beijing</a>
+                                
                             </div>
                         </div>
                         <!-- Chengdu -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/chengdu.jpg?v=1770598466');">
                                 <div class="city-name">Chengdu</div>
+                        </a>
                                 <div class="city-tag">Pandas & Spicy Cuisine</div>
                             </div>
                             <div class="city-details">
                                 <p>🐼 Chengdu Panda Base - see baby pandas</p>
                                 <p>🌶️ Sichuan hot pot & mapo tofu</p>
                                 <p>🎭 Sichuan opera with face-changing</p>
-                                <a href="cities/chengdu.html" class="city-link">Explore Chengdu</a>
+                                
                             </div>
                         </div>
                         <!-- Chongqing -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/chongqing.jpg?v=1771172179');">
                                 <div class="city-name">Chongqing</div>
+                        </a>
                                 <div class="city-tag">Mountain City & Hot Pot</div>
                             </div>
                             <div class="city-details">
                                 <p>🏔️ Built on mountains along Yangtze River</p>
                                 <p>🌶️ Chongqing hot pot - extra spicy</p>
                                 <p>🌉 Hongya Cave & Yangtze River Cable Car</p>
-                                <a href="cities/chongqing.html" class="city-link">Explore Chongqing</a>
+                                
                             </div>
                         </div>
                         <!-- Dali -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/dali_hero_bg.jpg?v=1771198094');">
                                 <div class="city-name">Dali</div>
+                        </a>
                                 <div class="city-tag">Ancient Town & Erhai Lake</div>
                             </div>
                             <div class="city-details">
                                 <p>🏮 Dali Ancient Town - Bai minority culture</p>
                                 <p>🌊 Erhai Lake - crystal clear waters</p>
                                 <p>🗼 Three Pagodas - 1,000+ years old</p>
-                                <a href="cities/dali.html" class="city-link">Explore Dali</a>
+                                
                             </div>
                         </div>
                         <!-- Datong -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/datong_hero_bg.jpg?v=1771202090');">
                                 <div class="city-name">Datong</div>
+                        </a>
                                 <div class="city-tag">Buddhist Grottoes & History</div>
                             </div>
                             <div class="city-details">
                                 <p>🪨 Yungang Grottoes - UNESCO site</p>
                                 <p>⛰️ Hanging Temple - built into cliff</p>
                                 <p>🏛️ Ancient city walls & Nine Dragon Screen</p>
-                                <a href="cities/datong.html" class="city-link">Explore Datong</a>
+                                
                             </div>
                         </div>
                     </div>
                     <!-- SLIDE -->
                     <div class="carousel-slide">
                         <!-- Guangzhou -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/guangzhou.jpg?v=1770598466');">
                                 <div class="city-name">Guangzhou</div>
+                        </a>
                                 <div class="city-tag">Canton City & Culinary Capital</div>
                             </div>
                             <div class="city-details">
                                 <p>🍜 Dim sum capital of China</p>
                                 <p>🏙️ Canton Tower - tallest in China</p>
                                 <p>🏛️ Chen Clan Ancestral Hall</p>
-                                <a href="cities/guangzhou.html" class="city-link">Explore Guangzhou</a>
+                                
                             </div>
                         </div>
                         <!-- Guilin -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/guilin_hero_bg.jpg?v=1771196281');">
                                 <div class="city-name">Guilin</div>
+                        </a>
                                 <div class="city-tag">Karst Landscape & Li River</div>
                             </div>
                             <div class="city-details">
                                 <p>⛰️ Karst mountains - iconic scenery</p>
                                 <p>🚤 Li River cruise - picturesque views</p>
                                 <p>🕳️ Reed Flute Cave - colorful limestone</p>
-                                <a href="cities/guilin.html" class="city-link">Explore Guilin</a>
+                                
                             </div>
                         </div>
                         <!-- Guiyang -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/guiyang_hero_bg.jpg?v=1771196767');">
                                 <div class="city-name">Guiyang</div>
+                        </a>
                                 <div class="city-tag">Forest City & Minority Culture</div>
                             </div>
                             <div class="city-details">
                                 <p>🌳 Qianling Park - forest in city</p>
                                 <p>🏯 Jiaxiu Tower - Ming Dynasty landmark</p>
                                 <p>🍲 Sour fish soup - Guizhou specialty</p>
-                                <a href="cities/guiyang.html" class="city-link">Explore Guiyang</a>
+                                
                             </div>
                         </div>
                         <!-- Hangzhou -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/hangzhou_hero_bg.jpg?v=1771219016');">
                                 <div class="city-name">Hangzhou</div>
+                        </a>
                                 <div class="city-tag">West Lake & Paradise on Earth</div>
                             </div>
                             <div class="city-details">
                                 <p>🏞️ West Lake - UNESCO World Heritage</p>
                                 <p>🏯 Leifeng Pagoda - famous legend</p>
                                 <p>🍵 Longjing tea - best in China</p>
-                                <a href="cities/hangzhou.html" class="city-link">Explore Hangzhou</a>
+                                
                             </div>
                         </div>
                         <!-- Harbin -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/harbin.jpg?v=1770598466');">
                                 <div class="city-name">Harbin</div>
+                        </a>
                                 <div class="city-tag">Ice City & Russian Architecture</div>
                             </div>
                             <div class="city-details">
                                 <p>❄️ Ice Festival - world's largest</p>
                                 <p>⛪ Saint Sophia Cathedral - Russian style</p>
                                 <p>🏰 Central Street - European architecture</p>
-                                <a href="cities/harbin.html" class="city-link">Explore Harbin</a>
+                                
                             </div>
                         </div>
                     </div>
                     <!-- SLIDE -->
                     <div class="carousel-slide">
                         <!-- Hongkong -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/hongkong.jpg?v=1771184412');">
                                 <div class="city-name">Hongkong</div>
+                        </a>
                                 <div class="city-tag">Asia's World City</div>
                             </div>
                             <div class="city-details">
                                 <p>🌃 Victoria Peak - panoramic views</p>
                                 <p>🎡 Disneyland & Ocean Park</p>
                                 <p>🍜 Dim sum & egg waffles</p>
-                                <a href="cities/hongkong.html" class="city-link">Explore Hongkong</a>
+                                
                             </div>
                         </div>
                         <!-- Jinan -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/jinan_hero_bg.jpg?v=1771199979');">
                                 <div class="city-name">Jinan</div>
+                        </a>
                                 <div class="city-tag">City of Springs</div>
                             </div>
                             <div class="city-details">
                                 <p>💧 Baotu Spring - #1 spring under heaven</p>
                                 <p>🏞️ Daming Lake - largest in city center</p>
                                 <p>🏯 Thousand Buddha Mountain</p>
-                                <a href="cities/jinan.html" class="city-link">Explore Jinan</a>
+                                
                             </div>
                         </div>
                         <!-- Kashi -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/kashi_hero_bg.jpg?v=1771221241');">
                                 <div class="city-name">Kashi</div>
+                        </a>
                                 <div class="city-tag">Silk Road Gateway</div>
                             </div>
                             <div class="city-details">
                                 <p>🕌 Id Kah Mosque - largest in China</p>
                                 <p>🛍️ Sunday Bazaar - traditional market</p>
                                 <p>🍖 Lamb kebabs & naan bread</p>
-                                <a href="cities/kashi.html" class="city-link">Explore Kashi</a>
+                                
                             </div>
                         </div>
                         <!-- Kunming -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/kunming_hero_bg.jpg?v=1771197761');">
                                 <div class="city-name">Kunming</div>
+                        </a>
                                 <div class="city-tag">Spring City & Flower Capital</div>
                             </div>
                             <div class="city-details">
                                 <p>🌺 Flower markets year-round</p>
                                 <p>🗿 Stone Forest - karst formations</p>
                                 <p>🏞️ Dianchi Lake - largest in Yunnan</p>
-                                <a href="cities/kunming.html" class="city-link">Explore Kunming</a>
+                                
                             </div>
                         </div>
                         <!-- Linyi -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/linyi_hero_bg.jpg?v=1771200340');">
                                 <div class="city-name">Linyi</div>
+                        </a>
                                 <div class="city-tag">Revolutionary Base & Nature</div>
                             </div>
                             <div class="city-details">
                                 <p>⛰️ Mengshan Mountain - sacred site</p>
                                 <p>🏞️ Yi River - scenic waterfront</p>
                                 <p>🏯 Wang Xizhi's Former Residence</p>
-                                <a href="cities/linyi.html" class="city-link">Explore Linyi</a>
+                                
                             </div>
                         </div>
                     </div>
                     <!-- SLIDE -->
                     <div class="carousel-slide">
                         <!-- Nanjing -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/nanjing.jpg?v=1770598466');">
                                 <div class="city-name">Nanjing</div>
+                        </a>
                                 <div class="city-tag">Ancient Capital & Modern City</div>
                             </div>
                             <div class="city-details">
                                 <p>🏯 Sun Yat-sen Mausoleum</p>
                                 <p>🏮 Confucius Temple - Qinhuai River</p>
                                 <p>🦆 Nanjing salted duck</p>
-                                <a href="cities/nanjing.html" class="city-link">Explore Nanjing</a>
+                                
                             </div>
                         </div>
                         <!-- Qingdao -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/qingdao.jpg?v=1771183735');">
                                 <div class="city-name">Qingdao</div>
+                        </a>
                                 <div class="city-tag">Beer & Beaches</div>
                             </div>
                             <div class="city-details">
                                 <p>🍺 Tsingtao Beer Museum</p>
                                 <p>🏖️ Golden Beach - 3.5km coastline</p>
                                 <p>🏛️ German architecture area</p>
-                                <a href="cities/qingdao.html" class="city-link">Explore Qingdao</a>
+                                
                             </div>
                         </div>
                         <!-- Shanghai -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/shanghai.jpg?v=1771184412');">
                                 <div class="city-name">Shanghai</div>
+                        </a>
                                 <div class="city-tag">The Bund & Skyscrapers</div>
                             </div>
                             <div class="city-details">
                                 <p>🌉 The Bund - colonial architecture</p>
                                 <p>🏙️ Oriental Pearl Tower</p>
                                 <p>🥟 Xiaolongbao - soup dumplings</p>
-                                <a href="cities/shanghai.html" class="city-link">Explore Shanghai</a>
+                                
                             </div>
                         </div>
                         <!-- Shenzhen -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/shenzhen.jpg?v=1771184412');">
                                 <div class="city-name">Shenzhen</div>
+                        </a>
                                 <div class="city-tag">Tech Hub & Modern City</div>
                             </div>
                             <div class="city-details">
                                 <p>💻 Window of the World theme park</p>
                                 <p>🏙️ Splendid China Folk Village</p>
                                 <p>🛍️ Luohu Commercial City</p>
-                                <a href="cities/shenzhen.html" class="city-link">Explore Shenzhen</a>
+                                
                             </div>
                         </div>
                         <!-- Suzhou -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/suzhou_hero_bg.jpg?v=1771222098');">
                                 <div class="city-name">Suzhou</div>
+                        </a>
                                 <div class="city-tag">Venice of the East</div>
                             </div>
                             <div class="city-details">
                                 <p>🏮 Humble Administrator's Garden</p>
                                 <p>🏯 Tiger Hill - leaning pagoda</p>
                                 <p>🍜 Suzhou noodles & sweet dumplings</p>
-                                <a href="cities/suzhou.html" class="city-link">Explore Suzhou</a>
+                                
                             </div>
                         </div>
                     </div>
                     <!-- SLIDE -->
                     <div class="carousel-slide">
                         <!-- Taiyuan -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/taiyuan_hero_bg.jpg?v=1771201568');">
                                 <div class="city-name">Taiyuan</div>
+                        </a>
                                 <div class="city-tag">Ancient Capital & Industry</div>
                             </div>
                             <div class="city-details">
                                 <p>🏯 Jinci Temple - 1,400 years old</p>
                                 <p>🏯 Twin Pagoda Temple - symbol</p>
                                 <p>🍜 Taiyuan noodles & vinegar dishes</p>
-                                <a href="cities/taiyuan.html" class="city-link">Explore Taiyuan</a>
+                                
                             </div>
                         </div>
                         <!-- Urumqi -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/wulumuqi_hero_bg.jpg?v=1771204332');">
                                 <div class="city-name">Urumqi</div>
+                        </a>
                                 <div class="city-tag">Gateway to Xinjiang</div>
                             </div>
                             <div class="city-details">
                                 <p>🏞️ Heavenly Lake - Tianshan Mountains</p>
                                 <p>🏞️ Red Hill Park - city symbol</p>
                                 <p>🍖 Lamb kebabs & Xinjiang cuisine</p>
-                                <a href="cities/urumqi.html" class="city-link">Explore Urumqi</a>
+                                
                             </div>
                         </div>
                         <!-- Wuhan -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/wuhan_hero_bg.jpg?v=1771221844');">
                                 <div class="city-name">Wuhan</div>
+                        </a>
                                 <div class="city-tag">River City & Transportation Hub</div>
                             </div>
                             <div class="city-details">
                                 <p>🏯 Yellow Crane Tower - famous poem</p>
                                 <p>🏞️ East Lake - largest urban lake</p>
                                 <p>🍜 Hot dry noodles - local specialty</p>
-                                <a href="cities/wuhan.html" class="city-link">Explore Wuhan</a>
+                                
                             </div>
                         </div>
                         <!-- Wuxi -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/wuxi.jpg?v=1771184412');">
                                 <div class="city-name">Wuxi</div>
+                        </a>
                                 <div class="city-tag">Lake City & Industry</div>
                             </div>
                             <div class="city-details">
                                 <p>🙏 Lingshan Grand Buddha - 88m tall</p>
                                 <p>🏞️ Taihu Lake - 3rd largest freshwater</p>
                                 <p>🍖 Wuxi spareribs - sweet & savory</p>
-                                <a href="cities/wuxi.html" class="city-link">Explore Wuxi</a>
+                                
                             </div>
                         </div>
                         <!-- Xiamen -->
+                        <a href="cities/.html" class="city-card-link">
                         <div class="city-card">
                             <div class="city-header" style="background-image: url('images/user_photos/xiamen.jpg?v=1771183741');">
                                 <div class="city-name">Xiamen</div>
+                        </a>
                                 <div class="city-tag">Garden Island & Coastal City</div>
                             </div>
                             <div class="city-details">
                                 <p>🏝️ Gulangyu Island - car-free</p>
                                 <p>🏰 Hulishan Fortress - coastal defense</p>
                                 <p>🦐 Seafood & peanut soup</p>
-                                <a href="cities/xiamen.html" class="city-link">Explore Xiamen</a>
+                                
                             </div>
                         </div>
                     </div>

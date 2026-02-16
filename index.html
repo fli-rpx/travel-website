@@ -100,6 +100,15 @@
         margin: 10px;
         height: 380px;
     }
+    /* Simple hover effect - no brightness change */
+    .city-card:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+    }
+    
+    .city-card:hover .city-header {
+        /* No brightness change - keep images clean */
+    }
         
         .city-card:hover {
             transform: translateY(-5px);
@@ -112,33 +121,30 @@
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-        filter: brightness(1.02); /* Just 2% brighter if needed */
+         /* Just 2% brighter if needed */
     }
-                /* Carousel images with 10% gradient overlay */
-        .city-header {
-        position: relative;
+                    /* Clean carousel images - no filters, no gradients */
+    .city-header {
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-        filter: brightness(1.02); /* Just 2% brighter if needed */
     }
     
-    /* Very subtle 10% gradient overlay for text readability */
-    .city-header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(to bottom, 
-            rgba(0,0,0,0.05) 0%,      /* 5% at top */
-            rgba(0,0,0,0.1) 50%,      /* 10% in middle */
-            rgba(0,0,0,0.15) 100%     /* 15% at bottom */
-        );
-        z-index: 1;
-        pointer-events: none; /* Don't interfere with clicks */
+    /* Text styling for readability */
+    .city-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
+    
+    .city-tag {
+        font-size: 0.95rem;
+        color: rgba(255,255,255,0.95);
+        font-weight: 500;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    }    /* Very subtle 10% gradient overlay for text readability */
+    
     
     .city-name, .city-tag {
         position: relative;
@@ -166,13 +172,11 @@
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-        filter: brightness(1.02); /* Just 2% brighter if needed */
+         /* Just 2% brighter if needed */
     }
     
     /* Remove gradient on hover for cleaner look */
-    .city-card:hover .city-header::before {
-        opacity: 0.7; /* Reduce gradient on hover */
-    }    /* Make text even more visible */
+    .city-card:hover     /* Make text even more visible */
     .city-name {
         font-size: 1.5rem;
         font-weight: bold;
@@ -185,16 +189,7 @@
         font-weight: 500;
     }
     
-    .city-header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
-        z-index: 1;
-    }
+    
     
     .city-name, .city-tag {
         position: relative;
@@ -208,7 +203,7 @@
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-        filter: brightness(1.02); /* Just 2% brighter if needed */
+         /* Just 2% brighter if needed */
     }
     
     /* Brighten dark images */
@@ -217,20 +212,10 @@
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-        filter: brightness(1.02); /* Just 2% brighter if needed */
+         /* Just 2% brighter if needed */
     }
         
-        .city-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
-            border-radius: 10px 10px 0 0;
-            z-index: 1;
-        }
+        
         
         .city-name, .city-tag {
             position: relative;
@@ -403,7 +388,7 @@
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-        filter: brightness(1.02); /* Just 2% brighter if needed */
+         /* Just 2% brighter if needed */
     }
         
         .city-header.loaded {
@@ -742,7 +727,7 @@
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-        filter: brightness(1.02); /* Just 2% brighter if needed */
+         /* Just 2% brighter if needed */
     }
         
                 .carousel-track {
@@ -788,7 +773,7 @@
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-        filter: brightness(1.02); /* Just 2% brighter if needed */
+         /* Just 2% brighter if needed */
     }
         
         .city-details {
@@ -836,7 +821,7 @@
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-        filter: brightness(1.02); /* Just 2% brighter if needed */
+         /* Just 2% brighter if needed */
     }
         
                 .carousel-track {
@@ -857,19 +842,10 @@
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-        filter: brightness(1.02); /* Just 2% brighter if needed */
+         /* Just 2% brighter if needed */
     }
     
-    .city-header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
-        z-index: 1;
-    }
+    
     
     .city-name, .city-tag {
         position: relative;

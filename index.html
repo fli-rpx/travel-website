@@ -1605,5 +1605,27 @@
     
     // Show debug after 2 seconds
     setTimeout(showDebugInfo, 2000);
-    </script></body>
+    </script>
+    <script>
+    /* Detect and fix broken images */
+    document.addEventListener('DOMContentLoaded', function() {
+        const cityHeaders = document.querySelectorAll('.city-header');
+        cityHeaders.forEach(header => {
+            const bgImage = header.style.backgroundImage;
+            if (bgImage) {
+                const imgUrl = bgImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
+                const img = new Image();
+                img.onerror = function() {
+                    console.warn('Image failed to load:', imgUrl);
+                    // Add error class for styling
+                    header.classList.add('image-error');
+                    // Set a solid color fallback
+                    header.style.backgroundColor = '#3b82f6';
+                    header.style.backgroundImage = 'none';
+                };
+                img.src = imgUrl;
+            }
+        });
+    });</script>
+</body>
 </html>

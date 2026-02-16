@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-15T23:40:00.522399",
+  "timestamp": "2026-02-16T07:10:01.013702",
   "checks": [
     {
       "check": "Images",
@@ -40,15 +40,17 @@
     },
     {
       "check": "Layout",
-      "passed": true,
-      "issues": [],
-      "fixes": [
-        "Colors consistent"
+      "passed": false,
+      "issues": [
+        "Missing colors: 1"
       ],
-      "remaining": []
+      "fixes": [],
+      "remaining": [
+        "#1e40af"
+      ]
     }
   ],
-  "passed": 2,
+  "passed": 1,
   "total": 4,
   "message_sent": true
 }

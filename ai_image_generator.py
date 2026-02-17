@@ -110,6 +110,15 @@ class AIImageGenerator:
                 "priority": 1,  # High priority for city view
                 "needs_ai": True
             },
+            "Kaifeng": {
+                "prompts": [
+                    "Daxiangguo Temple in Kaifeng, ancient Buddhist temple architecture, traditional Chinese buildings, professional travel photography, 16:9 aspect ratio",
+                    "Iron Pagoda in Kaifeng, historic pagoda structure, traditional Chinese architecture, professional photography",
+                    "Kaifeng ancient city gate, traditional Chinese city wall, historical architecture, professional travel photography"
+                ],
+                "priority": 2,
+                "needs_ai": True  # Generate unique Kaifeng images
+            },
             "Wuxi": {
                 "prompts": [
                     "Taihu Lake in Wuxi, serene water, lotus flowers, traditional boats, professional landscape photography, 16:9 aspect ratio",

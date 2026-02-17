@@ -1,12 +1,12 @@
 {
-  "last_run": "2026-02-07T22:05:40.403752",
+  "last_run": "2026-02-16T17:51:03.921924",
   "results": {
     "Website Monitor": true,
     "City Pages": true,
-    "AI Images": true,
+    "AI Images": false,
     "Style Consistency": true
   },
-  "elapsed_time": 0.06499791145324707,
-  "all_passed": true,
-  "timestamp": 1770530740.403757
+  "elapsed_time": 0.12947297096252441,
+  "all_passed": false,
+  "timestamp": 1771293063.921928
 }

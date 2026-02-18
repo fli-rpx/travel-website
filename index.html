@@ -141,6 +141,130 @@
             font-weight: 300;
         }
         
+        /* FEATURED DESTINATIONS SECTION */
+        .featured-section {
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, #f8fafc, #ffffff);
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .featured-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .featured-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #3b82f6;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .featured-badge.popular {
+            background: #ef4444;
+        }
+        
+        .featured-badge.new {
+            background: #10b981;
+        }
+        
+        .featured-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .featured-content {
+            padding: 25px;
+        }
+        
+        .featured-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+        
+        .featured-description {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .featured-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-tag {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .featured-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .featured-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .featured-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .featured-section {
+                padding: 40px 20px;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.2rem;
@@ -1685,6 +1809,74 @@
             </div>
         </div>
     </section>    <!-- SIMPLE JAVASCRIPT -->
+    
+    <!-- FEATURED DESTINATIONS SECTION -->
+    <section id="featured" class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Featured Destinations</h2>
+            <p class="section-subtitle">Discover our most popular cities and newest additions. These handpicked destinations offer unique experiences you won't find anywhere else.</p>
+            
+            <div class="featured-grid">
+                <!-- Beijing - Most Popular -->
+                <div class="featured-card">
+                    <div class="featured-badge popular">Most Popular</div>
+                    <div class="featured-image" style="background-image: url('https://images.unsplash.com/photo-1599576838688-8a6c113322a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="featured-content">
+                        <h3 class="featured-title">Beijing</h3>
+                        <p class="featured-description">The heart of China with over 3,000 years of history. Explore the Forbidden City, walk the Great Wall, and experience imperial grandeur.</p>
+                        <div class="featured-highlights">
+                            <span class="highlight-tag">Historical Sites</span>
+                            <span class="highlight-tag">Imperial Palaces</span>
+                            <span class="highlight-tag">Great Wall</span>
+                            <span class="highlight-tag">Local Cuisine</span>
+                        </div>
+                        <a href="cities/beijing.html" class="featured-btn">Explore Beijing →</a>
+                    </div>
+                </div>
+                
+                <!-- Shanghai - Modern Metropolis -->
+                <div class="featured-card">
+                    <div class="featured-badge">Top Rated</div>
+                    <div class="featured-image" style="background-image: url('https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="featured-content">
+                        <h3 class="featured-title">Shanghai</h3>
+                        <p class="featured-description">China's financial capital and most cosmopolitan city. Experience futuristic skyscrapers, vibrant nightlife, and international cuisine.</p>
+                        <div class="featured-highlights">
+                            <span class="highlight-tag">Modern Architecture</span>
+                            <span class="highlight-tag">Shopping</span>
+                            <span class="highlight-tag">Nightlife</span>
+                            <span class="highlight-tag">Business Hub</span>
+                        </div>
+                        <a href="cities/shanghai.html" class="featured-btn">Explore Shanghai →</a>
+                    </div>
+                </div>
+                
+                <!-- Chengdu - New Addition -->
+                <div class="featured-card">
+                    <div class="featured-badge new">New Addition</div>
+                    <div class="featured-image" style="background-image: url('https://images.unsplash.com/photo-1551590190-96d5ba5d8b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="featured-content">
+                        <h3 class="featured-title">Chengdu</h3>
+                        <p class="featured-description">Home of giant pandas and Sichuan cuisine. Experience relaxed teahouse culture, spicy hotpot, and adorable panda encounters.</p>
+                        <div class="featured-highlights">
+                            <span class="highlight-tag">Panda Sanctuary</span>
+                            <span class="highlight-tag">Sichuan Cuisine</span>
+                            <span class="highlight-tag">Teahouses</span>
+                            <span class="highlight-tag">Relaxed Pace</span>
+                        </div>
+                        <a href="cities/chengdu.html" class="featured-btn">Explore Chengdu →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#cities" class="hero-btn hero-btn-secondary" style="display: inline-flex; align-items: center; gap: 10px;">
+                    <span>View All 25+ Cities</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </section>
     
     <!-- NEWS SECTION -->
     <section id="news" class="news-section">

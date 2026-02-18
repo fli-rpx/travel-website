@@ -160,6 +160,389 @@
             background: #2563eb;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+        
+        /* NEW CITY PAGE SECTIONS TEMPLATE */
+        
+        /* Interactive Map Section */
+        .map-section {
+            margin: 60px 0;
+            background: var(--light);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .map-container {
+            height: 400px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 30px;
+            position: relative;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .map-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .map-marker {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #ef4444;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .map-marker::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+        }
+        
+        .map-marker:hover {
+            transform: rotate(-45deg) scale(1.2);
+        }
+        
+        .marker-tooltip {
+            position: absolute;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 100;
+            display: none;
+            min-width: 200px;
+        }
+        
+        .marker-tooltip h5 {
+            margin: 0 0 5px 0;
+            color: var(--primary);
+        }
+        
+        .marker-tooltip p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+        
+        /* Local Cuisine Section */
+        .cuisine-section {
+            margin: 60px 0;
+        }
+        
+        .cuisine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .cuisine-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .cuisine-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        
+        .cuisine-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .cuisine-content {
+            padding: 25px;
+        }
+        
+        .cuisine-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .cuisine-description {
+            color: var(--gray-medium);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .cuisine-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .cuisine-tag {
+            background: var(--light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .restaurant-list {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-light);
+        }
+        
+        .restaurant-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        .restaurant-item:last-child {
+            border-bottom: none;
+        }
+        
+        .restaurant-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .restaurant-rating {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        /* Transportation Section */
+        .transport-section {
+            margin: 60px 0;
+            background: var(--light);
+            border-radius: 15px;
+            padding: 40px;
+        }
+        
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .transport-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .transport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .transport-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .transport-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .transport-description {
+            color: var(--gray-medium);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .transport-tip {
+            background: #fef3c7;
+            border-left: 4px solid var(--accent);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+        
+        /* Suggested Itineraries Section */
+        .itinerary-section {
+            margin: 60px 0;
+        }
+        
+        .itinerary-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .itinerary-tab {
+            padding: 12px 25px;
+            background: var(--light);
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            color: var(--gray-medium);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .itinerary-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .itinerary-content {
+            display: none;
+        }
+        
+        .itinerary-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .itinerary-day {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .day-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .day-duration {
+            background: var(--light);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .day-schedule {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .schedule-item {
+            display: flex;
+            gap: 20px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+        
+        .schedule-time {
+            min-width: 80px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .schedule-activity {
+            flex: 1;
+        }
+        
+        .activity-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .activity-description {
+            color: var(--gray-medium);
+            font-size: 0.95rem;
+        }
+        
+        .itinerary-tips {
+            background: #f0f9ff;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .itinerary-tips h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .map-container {
+                height: 300px;
+            }
+            
+            .cuisine-grid,
+            .transport-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .itinerary-tabs {
+                flex-direction: column;
+            }
+            
+            .schedule-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .schedule-time {
+                min-width: auto;
+            }
         }</style>
 </head>
 <body>
@@ -311,6 +694,353 @@
 <a href="suzhou.html" class="city-link">Suzhou</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTIONS TEMPLATE -->
+    
+    <!-- Interactive Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Beijing Interactive Map</h2>
+            <p>Explore Beijing's key attractions with our interactive map. Click on markers to learn more about each location.</p>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Interactive Beijing Map</h3>
+                    <p>This interactive map shows Beijing's major attractions, restaurants, and transportation hubs.</p>
+                    <p><small>In a full implementation, this would be a live map with clickable markers.</small></p>
+                </div>
+                
+                <!-- Map markers (positioned absolutely) -->
+                <div class="map-marker" style="top: 30%; left: 40%;" data-title="Forbidden City" data-desc="Imperial palace from Ming to Qing dynasties">
+                    <div class="marker-tooltip">
+                        <h5>Forbidden City</h5>
+                        <p>Imperial palace complex with 980 buildings, home to 24 emperors.</p>
+                    </div>
+                </div>
+                
+                <div class="map-marker" style="top: 50%; left: 60%;" data-title="Temple of Heaven" data-desc="Imperial complex for prayer for good harvests">
+                    <div class="marker-tooltip">
+                        <h5>Temple of Heaven</h5>
+                        <p>Where emperors prayed for good harvests. UNESCO World Heritage site.</p>
+                    </div>
+                </div>
+                
+                <div class="map-marker" style="top: 70%; left: 30%;" data-title="Summer Palace" data-desc="Imperial garden with lakes and palaces">
+                    <div class="marker-tooltip">
+                        <h5>Summer Palace</h5>
+                        <p>Imperial garden with Kunming Lake and Longevity Hill.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="transport-tip">
+                <strong>💡 Tip:</strong> Beijing's attractions are spread out. Use the metro system (lines 1, 2, and 8 serve most tourist sites) or taxis for longer distances.
+            </div>
+        </div>
+    </section>
+    
+    <!-- Local Cuisine Section -->
+    <section class="cuisine-section">
+        <div class="container">
+            <h2>Beijing Local Cuisine</h2>
+            <p>Discover the flavors of Beijing with these must-try dishes and recommended restaurants.</p>
+            
+            <div class="cuisine-grid">
+                <!-- Peking Duck -->
+                <div class="cuisine-card">
+                    <div class="cuisine-image" style="background-image: url('https://images.unsplash.com/photo-1563245372-f21724e3856d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="cuisine-content">
+                        <h3 class="cuisine-title">Peking Duck</h3>
+                        <p class="cuisine-description">Beijing's most famous dish features crispy skin and tender meat served with pancakes, scallions, and sweet bean sauce.</p>
+                        <div class="cuisine-tags">
+                            <span class="cuisine-tag">Signature Dish</span>
+                            <span class="cuisine-tag">Must-Try</span>
+                            <span class="cuisine-tag">Imperial Cuisine</span>
+                        </div>
+                        
+                        <div class="restaurant-list">
+                            <div class="restaurant-item">
+                                <span class="restaurant-name">Quanjude Roast Duck</span>
+                                <span class="restaurant-rating">⭐ 4.5/5</span>
+                            </div>
+                            <div class="restaurant-item">
+                                <span class="restaurant-name">Da Dong Roast Duck</span>
+                                <span class="restaurant-rating">⭐ 4.7/5</span>
+                            </div>
+                            <div class="restaurant-item">
+                                <span class="restaurant-name">Bianyifang Roast Duck</span>
+                                <span class="restaurant-rating">⭐ 4.3/5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Zhajiangmian -->
+                <div class="cuisine-card">
+                    <div class="cuisine-image" style="background-image: url('https://images.unsplash.com/photo-1563245372-f21724e3856d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="cuisine-content">
+                        <h3 class="cuisine-title">Zhajiangmian</h3>
+                        <p class="cuisine-description">Wheat noodles topped with fermented soybean paste, ground pork, and fresh vegetables.</p>
+                        <div class="cuisine-tags">
+                            <span class="cuisine-tag">Noodles</span>
+                            <span class="cuisine-tag">Street Food</span>
+                            <span class="cuisine-tag">Affordable</span>
+                        </div>
+                        
+                        <div class="restaurant-list">
+                            <div class="restaurant-item">
+                                <span class="restaurant-name">Old Beijing Zhajiangmian</span>
+                                <span class="restaurant-rating">⭐ 4.2/5</span>
+                            </div>
+                            <div class="restaurant-item">
+                                <span class="restaurant-name">Noodle Legend</span>
+                                <span class="restaurant-rating">⭐ 4.4/5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mongolian Hot Pot -->
+                <div class="cuisine-card">
+                    <div class="cuisine-image" style="background-image: url('https://images.unsplash.com/photo-1563245372-f21724e3856d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="cuisine-content">
+                        <h3 class="cuisine-title">Mongolian Hot Pot</h3>
+                        <p class="cuisine-description">Thinly sliced meat and vegetables cooked in a simmering broth at your table.</p>
+                        <div class="cuisine-tags">
+                            <span class="cuisine-tag">Hot Pot</span>
+                            <span class="cuisine-tag">Social Dining</span>
+                            <span class="cuisine-tag">Winter Favorite</span>
+                        </div>
+                        
+                        <div class="restaurant-list">
+                            <div class="restaurant-item">
+                                <span class="restaurant-name">Haidilao Hot Pot</span>
+                                <span class="restaurant-rating">⭐ 4.8/5</span>
+                            </div>
+                            <div class="restaurant-item">
+                                <span class="restaurant-name">Donglaishun</span>
+                                <span class="restaurant-rating">⭐ 4.5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Transportation Section -->
+    <section class="transport-section">
+        <div class="container">
+            <h2>Getting Around Beijing</h2>
+            <p>Beijing has an extensive transportation network. Here's how to navigate the city efficiently.</p>
+            
+            <div class="transport-grid">
+                <div class="transport-card">
+                    <div class="transport-icon">🚇</div>
+                    <h3 class="transport-title">Metro System</h3>
+                    <p class="transport-description">Beijing's metro is the world's largest by route length. Clean, efficient, and affordable way to travel.</p>
+                    <p><strong>Cost:</strong> ¥3-¥9 per ride</p>
+                    <p><strong>Hours:</strong> 5:00 AM - 11:30 PM</p>
+                </div>
+                
+                <div class="transport-card">
+                    <div class="transport-icon">🚕</div>
+                    <h3 class="transport-title">Taxis & Ride-Hailing</h3>
+                    <p class="transport-description">Taxis are plentiful and affordable. Use Didi (Chinese Uber) for convenient ride-hailing.</p>
+                    <p><strong>Base Fare:</strong> ¥13 for first 3km</p>
+                    <p><strong>Apps:</strong> Didi, Meituan</p>
+                </div>
+                
+                <div class="transport-card">
+                    <div class="transport-icon">🚌</div>
+                    <h3 class="transport-title">Public Buses</h3>
+                    <p class="transport-description">Extensive bus network covering all areas. Cheaper than metro but can be crowded.</p>
+                    <p><strong>Cost:</strong> ¥2-¥10 depending on distance</p>
+                    <p><strong>Payment:</strong> Yikatong card or cash</p>
+                </div>
+                
+                <div class="transport-card">
+                    <div class="transport-icon">🚲</div>
+                    <h3 class="transport-title">Bike Sharing</h3>
+                    <p class="transport-description">Mobike and Hello Bike offer convenient bike sharing for short distances.</p>
+                    <p><strong>Cost:</strong> ¥1.5 per 30 minutes</p>
+                    <p><strong>Apps:</strong> Mobike, Hello Bike</p>
+                </div>
+            </div>
+            
+            <div class="transport-tip">
+                <strong>📱 Essential Apps:</strong> Download Baidu Maps for navigation, Didi for ride-hailing, and Alipay/WeChat Pay for cashless payments throughout Beijing.
+            </div>
+        </div>
+    </section>
+    
+    <!-- Suggested Itineraries Section -->
+    <section class="itinerary-section">
+        <div class="container">
+            <h2>Suggested Beijing Itineraries</h2>
+            <p>Plan your perfect Beijing trip with these curated itineraries for different travel styles.</p>
+            
+            <div class="itinerary-tabs">
+                <button class="itinerary-tab active" data-itinerary="classic">Classic 3-Day</button>
+                <button class="itinerary-tab" data-itinerary="cultural">Cultural 5-Day</button>
+                <button class="itinerary-tab" data-itinerary="family">Family Friendly</button>
+                <button class="itinerary-tab" data-itinerary="food">Food Lover's</button>
+            </div>
+            
+            <!-- Classic 3-Day Itinerary -->
+            <div class="itinerary-content active" id="classic-itinerary">
+                <div class="itinerary-day">
+                    <div class="day-header">
+                        <h3 class="day-title">Day 1: Imperial Beijing</h3>
+                        <span class="day-duration">Full Day</span>
+                    </div>
+                    <ul class="day-schedule">
+                        <li class="schedule-item">
+                            <span class="schedule-time">9:00 AM</span>
+                            <div class="schedule-activity">
+                                <div class="activity-title">Tiananmen Square</div>
+                                <div class="activity-description">Start at the world's largest public square</div>
+                            </div>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="schedule-time">10:00 AM</span>
+                            <div class="schedule-activity">
+                                <div class="activity-title">Forbidden City</div>
+                                <div class="activity-description">Explore the imperial palace (book tickets in advance)</div>
+                            </div>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="schedule-time">1:00 PM</span>
+                            <div class="schedule-activity">
+                                <div class="activity-title">Lunch at Wangfujing</div>
+                                <div class="activity-description">Try local snacks at the famous food street</div>
+                            </div>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="schedule-time">3:00 PM</span>
+                            <div class="schedule-activity">
+                                <div class="activity-title">Jingshan Park</div>
+                                <div class="activity-description">Panoramic view of the Forbidden City</div>
+                            </div>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="schedule-time">7:00 PM</span>
+                            <div class="schedule-activity">
+                                <div class="activity-title">Peking Duck Dinner</div>
+                                <div class="activity-description">Quanjude or Da Dong for authentic experience</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="itinerary-day">
+                    <div class="day-header">
+                        <h3 class="day-title">Day 2: Great Wall Adventure</h3>
+                        <span class="day-duration">Full Day</span>
+                    </div>
+                    <ul class="day-schedule">
+                        <li class="schedule-item">
+                            <span class="schedule-time">7:00 AM</span>
+                            <div class="schedule-activity">
+                                <div class="activity-title">Depart for Mutianyu</div>
+                                <div class="activity-description">Private car or tour bus (1.5-2 hours)</div>
+                            </div>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="schedule-time">9:30 AM</span>
+                            <div class="schedule-activity">
+                                <div class="activity-title">Great Wall Hike</div>
+                                <div class="activity-description">Cable car up, hike along restored sections</div>
+                            </div>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="schedule-time">1:00 PM</span>
+                            <div class="schedule-activity">
+                                <div class="activity-title">Lunch at Local Restaurant</div>
+                                <div class="activity-description">Try rustic Chinese dishes near the Wall</div>
+                            </div>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="schedule-time">4:00 PM</span>
+                            <div class="schedule-activity">
+                                <div class="activity-title">Return to Beijing</div>
+                                <div class="activity-description">Rest at hotel or explore hutongs</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="itinerary-tips">
+                    <h4>📝 Planning Tips</h4>
+                    <p>• Book Forbidden City tickets at least 3 days in advance online<br>
+                       • Wear comfortable shoes for extensive walking<br>
+                       • Consider hiring a private guide for the Great Wall for flexibility<br>
+                       • Purchase a transportation card (Yikatong) for metro/bus convenience</p>
+                </div>
+            </div>
+            
+            <!-- Cultural 5-Day Itinerary (hidden by default) -->
+            <div class="itinerary-content" id="cultural-itinerary">
+                <div class="itinerary-day">
+                    <div class="day-header">
+                        <h3 class="day-title">Day 1-2: Imperial Heritage</h3>
+                        <span class="day-duration">2 Days</span>
+                    </div>
+                    <p>Forbidden City, Temple of Heaven, Summer Palace, Lama Temple, Confucius Temple</p>
+                </div>
+                <!-- More days would be here in a full implementation -->
+            </div>
+            
+            <!-- JavaScript for tab switching -->
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const tabs = document.querySelectorAll('.itinerary-tab');
+                const contents = document.querySelectorAll('.itinerary-content');
+                
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        const itineraryId = this.getAttribute('data-itinerary');
+                        
+                        // Update active tab
+                        tabs.forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Show corresponding content
+                        contents.forEach(content => {
+                            content.classList.remove('active');
+                            if (content.id === `${itineraryId}-itinerary`) {
+                                content.classList.add('active');
+                            }
+                        });
+                    });
+                });
+                
+                // Map marker interactivity
+                const markers = document.querySelectorAll('.map-marker');
+                markers.forEach(marker => {
+                    marker.addEventListener('mouseenter', function() {
+                        const tooltip = this.querySelector('.marker-tooltip');
+                        if (tooltip) {
+                            tooltip.style.display = 'block';
+                            tooltip.style.left = '40px';
+                            tooltip.style.top = '0';
+                        }
+                    });
+                    
+                    marker.addEventListener('mouseleave', function() {
+                        const tooltip = this.querySelector('.marker-tooltip');
+                        if (tooltip) {
+                            tooltip.style.display = 'none';
+                        }
+                    });
+                });
+                
+                console.log('✅ Beijing page enhancements loaded');
+            });
+            </script>
         </div>
     </section>
 

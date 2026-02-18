@@ -38,60 +38,438 @@
         }
         
         .city-hero .lead {
-            font-size: 1.25rem; /* Reduced from 1.5rem */
+            font-size: 1.25rem;
             max-width: 700px;
             margin: 0 auto 30px;
             color: rgba(255,255,255,0.95);
-            line-height: 1.6;
+            line-height: 1.8; /* Increased from 1.6 for better readability */
         }
         
         .city-content {
-            padding: 40px 0; /* Reduced from 60px */
+            padding: 60px 0; /* Increased from 40px for better spacing */
         }
         
         .city-section {
-            margin-bottom: 40px; /* Reduced from 60px */
+            margin-bottom: 60px; /* Increased from 40px for better section separation */
         }
         
         .city-section h2 {
             color: var(--secondary);
-            margin-bottom: 30px;
-            padding-bottom: 15px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
             border-bottom: 3px solid var(--accent);
+            font-size: 2rem; /* Increased from 1.75rem for better hierarchy */
+            font-weight: 800; /* Bolder weight for emphasis */
+            font-family: 'Libre Baskerville', Georgia, serif; /* Distinct serif font for headings */
+            letter-spacing: -0.5px; /* Slightly tighter letter spacing */
+            line-height: 1.3;
+        }
         
-            font-size: 1.75rem;}
+        /* Enhanced visual hierarchy for subheadings */
+        .city-highlight h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.4rem; /* Slightly larger */
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', Georgia, serif; /* Distinct font for subheadings */
+            line-height: 1.3;
+        }
+        
+        /* Distinct font for new section headings */
+        .map-section h2,
+        .cuisine-section h2,
+        .transport-section h2,
+        .itinerary-section h2 {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--accent);
+        }
+        
+        /* Enhanced hierarchy for day titles in itineraries */
+        .day-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        /* Better contrast for activity titles */
+        .activity-title {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
         
         .city-highlight {
             background: var(--light);
             border-radius: 12px;
-            padding: 24px; /* Reduced from 30px */
-            margin-bottom: 24px; /* Reduced from 30px */
+            padding: 32px; /* Increased from 24px */
+            margin-bottom: 32px; /* Increased from 24px */
             border-left: 4px solid var(--primary);
+            line-height: 1.7; /* Added for better text readability */
         }
         
         .city-highlight h3 {
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 20px; /* Increased from 15px */
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
         
-            font-size: 1.3rem;}
+        /* Improve general text readability */
+        .city-content p {
+            line-height: 1.7; /* Added for better paragraph readability */
+            margin-bottom: 20px; /* Added spacing between paragraphs */
+        }
+        
+        .city-content ul, .city-content ol {
+            line-height: 1.7; /* Better list readability */
+            margin-bottom: 20px;
+        }
+        
+        .city-content li {
+            margin-bottom: 10px; /* Space between list items */
+        }
         
         .city-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px; /* Increased gap for better spacing with captions */
             margin-top: 30px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
         }
         
         .city-gallery img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 10px;
+            display: block;
             transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        .caption-text {
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+        
+        .caption-icon {
+            margin-right: 8px;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        /* PROMINENT BACK TO HOME BUTTON */
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            border: 2px solid transparent;
+        }
+        
+        .back-home-btn:hover {
+            background: white;
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            gap: 15px;
+        }
+        
+        .back-home-icon {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .back-home-btn:hover .back-home-icon {
+            transform: translateX(-5px);
+        }
+        
+        .back-home-text {
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .back-home-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        /* JUMP TO SECTION NAVIGATION */
+        .jump-nav {
+            position: sticky;
+            top: 80px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            z-index: 100;
+            border: 1px solid var(--gray-light);
+        }
+        
+        .jump-nav h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .jump-nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .jump-nav-item {
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .jump-nav-link {
+            display: block;
+            padding: 10px 15px;
+            background: var(--light);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .jump-nav-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .jump-nav-link.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .jump-nav-icon {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 992px) {
+            .jump-nav {
+                position: static;
+                margin-top: 20px;
+            }
+            
+            .jump-nav-list {
+                flex-direction: column;
+            }
+            
+            .jump-nav-item {
+                min-width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .jump-nav {
+                padding: 15px;
+            }
+            
+            .jump-nav-link {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+            }
         }
         
         .city-gallery img:hover {
             transform: scale(1.05);
+            cursor: pointer; /* Indicate images are clickable */
+        }
+        
+        /* LIGHTBOX FEATURE */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        
+        .lightbox-caption {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            font-size: 1.1rem;
+            padding: 10px;
+            background: rgba(0,0,0,0.7);
+            border-radius: 5px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .lightbox-close:hover {
+            transform: scale(1.2);
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .lightbox-nav:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .lightbox-prev {
+            left: 20px;
+        }
+        
+        .lightbox-next {
+            right: 20px;
+        }
+        
+        .lightbox-counter {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            color: white;
+            font-size: 1rem;
+            background: rgba(0,0,0,0.5);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .lightbox-nav {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .lightbox-prev {
+                left: 10px;
+            }
+            
+            .lightbox-next {
+                right: 10px;
+            }
+            
+            .lightbox-caption {
+                font-size: 0.9rem;
+                bottom: -40px;
+            }
         }
         
         .back-to-home {
@@ -577,11 +955,71 @@
     <!-- City Content -->
     <section class="city-content">
         <div class="container">
+            <!-- Prominent Back to Home Button -->
+            <div class="back-home-container" style="margin-bottom: 40px;">
+                <a href="../index.html" class="back-home-btn">
+                    <span class="back-home-icon">←</span>
+                    <span class="back-home-text">Back to Home Page</span>
+                </a>
+            </div>
+            
+            <!-- Jump to Section Navigation -->
+            <div class="jump-nav">
+                <h4>
+                    <span class="jump-nav-icon">🔍</span>
+                    Jump to Section
+                </h4>
+                <ul class="jump-nav-list">
+                    <li class="jump-nav-item">
+                        <a href="#overview" class="jump-nav-link" data-section="overview">
+                            <span class="jump-nav-icon">📖</span>
+                            Overview
+                        </a>
+                    </li>
+                    <li class="jump-nav-item">
+                        <a href="#highlights" class="jump-nav-link" data-section="highlights">
+                            <span class="jump-nav-icon">⭐</span>
+                            Highlights
+                        </a>
+                    </li>
+                    <li class="jump-nav-item">
+                        <a href="#gallery" class="jump-nav-link" data-section="gallery">
+                            <span class="jump-nav-icon">🖼️</span>
+                            Gallery
+                        </a>
+                    </li>
+                    <li class="jump-nav-item">
+                        <a href="#map" class="jump-nav-link" data-section="map">
+                            <span class="jump-nav-icon">🗺️</span>
+                            Map
+                        </a>
+                    </li>
+                    <li class="jump-nav-item">
+                        <a href="#cuisine" class="jump-nav-link" data-section="cuisine">
+                            <span class="jump-nav-icon">🍜</span>
+                            Cuisine
+                        </a>
+                    </li>
+                    <li class="jump-nav-item">
+                        <a href="#transportation" class="jump-nav-link" data-section="transportation">
+                            <span class="jump-nav-icon">🚇</span>
+                            Transportation
+                        </a>
+                    </li>
+                    <li class="jump-nav-item">
+                        <a href="#itineraries" class="jump-nav-link" data-section="itineraries">
+                            <span class="jump-nav-icon">🗓️</span>
+                            Itineraries
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
             <div class="row">
                 <div class="col-lg-8">
                     <!-- Overview -->
                     
-                    <div class="city-section">
+                    <div class="city-section" id="overview">
                         <h2>Detailed Overview</h2>
                         <div class="city-highlight">
                             <p>Beijing, the capital of the People's Republic of China, stands as one of the world's great ancient capitals with over 3,000 years of history and 860 years as a capital city. As China's political, cultural, and educational center, Beijing represents both the glorious imperial past and the dynamic modern present of this rising global power. The city's layout follows strict feng shui principles, with the Forbidden City at its heart, surrounded by concentric rings of development that tell the story of China's evolution from imperial dynasty to modern superpower.
@@ -600,7 +1038,7 @@
                     </div>
                     
                     <!-- Highlights -->
-                    <div class="city-section">
+                    <div class="city-section" id="highlights">
                         <h2>Must-See Highlights</h2>
                         <div class="city-highlight">
                             <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
@@ -653,12 +1091,50 @@
                     </div>
                     
                     <!-- Gallery -->
-                    <div class="city-section">
+                    <div class="city-section" id="gallery">
                         <h2>Gallery</h2>
+                        <p class="lightbox-instruction" style="color: #64748b; margin-bottom: 20px; font-size: 0.95rem;">
+                            <i class="fas fa-expand-alt me-2"></i>Click on any image to view it larger in the lightbox.
+                        </p>
                         <div class="city-gallery">
-                            <img src="../images/user_photos/beijing_1.jpg" alt="Beijing Forbidden City - Imperial palace architecture">
-                            <img src="../images/user_photos/beijing_2.jpg" alt="Beijing Great Wall - Ancient fortifications on mountains">
-                            <img src="../images/user_photos/beijing_3.jpg" alt="Beijing modern skyline - Contemporary architecture and city life">
+                            <div class="gallery-item">
+                                <img src="../images/user_photos/beijing_1.jpg" 
+                                     alt="Beijing Forbidden City - Imperial palace architecture"
+                                     data-caption="Forbidden City - Imperial palace complex with 980 buildings, home to 24 emperors from Ming to Qing dynasties"
+                                     class="lightbox-trigger">
+                                <div class="gallery-caption">
+                                    <p class="caption-text">
+                                        <span class="caption-icon">🏯</span>
+                                        Forbidden City - Imperial palace with 980 buildings
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <img src="../images/user_photos/beijing_2.jpg" 
+                                     alt="Beijing Great Wall - Ancient fortifications on mountains"
+                                     data-caption="Great Wall of China - Ancient fortification stretching over 21,000 km across northern China, built over 2,000 years"
+                                     class="lightbox-trigger">
+                                <div class="gallery-caption">
+                                    <p class="caption-text">
+                                        <span class="caption-icon">🏔️</span>
+                                        Great Wall - Ancient fortification on mountains
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item">
+                                <img src="../images/user_photos/beijing_3.jpg" 
+                                     alt="Beijing modern skyline - Contemporary architecture and city life"
+                                     data-caption="Beijing Central Business District - Modern skyline featuring China Zun Tower (528m), CCTV Headquarters, and other contemporary architecture"
+                                     class="lightbox-trigger">
+                                <div class="gallery-caption">
+                                    <p class="caption-text">
+                                        <span class="caption-icon">🏙️</span>
+                                        Beijing CBD - Modern skyline and architecture
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -700,7 +1176,7 @@
     <!-- NEW SECTIONS TEMPLATE -->
     
     <!-- Interactive Map Section -->
-    <section class="map-section">
+    <section class="map-section" id="map">
         <div class="container">
             <h2>Beijing Interactive Map</h2>
             <p>Explore Beijing's key attractions with our interactive map. Click on markers to learn more about each location.</p>
@@ -743,7 +1219,7 @@
     </section>
     
     <!-- Local Cuisine Section -->
-    <section class="cuisine-section">
+    <section class="cuisine-section" id="cuisine">
         <div class="container">
             <h2>Beijing Local Cuisine</h2>
             <p>Discover the flavors of Beijing with these must-try dishes and recommended restaurants.</p>
@@ -832,7 +1308,7 @@
     </section>
     
     <!-- Transportation Section -->
-    <section class="transport-section">
+    <section class="transport-section" id="transportation">
         <div class="container">
             <h2>Getting Around Beijing</h2>
             <p>Beijing has an extensive transportation network. Here's how to navigate the city efficiently.</p>
@@ -878,7 +1354,7 @@
     </section>
     
     <!-- Suggested Itineraries Section -->
-    <section class="itinerary-section">
+    <section class="itinerary-section" id="itineraries">
         <div class="container">
             <h2>Suggested Beijing Itineraries</h2>
             <p>Plan your perfect Beijing trip with these curated itineraries for different travel styles.</p>
@@ -1077,5 +1553,160 @@
         <span style="color: #f8fafc;">light</span>
         <span style="color: #1e293b;">dark</span>
     </div>
+    
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+        <div class="lightbox-content">
+            <div class="lightbox-counter" id="lightboxCounter">1 / 3</div>
+            <img class="lightbox-img" id="lightboxImage" src="" alt="">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+    
+    <!-- LIGHTBOX JAVASCRIPT -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
+        
+        if (!lightbox || lightboxTriggers.length === 0) return;
+        
+        let currentImageIndex = 0;
+        const images = Array.from(lightboxTriggers);
+        
+        // Open lightbox when clicking on an image
+        lightboxTriggers.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentImageIndex = index;
+                updateLightbox();
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+        });
+        
+        // Update lightbox content
+        function updateLightbox() {
+            const currentImage = images[currentImageIndex];
+            lightboxImage.src = currentImage.src;
+            lightboxImage.alt = currentImage.alt;
+            lightboxCaption.textContent = currentImage.getAttribute('data-caption') || currentImage.alt;
+            lightboxCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+        }
+        
+        // Close lightbox
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Click on backdrop to close
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Escape key to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            // Arrow key navigation
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') {
+                    navigateLightbox(-1);
+                } else if (e.key === 'ArrowRight') {
+                    navigateLightbox(1);
+                }
+            }
+        });
+        
+        // Navigation functions
+        function navigateLightbox(direction) {
+            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+            updateLightbox();
+        }
+        
+        // Button navigation
+        lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
+        lightboxNext.addEventListener('click', () => navigateLightbox(1));
+        
+        console.log('✅ Lightbox feature initialized');
+    });
+    </script>
+    
+    <!-- JUMP NAVIGATION JAVASCRIPT -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const jumpNavLinks = document.querySelectorAll('.jump-nav-link');
+        const sections = document.querySelectorAll('.city-section, .map-section, .cuisine-section, .transport-section, .itinerary-section');
+        
+        if (jumpNavLinks.length === 0) return;
+        
+        // Smooth scroll to section
+        jumpNavLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    // Update active link
+                    jumpNavLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Smooth scroll to section
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Update active link based on scroll position
+        function updateActiveNavLink() {
+            let currentSectionId = '';
+            const scrollPosition = window.scrollY + 150;
+            
+            // Find which section is currently in view
+            sections.forEach(section => {
+                if (section.offsetTop <= scrollPosition) {
+                    currentSectionId = section.id;
+                }
+            });
+            
+            // Update active link
+            jumpNavLinks.forEach(link => {
+                const linkSectionId = link.getAttribute('href').substring(1);
+                if (linkSectionId === currentSectionId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+        
+        // Update on scroll
+        window.addEventListener('scroll', updateActiveNavLink);
+        
+        // Initial update
+        updateActiveNavLink();
+        
+        console.log('✅ Jump navigation initialized');
+    });
+    </script>
 </body>
 </html>

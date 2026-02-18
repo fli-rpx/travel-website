@@ -29,27 +29,235 @@
             padding: 0 20px;
         }
         
-        /* HERO SECTION - COMPACT */
+        /* HERO SECTION - ENGAGING */
         .hero {
             text-align: center;
-            padding: 40px 20px 50px;
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            padding: 60px 20px 70px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%), url('images/hero-bg.jpg');
+            background-blend-mode: overlay;
+            background-size: cover;
+            background-position: center;
             color: white;
             border-radius: 0 0 20px 20px;
             margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(29, 78, 216, 0.9) 100%);
+            z-index: 1;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
         }
         
         .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
+            font-size: 3rem;
+            margin-bottom: 20px;
             line-height: 1.2;
+            font-weight: 800;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         
         .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .hero-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: white;
+            color: #3b82f6;
+            text-decoration: none;
+            border-radius: 30px;
             font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .hero-btn:hover {
+            background: #1e40af;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .hero-btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .hero-btn-secondary:hover {
+            background: white;
+            color: #3b82f6;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+            
+            .hero-stats {
+                gap: 20px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+        
+        /* CITY SEARCH BAR */
+        .city-search-container {
             max-width: 600px;
             margin: 0 auto 25px;
-            line-height: 1.5;
+        }
+        
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        
+        .search-btn {
+            padding: 12px 30px;
+            background: white;
+            color: #3b82f6;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .search-btn:hover {
+            background: #3b82f6;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+        }
+        
+        .search-results {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: none;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .search-result-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        
+        .search-result-item:hover {
+            background: #f1f5f9;
+        }
+        
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .search-result-name {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+        
+        .search-result-desc {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        
+        .no-results {
+            padding: 20px;
+            text-align: center;
+            color: #64748b;
+            font-style: italic;
         }
         
         /* SIMPLE CAROUSEL */
@@ -1060,9 +1268,46 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
-            <h1>Experience Authentic China</h1>
-            <p>Personal travel assistance with cultural introductions and complete arrangements for your China journey.</p>
-            <a href="#cities" class="hero-btn">Explore Cities in Detail</a>
+            <h1>Discover the Real China</h1>
+            <p>Immerse yourself in authentic cultural experiences with personalized travel planning, local guides, and unforgettable adventures across 25+ Chinese cities.</p>
+            
+            <!-- CITY SEARCH BAR -->
+            <div class="city-search-container">
+                <div class="search-box">
+                    <input type="text" id="citySearch" placeholder="Where do you want to go? Search cities..." class="search-input">
+                    <button id="searchButton" class="search-btn">
+                        <span>🔍 Search</span>
+                    </button>
+                </div>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            
+            <!-- ENGAGING CALL-TO-ACTION BUTTONS -->
+            <div class="hero-buttons">
+                <a href="#cities" class="hero-btn">Explore All Cities</a>
+                <a href="#featured" class="hero-btn hero-btn-secondary">Featured Destinations</a>
+                <a href="#itineraries" class="hero-btn hero-btn-secondary">Plan Your Trip</a>
+            </div>
+            
+            <!-- STATISTICS -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Chinese Cities</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Local Guides</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Happy Travelers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Travel Support</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1789,5 +2034,113 @@
             }
         });
     });</script>
+    
+    <!-- CITY SEARCH JAVASCRIPT -->
+    <script>
+    // City data - in a real app, this would come from a database or API
+    const cities = [
+        { name: "Beijing", description: "Capital city of China with rich history", page: "cities/beijing.html" },
+        { name: "Shanghai", description: "Modern metropolis and financial center", page: "cities/shanghai.html" },
+        { name: "Kaifeng", description: "Ancient capital of seven dynasties", page: "cities/kaifeng.html" },
+        { name: "Xiamen", description: "Coastal city with beautiful beaches", page: "cities/xiamen.html" },
+        { name: "Chengdu", description: "Home of pandas and spicy cuisine", page: "cities/chengdu.html" },
+        { name: "Xi'an", description: "Ancient capital with Terracotta Army", page: "cities/xian.html" },
+        { name: "Guilin", description: "Famous for stunning karst landscapes", page: "cities/guilin.html" },
+        { name: "Hangzhou", description: "Beautiful West Lake and tea plantations", page: "cities/hangzhou.html" },
+        { name: "Suzhou", description: "Classical gardens and canals", page: "cities/suzhou.html" },
+        { name: "Lhasa", description: "Capital of Tibet with rich culture", page: "cities/lhasa.html" }
+    ];
+    
+    // Initialize search functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('citySearch');
+        const searchButton = document.getElementById('searchButton');
+        const searchResults = document.getElementById('searchResults');
+        
+        if (!searchInput || !searchButton || !searchResults) {
+            console.log('Search elements not found');
+            return;
+        }
+        
+        // Search on button click
+        searchButton.addEventListener('click', performSearch);
+        
+        // Search on Enter key
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        // Search on input (real-time search)
+        searchInput.addEventListener('input', function() {
+            if (this.value.length >= 2) {
+                performSearch();
+            } else {
+                searchResults.style.display = 'none';
+            }
+        });
+        
+        // Perform search function
+        function performSearch() {
+            const query = searchInput.value.trim().toLowerCase();
+            
+            if (query.length === 0) {
+                searchResults.style.display = 'none';
+                return;
+            }
+            
+            // Filter cities based on search query
+            const filteredCities = cities.filter(city => 
+                city.name.toLowerCase().includes(query) || 
+                city.description.toLowerCase().includes(query)
+            );
+            
+            // Display results
+            displayResults(filteredCities);
+        }
+        
+        // Display search results
+        function displayResults(results) {
+            searchResults.innerHTML = '';
+            
+            if (results.length === 0) {
+                searchResults.innerHTML = '<div class="no-results">No cities found. Try a different search term.</div>';
+                searchResults.style.display = 'block';
+                return;
+            }
+            
+            // Limit to 10 results
+            const limitedResults = results.slice(0, 10);
+            
+            limitedResults.forEach(city => {
+                const resultItem = document.createElement('div');
+                resultItem.className = 'search-result-item';
+                resultItem.innerHTML = `
+                    <div class="search-result-name">${city.name}</div>
+                    <div class="search-result-desc">${city.description}</div>
+                `;
+                
+                // Click to navigate to city page
+                resultItem.addEventListener('click', function() {
+                    window.location.href = city.page;
+                });
+                
+                searchResults.appendChild(resultItem);
+            });
+            
+            searchResults.style.display = 'block';
+        }
+        
+        // Close search results when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!searchResults.contains(e.target) && e.target !== searchInput && e.target !== searchButton) {
+                searchResults.style.display = 'none';
+            }
+        });
+        
+        console.log('✅ City search functionality initialized');
+    });
+    </script>
 </body>
 </html>

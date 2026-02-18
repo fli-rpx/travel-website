@@ -1382,6 +1382,158 @@
     .city-link:hover {
         color: #2563eb;
         text-decoration: underline;
+    }
+    
+    /* ENHANCED FOOTER */
+    footer {
+        background: #1e293b;
+        color: white;
+        padding: 60px 0 30px;
+        margin-top: 60px;
+    }
+    
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+    
+    .footer-logo h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: white;
+    }
+    
+    .footer-logo p {
+        color: #cbd5e1;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .footer-column h4 {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        color: white;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .footer-column h4::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: #3b82f6;
+    }
+    
+    .footer-links {
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+        color: #cbd5e1;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .footer-links a:hover {
+        color: #3b82f6;
+    }
+    
+    .footer-links a i {
+        font-size: 0.9rem;
+        width: 20px;
+    }
+    
+    .footer-contact {
+        color: #cbd5e1;
+        line-height: 1.6;
+    }
+    
+    .footer-contact p {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .footer-social {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        background: #334155;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+        background: #3b82f6;
+        transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid #334155;
+        padding-top: 30px;
+        text-align: center;
+        color: #94a3b8;
+        font-size: 0.9rem;
+    }
+    
+    .footer-bottom-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .footer-bottom-links a {
+        color: #94a3b8;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-bottom-links a:hover {
+        color: #3b82f6;
+    }
+    
+    @media (max-width: 992px) {
+        .footer-container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .footer-container {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .footer-bottom-links {
+            flex-direction: column;
+            gap: 10px;
+        }
     }</style>
     <!-- Prevent caching -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -1965,14 +2117,84 @@
         </div>
     </section>
     
-    <!-- FOOTER -->
+    <!-- ENHANCED FOOTER -->
     <footer>
         <div class="container">
-            <h3>China Travel Assistance</h3>
-            <p>Personalized travel planning & cultural experiences</p>
-            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
-                25 Chinese Cities • Latest News • Contact Us • Working Carousel
-            </p>
+            <div class="footer-container">
+                <!-- Logo and Description -->
+                <div class="footer-logo">
+                    <h3>China Travel Guide</h3>
+                    <p>Your trusted companion for authentic Chinese travel experiences. Personalized planning, local insights, and unforgettable adventures across China.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <span>📘</span>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <span>🐦</span>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <span>📷</span>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <span>📺</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i>🏠</i> Home</a></li>
+                        <li><a href="#cities"><i>🏙️</i> All Cities</a></li>
+                        <li><a href="#featured"><i>⭐</i> Featured Destinations</a></li>
+                        <li><a href="#news"><i>📰</i> Travel News</a></li>
+                        <li><a href="#itineraries"><i>🗺️</i> Trip Planner</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company -->
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html"><i>👥</i> About Us</a></li>
+                        <li><a href="contact.html"><i>📞</i> Contact Us</a></li>
+                        <li><a href="team.html"><i>👨‍💼</i> Our Team</a></li>
+                        <li><a href="careers.html"><i>💼</i> Careers</a></li>
+                        <li><a href="partners.html"><i>🤝</i> Partners</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal & Support -->
+                <div class="footer-column">
+                    <h4>Legal & Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html"><i>🔒</i> Privacy Policy</a></li>
+                        <li><a href="terms.html"><i>📄</i> Terms of Service</a></li>
+                        <li><a href="cookies.html"><i>🍪</i> Cookie Policy</a></li>
+                        <li><a href="faq.html"><i>❓</i> FAQ</a></li>
+                        <li><a href="support.html"><i>🆘</i> Customer Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="footer-contact">
+                <p><i>📍</i> 123 Travel Street, Beijing, China 100000</p>
+                <p><i>📧</i> contact@chinatravelguide.com</p>
+                <p><i>📞</i> +86 10 1234 5678 (24/7 Support)</p>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>© 2026 China Travel Guide. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="sitemap.html">Sitemap</a>
+                    <a href="accessibility.html">Accessibility</a>
+                    <a href="disclaimer.html">Disclaimer</a>
+                    <a href="sustainability.html">Sustainability</a>
+                </div>
+            </div>
         </div>
     </footer>
     <script>

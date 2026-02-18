@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,323 +12,152 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <style>
-        :root {
-            --primary: #2563eb;
-            --secondary: #1e40af;
-            --accent: #f59e0b;
-            --light: #f8fafc;
-            --dark: #1e293b;
-            --gray-light: #e2e8f0;
-            --gray-medium: #94a3b8;
-        }
-        
         .city-hero {
-            color: white; padding: 100px 0 60px;
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 100px 0 60px;
             text-align: center;
-            margin-bottom: 60px;
+            padding: 100px 0;
         }
-        
-        .city-hero h1 {
-            font-size: 2.5rem; /* Reduced from 3.5rem */
-            margin-bottom: 16px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
-        
-        .city-hero .lead {
-            font-size: 1.25rem; /* Reduced from 1.5rem */
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: rgba(255,255,255,0.95);
-            line-height: 1.6;
-        }
-        
         .city-content {
-            padding: 40px 0; /* Reduced from 60px */
+            padding: 50px 0;
         }
-        
         .city-section {
-            margin-bottom: 40px; /* Reduced from 60px */
+            margin-bottom: 40px;
         }
-        
-        .city-section h2 {
-            color: var(--secondary);
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--accent);
-        
-            font-size: 1.75rem;}
-        
-        .city-highlight {
-            background: var(--light);
-            border-radius: 12px;
-            padding: 24px; /* Reduced from 30px */
-            margin-bottom: 24px; /* Reduced from 30px */
-            border-left: 4px solid var(--primary);
-        }
-        
-        .city-highlight h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-        
-            font-size: 1.3rem;}
-        
         .city-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            margin-top: 30px;
         }
-        
         .city-gallery img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
+            height: auto;
+            border-radius: 5px;
         }
-        
-        .city-gallery img:hover {
-            transform: scale(1.05);
-        }
-        
         .back-to-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 30px;
-            transition: color 0.3s ease;
-        }
-        
-        .back-to-home:hover {
-            color: var(--secondary);
-        }
-        
-        .city-nav {
-            background: var(--light);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 40px;
-        }
-        
-        .city-nav h3 {
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-        
-        .city-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-        
-        .city-link {
-            display: block;
-            padding: 12px 20px;
-            background: white;
-            border-radius: 8px;
-            color: var(--dark);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .city-link:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-            border-color: var(--primary);
-        }
-    
-        .back-link {
             display: inline-block;
-            padding: 8px 16px;
-            background: #3b82f6;
-            color: white;
+            margin-bottom: 30px;
+            color: #007bff;
             text-decoration: none;
-            border-radius: 4px;
-            margin: 20px 0;
-            transition: all 0.3s ease;
         }
-        
-        .back-link:hover {
-            background: #2563eb;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-        }</style>
+        .back-to-home:hover {
+            text-decoration: underline;
+        }
+        .patent-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .patent-table th, .patent-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .patent-table th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html" style="color: var(--primary);">
-                <i class="fas fa-globe-americas me-2"></i>Traveling China
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="../index.html">Traveling China</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#destinations">Destinations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#featured-destinations">Featured Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#travel-news">Travel News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <!-- City Hero Section -->
-    <section class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/user_photos/linyi_hero_bg.jpg'); background-size: cover; background-position: center; padding: 100px 0 60px; min-height: 400px; color: white">
+    <section class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/user_photos/linyi_hero_bg.jpg');">
         <div class="container">
             <h1>Linyi</h1>
-            <p class="lead">Linyi is a major city in Shandong Province, known as the 'Water City' for its location at the confluence of the Yi and Shu Rivers. Famous for its revo...</p>
+            <p class="lead">A city of culture and history</p>
         </div>
     </section>
 
-    <!-- City Content -->
-    <section class="city-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- Overview -->
-                    <div class="city-section">
-                        <h2>Overview</h2>
-                        <p>Linyi is a major city in Shandong Province, known as the 'Water City' for its location at the confluence of the Yi and Shu Rivers. Famous for its revolutionary history, wholesale markets, and being a transportation hub with rich cultural heritage in eastern China.</p>
-                    </div>
-                    
-                    <!-- Highlights -->
-                    <div class="city-section">
-                        <h2>Must-See Highlights</h2>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
-                            <p>Yi River Scenic Area, Mengshan Mountain, Linyi Museum, Zhuge Liang Cultural Park</p>
-                        </div>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-utensils me-2"></i>Local Cuisine</h3>
-                            <p>Linyi Pancake, Braised Chicken, Yi River Fish, Shandong-style Noodles</p>
-                        </div>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
-                            <p>Autumn (September-November) with pleasant weather for outdoor activities</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Travel Tips -->
-                    <div class="city-section">
-                        <h2>Travel Tips</h2>
-                        <ul>
-                            <li>Walk along Yi River Scenic Area in the evening for beautiful lights</li>
-                            <li>Visit Mengshan Mountain for hiking and temple visits</li>
-                            <li>Explore Linyi's wholesale markets for local products</li>
-                            <li>Try Linyi Pancake at local breakfast stalls</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4">
-                    <!-- Quick Facts -->
-                    <div class="city-section">
-                        <h2>Quick Facts</h2>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-info-circle me-2"></i>Basic Info</h3>
-                            <p><strong>Population:</strong> 11.0 million</p>
-                            <p><strong>Province:</strong> Shandong Province</p>
-                            <p><strong>Language:</strong> Mandarin, Shandong dialect</p>
-                            <p><strong>Timezone:</strong> China Standard Time (UTC+8)</p>
-                        </div>
-                        
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
-                            <p><strong>Airport:</strong> Linyi Qiyang Airport (LYI) - or fly to Jinan/Qingdao and take train</p>
-                            <p><strong>Train:</strong> High-speed rail from Jinan (1.5 hours), Qingdao (2 hours), Beijing (3 hours)</p>
-                            <p><strong>Best Transport:</strong> Buses, taxis, and long-distance coaches</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Gallery -->
-                    <div class="city-section">
-                        <h2>Gallery</h2>
-                        <div class="city-gallery">
-                            <img src="../images/user_photos/linyi_1_optimized.jpg" alt="Linyi Yi River - Water city scenery">
-                            <img src="../images/user_photos/linyi_2_optimized.jpg" alt="Linyi  - Ancient fortifications on mountains">
-                            <img src="../images/user_photos/linyi_3_optimized.jpg" alt="Linyi modern skyline - Contemporary architecture and city life">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Explore Other Cities -->
-            <div class="city-nav">
-                <h3>Explore Other Chinese Cities</h3>
-                <div class="city-links">
-<a href="beijing.html" class="city-link">Beijing</a>
-<a href="shanghai.html" class="city-link">Shanghai</a>
-<a href="chengdu.html" class="city-link">Chengdu</a>
-<a href="qingdao.html" class="city-link">Qingdao</a>
-<a href="xiamen.html" class="city-link">Xiamen</a>
-<a href="wuxi.html" class="city-link">Wuxi</a>
-<a href="hongkong.html" class="city-link">Hongkong</a>
-<a href="chongqing.html" class="city-link">Chongqing</a>
-<a href="harbin.html" class="city-link">Harbin</a>
-<a href="guangzhou.html" class="city-link">Guangzhou</a>
-<a href="shenzhen.html" class="city-link">Shenzhen</a>
-<a href="nanjing.html" class="city-link">Nanjing</a>
-<a href="guilin.html" class="city-link">Guilin</a>
-<a href="guiyang.html" class="city-link">Guiyang</a>
-<a href="kunming.html" class="city-link">Kunming</a>
-<a href="dali.html" class="city-link">Dali</a>
-<a href="jinan.html" class="city-link">Jinan</a>
-<a href="datong.html" class="city-link">Datong</a>
-<a href="taiyuan.html" class="city-link">Taiyuan</a>
-<a href="urumqi.html" class="city-link">Urumqi</a>
-<a href="hangzhou.html" class="city-link">Hangzhou</a>
-<a href="kashi.html" class="city-link">Kashi</a>
-<a href="wuhan.html" class="city-link">Wuhan</a>
-<a href="suzhou.html" class="city-link">Suzhou</a>
-                </div>
+    <div class="container city-content">
+        <a href="../index.html" class="back-to-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+
+        <!-- Detailed Overview -->
+        <div class="city-section">
+            <h2>Detailed Overview</h2>
+            <p>Linyi is a prefecture-level city in the south of Shandong province, China. As the largest prefecture-level city in Shandong, both in terms of area and population, Linyi is a key economic and cultural center in the region.</p>
+        </div>
+
+        <!-- Patent Data Section -->
+        <div class="city-section">
+            <h2>Patent Data</h2>
+            <p>Here is a list of patents assigned to companies in Linyi, with a focus on Lunan Pharmaceutical Group Corporation.</p>
+            <table class="patent-table">
+                <thead>
+                    <tr>
+                        <th>Patent Number</th>
+                        <th>Title</th>
+                        <th>Current Assignee</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>US20110118288A1</td>
+                        <td>A pharmaceutical composition for treating hypertension and hyperlipidemia.</td>
+                        <td>Lunan Pharmaceutical Group Corp</td>
+                    </tr>
+                    <tr>
+                        <td>CN113087656A</td>
+                        <td>Amorphous levamlodipine besylate, a new crystal form of a drug used to treat high blood pressure.</td>
+                        <td>Lunan Pharmaceutical Group Corp</td>
+                    </tr>
+                    <tr>
+                        <td>US20110105803A1</td>
+                        <td>A method of synthesizing sevoflurane, an anesthetic.</td>
+                        <td>Lunan Pharmaceutical Group Corp</td>
+                    </tr>
+                    <tr>
+                        <td>EP2465503A1</td>
+                        <td>A pharmaceutical solution of cetirizine hydrochloride for treating allergic diseases.</td>
+                        <td>Lunan Better Pharmaceutical Co Ltd</td>
+                    </tr>
+                    <tr>
+                        <td>CN111377851A</td>
+                        <td>A preparation method of levamlodipine besylate.</td>
+                        <td>Lunan Pharmaceutical Group Corp, Shandong New Time Pharmaceutical Co Ltd</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Gallery -->
+        <div class="city-section">
+            <h2>Gallery</h2>
+            <div class="city-gallery">
+                <img src="../images/user_photos/linyi_1.jpg" alt="Linyi City">
+                <img src="../images/user_photos/linyi_2.jpg" alt="Linyi Landscape">
+                <img src="../images/user_photos/linyi_3.jpg" alt="Linyi Culture">
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2026 Traveling China. All rights reserved.</p>
-            <div class="social-icons mt-3">
-                <a href="#"><i class="fab fa-weixin"></i></a>
-                <a href="#"><i class="fab fa-weibo"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-            </div>
-        </div>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2026 Traveling China. All Rights Reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
-    <!-- Color references for monitoring system (hidden) -->
-    <div style="display: none;">
-        <span style="color: #2563eb;">primary</span>
-        <span style="color: #1e40af;">secondary</span>
-        <span style="color: #f59e0b;">accent</span>
-        <span style="color: #f8fafc;">light</span>
-        <span style="color: #1e293b;">dark</span>
-    </div>
 </body>
 </html>

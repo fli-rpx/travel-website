@@ -64,28 +64,28 @@
             color: #1e293b;
         }
         
-            .simple-carousel {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-    }
+        .simple-carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
         
-                .carousel-track {
-        display: flex;
-        width: 500%; /* 5 slides × 100% */
-        transition: transform 0.5s ease-in-out;
-    }
+        .carousel-track {
+            display: flex;
+            /* Width will be set dynamically by JavaScript */
+            transition: transform 0.5s ease-in-out;
+        }
         
-                    .carousel-slide {
-        display: flex;
-        width: 20%; /* 100% ÷ 5 slides = 20% */
-        min-height: 400px;
-        padding: 10px;
-        box-sizing: border-box;
-        flex-shrink: 0; /* Prevent shrinking */
-        justify-content: space-around; /* Distribute space evenly */
-        align-items: stretch;
-    }
+        .carousel-slide {
+            display: flex;
+            /* Width will be set dynamically by JavaScript */
+            min-height: 400px;
+            padding: 10px;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            justify-content: space-around;
+            align-items: stretch;
+        }
         
         /* CITY CARDS - NO IMAGES */
                 .city-card {
@@ -117,85 +117,42 @@
         }
         
             .city-header {
-        position: relative;
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-         /* Just 2% brighter if needed */
-    }
-                    /* Clean carousel images - no filters, no gradients */
-    .city-header {
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-    }
-    
-    /* Text styling for readability */
-    .city-name {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: white;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-    }
-    
-    .city-tag {
-        font-size: 0.95rem;
-        color: rgba(255,255,255,0.95);
-        font-weight: 500;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-    }    /* Very subtle 10% gradient overlay for text readability */
-    
-    
-    .city-name, .city-tag {
-        position: relative;
-        z-index: 2; /* Above gradient */
-    }
-    
-    /* Make text very visible with minimal gradient */
-    .city-name {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: white;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.7);
-    }
-    
-    .city-tag {
-        font-size: 0.95rem;
-        color: rgba(255,255,255,0.95);
-        font-weight: 500;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.7);
-    }
-    
-    /* Slight brightness on hover */
-    .city-card:hover     .city-header {
-        position: relative;
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-         /* Just 2% brighter if needed */
-    }
-    
-    /* Remove gradient on hover for cleaner look */
-    .city-card:hover     /* Make text even more visible */
-    .city-name {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: white;
-    }
-    
-    .city-tag {
-        font-size: 0.95rem;
-        color: rgba(255,255,255,0.95);
-        font-weight: 500;
-    }
-    
-    
-    
-    .city-name, .city-tag {
-        position: relative;
-        z-index: 2;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    }
+                position: relative;
+                background-size: cover !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 15px;
+            }
+            
+            /* Text styling for readability */
+            .city-name {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: white;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+                margin-bottom: 5px;
+            }
+            
+            .city-tag {
+                font-size: 0.95rem;
+                color: rgba(255,255,255,0.95);
+                font-weight: 500;
+                text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+            }
+            
+            .city-name, .city-tag {
+                position: relative;
+                z-index: 2;
+            }
+            
+            /* Slight brightness on hover */
+            .city-card:hover .city-header {
+                filter: brightness(1.02);
+            }
     
     /* Ensure images cover properly */
         .city-header {
@@ -723,6 +680,27 @@
         .carousel-dot.active {
             background: #3b82f6;
             transform: scale(1.2);
+        }
+        
+        /* Carousel navigation container */
+        .carousel-navigation-container {
+            position: relative;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        /* Slide counter */
+        .slide-counter {
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-left: 10px;
         }
         
         .carousel-dot:hover {
@@ -1450,11 +1428,14 @@
                     </div>
                 </div>
                 
-                <!-- Navigation buttons -->
-                <button class="carousel-btn prev" onclick="prevSlide()">‹</button>
-                <button class="carousel-btn next" onclick="nextSlide()">›</button>
-                <div class="carousel-dots">
-                    <!-- Dots will be generated by JavaScript -->
+                <!-- Navigation -->
+                <div class="carousel-navigation-container">
+                    <button class="carousel-btn prev" onclick="prevSlide()">‹</button>
+                    <div class="carousel-dots">
+                        <!-- Dots will be generated by JavaScript -->
+                    </div>
+                    <button class="carousel-btn next" onclick="nextSlide()">›</button>
+                    <div class="slide-counter">1 / 5</div>
                 </div>
             </div>
         </div>
@@ -1558,24 +1539,25 @@
         </div>
     </footer>
     <script>
-    // SIMPLE WORKING CAROUSEL FOR 5 SLIDES
-    console.log('🚀 Loading simple carousel...');
+    // DYNAMIC CAROUSEL - HANDLES ANY NUMBER OF SLIDES
+    console.log('🚀 Loading dynamic carousel...');
     
     let currentSlide = 0;
-    let totalSlides = 5;
+    let totalSlides = 0;
     let track = null;
     let slides = [];
     let autoInterval = null;
+    let slideWidth = 0;
     
     // Initialize carousel
     function initCarousel() {
-        console.log('🎯 Initializing carousel...');
+        console.log('🎯 Initializing dynamic carousel...');
         
         track = document.querySelector('.carousel-track');
         slides = document.querySelectorAll('.carousel-slide');
         totalSlides = slides.length;
         
-        console.log(`Found ${totalSlides} slides, ${slides.length} slide elements`);
+        console.log(`Found ${totalSlides} slides`);
         
         if (!track || slides.length === 0) {
             console.log('⏳ Waiting for elements...');
@@ -1583,19 +1565,43 @@
             return;
         }
         
+        // Calculate dynamic widths
+        calculateSlideWidth();
+        setupTrackWidth();
+        
         // Set initial position
         updateCarousel();
         
-        // Create dots if needed
+        // Create dots dynamically based on actual slide count
         createDots();
         
         // Start auto-rotate
         startAutoRotate();
         
-        console.log('✅ Carousel initialized successfully!');
+        // Setup hover pause
+        setupHoverPause();
+        
+        console.log('✅ Dynamic carousel initialized successfully!');
     }
     
-    // Create navigation dots
+    // Calculate slide width based on viewport
+    function calculateSlideWidth() {
+        const carouselWidth = track.parentElement.clientWidth;
+        slideWidth = 100 / totalSlides; // Percentage per slide
+        console.log(`📏 Carousel width: ${carouselWidth}px, Slide width: ${slideWidth}% per slide`);
+    }
+    
+    // Setup track width dynamically
+    function setupTrackWidth() {
+        track.style.width = `${totalSlides * 100}%`;
+        
+        // Set each slide width dynamically
+        slides.forEach(slide => {
+            slide.style.width = `${slideWidth}%`;
+        });
+    }
+    
+    // Create navigation dots dynamically
     function createDots() {
         const dotsContainer = document.querySelector('.carousel-dots');
         if (!dotsContainer) return;
@@ -1603,7 +1609,7 @@
         // Clear existing dots
         dotsContainer.innerHTML = '';
         
-        // Create 5 dots for 5 slides
+        // Create dots based on actual slide count
         for (let i = 0; i < totalSlides; i++) {
             const dot = document.createElement('button');
             dot.className = 'carousel-dot';
@@ -1619,15 +1625,18 @@
     function updateCarousel() {
         if (!track) return;
         
-        // For 5 slides: 0%, -20%, -40%, -60%, -80%
-        const position = -(currentSlide * 100);
-        track.style.transform = `translateX(${position / totalSlides}%)`;
+        // Calculate position based on dynamic slide width
+        const position = -(currentSlide * slideWidth);
+        track.style.transform = `translateX(${position}%)`;
         track.style.transition = 'transform 0.5s ease-in-out';
         
         // Update dots
         updateDots();
         
-        console.log(`📊 Slide ${currentSlide + 1} of ${totalSlides}`);
+        // Update UI indicators
+        updateSlideCounter();
+        
+        console.log(`📊 Slide ${currentSlide + 1} of ${totalSlides} (Position: ${position}%)`);
     }
     
     // Update dot states
@@ -1640,6 +1649,14 @@
                 dot.classList.remove('active');
             }
         });
+    }
+    
+    // Update slide counter in UI
+    function updateSlideCounter() {
+        const counter = document.querySelector('.slide-counter');
+        if (counter) {
+            counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+        }
     }
     
     // Go to specific slide
@@ -1693,16 +1710,28 @@
         track.addEventListener('mouseleave', startAutoRotate);
     }
     
+    // Handle window resize
+    function handleResize() {
+        calculateSlideWidth();
+        setupTrackWidth();
+        updateCarousel();
+    }
+    
     // Initialize when page loads
     document.addEventListener('DOMContentLoaded', function() {
         initCarousel();
-        setupHoverPause();
+        window.addEventListener('resize', handleResize);
     });
     
     // Also try after a short delay
     setTimeout(initCarousel, 500);
     
-    console.log('🎉 Carousel script loaded!');
+    // Fallback initialization
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(initCarousel, 100);
+    }
+    
+    console.log('🎉 Dynamic carousel script loaded!');
     </script>
 <!-- DEBUG INFO -->
     <div id="carouselDebug" style="display: none; background: #fef3c7; border: 1px solid #f59e0b; padding: 10px; margin: 10px 0; border-radius: 5px; font-family: monospace;">

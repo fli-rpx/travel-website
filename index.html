@@ -1534,6 +1534,339 @@
             flex-direction: column;
             gap: 10px;
         }
+    }
+    
+    /* TESTIMONIALS SECTION */
+    .testimonials-section {
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    }
+    
+    .testimonials-slider {
+        max-width: 1000px;
+        margin: 50px auto 0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .testimonials-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .testimonial-card {
+        flex: 0 0 100%;
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        margin: 0 15px;
+        position: relative;
+    }
+    
+    .testimonial-quote {
+        font-size: 1.5rem;
+        color: #1e293b;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        font-style: italic;
+        position: relative;
+        padding-left: 30px;
+    }
+    
+    .testimonial-quote::before {
+        content: '"';
+        position: absolute;
+        left: 0;
+        top: -10px;
+        font-size: 4rem;
+        color: #3b82f6;
+        opacity: 0.2;
+        font-family: Georgia, serif;
+    }
+    
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .author-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        border: 3px solid #3b82f6;
+    }
+    
+    .author-info h4 {
+        margin: 0 0 5px 0;
+        color: #1e293b;
+        font-size: 1.1rem;
+    }
+    
+    .author-info p {
+        margin: 0;
+        color: #64748b;
+        font-size: 0.9rem;
+    }
+    
+    .testimonial-rating {
+        color: #f59e0b;
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+    
+    .testimonials-nav {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 40px;
+    }
+    
+    .testimonial-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #cbd5e1;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .testimonial-dot.active {
+        background: #3b82f6;
+        transform: scale(1.2);
+    }
+    
+    .testimonial-nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        background: white;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        cursor: pointer;
+        font-size: 1.2rem;
+        color: #3b82f6;
+        z-index: 10;
+        transition: all 0.3s ease;
+    }
+    
+    .testimonial-nav-btn:hover {
+        background: #3b82f6;
+        color: white;
+        transform: translateY(-50%) scale(1.1);
+    }
+    
+    .testimonial-prev {
+        left: -25px;
+    }
+    
+    .testimonial-next {
+        right: -25px;
+    }
+    
+    @media (max-width: 768px) {
+        .testimonial-card {
+            padding: 30px 20px;
+            margin: 0 10px;
+        }
+        
+        .testimonial-quote {
+            font-size: 1.2rem;
+            padding-left: 20px;
+        }
+        
+        .testimonial-nav-btn {
+            display: none;
+        }
+    }
+    
+    /* TRAVEL BLOG SECTION */
+    .blog-section {
+        padding: 80px 20px;
+        background: white;
+    }
+    
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        margin-top: 50px;
+    }
+    
+    .blog-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+    }
+    
+    .blog-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    
+    .blog-image {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    
+    .blog-category {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: #3b82f6;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    
+    .blog-content {
+        padding: 30px;
+    }
+    
+    .blog-date {
+        color: #64748b;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .blog-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+    
+    .blog-excerpt {
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .blog-read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: 600;
+        transition: gap 0.3s ease;
+    }
+    
+    .blog-read-more:hover {
+        gap: 12px;
+    }
+    
+    .blog-view-all {
+        text-align: center;
+        margin-top: 50px;
+    }
+    
+    /* NEWSLETTER SECTION */
+    .newsletter-section {
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        color: white;
+        text-align: center;
+    }
+    
+    .newsletter-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .newsletter-form {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .newsletter-input {
+        flex: 1;
+        min-width: 250px;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 30px;
+        font-size: 1rem;
+        background: rgba(255,255,255,0.9);
+    }
+    
+    .newsletter-input:focus {
+        outline: none;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+    }
+    
+    .newsletter-btn {
+        padding: 15px 40px;
+        background: white;
+        color: #3b82f6;
+        border: none;
+        border-radius: 30px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .newsletter-btn:hover {
+        background: #1e40af;
+        color: white;
+        transform: translateY(-3px);
+    }
+    
+    .newsletter-features {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+    }
+    
+    .newsletter-feature {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.95rem;
+        opacity: 0.9;
+    }
+    
+    .privacy-note {
+        margin-top: 20px;
+        font-size: 0.85rem;
+        opacity: 0.8;
+    }
+    
+    @media (max-width: 768px) {
+        .blog-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .newsletter-form {
+            flex-direction: column;
+        }
+        
+        .newsletter-input {
+            min-width: 100%;
+        }
     }</style>
     <!-- Prevent caching -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -2026,6 +2359,154 @@
                     <span>View All 25+ Cities</span>
                     <span>→</span>
                 </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Traveler Testimonials</h2>
+            <p class="section-subtitle">See what our travelers have to say about their experiences exploring China with us.</p>
+            
+            <div class="testimonials-slider">
+                <button class="testimonial-nav-btn testimonial-prev">‹</button>
+                <button class="testimonial-nav-btn testimonial-next">›</button>
+                
+                <div class="testimonials-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            Our trip to Beijing and the Great Wall was absolutely incredible! The local guide provided insights we never would have discovered on our own. The attention to detail and personalized itinerary made this the best vacation we've ever had.
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');"></div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Traveled to Beijing & Shanghai</p>
+                                <div class="testimonial-rating">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            As a solo female traveler, I was initially nervous about visiting China. But the team made me feel safe and supported throughout my entire journey. The cultural experiences were authentic, and the food recommendations were spot on!
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');"></div>
+                            <div class="author-info">
+                                <h4>Maria Rodriguez</h4>
+                                <p>Solo traveler to Chengdu & Xi'an</p>
+                                <div class="testimonial-rating">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            We traveled with our two teenagers, and the itinerary was perfect for all ages. The balance of historical sites, cultural activities, and free time was just right. The transportation arrangements were seamless. Highly recommended for families!
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');"></div>
+                            <div class="author-info">
+                                <h4>David Chen</h4>
+                                <p>Family trip to Guilin & Yangshuo</p>
+                                <div class="testimonial-rating">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonials-nav">
+                    <button class="testimonial-dot active" data-slide="0"></button>
+                    <button class="testimonial-dot" data-slide="1"></button>
+                    <button class="testimonial-dot" data-slide="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- TRAVEL BLOG SECTION -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2 class="section-title">China Travel Blog</h2>
+            <p class="section-subtitle">Insights, tips, and stories from our travels across China.</p>
+            
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1512529904539-2034f9e1c8b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <span class="blog-category">Cultural Guide</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">📅 February 15, 2026</div>
+                        <h3 class="blog-title">Understanding Chinese Tea Culture: A Beginner's Guide</h3>
+                        <p class="blog-excerpt">From traditional tea ceremonies to modern tea houses, discover the rich history and etiquette of Chinese tea culture. Learn which teas to try in different regions.</p>
+                        <a href="#" class="blog-read-more">Read Article →</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <span class="blog-category">Food & Dining</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">📅 February 10, 2026</div>
+                        <h3 class="blog-title">Beyond Peking Duck: 10 Must-Try Beijing Street Foods</h3>
+                        <p class="blog-excerpt">Explore Beijing's vibrant street food scene with our guide to local favorites. From jianbing to chuan'r, discover the flavors of the capital.</p>
+                        <a href="#" class="blog-read-more">Read Article →</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <span class="blog-category">Travel Tips</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">📅 February 5, 2026</div>
+                        <h3 class="blog-title">Navigating China's High-Speed Rail: A Complete Guide</h3>
+                        <p class="blog-excerpt">Everything you need to know about traveling by high-speed train in China. From booking tickets to onboard etiquette, make your journey smooth and comfortable.</p>
+                        <a href="#" class="blog-read-more">Read Article →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog-view-all">
+                <a href="#" class="hero-btn hero-btn-secondary">View All Blog Posts →</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- NEWSLETTER SECTION -->
+    <section id="newsletter" class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-container">
+                <h2 class="section-title" style="color: white;">Stay Updated on China Travel</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Subscribe to our newsletter for travel tips, destination guides, and exclusive offers delivered to your inbox.</p>
+                
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+                
+                <div class="newsletter-features">
+                    <div class="newsletter-feature">
+                        <span>✓</span> Monthly travel guides
+                    </div>
+                    <div class="newsletter-feature">
+                        <span>✓</span> Exclusive discounts
+                    </div>
+                    <div class="newsletter-feature">
+                        <span>✓</span> Cultural insights
+                    </div>
+                </div>
+                
+                <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
             </div>
         </div>
     </section>
@@ -2554,6 +3035,108 @@
         });
         
         console.log('✅ City search functionality initialized');
+    });
+    </script>
+    
+    <!-- TESTIMONIALS SLIDER JAVASCRIPT -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const testimonialsTrack = document.querySelector('.testimonials-track');
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        const prevBtn = document.querySelector('.testimonial-prev');
+        const nextBtn = document.querySelector('.testimonial-next');
+        
+        if (!testimonialsTrack || testimonialCards.length === 0) return;
+        
+        let currentTestimonial = 0;
+        const totalTestimonials = testimonialCards.length;
+        
+        // Set initial track width
+        testimonialsTrack.style.width = `${totalTestimonials * 100}%`;
+        
+        // Update slider position
+        function updateTestimonialSlider() {
+            const position = -currentTestimonial * 100;
+            testimonialsTrack.style.transform = `translateX(${position}%)`;
+            testimonialsTrack.style.transition = 'transform 0.5s ease-in-out';
+            
+            // Update dots
+            testimonialDots.forEach((dot, index) => {
+                if (index === currentTestimonial) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        
+        // Next testimonial
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+            updateTestimonialSlider();
+        }
+        
+        // Previous testimonial
+        function prevTestimonial() {
+            currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+            updateTestimonialSlider();
+        }
+        
+        // Dot click
+        testimonialDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentTestimonial = index;
+                updateTestimonialSlider();
+            });
+        });
+        
+        // Button events
+        if (prevBtn) prevBtn.addEventListener('click', prevTestimonial);
+        if (nextBtn) nextBtn.addEventListener('click', nextTestimonial);
+        
+        // Auto-rotate testimonials
+        let testimonialInterval = setInterval(nextTestimonial, 5000);
+        
+        // Pause on hover
+        testimonialsTrack.addEventListener('mouseenter', () => {
+            clearInterval(testimonialInterval);
+        });
+        
+        testimonialsTrack.addEventListener('mouseleave', () => {
+            testimonialInterval = setInterval(nextTestimonial, 5000);
+        });
+        
+        // Newsletter form
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                const email = emailInput.value.trim();
+                
+                if (email) {
+                    // In a real implementation, this would send to a server
+                    alert(`Thank you for subscribing with ${email}! You'll receive our next newsletter soon.`);
+                    emailInput.value = '';
+                    
+                    // Simulate successful submission
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Subscribed!';
+                    submitBtn.style.background = '#10b981';
+                    submitBtn.style.color = 'white';
+                    
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.background = '';
+                        submitBtn.style.color = '';
+                    }, 2000);
+                }
+            });
+        }
+        
+        console.log('✅ Testimonials slider and newsletter form initialized');
     });
     </script>
 </body>

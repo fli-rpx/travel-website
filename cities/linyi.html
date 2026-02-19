@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,60 +39,446 @@
         }
         
         .city-hero .lead {
-            font-size: 1.25rem; /* Reduced from 1.5rem */
+            font-size: 1.25rem;
             max-width: 700px;
             margin: 0 auto 30px;
             color: rgba(255,255,255,0.95);
-            line-height: 1.6;
+            line-height: 1.8; /* Increased from 1.6 for better readability */
         }
         
         .city-content {
-            padding: 40px 0; /* Reduced from 60px */
+            padding: 60px 0; /* Increased from 40px for better spacing */
         }
         
         .city-section {
-            margin-bottom: 40px; /* Reduced from 60px */
+            margin-bottom: 60px; /* Increased from 40px for better section separation */
         }
         
         .city-section h2 {
             color: var(--secondary);
-            margin-bottom: 30px;
-            padding-bottom: 15px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
             border-bottom: 3px solid var(--accent);
+            font-size: 2rem; /* Increased from 1.75rem for better hierarchy */
+            font-weight: 800; /* Bolder weight for emphasis */
+            font-family: 'Libre Baskerville', Georgia, serif; /* Distinct serif font for headings */
+            letter-spacing: -0.5px; /* Slightly tighter letter spacing */
+            line-height: 1.3;
+        }
         
-            font-size: 1.75rem;}
+        /* Enhanced visual hierarchy for subheadings */
+        .city-highlight h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.4rem; /* Slightly larger */
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', Georgia, serif; /* Distinct font for subheadings */
+            line-height: 1.3;
+        }
+        
+        /* Distinct font for new section headings */
+        .map-section h2,
+        .cuisine-section h2,
+        .transport-section h2,
+        .itinerary-section h2 {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--accent);
+        }
+        
+        /* Enhanced hierarchy for day titles in itineraries */
+        .day-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        /* Better contrast for activity titles */
+        .activity-title {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
         
         .city-highlight {
             background: var(--light);
             border-radius: 12px;
-            padding: 24px; /* Reduced from 30px */
-            margin-bottom: 24px; /* Reduced from 30px */
+            padding: 32px; /* Increased from 24px */
+            margin-bottom: 32px; /* Increased from 24px */
             border-left: 4px solid var(--primary);
+            line-height: 1.7; /* Added for better text readability */
         }
         
         .city-highlight h3 {
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 20px; /* Increased from 15px */
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
         
-            font-size: 1.3rem;}
+        /* Improve general text readability */
+        .city-content p {
+            line-height: 1.7; /* Added for better paragraph readability */
+            margin-bottom: 20px; /* Added spacing between paragraphs */
+        }
+        
+        .city-content ul, .city-content ol {
+            line-height: 1.7; /* Better list readability */
+            margin-bottom: 20px;
+        }
+        
+        .city-content li {
+            margin-bottom: 10px; /* Space between list items */
+        }
         
         .city-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px; /* Increased gap for better spacing with captions */
             margin-top: 30px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
         }
         
         .city-gallery img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 10px;
+            display: block;
             transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        .caption-text {
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+        
+        .caption-icon {
+            margin-right: 8px;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        /* PROMINENT BACK TO HOME BUTTON */
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            border: 2px solid transparent;
+        }
+        
+        .back-home-btn:hover {
+            background: white;
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            gap: 15px;
+        }
+        
+        .back-home-icon {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .back-home-btn:hover .back-home-icon {
+            transform: translateX(-5px);
+        }
+
+        .patent-table {
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        
+        .back-home-text {
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .back-home-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        /* JUMP TO SECTION NAVIGATION */
+        .jump-nav {
+            position: sticky;
+            top: 80px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            z-index: 100;
+            border: 1px solid var(--gray-light);
+        }
+        
+        .jump-nav h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .jump-nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .jump-nav-item {
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .jump-nav-link {
+            display: block;
+            padding: 10px 15px;
+            background: var(--light);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .jump-nav-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .jump-nav-link.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .jump-nav-icon {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 992px) {
+            .jump-nav {
+                position: static;
+                margin-top: 20px;
+            }
+            
+            .jump-nav-list {
+                flex-direction: column;
+            }
+            
+            .jump-nav-item {
+                min-width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .jump-nav {
+                padding: 15px;
+            }
+            
+            .jump-nav-link {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+            }
         }
         
         .city-gallery img:hover {
             transform: scale(1.05);
+            cursor: pointer; /* Indicate images are clickable */
+        }
+        
+        /* LIGHTBOX FEATURE */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        
+        .lightbox-caption {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            font-size: 1.1rem;
+            padding: 10px;
+            background: rgba(0,0,0,0.7);
+            border-radius: 5px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .lightbox-close:hover {
+            transform: scale(1.2);
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .lightbox-nav:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .lightbox-prev {
+            left: 20px;
+        }
+        
+        .lightbox-next {
+            right: 20px;
+        }
+        
+        .lightbox-counter {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            color: white;
+            font-size: 1rem;
+            background: rgba(0,0,0,0.5);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .lightbox-nav {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .lightbox-prev {
+                left: 10px;
+            }
+            
+            .lightbox-next {
+                right: 10px;
+            }
+            
+            .lightbox-caption {
+                font-size: 0.9rem;
+                bottom: -40px;
+            }
         }
         
         .back-to-home {
@@ -160,196 +547,639 @@
             background: #2563eb;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-        }</style>
+        }
+        
+        /* NEW CITY PAGE SECTIONS TEMPLATE */
+        
+        /* Interactive Map Section */
+        .map-section {
+            margin: 60px 0;
+            background: var(--light);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .map-container {
+            height: 400px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 30px;
+            position: relative;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .map-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .map-marker {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #ef4444;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .map-marker::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+        }
+        
+        .map-marker:hover {
+            transform: rotate(-45deg) scale(1.2);
+        }
+        
+        .marker-tooltip {
+            position: absolute;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 100;
+            display: none;
+            min-width: 200px;
+        }
+        
+        .marker-tooltip h5 {
+            margin: 0 0 5px 0;
+            color: var(--primary);
+        }
+        
+        .marker-tooltip p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+        
+        /* Local Cuisine Section */
+        .cuisine-section {
+            margin: 60px 0;
+        }
+        
+        .cuisine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .cuisine-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .cuisine-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        
+        .cuisine-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .cuisine-content {
+            padding: 25px;
+        }
+        
+        .cuisine-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .cuisine-description {
+            color: var(--gray-medium);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .cuisine-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .cuisine-tag {
+            background: var(--light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .restaurant-list {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-light);
+        }
+        
+        .restaurant-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        .restaurant-item:last-child {
+            border-bottom: none;
+        }
+        
+        .restaurant-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .restaurant-rating {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        /* Transportation Section */
+        .transport-section {
+            margin: 60px 0;
+            background: var(--light);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .transport-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid var(--gray-light);
+            transition: all 0.3s ease;
+        }
+        
+        .transport-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+        
+        .transport-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .transport-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .transport-description {
+            color: var(--gray-medium);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Suggested Itinerary Section */
+        .itinerary-section {
+            margin: 60px 0;
+        }
+        
+        .itinerary-timeline {
+            margin-top: 40px;
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .itinerary-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gray-light);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 60px;
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 44px;
+            height: 44px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px var(--primary);
+        }
+        
+        .timeline-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+            border: 1px solid var(--gray-light);
+        }
+        
+        .day-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .activity-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .activity-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .activity-time {
+            font-weight: 600;
+            color: var(--primary);
+            flex-shrink: 0;
+            width: 80px;
+        }
+        
+        .activity-details {
+            flex-grow: 1;
+        }
+        
+        .activity-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .activity-description {
+            color: var(--gray-medium);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+    </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+<body class="bg-light">
+
+    <header class="city-hero" style="background-image: url('../images/linyi-hero.jpg');">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html" style="color: var(--primary);">
-                <i class="fas fa-globe-americas me-2"></i>Traveling China
+            <a href="/" class="back-to-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <h1 class="display-4">Discover Linyi</h1>
+            <p class="lead">Linyi, a prefecture-level city in southern Shandong province, is a place where ancient history and modern dynamism converge. Known as the 'City of Calligraphy' and the hometown of the sage Wang Xizhi, Linyi boasts a rich cultural heritage. Today, it is a major center for trade and logistics in eastern China, with a rapidly growing economy. The city's landscape is graced by the Yi and Shu rivers, offering scenic beauty alongside urban development.</p>
+        </div>
+    </header>
+
+    <main class="container city-content">
+        <div class="row">
+            <div class="col-lg-3">
+                <nav class="jump-nav">
+                    <h4><i class="fas fa-compass"></i> Jump to Section</h4>
+                    <ul class="jump-nav-list">
+                        <li class="jump-nav-item"><a href="#overview" class="jump-nav-link active"><i class="fas fa-info-circle jump-nav-icon"></i> Overview</a></li>
+                        <li class="jump-nav-item"><a href="#highlights" class="jump-nav-link"><i class="fas fa-star jump-nav-icon"></i> Highlights</a></li>
+                        <li class="jump-nav-item"><a href="#gallery" class="jump-nav-link"><i class="fas fa-images jump-nav-icon"></i> Gallery</a></li>
+                        <li class="jump-nav-item"><a href="#patents" class="jump-nav-link"><i class="fas fa-certificate jump-nav-icon"></i> Patents</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-lg-9">
+                <section id="overview" class="city-section">
+                    <h2><i class="fas fa-info-circle"></i> City Overview</h2>
+                    <div class="city-highlight">
+        <h3>Historical Significance</h3>
+        <p>Explore the roots of Chinese calligraphy and the legacy of its greatest master, Wang Xizhi. Visit the Wang Xizhi's Former Residence to immerse yourself in the art and history that shaped a nation's script.</p>
+    </div>
+    <div class="city-highlight">
+        <h3>Natural Beauty</h3>
+        <p>Discover the serene landscapes of the Mengshan Mountain National Forest Park, a 'natural oxygen bar' offering breathtaking views, hiking trails, and a peaceful retreat from the city bustle. The Yi River also provides picturesque waterfronts for leisurely strolls.</p>
+    </div>
+    <div class="city-highlight">
+        <h3>Economic Hub</h3>
+        <p>Witness the vibrant energy of one of China's largest wholesale market clusters. Linyi's trade centers are a testament to its modern economic prowess and its role as a key logistics hub in the region.</p>
+    </div>
+                </section>
+
+                <section id="highlights" class="city-section">
+                    <h2><i class="fas fa-star"></i> Highlights</h2>
+                    {{HIGHLIGHTS_CONTENT}}
+                </section>
+
+                <section id="gallery" class="city-section">
+                    <h2><i class="fas fa-images"></i> Gallery</h2>
+                    <div class="city-gallery">
+                        <div class="gallery-item">
+        <img src="../images/linyi-gallery-1.jpg" alt="Linyi Gallery Image 1" class="gallery-img" data-caption="The serene Yi River flowing through Linyi.">
+        <div class="gallery-caption">
+            <p class="caption-text"><i class="fas fa-tint caption-icon"></i>The serene Yi River flowing through Linyi.</p>
+        </div>
+    </div>
+    <div class="gallery-item">
+        <img src="../images/linyi-gallery-2.jpg" alt="Linyi Gallery Image 2" class="gallery-img" data-caption="Statue of the sage Wang Xizhi.">
+        <div class="gallery-caption">
+            <p class="caption-text"><i class="fas fa-pen-fancy caption-icon"></i>Statue of the sage Wang Xizhi.</p>
+        </div>
+    </div>
+    <div class="gallery-item">
+        <img src="../images/linyi-gallery-3.jpg" alt="Linyi Gallery Image 3" class="gallery-img" data-caption="Bustling wholesale markets of Linyi.">
+        <div class="gallery-caption">
+            <p class="caption-text"><i class="fas fa-store caption-icon"></i>Bustling wholesale markets of Linyi.</p>
+        </div>
+    </div>
+                    </div>
+                </section>
+
+                <section id="patents" class="city-section">
+                    <h2><i class="fas fa-certificate"></i> Patent Data</h2>
+                    <table class="table table-bordered table-hover patent-table">
+        <thead class="table-primary">
+            <tr>
+                <th>Patent ID</th>
+                <th>Title</th>
+                <th>Inventor</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CN113325699A</td>
+                <td>A kind of environment-friendly high-elasticity flame-retardant artificial leather and preparation method thereof</td>
+                <td>Liu, Wei</td>
+                <td>2021-08-31</td>
+            </tr>
+            <tr>
+                <td>CN113278688A</td>
+                <td>A kind of wear-resistant and scratch-resistant solvent-free PU artificial leather and preparation method thereof</td>
+                <td>Wang, Jian</td>
+                <td>2021-08-17</td>
+            </tr>
+            <tr>
+                <td>CN113122021A</td>
+                <td>A kind of antibacterial and mildewproof PU synthetic leather and preparation method thereof</td>
+                <td>Li, Na</td>
+                <td>2021-07-13</td>
+            </tr>
+        </tbody>
+    </table>
+                </section>
+
+                <!-- New Sections from Template -->
+                <section id="map" class="map-section">
+                    <h2><i class="fas fa-map-marked-alt"></i> Interactive Map</h2>
+                    <p>Explore key locations in Linyi. Click on the markers to learn more about each point of interest.</p>
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <i class="fas fa-layer-group"></i>
+                            <h4>Interactive Map Coming Soon</h4>
+                            <p>We're working on an interactive map to help you navigate Linyi's attractions.</p>
+                        </div>
+                        <!-- Example Markers (to be dynamically generated) -->
+                    </div>
+                </section>
+
+                <section id="cuisine" class="cuisine-section">
+                    <h2><i class="fas fa-utensils"></i> Local Cuisine</h2>
+                    <p>Linyi's cuisine is a delightful part of Shandong's culinary tradition. Here are some dishes you must try.</p>
+                    <div class="cuisine-grid">
+                        <!-- Placeholder Content -->
+                        <div class="cuisine-card">
+                            <div class="cuisine-image" style="background-image: url('https://via.placeholder.com/400x250/E2E8F0/94A3B8?text=Pancake+(Jianbing)');"></div>
+                            <div class="cuisine-content">
+                                <h3 class="cuisine-title">Shandong Pancake (Jianbing)</h3>
+                                <p class="cuisine-description">A savory crepe made from grain flour, often filled with egg, crispy crackers, and scallions.</p>
+                            </div>
+                        </div>
+                        <div class="cuisine-card">
+                            <div class="cuisine-image" style="background-image: url('https://via.placeholder.com/400x250/E2E8F0/94A3B8?text=Braised+Pork');"></div>
+                            <div class="cuisine-content">
+                                <h3 class="cuisine-title">Braised Pork in Brown Sauce</h3>
+                                <p class="cuisine-description">A classic Chinese dish, slow-cooked to perfection with a rich, savory, and slightly sweet flavor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="transport" class="transport-section">
+                    <h2><i class="fas fa-subway"></i> Getting Around</h2>
+                    <p>Navigating Linyi is convenient with its modern transportation network.</p>
+                    <div class="transport-grid">
+                        <!-- Placeholder Content -->
+                        <div class="transport-card">
+                            <i class="fas fa-plane transport-icon"></i>
+                            <h3 class="transport-title">By Air</h3>
+                            <p class="transport-description">Linyi Shubuling Airport (LYI) connects the city to major domestic destinations.</p>
+                        </div>
+                        <div class="transport-card">
+                            <i class="fas fa-train transport-icon"></i>
+                            <h3 class="transport-title">By Train</h3>
+                            <p class="transport-description">High-speed and conventional trains link Linyi to the national rail network.</p>
+                        </div>
+                        <div class="transport-card">
+                            <i class="fas fa-bus transport-icon"></i>
+                            <h3 class="transport-title">Public Transit</h3>
+                            <p class="transport-description">An extensive bus system makes it easy and affordable to travel within the city.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="itinerary" class="itinerary-section">
+                    <h2><i class="fas fa-calendar-alt"></i> Suggested Itinerary</h2>
+                    <p>Make the most of your trip with this sample itinerary for a 3-day visit to Linyi.</p>
+                    <div class="itinerary-timeline">
+                        <!-- Placeholder Content -->
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-sun"></i></div>
+                            <div class="timeline-content">
+                                <h3 class="day-title">Day 1: Cultural Immersion</h3>
+                                <ul class="activity-list">
+                                    <li class="activity-item">
+                                        <div class="activity-time">AM</div>
+                                        <div class="activity-details">
+                                            <h4 class="activity-title">Wang Xizhi's Former Residence</h4>
+                                            <p class="activity-description">Start your journey at the home of the Sage of Calligraphy.</p>
+                                        </div>
+                                    </li>
+                                    <li class="activity-item">
+                                        <div class="activity-time">PM</div>
+                                        <div class="activity-details">
+                                            <h4 class="activity-title">Linyi Museum</h4>
+                                            <p class="activity-description">Delve deeper into the region's rich history and cultural artifacts.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="/" class="back-home-btn">
+                <i class="fas fa-home back-home-icon"></i>
+                <span class="back-home-text">Back to Homepage</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#destinations">Destinations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
-                </ul>
-            </div>
         </div>
-    </nav>
-    <!-- City Hero Section -->
-    <section class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/user_photos/linyi_hero_bg.jpg'); background-size: cover; background-position: center; padding: 100px 0 60px; min-height: 400px; color: white">
-        <div class="container">
-            <h1>Linyi</h1>
-            <p class="lead">Linyi is a major city in Shandong Province, known as the 'Water City' for its location at the confluence of the Yi and Shu Rivers. Famous for its revo...</p>
-        </div>
-    </section>
 
-    <!-- City Content -->
-    <section class="city-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- Overview -->
-                    <div class="city-section">
-                        <h2>Overview</h2>
-                        <p>Linyi is a major city in Shandong Province, known as the 'Water City' for its location at the confluence of the Yi and Shu Rivers. Famous for its revolutionary history, wholesale markets, and being a transportation hub with rich cultural heritage in eastern China.</p>
-                    </div>
-                    
-                    <!-- Highlights -->
-                    <div class="city-section">
-                        <h2>Must-See Highlights</h2>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
-                            <p>Yi River Scenic Area, Mengshan Mountain, Linyi Museum, Zhuge Liang Cultural Park</p>
-                        </div>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-utensils me-2"></i>Local Cuisine</h3>
-                            <p>Linyi Pancake, Braised Chicken, Yi River Fish, Shandong-style Noodles</p>
-                        </div>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
-                            <p>Autumn (September-November) with pleasant weather for outdoor activities</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Travel Tips -->
-                    <div class="city-section">
-                        <h2>Travel Tips</h2>
-                        <ul>
-                            <li>Walk along Yi River Scenic Area in the evening for beautiful lights</li>
-                            <li>Visit Mengshan Mountain for hiking and temple visits</li>
-                            <li>Explore Linyi's wholesale markets for local products</li>
-                            <li>Try Linyi Pancake at local breakfast stalls</li>
-                        </ul>
-                    </div>
-                    <!-- Patent Data -->
-                    <div class="city-section">
-                        <h2>Patent Data</h2>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-microscope me-2"></i>Lunan Pharmaceutical Group Corporation</h3>
-                            <ul>
-                                <li><strong>Patent Number:</strong> CN117343369A</li>
-                                <li><strong>Title:</strong> Application of deuterated GLP-1/GIP double receptor agonist in preparing drugs for treating metabolic syndrome</li>
-                                <li><strong>Current Assignee:</strong> Lunan Pharmaceutical Group Corp Ltd</li>
-                            </ul>
-                            <ul>
-                                <li><strong>Patent Number:</strong> CN117286197A</li>
-                                <li><strong>Title:</strong> Method for preparing chiral intermediate of antiviral drug by utilizing imine reductase</li>
-                                <li><strong>Current Assignee:</strong> Lunan Pharmaceutical Group Corp Ltd</li>
-                            </ul>
-                            <ul>
-                                <li><strong>Patent Number:</strong> CN117303131A</li>
-                                <li><strong>Title:</strong> Preparation method of evogliptin intermediate</li>
-                                <li><strong>Current Assignee:</strong> Lunan Pharmaceutical Group Corp Ltd</li>
-                             </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4">
-                    <!-- Quick Facts -->
-                    <div class="city-section">
-                        <h2>Quick Facts</h2>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-info-circle me-2"></i>Basic Info</h3>
-                            <p><strong>Population:</strong> 11.0 million</p>
-                            <p><strong>Province:</strong> Shandong Province</p>
-                            <p><strong>Language:</strong> Mandarin, Shandong dialect</p>
-                            <p><strong>Timezone:</strong> China Standard Time (UTC+8)</p>
-                        </div>
-                        
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
-                            <p><strong>Airport:</strong> Linyi Qiyang Airport (LYI) - or fly to Jinan/Qingdao and take train</p>
-                            <p><strong>Train:</strong> High-speed rail from Jinan (1.5 hours), Qingdao (2 hours), Beijing (3 hours)</p>
-                            <p><strong>Best Transport:</strong> Buses, taxis, and long-distance coaches</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Gallery -->
-                    <div class="city-section">
-                        <h2>Gallery</h2>
-                        <div class="city-gallery">
-                            <img src="../images/user_photos/linyi_1_optimized.jpg" alt="Linyi Yi River - Water city scenery">
-                            <img src="../images/user_photos/linyi_2_optimized.jpg" alt="Linyi  - Ancient fortifications on mountains">
-                            <img src="../images/user_photos/linyi_3_optimized.jpg" alt="Linyi modern skyline - Contemporary architecture and city life">
-                        </div>
-                    </div>
-                </div>
+        <nav class="city-nav">
+            <h3>Explore Other Cities</h3>
+            <div class="city-links">
+                <!-- Links to other cities will be populated here -->
             </div>
-            
-            <!-- Explore Other Cities -->
-            <div class="city-nav">
-                <h3>Explore Other Chinese Cities</h3>
-                <div class="city-links">
-<a href="beijing.html" class="city-link">Beijing</a>
-<a href="shanghai.html" class="city-link">Shanghai</a>
-<a href="chengdu.html" class="city-link">Chengdu</a>
-<a href="qingdao.html" class="city-link">Qingdao</a>
-<a href="xiamen.html" class="city-link">Xiamen</a>
-<a href="wuxi.html" class="city-link">Wuxi</a>
-<a href="hongkong.html" class="city-link">Hongkong</a>
-<a href="chongqing.html" class="city-link">Chongqing</a>
-<a href="harbin.html" class="city-link">Harbin</a>
-<a href="guangzhou.html" class="city-link">Guangzhou</a>
-<a href="shenzhen.html" class="city-link">Shenzhen</a>
-<a href="nanjing.html" class="city-link">Nanjing</a>
-<a href="guilin.html" class="city-link">Guilin</a>
-<a href="guiyang.html" class="city-link">Guiyang</a>
-<a href="kunming.html" class="city-link">Kunming</a>
-<a href="dali.html" class="city-link">Dali</a>
-<a href="jinan.html" class="city-link">Jinan</a>
-<a href="datong.html" class="city-link">Datong</a>
-<a href="taiyuan.html" class="city-link">Taiyuan</a>
-<a href="urumqi.html" class="city-link">Urumqi</a>
-<a href="hangzhou.html" class="city-link">Hangzhou</a>
-<a href="kashi.html" class="city-link">Kashi</a>
-<a href="wuhan.html" class="city-link">Wuhan</a>
-<a href="suzhou.html" class="city-link">Suzhou</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </nav>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2026 Traveling China. All rights reserved.</p>
-            <div class="social-icons mt-3">
-                <a href="#"><i class="fab fa-weixin"></i></a>
-                <a href="#"><i class="fab fa-weibo"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-            </div>
+    </main>
+
+    <!-- Lightbox Structure -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <button class="lightbox-nav lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-nav lightbox-next"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img">
+            <div class="lightbox-counter"></div>
+            <div class="lightbox-caption"></div>
         </div>
-    </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+        document.addEventListener('DOMContentLoaded', function () {
+            // Sticky Nav Active State
+            const sections = document.querySelectorAll('.city-section');
+            const navLinks = document.querySelectorAll('.jump-nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Lightbox Functionality
+            const galleryImages = document.querySelectorAll('.gallery-img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-img');
+            const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+            const lightboxCounter = lightbox.querySelector('.lightbox-counter');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+            const prevBtn = lightbox.querySelector('.lightbox-prev');
+            const nextBtn = lightbox.querySelector('.lightbox-next');
+
+            let currentIndex = 0;
+
+            function showLightbox(index) {
+                const img = galleryImages[index];
+                lightboxImg.src = img.src;
+                lightboxCaption.textContent = img.dataset.caption;
+                lightboxCounter.textContent = `${index + 1} / ${galleryImages.length}`;
+                currentIndex = index;
+                lightbox.classList.add('active');
             }
+
+            function hideLightbox() {
+                lightbox.classList.remove('active');
+            }
+
+            function showPrev() {
+                currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+                showLightbox(currentIndex);
+            }
+
+            function showNext() {
+                currentIndex = (currentIndex + 1) % galleryImages.length;
+                showLightbox(currentIndex);
+            }
+
+            galleryImages.forEach((img, index) => {
+                img.addEventListener('click', () => showLightbox(index));
+            });
+
+            closeBtn.addEventListener('click', hideLightbox);
+            prevBtn.addEventListener('click', showPrev);
+            nextBtn.addEventListener('click', showNext);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    hideLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.classList.contains('active')) {
+                    if (e.key === 'Escape') hideLightbox();
+                    if (e.key === 'ArrowLeft') showPrev();
+                    if (e.key === 'ArrowRight') showNext();
+                }
+            });
         });
     </script>
-    <!-- Color references for monitoring system (hidden) -->
-    <div style="display: none;">
-        <span style="color: #2563eb;">primary</span>
-        <span style="color: #1e40af;">secondary</span>
-        <span style="color: #f59e0b;">accent</span>
-        <span style="color: #f8fafc;">light</span>
-        <span style="color: #1e293b;">dark</span>
-    </div>
 </body>
 </html>

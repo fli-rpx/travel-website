@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/travel-website/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
     <style>
         :root {
             --primary: #2563eb;
@@ -20,7 +20,7 @@
             --gray-light: #e2e8f0;
             --gray-medium: #94a3b8;
         }
-        
+
         .city-hero {
             color: white; padding: 100px 0 60px;
             background-size: cover;
@@ -30,70 +30,175 @@
             text-align: center;
             margin-bottom: 60px;
         }
-        
+
         .city-hero h1 {
             font-size: 2.5rem; /* Reduced from 3.5rem */
             margin-bottom: 16px;
             text-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
-        
+
         .city-hero .lead {
-            font-size: 1.25rem; /* Reduced from 1.5rem */
+            font-size: 1.25rem;
             max-width: 700px;
             margin: 0 auto 30px;
             color: rgba(255,255,255,0.95);
-            line-height: 1.6;
+            line-height: 1.8; /* Increased from 1.6 for better readability */
         }
-        
+
         .city-content {
-            padding: 40px 0; /* Reduced from 60px */
+            padding: 60px 0; /* Increased from 40px for better spacing */
         }
-        
+
         .city-section {
-            margin-bottom: 40px; /* Reduced from 60px */
+            margin-bottom: 60px; /* Increased from 40px for better section separation */
         }
-        
+
         .city-section h2 {
             color: var(--secondary);
-            margin-bottom: 30px;
-            padding-bottom: 15px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
             border-bottom: 3px solid var(--accent);
-        
-            font-size: 1.75rem;}
-        
+            font-size: 2rem; /* Increased from 1.75rem for better hierarchy */
+            font-weight: 800; /* Bolder weight for emphasis */
+            font-family: 'Libre Baskerville', Georgia, serif; /* Distinct serif font for headings */
+            letter-spacing: -0.5px; /* Slightly tighter letter spacing */
+            line-height: 1.3;
+        }
+
+        /* Enhanced visual hierarchy for subheadings */
+        .city-highlight h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.4rem; /* Slightly larger */
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', Georgia, serif; /* Distinct font for subheadings */
+            line-height: 1.3;
+        }
+
+        /* Distinct font for new section headings */
+        .map-section h2,
+        .cuisine-section h2,
+        .transport-section h2,
+        .itinerary-section h2 {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        /* Enhanced hierarchy for day titles in itineraries */
+        .day-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        /* Better contrast for activity titles */
+        .activity-title {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+
         .city-highlight {
             background: var(--light);
             border-radius: 12px;
-            padding: 24px; /* Reduced from 30px */
-            margin-bottom: 24px; /* Reduced from 30px */
+            padding: 32px; /* Increased from 24px */
+            margin-bottom: 32px; /* Increased from 24px */
             border-left: 4px solid var(--primary);
+            line-height: 1.7; /* Added for better text readability */
         }
-        
+
         .city-highlight h3 {
             color: var(--primary);
-            margin-bottom: 15px;
-        
-            font-size: 1.3rem;}
-        
+            margin-bottom: 20px; /* Increased from 15px */
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+
+        /* Improve general text readability */
+        .city-content p {
+            line-height: 1.7; /* Added for better paragraph readability */
+            margin-bottom: 20px; /* Added spacing between paragraphs */
+        }
+
+        .city-content ul, .city-content ol {
+            line-height: 1.7; /* Better list readability */
+            margin-bottom: 20px;
+        }
+
+        .city-content li {
+            margin-bottom: 10px; /* Space between list items */
+        }
+
         .city-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px; /* Increased gap for better spacing with captions */
             margin-top: 30px;
         }
-        
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
         .city-gallery img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 10px;
+            display: block;
             transition: transform 0.3s ease;
         }
-        
-        .city-gallery img:hover {
+
+        .gallery-item:hover img {
             transform: scale(1.05);
         }
-        
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .caption-text {
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .caption-icon {
+            margin-right: 8px;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .patent-table {
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
         .back-to-home {
             display: inline-flex;
             align-items: center;
@@ -104,29 +209,29 @@
             margin-bottom: 30px;
             transition: color 0.3s ease;
         }
-        
+
         .back-to-home:hover {
             color: var(--secondary);
         }
-        
+
         .city-nav {
             background: var(--light);
             padding: 20px;
             border-radius: 10px;
             margin-top: 40px;
         }
-        
+
         .city-nav h3 {
             color: var(--secondary);
             margin-bottom: 20px;
         }
-        
+
         .city-links {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
         }
-        
+
         .city-link {
             display: block;
             padding: 12px 20px;
@@ -137,14 +242,14 @@
             transition: all 0.3s ease;
             border: 2px solid transparent;
         }
-        
+
         .city-link:hover {
             background: var(--primary);
             color: white;
             transform: translateY(-3px);
             border-color: var(--primary);
         }
-    
+
         .back-link {
             display: inline-block;
             padding: 8px 16px;
@@ -155,132 +260,746 @@
             margin: 20px 0;
             transition: all 0.3s ease;
         }
-        
+
         .back-link:hover {
             background: #2563eb;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
         }
-        .patent-table {
-            margin-top: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+        /* PROMINENT BACK TO HOME BUTTON */
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .back-home-btn:hover {
+            background: white;
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            gap: 15px;
+        }
+
+        .back-home-icon {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-home-btn:hover .back-home-icon {
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .back-home-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* JUMP TO SECTION NAVIGATION */
+        .jump-nav {
+            position: sticky;
+            top: 80px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            z-index: 100;
+            border: 1px solid var(--gray-light);
+        }
+
+        .jump-nav h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .jump-nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .jump-nav-item {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .jump-nav-link {
+            display: block;
+            padding: 10px 15px;
+            background: var(--light);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .jump-nav-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+            border-color: var(--primary);
+        }
+
+        .jump-nav-link.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .jump-nav-icon {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 992px) {
+            .jump-nav {
+                position: static;
+                margin-top: 20px;
+            }
+
+            .jump-nav-list {
+                flex-direction: column;
+            }
+
+            .jump-nav-item {
+                min-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .jump-nav {
+                padding: 15px;
+            }
+
+            .jump-nav-link {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+            }
+        }
+
+        .city-gallery img:hover {
+            transform: scale(1.05);
+            cursor: pointer; /* Indicate images are clickable */
+        }
+
+        /* LIGHTBOX FEATURE */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            font-size: 1.1rem;
+            padding: 10px;
+            background: rgba(0,0,0,0.7);
+            border-radius: 5px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            transform: scale(1.2);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            color: white;
+            font-size: 1rem;
+            background: rgba(0,0,0,0.5);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-nav {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+
+            .lightbox-caption {
+                font-size: 0.9rem;
+                bottom: -40px;
+            }
+        }
+
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            color: var(--secondary);
+        }
+
+        .city-nav {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .city-nav h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .city-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .city-link {
+            display: block;
+            padding: 12px 20px;
+            background: white;
+            border-radius: 8px;
+            color: var(--dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .city-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        /* NEW CITY PAGE SECTIONS TEMPLATE */
+
+        /* Interactive Map Section */
+        .map-section {
+            margin: 60px 0;
+            background: var(--light);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .map-container {
+            height: 400px;
+            background: #e2e8f0;
             border-radius: 10px;
             overflow: hidden;
-        }</style>
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .map-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .map-marker {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #ef4444;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .map-marker::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+        }
+
+        .map-marker:hover {
+            transform: rotate(-45deg) scale(1.2);
+        }
+
+        .marker-tooltip {
+            position: absolute;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 100;
+            display: none;
+            min-width: 200px;
+        }
+
+        .marker-tooltip h5 {
+            margin: 0 0 5px 0;
+            color: var(--primary);
+        }
+
+        .marker-tooltip p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        /* Local Cuisine Section */
+        .cuisine-section {
+            margin: 60px 0;
+        }
+
+        .cuisine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .cuisine-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .cuisine-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .cuisine-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cuisine-content {
+            padding: 25px;
+        }
+
+        .cuisine-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .cuisine-description {
+            color: var(--gray-medium);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .cuisine-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .cuisine-tag {
+            background: var(--light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .restaurant-list {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        .restaurant-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .restaurant-item:last-child {
+            border-bottom: none;
+        }
+
+        .restaurant-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .restaurant-rating {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Transportation Section */
+        .transport-section {
+            margin: 60px 0;
+            background: var(--light);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .transport-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid var(--gray-light);
+            transition: all 0.3s ease;
+        }
+
+        .transport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+
+        .transport-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .transport-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .transport-description {
+            color: var(--gray-medium);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Suggested Itinerary Section */
+        .itinerary-section {
+            margin: 60px 0;
+        }
+
+        .itinerary-timeline {
+            position: relative;
+            margin-top: 40px;
+            padding-left: 40px;
+            border-left: 3px solid var(--gray-light);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            left: -55px;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+
+        .timeline-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+        }
+
+        .day-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .activity {
+            margin-bottom: 25px;
+        }
+
+        .activity:last-child {
+            margin-bottom: 0;
+        }
+
+        .activity-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .activity-icon {
+            font-size: 1.3rem;
+            color: var(--accent);
+        }
+
+        .activity-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .activity-description {
+            color: var(--gray-medium);
+            line-height: 1.6;
+            padding-left: 40px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+
+    <header class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/user_photos/chongqing_hero_bg.jpg');">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="/travel-website/index.html" style="color: var(--primary);">
-                <i class="fas fa-globe-americas me-2"></i>Traveling China
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/travel-website/index.html#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/travel-website/index.html#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/travel-website/index.html#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/travel-website/index.html#destinations">Destinations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/travel-website/index.html#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- City Hero Section -->
-    <section class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/user_photos/chongqing_hero_bg.jpg'); background-size: cover; background-position: center; padding: 100px 0 60px; min-height: 400px; color: white">
-        <div class="container">
-            <a href="/travel-website/index.html" class="back-to-home">
-                <i class="fas fa-arrow-left"></i> Back to Home
-            </a>
-            <h1>Chongqing</h1>
+            <h1 class="display-4">Chongqing</h1>
             <p class="lead">Mountain City & Hot Pot Capital</p>
         </div>
-    </section>
+    </header>
 
-    <!-- City Content -->
-    <section class="city-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- Overview -->
-                    <div class="city-section">
-                        <h2>Overview</h2>
+    <main class="container city-content">
+        <div class="row">
+            <div class="col-lg-3">
+                <nav class="jump-nav">
+                    <h4><i class="fas fa-map-signs"></i> Jump to Section</h4>
+                    <ul class="jump-nav-list">
+                        <li class="jump-nav-item"><a href="#overview" class="jump-nav-link active">Overview</a></li>
+                        <li class="jump-nav-item"><a href="#highlights" class="jump-nav-link">Highlights</a></li>
+                        <li class="jump-nav-item"><a href="#gallery" class="jump-nav-link">Gallery</a></li>
+                        <li class="jump-nav-item"><a href="#patents" class="jump-nav-link">Patents</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-lg-9">
+                <section id="overview" class="city-section">
+                    <h2><i class="fas fa-info-circle"></i> City Overview</h2>
+                    <div class="city-highlight">
                         <p>Chongqing, known as the 'Mountain City', is built on hills along the Yangtze River. This massive municipality is famous for its hot pot, stunning night views, and unique urban landscape with buildings constructed on steep slopes. As one of China's four direct-controlled municipalities, Chongqing offers a vibrant mix of traditional culture and rapid modernization.</p>
                     </div>
-                    
-                    <!-- Highlights -->
-                    <div class="city-section">
-                        <h2>Must-See Highlights</h2>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
-                            <p>Hongya Cave, Ciqikou Ancient Town, Yangtze River Cableway, Jiefangbei CBD, Three Gorges Museum</p>
+                </section>
+
+                <section id="highlights" class="city-section">
+                    <h2><i class="fas fa-star"></i> Key Highlights</h2>
+                    <div class="city-highlight">
+                        <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
+                        <p>Hongya Cave, Ciqikou Ancient Town, Yangtze River Cableway, Jiefangbei CBD, Three Gorges Museum</p>
+                    </div>
+                    <div class="city-highlight">
+                        <h3><i class="fas fa-utensils me-2"></i>Local Cuisine</h3>
+                        <p>Chongqing Hot Pot, Spicy Noodles, Jiangtuan Fish, La Zi Ji (Spicy Chicken)</p>
+                    </div>
+                    <div class="city-highlight">
+                        <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
+                        <p>Spring (March-May) and Autumn (September-November) with comfortable temperatures</p>
+                    </div>
+                </section>
+
+                <section id="gallery" class="city-section">
+                    <h2><i class="fas fa-camera-retro"></i> Photo Gallery</h2>
+                    <div class="city-gallery">
+                        <div class="gallery-item">
+                            <img src="../images/user_photos/chongqing-1.jpg" alt="Chongqing view 1" class="gallery-img">
+                            <div class="gallery-caption">
+                                <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Chongqing view 1</p>
+                            </div>
                         </div>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-utensils me-2"></i>Local Cuisine</h3>
-                            <p>Chongqing Hot Pot, Spicy Noodles, Jiangtuan Fish, La Zi Ji (Spicy Chicken)</p>
+                        <div class="gallery-item">
+                            <img src="../images/user_photos/chongqing-2.jpg" alt="Chongqing view 2" class="gallery-img">
+                            <div class="gallery-caption">
+                                <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Chongqing view 2</p>
+                            </div>
                         </div>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
-                            <p>Spring (March-May) and Autumn (September-November) with comfortable temperatures</p>
+                        <div class="gallery-item">
+                            <img src="../images/user_photos/chongqing-3.jpg" alt="Chongqing view 3" class="gallery-img">
+                            <div class="gallery-caption">
+                                <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Chongqing view 3</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- Travel Tips -->
-                    <div class="city-section">
-                        <h2>Travel Tips</h2>
-                        <ul>
-                            <li><li>Wear comfortable shoes for walking on hills and stairs</li>
-            <li>Take the Yangtze River Cableway for amazing city views</li>
-            <li>Try Chongqing hot pot but be prepared for extreme spiciness</li>
-            <li>Visit Hongya Cave at night for spectacular illuminated views</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4">
-                    <!-- Quick Facts -->
-                    <div class="city-section">
-                        <h2>Quick Facts</h2>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-info-circle me-2"></i>Basic Info</h3>
-                            <p><strong>Population:</strong> 32.1 million</p>
-                            <p><strong>Province:</strong> Chongqing Municipality</p>
-                            <p><strong>Language:</strong> Mandarin, Southwestern Mandarin (Chongqing dialect)</p>
-                            <p><strong>Timezone:</strong> China Standard Time (UTC+8)</p>
-                        </div>
-                        
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
-                            <p><strong>Airport:</strong> Chongqing Jiangbei International Airport (CKG)</p>
-                            <p><strong>Train:</strong> High-speed rail from Chengdu, Wuhan, Shanghai (2-8 hours)</p>
-                            <p><strong>Best Transport:</strong> Monorail, metro, buses, and taxis (be prepared for hills!)</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Gallery -->
-                    <div class="city-section">
-                        <h2>Gallery</h2>
-                        <div class="city-gallery">
-                            <img src="../images/user_photos/chongqing-1.jpg" alt="Chongqing view 1">
-                            <img src="../images/user_photos/chongqing-2.jpg" alt="Chongqing view 2">
-                            <img src="../images/user_photos/chongqing-3.jpg" alt="Chongqing view 3">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="city-section">
-                <h2>Patent Data</h2>
-                <div class="patent-table">
-                    <table class="table table-bordered">
-                        <thead>
+                </section>
+
+                <section id="patents" class="city-section">
+                    <h2><i class="fas fa-microscope"></i> Patent Data</h2>
+                    <table class="table table-bordered table-hover patent-table">
+                        <thead class="table-primary">
                             <tr>
-                                <th>Patent Number</th>
+                                <th>Patent ID</th>
                                 <th>Title</th>
-                                <th>Current Assignee</th>
+                                <th>Inventor</th>
+                                <th>Date</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -288,79 +1007,112 @@
                                 <td>CN117943231A</td>
                                 <td>Vehicle-mounted mobile energy storage system and vehicle</td>
                                 <td>Loncin Motor Co., Ltd.</td>
+                                <td>2024-04-16</td>
                             </tr>
                             <tr>
                                 <td>CN117894197A</td>
                                 <td>Electric bicycle</td>
                                 <td>Loncin Motor Co., Ltd.</td>
+                                <td>2024-04-09</td>
                             </tr>
                             <tr>
                                 <td>CN117894193A</td>
                                 <td>Electric bicycle</td>
                                 <td>Loncin Motor Co., Ltd.</td>
+                                <td>2024-04-09</td>
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
-            
-            <!-- Explore Other Cities -->
-            <div class="city-nav">
-                <h3>Explore Other Chinese Cities</h3>
-                <div class="city-links">
-<a href="beijing.html" class="city-link">Beijing</a>
-<a href="shanghai.html" class="city-link">Shanghai</a>
-<a href="chengdu.html" class="city-link">Chengdu</a>
-<a href="qingdao.html" class="city-link">Qingdao</a>
-<a href="xiamen.html" class="city-link">Xiamen</a>
-<a href="wuxi.html" class="city-link">Wuxi</a>
-<a href="hongkong.html" class="city-link">Hongkong</a>
-<a href="harbin.html" class="city-link">Harbin</a>
-<a href="guangzhou.html" class="city-link">Guangzhou</a>
-<a href="shenzhen.html" class="city-link">Shenzhen</a>
-<a href="nanjing.html" class="city-link">Nanjing</a>
-<a href="guilin.html" class="city-link">Guilin</a>
-<a href="guiyang.html" class="city-link">Guiyang</a>
-<a href="kunming.html" class="city-link">Kunming</a>
-<a href="dali.html" class="city-link">Dali</a>
-<a href="jinan.html" class="city-link">Jinan</a>
-<a href="datong.html" class="city-link">Datong</a>
-<a href="linyi.html" class="city-link">Linyi</a>
-<a href="taiyuan.html" class="city-link">Taiyuan</a>
-<a href="urumqi.html" class="city-link">Urumqi</a>
-<a href="hangzhou.html" class="city-link">Hangzhou</a>
-<a href="kashi.html" class="city-link">Kashi</a>
-<a href="wuhan.html" class="city-link">Wuhan</a>
-<a href="suzhou.html" class="city-link">Suzhou</a>
+                </section>
+
+                <div class="text-center mt-5">
+                    <a href="../index.html" class="back-home-btn">
+                        <i class="fas fa-arrow-left back-home-icon"></i>
+                        <span class="back-home-text">Back to Home</span>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2026 Traveling China. All rights reserved.</p>
-            <div class="social-icons mt-3">
-                <a href="#"><i class="fab fa-weixin"></i></a>
-                <a href="#"><i class="fab fa-weibo"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
+    <div class="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <button class="lightbox-nav lightbox-prev">&lsaquo;</button>
+        <button class="lightbox-nav lightbox-next">&rsaquo;</button>
+        <div class="lightbox-content">
+            <img src="" alt="Lightbox Image" class="lightbox-img">
+            <div class="lightbox-caption-container">
+                <p class="lightbox-caption"></p>
             </div>
         </div>
-    </footer>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+        document.addEventListener('DOMContentLoaded', function () {
+            const galleryImages = document.querySelectorAll('.gallery-img');
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = document.querySelector('.lightbox-img');
+            const lightboxCaption = document.querySelector('.lightbox-caption');
+            const closeBtn = document.querySelector('.lightbox-close');
+            const prevBtn = document.querySelector('.lightbox-prev');
+            const nextBtn = document.querySelector('.lightbox-next');
+
+            let currentIndex = 0;
+
+            function showLightbox(index) {
+                currentIndex = index;
+                const imgSrc = galleryImages[currentIndex].src;
+                const captionText = galleryImages[currentIndex].nextElementSibling.querySelector('.caption-text').innerHTML;
+                lightboxImg.src = imgSrc;
+                lightboxCaption.innerHTML = captionText;
+                lightbox.classList.add('active');
             }
+
+            function hideLightbox() {
+                lightbox.classList.remove('active');
+            }
+
+            function showPrev() {
+                currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+                showLightbox(currentIndex);
+            }
+
+            function showNext() {
+                currentIndex = (currentIndex + 1) % galleryImages.length;
+                showLightbox(currentIndex);
+            }
+
+            galleryImages.forEach((img, index) => {
+                img.addEventListener('click', () => {
+                    showLightbox(index);
+                });
+            });
+
+            closeBtn.addEventListener('click', hideLightbox);
+            prevBtn.addEventListener('click', showPrev);
+            nextBtn.addEventListener('click', showNext);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    hideLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.classList.contains('active')) {
+                    if (e.key === 'Escape') {
+                        hideLightbox();
+                    }
+                    if (e.key === 'ArrowLeft') {
+                        showPrev();
+                    }
+                    if (e.key === 'ArrowRight') {
+                        showNext();
+                    }
+                }
+            });
         });
     </script>
+
 </body>
 </html>

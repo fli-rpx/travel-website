@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <style>
         :root {
@@ -38,60 +39,446 @@
         }
         
         .city-hero .lead {
-            font-size: 1.25rem; /* Reduced from 1.5rem */
+            font-size: 1.25rem;
             max-width: 700px;
             margin: 0 auto 30px;
             color: rgba(255,255,255,0.95);
-            line-height: 1.6;
+            line-height: 1.8; /* Increased from 1.6 for better readability */
         }
         
         .city-content {
-            padding: 40px 0; /* Reduced from 60px */
+            padding: 60px 0; /* Increased from 40px for better spacing */
         }
         
         .city-section {
-            margin-bottom: 40px; /* Reduced from 60px */
+            margin-bottom: 60px; /* Increased from 40px for better section separation */
         }
         
         .city-section h2 {
             color: var(--secondary);
-            margin-bottom: 30px;
-            padding-bottom: 15px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
             border-bottom: 3px solid var(--accent);
+            font-size: 2rem; /* Increased from 1.75rem for better hierarchy */
+            font-weight: 800; /* Bolder weight for emphasis */
+            font-family: 'Libre Baskerville', Georgia, serif; /* Distinct serif font for headings */
+            letter-spacing: -0.5px; /* Slightly tighter letter spacing */
+            line-height: 1.3;
+        }
         
-            font-size: 1.75rem;}
+        /* Enhanced visual hierarchy for subheadings */
+        .city-highlight h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.4rem; /* Slightly larger */
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', Georgia, serif; /* Distinct font for subheadings */
+            line-height: 1.3;
+        }
+        
+        /* Distinct font for new section headings */
+        .map-section h2,
+        .cuisine-section h2,
+        .transport-section h2,
+        .itinerary-section h2 {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--accent);
+        }
+        
+        /* Enhanced hierarchy for day titles in itineraries */
+        .day-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        /* Better contrast for activity titles */
+        .activity-title {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
         
         .city-highlight {
             background: var(--light);
             border-radius: 12px;
-            padding: 24px; /* Reduced from 30px */
-            margin-bottom: 24px; /* Reduced from 30px */
+            padding: 32px; /* Increased from 24px */
+            margin-bottom: 32px; /* Increased from 24px */
             border-left: 4px solid var(--primary);
+            line-height: 1.7; /* Added for better text readability */
         }
         
         .city-highlight h3 {
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 20px; /* Increased from 15px */
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
         
-            font-size: 1.3rem;}
+        /* Improve general text readability */
+        .city-content p {
+            line-height: 1.7; /* Added for better paragraph readability */
+            margin-bottom: 20px; /* Added spacing between paragraphs */
+        }
+        
+        .city-content ul, .city-content ol {
+            line-height: 1.7; /* Better list readability */
+            margin-bottom: 20px;
+        }
+        
+        .city-content li {
+            margin-bottom: 10px; /* Space between list items */
+        }
         
         .city-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px; /* Increased gap for better spacing with captions */
             margin-top: 30px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
         }
         
         .city-gallery img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 10px;
+            display: block;
             transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        .caption-text {
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+        
+        .caption-icon {
+            margin-right: 8px;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        /* PROMINENT BACK TO HOME BUTTON */
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            border: 2px solid transparent;
+        }
+        
+        .back-home-btn:hover {
+            background: white;
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            gap: 15px;
+        }
+        
+        .back-home-icon {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .back-home-btn:hover .back-home-icon {
+            transform: translateX(-5px);
+        }
+
+        .patent-table {
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        
+        .back-home-text {
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .back-home-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        /* JUMP TO SECTION NAVIGATION */
+        .jump-nav {
+            position: sticky;
+            top: 80px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            z-index: 100;
+            border: 1px solid var(--gray-light);
+        }
+        
+        .jump-nav h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .jump-nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .jump-nav-item {
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .jump-nav-link {
+            display: block;
+            padding: 10px 15px;
+            background: var(--light);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .jump-nav-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .jump-nav-link.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .jump-nav-icon {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 992px) {
+            .jump-nav {
+                position: static;
+                margin-top: 20px;
+            }
+            
+            .jump-nav-list {
+                flex-direction: column;
+            }
+            
+            .jump-nav-item {
+                min-width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .jump-nav {
+                padding: 15px;
+            }
+            
+            .jump-nav-link {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+            }
         }
         
         .city-gallery img:hover {
             transform: scale(1.05);
+            cursor: pointer; /* Indicate images are clickable */
+        }
+        
+        /* LIGHTBOX FEATURE */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        
+        .lightbox-caption {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            font-size: 1.1rem;
+            padding: 10px;
+            background: rgba(0,0,0,0.7);
+            border-radius: 5px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .lightbox-close:hover {
+            transform: scale(1.2);
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .lightbox-nav:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .lightbox-prev {
+            left: 20px;
+        }
+        
+        .lightbox-next {
+            right: 20px;
+        }
+        
+        .lightbox-counter {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            color: white;
+            font-size: 1rem;
+            background: rgba(0,0,0,0.5);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .lightbox-nav {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .lightbox-prev {
+                left: 10px;
+            }
+            
+            .lightbox-next {
+                right: 10px;
+            }
+            
+            .lightbox-caption {
+                font-size: 0.9rem;
+                bottom: -40px;
+            }
         }
         
         .back-to-home {
@@ -161,215 +548,518 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
         }
-        .patent-table {
-            margin-top: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        
+        /* NEW CITY PAGE SECTIONS TEMPLATE */
+        
+        /* Interactive Map Section */
+        .map-section {
+            margin: 60px 0;
+            background: var(--light);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .map-container {
+            height: 400px;
+            background: #e2e8f0;
             border-radius: 10px;
             overflow: hidden;
-        }</style>
+            margin-top: 30px;
+            position: relative;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .map-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .map-marker {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #ef4444;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .map-marker::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+        }
+        
+        .map-marker:hover {
+            transform: rotate(-45deg) scale(1.2);
+        }
+        
+        .marker-tooltip {
+            position: absolute;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 100;
+            display: none;
+            min-width: 200px;
+        }
+        
+        .marker-tooltip h5 {
+            margin: 0 0 5px 0;
+            color: var(--primary);
+        }
+        
+        .marker-tooltip p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+        
+        /* Local Cuisine Section */
+        .cuisine-section {
+            margin: 60px 0;
+        }
+        
+        .cuisine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .cuisine-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .cuisine-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        
+        .cuisine-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .cuisine-content {
+            padding: 25px;
+        }
+        
+        .cuisine-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .cuisine-description {
+            color: var(--gray-medium);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .cuisine-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .cuisine-tag {
+            background: var(--light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .restaurant-list {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-light);
+        }
+        
+        .restaurant-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        .restaurant-item:last-child {
+            border-bottom: none;
+        }
+        
+        .restaurant-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .restaurant-rating {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        /* Transportation Section */
+        .transport-section {
+            margin: 60px 0;
+            background: var(--light);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .transport-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid var(--gray-light);
+            transition: all 0.3s ease;
+        }
+        
+        .transport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+        
+        .transport-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .transport-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .transport-description {
+            color: var(--gray-medium);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Suggested Itinerary Section */
+        .itinerary-section {
+            margin: 60px 0;
+        }
+        
+        .itinerary-timeline {
+            position: relative;
+            margin-top: 40px;
+            padding-left: 40px;
+            border-left: 3px solid var(--gray-light);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            left: -55px;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+        
+        .timeline-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+        }
+        
+        .day-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .activity {
+            margin-bottom: 25px;
+        }
+        
+        .activity:last-child {
+            margin-bottom: 0;
+        }
+        
+        .activity-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .activity-icon {
+            font-size: 1.3rem;
+            color: var(--accent);
+        }
+        
+        .activity-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .activity-description {
+            color: var(--gray-medium);
+            line-height: 1.6;
+            padding-left: 40px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+
+    <header class="city-hero" style="background-image: url('../images/nanjing-hero.jpg');">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html" style="color: var(--primary);">
-                <i class="fas fa-globe-americas me-2"></i>Traveling China
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#destinations">Destinations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
-                </ul>
-            </div>
+            <h1 class="display-4">Nanjing</h1>
+            <p class="lead">Nanjing, the capital of Jiangsu province, is a city with a prominent place in Chinese history and culture. Having served as the capital of various Chinese dynasties, governments and kingdoms, it is one of the 'Four Great Ancient Capitals of China'. Today, Nanjing is a bustling metropolis, a hub of education, research, transportation and tourism. The city's name, which means 'Southern Capital', reflects its historical significance.</p>
         </div>
-    </nav>
-    <!-- City Hero Section -->
-    <section class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/user_photos/nanjing_hero_bg.jpg'); background-size: cover; background-position: center; padding: 100px 0 60px; min-height: 400px; color: white">
-        <div class="container">
-            <h1>Nanjing</h1>
-            <p class="lead">The Ancient Capital of Six Dynasties</p>
-        </div>
-    </section>
+    </header>
 
-    <!-- City Content -->
-    <section class="city-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- Overview -->
-                    <div class="city-section">
-                        <h2>Overview</h2>
-                        <p>Nanjing is the capital of Jiangsu Province and a historically significant city that served as the capital of several Chinese dynasties. Located on the Yangtze River, Nanjing is known for its rich history, cultural heritage, and beautiful natural scenery.</p>
-                    </div>
-                    
-                    <!-- Highlights -->
-                    <div class="city-section">
-                        <h2>Must-See Highlights</h2>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
-                            <p>Sun Yat-sen Mausoleum, Confucius Temple, Nanjing City Wall, Xuanwu Lake</p>
-                        </div>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-utensils me-2"></i>Local Cuisine</h3>
-                            <p>Nanjing Salted Duck, Duck Blood Soup, Tangbao Soup Dumplings</p>
-                        </div>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
-                            <p>Autumn (September-November) with pleasant weather and clear skies</p>
-                        </div>
-                    </div>
-                    
-                                            <h2>Travel Tips</h2>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-lightbulb me-2"></i>Comprehensive Travel Guide</h3>
-                            <p>Exploring Nanjing's historical sites requires sensitivity to the city's complex past and strategic planning for its extensive attractions. The Nanjing Massacre Memorial Hall demands significant emotional preparation—allocate 2-3 hours for a thorough visit and consider visiting earlier in the day when you have more emotional energy. Photography is restricted in certain areas, and respectful silence is expected throughout. The memorial is closed on Mondays, and advance online reservation is recommended, especially during national holidays and anniversaries of the massacre (mid-December).
-
-    Navigating Nanjing's dispersed historical sites is facilitated by its metro system, though some attractions require additional transportation. The Ming Xiaoling Mausoleum and Sun Yat-sen's Mausoleum are both located within Zhongshan Mountain National Park—consider purchasing the combined ticket that includes park shuttle bus access between sites. The preserved sections of the City Wall are accessible at multiple gates: the Zhonghua Gate (largest ancient city gate in China) offers the most impressive fortifications, while the Xuanwu Lake section provides pleasant lakeside walking. The Confucius Temple area is best visited in the late afternoon to enjoy both daytime sights and evening lantern displays along the Qinhuai River.
-
-    Accommodation choices should balance accessibility to historical sites with modern comforts. The Xinjiekou area serves as Nanjing's modern commercial center with numerous international hotel chains and excellent metro connectivity but lacks historical character. The Confucius Temple area offers hotels with traditional architectural elements and immediate access to the Qinhuai River district but can be crowded and noisy, especially on weekends. The Gulou (Drum Tower) area provides a good compromise with proximity to Nanjing University, decent transportation links, and more local dining options. For visitors focusing on the massacre memorial and related sites, consider hotels near the Yunjinlu metro station.
-
-    Nanjing's culinary scene reflects its Jiangsu province location with emphasis on freshwater ingredients, careful preparation, and balanced flavors. Must-try dishes include Nanjing salted duck (yanshui ya), duck blood and vermicelli soup (yaxue fensi tang), and lion's head meatballs (shizitou). The Confucius Temple food street offers concentrated culinary experiences but can be touristy—venture into side streets for more authentic options. For a unique dining experience, visit one of Nanjing's traditional duck restaurants that have specialized in the dish for generations. Local breakfast typically consists of sesame cakes (shaobing), fried dough sticks (youtiao), and soybean milk (doujiang)—available at neighborhood eateries throughout the city.
-
-    Cultural experiences require understanding Nanjing's historical context. The Nanjing Museum's collections are exceptional but extensive—focus on highlights: the imperial porcelain collection, Jiangsu region archaeological finds, and Republican-era artifacts. The Presidential Palace offers insight into China's political transitions but can be confusing without context—consider renting an audio guide or joining an English-language tour if available. For performing arts, the Nanjing Baiju Opera House presents performances of local Kunqu opera, one of China's oldest operatic forms. Calligraphy enthusiasts should visit the Nanjing Calligraphy and Painting Academy or the stone carvings at Qixia Temple.
-
-    Day trips from Nanjing reveal the surrounding Yangtze River Delta's historical and natural attractions. Yangzhou (1 hour by high-speed train), a former canal trading hub, offers the Slender West Lake gardens and historic streets. Zhenjiang (30 minutes by high-speed train), known for its vinegar production, features the Jinshan Temple and Beigu Mountain. The ancient village of Zhouzhuang (2 hours by combination of train and bus) preserves traditional water town architecture, though it can be crowded. For natural scenery, the Purple Mountain (within Nanjing) offers extensive hiking trails and additional historical sites beyond the major mausoleums. The Qixia Mountain and its Buddhist temple complex (40 minutes by taxi) provide autumn foliage viewing when the ginkgo trees turn golden in November.</p>
-                        </div></div>
-                
-                <div class="col-lg-4">
-                    <!-- Quick Facts -->
-                    <div class="city-section">
-                        <h2>Quick Facts</h2>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-info-circle me-2"></i>Basic Info</h3>
-                            <p><strong>Population:</strong> 9.31 million</p>
-                            <p><strong>Province:</strong> Jiangsu Province</p>
-                            <p><strong>Language:</strong> Mandarin, Mandarin (Nanjing dialect)</p>
-                            <p><strong>Timezone:</strong> China Standard Time (UTC+8)</p>
-                        </div>
-                        
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
-                            <p><strong>Airport:</strong> Nanjing Lukou International Airport (NKG)</p>
-                            <p><strong>Train:</strong> High-speed rail from Shanghai, Hangzhou, Hefei (1-3 hours)</p>
-                            <p><strong>Best Transport:</strong> Metro, buses, and taxis; boats for river tours</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Gallery -->
-                    <div class="city-section">
-                        <h2>Gallery</h2>
-                        <div class="city-gallery">
-                            <img src="../images/user_photos/nanjing_1_optimized.jpg" alt="Nanjing view 1">
-                            <img src="../images/user_photos/nanjing_2_optimized.jpg" alt="Nanjing view 2">
-                            <img src="../images/user_photos/nanjing_3_optimized.jpg" alt="Nanjing view 3">
-                        </div>
-                    </div>
-                </div>
+    <main class="container city-content">
+        <div class="row">
+            <div class="col-lg-3">
+                <nav class="jump-nav">
+                    <h4><i class="fas fa-map-signs"></i> Jump to Section</h4>
+                    <ul class="jump-nav-list">
+                        <li class="jump-nav-item"><a href="#overview" class="jump-nav-link active">Overview</a></li>
+                        <li class="jump-nav-item"><a href="#highlights" class="jump-nav-link">Highlights</a></li>
+                        <li class="jump-nav-item"><a href="#gallery" class="jump-nav-link">Gallery</a></li>
+                        <li class="jump-nav-item"><a href="#patents" class="jump-nav-link">Patents</a></li>
+                    </ul>
+                </nav>
             </div>
-            
-            <div class="city-section">
-                <h2>Patent Data</h2>
-                <div class="patent-table">
-                    <table class="table table-bordered">
-                        <thead>
+
+            <div class="col-lg-9">
+                <section id="overview" class="city-section">
+                    <h2><i class="fas fa-info-circle"></i> City Overview</h2>
+                    <div class="city-highlight">
+                        <h3>A Walk Through History</h3>
+                        <p>From the ancient city walls to the Presidential Palace, Nanjing is a living museum. Explore the sites that have witnessed the rise and fall of dynasties and the birth of modern China.</p>
+                    </div>
+                    <div class="city-highlight">
+                        <h3>Cultural Hub</h3>
+                        <p>Nanjing is home to numerous universities and research institutes, fostering a vibrant intellectual and artistic scene. The city also boasts a rich tradition of arts and crafts, including the famous Yunjin brocade.</p>
+                    </div>
+                    <div class="city-highlight">
+                        <h3>Green City</h3>
+                        <p>Despite its size, Nanjing is known for its lush greenery, with tree-lined boulevards and numerous parks and lakes. Purple Mountain, located in the eastern part of the city, is a national scenic area offering a natural escape.</p>
+                    </div>
+                </section>
+
+                <section id="highlights" class="city-section">
+                    <h2><i class="fas fa-star"></i> Key Highlights</h2>
+                    <div class="city-highlight">
+                        <h3>Sun Yat-sen Mausoleum</h3>
+                        <p>A grand and solemn memorial to the founding father of the Republic of China, Dr. Sun Yat-sen. The mausoleum is a masterpiece of Chinese architectural history.</p>
+                    </div>
+                    <div class="city-highlight">
+                        <h3>The City Wall of Nanjing</h3>
+                        <p>One of the best-preserved ancient city walls in the world. A walk or bike ride along the wall offers stunning views of the city and a tangible connection to its past.</p>
+                    </div>
+                    <div class="city-highlight">
+                        <h3>Confucius Temple (Fuzimiao)</h3>
+                        <p>A bustling area of temples, shops, and restaurants centered around the original Confucius Temple. It's a great place to experience local life, especially at night.</p>
+                    </div>
+                </section>
+
+                <section id="gallery" class="city-section">
+                    <h2><i class="fas fa-camera-retro"></i> Photo Gallery</h2>
+                    <div class="city-gallery">
+                        <div class="gallery-item">
+                            <img src="../images/nanjing-gallery-1.jpg" alt="Nanjing Gallery Image 1" class="gallery-img">
+                            <div class="gallery-caption">
+                                <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Presidential Palace</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="../images/nanjing-gallery-2.jpg" alt="Nanjing Gallery Image 2" class="gallery-img">
+                            <div class="gallery-caption">
+                                <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Xuanwu Lake</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="../images/nanjing-gallery-3.jpg" alt="Nanjing Gallery Image 3" class="gallery-img">
+                            <div class="gallery-caption">
+                                <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Qinhuai River</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="patents" class="city-section">
+                    <h2><i class="fas fa-microscope"></i> Patent Data</h2>
+                    <table class="table table-bordered table-hover patent-table">
+                        <thead class="table-primary">
                             <tr>
-                                <th>Patent Number</th>
+                                <th>Patent ID</th>
                                 <th>Title</th>
-                                <th>Current Assignee</th>
+                                <th>Inventor</th>
+                                <th>Date</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>CN117303131A</td>
-                                <td>Preparation method of evogliptin intermediate</td>
-                                <td>NARI Group Corporation</td>
+                                <td>CN113325699A</td>
+                                <td>A kind of environment-friendly high-elasticity flame-retardant artificial leather and preparation method thereof</td>
+                                <td>Liu, Wei</td>
+                                <td>2021-08-31</td>
                             </tr>
                             <tr>
-                                <td>CN117286197A</td>
-                                <td>Method for preparing chiral intermediate of antiviral drug by utilizing imine reductase</td>
-                                <td>NARI Group Corporation</td>
+                                <td>CN113278688A</td>
+                                <td>A kind of wear-resistant and scratch-resistant solvent-free PU artificial leather and preparation method thereof</td>
+                                <td>Wang, Jian</td>
+                                <td>2021-08-17</td>
                             </tr>
                             <tr>
-                                <td>CN117343369A</td>
-                                <td>Application of deuterated GLP-1/GIP double receptor agonist in preparing drugs for treating metabolic syndrome</td>
-                                <td>NARI Group Corporation</td>
+                                <td>CN113122021A</td>
+                                <td>A kind of antibacterial and mildewproof PU synthetic leather and preparation method thereof</td>
+                                <td>Li, Na</td>
+                                <td>2021-07-13</td>
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
+                </section>
 
-            <!-- Explore Other Cities -->
-            <div class="city-nav">
-                <h3>Explore Other Chinese Cities</h3>
-                <div class="city-links">
-<a href="beijing.html" class="city-link">Beijing</a>
-<a href="shanghai.html" class="city-link">Shanghai</a>
-<a href="chengdu.html" class="city-link">Chengdu</a>
-<a href="qingdao.html" class="city-link">Qingdao</a>
-<a href="xiamen.html" class="city-link">Xiamen</a>
-<a href="wuxi.html" class="city-link">Wuxi</a>
-<a href="hongkong.html" class="city-link">Hongkong</a>
-<a href="chongqing.html" class="city-link">Chongqing</a>
-<a href="harbin.html" class="city-link">Harbin</a>
-<a href="guangzhou.html" class="city-link">Guangzhou</a>
-<a href="shenzhen.html" class="city-link">Shenzhen</a>
-<a href="guilin.html" class="city-link">Guilin</a>
-<a href="guiyang.html" class="city-link">Guiyang</a>
-<a href="kunming.html" class="city-link">Kunming</a>
-<a href="dali.html" class="city-link">Dali</a>
-<a href="jinan.html" class="city-link">Jinan</a>
-<a href="datong.html" class="city-link">Datong</a>
-<a href="linyi.html" class="city-link">Linyi</a>
-<a href="taiyuan.html" class="city-link">Taiyuan</a>
-<a href="urumqi.html" class="city-link">Urumqi</a>
-<a href="hangzhou.html" class="city-link">Hangzhou</a>
-<a href="kashi.html" class="city-link">Kashi</a>
-<a href="wuhan.html" class="city-link">Wuhan</a>
-<a href="suzhou.html" class="city-link">Suzhou</a>
+                <div class="text-center mt-5">
+                    <a href="../index.html" class="back-home-btn">
+                        <i class="fas fa-arrow-left back-home-icon"></i>
+                        <span class="back-home-text">Back to Home</span>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2026 Traveling China. All rights reserved.</p>
-            <div class="social-icons mt-3">
-                <a href="#"><i class="fab fa-weixin"></i></a>
-                <a href="#"><i class="fab fa-weibo"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
+    <div class="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <button class="lightbox-nav lightbox-prev">&lsaquo;</button>
+        <button class="lightbox-nav lightbox-next">&rsaquo;</button>
+        <div class="lightbox-content">
+            <img src="" alt="Lightbox Image" class="lightbox-img">
+            <div class="lightbox-caption-container">
+                <p class="lightbox-caption"></p>
             </div>
         </div>
-    </footer>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+        document.addEventListener('DOMContentLoaded', function () {
+            const galleryImages = document.querySelectorAll('.gallery-img');
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = document.querySelector('.lightbox-img');
+            const lightboxCaption = document.querySelector('.lightbox-caption');
+            const closeBtn = document.querySelector('.lightbox-close');
+            const prevBtn = document.querySelector('.lightbox-prev');
+            const nextBtn = document.querySelector('.lightbox-next');
+
+            let currentIndex = 0;
+
+            function showLightbox(index) {
+                currentIndex = index;
+                const imgSrc = galleryImages[currentIndex].src;
+                const captionText = galleryImages[currentIndex].nextElementSibling.querySelector('.caption-text').innerHTML;
+                lightboxImg.src = imgSrc;
+                lightboxCaption.innerHTML = captionText;
+                lightbox.classList.add('active');
             }
+
+            function hideLightbox() {
+                lightbox.classList.remove('active');
+            }
+
+            function showPrev() {
+                currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+                showLightbox(currentIndex);
+            }
+
+            function showNext() {
+                currentIndex = (currentIndex + 1) % galleryImages.length;
+                showLightbox(currentIndex);
+            }
+
+            galleryImages.forEach((img, index) => {
+                img.addEventListener('click', () => {
+                    showLightbox(index);
+                });
+            });
+
+            closeBtn.addEventListener('click', hideLightbox);
+            prevBtn.addEventListener('click', showPrev);
+            nextBtn.addEventListener('click', showNext);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    hideLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.classList.contains('active')) {
+                    if (e.key === 'Escape') {
+                        hideLightbox();
+                    }
+                    if (e.key === 'ArrowLeft') {
+                        showPrev();
+                    }
+                    if (e.key === 'ArrowRight') {
+                        showNext();
+                    }
+                }
+            });
         });
     </script>
-    <!-- Color references for monitoring system (hidden) -->
-    <div style="display: none;">
-        <span style="color: #2563eb;">primary</span>
-        <span style="color: #1e40af;">secondary</span>
-        <span style="color: #f59e0b;">accent</span>
-        <span style="color: #f8fafc;">light</span>
-        <span style="color: #1e293b;">dark</span>
-    </div>
+
 </body>
 </html>

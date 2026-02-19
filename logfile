@@ -1,0 +1,24 @@
+2026-02-18 07:52:57.454 PST [45827] LOG:  starting PostgreSQL 14.21 (Homebrew) on aarch64-apple-darwin25.2.0, compiled by Apple clang version 17.0.0 (clang-1700.6.3.2), 64-bit
+2026-02-18 07:52:57.456 PST [45827] LOG:  listening on IPv6 address "::1", port 5432
+2026-02-18 07:52:57.456 PST [45827] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-02-18 07:52:57.456 PST [45827] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2026-02-18 07:52:57.458 PST [45828] LOG:  database system was shut down at 2026-02-18 07:52:46 PST
+2026-02-18 07:52:57.460 PST [45827] LOG:  database system is ready to accept connections
+2026-02-18 08:28:01.403 PST [50259] FATAL:  database "fudongli" does not exist
+2026-02-18 08:49:23.966 PST [52615] ERROR:  syntax error at or near "psql" at character 1
+2026-02-18 08:49:23.966 PST [52615] STATEMENT:  psql -U fudongli -d travel_website -c 'TABLE travel.travel_development_idea;'
+	select count(*) from travel_development_ideas;
+2026-02-18 08:50:05.534 PST [52615] ERROR:  syntax error at or near "psql" at character 1
+2026-02-18 08:50:05.534 PST [52615] STATEMENT:  psql -U fudongli -d travel_website 
+	set search_path to travel;
+2026-02-18 08:51:54.430 PST [52615] ERROR:  syntax error at or near "psql" at character 1
+2026-02-18 08:51:54.430 PST [52615] STATEMENT:  psql -U fudongli -d travel_website -c 'TABLE travel.travel_development_idea;'
+	select count(*) from travel.travel_development_ideas;
+2026-02-18 08:52:55.877 PST [57648] ERROR:  relation "travel.travel_development_idea" does not exist at character 13
+2026-02-18 08:52:55.877 PST [57648] STATEMENT:  INSERT INTO travel.travel_development_idea (idea, status) VALUES ('Fix carousel CSS: remove all the broken css rules, and dynamically calculate slide width', 'pending');
+2026-02-18 08:52:55.877 PST [57648] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2026-02-18 08:52:55.877 PST [57648] STATEMENT:  INSERT INTO travel.travel_development_idea (idea, status) VALUES ('Fix carousel JavaScript: replace the static script with a dynamic one that correctly handles slide navigation and updates the UI', 'pending');
+2026-02-18 08:53:10.229 PST [57983] ERROR:  column "status" of relation "travel_development_ideas" does not exist at character 52
+2026-02-18 08:53:10.229 PST [57983] STATEMENT:  INSERT INTO travel.travel_development_ideas (idea, status) VALUES ('Fix carousel CSS: remove all the broken css rules, and dynamically calculate slide width', 'pending');
+2026-02-18 08:53:10.230 PST [57983] ERROR:  current transaction is aborted, commands ignored until end of transaction block
+2026-02-18 08:53:10.230 PST [57983] STATEMENT:  INSERT INTO travel.travel_development_idea (idea, status) VALUES ('Fix carousel JavaScript: replace the static script with a dynamic one that correctly handles slide navigation and updates the UI', 'pending');

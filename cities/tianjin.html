@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qingdao - Traveling China</title>
+    <title>Tianjin - Traveling China like your home yard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/travel-website/style.css">
     <style>
         :root {
             --primary: #2563eb;
@@ -22,35 +22,34 @@
         }
         
         .city-hero {
-            color: white; padding: 100px 0 60px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--hero-image);
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 100px 0 60px;
+            padding: 120px 0 80px;
             text-align: center;
             margin-bottom: 60px;
         }
         
         .city-hero h1 {
-            font-size: 2.5rem; /* Reduced from 3.5rem */
-            margin-bottom: 16px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         
         .city-hero .lead {
-            font-size: 1.25rem; /* Reduced from 1.5rem */
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: rgba(255,255,255,0.95);
-            line-height: 1.6;
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.9);
         }
         
         .city-content {
-            padding: 40px 0; /* Reduced from 60px */
+            padding: 60px 0;
         }
         
         .city-section {
-            margin-bottom: 40px; /* Reduced from 60px */
+            margin-bottom: 60px;
         }
         
         .city-section h2 {
@@ -58,22 +57,20 @@
             margin-bottom: 30px;
             padding-bottom: 15px;
             border-bottom: 3px solid var(--accent);
-        
-            font-size: 1.75rem;}
+        }
         
         .city-highlight {
             background: var(--light);
-            border-radius: 12px;
-            padding: 24px; /* Reduced from 30px */
-            margin-bottom: 24px; /* Reduced from 30px */
-            border-left: 4px solid var(--primary);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
         }
         
         .city-highlight h3 {
             color: var(--primary);
             margin-bottom: 15px;
-        
-            font-size: 1.3rem;}
+        }
         
         .city-gallery {
             display: grid;
@@ -144,36 +141,21 @@
             transform: translateY(-3px);
             border-color: var(--primary);
         }
-    
-        .back-link {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #3b82f6;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            margin: 20px 0;
-            transition: all 0.3s ease;
-        }
-        
-        .back-link:hover {
-            background: #2563eb;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-        }
+
         .patent-table {
             margin-top: 30px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border-radius: 10px;
             overflow: hidden;
-        }</style>
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html" style="color: var(--primary);">
-                <i class="fas fa-globe-americas me-2"></i>Traveling China
+            <a class="navbar-brand fw-bold fs-3" href="/travel-website/index.html" style="color: var(--primary);">
+                <i class="fas fa-globe-americas me-2"></i>Traveling China like your home yard
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -189,11 +171,15 @@
             </div>
         </div>
     </nav>
+
     <!-- City Hero Section -->
-    <section class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/user_photos/qingdao_hero_bg.jpg'); background-size: cover; background-position: center; padding: 100px 0 60px; min-height: 400px; color: white">
+    <section class="city-hero" style="--hero-image: url('https://images.unsplash.com/photo-1599266202441-8c5697e41003?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
         <div class="container">
-            <h1>Qingdao</h1>
-            <p class="lead">Where East Meets West</p>
+            <a href="/travel-website/index.html" class="back-to-home">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+            <h1>Tianjin</h1>
+            <p class="lead">A port city with a blend of Chinese and Western architecture.</p>
         </div>
     </section>
 
@@ -205,7 +191,7 @@
                     <!-- Overview -->
                     <div class="city-section">
                         <h2>Overview</h2>
-                        <p>Qingdao is a major port city in Shandong Province, famous for its European architecture, beautiful coastline, and Tsingtao Beer. Originally a German concession, the city blends Chinese and Western influences with its red-roofed buildings, Catholic churches, and coastal scenery.</p>
+                        <p>Tianjin is a major port city in northeastern China. Once home to foreign concessions, the city has a cosmopolitan feel, with a mix of European-style buildings and traditional Chinese architecture. The Hai River flows through the city, and its banks are a popular spot for locals and tourists alike.</p>
                     </div>
                     
                     <!-- Highlights -->
@@ -213,15 +199,15 @@
                         <h2>Must-See Highlights</h2>
                         <div class="city-highlight">
                             <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
-                            <p>Zhanqiao Pier, Badaguan Scenic Area, Tsingtao Beer Museum, Laoshan Mountain</p>
+                            <p>Five Great Avenues, Tianjin Eye, Ancient Culture Street</p>
                         </div>
                         <div class="city-highlight">
                             <h3><i class="fas fa-utensils me-2"></i>Local Cuisine</h3>
-                            <p>Seafood, Tsingtao Beer, Braised Abalone, Clams in Black Bean Sauce</p>
+                            <p>Goubuli buns, Mahua (fried dough twists), Erduoyan fried cakes</p>
                         </div>
                         <div class="city-highlight">
                             <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
-                            <p>Spring (April-June) and Autumn (September-October) with mild temperatures and clear skies</p>
+                            <p>Spring and Autumn, with mild and pleasant weather.</p>
                         </div>
                     </div>
                     
@@ -229,10 +215,10 @@
                     <div class="city-section">
                         <h2>Travel Tips</h2>
                         <ul>
-                            <li>Visit the Tsingtao Beer Museum to learn about the brewing process and enjoy fresh beer</li>
-                            <li>Walk along Badaguan Scenic Area to see the unique architectural styles from different countries</li>
-                            <li>Take a cable car up Laoshan Mountain for stunning coastal views</li>
-                            <li>Try fresh seafood at the local markets and restaurants near the pier</li>
+                            <li>Take a boat trip on the Hai River for stunning city views.</li>
+                            <li>Explore the different architectural styles in the Five Great Avenues.</li>
+                            <li>Bargain for souvenirs and try local snacks on Ancient Culture Street.</li>
+                            <li>Use the metro system for convenient travel around the city.</li>
                         </ul>
                     </div>
                 </div>
@@ -243,17 +229,17 @@
                         <h2>Quick Facts</h2>
                         <div class="city-highlight">
                             <h3><i class="fas fa-info-circle me-2"></i>Basic Info</h3>
-                            <p><strong>Population:</strong> 10.07 million</p>
-                            <p><strong>Province:</strong> Shandong Province</p>
-                            <p><strong>Language:</strong> Mandarin, Jiaoliao Mandarin</p>
+                            <p><strong>Population:</strong> Over 15 million</p>
+                            <p><strong>Province:</strong> Tianjin Municipality</p>
+                            <p><strong>Language:</strong> Mandarin, Tianjin dialect</p>
                             <p><strong>Timezone:</strong> China Standard Time (UTC+8)</p>
                         </div>
                         
                         <div class="city-highlight">
                             <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
-                            <p><strong>Airport:</strong> Qingdao Jiaodong International Airport (TAO)</p>
-                            <p><strong>Train:</strong> High-speed rail from Jinan, Yantai, Weihai (2-4 hours)</p>
-                            <p><strong>Best Transport:</strong> Metro, buses, and taxis for city travel; ferries for island visits</p>
+                            <p><strong>Airport:</strong> Tianjin Binhai International Airport (TSN)</p>
+                            <p><strong>Train:</strong> High-speed rail from Beijing, Shanghai, and other major cities.</p>
+                            <p><strong>Best Transport:</strong> Metro, taxi</p>
                         </div>
                     </div>
                     
@@ -261,14 +247,14 @@
                     <div class="city-section">
                         <h2>Gallery</h2>
                         <div class="city-gallery">
-                            <img src="../images/user_photos/qingdao_1_optimized.jpg?v=1771182062" alt="Qingdao view 1">
-                            <img src="../images/user_photos/qingdao_2_optimized.jpg?v=1771182062" alt="Qingdao view 2">
-                            <img src="../images/user_photos/qingdao_3_optimized.jpg?v=1771182062" alt="Qingdao view 3">
-</div>
+                            <img src="https://images.unsplash.com/photo-1569310173909-a0294f573543?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tianjin view 1">
+                            <img src="https://images.unsplash.com/photo-1610642289134-56e4216110a5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tianjin view 2">
+                            <img src="https://images.unsplash.com/photo-1558137343-c432a48cacec?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tianjin view 3">
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="city-section">
                 <h2>Patent Data</h2>
                 <div class="patent-table">
@@ -282,58 +268,41 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>CN102839519B</td>
-                                <td>Household dry cleaning machine and clothes dry cleaning method</td>
-                                <td>Haier Group Corporation</td>
+                                <td>CN100389121C</td>
+                                <td>Preparation method of mometasone furoate intermediate 21-hydroxyl</td>
+                                <td>TIANJIN PHARMACEUTICAL INDUSTRY GROUP CORP Ltd</td>
                             </tr>
                             <tr>
-                                <td>CN108360214A</td>
-                                <td>A kind of control method and washing machine of washing machine</td>
-                                <td>Haier Group Corporation</td>
+                                <td>CN101817783A</td>
+                                <td>Method for preparing tolvaptan intermediate</td>
+                                <td>Tianjin Taipu Pharmaceutical Science & Technology Development Co Ltd</td>
                             </tr>
                             <tr>
-                                <td>CN113296415A</td>
-                                <td>Intelligent household electrical appliance control method, intelligent household electrical appliance control device and system</td>
-                                <td>Haier Group Corporation</td>
-                            </tr>
-                            <tr>
-                                <td>CN104268591A</td>
-                                <td>Face key point detecting method and device</td>
-                                <td>Hisense Group Co Ltd</td>
+                                <td>CN101347621A</td>
+                                <td>A pharmaceutical composition for treating respiratory diseases</td>
+                                <td>TIANJIN PHARMACEUTICALS GROUP CORP</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-
+            
             <!-- Explore Other Cities -->
             <div class="city-nav">
                 <h3>Explore Other Chinese Cities</h3>
                 <div class="city-links">
-<a href="beijing.html" class="city-link">Beijing</a>
-<a href="shanghai.html" class="city-link">Shanghai</a>
-<a href="chengdu.html" class="city-link">Chengdu</a>
-<a href="xiamen.html" class="city-link">Xiamen</a>
-<a href="wuxi.html" class="city-link">Wuxi</a>
-<a href="hongkong.html" class="city-link">Hongkong</a>
-<a href="chongqing.html" class="city-link">Chongqing</a>
-<a href="harbin.html" class="city-link">Harbin</a>
-<a href="guangzhou.html" class="city-link">Guangzhou</a>
-<a href="shenzhen.html" class="city-link">Shenzhen</a>
-<a href="nanjing.html" class="city-link">Nanjing</a>
-<a href="guilin.html" class="city-link">Guilin</a>
-<a href="guiyang.html" class="city-link">Guiyang</a>
-<a href="kunming.html" class="city-link">Kunming</a>
-<a href="dali.html" class="city-link">Dali</a>
-<a href="jinan.html" class="city-link">Jinan</a>
-<a href="datong.html" class="city-link">Datong</a>
-<a href="linyi.html" class="city-link">Linyi</a>
-<a href="taiyuan.html" class="city-link">Taiyuan</a>
-<a href="urumqi.html" class="city-link">Urumqi</a>
-<a href="hangzhou.html" class="city-link">Hangzhou</a>
-<a href="kashi.html" class="city-link">Kashi</a>
-<a href="wuhan.html" class="city-link">Wuhan</a>
-<a href="suzhou.html" class="city-link">Suzhou</a>
+                    <a href="chengdu.html" class="city-link">Chengdu</a>
+                    <a href="beijing.html" class="city-link">Beijing</a>
+                    <a href="wuxi.html" class="city-link">Wuxi</a>
+                    <a href="qingdao.html" class="city-link">Qingdao</a>
+                    <a href="xiamen.html" class="city-link">Xiamen</a>
+                    <a href="harbin.html" class="city-link">Harbin</a>
+                    <a href="shanghai.html" class="city-link">Shanghai</a>
+                    <a href="nanjing.html" class="city-link">Nanjing</a>
+                    <a href="shenzhen.html" class="city-link">Shenzhen</a>
+                    <a href="guangzhou.html" class="city-link">Guangzhou</a>
+                    <a href="hongkong.html" class="city-link">Hongkong</a>
+                    <a href="chongqing.html" class="city-link">Chongqing</a>
                 </div>
             </div>
         </div>
@@ -342,7 +311,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>&copy; 2026 Traveling China. All rights reserved.</p>
+            <p>&copy; 2026 Traveling China like your home yard. All rights reserved.</p>
             <div class="social-icons mt-3">
                 <a href="#"><i class="fab fa-weixin"></i></a>
                 <a href="#"><i class="fab fa-weibo"></i></a>
@@ -364,13 +333,5 @@
             }
         });
     </script>
-    <!-- Color references for monitoring system (hidden) -->
-    <div style="display: none;">
-        <span style="color: #2563eb;">primary</span>
-        <span style="color: #1e40af;">secondary</span>
-        <span style="color: #f59e0b;">accent</span>
-        <span style="color: #f8fafc;">light</span>
-        <span style="color: #1e293b;">dark</span>
-    </div>
 </body>
 </html>

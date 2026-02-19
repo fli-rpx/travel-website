@@ -226,6 +226,14 @@
         .back-home-btn:hover .back-home-icon {
             transform: translateX(-5px);
         }
+
+        .patent-table {
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
         
         .back-home-text {
             font-weight: 600;
@@ -738,13 +746,13 @@
             border-radius: 12px;
             padding: 25px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
             transition: all 0.3s ease;
         }
         
         .transport-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
         }
         
         .transport-icon {
@@ -755,123 +763,97 @@
         
         .transport-title {
             font-size: 1.2rem;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--dark);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         
         .transport-description {
             color: var(--gray-medium);
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .transport-tip {
-            background: #fef3c7;
-            border-left: 4px solid var(--accent);
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
             font-size: 0.95rem;
+            line-height: 1.6;
         }
         
-        /* Suggested Itineraries Section */
+        /* Sample Itinerary Section */
         .itinerary-section {
             margin: 60px 0;
         }
         
-        .itinerary-tabs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
+        .itinerary-timeline {
+            position: relative;
+            padding: 20px 0;
+            margin-top: 30px;
         }
         
-        .itinerary-tab {
-            padding: 12px 25px;
-            background: var(--light);
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            color: var(--gray-medium);
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .itinerary-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gray-light);
+            border-radius: 2px;
         }
         
-        .itinerary-tab.active {
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 50px;
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
             background: var(--primary);
             color: white;
-        }
-        
-        .itinerary-content {
-            display: none;
-        }
-        
-        .itinerary-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .itinerary-day {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        
-        .day-header {
+            border-radius: 50%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--light);
+            justify-content: center;
+            font-size: 1.2rem;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px var(--primary);
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
         }
         
         .day-title {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--secondary);
+            margin-bottom: 20px;
         }
         
-        .day-duration {
-            background: var(--light);
-            color: var(--primary);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 600;
-        }
-        
-        .day-schedule {
+        .activity-list {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
         
-        .schedule-item {
+        .activity-item {
             display: flex;
-            gap: 20px;
-            padding: 15px 0;
-            border-bottom: 1px solid var(--gray-light);
+            gap: 15px;
+            margin-bottom: 15px;
         }
         
-        .schedule-item:last-child {
-            border-bottom: none;
-        }
-        
-        .schedule-time {
-            min-width: 80px;
+        .activity-time {
             font-weight: 600;
             color: var(--primary);
+            flex-shrink: 0;
+            width: 80px;
         }
         
-        .schedule-activity {
-            flex: 1;
+        .activity-details {
+            flex-grow: 1;
         }
         
         .activity-title {
@@ -885,828 +867,405 @@
             font-size: 0.95rem;
         }
         
-        .itinerary-tips {
-            background: #f0f9ff;
-            border-radius: 12px;
-            padding: 25px;
-            margin-top: 30px;
-            border-left: 4px solid var(--primary);
-        }
-        
-        .itinerary-tips h4 {
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .map-container {
-                height: 300px;
-            }
-            
-            .cuisine-grid,
-            .transport-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .itinerary-tabs {
-                flex-direction: column;
-            }
-            
-            .schedule-item {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .schedule-time {
-                min-width: auto;
-            }
-        }</style>
+    </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+<body style="background-image: url('../images/beijing_hero_bg.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+
+    <header class="city-hero" style="background-image: url('../images/user_photos/beijing_hero_bg.jpg?v=1771200340');">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html" style="color: var(--primary);">
-                <i class="fas fa-globe-americas me-2"></i>Traveling China
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#destinations">Destinations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
-                </ul>
-            </div>
+            <a href="../index.html" class="back-to-home"><i class="fas fa-arrow-left"></i> Back to Homepage</a>
+            <h1 class="display-4">Beijing</h1>
+            <p class="lead">The heart of China, a city where ancient history and modern innovation collide.</p>
         </div>
-    </nav>
-    <!-- City Hero Section -->
-    <section class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/user_photos/beijing_hero_bg.jpg'); background-size: cover; background-position: center; padding: 100px 0 60px; min-height: 400px; color: white">
-        <div class="container">
-            <h1>Beijing</h1>
-            <p class="lead">Ancient Capital & Modern Metropolis</p>
-        </div>
-    </section>
+    </header>
 
-    <!-- City Content -->
-    <section class="city-content">
-        <div class="container">
-            <!-- Prominent Back to Home Button -->
-            <div class="back-home-container" style="margin-bottom: 40px;">
-                <a href="../index.html" class="back-home-btn">
-                    <span class="back-home-icon">←</span>
-                    <span class="back-home-text">Back to Home Page</span>
-                </a>
-            </div>
-            
-            <!-- Jump to Section Navigation -->
-            <div class="jump-nav">
-                <h4>
-                    <span class="jump-nav-icon">🔍</span>
-                    Jump to Section
-                </h4>
-                <ul class="jump-nav-list">
-                    <li class="jump-nav-item">
-                        <a href="#overview" class="jump-nav-link" data-section="overview">
-                            <span class="jump-nav-icon">📖</span>
-                            Overview
-                        </a>
-                    </li>
-                    <li class="jump-nav-item">
-                        <a href="#highlights" class="jump-nav-link" data-section="highlights">
-                            <span class="jump-nav-icon">⭐</span>
-                            Highlights
-                        </a>
-                    </li>
-                    <li class="jump-nav-item">
-                        <a href="#gallery" class="jump-nav-link" data-section="gallery">
-                            <span class="jump-nav-icon">🖼️</span>
-                            Gallery
-                        </a>
-                    </li>
-                    <li class="jump-nav-item">
-                        <a href="#map" class="jump-nav-link" data-section="map">
-                            <span class="jump-nav-icon">🗺️</span>
-                            Map
-                        </a>
-                    </li>
-                    <li class="jump-nav-item">
-                        <a href="#cuisine" class="jump-nav-link" data-section="cuisine">
-                            <span class="jump-nav-icon">🍜</span>
-                            Cuisine
-                        </a>
-                    </li>
-                    <li class="jump-nav-item">
-                        <a href="#transportation" class="jump-nav-link" data-section="transportation">
-                            <span class="jump-nav-icon">🚇</span>
-                            Transportation
-                        </a>
-                    </li>
-                    <li class="jump-nav-item">
-                        <a href="#itineraries" class="jump-nav-link" data-section="itineraries">
-                            <span class="jump-nav-icon">🗓️</span>
-                            Itineraries
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- Overview -->
-                    
-                    <div class="city-section" id="overview">
-                        <h2>Detailed Overview</h2>
-                        <div class="city-highlight">
-                            <p>Beijing, the capital of the People's Republic of China, stands as one of the world's great ancient capitals with over 3,000 years of history and 860 years as a capital city. As China's political, cultural, and educational center, Beijing represents both the glorious imperial past and the dynamic modern present of this rising global power. The city's layout follows strict feng shui principles, with the Forbidden City at its heart, surrounded by concentric rings of development that tell the story of China's evolution from imperial dynasty to modern superpower.
-
-        Beijing's historical significance is unparalleled in China. It served as the capital during the Liao, Jin, Yuan, Ming, and Qing dynasties, leaving behind an incredible architectural legacy. The Forbidden City, the world's largest palace complex, contains 980 buildings with 8,886 rooms, housing the Imperial Palace Museum's collection of over 1.8 million artifacts. Just north of the palace lies Jingshan Park, where the last Ming emperor hanged himself as rebel forces entered the city in 1644. The Temple of Heaven, where emperors performed annual ceremonies to ensure good harvests, showcases exquisite Ming dynasty architecture and remains one of Beijing's most photographed sites.
-
-        The Great Wall of China, which snakes through Beijing's northern districts, represents one of humanity's most ambitious engineering projects. While sections like Badaling attract massive crowds, more remote segments like Jiankou and Jinshanling offer breathtaking hikes along crumbling watchtowers with minimal tourist interference. Modern Beijing contrasts sharply with its ancient heritage. The Central Business District (CBD) boasts some of Asia's most striking contemporary architecture, including the CCTV Headquarters (known locally as "Big Pants") and the China Zun Tower, currently Beijing's tallest building at 528 meters.
-
-        Beijing's cultural scene is equally impressive. The 798 Art District, housed in a former electronics factory complex, has become one of Asia's most important contemporary art centers. Traditional performances like Peking Opera at the Liyuan Theatre and acrobatic shows at the Chaoyang Theatre showcase China's artistic heritage. The city's culinary landscape ranges from imperial banquet cuisine at Fangshan Restaurant in Beihai Park to humble street food in the hutongs (ancient alleyways). Beijing's famous Peking Duck, with its crispy skin and tender meat wrapped in thin pancakes with scallions and sweet bean sauce, remains a must-try culinary experience.
-
-        The city faces significant challenges, particularly air pollution that occasionally blankets the city in thick smog. However, massive government investment in green technology and public transportation has led to noticeable improvements in recent years. Beijing's metro system, now the world's largest by route length, continues to expand, making the city increasingly navigable for visitors. Despite its rapid modernization, Beijing retains its historical soul in places like the Shichahai lakes district, where locals still practice tai chi at dawn, and the Lama Temple, where Tibetan Buddhism continues to thrive in the heart of Han Chinese culture.</p>
-                        </div>
-                    </div><div class="city-section">
-                        <h2>Overview</h2>
-                        <p>Beijing, China's capital for over 800 years, is a city where ancient history meets modern innovation. From the majestic Forbidden City to the contemporary architecture of the CBD, Beijing offers a journey through China's imperial past and dynamic present.</p>
-                    </div>
-                    
-                    <!-- Highlights -->
-                    <div class="city-section" id="highlights">
-                        <h2>Must-See Highlights</h2>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
-                            <p>Forbidden City, Great Wall, Temple of Heaven, Summer Palace, Tiananmen Square</p>
-                        </div>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-utensils me-2"></i>Local Cuisine</h3>
-                            <p>Peking Duck, Zhajiangmian, Mongolian Hot Pot, Beijing Yogurt</p>
-                        </div>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
-                            <p>Autumn (September-October) with clear skies and pleasant temperatures</p>
-                        </div>
-                    </div>
-                    
-                                            <h2>Travel Tips</h2>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-lightbulb me-2"></i>Comprehensive Travel Guide</h3>
-                            <p>Navigating Beijing requires strategic planning due to its vast size and occasional air quality issues. For first-time visitors, purchasing a transportation card (Yikatong) is essential for seamless travel on the extensive metro system, which now spans over 700 kilometers across 27 lines. Download mobile apps like Baidu Maps (China's Google Maps equivalent) and Didi (China's Uber) for navigation and ride-hailing services, as Google services are restricted in China.
-
-        Ticket purchasing for major attractions demands advance planning. The Forbidden City limits daily visitors to 80,000, with tickets often selling out days in advance during peak seasons. Book online through official channels at least a week before your visit. Similarly, the Great Wall sections closest to Beijing (Badaling and Mutianyu) can become uncomfortably crowded. Consider visiting Jinshanling or Simatai for a more authentic experience, though these require longer travel times. Hiring a private driver for Great Wall trips often proves more convenient than public transportation.
-
-        Beijing's climate presents distinct challenges across seasons. Spring (April-May) brings pleasant temperatures but occasional sandstorms from the Gobi Desert. Summer (June-August) can be oppressively hot and humid, with temperatures exceeding 35°C (95°F). Autumn (September-October) offers ideal conditions with clear skies and comfortable temperatures. Winter (November-March) brings freezing temperatures but fewer tourists and the possibility of seeing the Great Wall dusted with snow.
-
-        Cultural etiquette remains important. When visiting temples, dress modestly and walk clockwise around stupas and prayer wheels. Bargaining is expected at markets like the Silk Street and Panjiayuan Antique Market, but start at about 30% of the asking price. Tipping is not customary in China and can sometimes cause confusion. Instead, excellent service warrants sincere thanks and possibly returning to the same establishment.
-
-        Health considerations include bringing N95 masks for days with poor air quality (check AQI levels via apps like AirVisual). Drink only bottled or boiled water, and be cautious with street food—stick to vendors with high turnover. Pharmacies (yaodian) are plentiful, but bring any prescription medications with you, as equivalents may not be available. Register with your embassy upon arrival and keep emergency contact numbers handy.
-
-        Money matters require attention. While mobile payments (WeChat Pay and Alipay) dominate, international credit cards work at major hotels and upscale restaurants. Always carry some cash for smaller establishments and markets. Currency exchange is available at banks and hotels, but rates at the airport are less favorable. Notify your bank of travel plans to avoid card blocks on international transactions.</p>
-                        </div></div>
-                
-                <div class="col-lg-4">
-                    <!-- Quick Facts -->
-                    <div class="city-section">
-                        <h2>Quick Facts</h2>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-info-circle me-2"></i>Basic Info</h3>
-                            <p><strong>Population:</strong> 21.9 million</p>
-                            <p><strong>Province:</strong> Beijing Municipality</p>
-                            <p><strong>Language:</strong> Mandarin, Beijing Mandarin</p>
-                            <p><strong>Timezone:</strong> China Standard Time (UTC+8)</p>
-                        </div>
-                        
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
-                            <p><strong>Airport:</strong> Beijing Capital International Airport (PEK) / Beijing Daxing International Airport (PKX)</p>
-                            <p><strong>Train:</strong> High-speed rail from Shanghai, Guangzhou, Xi'an (4-6 hours)</p>
-                            <p><strong>Best Transport:</strong> Extensive metro system, buses, and taxis</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Gallery -->
-                    <div class="city-section" id="gallery">
-                        <h2>Gallery</h2>
-                        <p class="lightbox-instruction" style="color: #64748b; margin-bottom: 20px; font-size: 0.95rem;">
-                            <i class="fas fa-expand-alt me-2"></i>Click on any image to view it larger in the lightbox.
-                        </p>
-                        <div class="city-gallery">
-                            <div class="gallery-item">
-                                <img src="../images/user_photos/beijing_1.jpg" 
-                                     alt="Beijing Forbidden City - Imperial palace architecture"
-                                     data-caption="Forbidden City - Imperial palace complex with 980 buildings, home to 24 emperors from Ming to Qing dynasties"
-                                     class="lightbox-trigger">
-                                <div class="gallery-caption">
-                                    <p class="caption-text">
-                                        <span class="caption-icon">🏯</span>
-                                        Forbidden City - Imperial palace with 980 buildings
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="gallery-item">
-                                <img src="../images/user_photos/beijing_2.jpg" 
-                                     alt="Beijing Great Wall - Ancient fortifications on mountains"
-                                     data-caption="Great Wall of China - Ancient fortification stretching over 21,000 km across northern China, built over 2,000 years"
-                                     class="lightbox-trigger">
-                                <div class="gallery-caption">
-                                    <p class="caption-text">
-                                        <span class="caption-icon">🏔️</span>
-                                        Great Wall - Ancient fortification on mountains
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="gallery-item">
-                                <img src="../images/user_photos/beijing_3.jpg" 
-                                     alt="Beijing modern skyline - Contemporary architecture and city life"
-                                     data-caption="Beijing Central Business District - Modern skyline featuring China Zun Tower (528m), CCTV Headquarters, and other contemporary architecture"
-                                     class="lightbox-trigger">
-                                <div class="gallery-caption">
-                                    <p class="caption-text">
-                                        <span class="caption-icon">🏙️</span>
-                                        Beijing CBD - Modern skyline and architecture
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Explore Other Cities -->
-            <div class="city-nav">
-                <h3>Explore Other Chinese Cities</h3>
-                <div class="city-links">
-<a href="shanghai.html" class="city-link">Shanghai</a>
-<a href="chengdu.html" class="city-link">Chengdu</a>
-<a href="qingdao.html" class="city-link">Qingdao</a>
-<a href="xiamen.html" class="city-link">Xiamen</a>
-<a href="wuxi.html" class="city-link">Wuxi</a>
-<a href="hongkong.html" class="city-link">Hongkong</a>
-<a href="chongqing.html" class="city-link">Chongqing</a>
-<a href="harbin.html" class="city-link">Harbin</a>
-<a href="guangzhou.html" class="city-link">Guangzhou</a>
-<a href="shenzhen.html" class="city-link">Shenzhen</a>
-<a href="nanjing.html" class="city-link">Nanjing</a>
-<a href="guilin.html" class="city-link">Guilin</a>
-<a href="guiyang.html" class="city-link">Guiyang</a>
-<a href="kunming.html" class="city-link">Kunming</a>
-<a href="dali.html" class="city-link">Dali</a>
-<a href="jinan.html" class="city-link">Jinan</a>
-<a href="datong.html" class="city-link">Datong</a>
-<a href="linyi.html" class="city-link">Linyi</a>
-<a href="taiyuan.html" class="city-link">Taiyuan</a>
-<a href="urumqi.html" class="city-link">Urumqi</a>
-<a href="hangzhou.html" class="city-link">Hangzhou</a>
-<a href="kashi.html" class="city-link">Kashi</a>
-<a href="wuhan.html" class="city-link">Wuhan</a>
-<a href="suzhou.html" class="city-link">Suzhou</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW SECTIONS TEMPLATE -->
-    
-    <!-- Interactive Map Section -->
-    <section class="map-section" id="map">
-        <div class="container">
-            <h2>Beijing Interactive Map</h2>
-            <p>Explore Beijing's key attractions with our interactive map. Click on markers to learn more about each location.</p>
-            
-            <div class="map-container">
-                <div class="map-placeholder">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <h3>Interactive Beijing Map</h3>
-                    <p>This interactive map shows Beijing's major attractions, restaurants, and transportation hubs.</p>
-                    <p><small>In a full implementation, this would be a live map with clickable markers.</small></p>
-                </div>
-                
-                <!-- Map markers (positioned absolutely) -->
-                <div class="map-marker" style="top: 30%; left: 40%;" data-title="Forbidden City" data-desc="Imperial palace from Ming to Qing dynasties">
-                    <div class="marker-tooltip">
-                        <h5>Forbidden City</h5>
-                        <p>Imperial palace complex with 980 buildings, home to 24 emperors.</p>
-                    </div>
-                </div>
-                
-                <div class="map-marker" style="top: 50%; left: 60%;" data-title="Temple of Heaven" data-desc="Imperial complex for prayer for good harvests">
-                    <div class="marker-tooltip">
-                        <h5>Temple of Heaven</h5>
-                        <p>Where emperors prayed for good harvests. UNESCO World Heritage site.</p>
-                    </div>
-                </div>
-                
-                <div class="map-marker" style="top: 70%; left: 30%;" data-title="Summer Palace" data-desc="Imperial garden with lakes and palaces">
-                    <div class="marker-tooltip">
-                        <h5>Summer Palace</h5>
-                        <p>Imperial garden with Kunming Lake and Longevity Hill.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="transport-tip">
-                <strong>💡 Tip:</strong> Beijing's attractions are spread out. Use the metro system (lines 1, 2, and 8 serve most tourist sites) or taxis for longer distances.
-            </div>
-        </div>
-    </section>
-    
-    <!-- Local Cuisine Section -->
-    <section class="cuisine-section" id="cuisine">
-        <div class="container">
-            <h2>Beijing Local Cuisine</h2>
-            <p>Discover the flavors of Beijing with these must-try dishes and recommended restaurants.</p>
-            
-            <div class="cuisine-grid">
-                <!-- Peking Duck -->
-                <div class="cuisine-card">
-                    <div class="cuisine-image" style="background-image: url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="cuisine-content">
-                        <h3 class="cuisine-title">Peking Duck</h3>
-                        <p class="cuisine-description">Beijing's most famous dish features crispy skin and tender meat served with pancakes, scallions, and sweet bean sauce.</p>
-                        <div class="cuisine-tags">
-                            <span class="cuisine-tag">Signature Dish</span>
-                            <span class="cuisine-tag">Must-Try</span>
-                            <span class="cuisine-tag">Imperial Cuisine</span>
-                        </div>
-                        
-                        <div class="restaurant-list">
-                            <div class="restaurant-item">
-                                <span class="restaurant-name">Quanjude Roast Duck</span>
-                                <span class="restaurant-rating">⭐ 4.5/5</span>
-                            </div>
-                            <div class="restaurant-item">
-                                <span class="restaurant-name">Da Dong Roast Duck</span>
-                                <span class="restaurant-rating">⭐ 4.7/5</span>
-                            </div>
-                            <div class="restaurant-item">
-                                <span class="restaurant-name">Bianyifang Roast Duck</span>
-                                <span class="restaurant-rating">⭐ 4.3/5</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Zhajiangmian -->
-                <div class="cuisine-card">
-                    <div class="cuisine-image" style="background-image: url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="cuisine-content">
-                        <h3 class="cuisine-title">Zhajiangmian</h3>
-                        <p class="cuisine-description">Wheat noodles topped with fermented soybean paste, ground pork, and fresh vegetables.</p>
-                        <div class="cuisine-tags">
-                            <span class="cuisine-tag">Noodles</span>
-                            <span class="cuisine-tag">Street Food</span>
-                            <span class="cuisine-tag">Affordable</span>
-                        </div>
-                        
-                        <div class="restaurant-list">
-                            <div class="restaurant-item">
-                                <span class="restaurant-name">Old Beijing Zhajiangmian</span>
-                                <span class="restaurant-rating">⭐ 4.2/5</span>
-                            </div>
-                            <div class="restaurant-item">
-                                <span class="restaurant-name">Noodle Legend</span>
-                                <span class="restaurant-rating">⭐ 4.4/5</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Mongolian Hot Pot -->
-                <div class="cuisine-card">
-                    <div class="cuisine-image" style="background-image: url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="cuisine-content">
-                        <h3 class="cuisine-title">Mongolian Hot Pot</h3>
-                        <p class="cuisine-description">Thinly sliced meat and vegetables cooked in a simmering broth at your table.</p>
-                        <div class="cuisine-tags">
-                            <span class="cuisine-tag">Hot Pot</span>
-                            <span class="cuisine-tag">Social Dining</span>
-                            <span class="cuisine-tag">Winter Favorite</span>
-                        </div>
-                        
-                        <div class="restaurant-list">
-                            <div class="restaurant-item">
-                                <span class="restaurant-name">Haidilao Hot Pot</span>
-                                <span class="restaurant-rating">⭐ 4.8/5</span>
-                            </div>
-                            <div class="restaurant-item">
-                                <span class="restaurant-name">Donglaishun</span>
-                                <span class="restaurant-rating">⭐ 4.5/5</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Transportation Section -->
-    <section class="transport-section" id="transportation">
-        <div class="container">
-            <h2>Getting Around Beijing</h2>
-            <p>Beijing has an extensive transportation network. Here's how to navigate the city efficiently.</p>
-            
-            <div class="transport-grid">
-                <div class="transport-card">
-                    <div class="transport-icon">🚇</div>
-                    <h3 class="transport-title">Metro System</h3>
-                    <p class="transport-description">Beijing's metro is the world's largest by route length. Clean, efficient, and affordable way to travel.</p>
-                    <p><strong>Cost:</strong> ¥3-¥9 per ride</p>
-                    <p><strong>Hours:</strong> 5:00 AM - 11:30 PM</p>
-                </div>
-                
-                <div class="transport-card">
-                    <div class="transport-icon">🚕</div>
-                    <h3 class="transport-title">Taxis & Ride-Hailing</h3>
-                    <p class="transport-description">Taxis are plentiful and affordable. Use Didi (Chinese Uber) for convenient ride-hailing.</p>
-                    <p><strong>Base Fare:</strong> ¥13 for first 3km</p>
-                    <p><strong>Apps:</strong> Didi, Meituan</p>
-                </div>
-                
-                <div class="transport-card">
-                    <div class="transport-icon">🚌</div>
-                    <h3 class="transport-title">Public Buses</h3>
-                    <p class="transport-description">Extensive bus network covering all areas. Cheaper than metro but can be crowded.</p>
-                    <p><strong>Cost:</strong> ¥2-¥10 depending on distance</p>
-                    <p><strong>Payment:</strong> Yikatong card or cash</p>
-                </div>
-                
-                <div class="transport-card">
-                    <div class="transport-icon">🚲</div>
-                    <h3 class="transport-title">Bike Sharing</h3>
-                    <p class="transport-description">Mobike and Hello Bike offer convenient bike sharing for short distances.</p>
-                    <p><strong>Cost:</strong> ¥1.5 per 30 minutes</p>
-                    <p><strong>Apps:</strong> Mobike, Hello Bike</p>
-                </div>
-            </div>
-            
-            <div class="transport-tip">
-                <strong>📱 Essential Apps:</strong> Download Baidu Maps for navigation, Didi for ride-hailing, and Alipay/WeChat Pay for cashless payments throughout Beijing.
-            </div>
-        </div>
-    </section>
-    
-    <!-- Suggested Itineraries Section -->
-    <section class="itinerary-section" id="itineraries">
-        <div class="container">
-            <h2>Suggested Beijing Itineraries</h2>
-            <p>Plan your perfect Beijing trip with these curated itineraries for different travel styles.</p>
-            
-            <div class="itinerary-tabs">
-                <button class="itinerary-tab active" data-itinerary="classic">Classic 3-Day</button>
-                <button class="itinerary-tab" data-itinerary="cultural">Cultural 5-Day</button>
-                <button class="itinerary-tab" data-itinerary="family">Family Friendly</button>
-                <button class="itinerary-tab" data-itinerary="food">Food Lover's</button>
-            </div>
-            
-            <!-- Classic 3-Day Itinerary -->
-            <div class="itinerary-content active" id="classic-itinerary">
-                <div class="itinerary-day">
-                    <div class="day-header">
-                        <h3 class="day-title">Day 1: Imperial Beijing</h3>
-                        <span class="day-duration">Full Day</span>
-                    </div>
-                    <ul class="day-schedule">
-                        <li class="schedule-item">
-                            <span class="schedule-time">9:00 AM</span>
-                            <div class="schedule-activity">
-                                <div class="activity-title">Tiananmen Square</div>
-                                <div class="activity-description">Start at the world's largest public square</div>
-                            </div>
-                        </li>
-                        <li class="schedule-item">
-                            <span class="schedule-time">10:00 AM</span>
-                            <div class="schedule-activity">
-                                <div class="activity-title">Forbidden City</div>
-                                <div class="activity-description">Explore the imperial palace (book tickets in advance)</div>
-                            </div>
-                        </li>
-                        <li class="schedule-item">
-                            <span class="schedule-time">1:00 PM</span>
-                            <div class="schedule-activity">
-                                <div class="activity-title">Lunch at Wangfujing</div>
-                                <div class="activity-description">Try local snacks at the famous food street</div>
-                            </div>
-                        </li>
-                        <li class="schedule-item">
-                            <span class="schedule-time">3:00 PM</span>
-                            <div class="schedule-activity">
-                                <div class="activity-title">Jingshan Park</div>
-                                <div class="activity-description">Panoramic view of the Forbidden City</div>
-                            </div>
-                        </li>
-                        <li class="schedule-item">
-                            <span class="schedule-time">7:00 PM</span>
-                            <div class="schedule-activity">
-                                <div class="activity-title">Peking Duck Dinner</div>
-                                <div class="activity-description">Quanjude or Da Dong for authentic experience</div>
-                            </div>
-                        </li>
+    <main class="container city-content bg-light rounded-top-5 shadow-lg" style="--bs-bg-opacity: .95;">
+        
+        <div class="row">
+            <div class="col-lg-3">
+                <nav class="jump-nav">
+                    <h4><i class="fas fa-compass"></i> Explore Beijing</h4>
+                    <ul class="jump-nav-list">
+                        <li class="jump-nav-item"><a href="#overview" class="jump-nav-link active"><i class="fas fa-info-circle jump-nav-icon"></i>Overview</a></li>
+                        <li class="jump-nav-item"><a href="#gallery" class="jump-nav-link"><i class="fas fa-images jump-nav-icon"></i>Gallery</a></li>
+                        <li class="jump-nav-item"><a href="#map" class="jump-nav-link"><i class="fas fa-map-marked-alt jump-nav-icon"></i>Map</a></li>
+                        <li class="jump-nav-item"><a href="#cuisine" class="jump-nav-link"><i class="fas fa-utensils jump-nav-icon"></i>Cuisine</a></li>
+                        <li class="jump-nav-item"><a href="#transport" class="jump-nav-link"><i class="fas fa-subway jump-nav-icon"></i>Transport</a></li>
+                        <li class="jump-nav-item"><a href="#itinerary" class="jump-nav-link"><i class="fas fa-calendar-alt jump-nav-icon"></i>Itinerary</a></li>
                     </ul>
-                </div>
-                
-                <div class="itinerary-day">
-                    <div class="day-header">
-                        <h3 class="day-title">Day 2: Great Wall Adventure</h3>
-                        <span class="day-duration">Full Day</span>
-                    </div>
-                    <ul class="day-schedule">
-                        <li class="schedule-item">
-                            <span class="schedule-time">7:00 AM</span>
-                            <div class="schedule-activity">
-                                <div class="activity-title">Depart for Mutianyu</div>
-                                <div class="activity-description">Private car or tour bus (1.5-2 hours)</div>
-                            </div>
-                        </li>
-                        <li class="schedule-item">
-                            <span class="schedule-time">9:30 AM</span>
-                            <div class="schedule-activity">
-                                <div class="activity-title">Great Wall Hike</div>
-                                <div class="activity-description">Cable car up, hike along restored sections</div>
-                            </div>
-                        </li>
-                        <li class="schedule-item">
-                            <span class="schedule-time">1:00 PM</span>
-                            <div class="schedule-activity">
-                                <div class="activity-title">Lunch at Local Restaurant</div>
-                                <div class="activity-description">Try rustic Chinese dishes near the Wall</div>
-                            </div>
-                        </li>
-                        <li class="schedule-item">
-                            <span class="schedule-time">4:00 PM</span>
-                            <div class="schedule-activity">
-                                <div class="activity-title">Return to Beijing</div>
-                                <div class="activity-description">Rest at hotel or explore hutongs</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="itinerary-tips">
-                    <h4>📝 Planning Tips</h4>
-                    <p>• Book Forbidden City tickets at least 3 days in advance online<br>
-                       • Wear comfortable shoes for extensive walking<br>
-                       • Consider hiring a private guide for the Great Wall for flexibility<br>
-                       • Purchase a transportation card (Yikatong) for metro/bus convenience</p>
-                </div>
+                </nav>
             </div>
-            
-            <!-- Cultural 5-Day Itinerary (hidden by default) -->
-            <div class="itinerary-content" id="cultural-itinerary">
-                <div class="itinerary-day">
-                    <div class="day-header">
-                        <h3 class="day-title">Day 1-2: Imperial Heritage</h3>
-                        <span class="day-duration">2 Days</span>
-                    </div>
-                    <p>Forbidden City, Temple of Heaven, Summer Palace, Lama Temple, Confucius Temple</p>
-                </div>
-                <!-- More days would be here in a full implementation -->
-            </div>
-            
-            <!-- JavaScript for tab switching -->
-            <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const tabs = document.querySelectorAll('.itinerary-tab');
-                const contents = document.querySelectorAll('.itinerary-content');
-                
-                tabs.forEach(tab => {
-                    tab.addEventListener('click', function() {
-                        const itineraryId = this.getAttribute('data-itinerary');
-                        
-                        // Update active tab
-                        tabs.forEach(t => t.classList.remove('active'));
-                        this.classList.add('active');
-                        
-                        // Show corresponding content
-                        contents.forEach(content => {
-                            content.classList.remove('active');
-                            if (content.id === `${itineraryId}-itinerary`) {
-                                content.classList.add('active');
-                            }
-                        });
-                    });
-                });
-                
-                // Map marker interactivity
-                const markers = document.querySelectorAll('.map-marker');
-                markers.forEach(marker => {
-                    marker.addEventListener('mouseenter', function() {
-                        const tooltip = this.querySelector('.marker-tooltip');
-                        if (tooltip) {
-                            tooltip.style.display = 'block';
-                            tooltip.style.left = '40px';
-                            tooltip.style.top = '0';
-                        }
-                    });
-                    
-                    marker.addEventListener('mouseleave', function() {
-                        const tooltip = this.querySelector('.marker-tooltip');
-                        if (tooltip) {
-                            tooltip.style.display = 'none';
-                        }
-                    });
-                });
-                
-                console.log('✅ Beijing page enhancements loaded');
-            });
-            </script>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
+            <div class="col-lg-9">
+                <section id="overview" class="city-section">
+                    <h2><i class="fas fa-landmark"></i> City Overview</h2>
+                    <div class="city-highlight">
+                        <h3>Imperial Grandeur & Modern Marvel</h3>
+                        <p>Beijing, the capital of the People's Republic of China, is a city of immense scale and historical significance. For centuries, it has been the center of power, culture, and art in China. Its landscape is a testament to its journey through time, with the imperial grandeur of the Forbidden City and the Great Wall standing alongside the architectural marvels of the modern era, like the CCTV Headquarters and the "Bird's Nest" stadium.</p>
+                    </div>
+                    <p>As you walk through Beijing, you are treading on layers of history. The city's layout, centered around the north-south axis, reflects ancient Chinese cosmology. The hutongs, traditional alleyway neighborhoods, offer a glimpse into the city's past, with their courtyard houses and bustling local life. Yet, just around the corner, you'll find gleaming skyscrapers, luxury shopping malls, and a vibrant contemporary art scene in the 798 Art District.</p>
+                    <p>Beijing is not just a city of monuments; it's a living, breathing metropolis. It's the political heart of the nation, a hub of education with prestigious universities, and a center for technological innovation. The energy of its 21 million residents is palpable, from the morning exercises in the parks to the bustling nightlife in Sanlitun. Despite its rapid modernization, Beijing retains a unique charm, a blend of the stately and the dynamic, the ancient and the avant-garde.</p>
+                </section>
+
+                <section id="gallery" class="city-section">
+                    <h2><i class="fas fa-camera-retro"></i> Visual Journey</h2>
+                    <div class="city-gallery">
+                        <div class="gallery-item">
+                            <img src="../images/user_photos/beijing_1.jpg?v=1771200340" alt="The Forbidden City" class="gallery-img" data-caption="The majestic Forbidden City, former imperial palace." data-index="0">
+                            <div class="gallery-caption">
+                                <p class="caption-text"><i class="fas fa-camera caption-icon"></i>The Forbidden City</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="../images/user_photos/beijing_2.jpg?v=1771200340" alt="The Great Wall of China" class="gallery-img" data-caption="A stunning view of the Great Wall at Mutianyu." data-index="1">
+                            <div class="gallery-caption">
+                                <p class="caption-text"><i class="fas fa-camera caption-icon"></i>The Great Wall</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="../images/user_photos/beijing_3.jpg?v=1771200340" alt="The Temple of Heaven" class="gallery-img" data-caption="The iconic Hall of Prayer for Good Harvests at the Temple of Heaven." data-index="2">
+                            <div class="gallery-caption">
+                                <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Temple of Heaven</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="map" class="map-section">
+                    <h2><i class="fas fa-map-signs"></i> Interactive City Map</h2>
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <h4>Interactive Map Coming Soon</h4>
+                            <p>Explore Beijing's landmarks and hidden gems.</p>
+                        </div>
+                        <!-- Example Markers -->
+                        <div class="map-marker" style="top: 40%; left: 50%;" data-title="Forbidden City" data-desc="Imperial palace complex at the heart of Beijing."></div>
+                        <div class="map-marker" style="top: 20%; left: 25%;" data-title="Summer Palace" data-desc="A vast ensemble of lakes, gardens and palaces."></div>
+                        <div class="map-marker" style="top: 65%; left: 70%;" data-title="Temple of Heaven" data-desc="A complex of religious buildings visited by Emperors."></div>
+                    </div>
+                    <div class="marker-tooltip"></div>
+                </section>
+                
+                <section id="cuisine" class="cuisine-section">
+                    <h2><i class="fas fa-pepper-hot"></i> A Taste of Beijing</h2>
+                    <div class="cuisine-grid">
+                        <!-- Peking Duck -->
+                        <div class="cuisine-card">
+                            <div class="cuisine-image" style="background-image: url('../images/beijing_cuisine_1.jpg');"></div>
+                            <div class="cuisine-content">
+                                <h3 class="cuisine-title">Peking Duck (北京烤鸭)</h3>
+                                <p class="cuisine-description">The quintessential Beijing dish, famous for its crispy skin and tender meat, often served with pancakes and sweet bean sauce.</p>
+                                <div class="cuisine-tags">
+                                    <span class="cuisine-tag">Iconic</span>
+                                    <span class="cuisine-tag">Poultry</span>
+                                    <span class="cuisine-tag">Must-Try</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Zhajiangmian -->
+                        <div class="cuisine-card">
+                            <div class="cuisine-image" style="background-image: url('../images/beijing_cuisine_2.jpg');"></div>
+                            <div class="cuisine-content">
+                                <h3 class="cuisine-title">Zhajiangmian (炸酱面)</h3>
+                                <p class="cuisine-description">"Fried sauce noodles" - a hearty dish of thick wheat noodles topped with a rich, savory soybean paste and fresh vegetables.</p>
+                                <div class="cuisine-tags">
+                                    <span class="cuisine-tag">Local Favorite</span>
+                                    <span class="cuisine-tag">Noodles</span>
+                                    <span class="cuisine-tag">Savory</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Jiaozi -->
+                        <div class="cuisine-card">
+                            <div class="cuisine-image" style="background-image: url('../images/beijing_cuisine_3.jpg');"></div>
+                            <div class="cuisine-content">
+                                <h3 class="cuisine-title">Jiaozi (饺子)</h3>
+                                <p class="cuisine-description">Chinese dumplings, a staple in Northern China. Enjoy them boiled, steamed, or pan-fried with various fillings.</p>
+                                <div class="cuisine-tags">
+                                    <span class="cuisine-tag">Comfort Food</span>
+                                    <span class="cuisine-tag">Dumplings</span>
+                                    <span class="cuisine-tag">Versatile</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="restaurant-list">
+                        <h4 class="mt-4 mb-3">Top Rated Restaurants:</h4>
+                        <div class="restaurant-item">
+                            <span class="restaurant-name"><i class="fas fa-utensils me-2"></i>Quanjude (全聚德)</span>
+                            <span class="restaurant-rating">★★★★★</span>
+                        </div>
+                        <div class="restaurant-item">
+                            <span class="restaurant-name"><i class="fas fa-utensils me-2"></i>Da Dong Roast Duck (大董烤鸭)</span>
+                            <span class="restaurant-rating">★★★★★</span>
+                        </div>
+                        <div class="restaurant-item">
+                            <span class="restaurant-name"><i class="fas fa-utensils me-2"></i>Haidilao Hot Pot (海底捞)</span>
+                            <span class="restaurant-rating">★★★★☆</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="transport" class="transport-section">
+                    <h2><i class="fas fa-route"></i> Getting Around</h2>
+                    <div class="transport-grid">
+                        <div class="transport-card">
+                            <i class="fas fa-subway transport-icon"></i>
+                            <h3 class="transport-title">Subway</h3>
+                            <p class="transport-description">The Beijing Subway is extensive, efficient, and the best way to navigate the city and avoid traffic.</p>
+                        </div>
+                        <div class="transport-card">
+                            <i class="fas fa-taxi transport-icon"></i>
+                            <h3 class="transport-title">Taxis & Ride-Hailing</h3>
+                            <p class="transport-description">Taxis are plentiful, and ride-hailing apps like Didi Chuxing are very convenient for direct routes.</p>
+                        </div>
+                        <div class="transport-card">
+                            <i class="fas fa-bicycle transport-icon"></i>
+                            <h3 class="transport-title">Bikes</h3>
+                            <p class="transport-description">Bike-sharing is ubiquitous and a great way to explore smaller streets and hutongs at your own pace.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="itinerary" class="itinerary-section">
+                    <h2><i class="fas fa-map-signs"></i> 3-Day Suggested Itinerary</h2>
+                    <div class="itinerary-timeline">
+                        <!-- Day 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-flag"></i></div>
+                            <div class="timeline-content">
+                                <h3 class="day-title">Day 1: Imperial Heart</h3>
+                                <ul class="activity-list">
+                                    <li class="activity-item">
+                                        <div class="activity-time">AM</div>
+                                        <div class="activity-details">
+                                            <h4 class="activity-title">Tiananmen Square & Forbidden City</h4>
+                                            <p class="activity-description">Start at the world's largest public square, then enter the magnificent Forbidden City.</p>
+                                        </div>
+                                    </li>
+                                    <li class="activity-item">
+                                        <div class="activity-time">PM</div>
+                                        <div class="activity-details">
+                                            <h4 class="activity-title">Jingshan Park & Hutong Tour</h4>
+                                            <p class="activity-description">Climb Jingshan Hill for a panoramic view of the Forbidden City, then explore the nearby hutongs by rickshaw.</p>
+                                        </div>
+                                    </li>
+                                    <li class="activity-item">
+                                        <div class="activity-time">Eve</div>
+                                        <div class="activity-details">
+                                            <h4 class="activity-title">Peking Duck Dinner</h4>
+                                            <p class="activity-description">Indulge in an authentic Peking Duck feast at a renowned restaurant.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Day 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-mountain"></i></div>
+                            <div class="timeline-content">
+                                <h3 class="day-title">Day 2: The Great Wall & Olympic Spirit</h3>
+                                <ul class="activity-list">
+                                    <li class="activity-item">
+                                        <div class="activity-time">All Day</div>
+                                        <div class="activity-details">
+                                            <h4 class="activity-title">Mutianyu Great Wall</h4>
+                                            <p class="activity-description">Take a day trip to a beautifully restored section of the Great Wall. Enjoy the cable car and toboggan ride.</p>
+                                        </div>
+                                    </li>
+                                    <li class="activity-item">
+                                        <div class="activity-time">Eve</div>
+                                        <div class="activity-details">
+                                            <h4 class="activity-title">Olympic Park</h4>
+                                            <p class="activity-description">Visit the 2008 Olympic venues, the "Bird's Nest" stadium and "Water Cube," beautifully lit up at night.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Day 3 -->
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-pray"></i></div>
+                            <div class="timeline-content">
+                                <h3 class="day-title">Day 3: Temples & Palaces</h3>
+                                <ul class="activity-list">
+                                    <li class="activity-item">
+                                        <div class="activity-time">AM</div>
+                                        <div class="activity-details">
+                                            <h4 class="activity-title">Temple of Heaven</h4>
+                                            <p class="activity-description">Visit the serene park and marvel at the architectural masterpiece where emperors prayed for good harvests.</p>
+                                        </div>
+                                    </li>
+                                    <li class="activity-item">
+                                        <div class="activity-time">PM</div>
+                                        <div class="activity-details">
+                                            <h4 class="activity-title">Summer Palace</h4>
+                                            <p class="activity-description">Explore the vast and beautiful imperial garden, with its lakes, temples, and pavilions.</p>
+                                        </div>
+                                    </li>
+                                    <li class="activity-item">
+                                        <div class="activity-time">Eve</div>
+                                        <div class="activity-details">
+                                            <h4 class="activity-title">Sanlitun for Dinner & Drinks</h4>
+                                            <p class="activity-description">Experience modern Beijing's vibrant nightlife in the trendy Sanlitun area.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="city-section">
+            <h2>Patent Data</h2>
+            <div class="patent-table">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Patent Number</th>
+                            <th>Title</th>
+                            <th>Current Assignee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>US-11941805-B2</td>
+                            <td>System and method for 3D try-on based on human pose and body shape estimation</td>
+                            <td>JD.com American Technologies Corporation</td>
+                        </tr>
+                        <tr>
+                            <td>US-11935029-B2</td>
+                            <td>System and method for product recommendation based on multimodal fashion knowledge graph</td>
+                            <td>JD.com American Technologies Corporation</td>
+                        </tr>
+                        <tr>
+                            <td>US-11922898-B2</td>
+                            <td>System and method for recognizing intersection by autonomous vehicles</td>
+                            <td>JD.com American Technologies Corporation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <div class="text-center my-5">
+        <a href="../index.html" class="back-home-btn">
+            <i class="fas fa-arrow-left back-home-icon"></i>
+            <span class="back-home-text">Back to Homepage</span>
+        </a>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-light">
         <div class="container text-center">
-            <p>&copy; 2026 Traveling China. All rights reserved.</p>
-            <div class="social-icons mt-3">
-                <a href="#"><i class="fab fa-weixin"></i></a>
-                <a href="#"><i class="fab fa-weibo"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-            </div>
+            <span class="text-muted">© 2024 Traveling China. All Rights Reserved.</span>
         </div>
     </footer>
 
+    <div class="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <button class="lightbox-nav lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img">
+            <div class="lightbox-counter"></div>
+            <div class="lightbox-caption"></div>
+        </div>
+        <button class="lightbox-nav lightbox-next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
-    <!-- Color references for monitoring system (hidden) -->
-    <div style="display: none;">
-        <span style="color: #2563eb;">primary</span>
-        <span style="color: #1e40af;">secondary</span>
-        <span style="color: #f59e0b;">accent</span>
-        <span style="color: #f8fafc;">light</span>
-        <span style="color: #1e293b;">dark</span>
-    </div>
-    
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" id="lightboxClose">&times;</button>
-        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
-        <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
-        <div class="lightbox-content">
-            <div class="lightbox-counter" id="lightboxCounter">1 / 3</div>
-            <img class="lightbox-img" id="lightboxImage" src="" alt="">
-            <div class="lightbox-caption" id="lightboxCaption"></div>
-        </div>
-    </div>
-    
-    <!-- LIGHTBOX JAVASCRIPT -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImage = document.getElementById('lightboxImage');
-        const lightboxCaption = document.getElementById('lightboxCaption');
-        const lightboxCounter = document.getElementById('lightboxCounter');
-        const lightboxClose = document.getElementById('lightboxClose');
-        const lightboxPrev = document.getElementById('lightboxPrev');
-        const lightboxNext = document.getElementById('lightboxNext');
-        const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
-        
-        if (!lightbox || lightboxTriggers.length === 0) return;
-        
-        let currentImageIndex = 0;
-        const images = Array.from(lightboxTriggers);
-        
-        // Open lightbox when clicking on an image
-        lightboxTriggers.forEach((img, index) => {
-            img.addEventListener('click', () => {
-                currentImageIndex = index;
-                updateLightbox();
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            });
-        });
-        
-        // Update lightbox content
-        function updateLightbox() {
-            const currentImage = images[currentImageIndex];
-            lightboxImage.src = currentImage.src;
-            lightboxImage.alt = currentImage.alt;
-            lightboxCaption.textContent = currentImage.getAttribute('data-caption') || currentImage.alt;
-            lightboxCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
-        }
-        
-        // Close lightbox
-        lightboxClose.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-        
-        // Click on backdrop to close
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-        
-        // Escape key to close
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-                lightbox.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-            
-            // Arrow key navigation
-            if (lightbox.classList.contains('active')) {
-                if (e.key === 'ArrowLeft') {
-                    navigateLightbox(-1);
-                } else if (e.key === 'ArrowRight') {
-                    navigateLightbox(1);
-                }
-            }
-        });
-        
-        // Navigation functions
-        function navigateLightbox(direction) {
-            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
-            updateLightbox();
-        }
-        
-        // Button navigation
-        lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
-        lightboxNext.addEventListener('click', () => navigateLightbox(1));
-        
-        console.log('✅ Lightbox feature initialized');
-    });
-    </script>
-    
-    <!-- JUMP NAVIGATION JAVASCRIPT -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const jumpNavLinks = document.querySelectorAll('.jump-nav-link');
-        const sections = document.querySelectorAll('.city-section, .map-section, .cuisine-section, .transport-section, .itinerary-section');
-        
-        if (jumpNavLinks.length === 0) return;
-        
-        // Smooth scroll to section
-        jumpNavLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                
-                if (targetSection) {
-                    // Update active link
-                    jumpNavLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scrolling for jump links
+            document.querySelectorAll('.jump-nav-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
                     
-                    // Smooth scroll to section
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 100,
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
                         behavior: 'smooth'
                     });
+
+                    // Update active state
+                    document.querySelectorAll('.jump-nav-link').forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Lightbox functionality
+            const galleryImages = document.querySelectorAll('.gallery-img');
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = document.querySelector('.lightbox-img');
+            const lightboxCaption = document.querySelector('.lightbox-caption');
+            const lightboxCounter = document.querySelector('.lightbox-counter');
+            const closeBtn = document.querySelector('.lightbox-close');
+            const prevBtn = document.querySelector('.lightbox-prev');
+            const nextBtn = document.querySelector('.lightbox-next');
+            let currentIndex = 0;
+
+            function showLightbox(index) {
+                currentIndex = index;
+                const img = galleryImages[currentIndex];
+                lightboxImg.src = img.src;
+                lightboxCaption.textContent = img.dataset.caption;
+                lightboxCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
+                lightbox.classList.add('active');
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+            }
+
+            function showPrev() {
+                currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+                showLightbox(currentIndex);
+            }
+
+            function showNext() {
+                currentIndex = (currentIndex + 1) % galleryImages.length;
+                showLightbox(currentIndex);
+            }
+
+            galleryImages.forEach((img, index) => {
+                img.addEventListener('click', () => showLightbox(index));
+            });
+
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', showPrev);
+            nextBtn.addEventListener('click', showNext);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
                 }
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.classList.contains('active')) {
+                    if (e.key === 'Escape') closeLightbox();
+                    if (e.key === 'ArrowLeft') showPrev();
+                    if (e.key === 'ArrowRight') showNext();
+                }
+            });
+
+            // Tooltip for map markers
+            const markers = document.querySelectorAll('.map-marker');
+            const tooltip = document.querySelector('.marker-tooltip');
+
+            markers.forEach(marker => {
+                marker.addEventListener('mouseenter', function(e) {
+                    tooltip.innerHTML = `<h5>${this.dataset.title}</h5><p>${this.dataset.desc}</p>`;
+                    tooltip.style.display = 'block';
+                    const rect = this.getBoundingClientRect();
+                    tooltip.style.left = `${rect.left + window.scrollX + (rect.width / 2) - (tooltip.offsetWidth / 2)}px`;
+                    tooltip.style.top = `${rect.top + window.scrollY - tooltip.offsetHeight - 10}px`;
+                });
+
+                marker.addEventListener('mouseleave', function() {
+                    tooltip.style.display = 'none';
+                });
             });
         });
-        
-        // Update active link based on scroll position
-        function updateActiveNavLink() {
-            let currentSectionId = '';
-            const scrollPosition = window.scrollY + 150;
-            
-            // Find which section is currently in view
-            sections.forEach(section => {
-                if (section.offsetTop <= scrollPosition) {
-                    currentSectionId = section.id;
-                }
-            });
-            
-            // Update active link
-            jumpNavLinks.forEach(link => {
-                const linkSectionId = link.getAttribute('href').substring(1);
-                if (linkSectionId === currentSectionId) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-        }
-        
-        // Update on scroll
-        window.addEventListener('scroll', updateActiveNavLink);
-        
-        // Initial update
-        updateActiveNavLink();
-        
-        console.log('✅ Jump navigation initialized');
-    });
     </script>
 </body>
 </html>

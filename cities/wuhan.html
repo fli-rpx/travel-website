@@ -11,6 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <style>
+        .patent-table {
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    </style>
+    <style>
         :root {
             --primary: #2563eb;
             --secondary: #1e40af;
@@ -261,7 +269,39 @@
             </div>
             
             <!-- Explore Other Cities -->
-            <div class="city-nav">
+            <div class="city-section">
+        <h2>Patent Data</h2>
+        <div class="patent-table">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Patent Number</th>
+                        <th>Title</th>
+                        <th>Current Assignee</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CN219564931U</td>
+                        <td>A kind of ship tail shaft sealing arrangement</td>
+                        <td>Wuchang Shipbuilding Industry Group Co., Ltd.</td>
+                    </tr>
+                    <tr>
+                        <td>CN116203023A</td>
+                        <td>Method and device for calculating propeller wet surface area and computer readable storage medium</td>
+                        <td>Wuchang Shipbuilding Industry Group Co., Ltd.</td>
+                    </tr>
+                    <tr>
+                        <td>CN219294039U</td>
+                        <td>A kind of cabin anti-riot door</td>
+                        <td>Wuchang Shipbuilding Industry Group Co., Ltd.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="city-nav">
                 <h3>Explore Other Chinese Cities</h3>
                 <div class="city-links">
 <a href="beijing.html" class="city-link">Beijing</a>

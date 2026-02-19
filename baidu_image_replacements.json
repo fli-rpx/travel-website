@@ -1,0 +1,56 @@
+{
+  "instructions": "Replace the Unsplash URLs below with your Baidu image URLs",
+  "note": "After downloading images from Baidu, update the URLs here and run update script",
+  "cities": {
+    "Beijing": {
+      "current_unsplash": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
+      "baidu_replacement": "REPLACE_WITH_BAIDU_IMAGE_URL",
+      "description": "Great Wall or Forbidden City image from Baidu",
+      "search_queries": [
+        "北京 长城",
+        "北京 故宫",
+        "北京 旅游 景点"
+      ]
+    },
+    "Shanghai": {
+      "current_unsplash": "https://images.unsplash.com/photo-1578645510447-e4b5c5d90673?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
+      "baidu_replacement": "REPLACE_WITH_BAIDU_IMAGE_URL",
+      "description": "Shanghai skyline or Bund image from Baidu",
+      "search_queries": [
+        "上海 外滩",
+        "上海 东方明珠",
+        "上海 夜景"
+      ]
+    },
+    "Chengdu": {
+      "current_unsplash": "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
+      "baidu_replacement": "REPLACE_WITH_BAIDU_IMAGE_URL",
+      "description": "Panda or Chengdu street image from Baidu",
+      "search_queries": [
+        "成都 熊猫",
+        "成都 大熊猫基地",
+        "成都 锦里"
+      ]
+    },
+    "Harbin": {
+      "current_unsplash": "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
+      "baidu_replacement": "REPLACE_WITH_BAIDU_IMAGE_URL",
+      "description": "Ice festival or snow scene from Baidu",
+      "search_queries": [
+        "哈尔滨 冰雪大世界",
+        "哈尔滨 冰雕",
+        "哈尔滨 雪景"
+      ]
+    },
+    "Chongqing": {
+      "current_unsplash": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
+      "baidu_replacement": "REPLACE_WITH_BAIDU_IMAGE_URL",
+      "description": "Mountain city or Hongya Cave from Baidu",
+      "search_queries": [
+        "重庆 山城",
+        "重庆 洪崖洞",
+        "重庆 夜景"
+      ]
+    }
+  }
+}

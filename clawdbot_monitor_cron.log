@@ -1,0 +1,120 @@
+[2026-02-07 23:50:00] [INFO] ======================================================================
+[2026-02-07 23:50:00] [INFO] 🔔 CLAWDBOT-INTEGRATED WEBSITE MONITOR
+[2026-02-07 23:50:00] [INFO] ======================================================================
+[2026-02-07 23:50:00] [INFO] Starting check: 2026-02-07 23:50:00
+[2026-02-07 23:50:00] [INFO] 
+🔍 CHECK 1: Images Readiness
+[2026-02-07 23:50:00] [INFO] 
+🔍 CHECK 2: Pages Readiness
+[2026-02-07 23:50:00] [INFO] 
+🔍 CHECK 3: Navigation Links
+[2026-02-07 23:50:00] [INFO] 
+🔍 CHECK 4: Layout & Colors
+[2026-02-07 23:50:00] [INFO] 
+📱 SENDING TELEGRAM ALERTS...
+[2026-02-07 23:50:00] [INFO] ✅ Telegram alert prepared in latest_telegram_alert.txt
+[2026-02-07 23:50:00] [INFO] ✅ Created trigger file: send_telegram_trigger.json
+[2026-02-07 23:50:00] [INFO]   Sent Images alert: FAILED
+[2026-02-07 23:50:00] [INFO] ✅ Telegram alert prepared in latest_telegram_alert.txt
+[2026-02-07 23:50:00] [INFO] ✅ Created trigger file: send_telegram_trigger.json
+[2026-02-07 23:50:00] [INFO]   Sent Pages alert: PASSED
+[2026-02-07 23:50:00] [INFO] ✅ Telegram alert prepared in latest_telegram_alert.txt
+[2026-02-07 23:50:00] [INFO] ✅ Created trigger file: send_telegram_trigger.json
+[2026-02-07 23:50:00] [INFO]   Sent Navigation alert: PASSED
+[2026-02-07 23:50:00] [INFO] ✅ Telegram alert prepared in latest_telegram_alert.txt
+[2026-02-07 23:50:00] [INFO] ✅ Created trigger file: send_telegram_trigger.json
+[2026-02-07 23:50:00] [INFO]   Sent Layout alert: PASSED
+[2026-02-07 23:50:00] [INFO] ✅ Telegram alert prepared in latest_telegram_alert.txt
+[2026-02-07 23:50:00] [INFO] ✅ Created trigger file: send_telegram_trigger.json
+[2026-02-07 23:50:00] [INFO] 
+✅ Sent summary alert
+[2026-02-07 23:50:00] [INFO] 
+======================================================================
+[2026-02-07 23:50:00] [INFO] 📊 CHECK SUMMARY
+[2026-02-07 23:50:00] [INFO] ======================================================================
+[2026-02-07 23:50:00] [INFO] Checks passed: 3/4
+[2026-02-07 23:50:00] [INFO] Issues found: 1
+[2026-02-07 23:50:00] [INFO] Fixes applied: 1
+[2026-02-07 23:50:00] [INFO] ⚠️  WEBSITE STATUS: NEEDS ATTENTION
+[2026-02-07 23:50:00] [INFO] 
+✅ Status saved to clawdbot_monitor_status.json
+[2026-02-08 00:00:00] [INFO] ======================================================================
+[2026-02-08 00:00:00] [INFO] 🔔 CLAWDBOT-INTEGRATED WEBSITE MONITOR
+[2026-02-08 00:00:00] [INFO] ======================================================================
+[2026-02-08 00:00:00] [INFO] Starting check: 2026-02-08 00:00:00
+[2026-02-08 00:00:00] [INFO] 
+🔍 CHECK 1: Images Readiness
+[2026-02-08 00:00:01] [INFO] 
+🔍 CHECK 2: Pages Readiness
+[2026-02-08 00:00:01] [INFO] 
+🔍 CHECK 3: Navigation Links
+[2026-02-08 00:00:01] [INFO] 
+🔍 CHECK 4: Layout & Colors
+[2026-02-08 00:00:01] [INFO] 
+📱 SENDING TELEGRAM ALERTS...
+[2026-02-08 00:00:01] [INFO] ✅ Telegram alert prepared in latest_telegram_alert.txt
+[2026-02-08 00:00:01] [INFO] ✅ Created trigger file: send_telegram_trigger.json
+[2026-02-08 00:00:01] [INFO]   Sent Images alert: FAILED
+[2026-02-08 00:00:01] [INFO] ✅ Telegram alert prepared in latest_telegram_alert.txt
+[2026-02-08 00:00:01] [INFO] ✅ Created trigger file: send_telegram_trigger.json
+[2026-02-08 00:00:01] [INFO]   Sent Pages alert: PASSED
+[2026-02-08 00:00:01] [INFO] ✅ Telegram alert prepared in latest_telegram_alert.txt
+[2026-02-08 00:00:01] [INFO] ✅ Created trigger file: send_telegram_trigger.json
+[2026-02-08 00:00:01] [INFO]   Sent Navigation alert: PASSED
+[2026-02-08 00:00:01] [INFO] ✅ Telegram alert prepared in latest_telegram_alert.txt
+[2026-02-08 00:00:01] [INFO] ✅ Created trigger file: send_telegram_trigger.json
+[2026-02-08 00:00:01] [INFO]   Sent Layout alert: PASSED
+[2026-02-08 00:00:01] [INFO] ✅ Telegram alert prepared in latest_telegram_alert.txt
+[2026-02-08 00:00:01] [INFO] ✅ Created trigger file: send_telegram_trigger.json
+[2026-02-08 00:00:01] [INFO] 
+✅ Sent summary alert
+[2026-02-08 00:00:01] [INFO] 
+======================================================================
+[2026-02-08 00:00:01] [INFO] 📊 CHECK SUMMARY
+[2026-02-08 00:00:01] [INFO] ======================================================================
+[2026-02-08 00:00:01] [INFO] Checks passed: 3/4
+[2026-02-08 00:00:01] [INFO] Issues found: 1
+[2026-02-08 00:00:01] [INFO] Fixes applied: 1
+[2026-02-08 00:00:01] [INFO] ⚠️  WEBSITE STATUS: NEEDS ATTENTION
+[2026-02-08 00:00:01] [INFO] 
+✅ Status saved to clawdbot_monitor_status.json
+[2026-02-08 00:10:00] [INFO] ======================================================================
+[2026-02-08 00:10:00] [INFO] 🔔 CLAWDBOT-INTEGRATED WEBSITE MONITOR
+[2026-02-08 00:10:00] [INFO] ======================================================================
+[2026-02-08 00:10:00] [INFO] Starting check: 2026-02-08 00:10:00
+[2026-02-08 00:10:00] [INFO] 
+🔍 CHECK 1: Images Readiness
+[2026-02-08 00:10:00] [INFO] 
+🔍 CHECK 2: Pages Readiness
+[2026-02-08 00:10:00] [INFO] 
+🔍 CHECK 3: Navigation Links
+[2026-02-08 00:10:00] [INFO] 
+🔍 CHECK 4: Layout & Colors
+[2026-02-08 00:10:00] [INFO] 
+📱 SENDING TELEGRAM ALERTS...
+[2026-02-08 00:10:00] [INFO] ✅ Telegram alert prepared in latest_telegram_alert.txt
+[2026-02-08 00:10:00] [INFO] ✅ Created trigger file: send_telegram_trigger.json
+[2026-02-08 00:10:00] [INFO]   Sent Images alert: FAILED
+[2026-02-08 00:10:00] [INFO] ✅ Telegram alert prepared in latest_telegram_alert.txt
+[2026-02-08 00:10:00] [INFO] ✅ Created trigger file: send_telegram_trigger.json
+[2026-02-08 00:10:00] [INFO]   Sent Pages alert: PASSED
+[2026-02-08 00:10:00] [INFO] ✅ Telegram alert prepared in latest_telegram_alert.txt
+[2026-02-08 00:10:00] [INFO] ✅ Created trigger file: send_telegram_trigger.json
+[2026-02-08 00:10:00] [INFO]   Sent Navigation alert: PASSED
+[2026-02-08 00:10:00] [INFO] ✅ Telegram alert prepared in latest_telegram_alert.txt
+[2026-02-08 00:10:00] [INFO] ✅ Created trigger file: send_telegram_trigger.json
+[2026-02-08 00:10:00] [INFO]   Sent Layout alert: PASSED
+[2026-02-08 00:10:00] [INFO] ✅ Telegram alert prepared in latest_telegram_alert.txt
+[2026-02-08 00:10:00] [INFO] ✅ Created trigger file: send_telegram_trigger.json
+[2026-02-08 00:10:00] [INFO] 
+✅ Sent summary alert
+[2026-02-08 00:10:00] [INFO] 
+======================================================================
+[2026-02-08 00:10:00] [INFO] 📊 CHECK SUMMARY
+[2026-02-08 00:10:00] [INFO] ======================================================================
+[2026-02-08 00:10:00] [INFO] Checks passed: 3/4
+[2026-02-08 00:10:00] [INFO] Issues found: 1
+[2026-02-08 00:10:00] [INFO] Fixes applied: 1
+[2026-02-08 00:10:00] [INFO] ⚠️  WEBSITE STATUS: NEEDS ATTENTION
+[2026-02-08 00:10:00] [INFO] 
+✅ Status saved to clawdbot_monitor_status.json

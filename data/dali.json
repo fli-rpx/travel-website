@@ -1,0 +1,90 @@
+{
+  "name": "Dali",
+  "title": "Dali - Traveling China like your home yard",
+  "heroTitle": "Dali",
+  "heroSubtitle": "Historic City in Yunnan Province",
+  "heroImage": "../images/user_photos/dali_hero_bg.jpg",
+  "overview": "Dali is a historic city in Yunnan Province, famous for its ancient town, Erhai Lake, and Cangshan Mountains. Known for its Bai ethnic minority culture, traditional architecture, and stunning natural scenery between mountains and lake. A popular destination for cultural tourism.",
+  "highlights": {
+    "attractions": "Dali Ancient Town, Three Pagodas, Erhai Lake, Cangshan Mountains",
+    "cuisine": "Rushan Cheese, Xizhou Baba, Dali-style Hot Pot, Erhai Lake Fish",
+    "bestTime": "Spring (March-May) and Autumn (September-November) with pleasant weather"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Rushan Cheese",
+        "description": "Traditional Bai ethnic minority cheese, often grilled and served with honey."
+      },
+      {
+        "name": "Xizhou Baba",
+        "description": "Local flatbread specialty from Xizhou Town, crispy and flavorful."
+      },
+      {
+        "name": "Erhai Lake Fish",
+        "description": "Fresh fish from Erhai Lake, prepared in traditional Bai style."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Dali Ancient Town Food Street",
+        "description": "Traditional Bai cuisine and local specialties in the historic old town."
+      },
+      {
+        "name": "Xizhou Town",
+        "description": "Famous for local snacks and traditional Bai ethnic minority cuisine."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Dali Airport (DLU) with domestic flights from major Chinese cities",
+      "By Train: High-speed rail connects Dali to Kunming and other Yunnan cities",
+      "By Bus: Long-distance bus services from Kunming and neighboring cities"
+    ],
+    "gettingAround": [
+      "Bicycle: Popular way to explore Erhai Lake and surrounding areas",
+      "Taxi: Available for short distances within the city",
+      "Bus: Local bus services to major attractions",
+      "Walking: Best way to explore Dali Ancient Town"
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Ancient Town Exploration",
+      "activities": [
+        "Morning: Explore Dali Ancient Town and its traditional Bai architecture",
+        "Afternoon: Visit Three Pagodas and Chongsheng Temple",
+        "Evening: Walk around the ancient town when it's beautifully lit"
+      ]
+    },
+    {
+      "day": "Day 2: Nature and Culture",
+      "activities": [
+        "Morning: Take a cable car up Cangshan Mountains for hiking trails",
+        "Afternoon: Rent a bicycle and cycle around Erhai Lake",
+        "Evening: Enjoy local Bai cuisine in Xizhou Town"
+      ]
+    },
+    {
+      "day": "Day 3: Local Experience",
+      "activities": [
+        "Morning: Visit local markets and experience Bai ethnic culture",
+        "Afternoon: Explore Xizhou Town and try local specialties",
+        "Evening: Relax by Erhai Lake and enjoy the sunset"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/dali_1_optimized.jpg",
+    "../images/user_photos/dali_2_optimized.jpg",
+    "../images/user_photos/dali_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

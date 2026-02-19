@@ -1,0 +1,90 @@
+{
+  "name": "Datong",
+  "title": "Datong - Traveling China like your home yard",
+  "heroTitle": "Datong",
+  "heroSubtitle": "Ancient Capital & Modern Metropolis",
+  "heroImage": "../images/user_photos/datong_hero_bg.jpg",
+  "overview": "Datong is a historic city in Shanxi Province, famous for its ancient Buddhist grottoes and rich cultural heritage. Known for the UNESCO World Heritage Yungang Grottoes and the remarkable Hanging Temple built into a cliff face, Datong offers a glimpse into China's Buddhist art and architecture from the Northern Wei Dynasty.",
+  "highlights": {
+    "attractions": "Yungang Grottoes (UNESCO World Heritage), Datong Ancient City Wall (Ming Dynasty), Nine Dragon Screen (ancient glazed tile mural), Huayan Temple",
+    "cuisine": "Datong Knife-cut Noodles (Dao Xiao Mian), Braised Lamb (Hong Shao Yang Rou), Shanxi Vinegar dishes, You Mian (oat noodles)",
+    "bestTime": "Spring (April-May) and Autumn (September-October) with mild weather"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Datong Knife-cut Noodles",
+        "description": "Hand-cut noodles with unique texture, served with various sauces and toppings."
+      },
+      {
+        "name": "Braised Lamb",
+        "description": "Tender lamb slow-cooked with traditional Shanxi spices and seasonings."
+      },
+      {
+        "name": "Shanxi Vinegar Dishes",
+        "description": "Local dishes featuring the famous aged Shanxi vinegar as a key ingredient."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Datong Ancient City Food Street",
+        "description": "Traditional Shanxi cuisine and local specialties in the historic city center."
+      },
+      {
+        "name": "Yungang Grottoes Area",
+        "description": "Local restaurants serving authentic Datong dishes near the famous grottoes."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Datong Yungang Airport (DAT) with domestic flights from major cities",
+      "By Train: High-speed rail connects Datong to Beijing, Taiyuan, and other cities",
+      "By Bus: Long-distance bus services from Beijing and neighboring provinces"
+    ],
+    "gettingAround": [
+      "Bus: Public bus system connecting major attractions",
+      "Taxi: Available for convenient travel within the city",
+      "Walking: Best way to explore the ancient city area",
+      "Tour Bus: Organized tours to Yungang Grottoes and other attractions"
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Buddhist Heritage",
+      "activities": [
+        "Morning: Visit Yungang Grottoes (UNESCO World Heritage site)",
+        "Afternoon: Explore Huayan Temple and its ancient architecture",
+        "Evening: Walk around Datong Ancient City Wall area"
+      ]
+    },
+    {
+      "day": "Day 2: Ancient Architecture",
+      "activities": [
+        "Morning: Visit the Nine Dragon Screen (ancient glazed tile mural)",
+        "Afternoon: Explore Datong Ancient City Wall and historic center",
+        "Evening: Enjoy local Shanxi cuisine at traditional restaurants"
+      ]
+    },
+    {
+      "day": "Day 3: Cultural Experience",
+      "activities": [
+        "Morning: Visit local museums and cultural sites",
+        "Afternoon: Explore traditional markets and try local snacks",
+        "Evening: Experience Datong's night market and street food"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/datong_1_optimized.jpg",
+    "../images/user_photos/datong_2_optimized.jpg",
+    "../images/user_photos/datong_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

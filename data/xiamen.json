@@ -1,0 +1,90 @@
+{
+  "name": "Xiamen",
+  "title": "Xiamen - Traveling China like your home yard",
+  "heroTitle": "Xiamen",
+  "heroSubtitle": "Coastal Garden City",
+  "heroImage": "../images/user_photos/xiamen_hero_bg.jpg",
+  "overview": "Xiamen is a coastal city in Fujian Province, known for its pleasant climate, beautiful beaches, and colonial architecture. Famous for Gulangyu Island, a pedestrian-only island with historic buildings and scenic views, Xiamen offers a relaxing and culturally rich travel experience.",
+  "highlights": {
+    "attractions": "Gulangyu Island, Nanputuo Temple, Xiamen University, Huandao Road",
+    "cuisine": "Seafood, Satay Noodles, Oyster Omelette, Spring Rolls",
+    "bestTime": "Year-round destination, best in Spring and Autumn with mild weather"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Satay Noodles",
+        "description": "Local specialty with noodles in rich satay soup, served with various toppings."
+      },
+      {
+        "name": "Oyster Omelette",
+        "description": "Popular street food with fresh oysters, eggs, and sweet potato starch."
+      },
+      {
+        "name": "Xiamen Spring Rolls",
+        "description": "Delicate spring rolls with various fillings, a traditional local snack."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Zhongshan Road",
+        "description": "Popular pedestrian street with local snacks and restaurants."
+      },
+      {
+        "name": "Taiwan Snack Street",
+        "description": "Food street with Taiwanese specialties and local cuisine."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Xiamen Gaoqi International Airport (XMN) with domestic and international flights",
+      "By Train: High-speed rail connects Xiamen to major cities including Shanghai and Shenzhen",
+      "By Bus: Long-distance bus services from neighboring provinces"
+    ],
+    "gettingAround": [
+      "Bus: Comprehensive public bus system",
+      "Taxi: Available for convenient travel",
+      "Ferry: Regular ferry services to Gulangyu Island",
+      "Bicycle: Popular for exploring Huandao Road and coastal areas"
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Island Exploration",
+      "activities": [
+        "Morning: Take ferry to Gulangyu Island and explore its historic architecture",
+        "Afternoon: Visit Sunlight Rock for panoramic views",
+        "Evening: Enjoy fresh seafood dinner on the island"
+      ]
+    },
+    {
+      "day": "Day 2: Culture and Scenery",
+      "activities": [
+        "Morning: Visit Nanputuo Temple and Xiamen University campus",
+        "Afternoon: Cycle along Huandao Road and enjoy coastal views",
+        "Evening: Explore Zhongshan Road pedestrian street"
+      ]
+    },
+    {
+      "day": "Day 3: Local Experience",
+      "activities": [
+        "Morning: Visit local markets and try traditional snacks",
+        "Afternoon: Explore Jimei School Village and its unique architecture",
+        "Evening: Experience Xiamen's night life and food culture"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/xiamen_gulangyu_optimized.jpg",
+    "../images/user_photos/xiamen_university_optimized.jpg",
+    "../images/user_photos/xiamen_hulishan_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

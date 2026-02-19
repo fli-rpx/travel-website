@@ -1,0 +1,90 @@
+{
+  "name": "Urumqi",
+  "title": "Urumqi - Traveling China like your home yard",
+  "heroTitle": "Urumqi",
+  "heroSubtitle": "Gateway to Xinjiang",
+  "heroImage": "../images/user_photos/urumqi_hero_bg.jpg",
+  "overview": "Urumqi is the capital of Xinjiang Uyghur Autonomous Region, located in the heart of Central Asia. Known for its diverse ethnic cultures, bustling bazaars, and proximity to stunning natural landscapes like Heavenly Lake, Urumqi serves as a gateway to exploring the ancient Silk Road and the vast region of Xinjiang.",
+  "highlights": {
+    "attractions": "Heavenly Lake (Tianchi), Xinjiang Regional Museum, Grand Bazaar, Red Hill Park",
+    "cuisine": "Uyghur Polo, Lamb Kebabs, Naan Bread, Hand-pulled Noodles",
+    "bestTime": "Summer (June-August) for pleasant weather and access to natural areas"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Uyghur Polo",
+        "description": "Traditional Uyghur rice pilaf with lamb, carrots, and aromatic spices."
+      },
+      {
+        "name": "Lamb Kebabs",
+        "description": "Tender lamb skewers grilled over charcoal with cumin and spices."
+      },
+      {
+        "name": "Uyghur Naan",
+        "description": "Traditional flatbread baked in clay ovens, perfect with kebabs."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Grand Bazaar Food Street",
+        "description": "Vibrant food street with Uyghur specialties and local snacks."
+      },
+      {
+        "name": "Night Market Area",
+        "description": "Popular night market with street food and ethnic cuisine."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Urumqi Diwopu International Airport (URC) with domestic and international flights",
+      "By Train: Major railway hub connecting to cities across China",
+      "By Bus: Long-distance bus services from neighboring regions"
+    ],
+    "gettingAround": [
+      "Bus: Comprehensive public bus system",
+      "Taxi: Available for convenient travel",
+      "Metro: Modern subway system under development",
+      "Tour Bus: Organized tours to Heavenly Lake and other attractions"
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: City Exploration",
+      "activities": [
+        "Morning: Visit Xinjiang Regional Museum to see ancient artifacts",
+        "Afternoon: Explore the Grand Bazaar and its vibrant markets",
+        "Evening: Walk around Red Hill Park for city views"
+      ]
+    },
+    {
+      "day": "Day 2: Natural Wonders",
+      "activities": [
+        "Morning: Day trip to Heavenly Lake (Tianchi) in the Tianshan Mountains",
+        "Afternoon: Hike and enjoy the alpine scenery",
+        "Evening: Return to Urumqi and enjoy local cuisine"
+      ]
+    },
+    {
+      "day": "Day 3: Cultural Experience",
+      "activities": [
+        "Morning: Visit local mosques and cultural sites",
+        "Afternoon: Explore traditional neighborhoods and markets",
+        "Evening: Experience Uyghur culture and hospitality"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/wulumuqi_1_optimized.jpg",
+    "../images/user_photos/wulumuqi_2_optimized.jpg",
+    "../images/user_photos/wulumuqi_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

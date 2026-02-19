@@ -1,0 +1,90 @@
+{
+  "name": "Wuhan",
+  "title": "Wuhan - Traveling China like your home yard",
+  "heroTitle": "Wuhan",
+  "heroSubtitle": "River City & Cultural Hub",
+  "heroImage": "../images/user_photos/wuhan_hero_bg.jpg",
+  "overview": "Wuhan is the capital of Hubei Province, located at the confluence of the Yangtze and Han rivers. Known as the 'River City', Wuhan is famous for its important role in modern Chinese history, beautiful cherry blossoms, and as a major transportation hub connecting North and South China.",
+  "highlights": {
+    "attractions": "Yellow Crane Tower, East Lake, Wuhan University Cherry Blossoms, Yangtze River Bridge",
+    "cuisine": "Hot Dry Noodles, Duck Neck, Soup Dumplings, Fish Dishes",
+    "bestTime": "Spring (March-April) for cherry blossoms and Autumn (September-November)"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Hot Dry Noodles",
+        "description": "Wuhan's most famous dish - chewy noodles with sesame sauce and various toppings."
+      },
+      {
+        "name": "Duck Neck",
+        "description": "Spicy braised duck neck, a popular local snack and street food."
+      },
+      {
+        "name": "Wuhan Soup Dumplings",
+        "description": "Delicate dumplings with rich broth and savory fillings."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Hubu Alley",
+        "description": "Famous food street with traditional Wuhan snacks and local specialties."
+      },
+      {
+        "name": "Jiqing Street",
+        "description": "Popular night market area with street food and local cuisine."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Wuhan Tianhe International Airport (WUH) with domestic and international flights",
+      "By Train: Major railway hub with high-speed rail connections to all major cities",
+      "By Bus: Long-distance bus services from neighboring provinces"
+    ],
+    "gettingAround": [
+      "Metro: Modern subway system connecting major areas",
+      "Bus: Comprehensive public bus network",
+      "Taxi: Available for convenient travel",
+      "Ferry: River ferries connecting different parts of the city"
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Historic Sites",
+      "activities": [
+        "Morning: Visit Yellow Crane Tower for panoramic city views",
+        "Afternoon: Explore the Yangtze River Bridge area",
+        "Evening: Walk along the riverfront and enjoy local snacks"
+      ]
+    },
+    {
+      "day": "Day 2: Natural Beauty",
+      "activities": [
+        "Morning: Visit East Lake scenic area",
+        "Afternoon: Explore Wuhan University campus (especially during cherry blossom season)",
+        "Evening: Enjoy local cuisine at traditional restaurants"
+      ]
+    },
+    {
+      "day": "Day 3: Cultural Experience",
+      "activities": [
+        "Morning: Visit local museums and cultural sites",
+        "Afternoon: Explore traditional neighborhoods and markets",
+        "Evening: Experience Wuhan's night life and food culture"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/wuhan_1_optimized.jpg",
+    "../images/user_photos/wuhan_2_optimized.jpg",
+    "../images/user_photos/wuhan_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

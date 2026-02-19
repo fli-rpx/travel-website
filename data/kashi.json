@@ -1,0 +1,90 @@
+{
+  "name": "Kashi",
+  "title": "Kashi - Traveling China like your home yard",
+  "heroTitle": "Kashi",
+  "heroSubtitle": "Ancient Silk Road Oasis",
+  "heroImage": "../images/user_photos/kashi_hero_bg.jpg",
+  "overview": "Kashi (Kashgar) is an ancient city in Xinjiang Uyghur Autonomous Region, located on the historic Silk Road. Known for its vibrant bazaars, traditional Uyghur culture, and stunning desert landscapes, Kashi offers a unique blend of Central Asian and Chinese influences.",
+  "highlights": {
+    "attractions": "Id Kah Mosque, Kashgar Old Town, Sunday Bazaar, Abakh Khoja Tomb",
+    "cuisine": "Uyghur Polo, Kebabs, Naan Bread, Hand-pulled Noodles, Dried Fruits",
+    "bestTime": "Spring (April-May) and Autumn (September-October) with mild weather"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Uyghur Polo",
+        "description": "Traditional Uyghur rice pilaf with lamb, carrots, and aromatic spices."
+      },
+      {
+        "name": "Lamb Kebabs",
+        "description": "Tender lamb skewers grilled over charcoal with cumin and spices."
+      },
+      {
+        "name": "Uyghur Naan",
+        "description": "Traditional flatbread baked in clay ovens, perfect with kebabs."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Kashgar Night Market",
+        "description": "Vibrant night market with Uyghur specialties and street food."
+      },
+      {
+        "name": "Old Town Food Area",
+        "description": "Traditional Uyghur restaurants in the historic old town."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Kashgar Airport (KHG) with domestic flights from major Chinese cities",
+      "By Train: Railway connects Kashgar to Urumqi and other Xinjiang cities",
+      "By Bus: Long-distance bus services from neighboring regions"
+    ],
+    "gettingAround": [
+      "Taxi: Available for convenient travel within the city",
+      "Bus: Local bus system connecting major areas",
+      "Walking: Best way to explore the old town and bazaars",
+      "Donkey Cart: Traditional transportation in rural areas"
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Old Town Exploration",
+      "activities": [
+        "Morning: Explore Kashgar Old Town with traditional Uyghur architecture",
+        "Afternoon: Visit Id Kah Mosque, the largest mosque in China",
+        "Evening: Experience the vibrant night market"
+      ]
+    },
+    {
+      "day": "Day 2: Cultural Heritage",
+      "activities": [
+        "Morning: Visit Abakh Khoja Tomb and learn about Islamic architecture",
+        "Afternoon: Explore the Sunday Bazaar (if it's Sunday)",
+        "Evening: Enjoy traditional Uyghur music and dance"
+      ]
+    },
+    {
+      "day": "Day 3: Local Experience",
+      "activities": [
+        "Morning: Visit local workshops and craft centers",
+        "Afternoon: Explore traditional bazaars and try local cuisine",
+        "Evening: Experience Uyghur hospitality and culture"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/kashi_1_optimized.jpg",
+    "../images/user_photos/kashi_2_optimized.jpg",
+    "../images/user_photos/kashi_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

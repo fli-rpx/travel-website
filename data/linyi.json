@@ -4,7 +4,7 @@
   "title": "Linyi - Traveling China",
   "heroTitle": "Discover Linyi",
   "heroSubtitle": "A prefecture-level city in southern Shandong province, is a place where ancient history and modern dynamism converge.",
-  "heroImage": "../images/linyi-hero.jpg",
+  "heroImage": "../images/user_photos/linyi_hero_bg.jpg",
   "overview": "Linyi, a prefecture-level city in southern Shandong province, is a place where ancient history and modern dynamism converge. Known as the 'City of Calligraphy' and the hometown of the sage Wang Xizhi, Linyi boasts a rich cultural heritage. Today, it is a major center for trade and logistics in eastern China, with a rapidly growing economy. The city's landscape is graced by the Yi and Shu rivers, offering scenic beauty alongside urban development.",
   "highlights": {
     "attractions": "Wang Xizhi's Former Residence, Mengshan Mountain National Forest Park, Linyi Trade City",
@@ -43,9 +43,9 @@
     }
   ],
   "gallery": [
-    "../images/linyi-gallery-1.jpg",
-    "../images/linyi-gallery-2.jpg",
-    "../images/linyi-gallery-3.jpg"
+    "../images/user_photos/linyi_1_optimized.jpg",
+    "../images/user_photos/linyi_2_optimized.jpg",
+    "../images/user_photos/linyi_3_optimized.jpg"
   ],
   "patents": [
     {

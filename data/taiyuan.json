@@ -1,0 +1,90 @@
+{
+  "name": "Taiyuan",
+  "title": "Taiyuan - Traveling China like your home yard",
+  "heroTitle": "Taiyuan",
+  "heroSubtitle": "Ancient Capital of Shanxi",
+  "heroImage": "../images/user_photos/taiyuan_hero_bg.jpg",
+  "overview": "Taiyuan is the capital of Shanxi Province, with a history dating back over 2,500 years. Known as an important industrial and cultural center, Taiyuan offers historic temples, museums, and serves as a gateway to famous Buddhist sites like Mount Wutai and the ancient city of Pingyao.",
+  "highlights": {
+    "attractions": "Jinci Temple, Twin Pagoda Temple, Shanxi Museum, Fen River Park",
+    "cuisine": "Shanxi Vinegar Dishes, Knife-cut Noodles, Youmian (Oat Noodles), Lamb Soup",
+    "bestTime": "Spring (April-May) and Autumn (September-October) with mild weather"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Shanxi Vinegar Dishes",
+        "description": "Local dishes featuring the famous aged Shanxi vinegar as a key ingredient."
+      },
+      {
+        "name": "Taiyuan Knife-cut Noodles",
+        "description": "Hand-cut noodles with unique texture, served with various sauces."
+      },
+      {
+        "name": "Youmian (Oat Noodles)",
+        "description": "Traditional oat noodles, a specialty of northern Shanxi."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Food Street",
+        "description": "Popular area with traditional Shanxi cuisine and local specialties."
+      },
+      {
+        "name": "Old Town Area",
+        "description": "Historic district with local restaurants serving authentic dishes."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Taiyuan Wusu International Airport (TYN) with domestic flights",
+      "By Train: High-speed rail connects Taiyuan to Beijing and other major cities",
+      "By Bus: Long-distance bus services from neighboring provinces"
+    ],
+    "gettingAround": [
+      "Bus: Comprehensive public bus system",
+      "Taxi: Available for convenient travel",
+      "Metro: Modern subway system under development",
+      "Walking: Best way to explore historic areas and parks"
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Historic Sites",
+      "activities": [
+        "Morning: Visit Jinci Temple with ancient architecture and gardens",
+        "Afternoon: Explore Twin Pagoda Temple and surrounding area",
+        "Evening: Walk along Fen River Park scenic area"
+      ]
+    },
+    {
+      "day": "Day 2: Culture and Museums",
+      "activities": [
+        "Morning: Visit Shanxi Museum to learn about regional history",
+        "Afternoon: Explore Chongshan Temple and other historic sites",
+        "Evening: Enjoy local Shanxi cuisine at traditional restaurants"
+      ]
+    },
+    {
+      "day": "Day 3: Local Experience",
+      "activities": [
+        "Morning: Visit local markets and experience daily life",
+        "Afternoon: Explore parks and recreational areas",
+        "Evening: Experience Taiyuan's night markets and street food"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/taiyuan_1_optimized.jpg",
+    "../images/user_photos/taiyuan_2_optimized.jpg",
+    "../images/user_photos/taiyuan_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

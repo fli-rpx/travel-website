@@ -1,0 +1,90 @@
+{
+  "name": "Nanjing",
+  "title": "Nanjing - Traveling China like your home yard",
+  "heroTitle": "Nanjing",
+  "heroSubtitle": "Ancient Capital & Modern City",
+  "heroImage": "../images/user_photos/nanjing_hero_bg.jpg",
+  "overview": "Nanjing, the capital of Jiangsu Province, served as the capital of several Chinese dynasties and is known for its rich history and cultural significance. Famous for the Purple Mountain scenic area, the Presidential Palace, and the Memorial Hall of the Nanjing Massacre, Nanjing offers a deep dive into Chinese history and culture.",
+  "highlights": {
+    "attractions": "Purple Mountain, Sun Yat-sen Mausoleum, Presidential Palace, Confucius Temple",
+    "cuisine": "Nanjing Salted Duck, Duck Blood Soup, Steamed Dumplings, Osmanthus Duck",
+    "bestTime": "Spring (March-May) and Autumn (September-November) with mild weather"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Nanjing Salted Duck",
+        "description": "Famous local specialty with tender duck meat and unique seasoning."
+      },
+      {
+        "name": "Duck Blood Soup",
+        "description": "Traditional soup with duck blood, tofu, and vermicelli in rich broth."
+      },
+      {
+        "name": "Nanjing Steamed Dumplings",
+        "description": "Delicate dumplings with thin wrappers and savory fillings."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Confucius Temple Area",
+        "description": "Historic area with traditional Nanjing cuisine and snacks."
+      },
+      {
+        "name": "Laomendong",
+        "description": "Restored historic district with local restaurants and tea houses."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Nanjing Lukou International Airport (NKG) with domestic and international flights",
+      "By Train: High-speed rail connects Nanjing to major cities including Beijing and Shanghai",
+      "By Bus: Long-distance bus services from neighboring provinces"
+    ],
+    "gettingAround": [
+      "Metro: Modern subway system connecting major areas",
+      "Bus: Comprehensive public bus network",
+      "Taxi: Available for convenient travel",
+      "Walking: Best way to explore historic districts"
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Historic Sites",
+      "activities": [
+        "Morning: Visit Sun Yat-sen Mausoleum on Purple Mountain",
+        "Afternoon: Explore Ming Xiaoling Mausoleum and surrounding area",
+        "Evening: Walk around Xuanwu Lake scenic area"
+      ]
+    },
+    {
+      "day": "Day 2: Cultural Heritage",
+      "activities": [
+        "Morning: Visit Presidential Palace and learn about modern Chinese history",
+        "Afternoon: Explore Confucius Temple area and Qinhuai River",
+        "Evening: Enjoy traditional Nanjing cuisine at local restaurants"
+      ]
+    },
+    {
+      "day": "Day 3: Museums and Memorials",
+      "activities": [
+        "Morning: Visit Memorial Hall of the Nanjing Massacre",
+        "Afternoon: Explore Nanjing Museum and other cultural sites",
+        "Evening: Experience local culture and night markets"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/nanjing_1_optimized.jpg",
+    "../images/user_photos/nanjing_2_optimized.jpg",
+    "../images/user_photos/nanjing_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

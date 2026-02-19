@@ -1,0 +1,90 @@
+{
+  "name": "Guilin",
+  "title": "Guilin - Traveling China like your home yard",
+  "heroTitle": "Guilin",
+  "heroSubtitle": "Karst Landscapes & Li River Beauty",
+  "heroImage": "../images/user_photos/guilin_hero_bg.jpg",
+  "overview": "Guilin is famous for its stunning karst mountain landscapes along the Li River. Known as one of China's most picturesque destinations, it offers breathtaking natural scenery, traditional fishing villages, and unique limestone formations that have inspired Chinese artists for centuries.",
+  "highlights": {
+    "attractions": "Li River Cruise, Yangshuo Countryside, Elephant Trunk Hill, Reed Flute Cave",
+    "cuisine": "Guilin Rice Noodles, Beer Fish, Oil Tea, Lipu Taro Loaf",
+    "bestTime": "Spring (April-May) and Autumn (September-October) with mild weather"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Guilin Rice Noodles",
+        "description": "Famous local rice noodles served with savory broth, pickled vegetables, and various toppings."
+      },
+      {
+        "name": "Beer Fish",
+        "description": "Fresh river fish cooked with beer and local spices, a Yangshuo specialty."
+      },
+      {
+        "name": "Oil Tea",
+        "description": "Traditional tea-based soup with various ingredients, unique to the region."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Guilin Night Market",
+        "description": "Vibrant night market with local street food and specialties."
+      },
+      {
+        "name": "Yangshuo West Street",
+        "description": "Popular tourist area with restaurants serving local and international cuisine."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Guilin Liangjiang International Airport (KWL) with domestic and international flights",
+      "By Train: High-speed rail connects Guilin to major cities including Beijing, Shanghai, and Guangzhou",
+      "By Bus: Long-distance bus services from neighboring provinces"
+    ],
+    "gettingAround": [
+      "Li River Cruise: Scenic boat tours between Guilin and Yangshuo",
+      "Bus: Public transportation to major attractions",
+      "Taxi: Available for convenient travel",
+      "Bicycle: Popular for exploring Yangshuo countryside"
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: City Exploration",
+      "activities": [
+        "Morning: Visit Elephant Trunk Hill and Fubo Hill",
+        "Afternoon: Explore Reed Flute Cave with stunning stalactites",
+        "Evening: Walk along the Li River and enjoy local cuisine"
+      ]
+    },
+    {
+      "day": "Day 2: Li River Cruise",
+      "activities": [
+        "Morning: Take Li River cruise to Yangshuo (4-hour scenic journey)",
+        "Afternoon: Explore Yangshuo West Street and countryside",
+        "Evening: Watch the Impression Liu Sanjie light show"
+      ]
+    },
+    {
+      "day": "Day 3: Countryside Experience",
+      "activities": [
+        "Morning: Bicycle tour through Yangshuo's karst landscape",
+        "Afternoon: Visit traditional villages and experience local culture",
+        "Evening: Return to Guilin and enjoy river night views"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/guilin_1_optimized.jpg",
+    "../images/user_photos/guilin_2_optimized.jpg",
+    "../images/user_photos/guilin_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

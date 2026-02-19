@@ -1,0 +1,90 @@
+{
+  "name": "Jinan",
+  "title": "Jinan - Traveling China like your home yard",
+  "heroTitle": "Jinan",
+  "heroSubtitle": "City of Springs",
+  "heroImage": "../images/user_photos/jinan_hero_bg.jpg",
+  "overview": "Jinan, the capital of Shandong Province, is known as the 'City of Springs' for its 72 famous natural springs. With a history dating back over 2,000 years, Jinan offers beautiful natural springs, historic sites, and serves as a gateway to Mount Tai, one of China's most sacred mountains.",
+  "highlights": {
+    "attractions": "Baotu Spring Park, Daming Lake, Thousand Buddha Mountain, Lingyan Temple",
+    "cuisine": "Shandong Cuisine, Sweet and Sour Carp, Dezhou Braised Chicken, Jinan Dumplings",
+    "bestTime": "Spring (April-May) and Autumn (September-October) with pleasant weather"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Sweet and Sour Carp",
+        "description": "Fresh carp from Daming Lake prepared with traditional sweet and sour sauce."
+      },
+      {
+        "name": "Dezhou Braised Chicken",
+        "description": "Famous Shandong dish with tender chicken and rich, flavorful sauce."
+      },
+      {
+        "name": "Jinan Dumplings",
+        "description": "Local dumplings with various fillings, known for their delicate wrappers."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Furong Street",
+        "description": "Historic food street with traditional Shandong cuisine and local snacks."
+      },
+      {
+        "name": "Quancheng Road",
+        "description": "Popular dining area with restaurants serving local specialties."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Jinan Yaoqiang International Airport (TNA) with domestic and international flights",
+      "By Train: High-speed rail connects Jinan to Beijing, Shanghai, and major cities",
+      "By Bus: Long-distance bus services from neighboring provinces"
+    ],
+    "gettingAround": [
+      "Bus: Comprehensive public bus system",
+      "Taxi: Available for convenient travel",
+      "Metro: Modern subway system connecting major areas",
+      "Walking: Best way to explore spring areas and historic districts"
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Springs and Lakes",
+      "activities": [
+        "Morning: Visit Baotu Spring Park, the most famous spring in Jinan",
+        "Afternoon: Explore Daming Lake and its scenic surroundings",
+        "Evening: Walk along the ancient city moat"
+      ]
+    },
+    {
+      "day": "Day 2: Cultural Heritage",
+      "activities": [
+        "Morning: Climb Thousand Buddha Mountain for city views",
+        "Afternoon: Visit Lingyan Temple and other historic sites",
+        "Evening: Enjoy traditional Shandong cuisine at local restaurants"
+      ]
+    },
+    {
+      "day": "Day 3: Local Experience",
+      "activities": [
+        "Morning: Explore local markets and spring areas",
+        "Afternoon: Visit museums and cultural centers",
+        "Evening: Experience Jinan's night life and food streets"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/jinan_1_optimized.jpg",
+    "../images/user_photos/jinan_2_optimized.jpg",
+    "../images/user_photos/jinan_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

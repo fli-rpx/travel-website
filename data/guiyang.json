@@ -1,0 +1,90 @@
+{
+  "name": "Guiyang",
+  "title": "Guiyang - Traveling China like your home yard",
+  "heroTitle": "Guiyang",
+  "heroSubtitle": "Forest City & Ethnic Culture",
+  "heroImage": "../images/user_photos/guiyang_hero_bg.jpg",
+  "overview": "Guiyang is the capital of Guizhou Province, known as the 'Forest City' for its lush greenery and karst landscapes. Famous for its ethnic minority cultures, including Miao and Buyi minorities, Guiyang offers a unique blend of natural beauty, traditional villages, and modern urban development.",
+  "highlights": {
+    "attractions": "Qianling Park, Jiaxiu Pavilion, Qingyan Ancient Town, Huaxi Park",
+    "cuisine": "Sour Fish Soup, Guizhou Spicy Chicken, Rice Tofu, Miao Minority Cuisine",
+    "bestTime": "Spring (March-May) and Autumn (September-November) with mild weather"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Sour Fish Soup",
+        "description": "Traditional Miao minority dish with fresh fish in tangy, spicy broth."
+      },
+      {
+        "name": "Guizhou Spicy Chicken",
+        "description": "Local chicken dish cooked with Guizhou's famous spicy seasonings."
+      },
+      {
+        "name": "Rice Tofu",
+        "description": "Unique local specialty made from rice, served in various preparations."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Hequn Road Night Market",
+        "description": "Popular night market with local snacks and ethnic minority cuisine."
+      },
+      {
+        "name": "Qingyan Ancient Town",
+        "description": "Traditional food street in the historic town with local specialties."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Guiyang Longdongbao International Airport (KWE) with domestic and international flights",
+      "By Train: High-speed rail connects Guiyang to major cities including Beijing and Guangzhou",
+      "By Bus: Long-distance bus services from neighboring provinces"
+    ],
+    "gettingAround": [
+      "Bus: Comprehensive public bus system",
+      "Taxi: Available for convenient travel",
+      "Metro: Modern subway system connecting major areas",
+      "Walking: Best way to explore parks and historic areas"
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: City Exploration",
+      "activities": [
+        "Morning: Visit Qianling Park and Hongfu Temple",
+        "Afternoon: Explore Jiaxiu Pavilion and the surrounding area",
+        "Evening: Walk around Hequn Road Night Market"
+      ]
+    },
+    {
+      "day": "Day 2: Cultural Heritage",
+      "activities": [
+        "Morning: Visit Qingyan Ancient Town",
+        "Afternoon: Explore Huaxi Park and University area",
+        "Evening: Experience local ethnic minority culture"
+      ]
+    },
+    {
+      "day": "Day 3: Nature and Culture",
+      "activities": [
+        "Morning: Visit local museums and cultural sites",
+        "Afternoon: Explore karst landscapes and natural areas",
+        "Evening: Enjoy local cuisine and cultural performances"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/guiyang_1_optimized.jpg",
+    "../images/user_photos/guiyang_2_optimized.jpg",
+    "../images/user_photos/guiyang_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

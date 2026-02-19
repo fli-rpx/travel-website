@@ -1,0 +1,90 @@
+{
+  "name": "Shenzhen",
+  "title": "Shenzhen - Traveling China like your home yard",
+  "heroTitle": "Shenzhen",
+  "heroSubtitle": "China's Silicon Valley",
+  "heroImage": "../images/user_photos/shenzhen_hero_bg.jpg",
+  "overview": "Shenzhen is a modern metropolis in Guangdong Province, transformed from a small fishing village to China's first Special Economic Zone. Known as China's Silicon Valley, Shenzhen is famous for its technology industry, modern architecture, theme parks, and proximity to Hong Kong, offering a glimpse into China's rapid modernization.",
+  "highlights": {
+    "attractions": "Window of the World, Splendid China, OCT Loft, Dameisha Beach, Ping An Finance Center",
+    "cuisine": "Cantonese Dim Sum, Seafood, International Cuisine, Street Food",
+    "bestTime": "Year-round destination, best in Spring and Autumn with mild weather"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Cantonese Dim Sum",
+        "description": "Traditional Cantonese small plates including dumplings, buns, and pastries."
+      },
+      {
+        "name": "Fresh Seafood",
+        "description": "Locally caught seafood prepared in various styles at coastal restaurants."
+      },
+      {
+        "name": "International Fusion",
+        "description": "Diverse international cuisine reflecting the city's cosmopolitan nature."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Dongmen Food Street",
+        "description": "Popular food street with local and international cuisine."
+      },
+      {
+        "name": "Luohu Commercial City",
+        "description": "Shopping and dining area with diverse food options."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Shenzhen Bao'an International Airport (SZX) with domestic and international flights",
+      "By Train: High-speed rail connects Shenzhen to major cities including Beijing and Guangzhou",
+      "By Metro: Connected to Hong Kong via metro and border crossings"
+    ],
+    "gettingAround": [
+      "Metro: Modern subway system covering major areas",
+      "Bus: Comprehensive public bus network",
+      "Taxi: Available for convenient travel",
+      "Shared Bikes: Popular for short distances in urban areas"
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Theme Parks",
+      "activities": [
+        "Morning: Visit Window of the World theme park",
+        "Afternoon: Explore Splendid China Folk Village",
+        "Evening: Enjoy dinner at OCT Loft creative district"
+      ]
+    },
+    {
+      "day": "Day 2: Modern City",
+      "activities": [
+        "Morning: Visit Ping An Finance Center observation deck",
+        "Afternoon: Explore modern shopping districts and tech centers",
+        "Evening: Experience Shenzhen's vibrant nightlife"
+      ]
+    },
+    {
+      "day": "Day 3: Nature and Culture",
+      "activities": [
+        "Morning: Visit Dameisha Beach and coastal areas",
+        "Afternoon: Explore local markets and cultural sites",
+        "Evening: Enjoy fresh seafood dinner by the coast"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/shenzhen_1_optimized.jpg",
+    "../images/user_photos/shenzhen_2_optimized.jpg",
+    "../images/user_photos/shenzhen_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

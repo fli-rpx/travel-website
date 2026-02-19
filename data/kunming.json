@@ -1,0 +1,90 @@
+{
+  "name": "Kunming",
+  "title": "Kunming - Traveling China like your home yard",
+  "heroTitle": "Kunming",
+  "heroSubtitle": "City of Eternal Spring",
+  "heroImage": "../images/user_photos/kunming_hero_bg.jpg",
+  "overview": "Kunming, the capital of Yunnan Province, is known as the 'City of Eternal Spring' due to its pleasant year-round climate. Famous for its diverse ethnic cultures, beautiful natural scenery, and proximity to attractions like the Stone Forest and Dianchi Lake, Kunming serves as a gateway to exploring Yunnan's rich cultural and natural heritage.",
+  "highlights": {
+    "attractions": "Stone Forest, Dianchi Lake, Green Lake Park, Yuantong Temple, Western Hills",
+    "cuisine": "Cross-bridge Rice Noodles, Steam Pot Chicken, Yunnan Ham, Wild Mushrooms",
+    "bestTime": "Year-round destination with mild climate, best in Spring and Autumn"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Cross-bridge Rice Noodles",
+        "description": "Famous Yunnan dish with rice noodles in rich broth, served with various toppings."
+      },
+      {
+        "name": "Steam Pot Chicken",
+        "description": "Traditional chicken soup steamed in special pottery with herbs."
+      },
+      {
+        "name": "Yunnan Ham",
+        "description": "Famous cured ham from Yunnan, used in various local dishes."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Nanping Street",
+        "description": "Popular food street with local specialties and snacks."
+      },
+      {
+        "name": "Green Lake Area",
+        "description": "Restaurants and cafes around the scenic lake area."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Kunming Changshui International Airport (KMG) with domestic and international flights",
+      "By Train: High-speed rail connects Kunming to major cities including Beijing and Shanghai",
+      "By Bus: Long-distance bus services from neighboring provinces"
+    ],
+    "gettingAround": [
+      "Metro: Modern subway system connecting major areas",
+      "Bus: Comprehensive public bus network",
+      "Taxi: Available for convenient travel",
+      "Bicycle: Popular for exploring parks and scenic areas"
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: City Exploration",
+      "activities": [
+        "Morning: Visit Green Lake Park and enjoy the scenery",
+        "Afternoon: Explore Yuantong Temple and nearby areas",
+        "Evening: Walk around Nanping Street and try local food"
+      ]
+    },
+    {
+      "day": "Day 2: Natural Wonders",
+      "activities": [
+        "Morning: Visit the famous Stone Forest (Shilin)",
+        "Afternoon: Explore Dianchi Lake area",
+        "Evening: Return to city and enjoy local cuisine"
+      ]
+    },
+    {
+      "day": "Day 3: Cultural Experience",
+      "activities": [
+        "Morning: Visit Western Hills and Dragon Gate",
+        "Afternoon: Explore local markets and ethnic minority areas",
+        "Evening: Experience Kunming's night life and food culture"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/kunming_1_optimized.jpg",
+    "../images/user_photos/kunming_2_optimized.jpg",
+    "../images/user_photos/kunming_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

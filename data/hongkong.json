@@ -1,0 +1,90 @@
+{
+  "name": "Hongkong",
+  "title": "Hongkong - Traveling China like your home yard",
+  "heroTitle": "Hongkong",
+  "heroSubtitle": "Asia's World City",
+  "heroImage": "../images/user_photos/hongkong_hero_bg.jpg",
+  "overview": "Hong Kong is a vibrant metropolis where East meets West, featuring stunning skylines, bustling markets, and beautiful natural landscapes. Known for its iconic Victoria Harbour, world-class shopping, and diverse culinary scene, Hong Kong offers a unique blend of Chinese tradition and international modernity.",
+  "highlights": {
+    "attractions": "Victoria Peak, Victoria Harbour, Tsim Sha Tsui, Big Buddha, Ocean Park",
+    "cuisine": "Dim Sum, Roast Goose, Egg Waffles, Hong Kong-style Milk Tea",
+    "bestTime": "Autumn (October-December) and Spring (March-May) with comfortable weather"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Dim Sum",
+        "description": "Traditional Cantonese small plates served with tea, featuring dumplings, buns, and pastries."
+      },
+      {
+        "name": "Roast Goose",
+        "description": "Perfectly roasted goose with crispy skin and tender meat, a Hong Kong specialty."
+      },
+      {
+        "name": "Egg Waffles",
+        "description": "Popular street snack with crispy exterior and soft, eggy interior."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Temple Street Night Market",
+        "description": "Famous night market with street food, fortune tellers, and local atmosphere."
+      },
+      {
+        "name": "Mongkok Food Streets",
+        "description": "Multiple food streets in Mongkok offering diverse local and international cuisine."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Hong Kong International Airport (HKG), major international hub",
+      "By Train: High-speed rail connects to mainland China cities",
+      "By Ferry: Regular ferry services from Macau and mainland China"
+    ],
+    "gettingAround": [
+      "MTR: Efficient subway system covering all major areas",
+      "Bus: Comprehensive bus network including double-decker buses",
+      "Tram: Historic Peak Tram and Hong Kong Tramways",
+      "Star Ferry: Iconic ferry service across Victoria Harbour"
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Iconic Hong Kong",
+      "activities": [
+        "Morning: Take Peak Tram to Victoria Peak for panoramic views",
+        "Afternoon: Explore Central and Sheung Wan districts",
+        "Evening: Watch Symphony of Lights show from Tsim Sha Tsui"
+      ]
+    },
+    {
+      "day": "Day 2: Culture & Markets",
+      "activities": [
+        "Morning: Visit Big Buddha and Po Lin Monastery on Lantau Island",
+        "Afternoon: Explore Temple Street Night Market",
+        "Evening: Enjoy authentic dim sum dinner"
+      ]
+    },
+    {
+      "day": "Day 3: Modern & Traditional",
+      "activities": [
+        "Morning: Visit Hong Kong Museum of History",
+        "Afternoon: Shop in Causeway Bay and explore street markets",
+        "Evening: Harbor cruise and seafood dinner"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/hongkong_1_optimized.jpg",
+    "../images/user_photos/hongkong_2_optimized.jpg",
+    "../images/user_photos/hongkong_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

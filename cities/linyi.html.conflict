@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linyi - Traveling China</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .city-hero {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .city-content {
+            padding: 50px 0;
+        }
+        .city-section {
+            margin-bottom: 40px;
+        }
+        .city-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .city-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .back-to-home {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-to-home:hover {
+            text-decoration: underline;
+        }
+        .patent-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .patent-table th, .patent-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .patent-table th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Traveling China</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#featured-destinations">Featured Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#travel-news">Travel News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- City Hero Section -->
+    <section class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/user_photos/linyi_hero_bg.jpg');">
+        <div class="container">
+            <h1>Linyi</h1>
+            <p class="lead">A city of culture and history</p>
+        </div>
+    </section>
+
+<<<<<<< Updated upstream
+    <div class="container city-content">
+        <a href="../index.html" class="back-to-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+
+        <!-- Detailed Overview -->
+        <div class="city-section">
+            <h2>Detailed Overview</h2>
+            <p>Linyi is a prefecture-level city in the south of Shandong province, China. As the largest prefecture-level city in Shandong, both in terms of area and population, Linyi is a key economic and cultural center in the region.</p>
+        </div>
+
+        <!-- Patent Data Section -->
+        <div class="city-section">
+            <h2>Patent Data</h2>
+            <p>Here is a list of patents assigned to companies in Linyi, with a focus on Lunan Pharmaceutical Group Corporation.</p>
+            <table class="patent-table">
+                <thead>
+                    <tr>
+                        <th>Patent Number</th>
+                        <th>Title</th>
+                        <th>Current Assignee</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>US20110118288A1</td>
+                        <td>A pharmaceutical composition for treating hypertension and hyperlipidemia.</td>
+                        <td>Lunan Pharmaceutical Group Corp</td>
+                    </tr>
+                    <tr>
+                        <td>CN113087656A</td>
+                        <td>Amorphous levamlodipine besylate, a new crystal form of a drug used to treat high blood pressure.</td>
+                        <td>Lunan Pharmaceutical Group Corp</td>
+                    </tr>
+                    <tr>
+                        <td>US20110105803A1</td>
+                        <td>A method of synthesizing sevoflurane, an anesthetic.</td>
+                        <td>Lunan Pharmaceutical Group Corp</td>
+                    </tr>
+                    <tr>
+                        <td>EP2465503A1</td>
+                        <td>A pharmaceutical solution of cetirizine hydrochloride for treating allergic diseases.</td>
+                        <td>Lunan Better Pharmaceutical Co Ltd</td>
+                    </tr>
+                    <tr>
+                        <td>CN111377851A</td>
+                        <td>A preparation method of levamlodipine besylate.</td>
+                        <td>Lunan Pharmaceutical Group Corp, Shandong New Time Pharmaceutical Co Ltd</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Gallery -->
+        <div class="city-section">
+            <h2>Gallery</h2>
+            <div class="city-gallery">
+                <img src="../images/user_photos/linyi_1.jpg" alt="Linyi City">
+                <img src="../images/user_photos/linyi_2.jpg" alt="Linyi Landscape">
+                <img src="../images/user_photos/linyi_3.jpg" alt="Linyi Culture">
+=======
+    <!-- City Content -->
+    <section class="city-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Overview -->
+                    <div class="city-section">
+                        <h2>Overview</h2>
+                        <p>Linyi is a major city in Shandong Province, known as the 'Water City' for its location at the confluence of the Yi and Shu Rivers. Famous for its revolutionary history, wholesale markets, and being a transportation hub with rich cultural heritage in eastern China.</p>
+                    </div>
+                    
+                    <!-- Highlights -->
+                    <div class="city-section">
+                        <h2>Must-See Highlights</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
+                            <p>Yi River Scenic Area, Mengshan Mountain, Linyi Museum, Zhuge Liang Cultural Park</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-utensils me-2"></i>Local Cuisine</h3>
+                            <p>Linyi Pancake, Braised Chicken, Yi River Fish, Shandong-style Noodles</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
+                            <p>Autumn (September-November) with pleasant weather for outdoor activities</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Travel Tips -->
+                    <div class="city-section">
+                        <h2>Travel Tips</h2>
+                        <ul>
+                            <li>Walk along Yi River Scenic Area in the evening for beautiful lights</li>
+                            <li>Visit Mengshan Mountain for hiking and temple visits</li>
+                            <li>Explore Linyi's wholesale markets for local products</li>
+                            <li>Try Linyi Pancake at local breakfast stalls</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Patent Data -->
+                    <div class="city-section">
+                        <h2><i class="fas fa-file-alt me-2"></i>Innovation & Patent Data</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-chart-line me-2"></i>Patent Overview</h3>
+                            <p><strong>Total Patents:</strong> 93,144+ patents registered from Linyi-based organizations</p>
+                            <p><strong>Recent Growth:</strong> 309 patents filed in 2022-2025 period</p>
+                            <p><strong>Key Sectors:</strong> Energy, Agriculture, Construction, Green Technology</p>
+                        </div>
+                        
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-building me-2"></i>Top Patent-Holding Organizations</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li><strong>State Grid Shandong Linyi Power Supply</strong> - 121 patents</li>
+                                        <li><strong>State Grid Corporation</strong> - 95 patents</li>
+                                        <li><strong>Linyi University</strong> - 77 patents</li>
+                                        <li><strong>Linyi Academy of Agricultural Sciences</strong> - 55 patents</li>
+                                        <li><strong>Zhejiang University (Linyi) Modern Agriculture Research Institute</strong> - 49 patents</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li><strong>Linyi Municipal Construction Group</strong> - 45 patents</li>
+                                        <li><strong>Linyi Taoyuan Industrial</strong> - 41 patents</li>
+                                        <li><strong>Linyi Smart New Energy Technology</strong> - 40 patents</li>
+                                        <li><strong>Linyi Smart New Energy Research Institute</strong> - 37 patents</li>
+                                        <li><strong>Linyi Municipal Building Materials</strong> - 35 patents</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-cogs me-2"></i>Key Technology Areas</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Green & Sustainable Tech:</strong> 44 patents (Y02 classification)</p>
+                                    <p><strong>Computer Technology:</strong> 35 patents (G06F)</p>
+                                    <p><strong>Business Methods:</strong> 35 patents (G06Q)</p>
+                                    <p><strong>Energy Technology:</strong> 34 patents (Y02E)</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Climate Adaptation:</strong> 32 patents (Y02A)</p>
+                                    <p><strong>Fertilizer Technology:</strong> 27 patents (C05G)</p>
+                                    <p><strong>Building Materials:</strong> 23 patents (C04B)</p>
+                                    <p><strong>Waste Management:</strong> 23 patents (Y02W)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-lightbulb me-2"></i>Recent Notable Patents</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>EV Charging Guidance System</strong><br>
+                                    <small>State Grid Corporation (2013) - CN102508489B</small></p>
+                                    <p><strong>Bridge Crack Detection System</strong><br>
+                                    <small>Linyi Highway Development Center (2023) - CN117237368A</small></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Lithium Battery Material</strong><br>
+                                    <small>Linyi Jieneng New Energy Materials (2012) - CN102044671B</small></p>
+                                    <p><strong>Amino Acid Water-Soluble Fertilizer</strong><br>
+                                    <small>SinoChem Agriculture (Linyi) R&D Center (2022) - CN113999071A</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-trend-up me-2"></i>Innovation Trends</h3>
+                            <p><strong>Growing Innovation:</strong> Patent filings have increased significantly in recent years</p>
+                            <p><strong>Technology Shift:</strong> Moving from traditional manufacturing to green tech and AI</p>
+                            <p><strong>University Contribution:</strong> Linyi University is a major research contributor</p>
+                            <p><strong>Industry Focus:</strong> Strong alignment with Linyi's economic strengths in agriculture and construction</p>
+                        </div>
+                        
+                        <div class="alert alert-info mt-3">
+                            <i class="fas fa-info-circle me-2"></i>
+                            <strong>Data Source:</strong> Google Patents search for assignees in Linyi, China. Data represents patent activity through 2025.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <!-- Quick Facts -->
+                    <div class="city-section">
+                        <h2>Quick Facts</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-info-circle me-2"></i>Basic Info</h3>
+                            <p><strong>Population:</strong> 11.0 million</p>
+                            <p><strong>Province:</strong> Shandong Province</p>
+                            <p><strong>Language:</strong> Mandarin, Shandong dialect</p>
+                            <p><strong>Timezone:</strong> China Standard Time (UTC+8)</p>
+                        </div>
+                        
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
+                            <p><strong>Airport:</strong> Linyi Qiyang Airport (LYI) - or fly to Jinan/Qingdao and take train</p>
+                            <p><strong>Train:</strong> High-speed rail from Jinan (1.5 hours), Qingdao (2 hours), Beijing (3 hours)</p>
+                            <p><strong>Best Transport:</strong> Buses, taxis, and long-distance coaches</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery -->
+                    <div class="city-section">
+                        <h2>Gallery</h2>
+                        <div class="city-gallery">
+                            <img src="../images/user_photos/linyi_1_optimized.jpg" alt="Linyi Yi River - Water city scenery">
+                            <img src="../images/user_photos/linyi_2_optimized.jpg" alt="Linyi  - Ancient fortifications on mountains">
+                            <img src="../images/user_photos/linyi_3_optimized.jpg" alt="Linyi modern skyline - Contemporary architecture and city life">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Explore Other Cities -->
+            <div class="city-nav">
+                <h3>Explore Other Chinese Cities</h3>
+                <div class="city-links">
+<a href="beijing.html" class="city-link">Beijing</a>
+<a href="shanghai.html" class="city-link">Shanghai</a>
+<a href="chengdu.html" class="city-link">Chengdu</a>
+<a href="qingdao.html" class="city-link">Qingdao</a>
+<a href="xiamen.html" class="city-link">Xiamen</a>
+<a href="wuxi.html" class="city-link">Wuxi</a>
+<a href="hongkong.html" class="city-link">Hongkong</a>
+<a href="chongqing.html" class="city-link">Chongqing</a>
+<a href="harbin.html" class="city-link">Harbin</a>
+<a href="guangzhou.html" class="city-link">Guangzhou</a>
+<a href="shenzhen.html" class="city-link">Shenzhen</a>
+<a href="nanjing.html" class="city-link">Nanjing</a>
+<a href="guilin.html" class="city-link">Guilin</a>
+<a href="guiyang.html" class="city-link">Guiyang</a>
+<a href="kunming.html" class="city-link">Kunming</a>
+<a href="dali.html" class="city-link">Dali</a>
+<a href="jinan.html" class="city-link">Jinan</a>
+<a href="datong.html" class="city-link">Datong</a>
+<a href="taiyuan.html" class="city-link">Taiyuan</a>
+<a href="urumqi.html" class="city-link">Urumqi</a>
+<a href="hangzhou.html" class="city-link">Hangzhou</a>
+<a href="kashi.html" class="city-link">Kashi</a>
+<a href="wuhan.html" class="city-link">Wuhan</a>
+<a href="suzhou.html" class="city-link">Suzhou</a>
+                </div>
+>>>>>>> Stashed changes
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2026 Traveling China. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

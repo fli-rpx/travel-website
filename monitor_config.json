@@ -1,0 +1,27 @@
+{
+  "monitor": {
+    "enabled": true,
+    "check_interval_minutes": 10,
+    "max_improvements_per_run": 5,
+    "notify_on_issues": true,
+    "auto_fix": true
+  },
+  "checks": {
+    "main_page": true,
+    "city_pages": true,
+    "images": true,
+    "links": true,
+    "performance": false
+  },
+  "improvements": {
+    "fix_broken_images": true,
+    "create_missing_pages": true,
+    "update_styles": true,
+    "optimize_images": false
+  },
+  "logging": {
+    "level": "INFO",
+    "max_log_files": 10,
+    "max_log_size_mb": 10
+  }
+}

@@ -1,0 +1,381 @@
+==========================================
+AUTO FIX STATUS RUN: Sat Feb  7 23:58:29 PST 2026
+==========================================
+[23:58:29] Running website checks...
+[2026-02-07 23:58:29] [INFO] 
+======================================================================
+[2026-02-07 23:58:29] [INFO] ENHANCED WEBSITE MONITOR - 10 MINUTE CHECK
+[2026-02-07 23:58:29] [INFO] ======================================================================
+[2026-02-07 23:58:29] [INFO] Checking: 2026-02-07 23:58:29
+[2026-02-07 23:58:29] [INFO] 
+🔍 CHECK 1: IMAGES READINESS FOR EACH CITY
+[2026-02-07 23:58:29] [INFO] ----------------------------------------
+[2026-02-07 23:58:29] [INFO] ✅ Cities WITH images: 0/12
+[2026-02-07 23:58:29] [INFO] ⚠️  Cities WITHOUT images: 12/12
+[2026-02-07 23:58:29] [INFO]    • Beijing, Shanghai, Chengdu, Harbin, Chongqing and 7 more
+[2026-02-07 23:58:29] [INFO] 
+🎯 PRIORITY CITIES STATUS:
+[2026-02-07 23:58:29] [INFO]    ❌ NEEDS IMAGES Chengdu
+[2026-02-07 23:58:29] [INFO]    ❌ NEEDS IMAGES Harbin
+[2026-02-07 23:58:29] [INFO]    ❌ NEEDS IMAGES Chongqing
+[2026-02-07 23:58:29] [ERROR] ❌ Images Readiness: FAILED
+[2026-02-07 23:58:29] [INFO] 
+🔍 CHECK 2: PAGES READINESS FOR EACH CITY
+[2026-02-07 23:58:29] [INFO] ----------------------------------------
+[2026-02-07 23:58:29] [INFO] ✅ Cities WITH pages: 12/12
+[2026-02-07 23:58:29] [INFO]    • Nanjing, Xiamen, Shanghai, Qingdao, Chongqing and 7 more
+[2026-02-07 23:58:29] [INFO] ✅ All 12 cities have pages!
+[2026-02-07 23:58:29] [INFO] ✅ Pages Readiness: PASSED
+[2026-02-07 23:58:29] [INFO] 
+🔍 CHECK 3: LAYOUT & COLOR CONSISTENCY
+[2026-02-07 23:58:29] [INFO] ----------------------------------------
+[2026-02-07 23:58:29] [INFO] 📄 Main page: 55 colors, 111 layout elements
+[2026-02-07 23:58:29] [INFO] 
+🎨 COLOR CONSISTENCY ANALYSIS:
+[2026-02-07 23:58:29] [INFO]    ⚠️  primary (#2563eb): Not found in checked pages
+[2026-02-07 23:58:29] [INFO]    ⚠️  secondary (#1e40af): Not found in checked pages
+[2026-02-07 23:58:29] [INFO]    ⚠️  accent (#f59e0b): Not found in checked pages
+[2026-02-07 23:58:29] [INFO]    ⚠️  light (#f8fafc): Not found in checked pages
+[2026-02-07 23:58:29] [INFO]    ⚠️  dark (#1e293b): Not found in checked pages
+[2026-02-07 23:58:29] [INFO] 
+📐 LAYOUT CONSISTENCY ANALYSIS:
+[2026-02-07 23:58:29] [INFO]    ✅ Common elements across all pages: 6
+[2026-02-07 23:58:29] [INFO]      • guangzhou.html
+[2026-02-07 23:58:29] [INFO]      • shanghai.html
+[2026-02-07 23:58:29] [INFO]      • nanjing.html
+[2026-02-07 23:58:29] [INFO] 
+⚠️  Found 5 consistency issues:
+[2026-02-07 23:58:29] [INFO]    • Color primary (#2563eb) not used
+[2026-02-07 23:58:29] [INFO]    • Color secondary (#1e40af) not used
+[2026-02-07 23:58:29] [INFO]    • Color accent (#f59e0b) not used
+[2026-02-07 23:58:29] [INFO]    ... and 2 more issues
+[2026-02-07 23:58:29] [ERROR] ❌ Layout & Color Consistency: FAILED
+[2026-02-07 23:58:29] [INFO] 
+🔗 CHECK 4: NAVIGATION LINK CONSISTENCY
+[2026-02-07 23:58:29] [INFO] ----------------------------------------
+[2026-02-07 23:58:29] [INFO] Main page has 12 city links
+[2026-02-07 23:58:29] [INFO] ⚠️  Found 3 navigation issues:
+[2026-02-07 23:58:29] [INFO]    • nanjing.html: No link back to home page
+[2026-02-07 23:58:29] [INFO]    • xiamen.html: No link back to home page
+[2026-02-07 23:58:29] [INFO]    • shanghai.html: No link back to home page
+[2026-02-07 23:58:29] [ERROR] ❌ Navigation Links: FAILED
+[2026-02-07 23:58:29] [INFO] 
+🔧 RUNNING IMPROVEMENTS
+[2026-02-07 23:58:29] [INFO] ----------------------------------------
+[2026-02-07 23:58:29] [INFO] Checking image consistency...
+[2026-02-07 23:58:29] [INFO] 
+🔧 Improvements applied:
+[2026-02-07 23:58:29] [INFO]    • Fixed image inconsistencies
+[2026-02-07 23:58:29] [INFO] 
+======================================================================
+[2026-02-07 23:58:29] [INFO] ENHANCED CHECK SUMMARY
+[2026-02-07 23:58:29] [INFO] ======================================================================
+[2026-02-07 23:58:29] [INFO] Checks passed: 1/4 (25.0%)
+[2026-02-07 23:58:29] [INFO] Issues found: 20
+[2026-02-07 23:58:29] [INFO] Improvements made: 1
+[2026-02-07 23:58:29] [INFO] 
+🔧 WEBSITE STATUS: IMPROVED
+[2026-02-07 23:58:29] [INFO]    Issues were found and fixed automatically
+[23:58:29] Generating fix status...
+[2026-02-07 23:58:29] ============================================================
+[2026-02-07 23:58:29] 🔧 TELEGRAM FIX STATUS MONITOR
+[2026-02-07 23:58:29] ============================================================
+[2026-02-07 23:58:29] 🔍 Checking image fix status...
+[2026-02-07 23:58:29] 🔍 Checking page fix status...
+[2026-02-07 23:58:29] 🔍 Checking navigation fix status...
+[2026-02-07 23:58:29] 🔍 Checking layout fix status...
+[2026-02-07 23:58:29] ✅ Fix status prepared for Telegram
+
+📱 TELEGRAM FIX STATUS:
+
+🔧 **WEBSITE FIX STATUS REPORT** 🔧
+**Time:** 2026-02-07 23:58:29
+**Checks:** 2/4 passed
+
+
+❌ **Images:** NEEDS FIXING
+   • Issues: 5 cities need images
+   • Remaining: Beijing, Shanghai, Chengdu (+2 more)
+   • Fixes attempted: Image search attempted
+✅ **Pages:** FIXED (All 12 city pages exist)
+❌ **Navigation:** NEEDS FIXING
+   • Issues: Navigation issues detected
+   • Fixes attempted: Navigation fixes applied
+✅ **Layout:** FIXED (Colors consistent)
+
+📊 **OVERALL STATUS:** ❌ 2 CHECKS NEED FIXING
+    
+🔄 **NEXT STEPS:**
+• Monitor runs every 10 minutes
+• Auto-fixes will continue
+• Next check at: 23:00
+
+🔔 **REAL-TIME UPDATES:**
+Fix status will be posted after each check
+
+
+[2026-02-07 23:58:29] 
+📊 Fix Status: 2/4 checks fixed
+[2026-02-07 23:58:29] ✅ Fix status sent to Telegram
+[2026-02-07 23:58:29] ✅ Status saved to fix_status_report.json
+[23:58:29] Fix status created
+[23:58:29] Fix status saved to /Users/fudongli/clawd/travel-website/latest_fix_status.txt
+Message size:      712 bytes
+[23:58:30] Trigger file created: /Users/fudongli/clawd/travel-website/send_fix_status_trigger.json
+[23:58:30] Status saved to /Users/fudongli/clawd/travel-website/auto_fix_status.json
+[23:58:30] Auto fix status system completed
+
+==========================================
+AUTO FIX STATUS RUN: Sun Feb  8 00:00:00 PST 2026
+==========================================
+[00:00:00] Running website checks...
+[2026-02-08 00:00:00] [INFO] 
+======================================================================
+[2026-02-08 00:00:00] [INFO] ENHANCED WEBSITE MONITOR - 10 MINUTE CHECK
+[2026-02-08 00:00:00] [INFO] ======================================================================
+[2026-02-08 00:00:00] [INFO] Checking: 2026-02-08 00:00:00
+[2026-02-08 00:00:00] [INFO] 
+🔍 CHECK 1: IMAGES READINESS FOR EACH CITY
+[2026-02-08 00:00:00] [INFO] ----------------------------------------
+[2026-02-08 00:00:00] [INFO] ✅ Cities WITH images: 0/12
+[2026-02-08 00:00:00] [INFO] ⚠️  Cities WITHOUT images: 12/12
+[2026-02-08 00:00:00] [INFO]    • Beijing, Shanghai, Chengdu, Harbin, Chongqing and 7 more
+[2026-02-08 00:00:00] [INFO] 
+🎯 PRIORITY CITIES STATUS:
+[2026-02-08 00:00:00] [INFO]    ❌ NEEDS IMAGES Chengdu
+[2026-02-08 00:00:00] [INFO]    ❌ NEEDS IMAGES Harbin
+[2026-02-08 00:00:00] [INFO]    ❌ NEEDS IMAGES Chongqing
+[2026-02-08 00:00:00] [ERROR] ❌ Images Readiness: FAILED
+[2026-02-08 00:00:00] [INFO] 
+🔍 CHECK 2: PAGES READINESS FOR EACH CITY
+[2026-02-08 00:00:00] [INFO] ----------------------------------------
+[2026-02-08 00:00:00] [INFO] ✅ Cities WITH pages: 12/12
+[2026-02-08 00:00:00] [INFO]    • Nanjing, Xiamen, Shanghai, Qingdao, Chongqing and 7 more
+[2026-02-08 00:00:00] [INFO] ✅ All 12 cities have pages!
+[2026-02-08 00:00:00] [INFO] ✅ Pages Readiness: PASSED
+[2026-02-08 00:00:00] [INFO] 
+🔍 CHECK 3: LAYOUT & COLOR CONSISTENCY
+[2026-02-08 00:00:00] [INFO] ----------------------------------------
+[2026-02-08 00:00:00] [INFO] 📄 Main page: 55 colors, 111 layout elements
+[2026-02-08 00:00:00] [INFO] 
+🎨 COLOR CONSISTENCY ANALYSIS:
+[2026-02-08 00:00:00] [INFO]    ⚠️  primary (#2563eb): Not found in checked pages
+[2026-02-08 00:00:00] [INFO]    ⚠️  secondary (#1e40af): Not found in checked pages
+[2026-02-08 00:00:00] [INFO]    ⚠️  accent (#f59e0b): Not found in checked pages
+[2026-02-08 00:00:00] [INFO]    ⚠️  light (#f8fafc): Not found in checked pages
+[2026-02-08 00:00:00] [INFO]    ⚠️  dark (#1e293b): Not found in checked pages
+[2026-02-08 00:00:00] [INFO] 
+📐 LAYOUT CONSISTENCY ANALYSIS:
+[2026-02-08 00:00:00] [INFO]    ✅ Common elements across all pages: 6
+[2026-02-08 00:00:00] [INFO]      • qingdao.html
+[2026-02-08 00:00:00] [INFO]      • xiamen.html
+[2026-02-08 00:00:00] [INFO]      • shanghai.html
+[2026-02-08 00:00:00] [INFO] 
+⚠️  Found 5 consistency issues:
+[2026-02-08 00:00:00] [INFO]    • Color primary (#2563eb) not used
+[2026-02-08 00:00:00] [INFO]    • Color secondary (#1e40af) not used
+[2026-02-08 00:00:00] [INFO]    • Color accent (#f59e0b) not used
+[2026-02-08 00:00:00] [INFO]    ... and 2 more issues
+[2026-02-08 00:00:00] [ERROR] ❌ Layout & Color Consistency: FAILED
+[2026-02-08 00:00:00] [INFO] 
+🔗 CHECK 4: NAVIGATION LINK CONSISTENCY
+[2026-02-08 00:00:00] [INFO] ----------------------------------------
+[2026-02-08 00:00:00] [INFO] Main page has 12 city links
+[2026-02-08 00:00:00] [INFO] ⚠️  Found 3 navigation issues:
+[2026-02-08 00:00:00] [INFO]    • nanjing.html: No link back to home page
+[2026-02-08 00:00:00] [INFO]    • xiamen.html: No link back to home page
+[2026-02-08 00:00:00] [INFO]    • shanghai.html: No link back to home page
+[2026-02-08 00:00:00] [ERROR] ❌ Navigation Links: FAILED
+[2026-02-08 00:00:00] [INFO] 
+🔧 RUNNING IMPROVEMENTS
+[2026-02-08 00:00:00] [INFO] ----------------------------------------
+[2026-02-08 00:00:00] [INFO] Checking image consistency...
+[2026-02-08 00:00:01] [INFO] 
+🔧 Improvements applied:
+[2026-02-08 00:00:01] [INFO]    • Fixed image inconsistencies
+[2026-02-08 00:00:01] [INFO] 
+======================================================================
+[2026-02-08 00:00:01] [INFO] ENHANCED CHECK SUMMARY
+[2026-02-08 00:00:01] [INFO] ======================================================================
+[2026-02-08 00:00:01] [INFO] Checks passed: 1/4 (25.0%)
+[2026-02-08 00:00:01] [INFO] Issues found: 20
+[2026-02-08 00:00:01] [INFO] Improvements made: 1
+[2026-02-08 00:00:01] [INFO] 
+🔧 WEBSITE STATUS: IMPROVED
+[2026-02-08 00:00:01] [INFO]    Issues were found and fixed automatically
+[00:00:01] Generating fix status...
+[2026-02-08 00:00:01] ============================================================
+[2026-02-08 00:00:01] 🔧 TELEGRAM FIX STATUS MONITOR
+[2026-02-08 00:00:01] ============================================================
+[2026-02-08 00:00:01] 🔍 Checking image fix status...
+[2026-02-08 00:00:01] 🔍 Checking page fix status...
+[2026-02-08 00:00:01] 🔍 Checking navigation fix status...
+[2026-02-08 00:00:01] 🔍 Checking layout fix status...
+[2026-02-08 00:00:01] ✅ Fix status prepared for Telegram
+
+📱 TELEGRAM FIX STATUS:
+
+🔧 **WEBSITE FIX STATUS REPORT** 🔧
+**Time:** 2026-02-08 00:00:01
+**Checks:** 2/4 passed
+
+
+❌ **Images:** NEEDS FIXING
+   • Issues: 5 cities need images
+   • Remaining: Beijing, Shanghai, Chengdu (+2 more)
+   • Fixes attempted: Image search attempted
+✅ **Pages:** FIXED (All 12 city pages exist)
+❌ **Navigation:** NEEDS FIXING
+   • Issues: Navigation issues detected
+   • Fixes attempted: Navigation fixes applied
+✅ **Layout:** FIXED (Colors consistent)
+
+📊 **OVERALL STATUS:** ❌ 2 CHECKS NEED FIXING
+    
+🔄 **NEXT STEPS:**
+• Monitor runs every 10 minutes
+• Auto-fixes will continue
+• Next check at: 00:10
+
+🔔 **REAL-TIME UPDATES:**
+Fix status will be posted after each check
+
+
+[2026-02-08 00:00:01] 
+📊 Fix Status: 2/4 checks fixed
+[2026-02-08 00:00:01] ✅ Fix status sent to Telegram
+[2026-02-08 00:00:01] ✅ Status saved to fix_status_report.json
+[00:00:01] Fix status created
+[00:00:01] Fix status saved to /Users/fudongli/clawd/travel-website/latest_fix_status.txt
+Message size:      712 bytes
+[00:00:01] Trigger file created: /Users/fudongli/clawd/travel-website/send_fix_status_trigger.json
+[00:00:01] Status saved to /Users/fudongli/clawd/travel-website/auto_fix_status.json
+[00:00:01] Auto fix status system completed
+
+==========================================
+AUTO FIX STATUS RUN: Sun Feb  8 00:10:00 PST 2026
+==========================================
+[00:10:00] Running website checks...
+[2026-02-08 00:10:00] [INFO] 
+======================================================================
+[2026-02-08 00:10:00] [INFO] ENHANCED WEBSITE MONITOR - 10 MINUTE CHECK
+[2026-02-08 00:10:00] [INFO] ======================================================================
+[2026-02-08 00:10:00] [INFO] Checking: 2026-02-08 00:10:00
+[2026-02-08 00:10:00] [INFO] 
+🔍 CHECK 1: IMAGES READINESS FOR EACH CITY
+[2026-02-08 00:10:00] [INFO] ----------------------------------------
+[2026-02-08 00:10:00] [INFO] ✅ Cities WITH images: 0/12
+[2026-02-08 00:10:00] [INFO] ⚠️  Cities WITHOUT images: 12/12
+[2026-02-08 00:10:00] [INFO]    • Beijing, Shanghai, Chengdu, Harbin, Chongqing and 7 more
+[2026-02-08 00:10:00] [INFO] 
+🎯 PRIORITY CITIES STATUS:
+[2026-02-08 00:10:00] [INFO]    ❌ NEEDS IMAGES Chengdu
+[2026-02-08 00:10:00] [INFO]    ❌ NEEDS IMAGES Harbin
+[2026-02-08 00:10:00] [INFO]    ❌ NEEDS IMAGES Chongqing
+[2026-02-08 00:10:00] [ERROR] ❌ Images Readiness: FAILED
+[2026-02-08 00:10:00] [INFO] 
+🔍 CHECK 2: PAGES READINESS FOR EACH CITY
+[2026-02-08 00:10:00] [INFO] ----------------------------------------
+[2026-02-08 00:10:00] [INFO] ✅ Cities WITH pages: 12/12
+[2026-02-08 00:10:00] [INFO]    • Nanjing, Xiamen, Shanghai, Qingdao, Chongqing and 7 more
+[2026-02-08 00:10:00] [INFO] ✅ All 12 cities have pages!
+[2026-02-08 00:10:00] [INFO] ✅ Pages Readiness: PASSED
+[2026-02-08 00:10:00] [INFO] 
+🔍 CHECK 3: LAYOUT & COLOR CONSISTENCY
+[2026-02-08 00:10:00] [INFO] ----------------------------------------
+[2026-02-08 00:10:00] [INFO] 📄 Main page: 55 colors, 111 layout elements
+[2026-02-08 00:10:00] [INFO] 
+🎨 COLOR CONSISTENCY ANALYSIS:
+[2026-02-08 00:10:00] [INFO]    ⚠️  primary (#2563eb): Not found in checked pages
+[2026-02-08 00:10:00] [INFO]    ⚠️  secondary (#1e40af): Not found in checked pages
+[2026-02-08 00:10:00] [INFO]    ⚠️  accent (#f59e0b): Not found in checked pages
+[2026-02-08 00:10:00] [INFO]    ⚠️  light (#f8fafc): Not found in checked pages
+[2026-02-08 00:10:00] [INFO]    ⚠️  dark (#1e293b): Not found in checked pages
+[2026-02-08 00:10:00] [INFO] 
+📐 LAYOUT CONSISTENCY ANALYSIS:
+[2026-02-08 00:10:00] [INFO]    ✅ Common elements across all pages: 6
+[2026-02-08 00:10:00] [INFO]      • nanjing.html
+[2026-02-08 00:10:00] [INFO]      • guangzhou.html
+[2026-02-08 00:10:00] [INFO]      • qingdao.html
+[2026-02-08 00:10:00] [INFO] 
+⚠️  Found 5 consistency issues:
+[2026-02-08 00:10:00] [INFO]    • Color primary (#2563eb) not used
+[2026-02-08 00:10:00] [INFO]    • Color secondary (#1e40af) not used
+[2026-02-08 00:10:00] [INFO]    • Color accent (#f59e0b) not used
+[2026-02-08 00:10:00] [INFO]    ... and 2 more issues
+[2026-02-08 00:10:00] [ERROR] ❌ Layout & Color Consistency: FAILED
+[2026-02-08 00:10:00] [INFO] 
+🔗 CHECK 4: NAVIGATION LINK CONSISTENCY
+[2026-02-08 00:10:00] [INFO] ----------------------------------------
+[2026-02-08 00:10:00] [INFO] Main page has 12 city links
+[2026-02-08 00:10:00] [INFO] ⚠️  Found 3 navigation issues:
+[2026-02-08 00:10:00] [INFO]    • nanjing.html: No link back to home page
+[2026-02-08 00:10:00] [INFO]    • xiamen.html: No link back to home page
+[2026-02-08 00:10:00] [INFO]    • shanghai.html: No link back to home page
+[2026-02-08 00:10:00] [ERROR] ❌ Navigation Links: FAILED
+[2026-02-08 00:10:00] [INFO] 
+🔧 RUNNING IMPROVEMENTS
+[2026-02-08 00:10:00] [INFO] ----------------------------------------
+[2026-02-08 00:10:00] [INFO] Checking image consistency...
+[2026-02-08 00:10:00] [INFO] 
+🔧 Improvements applied:
+[2026-02-08 00:10:00] [INFO]    • Fixed image inconsistencies
+[2026-02-08 00:10:00] [INFO] 
+======================================================================
+[2026-02-08 00:10:00] [INFO] ENHANCED CHECK SUMMARY
+[2026-02-08 00:10:00] [INFO] ======================================================================
+[2026-02-08 00:10:00] [INFO] Checks passed: 1/4 (25.0%)
+[2026-02-08 00:10:00] [INFO] Issues found: 20
+[2026-02-08 00:10:00] [INFO] Improvements made: 1
+[2026-02-08 00:10:00] [INFO] 
+🔧 WEBSITE STATUS: IMPROVED
+[2026-02-08 00:10:00] [INFO]    Issues were found and fixed automatically
+[00:10:00] Generating fix status...
+[2026-02-08 00:10:00] ============================================================
+[2026-02-08 00:10:00] 🔧 TELEGRAM FIX STATUS MONITOR
+[2026-02-08 00:10:00] ============================================================
+[2026-02-08 00:10:00] 🔍 Checking image fix status...
+[2026-02-08 00:10:00] 🔍 Checking page fix status...
+[2026-02-08 00:10:00] 🔍 Checking navigation fix status...
+[2026-02-08 00:10:00] 🔍 Checking layout fix status...
+[2026-02-08 00:10:00] ✅ Fix status prepared for Telegram
+
+📱 TELEGRAM FIX STATUS:
+
+🔧 **WEBSITE FIX STATUS REPORT** 🔧
+**Time:** 2026-02-08 00:10:00
+**Checks:** 2/4 passed
+
+
+❌ **Images:** NEEDS FIXING
+   • Issues: 5 cities need images
+   • Remaining: Beijing, Shanghai, Chengdu (+2 more)
+   • Fixes attempted: Image search attempted
+✅ **Pages:** FIXED (All 12 city pages exist)
+❌ **Navigation:** NEEDS FIXING
+   • Issues: Navigation issues detected
+   • Fixes attempted: Navigation fixes applied
+✅ **Layout:** FIXED (Colors consistent)
+
+📊 **OVERALL STATUS:** ❌ 2 CHECKS NEED FIXING
+    
+🔄 **NEXT STEPS:**
+• Monitor runs every 10 minutes
+• Auto-fixes will continue
+• Next check at: 00:20
+
+🔔 **REAL-TIME UPDATES:**
+Fix status will be posted after each check
+
+
+[2026-02-08 00:10:00] 
+📊 Fix Status: 2/4 checks fixed
+[2026-02-08 00:10:00] ✅ Fix status sent to Telegram
+[2026-02-08 00:10:00] ✅ Status saved to fix_status_report.json
+[00:10:00] Fix status created
+[00:10:00] Fix status saved to /Users/fudongli/clawd/travel-website/latest_fix_status.txt
+Message size:      712 bytes
+[00:10:00] Trigger file created: /Users/fudongli/clawd/travel-website/send_fix_status_trigger.json
+[00:10:00] Status saved to /Users/fudongli/clawd/travel-website/auto_fix_status.json
+[00:10:00] Auto fix status system completed
+

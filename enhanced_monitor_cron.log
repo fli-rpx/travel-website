@@ -1,0 +1,796 @@
+[2026-02-07 22:30:00] [INFO] 
+======================================================================
+[2026-02-07 22:30:00] [INFO] ENHANCED WEBSITE MONITOR - 10 MINUTE CHECK
+[2026-02-07 22:30:00] [INFO] ======================================================================
+[2026-02-07 22:30:00] [INFO] Checking: 2026-02-07 22:30:00
+[2026-02-07 22:30:00] [INFO] 
+🔍 CHECK 1: IMAGES READINESS FOR EACH CITY
+[2026-02-07 22:30:00] [INFO] ----------------------------------------
+[2026-02-07 22:30:00] [INFO] ✅ Cities WITH images: 0/12
+[2026-02-07 22:30:00] [INFO] ⚠️  Cities WITHOUT images: 12/12
+[2026-02-07 22:30:00] [INFO]    • Beijing, Shanghai, Chengdu, Harbin, Chongqing and 7 more
+[2026-02-07 22:30:00] [INFO] 
+🎯 PRIORITY CITIES STATUS:
+[2026-02-07 22:30:00] [INFO]    ❌ NEEDS IMAGES Chengdu
+[2026-02-07 22:30:00] [INFO]    ❌ NEEDS IMAGES Harbin
+[2026-02-07 22:30:00] [INFO]    ❌ NEEDS IMAGES Chongqing
+[2026-02-07 22:30:00] [ERROR] ❌ Images Readiness: FAILED
+[2026-02-07 22:30:00] [INFO] 
+🔍 CHECK 2: PAGES READINESS FOR EACH CITY
+[2026-02-07 22:30:00] [INFO] ----------------------------------------
+[2026-02-07 22:30:00] [INFO] ✅ Cities WITH pages: 12/12
+[2026-02-07 22:30:00] [INFO]    • Nanjing, Xiamen, Shanghai, Qingdao, Chongqing and 7 more
+[2026-02-07 22:30:00] [INFO] ✅ All 12 cities have pages!
+[2026-02-07 22:30:00] [INFO] ✅ Pages Readiness: PASSED
+[2026-02-07 22:30:00] [INFO] 
+🔍 CHECK 3: LAYOUT & COLOR CONSISTENCY
+[2026-02-07 22:30:00] [INFO] ----------------------------------------
+[2026-02-07 22:30:00] [INFO] 📄 Main page: 55 colors, 111 layout elements
+[2026-02-07 22:30:00] [INFO] 
+🎨 COLOR CONSISTENCY ANALYSIS:
+[2026-02-07 22:30:00] [INFO]    ⚠️  primary (#2563eb): Not found in checked pages
+[2026-02-07 22:30:00] [INFO]    ⚠️  secondary (#1e40af): Not found in checked pages
+[2026-02-07 22:30:00] [INFO]    ⚠️  accent (#f59e0b): Not found in checked pages
+[2026-02-07 22:30:00] [INFO]    ⚠️  light (#f8fafc): Not found in checked pages
+[2026-02-07 22:30:00] [INFO]    ⚠️  dark (#1e293b): Not found in checked pages
+[2026-02-07 22:30:00] [INFO] 
+📐 LAYOUT CONSISTENCY ANALYSIS:
+[2026-02-07 22:30:00] [INFO]    ✅ Common elements across all pages: 6
+[2026-02-07 22:30:00] [INFO]      • xiamen.html
+[2026-02-07 22:30:00] [INFO]      • qingdao.html
+[2026-02-07 22:30:00] [INFO]      • guangzhou.html
+[2026-02-07 22:30:00] [INFO] 
+⚠️  Found 5 consistency issues:
+[2026-02-07 22:30:00] [INFO]    • Color primary (#2563eb) not used
+[2026-02-07 22:30:00] [INFO]    • Color secondary (#1e40af) not used
+[2026-02-07 22:30:00] [INFO]    • Color accent (#f59e0b) not used
+[2026-02-07 22:30:00] [INFO]    ... and 2 more issues
+[2026-02-07 22:30:00] [ERROR] ❌ Layout & Color Consistency: FAILED
+[2026-02-07 22:30:00] [INFO] 
+🔧 RUNNING IMPROVEMENTS
+[2026-02-07 22:30:00] [INFO] ----------------------------------------
+[2026-02-07 22:30:00] [INFO] Checking image consistency...
+[2026-02-07 22:30:00] [INFO] 
+🔧 Improvements applied:
+[2026-02-07 22:30:00] [INFO]    • Fixed image inconsistencies
+[2026-02-07 22:30:00] [INFO] 
+======================================================================
+[2026-02-07 22:30:00] [INFO] ENHANCED CHECK SUMMARY
+[2026-02-07 22:30:00] [INFO] ======================================================================
+[2026-02-07 22:30:00] [INFO] Checks passed: 1/3 (33.3%)
+[2026-02-07 22:30:00] [INFO] Issues found: 17
+[2026-02-07 22:30:00] [INFO] Improvements made: 1
+[2026-02-07 22:30:00] [INFO] 
+🔧 WEBSITE STATUS: IMPROVED
+[2026-02-07 22:30:00] [INFO]    Issues were found and fixed automatically
+[2026-02-07 22:40:01] [INFO] 
+======================================================================
+[2026-02-07 22:40:01] [INFO] ENHANCED WEBSITE MONITOR - 10 MINUTE CHECK
+[2026-02-07 22:40:01] [INFO] ======================================================================
+[2026-02-07 22:40:01] [INFO] Checking: 2026-02-07 22:40:01
+[2026-02-07 22:40:01] [INFO] 
+🔍 CHECK 1: IMAGES READINESS FOR EACH CITY
+[2026-02-07 22:40:01] [INFO] ----------------------------------------
+[2026-02-07 22:40:01] [INFO] ✅ Cities WITH images: 0/12
+[2026-02-07 22:40:01] [INFO] ⚠️  Cities WITHOUT images: 12/12
+[2026-02-07 22:40:01] [INFO]    • Beijing, Shanghai, Chengdu, Harbin, Chongqing and 7 more
+[2026-02-07 22:40:01] [INFO] 
+🎯 PRIORITY CITIES STATUS:
+[2026-02-07 22:40:01] [INFO]    ❌ NEEDS IMAGES Chengdu
+[2026-02-07 22:40:01] [INFO]    ❌ NEEDS IMAGES Harbin
+[2026-02-07 22:40:01] [INFO]    ❌ NEEDS IMAGES Chongqing
+[2026-02-07 22:40:01] [ERROR] ❌ Images Readiness: FAILED
+[2026-02-07 22:40:01] [INFO] 
+🔍 CHECK 2: PAGES READINESS FOR EACH CITY
+[2026-02-07 22:40:01] [INFO] ----------------------------------------
+[2026-02-07 22:40:01] [INFO] ✅ Cities WITH pages: 12/12
+[2026-02-07 22:40:01] [INFO]    • Nanjing, Xiamen, Shanghai, Qingdao, Chongqing and 7 more
+[2026-02-07 22:40:01] [INFO] ✅ All 12 cities have pages!
+[2026-02-07 22:40:01] [INFO] ✅ Pages Readiness: PASSED
+[2026-02-07 22:40:01] [INFO] 
+🔍 CHECK 3: LAYOUT & COLOR CONSISTENCY
+[2026-02-07 22:40:01] [INFO] ----------------------------------------
+[2026-02-07 22:40:01] [INFO] 📄 Main page: 55 colors, 111 layout elements
+[2026-02-07 22:40:01] [INFO] 
+🎨 COLOR CONSISTENCY ANALYSIS:
+[2026-02-07 22:40:01] [INFO]    ⚠️  primary (#2563eb): Not found in checked pages
+[2026-02-07 22:40:01] [INFO]    ⚠️  secondary (#1e40af): Not found in checked pages
+[2026-02-07 22:40:01] [INFO]    ⚠️  accent (#f59e0b): Not found in checked pages
+[2026-02-07 22:40:01] [INFO]    ⚠️  light (#f8fafc): Not found in checked pages
+[2026-02-07 22:40:01] [INFO]    ⚠️  dark (#1e293b): Not found in checked pages
+[2026-02-07 22:40:01] [INFO] 
+📐 LAYOUT CONSISTENCY ANALYSIS:
+[2026-02-07 22:40:01] [INFO]    ✅ Common elements across all pages: 6
+[2026-02-07 22:40:01] [INFO]      • shanghai.html
+[2026-02-07 22:40:01] [INFO]      • xiamen.html
+[2026-02-07 22:40:01] [INFO]      • qingdao.html
+[2026-02-07 22:40:01] [INFO] 
+⚠️  Found 5 consistency issues:
+[2026-02-07 22:40:01] [INFO]    • Color primary (#2563eb) not used
+[2026-02-07 22:40:01] [INFO]    • Color secondary (#1e40af) not used
+[2026-02-07 22:40:01] [INFO]    • Color accent (#f59e0b) not used
+[2026-02-07 22:40:01] [INFO]    ... and 2 more issues
+[2026-02-07 22:40:01] [ERROR] ❌ Layout & Color Consistency: FAILED
+[2026-02-07 22:40:01] [INFO] 
+🔧 RUNNING IMPROVEMENTS
+[2026-02-07 22:40:01] [INFO] ----------------------------------------
+[2026-02-07 22:40:01] [INFO] Checking image consistency...
+[2026-02-07 22:40:01] [INFO] 
+🔧 Improvements applied:
+[2026-02-07 22:40:01] [INFO]    • Fixed image inconsistencies
+[2026-02-07 22:40:01] [INFO] 
+======================================================================
+[2026-02-07 22:40:01] [INFO] ENHANCED CHECK SUMMARY
+[2026-02-07 22:40:01] [INFO] ======================================================================
+[2026-02-07 22:40:01] [INFO] Checks passed: 1/3 (33.3%)
+[2026-02-07 22:40:01] [INFO] Issues found: 17
+[2026-02-07 22:40:01] [INFO] Improvements made: 1
+[2026-02-07 22:40:01] [INFO] 
+🔧 WEBSITE STATUS: IMPROVED
+[2026-02-07 22:40:01] [INFO]    Issues were found and fixed automatically
+[2026-02-07 22:50:00] [INFO] 
+======================================================================
+[2026-02-07 22:50:00] [INFO] ENHANCED WEBSITE MONITOR - 10 MINUTE CHECK
+[2026-02-07 22:50:00] [INFO] ======================================================================
+[2026-02-07 22:50:00] [INFO] Checking: 2026-02-07 22:50:00
+[2026-02-07 22:50:00] [INFO] 
+🔍 CHECK 1: IMAGES READINESS FOR EACH CITY
+[2026-02-07 22:50:00] [INFO] ----------------------------------------
+[2026-02-07 22:50:00] [INFO] ✅ Cities WITH images: 0/12
+[2026-02-07 22:50:00] [INFO] ⚠️  Cities WITHOUT images: 12/12
+[2026-02-07 22:50:00] [INFO]    • Beijing, Shanghai, Chengdu, Harbin, Chongqing and 7 more
+[2026-02-07 22:50:00] [INFO] 
+🎯 PRIORITY CITIES STATUS:
+[2026-02-07 22:50:00] [INFO]    ❌ NEEDS IMAGES Chengdu
+[2026-02-07 22:50:00] [INFO]    ❌ NEEDS IMAGES Harbin
+[2026-02-07 22:50:00] [INFO]    ❌ NEEDS IMAGES Chongqing
+[2026-02-07 22:50:00] [ERROR] ❌ Images Readiness: FAILED
+[2026-02-07 22:50:00] [INFO] 
+🔍 CHECK 2: PAGES READINESS FOR EACH CITY
+[2026-02-07 22:50:00] [INFO] ----------------------------------------
+[2026-02-07 22:50:00] [INFO] ✅ Cities WITH pages: 12/12
+[2026-02-07 22:50:00] [INFO]    • Nanjing, Xiamen, Shanghai, Qingdao, Chongqing and 7 more
+[2026-02-07 22:50:00] [INFO] ✅ All 12 cities have pages!
+[2026-02-07 22:50:00] [INFO] ✅ Pages Readiness: PASSED
+[2026-02-07 22:50:00] [INFO] 
+🔍 CHECK 3: LAYOUT & COLOR CONSISTENCY
+[2026-02-07 22:50:00] [INFO] ----------------------------------------
+[2026-02-07 22:50:00] [INFO] 📄 Main page: 55 colors, 111 layout elements
+[2026-02-07 22:50:00] [INFO] 
+🎨 COLOR CONSISTENCY ANALYSIS:
+[2026-02-07 22:50:00] [INFO]    ⚠️  primary (#2563eb): Not found in checked pages
+[2026-02-07 22:50:00] [INFO]    ⚠️  secondary (#1e40af): Not found in checked pages
+[2026-02-07 22:50:00] [INFO]    ⚠️  accent (#f59e0b): Not found in checked pages
+[2026-02-07 22:50:00] [INFO]    ⚠️  light (#f8fafc): Not found in checked pages
+[2026-02-07 22:50:00] [INFO]    ⚠️  dark (#1e293b): Not found in checked pages
+[2026-02-07 22:50:00] [INFO] 
+📐 LAYOUT CONSISTENCY ANALYSIS:
+[2026-02-07 22:50:00] [INFO]    ✅ Common elements across all pages: 6
+[2026-02-07 22:50:00] [INFO]      • shanghai.html
+[2026-02-07 22:50:00] [INFO]      • nanjing.html
+[2026-02-07 22:50:00] [INFO]      • xiamen.html
+[2026-02-07 22:50:00] [INFO] 
+⚠️  Found 5 consistency issues:
+[2026-02-07 22:50:00] [INFO]    • Color primary (#2563eb) not used
+[2026-02-07 22:50:00] [INFO]    • Color secondary (#1e40af) not used
+[2026-02-07 22:50:00] [INFO]    • Color accent (#f59e0b) not used
+[2026-02-07 22:50:00] [INFO]    ... and 2 more issues
+[2026-02-07 22:50:00] [ERROR] ❌ Layout & Color Consistency: FAILED
+[2026-02-07 22:50:00] [INFO] 
+🔗 CHECK 4: NAVIGATION LINK CONSISTENCY
+[2026-02-07 22:50:00] [INFO] ----------------------------------------
+[2026-02-07 22:50:00] [INFO] Main page has 12 city links
+[2026-02-07 22:50:00] [INFO] ⚠️  Found 3 navigation issues:
+[2026-02-07 22:50:00] [INFO]    • nanjing.html: No link back to home page
+[2026-02-07 22:50:00] [INFO]    • xiamen.html: No link back to home page
+[2026-02-07 22:50:00] [INFO]    • shanghai.html: No link back to home page
+[2026-02-07 22:50:00] [ERROR] ❌ Navigation Links: FAILED
+[2026-02-07 22:50:00] [INFO] 
+🔧 RUNNING IMPROVEMENTS
+[2026-02-07 22:50:00] [INFO] ----------------------------------------
+[2026-02-07 22:50:00] [INFO] Checking image consistency...
+[2026-02-07 22:50:00] [INFO] 
+🔧 Improvements applied:
+[2026-02-07 22:50:00] [INFO]    • Fixed image inconsistencies
+[2026-02-07 22:50:00] [INFO] 
+======================================================================
+[2026-02-07 22:50:00] [INFO] ENHANCED CHECK SUMMARY
+[2026-02-07 22:50:00] [INFO] ======================================================================
+[2026-02-07 22:50:00] [INFO] Checks passed: 1/4 (25.0%)
+[2026-02-07 22:50:00] [INFO] Issues found: 20
+[2026-02-07 22:50:00] [INFO] Improvements made: 1
+[2026-02-07 22:50:00] [INFO] 
+🔧 WEBSITE STATUS: IMPROVED
+[2026-02-07 22:50:00] [INFO]    Issues were found and fixed automatically
+[2026-02-07 23:00:00] [INFO] 
+======================================================================
+[2026-02-07 23:00:00] [INFO] ENHANCED WEBSITE MONITOR - 10 MINUTE CHECK
+[2026-02-07 23:00:00] [INFO] ======================================================================
+[2026-02-07 23:00:00] [INFO] Checking: 2026-02-07 23:00:00
+[2026-02-07 23:00:00] [INFO] 
+🔍 CHECK 1: IMAGES READINESS FOR EACH CITY
+[2026-02-07 23:00:00] [INFO] ----------------------------------------
+[2026-02-07 23:00:00] [INFO] ✅ Cities WITH images: 0/12
+[2026-02-07 23:00:00] [INFO] ⚠️  Cities WITHOUT images: 12/12
+[2026-02-07 23:00:00] [INFO]    • Beijing, Shanghai, Chengdu, Harbin, Chongqing and 7 more
+[2026-02-07 23:00:00] [INFO] 
+🎯 PRIORITY CITIES STATUS:
+[2026-02-07 23:00:00] [INFO]    ❌ NEEDS IMAGES Chengdu
+[2026-02-07 23:00:00] [INFO]    ❌ NEEDS IMAGES Harbin
+[2026-02-07 23:00:00] [INFO]    ❌ NEEDS IMAGES Chongqing
+[2026-02-07 23:00:00] [ERROR] ❌ Images Readiness: FAILED
+[2026-02-07 23:00:00] [INFO] 
+🔍 CHECK 2: PAGES READINESS FOR EACH CITY
+[2026-02-07 23:00:00] [INFO] ----------------------------------------
+[2026-02-07 23:00:00] [INFO] ✅ Cities WITH pages: 12/12
+[2026-02-07 23:00:00] [INFO]    • Nanjing, Xiamen, Shanghai, Qingdao, Chongqing and 7 more
+[2026-02-07 23:00:00] [INFO] ✅ All 12 cities have pages!
+[2026-02-07 23:00:00] [INFO] ✅ Pages Readiness: PASSED
+[2026-02-07 23:00:00] [INFO] 
+🔍 CHECK 3: LAYOUT & COLOR CONSISTENCY
+[2026-02-07 23:00:00] [INFO] ----------------------------------------
+[2026-02-07 23:00:00] [INFO] 📄 Main page: 55 colors, 111 layout elements
+[2026-02-07 23:00:00] [INFO] 
+🎨 COLOR CONSISTENCY ANALYSIS:
+[2026-02-07 23:00:00] [INFO]    ⚠️  primary (#2563eb): Not found in checked pages
+[2026-02-07 23:00:00] [INFO]    ⚠️  secondary (#1e40af): Not found in checked pages
+[2026-02-07 23:00:00] [INFO]    ⚠️  accent (#f59e0b): Not found in checked pages
+[2026-02-07 23:00:00] [INFO]    ⚠️  light (#f8fafc): Not found in checked pages
+[2026-02-07 23:00:00] [INFO]    ⚠️  dark (#1e293b): Not found in checked pages
+[2026-02-07 23:00:00] [INFO] 
+📐 LAYOUT CONSISTENCY ANALYSIS:
+[2026-02-07 23:00:00] [INFO]    ✅ Common elements across all pages: 6
+[2026-02-07 23:00:00] [INFO]      • qingdao.html
+[2026-02-07 23:00:00] [INFO]      • shanghai.html
+[2026-02-07 23:00:00] [INFO]      • xiamen.html
+[2026-02-07 23:00:00] [INFO] 
+⚠️  Found 5 consistency issues:
+[2026-02-07 23:00:00] [INFO]    • Color primary (#2563eb) not used
+[2026-02-07 23:00:00] [INFO]    • Color secondary (#1e40af) not used
+[2026-02-07 23:00:00] [INFO]    • Color accent (#f59e0b) not used
+[2026-02-07 23:00:00] [INFO]    ... and 2 more issues
+[2026-02-07 23:00:00] [ERROR] ❌ Layout & Color Consistency: FAILED
+[2026-02-07 23:00:00] [INFO] 
+🔗 CHECK 4: NAVIGATION LINK CONSISTENCY
+[2026-02-07 23:00:00] [INFO] ----------------------------------------
+[2026-02-07 23:00:00] [INFO] Main page has 12 city links
+[2026-02-07 23:00:00] [INFO] ⚠️  Found 3 navigation issues:
+[2026-02-07 23:00:00] [INFO]    • nanjing.html: No link back to home page
+[2026-02-07 23:00:00] [INFO]    • xiamen.html: No link back to home page
+[2026-02-07 23:00:00] [INFO]    • shanghai.html: No link back to home page
+[2026-02-07 23:00:00] [ERROR] ❌ Navigation Links: FAILED
+[2026-02-07 23:00:00] [INFO] 
+🔧 RUNNING IMPROVEMENTS
+[2026-02-07 23:00:00] [INFO] ----------------------------------------
+[2026-02-07 23:00:00] [INFO] Checking image consistency...
+[2026-02-07 23:00:00] [INFO] 
+🔧 Improvements applied:
+[2026-02-07 23:00:00] [INFO]    • Fixed image inconsistencies
+[2026-02-07 23:00:00] [INFO] 
+======================================================================
+[2026-02-07 23:00:00] [INFO] ENHANCED CHECK SUMMARY
+[2026-02-07 23:00:00] [INFO] ======================================================================
+[2026-02-07 23:00:00] [INFO] Checks passed: 1/4 (25.0%)
+[2026-02-07 23:00:00] [INFO] Issues found: 20
+[2026-02-07 23:00:00] [INFO] Improvements made: 1
+[2026-02-07 23:00:00] [INFO] 
+🔧 WEBSITE STATUS: IMPROVED
+[2026-02-07 23:00:00] [INFO]    Issues were found and fixed automatically
+[2026-02-07 23:10:00] [INFO] 
+======================================================================
+[2026-02-07 23:10:00] [INFO] ENHANCED WEBSITE MONITOR - 10 MINUTE CHECK
+[2026-02-07 23:10:00] [INFO] ======================================================================
+[2026-02-07 23:10:00] [INFO] Checking: 2026-02-07 23:10:00
+[2026-02-07 23:10:00] [INFO] 
+🔍 CHECK 1: IMAGES READINESS FOR EACH CITY
+[2026-02-07 23:10:00] [INFO] ----------------------------------------
+[2026-02-07 23:10:00] [INFO] ✅ Cities WITH images: 0/12
+[2026-02-07 23:10:00] [INFO] ⚠️  Cities WITHOUT images: 12/12
+[2026-02-07 23:10:00] [INFO]    • Beijing, Shanghai, Chengdu, Harbin, Chongqing and 7 more
+[2026-02-07 23:10:00] [INFO] 
+🎯 PRIORITY CITIES STATUS:
+[2026-02-07 23:10:00] [INFO]    ❌ NEEDS IMAGES Chengdu
+[2026-02-07 23:10:00] [INFO]    ❌ NEEDS IMAGES Harbin
+[2026-02-07 23:10:00] [INFO]    ❌ NEEDS IMAGES Chongqing
+[2026-02-07 23:10:00] [ERROR] ❌ Images Readiness: FAILED
+[2026-02-07 23:10:00] [INFO] 
+🔍 CHECK 2: PAGES READINESS FOR EACH CITY
+[2026-02-07 23:10:00] [INFO] ----------------------------------------
+[2026-02-07 23:10:00] [INFO] ✅ Cities WITH pages: 12/12
+[2026-02-07 23:10:00] [INFO]    • Nanjing, Xiamen, Shanghai, Qingdao, Chongqing and 7 more
+[2026-02-07 23:10:00] [INFO] ✅ All 12 cities have pages!
+[2026-02-07 23:10:00] [INFO] ✅ Pages Readiness: PASSED
+[2026-02-07 23:10:00] [INFO] 
+🔍 CHECK 3: LAYOUT & COLOR CONSISTENCY
+[2026-02-07 23:10:00] [INFO] ----------------------------------------
+[2026-02-07 23:10:00] [INFO] 📄 Main page: 55 colors, 111 layout elements
+[2026-02-07 23:10:00] [INFO] 
+🎨 COLOR CONSISTENCY ANALYSIS:
+[2026-02-07 23:10:00] [INFO]    ⚠️  primary (#2563eb): Not found in checked pages
+[2026-02-07 23:10:00] [INFO]    ⚠️  secondary (#1e40af): Not found in checked pages
+[2026-02-07 23:10:00] [INFO]    ⚠️  accent (#f59e0b): Not found in checked pages
+[2026-02-07 23:10:00] [INFO]    ⚠️  light (#f8fafc): Not found in checked pages
+[2026-02-07 23:10:00] [INFO]    ⚠️  dark (#1e293b): Not found in checked pages
+[2026-02-07 23:10:00] [INFO] 
+📐 LAYOUT CONSISTENCY ANALYSIS:
+[2026-02-07 23:10:00] [INFO]    ✅ Common elements across all pages: 6
+[2026-02-07 23:10:00] [INFO]      • chongqing.html
+[2026-02-07 23:10:00] [INFO]      • guangzhou.html
+[2026-02-07 23:10:00] [INFO]      • qingdao.html
+[2026-02-07 23:10:00] [INFO] 
+⚠️  Found 5 consistency issues:
+[2026-02-07 23:10:00] [INFO]    • Color primary (#2563eb) not used
+[2026-02-07 23:10:00] [INFO]    • Color secondary (#1e40af) not used
+[2026-02-07 23:10:00] [INFO]    • Color accent (#f59e0b) not used
+[2026-02-07 23:10:00] [INFO]    ... and 2 more issues
+[2026-02-07 23:10:00] [ERROR] ❌ Layout & Color Consistency: FAILED
+[2026-02-07 23:10:00] [INFO] 
+🔗 CHECK 4: NAVIGATION LINK CONSISTENCY
+[2026-02-07 23:10:00] [INFO] ----------------------------------------
+[2026-02-07 23:10:00] [INFO] Main page has 12 city links
+[2026-02-07 23:10:00] [INFO] ⚠️  Found 3 navigation issues:
+[2026-02-07 23:10:00] [INFO]    • nanjing.html: No link back to home page
+[2026-02-07 23:10:00] [INFO]    • xiamen.html: No link back to home page
+[2026-02-07 23:10:00] [INFO]    • shanghai.html: No link back to home page
+[2026-02-07 23:10:00] [ERROR] ❌ Navigation Links: FAILED
+[2026-02-07 23:10:00] [INFO] 
+🔧 RUNNING IMPROVEMENTS
+[2026-02-07 23:10:00] [INFO] ----------------------------------------
+[2026-02-07 23:10:00] [INFO] Checking image consistency...
+[2026-02-07 23:10:00] [INFO] 
+🔧 Improvements applied:
+[2026-02-07 23:10:00] [INFO]    • Fixed image inconsistencies
+[2026-02-07 23:10:00] [INFO] 
+======================================================================
+[2026-02-07 23:10:00] [INFO] ENHANCED CHECK SUMMARY
+[2026-02-07 23:10:00] [INFO] ======================================================================
+[2026-02-07 23:10:00] [INFO] Checks passed: 1/4 (25.0%)
+[2026-02-07 23:10:00] [INFO] Issues found: 20
+[2026-02-07 23:10:00] [INFO] Improvements made: 1
+[2026-02-07 23:10:00] [INFO] 
+🔧 WEBSITE STATUS: IMPROVED
+[2026-02-07 23:10:00] [INFO]    Issues were found and fixed automatically
+[2026-02-07 23:20:01] [INFO] 
+======================================================================
+[2026-02-07 23:20:01] [INFO] ENHANCED WEBSITE MONITOR - 10 MINUTE CHECK
+[2026-02-07 23:20:01] [INFO] ======================================================================
+[2026-02-07 23:20:01] [INFO] Checking: 2026-02-07 23:20:01
+[2026-02-07 23:20:01] [INFO] 
+🔍 CHECK 1: IMAGES READINESS FOR EACH CITY
+[2026-02-07 23:20:01] [INFO] ----------------------------------------
+[2026-02-07 23:20:01] [INFO] ✅ Cities WITH images: 0/12
+[2026-02-07 23:20:01] [INFO] ⚠️  Cities WITHOUT images: 12/12
+[2026-02-07 23:20:01] [INFO]    • Beijing, Shanghai, Chengdu, Harbin, Chongqing and 7 more
+[2026-02-07 23:20:01] [INFO] 
+🎯 PRIORITY CITIES STATUS:
+[2026-02-07 23:20:01] [INFO]    ❌ NEEDS IMAGES Chengdu
+[2026-02-07 23:20:01] [INFO]    ❌ NEEDS IMAGES Harbin
+[2026-02-07 23:20:01] [INFO]    ❌ NEEDS IMAGES Chongqing
+[2026-02-07 23:20:01] [ERROR] ❌ Images Readiness: FAILED
+[2026-02-07 23:20:01] [INFO] 
+🔍 CHECK 2: PAGES READINESS FOR EACH CITY
+[2026-02-07 23:20:01] [INFO] ----------------------------------------
+[2026-02-07 23:20:01] [INFO] ✅ Cities WITH pages: 12/12
+[2026-02-07 23:20:01] [INFO]    • Nanjing, Xiamen, Shanghai, Qingdao, Chongqing and 7 more
+[2026-02-07 23:20:01] [INFO] ✅ All 12 cities have pages!
+[2026-02-07 23:20:01] [INFO] ✅ Pages Readiness: PASSED
+[2026-02-07 23:20:01] [INFO] 
+🔍 CHECK 3: LAYOUT & COLOR CONSISTENCY
+[2026-02-07 23:20:01] [INFO] ----------------------------------------
+[2026-02-07 23:20:01] [INFO] 📄 Main page: 55 colors, 111 layout elements
+[2026-02-07 23:20:01] [INFO] 
+🎨 COLOR CONSISTENCY ANALYSIS:
+[2026-02-07 23:20:01] [INFO]    ⚠️  primary (#2563eb): Not found in checked pages
+[2026-02-07 23:20:01] [INFO]    ⚠️  secondary (#1e40af): Not found in checked pages
+[2026-02-07 23:20:01] [INFO]    ⚠️  accent (#f59e0b): Not found in checked pages
+[2026-02-07 23:20:01] [INFO]    ⚠️  light (#f8fafc): Not found in checked pages
+[2026-02-07 23:20:01] [INFO]    ⚠️  dark (#1e293b): Not found in checked pages
+[2026-02-07 23:20:01] [INFO] 
+📐 LAYOUT CONSISTENCY ANALYSIS:
+[2026-02-07 23:20:01] [INFO]    ✅ Common elements across all pages: 6
+[2026-02-07 23:20:01] [INFO]      • nanjing.html
+[2026-02-07 23:20:01] [INFO]      • xiamen.html
+[2026-02-07 23:20:01] [INFO]      • chongqing.html
+[2026-02-07 23:20:01] [INFO] 
+⚠️  Found 5 consistency issues:
+[2026-02-07 23:20:01] [INFO]    • Color primary (#2563eb) not used
+[2026-02-07 23:20:01] [INFO]    • Color secondary (#1e40af) not used
+[2026-02-07 23:20:01] [INFO]    • Color accent (#f59e0b) not used
+[2026-02-07 23:20:01] [INFO]    ... and 2 more issues
+[2026-02-07 23:20:01] [ERROR] ❌ Layout & Color Consistency: FAILED
+[2026-02-07 23:20:01] [INFO] 
+🔗 CHECK 4: NAVIGATION LINK CONSISTENCY
+[2026-02-07 23:20:01] [INFO] ----------------------------------------
+[2026-02-07 23:20:01] [INFO] Main page has 12 city links
+[2026-02-07 23:20:01] [INFO] ⚠️  Found 3 navigation issues:
+[2026-02-07 23:20:01] [INFO]    • nanjing.html: No link back to home page
+[2026-02-07 23:20:01] [INFO]    • xiamen.html: No link back to home page
+[2026-02-07 23:20:01] [INFO]    • shanghai.html: No link back to home page
+[2026-02-07 23:20:01] [ERROR] ❌ Navigation Links: FAILED
+[2026-02-07 23:20:01] [INFO] 
+🔧 RUNNING IMPROVEMENTS
+[2026-02-07 23:20:01] [INFO] ----------------------------------------
+[2026-02-07 23:20:01] [INFO] Checking image consistency...
+[2026-02-07 23:20:01] [INFO] 
+🔧 Improvements applied:
+[2026-02-07 23:20:01] [INFO]    • Fixed image inconsistencies
+[2026-02-07 23:20:01] [INFO] 
+======================================================================
+[2026-02-07 23:20:01] [INFO] ENHANCED CHECK SUMMARY
+[2026-02-07 23:20:01] [INFO] ======================================================================
+[2026-02-07 23:20:01] [INFO] Checks passed: 1/4 (25.0%)
+[2026-02-07 23:20:01] [INFO] Issues found: 20
+[2026-02-07 23:20:01] [INFO] Improvements made: 1
+[2026-02-07 23:20:01] [INFO] 
+🔧 WEBSITE STATUS: IMPROVED
+[2026-02-07 23:20:01] [INFO]    Issues were found and fixed automatically
+[2026-02-07 23:30:00] [INFO] 
+======================================================================
+[2026-02-07 23:30:00] [INFO] ENHANCED WEBSITE MONITOR - 10 MINUTE CHECK
+[2026-02-07 23:30:00] [INFO] ======================================================================
+[2026-02-07 23:30:00] [INFO] Checking: 2026-02-07 23:30:00
+[2026-02-07 23:30:00] [INFO] 
+🔍 CHECK 1: IMAGES READINESS FOR EACH CITY
+[2026-02-07 23:30:00] [INFO] ----------------------------------------
+[2026-02-07 23:30:00] [INFO] ✅ Cities WITH images: 0/12
+[2026-02-07 23:30:00] [INFO] ⚠️  Cities WITHOUT images: 12/12
+[2026-02-07 23:30:00] [INFO]    • Beijing, Shanghai, Chengdu, Harbin, Chongqing and 7 more
+[2026-02-07 23:30:00] [INFO] 
+🎯 PRIORITY CITIES STATUS:
+[2026-02-07 23:30:00] [INFO]    ❌ NEEDS IMAGES Chengdu
+[2026-02-07 23:30:00] [INFO]    ❌ NEEDS IMAGES Harbin
+[2026-02-07 23:30:00] [INFO]    ❌ NEEDS IMAGES Chongqing
+[2026-02-07 23:30:00] [ERROR] ❌ Images Readiness: FAILED
+[2026-02-07 23:30:00] [INFO] 
+🔍 CHECK 2: PAGES READINESS FOR EACH CITY
+[2026-02-07 23:30:00] [INFO] ----------------------------------------
+[2026-02-07 23:30:00] [INFO] ✅ Cities WITH pages: 12/12
+[2026-02-07 23:30:00] [INFO]    • Nanjing, Xiamen, Shanghai, Qingdao, Chongqing and 7 more
+[2026-02-07 23:30:00] [INFO] ✅ All 12 cities have pages!
+[2026-02-07 23:30:00] [INFO] ✅ Pages Readiness: PASSED
+[2026-02-07 23:30:00] [INFO] 
+🔍 CHECK 3: LAYOUT & COLOR CONSISTENCY
+[2026-02-07 23:30:00] [INFO] ----------------------------------------
+[2026-02-07 23:30:00] [INFO] 📄 Main page: 55 colors, 111 layout elements
+[2026-02-07 23:30:00] [INFO] 
+🎨 COLOR CONSISTENCY ANALYSIS:
+[2026-02-07 23:30:00] [INFO]    ⚠️  primary (#2563eb): Not found in checked pages
+[2026-02-07 23:30:00] [INFO]    ⚠️  secondary (#1e40af): Not found in checked pages
+[2026-02-07 23:30:00] [INFO]    ⚠️  accent (#f59e0b): Not found in checked pages
+[2026-02-07 23:30:00] [INFO]    ⚠️  light (#f8fafc): Not found in checked pages
+[2026-02-07 23:30:00] [INFO]    ⚠️  dark (#1e293b): Not found in checked pages
+[2026-02-07 23:30:00] [INFO] 
+📐 LAYOUT CONSISTENCY ANALYSIS:
+[2026-02-07 23:30:00] [INFO]    ✅ Common elements across all pages: 6
+[2026-02-07 23:30:00] [INFO]      • xiamen.html
+[2026-02-07 23:30:00] [INFO]      • guangzhou.html
+[2026-02-07 23:30:00] [INFO]      • qingdao.html
+[2026-02-07 23:30:00] [INFO] 
+⚠️  Found 5 consistency issues:
+[2026-02-07 23:30:00] [INFO]    • Color primary (#2563eb) not used
+[2026-02-07 23:30:00] [INFO]    • Color secondary (#1e40af) not used
+[2026-02-07 23:30:00] [INFO]    • Color accent (#f59e0b) not used
+[2026-02-07 23:30:00] [INFO]    ... and 2 more issues
+[2026-02-07 23:30:00] [ERROR] ❌ Layout & Color Consistency: FAILED
+[2026-02-07 23:30:00] [INFO] 
+🔗 CHECK 4: NAVIGATION LINK CONSISTENCY
+[2026-02-07 23:30:00] [INFO] ----------------------------------------
+[2026-02-07 23:30:00] [INFO] Main page has 12 city links
+[2026-02-07 23:30:00] [INFO] ⚠️  Found 3 navigation issues:
+[2026-02-07 23:30:00] [INFO]    • nanjing.html: No link back to home page
+[2026-02-07 23:30:00] [INFO]    • xiamen.html: No link back to home page
+[2026-02-07 23:30:00] [INFO]    • shanghai.html: No link back to home page
+[2026-02-07 23:30:00] [ERROR] ❌ Navigation Links: FAILED
+[2026-02-07 23:30:00] [INFO] 
+🔧 RUNNING IMPROVEMENTS
+[2026-02-07 23:30:00] [INFO] ----------------------------------------
+[2026-02-07 23:30:00] [INFO] Checking image consistency...
+[2026-02-07 23:30:00] [INFO] 
+🔧 Improvements applied:
+[2026-02-07 23:30:00] [INFO]    • Fixed image inconsistencies
+[2026-02-07 23:30:00] [INFO] 
+======================================================================
+[2026-02-07 23:30:00] [INFO] ENHANCED CHECK SUMMARY
+[2026-02-07 23:30:00] [INFO] ======================================================================
+[2026-02-07 23:30:00] [INFO] Checks passed: 1/4 (25.0%)
+[2026-02-07 23:30:00] [INFO] Issues found: 20
+[2026-02-07 23:30:00] [INFO] Improvements made: 1
+[2026-02-07 23:30:00] [INFO] 
+🔧 WEBSITE STATUS: IMPROVED
+[2026-02-07 23:30:00] [INFO]    Issues were found and fixed automatically
+[2026-02-07 23:40:01] [INFO] 
+======================================================================
+[2026-02-07 23:40:01] [INFO] ENHANCED WEBSITE MONITOR - 10 MINUTE CHECK
+[2026-02-07 23:40:01] [INFO] ======================================================================
+[2026-02-07 23:40:01] [INFO] Checking: 2026-02-07 23:40:01
+[2026-02-07 23:40:01] [INFO] 
+🔍 CHECK 1: IMAGES READINESS FOR EACH CITY
+[2026-02-07 23:40:01] [INFO] ----------------------------------------
+[2026-02-07 23:40:01] [INFO] ✅ Cities WITH images: 0/12
+[2026-02-07 23:40:01] [INFO] ⚠️  Cities WITHOUT images: 12/12
+[2026-02-07 23:40:01] [INFO]    • Beijing, Shanghai, Chengdu, Harbin, Chongqing and 7 more
+[2026-02-07 23:40:01] [INFO] 
+🎯 PRIORITY CITIES STATUS:
+[2026-02-07 23:40:01] [INFO]    ❌ NEEDS IMAGES Chengdu
+[2026-02-07 23:40:01] [INFO]    ❌ NEEDS IMAGES Harbin
+[2026-02-07 23:40:01] [INFO]    ❌ NEEDS IMAGES Chongqing
+[2026-02-07 23:40:01] [ERROR] ❌ Images Readiness: FAILED
+[2026-02-07 23:40:01] [INFO] 
+🔍 CHECK 2: PAGES READINESS FOR EACH CITY
+[2026-02-07 23:40:01] [INFO] ----------------------------------------
+[2026-02-07 23:40:01] [INFO] ✅ Cities WITH pages: 12/12
+[2026-02-07 23:40:01] [INFO]    • Nanjing, Xiamen, Shanghai, Qingdao, Chongqing and 7 more
+[2026-02-07 23:40:01] [INFO] ✅ All 12 cities have pages!
+[2026-02-07 23:40:01] [INFO] ✅ Pages Readiness: PASSED
+[2026-02-07 23:40:01] [INFO] 
+🔍 CHECK 3: LAYOUT & COLOR CONSISTENCY
+[2026-02-07 23:40:01] [INFO] ----------------------------------------
+[2026-02-07 23:40:01] [INFO] 📄 Main page: 55 colors, 111 layout elements
+[2026-02-07 23:40:01] [INFO] 
+🎨 COLOR CONSISTENCY ANALYSIS:
+[2026-02-07 23:40:01] [INFO]    ⚠️  primary (#2563eb): Not found in checked pages
+[2026-02-07 23:40:01] [INFO]    ⚠️  secondary (#1e40af): Not found in checked pages
+[2026-02-07 23:40:01] [INFO]    ⚠️  accent (#f59e0b): Not found in checked pages
+[2026-02-07 23:40:01] [INFO]    ⚠️  light (#f8fafc): Not found in checked pages
+[2026-02-07 23:40:01] [INFO]    ⚠️  dark (#1e293b): Not found in checked pages
+[2026-02-07 23:40:01] [INFO] 
+📐 LAYOUT CONSISTENCY ANALYSIS:
+[2026-02-07 23:40:01] [INFO]    ✅ Common elements across all pages: 6
+[2026-02-07 23:40:01] [INFO]      • xiamen.html
+[2026-02-07 23:40:01] [INFO]      • shanghai.html
+[2026-02-07 23:40:01] [INFO]      • chongqing.html
+[2026-02-07 23:40:01] [INFO] 
+⚠️  Found 5 consistency issues:
+[2026-02-07 23:40:01] [INFO]    • Color primary (#2563eb) not used
+[2026-02-07 23:40:01] [INFO]    • Color secondary (#1e40af) not used
+[2026-02-07 23:40:01] [INFO]    • Color accent (#f59e0b) not used
+[2026-02-07 23:40:01] [INFO]    ... and 2 more issues
+[2026-02-07 23:40:01] [ERROR] ❌ Layout & Color Consistency: FAILED
+[2026-02-07 23:40:01] [INFO] 
+🔗 CHECK 4: NAVIGATION LINK CONSISTENCY
+[2026-02-07 23:40:01] [INFO] ----------------------------------------
+[2026-02-07 23:40:01] [INFO] Main page has 12 city links
+[2026-02-07 23:40:01] [INFO] ⚠️  Found 3 navigation issues:
+[2026-02-07 23:40:01] [INFO]    • nanjing.html: No link back to home page
+[2026-02-07 23:40:01] [INFO]    • xiamen.html: No link back to home page
+[2026-02-07 23:40:01] [INFO]    • shanghai.html: No link back to home page
+[2026-02-07 23:40:01] [ERROR] ❌ Navigation Links: FAILED
+[2026-02-07 23:40:01] [INFO] 
+🔧 RUNNING IMPROVEMENTS
+[2026-02-07 23:40:01] [INFO] ----------------------------------------
+[2026-02-07 23:40:01] [INFO] Checking image consistency...
+[2026-02-07 23:40:01] [INFO] 
+🔧 Improvements applied:
+[2026-02-07 23:40:01] [INFO]    • Fixed image inconsistencies
+[2026-02-07 23:40:01] [INFO] 
+======================================================================
+[2026-02-07 23:40:01] [INFO] ENHANCED CHECK SUMMARY
+[2026-02-07 23:40:01] [INFO] ======================================================================
+[2026-02-07 23:40:01] [INFO] Checks passed: 1/4 (25.0%)
+[2026-02-07 23:40:01] [INFO] Issues found: 20
+[2026-02-07 23:40:01] [INFO] Improvements made: 1
+[2026-02-07 23:40:01] [INFO] 
+🔧 WEBSITE STATUS: IMPROVED
+[2026-02-07 23:40:01] [INFO]    Issues were found and fixed automatically
+[2026-02-07 23:50:00] [INFO] 
+======================================================================
+[2026-02-07 23:50:00] [INFO] ENHANCED WEBSITE MONITOR - 10 MINUTE CHECK
+[2026-02-07 23:50:00] [INFO] ======================================================================
+[2026-02-07 23:50:00] [INFO] Checking: 2026-02-07 23:50:00
+[2026-02-07 23:50:00] [INFO] 
+🔍 CHECK 1: IMAGES READINESS FOR EACH CITY
+[2026-02-07 23:50:00] [INFO] ----------------------------------------
+[2026-02-07 23:50:00] [INFO] ✅ Cities WITH images: 0/12
+[2026-02-07 23:50:00] [INFO] ⚠️  Cities WITHOUT images: 12/12
+[2026-02-07 23:50:00] [INFO]    • Beijing, Shanghai, Chengdu, Harbin, Chongqing and 7 more
+[2026-02-07 23:50:00] [INFO] 
+🎯 PRIORITY CITIES STATUS:
+[2026-02-07 23:50:00] [INFO]    ❌ NEEDS IMAGES Chengdu
+[2026-02-07 23:50:00] [INFO]    ❌ NEEDS IMAGES Harbin
+[2026-02-07 23:50:00] [INFO]    ❌ NEEDS IMAGES Chongqing
+[2026-02-07 23:50:00] [ERROR] ❌ Images Readiness: FAILED
+[2026-02-07 23:50:00] [INFO] 
+🔍 CHECK 2: PAGES READINESS FOR EACH CITY
+[2026-02-07 23:50:00] [INFO] ----------------------------------------
+[2026-02-07 23:50:00] [INFO] ✅ Cities WITH pages: 12/12
+[2026-02-07 23:50:00] [INFO]    • Nanjing, Xiamen, Shanghai, Qingdao, Chongqing and 7 more
+[2026-02-07 23:50:00] [INFO] ✅ All 12 cities have pages!
+[2026-02-07 23:50:00] [INFO] ✅ Pages Readiness: PASSED
+[2026-02-07 23:50:00] [INFO] 
+🔍 CHECK 3: LAYOUT & COLOR CONSISTENCY
+[2026-02-07 23:50:00] [INFO] ----------------------------------------
+[2026-02-07 23:50:00] [INFO] 📄 Main page: 55 colors, 111 layout elements
+[2026-02-07 23:50:00] [INFO] 
+🎨 COLOR CONSISTENCY ANALYSIS:
+[2026-02-07 23:50:00] [INFO]    ⚠️  primary (#2563eb): Not found in checked pages
+[2026-02-07 23:50:00] [INFO]    ⚠️  secondary (#1e40af): Not found in checked pages
+[2026-02-07 23:50:00] [INFO]    ⚠️  accent (#f59e0b): Not found in checked pages
+[2026-02-07 23:50:00] [INFO]    ⚠️  light (#f8fafc): Not found in checked pages
+[2026-02-07 23:50:00] [INFO]    ⚠️  dark (#1e293b): Not found in checked pages
+[2026-02-07 23:50:00] [INFO] 
+📐 LAYOUT CONSISTENCY ANALYSIS:
+[2026-02-07 23:50:00] [INFO]    ✅ Common elements across all pages: 6
+[2026-02-07 23:50:00] [INFO]      • qingdao.html
+[2026-02-07 23:50:00] [INFO]      • nanjing.html
+[2026-02-07 23:50:00] [INFO]      • guangzhou.html
+[2026-02-07 23:50:00] [INFO] 
+⚠️  Found 5 consistency issues:
+[2026-02-07 23:50:00] [INFO]    • Color primary (#2563eb) not used
+[2026-02-07 23:50:00] [INFO]    • Color secondary (#1e40af) not used
+[2026-02-07 23:50:00] [INFO]    • Color accent (#f59e0b) not used
+[2026-02-07 23:50:00] [INFO]    ... and 2 more issues
+[2026-02-07 23:50:00] [ERROR] ❌ Layout & Color Consistency: FAILED
+[2026-02-07 23:50:00] [INFO] 
+🔗 CHECK 4: NAVIGATION LINK CONSISTENCY
+[2026-02-07 23:50:00] [INFO] ----------------------------------------
+[2026-02-07 23:50:00] [INFO] Main page has 12 city links
+[2026-02-07 23:50:00] [INFO] ⚠️  Found 3 navigation issues:
+[2026-02-07 23:50:00] [INFO]    • nanjing.html: No link back to home page
+[2026-02-07 23:50:00] [INFO]    • xiamen.html: No link back to home page
+[2026-02-07 23:50:00] [INFO]    • shanghai.html: No link back to home page
+[2026-02-07 23:50:00] [ERROR] ❌ Navigation Links: FAILED
+[2026-02-07 23:50:00] [INFO] 
+🔧 RUNNING IMPROVEMENTS
+[2026-02-07 23:50:00] [INFO] ----------------------------------------
+[2026-02-07 23:50:00] [INFO] Checking image consistency...
+[2026-02-07 23:50:00] [INFO] 
+🔧 Improvements applied:
+[2026-02-07 23:50:00] [INFO]    • Fixed image inconsistencies
+[2026-02-07 23:50:00] [INFO] 
+======================================================================
+[2026-02-07 23:50:00] [INFO] ENHANCED CHECK SUMMARY
+[2026-02-07 23:50:00] [INFO] ======================================================================
+[2026-02-07 23:50:00] [INFO] Checks passed: 1/4 (25.0%)
+[2026-02-07 23:50:00] [INFO] Issues found: 20
+[2026-02-07 23:50:00] [INFO] Improvements made: 1
+[2026-02-07 23:50:00] [INFO] 
+🔧 WEBSITE STATUS: IMPROVED
+[2026-02-07 23:50:00] [INFO]    Issues were found and fixed automatically
+[2026-02-08 00:00:00] [INFO] 
+======================================================================
+[2026-02-08 00:00:00] [INFO] ENHANCED WEBSITE MONITOR - 10 MINUTE CHECK
+[2026-02-08 00:00:00] [INFO] ======================================================================
+[2026-02-08 00:00:00] [INFO] Checking: 2026-02-08 00:00:00
+[2026-02-08 00:00:00] [INFO] 
+🔍 CHECK 1: IMAGES READINESS FOR EACH CITY
+[2026-02-08 00:00:00] [INFO] ----------------------------------------
+[2026-02-08 00:00:00] [INFO] ✅ Cities WITH images: 0/12
+[2026-02-08 00:00:00] [INFO] ⚠️  Cities WITHOUT images: 12/12
+[2026-02-08 00:00:00] [INFO]    • Beijing, Shanghai, Chengdu, Harbin, Chongqing and 7 more
+[2026-02-08 00:00:00] [INFO] 
+🎯 PRIORITY CITIES STATUS:
+[2026-02-08 00:00:00] [INFO]    ❌ NEEDS IMAGES Chengdu
+[2026-02-08 00:00:00] [INFO]    ❌ NEEDS IMAGES Harbin
+[2026-02-08 00:00:00] [INFO]    ❌ NEEDS IMAGES Chongqing
+[2026-02-08 00:00:00] [ERROR] ❌ Images Readiness: FAILED
+[2026-02-08 00:00:00] [INFO] 
+🔍 CHECK 2: PAGES READINESS FOR EACH CITY
+[2026-02-08 00:00:00] [INFO] ----------------------------------------
+[2026-02-08 00:00:00] [INFO] ✅ Cities WITH pages: 12/12
+[2026-02-08 00:00:00] [INFO]    • Nanjing, Xiamen, Shanghai, Qingdao, Chongqing and 7 more
+[2026-02-08 00:00:00] [INFO] ✅ All 12 cities have pages!
+[2026-02-08 00:00:00] [INFO] ✅ Pages Readiness: PASSED
+[2026-02-08 00:00:00] [INFO] 
+🔍 CHECK 3: LAYOUT & COLOR CONSISTENCY
+[2026-02-08 00:00:00] [INFO] ----------------------------------------
+[2026-02-08 00:00:00] [INFO] 📄 Main page: 55 colors, 111 layout elements
+[2026-02-08 00:00:00] [INFO] 
+🎨 COLOR CONSISTENCY ANALYSIS:
+[2026-02-08 00:00:00] [INFO]    ⚠️  primary (#2563eb): Not found in checked pages
+[2026-02-08 00:00:00] [INFO]    ⚠️  secondary (#1e40af): Not found in checked pages
+[2026-02-08 00:00:00] [INFO]    ⚠️  accent (#f59e0b): Not found in checked pages
+[2026-02-08 00:00:00] [INFO]    ⚠️  light (#f8fafc): Not found in checked pages
+[2026-02-08 00:00:00] [INFO]    ⚠️  dark (#1e293b): Not found in checked pages
+[2026-02-08 00:00:00] [INFO] 
+📐 LAYOUT CONSISTENCY ANALYSIS:
+[2026-02-08 00:00:00] [INFO]    ✅ Common elements across all pages: 6
+[2026-02-08 00:00:00] [INFO]      • qingdao.html
+[2026-02-08 00:00:00] [INFO]      • nanjing.html
+[2026-02-08 00:00:00] [INFO]      • xiamen.html
+[2026-02-08 00:00:00] [INFO] 
+⚠️  Found 5 consistency issues:
+[2026-02-08 00:00:00] [INFO]    • Color primary (#2563eb) not used
+[2026-02-08 00:00:00] [INFO]    • Color secondary (#1e40af) not used
+[2026-02-08 00:00:00] [INFO]    • Color accent (#f59e0b) not used
+[2026-02-08 00:00:00] [INFO]    ... and 2 more issues
+[2026-02-08 00:00:00] [ERROR] ❌ Layout & Color Consistency: FAILED
+[2026-02-08 00:00:00] [INFO] 
+🔗 CHECK 4: NAVIGATION LINK CONSISTENCY
+[2026-02-08 00:00:00] [INFO] ----------------------------------------
+[2026-02-08 00:00:00] [INFO] Main page has 12 city links
+[2026-02-08 00:00:00] [INFO] ⚠️  Found 3 navigation issues:
+[2026-02-08 00:00:00] [INFO]    • nanjing.html: No link back to home page
+[2026-02-08 00:00:00] [INFO]    • xiamen.html: No link back to home page
+[2026-02-08 00:00:00] [INFO]    • shanghai.html: No link back to home page
+[2026-02-08 00:00:00] [ERROR] ❌ Navigation Links: FAILED
+[2026-02-08 00:00:00] [INFO] 
+🔧 RUNNING IMPROVEMENTS
+[2026-02-08 00:00:00] [INFO] ----------------------------------------
+[2026-02-08 00:00:00] [INFO] Checking image consistency...
+[2026-02-08 00:00:01] [INFO] 
+🔧 Improvements applied:
+[2026-02-08 00:00:01] [INFO]    • Fixed image inconsistencies
+[2026-02-08 00:00:01] [INFO] 
+======================================================================
+[2026-02-08 00:00:01] [INFO] ENHANCED CHECK SUMMARY
+[2026-02-08 00:00:01] [INFO] ======================================================================
+[2026-02-08 00:00:01] [INFO] Checks passed: 1/4 (25.0%)
+[2026-02-08 00:00:01] [INFO] Issues found: 20
+[2026-02-08 00:00:01] [INFO] Improvements made: 1
+[2026-02-08 00:00:01] [INFO] 
+🔧 WEBSITE STATUS: IMPROVED
+[2026-02-08 00:00:01] [INFO]    Issues were found and fixed automatically
+[2026-02-08 00:10:00] [INFO] 
+======================================================================
+[2026-02-08 00:10:00] [INFO] ENHANCED WEBSITE MONITOR - 10 MINUTE CHECK
+[2026-02-08 00:10:00] [INFO] ======================================================================
+[2026-02-08 00:10:00] [INFO] Checking: 2026-02-08 00:10:00
+[2026-02-08 00:10:00] [INFO] 
+🔍 CHECK 1: IMAGES READINESS FOR EACH CITY
+[2026-02-08 00:10:00] [INFO] ----------------------------------------
+[2026-02-08 00:10:00] [INFO] ✅ Cities WITH images: 0/12
+[2026-02-08 00:10:00] [INFO] ⚠️  Cities WITHOUT images: 12/12
+[2026-02-08 00:10:00] [INFO]    • Beijing, Shanghai, Chengdu, Harbin, Chongqing and 7 more
+[2026-02-08 00:10:00] [INFO] 
+🎯 PRIORITY CITIES STATUS:
+[2026-02-08 00:10:00] [INFO]    ❌ NEEDS IMAGES Chengdu
+[2026-02-08 00:10:00] [INFO]    ❌ NEEDS IMAGES Harbin
+[2026-02-08 00:10:00] [INFO]    ❌ NEEDS IMAGES Chongqing
+[2026-02-08 00:10:00] [ERROR] ❌ Images Readiness: FAILED
+[2026-02-08 00:10:00] [INFO] 
+🔍 CHECK 2: PAGES READINESS FOR EACH CITY
+[2026-02-08 00:10:00] [INFO] ----------------------------------------
+[2026-02-08 00:10:00] [INFO] ✅ Cities WITH pages: 12/12
+[2026-02-08 00:10:00] [INFO]    • Nanjing, Xiamen, Shanghai, Qingdao, Chongqing and 7 more
+[2026-02-08 00:10:00] [INFO] ✅ All 12 cities have pages!
+[2026-02-08 00:10:00] [INFO] ✅ Pages Readiness: PASSED
+[2026-02-08 00:10:00] [INFO] 
+🔍 CHECK 3: LAYOUT & COLOR CONSISTENCY
+[2026-02-08 00:10:00] [INFO] ----------------------------------------
+[2026-02-08 00:10:00] [INFO] 📄 Main page: 55 colors, 111 layout elements
+[2026-02-08 00:10:00] [INFO] 
+🎨 COLOR CONSISTENCY ANALYSIS:
+[2026-02-08 00:10:00] [INFO]    ⚠️  primary (#2563eb): Not found in checked pages
+[2026-02-08 00:10:00] [INFO]    ⚠️  secondary (#1e40af): Not found in checked pages
+[2026-02-08 00:10:00] [INFO]    ⚠️  accent (#f59e0b): Not found in checked pages
+[2026-02-08 00:10:00] [INFO]    ⚠️  light (#f8fafc): Not found in checked pages
+[2026-02-08 00:10:00] [INFO]    ⚠️  dark (#1e293b): Not found in checked pages
+[2026-02-08 00:10:00] [INFO] 
+📐 LAYOUT CONSISTENCY ANALYSIS:
+[2026-02-08 00:10:00] [INFO]    ✅ Common elements across all pages: 6
+[2026-02-08 00:10:00] [INFO]      • xiamen.html
+[2026-02-08 00:10:00] [INFO]      • shanghai.html
+[2026-02-08 00:10:00] [INFO]      • qingdao.html
+[2026-02-08 00:10:00] [INFO] 
+⚠️  Found 5 consistency issues:
+[2026-02-08 00:10:00] [INFO]    • Color primary (#2563eb) not used
+[2026-02-08 00:10:00] [INFO]    • Color secondary (#1e40af) not used
+[2026-02-08 00:10:00] [INFO]    • Color accent (#f59e0b) not used
+[2026-02-08 00:10:00] [INFO]    ... and 2 more issues
+[2026-02-08 00:10:00] [ERROR] ❌ Layout & Color Consistency: FAILED
+[2026-02-08 00:10:00] [INFO] 
+🔗 CHECK 4: NAVIGATION LINK CONSISTENCY
+[2026-02-08 00:10:00] [INFO] ----------------------------------------
+[2026-02-08 00:10:00] [INFO] Main page has 12 city links
+[2026-02-08 00:10:00] [INFO] ⚠️  Found 3 navigation issues:
+[2026-02-08 00:10:00] [INFO]    • nanjing.html: No link back to home page
+[2026-02-08 00:10:00] [INFO]    • xiamen.html: No link back to home page
+[2026-02-08 00:10:00] [INFO]    • shanghai.html: No link back to home page
+[2026-02-08 00:10:00] [ERROR] ❌ Navigation Links: FAILED
+[2026-02-08 00:10:00] [INFO] 
+🔧 RUNNING IMPROVEMENTS
+[2026-02-08 00:10:00] [INFO] ----------------------------------------
+[2026-02-08 00:10:00] [INFO] Checking image consistency...
+[2026-02-08 00:10:00] [INFO] 
+🔧 Improvements applied:
+[2026-02-08 00:10:00] [INFO]    • Fixed image inconsistencies
+[2026-02-08 00:10:00] [INFO] 
+======================================================================
+[2026-02-08 00:10:00] [INFO] ENHANCED CHECK SUMMARY
+[2026-02-08 00:10:00] [INFO] ======================================================================
+[2026-02-08 00:10:00] [INFO] Checks passed: 1/4 (25.0%)
+[2026-02-08 00:10:00] [INFO] Issues found: 20
+[2026-02-08 00:10:00] [INFO] Improvements made: 1
+[2026-02-08 00:10:00] [INFO] 
+🔧 WEBSITE STATUS: IMPROVED
+[2026-02-08 00:10:00] [INFO]    Issues were found and fixed automatically

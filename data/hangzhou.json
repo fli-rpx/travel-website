@@ -1,0 +1,108 @@
+{
+  "name": "Hangzhou",
+  "title": "Hangzhou - Traveling China like your home yard",
+  "heroTitle": "Hangzhou",
+  "heroSubtitle": "Ancient Capital & Modern Metropolis",
+  "heroImage": "../images/user_photos/hangzhou_hero_bg.jpg",
+  "overview": "Hangzhou, the capital of Zhejiang province, represents the poetic soul of China, immortalized in countless poems, paintings, and literary works throughout Chinese history. Situated at the southern terminus of the Grand Canal and on the banks of the Qiantang River, Hangzhou's most famous feature is West Lake (Xi Hu), a UNESCO World Heritage Site that has inspired artists and poets for over a millennium.",
+  "highlights": {
+    "attractions": "West Lake, Lingyin Temple, Six Harmonies Pagoda, Su Causeway, Bai Causeway, Feilai Feng grottoes",
+    "cuisine": "Dongpo Pork, West Lake Fish in Vinegar Gravy, Longjing Tea, Beggar's Chicken, Hangzhou Yogurt",
+    "bestTime": "Autumn (September-October) with clear skies and pleasant temperatures, or Spring (March-May) for blooming flowers"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Dongpo Pork",
+        "description": "Braised pork belly named after the Song Dynasty poet Su Dongpo, known for its tender texture and rich flavor."
+      },
+      {
+        "name": "West Lake Fish in Vinegar Gravy",
+        "description": "Fresh fish from West Lake served with a sweet and sour vinegar sauce."
+      },
+      {
+        "name": "Longjing Tea Shrimp",
+        "description": "Fresh shrimp stir-fried with Longjing tea leaves, combining seafood with the famous local tea."
+      },
+      {
+        "name": "Beggar's Chicken",
+        "description": "Chicken wrapped in lotus leaves and clay, then baked until tender and aromatic."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Hefang Street",
+        "description": "Traditional snacks and street food in a historic setting with traditional architecture."
+      },
+      {
+        "name": "West Lake Area",
+        "description": "Lakeside restaurants serving fresh fish and local specialties with scenic views."
+      },
+      {
+        "name": "Qinghefang Historic District",
+        "description": "Family-run establishments offering authentic Hangzhou cuisine."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Hangzhou Xiaoshan International Airport (HGH) with domestic and international flights.",
+      "By Train: Major high-speed rail hub connecting to Shanghai, Guangzhou, Xi'an, and other cities.",
+      "By Bus: Extensive long-distance bus network connecting to nearby provinces and cities."
+    ],
+    "gettingAround": [
+      "Metro: Hangzhou's metro system provides efficient transportation to major attractions and districts.",
+      "Bicycle: Renting a bicycle offers the best way to explore West Lake's perimeter with dedicated bike lanes.",
+      "Bus: Comprehensive public bus network covering the urban area and tourist attractions.",
+      "Boat: Traditional wooden boats on West Lake provide scenic transportation and tours."
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: West Lake and Culture",
+      "activities": [
+        "Morning: Explore West Lake by bicycle, visiting Su Causeway and Bai Causeway.",
+        "Afternoon: Visit Lingyin Temple and Feilai Feng grottoes.",
+        "Evening: Enjoy dinner at a lakeside restaurant with West Lake fish."
+      ]
+    },
+    {
+      "day": "Day 2: History and Tea",
+      "activities": [
+        "Morning: Visit Six Harmonies Pagoda for panoramic views.",
+        "Afternoon: Explore Longjing tea plantations and participate in a tea ceremony.",
+        "Evening: Stroll through Hefang Street for shopping and street food."
+      ]
+    },
+    {
+      "day": "Day 3: Modern Hangzhou",
+      "activities": [
+        "Morning: Visit the National Silk Museum to learn about silk production.",
+        "Afternoon: Explore Xixi National Wetland Park for natural scenery.",
+        "Evening: Experience modern Hangzhou at the Cloud Town tech district."
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/hangzhou_1_optimized.jpg",
+    "../images/user_photos/hangzhou_2_optimized.jpg",
+    "../images/user_photos/hangzhou_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN106897282B",
+      "title": "User group classification method and device",
+      "assignee": "Alibaba Group Holding Ltd"
+    },
+    {
+      "number": "CN108418780A",
+      "title": "Filter method and device, system, the dns server of IP address",
+      "assignee": "Alibaba Group Holding Ltd"
+    },
+    {
+      "number": "CN108804885B",
+      "title": "Man-machine verification method and device, storage medium and processor",
+      "assignee": "Alibaba Group Holding Ltd"
+    }
+  ]
+}

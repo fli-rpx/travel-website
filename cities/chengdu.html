@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chengdu - Traveling China</title>
+    <title>Chengdu - Traveling China like your home yard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,234 +21,78 @@
             --gray-light: #e2e8f0;
             --gray-medium: #94a3b8;
         }
-
+        
         .city-hero {
-            color: white; padding: 100px 0 60px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--hero-image);
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 100px 0 60px;
+            padding: 120px 0 80px;
             text-align: center;
             margin-bottom: 60px;
+            --hero-image: url('../images/user_photos/chengdu_hero_bg.jpg');
         }
-
+        
         .city-hero h1 {
-            font-size: 2.5rem; /* Reduced from 3.5rem */
-            margin-bottom: 16px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
-
+        
         .city-hero .lead {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: rgba(255,255,255,0.95);
-            line-height: 1.8; /* Increased from 1.6 for better readability */
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.9);
         }
-
+        
         .city-content {
-            padding: 60px 0; /* Increased from 40px for better spacing */
+            padding: 60px 0;
         }
-
+        
         .city-section {
-            margin-bottom: 60px; /* Increased from 40px for better section separation */
+            margin-bottom: 60px;
         }
-
+        
         .city-section h2 {
             color: var(--secondary);
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid var(--accent);
-            font-size: 2rem; /* Increased from 1.75rem for better hierarchy */
-            font-weight: 800; /* Bolder weight for emphasis */
-            font-family: 'Libre Baskerville', Georgia, serif; /* Distinct serif font for headings */
-            letter-spacing: -0.5px; /* Slightly tighter letter spacing */
-            line-height: 1.3;
-        }
-
-        /* Enhanced visual hierarchy for subheadings */
-        .city-highlight h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.4rem; /* Slightly larger */
-            font-weight: 700;
-            font-family: 'Cormorant Garamond', Georgia, serif; /* Distinct font for subheadings */
-            line-height: 1.3;
-        }
-
-        /* Distinct font for new section headings */
-        .map-section h2,
-        .cuisine-section h2,
-        .transport-section h2,
-        .itinerary-section h2 {
-            font-family: 'Libre Baskerville', Georgia, serif;
-            font-weight: 800;
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 40px;
-            padding-bottom: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
             border-bottom: 3px solid var(--accent);
         }
-
-        /* Enhanced hierarchy for day titles in itineraries */
-        .day-title {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
-
-        /* Better contrast for activity titles */
-        .activity-title {
-            font-weight: 600;
-            color: var(--dark);
-            font-size: 1.1rem;
-        }
-
+        
         .city-highlight {
             background: var(--light);
-            border-radius: 12px;
-            padding: 32px; /* Increased from 24px */
-            margin-bottom: 32px; /* Increased from 24px */
-            border-left: 4px solid var(--primary);
-            line-height: 1.7; /* Added for better text readability */
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
         }
-
+        
         .city-highlight h3 {
             color: var(--primary);
-            margin-bottom: 20px; /* Increased from 15px */
-            font-size: 1.3rem;
-            line-height: 1.4;
+            margin-bottom: 15px;
         }
-
-        /* Improve general text readability */
-        .city-content p {
-            line-height: 1.7; /* Added for better paragraph readability */
-            margin-bottom: 20px; /* Added spacing between paragraphs */
-        }
-
-        .city-content ul, .city-content ol {
-            line-height: 1.7; /* Better list readability */
-            margin-bottom: 20px;
-        }
-
-        .city-content li {
-            margin-bottom: 10px; /* Space between list items */
-        }
-
+        
         .city-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px; /* Increased gap for better spacing with captions */
+            gap: 20px;
             margin-top: 30px;
         }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-        }
-
+        
         .city-gallery img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            display: block;
+            border-radius: 10px;
             transition: transform 0.3s ease;
         }
-
-        .gallery-item:hover img {
+        
+        .city-gallery img:hover {
             transform: scale(1.05);
         }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            color: white;
-            padding: 15px;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-caption {
-            transform: translateY(0);
-        }
-
-        .caption-text {
-            font-size: 0.9rem;
-            margin: 0;
-            line-height: 1.4;
-        }
-
-        .caption-icon {
-            margin-right: 8px;
-            font-size: 0.8rem;
-            opacity: 0.8;
-        }
-
-        /* PROMINENT BACK TO HOME BUTTON */
-        .back-home-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-            border: 2px solid transparent;
-        }
-
-        .back-home-btn:hover {
-            background: white;
-            color: var(--primary);
-            border-color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
-            gap: 15px;
-        }
-
-        .back-home-icon {
-            font-size: 1.3rem;
-            transition: transform 0.3s ease;
-        }
-
-        .back-home-btn:hover .back-home-icon {
-            transform: translateX(-5px);
-        }
-
-        .patent-table {
-            margin-top: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-
-        .back-home-text {
-            font-weight: 600;
-        }
-
-        @media (max-width: 768px) {
-            .back-home-btn {
-                padding: 12px 25px;
-                font-size: 1rem;
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
+        
         /* JUMP TO SECTION NAVIGATION */
         .jump-nav {
             position: sticky;
@@ -261,7 +105,7 @@
             z-index: 100;
             border: 1px solid var(--gray-light);
         }
-
+        
         .jump-nav h4 {
             color: var(--secondary);
             margin-bottom: 15px;
@@ -270,7 +114,7 @@
             align-items: center;
             gap: 10px;
         }
-
+        
         .jump-nav-list {
             display: flex;
             flex-wrap: wrap;
@@ -279,778 +123,394 @@
             padding: 0;
             margin: 0;
         }
-
+        
         .jump-nav-item {
-            flex: 1;
+            flex: 1 1 auto;
             min-width: 120px;
         }
-
+        
         .jump-nav-link {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             padding: 10px 15px;
             background: var(--light);
             color: var(--dark);
             text-decoration: none;
             border-radius: 8px;
-            font-weight: 500;
             font-size: 0.9rem;
-            text-align: center;
             transition: all 0.3s ease;
             border: 1px solid transparent;
         }
-
+        
         .jump-nav-link:hover {
             background: var(--primary);
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
-
+        
         .jump-nav-link.active {
             background: var(--primary);
             color: white;
             border-color: var(--primary);
         }
-
+        
         .jump-nav-icon {
-            display: block;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
+            font-size: 0.8rem;
+            width: 16px;
+            text-align: center;
         }
-
-        @media (max-width: 992px) {
+        
+        @media (max-width: 768px) {
             .jump-nav {
-                position: static;
-                margin-top: 20px;
+                position: relative;
+                top: 0;
+                margin-bottom: 30px;
             }
-
+            
             .jump-nav-list {
                 flex-direction: column;
             }
-
+            
             .jump-nav-item {
-                min-width: 100%;
+                flex: none;
             }
         }
-
+        
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .jump-nav {
-                padding: 15px;
+            .city-hero h1 {
+                font-size: 2.5rem;
             }
-
-            .jump-nav-link {
-                padding: 8px 12px;
-                font-size: 0.85rem;
-            }
-        }
-
-        .city-gallery img:hover {
-            transform: scale(1.05);
-            cursor: pointer; /* Indicate images are clickable */
-        }
-
-        /* LIGHTBOX FEATURE */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .lightbox.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 90%;
-            position: relative;
-        }
-
-        .lightbox-img {
-            max-width: 100%;
-            max-height: 90vh;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        }
-
-        .lightbox-caption {
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            color: white;
-            font-size: 1.1rem;
-            padding: 10px;
-            background: rgba(0,0,0,0.7);
-            border-radius: 5px;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 2.5rem;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s ease;
-        }
-
-        .lightbox-close:hover {
-            transform: scale(1.2);
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: white;
-            font-size: 2rem;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .lightbox-nav:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .lightbox-prev {
-            left: 20px;
-        }
-
-        .lightbox-next {
-            right: 20px;
-        }
-
-        .lightbox-counter {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            color: white;
-            font-size: 1rem;
-            background: rgba(0,0,0,0.5);
-            padding: 5px 15px;
-            border-radius: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .lightbox-nav {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-            }
-
-            .lightbox-prev {
-                left: 10px;
-            }
-
-            .lightbox-next {
-                right: 10px;
-            }
-
-            .lightbox-caption {
-                font-size: 0.9rem;
-                bottom: -40px;
+            
+            .city-hero .lead {
+                font-size: 1.2rem;
             }
         }
-
-        .back-to-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 30px;
-            transition: color 0.3s ease;
+        
+        .patent-table {
+            margin-top: 30px;
         }
-
-        .back-to-home:hover {
-            color: var(--secondary);
-        }
-
+        
         .city-nav {
+            margin-top: 60px;
+            padding: 40px 0;
             background: var(--light);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 40px;
+            border-radius: 15px;
         }
-
+        
         .city-nav h3 {
             color: var(--secondary);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
         }
-
+        
         .city-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 15px;
         }
-
+        
         .city-link {
-            display: block;
-            padding: 12px 20px;
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
             background: white;
-            border-radius: 8px;
-            color: var(--dark);
+            color: var(--primary);
             text-decoration: none;
+            border-radius: 25px;
+            border: 2px solid var(--primary);
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            font-weight: 500;
         }
-
+        
         .city-link:hover {
             background: var(--primary);
             color: white;
-            transform: translateY(-3px);
-            border-color: var(--primary);
-        }
-
-        .back-link {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #3b82f6;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            margin: 20px 0;
-            transition: all 0.3s ease;
-        }
-
-        .back-link:hover {
-            background: #2563eb;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
-
-        /* NEW CITY PAGE SECTIONS TEMPLATE */
-
-        /* Interactive Map Section */
-        .map-section {
-            margin: 60px 0;
-            background: var(--light);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        }
-
-        .map-container {
-            height: 400px;
-            background: #e2e8f0;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-top: 30px;
-            position: relative;
-        }
-
-        .map-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        
+        footer {
+            background: var(--dark);
             color: white;
-            text-align: center;
-            padding: 20px;
+            padding: 40px 0;
+            margin-top: 80px;
         }
-
-        .map-placeholder i {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .map-marker {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background: #ef4444;
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        .map-marker::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: white;
-            border-radius: 50%;
-            top: 5px;
-            left: 5px;
-        }
-
-        .map-marker:hover {
-            transform: rotate(-45deg) scale(1.2);
-        }
-
-        .marker-tooltip {
-            position: absolute;
-            background: white;
-            padding: 10px 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            z-index: 100;
-            display: none;
-            min-width: 200px;
-        }
-
-        .marker-tooltip h5 {
-            margin: 0 0 5px 0;
-            color: var(--primary);
-        }
-
-        .marker-tooltip p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: var(--dark);
-        }
-
-        /* Local Cuisine Section */
-        .cuisine-section {
-            margin: 60px 0;
-        }
-
-        .cuisine-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .cuisine-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-        }
-
-        .cuisine-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-        }
-
-        .cuisine-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .cuisine-content {
-            padding: 25px;
-        }
-
-        .cuisine-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-
-        .cuisine-description {
-            color: var(--gray-medium);
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .cuisine-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
-
-        .cuisine-tag {
-            background: var(--light);
-            color: var(--primary);
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .restaurant-list {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--gray-light);
-        }
-
-        .restaurant-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--gray-light);
-        }
-
-        .restaurant-item:last-child {
-            border-bottom: none;
-        }
-
-        .restaurant-name {
-            font-weight: 600;
-            color: var(--dark);
-        }
-
-        .restaurant-rating {
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        /* Transportation Section */
-        .transport-section {
-            margin: 60px 0;
-            background: var(--light);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        }
-
-        .transport-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .transport-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            border: 1px solid var(--gray-light);
-            transition: all 0.3s ease;
-        }
-
-        .transport-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            border-color: var(--primary);
-        }
-
-        .transport-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .transport-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-
-        .transport-description {
-            color: var(--gray-medium);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Suggested Itinerary Section */
-        .itinerary-section {
-            margin: 60px 0;
-        }
-
-        .itinerary-timeline {
-            position: relative;
-            margin-top: 40px;
-            padding-left: 40px;
-            border-left: 3px solid var(--gray-light);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 50px;
-        }
-
-        .timeline-icon {
-            position: absolute;
-            left: -55px;
-            top: 0;
-            width: 35px;
-            height: 35px;
-            background: var(--primary);
+        
+        .social-icons a {
             color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px var(--primary);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
         }
-
-        .timeline-content {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
-        }
-
-        .day-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-
-        .activity {
-            margin-bottom: 25px;
-        }
-
-        .activity:last-child {
-            margin-bottom: 0;
-        }
-
-        .activity-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 10px;
-        }
-
-        .activity-icon {
-            font-size: 1.3rem;
+        
+        .social-icons a:hover {
             color: var(--accent);
-        }
-
-        .activity-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--dark);
-        }
-
-        .activity-description {
-            color: var(--gray-medium);
-            line-height: 1.6;
-            padding-left: 40px;
         }
     </style>
 </head>
 <body>
-
-    <header class="city-hero" style="background-image: url('../images/user_photos/chengdu_hero_bg.jpg');">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
-            <h1 class="display-4">Chengdu</h1>
-            <p class="lead">Home of Giant Pandas & Sichuan Cuisine</p>
+            <a class="navbar-brand fw-bold" href="../index.html" style="color: var(--primary);">
+                <i class="fas fa-globe-americas me-2"></i>Traveling China
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
+    
+    <!-- City Hero Section -->
+    <section class="city-hero">
+        <div class="container">
+            <a href="../index.html" class="back-home-btn">
+                <i class="fas fa-arrow-left back-home-icon"></i>
+                <span class="back-home-text">Back to All Cities</span>
+            </a>
+            <h1>Chengdu</h1>
+            <p class="lead">Home of Giant Pandas & Fiery Cuisine</p>
+        </div>
+    </section>
 
-    <main class="container city-content">
-        <div class="row">
-            <div class="col-lg-3">
-                <nav class="jump-nav">
-                    <h4><i class="fas fa-map-signs"></i> Jump to Section</h4>
-                    <ul class="jump-nav-list">
-                        <li class="jump-nav-item"><a href="#overview" class="jump-nav-link active">Overview</a></li>
-                        <li class="jump-nav-item"><a href="#highlights" class="jump-nav-link">Highlights</a></li>
-                        <li class="jump-nav-item"><a href="#gallery" class="jump-nav-link">Gallery</a></li>
-                        <li class="jump-nav-item"><a href="#patents" class="jump-nav-link">Patents</a></li>
-                    </ul>
-                </nav>
+    <!-- City Content -->
+    <section class="city-content">
+        <div class="container">
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <!-- Overview -->
+                    <section id="overview" class="city-section">
+                        <h2><i class="fas fa-info-circle me-3"></i>Overview</h2>
+                        <p>Chengdu, the capital of Sichuan province, is a vibrant and laid-back metropolis famed for its adorable giant pandas and fiery, flavorful cuisine. It's a city where ancient history, represented by sites like the Wuhou Shrine and Dufu's Thatched Cottage, coexists with a bustling modern culture. Known for its relaxed teahouse culture and lush green spaces, Chengdu offers a unique blend of urban energy and tranquil living, making it one of China's most livable cities.</p>
+                    </section>
+                    
+                    <!-- Highlights -->
+                    <section id="highlights" class="city-section">
+                        <h2><i class="fas fa-star me-3"></i>Must-See Highlights</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-paw me-2"></i>Giant Panda Breeding Research Base</h3>
+                            <p>Get up close with China's national treasure. The best time to visit is in the morning when the pandas are most active.</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-landmark me-2"></i>Jinli Ancient Street</h3>
+                            <p>Stroll through this bustling, recreated ancient street, filled with traditional architecture, local snacks, and lively teahouses.</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-utensils me-2"></i>Sichuan Cuisine</h3>
+                            <p>Indulge in the world-famous flavors of Sichuan, from mouth-numbing Mapo Tofu to the communal joy of a spicy hot pot.</p>
+                        </div>
+                    </section>
+
+                    <!-- Local Cuisine -->
+                    <section id="cuisine" class="city-section">
+                        <h2><i class="fas fa-utensils me-3"></i>Local Cuisine</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-pepper-hot me-2"></i>Must-Try Dishes</h3>
+                            <p><strong>Sichuan Hot Pot:</strong> A quintessential Chengdu experience. Gather around a bubbling pot of spicy broth and cook a variety of meats, vegetables, and more.</p>
+                            <p><strong>Mapo Tofu:</strong> A classic dish of soft tofu in a spicy, bean-based sauce, often with minced meat.</p>
+                            <p><strong>Kung Pao Chicken:</strong> A stir-fried dish with chicken, peanuts, vegetables, and chili peppers.</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-map-marker-alt me-2"></i>Best Food Streets</h3>
+                            <p><strong>Jinli Ancient Street:</strong> Offers a wide array of traditional snacks and street food in a historic setting.</p>
+                            <p><strong>Kuanzhai Alley (Wide and Narrow Alley):</strong> A mix of modern and traditional restaurants, teahouses, and snack stalls.</p>
+                        </div>
+                    </section>
+
+                    <!-- Transportation -->
+                    <section id="transport" class="city-section">
+                        <h2><i class="fas fa-subway me-3"></i>Transportation</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
+                            <p><strong>By Air:</strong> Chengdu Shuangliu International Airport (CTU) is one of China's busiest airports, with extensive domestic and international connections.</p>
+                            <p><strong>By Train:</strong> A major high-speed rail hub connecting to cities like Xi'an, Chongqing, and Beijing.</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-bus me-2"></i>Getting Around</h3>
+                            <p><strong>Metro:</strong> The Chengdu Metro is a fast and efficient way to navigate the city, covering most major attractions.</p>
+                            <p><strong>Bus:</strong> An extensive public bus network provides comprehensive coverage of the urban area.</p>
+                            <p><strong>Taxi & Ride-Sharing:</strong> Taxis and services like DiDi are widely available and affordable.</p>
+                        </div>
+                    </section>
+
+                    <!-- Suggested Itinerary -->
+                    <section id="itinerary" class="city-section">
+                        <h2><i class="fas fa-calendar-alt me-3"></i>Suggested Itinerary</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-sun me-2"></i>Day 1: Pandas and Culture</h3>
+                            <p><strong>Morning:</strong> Visit the Giant Panda Breeding Research Base.</p>
+                            <p><strong>Afternoon:</strong> Explore the Wenshu Monastery, a serene Buddhist temple.</p>
+                            <p><strong>Evening:</strong> Stroll and dine at Jinli Ancient Street.</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-star me-2"></i>Day 2: History and Relaxation</h3>
+                            <p><strong>Morning:</strong> Visit the Wuhou Shrine, dedicated to figures from the Three Kingdoms period.</p>
+                            <p><strong>Afternoon:</strong> Experience the local lifestyle at a teahouse in People's Park.</p>
+                            <p><strong>Evening:</strong> Enjoy a Sichuan Opera show, famous for its "face-changing" performances.</p>
+                        </div>
+                    </section>
+
+                    <!-- Gallery -->
+                    <section id="gallery" class="city-section">
+                        <h2><i class="fas fa-camera-retro me-3"></i>Gallery</h2>
+                        <div class="city-gallery">
+                            <img src="../images/user_photos/chengdu_1.jpg" alt="Giant Pandas in Chengdu" class="gallery-img">
+                            <img src="../images/user_photos/chengdu_2.jpg" alt="Jinli Ancient Street at night" class="gallery-img">
+                            <img src="../images/user_photos/chengdu_3.jpg" alt="Sichuan Hot Pot" class="gallery-img">
+                        </div>
+                    </section>
+                    
+                    <!-- Patent Data -->
+                    <section id="patent-data" class="city-section">
+                        <h2><i class="fas fa-file-alt me-3"></i>Patent Data</h2>
+                        <div class="patent-table">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Patent Number</th>
+                                        <th>Title</th>
+                                        <th>Current Assignee</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CN116322434A</td>
+                                        <td>Sichuan-Chongqing regional multi-energy complementary optimal scheduling method considering source-load uncertainty</td>
+                                        <td>State Grid Sichuan Electric Power Company</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CN116322839A</td>
+                                        <td>Multi-objective optimal scheduling method for distribution network considering flexible load and new energy</td>
+                                        <td>State Grid Sichuan Electric Power Company</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Sticky Navigation -->
+                <div class="col-lg-3">
+                    <nav class="jump-nav">
+                        <h4><i class="fas fa-compass"></i> Explore Chengdu</h4>
+                        <ul class="jump-nav-list">
+                            <li class="jump-nav-item"><a href="#overview" class="jump-nav-link active"><i class="fas fa-info-circle jump-nav-icon"></i>Overview</a></li>
+                            <li class="jump-nav-item"><a href="#highlights" class="jump-nav-link"><i class="fas fa-star jump-nav-icon"></i>Highlights</a></li>
+                            <li class="jump-nav-item"><a href="#cuisine" class="jump-nav-link"><i class="fas fa-utensils jump-nav-icon"></i>Cuisine</a></li>
+                            <li class="jump-nav-item"><a href="#transport" class="jump-nav-link"><i class="fas fa-subway jump-nav-icon"></i>Transport</a></li>
+                            <li class="jump-nav-item"><a href="#itinerary" class="jump-nav-link"><i class="fas fa-calendar-alt jump-nav-icon"></i>Itinerary</a></li>
+                            <li class="jump-nav-item"><a href="#gallery" class="jump-nav-link"><i class="fas fa-images jump-nav-icon"></i>Gallery</a></li>
+                            <li class="jump-nav-item"><a href="#patent-data" class="jump-nav-link"><i class="fas fa-file-alt jump-nav-icon"></i>Patents</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
 
-            <div class="col-lg-9">
-                <section id="overview" class="city-section">
-                    <h2><i class="fas fa-info-circle"></i> City Overview</h2>
-                    <div class="city-highlight">
-                        <p>Chengdu, the capital of Sichuan province, is famous for its laid-back teahouse culture, spicy Sichuan cuisine, and of course, the Chengdu Research Base of Giant Panda Breeding. This vibrant city combines ancient history with modern development, offering visitors a unique blend of traditional Sichuanese culture and contemporary urban life.</p>
-                    </div>
-                </section>
-
-                <section id="highlights" class="city-section">
-                    <h2><i class="fas fa-star"></i> Key Highlights</h2>
-                    <div class="city-highlight">
-                        <h3>Top Attractions</h3>
-                        <p>Chengdu Research Base of Giant Panda Breeding, Jinli Ancient Street, Wuhou Temple, Dujiangyan Irrigation System, Mount Qingcheng</p>
-                    </div>
-                    <div class="city-highlight">
-                        <h3>Local Cuisine</h3>
-                        <p>Hot Pot, Mapo Tofu, Kung Pao Chicken, Dan Dan Noodles, Sichuan Peppercorn Dishes</p>
-                    </div>
-                    <div class="city-highlight">
-                        <h3>Best Time to Visit</h3>
-                        <p>Spring (March-May) and Autumn (September-November) with mild temperatures</p>
-                    </div>
-                </section>
-
-                <section id="gallery" class="city-section">
-                    <h2><i class="fas fa-camera-retro"></i> Photo Gallery</h2>
-                    <div class="city-gallery">
-                        <div class="gallery-item">
-                            <img src="../images/user_photos/chengdu_1.jpg" alt="Chengdu Panda Base - Giant pandas in their natural habitat" class="gallery-img">
-                            <div class="gallery-caption">
-                                <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Chengdu Panda Base</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="../images/user_photos/chengdu_2.jpg" alt="Chengdu cityscape - Modern architecture and traditional elements" class="gallery-img">
-                            <div class="gallery-caption">
-                                <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Chengdu cityscape</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="../images/user_photos/chengdu_3.jpg" alt="Chengdu teahouse culture - Traditional Sichuan tea experience" class="gallery-img">
-                            <div class="gallery-caption">
-                                <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Chengdu teahouse</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="patents" class="city-section">
-                    <h2><i class="fas fa-microscope"></i> Patent Data</h2>
-                    <table class="table table-bordered table-hover patent-table">
-                        <thead class="table-primary">
-                            <tr>
-                                <th>Patent ID</th>
-                                <th>Title</th>
-                                <th>Inventor</th>
-                                <th>Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>CN112016772A</td>
-                                <td>High-speed railway catenary parameter comprehensive detection device</td>
-                                <td>Chengdu Nobikan Technology</td>
-                                <td>2020-12-01</td>
-                            </tr>
-                            <tr>
-                                <td>CN115908142A</td>
-                                <td>A kind of catenary insulation state detection device, equipment and system</td>
-                                <td>Chengdu Nobikan Technology</td>
-                                <td>2023-03-28</td>
-                            </tr>
-                            <tr>
-                                <td>CN111591321A</td>
-                                <td>A method, device, equipment and medium for detecting the state of a drain line</td>
-                                <td>Chengdu Nobikan Technology</td>
-                                <td>2020-08-25</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-
-                <div class="text-center mt-5">
-                    <a href="../index.html" class="back-home-btn">
-                        <i class="fas fa-arrow-left back-home-icon"></i>
-                        <span class="back-home-text">Back to Home</span>
-                    </a>
+            <!-- Explore Other Cities -->
+            <div class="city-nav">
+                <h3>Explore Other Chinese Cities</h3>
+                <div class="city-links">
+                    <a href="beijing.html" class="city-link">Beijing</a>
+                    <a href="shanghai.html" class="city-link">Shanghai</a>
+                    <a href="tianjin.html" class="city-link">Tianjin</a>
+                    <a href="guangzhou.html" class="city-link">Guangzhou</a>
+                    <a href="shenzhen.html" class="city-link">Shenzhen</a>
+                    <a href="chongqing.html" class="city-link">Chongqing</a>
+                    <a href="xian.html" class="city-link">Xi'an</a>
+                    <a href="nanjing.html" class="city-link">Nanjing</a>
+                    <a href="qingdao.html" class="city-link">Qingdao</a>
+                    <a href="wuxi.html" class="city-link">Wuxi</a>
+                    <a href="xiamen.html" class="city-link">Xiamen</a>
+                    <a href="harbin.html" class="city-link">Harbin</a>
+                    <a href="guilin.html" class="city-link">Guilin</a>
+                    <a href="guiyang.html" class="city-link">Guiyang</a>
+                    <a href="kunming.html" class="city-link">Kunming</a>
+                    <a href="dali.html" class="city-link">Dali</a>
+                    <a href="jinan.html" class="city-link">Jinan</a>
+                    <a href="datong.html" class="city-link">Datong</a>
+                    <a href="linyi.html" class="city-link">Linyi</a>
+                    <a href="taiyuan.html" class="city-link">Taiyuan</a>
+                    <a href="urumqi.html" class="city-link">Urumqi</a>
+                    <a href="hangzhou.html" class="city-link">Hangzhou</a>
+                    <a href="kashi.html" class="city-link">Kashi</a>
+                    <a href="suzhou.html" class="city-link">Suzhou</a>
+                    <a href="wuhan.html" class="city-link">Wuhan</a>
+                    <a href="hongkong.html" class="city-link">Hong Kong</a>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <div class="lightbox">
-        <button class="lightbox-close">&times;</button>
-        <button class="lightbox-nav lightbox-prev">&lsaquo;</button>
-        <button class="lightbox-nav lightbox-next">&rsaquo;</button>
-        <div class="lightbox-content">
-            <img src="" alt="Lightbox Image" class="lightbox-img">
-            <div class="lightbox-caption-container">
-                <p class="lightbox-caption"></p>
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 Traveling China like your home yard. All rights reserved.</p>
+            <div class="social-icons mt-3">
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-weibo"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
-    </div>
+    </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const galleryImages = document.querySelectorAll('.gallery-img');
-            const lightbox = document.querySelector('.lightbox');
-            const lightboxImg = document.querySelector('.lightbox-img');
-            const lightboxCaption = document.querySelector('.lightbox-caption');
-            const closeBtn = document.querySelector('.lightbox-close');
-            const prevBtn = document.querySelector('.lightbox-prev');
-            const nextBtn = document.querySelector('.lightbox-next');
-
-            let currentIndex = 0;
-
-            function showLightbox(index) {
-                currentIndex = index;
-                const imgSrc = galleryImages[currentIndex].src;
-                const captionText = galleryImages[currentIndex].nextElementSibling.querySelector('.caption-text').innerHTML;
-                lightboxImg.src = imgSrc;
-                lightboxCaption.innerHTML = captionText;
-                lightbox.classList.add('active');
-            }
-
-            function hideLightbox() {
-                lightbox.classList.remove('active');
-            }
-
-            function showPrev() {
-                currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-                showLightbox(currentIndex);
-            }
-
-            function showNext() {
-                currentIndex = (currentIndex + 1) % galleryImages.length;
-                showLightbox(currentIndex);
-            }
-
-            galleryImages.forEach((img, index) => {
-                img.addEventListener('click', () => {
-                    showLightbox(index);
-                });
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.jump-nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Update active state
+                    document.querySelectorAll('.jump-nav-link').forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                }
             });
+        });
 
-            closeBtn.addEventListener('click', hideLightbox);
-            prevBtn.addEventListener('click', showPrev);
-            nextBtn.addEventListener('click', showNext);
-
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    hideLightbox();
+        // Update active navigation on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.city-section');
+            const navLinks = document.querySelectorAll('.jump-nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
                 }
             });
 
-            document.addEventListener('keydown', (e) => {
-                if (lightbox.classList.contains('active')) {
-                    if (e.key === 'Escape') {
-                        hideLightbox();
-                    }
-                    if (e.key === 'ArrowLeft') {
-                        showPrev();
-                    }
-                    if (e.key === 'ArrowRight') {
-                        showNext();
-                    }
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
                 }
             });
         });
     </script>
-
 </body>
 </html>

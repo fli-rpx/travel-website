@@ -1,0 +1,67 @@
+
+{
+  "name": "Linyi",
+  "title": "Linyi - Traveling China",
+  "heroTitle": "Discover Linyi",
+  "heroSubtitle": "A prefecture-level city in southern Shandong province, is a place where ancient history and modern dynamism converge.",
+  "heroImage": "../images/linyi-hero.jpg",
+  "overview": "Linyi, a prefecture-level city in southern Shandong province, is a place where ancient history and modern dynamism converge. Known as the 'City of Calligraphy' and the hometown of the sage Wang Xizhi, Linyi boasts a rich cultural heritage. Today, it is a major center for trade and logistics in eastern China, with a rapidly growing economy. The city's landscape is graced by the Yi and Shu rivers, offering scenic beauty alongside urban development.",
+  "highlights": {
+    "attractions": "Wang Xizhi's Former Residence, Mengshan Mountain National Forest Park, Linyi Trade City",
+    "cuisine": "Shandong Pancake (Jianbing), Braised Pork in Brown Sauce, Linyi Pancake",
+    "bestTime": "Spring and Autumn"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Shandong Pancake (Jianbing)",
+        "description": "A savory crepe made from grain flour, often filled with egg, crispy crackers, and scallions."
+      },
+      {
+        "name": "Braised Pork in Brown Sauce",
+        "description": "A classic Chinese dish, slow-cooked to perfection with a rich, savory, and slightly sweet flavor."
+      }
+    ],
+    "foodStreets": []
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Linyi Shubuling Airport (LYI) connects the city to major domestic destinations."
+    ],
+    "gettingAround": [
+      "By Train: High-speed and conventional trains link Linyi to the national rail network.",
+      "Public Transit: An extensive bus system makes it easy and affordable to travel within the city."
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Cultural Immersion",
+      "activities": [
+        "Morning: Wang Xizhi's Former Residence",
+        "Afternoon: Linyi Museum"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/linyi-gallery-1.jpg",
+    "../images/linyi-gallery-2.jpg",
+    "../images/linyi-gallery-3.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN113325699A",
+      "title": "A kind of environment-friendly high-elasticity flame-retardant artificial leather and preparation method thereof",
+      "assignee": "Liu, Wei"
+    },
+    {
+      "number": "CN113278688A",
+      "title": "A kind of wear-resistant and scratch-resistant solvent-free PU artificial leather and preparation method thereof",
+      "assignee": "Wang, Jian"
+    },
+    {
+      "number": "CN113122021A",
+      "title": "A kind of antibacterial and mildewproof PU synthetic leather and preparation method thereof",
+      "assignee": "Li, Na"
+    }
+  ]
+}

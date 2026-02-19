@@ -1,0 +1,104 @@
+{
+  "name": "Tianjin",
+  "title": "Tianjin - Traveling China like your home yard",
+  "heroTitle": "Tianjin",
+  "heroSubtitle": "A port city with a blend of Chinese and Western architecture.",
+  "heroImage": "../images/user_photos/tianjin_hero_bg.jpg",
+  "overview": "Tianjin is a major port city in northeastern China. Once home to foreign concessions, the city has a cosmopolitan feel, with a mix of European-style buildings and traditional Chinese architecture. The Hai River flows through the city, and its banks are a popular spot for locals and tourists alike.",
+  "highlights": {
+    "attractions": "Five Great Avenues, Tianjin Eye, Ancient Culture Street",
+    "cuisine": "Goubuli buns, Mahua (fried dough twists), Erduoyan fried cakes",
+    "bestTime": "Spring and Autumn, with mild and pleasant weather."
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Goubuli Buns",
+        "description": "Famous steamed buns with savory fillings, a Tianjin specialty."
+      },
+      {
+        "name": "Mahua",
+        "description": "Fried dough twists, crispy and sweet, perfect for snacking."
+      },
+      {
+        "name": "Erduoyan Fried Cakes",
+        "description": "Traditional fried cakes with various fillings."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Ancient Culture Street",
+        "description": "Traditional snacks and local delicacies."
+      },
+      {
+        "name": "Nanshi Food Street",
+        "description": "Wide variety of Tianjin specialties."
+      },
+      {
+        "name": "Hai River Banks",
+        "description": "Riverside restaurants with beautiful views."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Tianjin Binhai International Airport (TSN) with domestic and international flights.",
+      "By Train: High-speed rail connections from Beijing (30 minutes), Shanghai, and other major cities.",
+      "By Car: Well-connected highway system, about 1.5 hours from Beijing."
+    ],
+    "gettingAround": [
+      "Metro: Efficient metro system covering major attractions.",
+      "Bus: Extensive bus network throughout the city.",
+      "Taxi: Readily available and affordable.",
+      "Walking: Many attractions are within walking distance in the city center."
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Historical Tianjin",
+      "activities": [
+        "Morning: Visit the Five Great Avenues to see European-style architecture.",
+        "Afternoon: Explore Ancient Culture Street for traditional crafts and snacks.",
+        "Evening: Take a boat ride on the Hai River for beautiful night views."
+      ]
+    },
+    {
+      "day": "Day 2: Modern Tianjin",
+      "activities": [
+        "Morning: Ride the Tianjin Eye Ferris wheel for panoramic city views.",
+        "Afternoon: Visit the Tianjin Museum to learn about the city's history.",
+        "Evening: Enjoy local cuisine at Nanshi Food Street."
+      ]
+    },
+    {
+      "day": "Day 3: Culture and Shopping",
+      "activities": [
+        "Morning: Visit the Porcelain House, a unique architectural wonder.",
+        "Afternoon: Shop at Binjiang Road pedestrian street.",
+        "Evening: Experience Tianjin's nightlife in the Italian Style Town."
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/tianjin_1.jpg",
+    "../images/user_photos/tianjin_2.jpg",
+    "../images/user_photos/tianjin_3.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN100389121C",
+      "title": "Preparation method of mometasone furoate intermediate 21-hydroxyl",
+      "assignee": "TIANJIN PHARMACEUTICAL INDUSTRY GROUP CORP Ltd"
+    },
+    {
+      "number": "CN101817783A",
+      "title": "Method for preparing tolvaptan intermediate",
+      "assignee": "Tianjin Taipu Pharmaceutical Science & Technology Development Co Ltd"
+    },
+    {
+      "number": "CN101347621A",
+      "title": "A pharmaceutical composition for treating respiratory diseases",
+      "assignee": "TIANJIN PHARMACEUTICALS GROUP CORP"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "name": "Qingdao",
+  "title": "Qingdao - Traveling China like your home yard",
+  "heroTitle": "Qingdao",
+  "heroSubtitle": "The Pearl of the Yellow Sea",
+  "heroImage": "../images/user_photos/qingdao_hero_bg.jpg",
+  "overview": "Qingdao is a coastal city in Shandong Province, known for its beautiful beaches, European-style architecture, and being the home of Tsingtao Beer. This port city combines natural coastal beauty with a rich brewing heritage and serves as a major economic and cultural hub in eastern China.",
+  "highlights": {
+    "attractions": "Badaguan Scenic Area, May Fourth Square, Tsingtao Beer Museum, Laoshan Mountain, Zhanqiao Pier",
+    "cuisine": "Tsingtao Beer, Seafood, Laoshan Mineral Water, Clams, Sea Cucumber",
+    "bestTime": "Summer (June-August) for beach activities and beer festivals"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Tsingtao Beer",
+        "description": "World-famous Chinese beer brewed with Laoshan spring water, known for its crisp and refreshing taste."
+      },
+      {
+        "name": "Qingdao Clams",
+        "description": "Fresh clams from the Yellow Sea, often stir-fried with garlic and chili."
+      },
+      {
+        "name": "Sea Cucumber",
+        "description": "Premium seafood delicacy, often braised with shiitake mushrooms and vegetables."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Beer Street",
+        "description": "Historic street lined with beer gardens and seafood restaurants near the Tsingtao Brewery."
+      },
+      {
+        "name": "Taidong Night Market",
+        "description": "Vibrant night market offering fresh seafood, local snacks, and street food."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Qingdao Jiaodong International Airport (TAO) with domestic and international flights.",
+      "By Train: High-speed rail connections to Beijing, Shanghai, Jinan, and other major cities.",
+      "By Bus: Long-distance bus services connecting to nearby cities and provinces."
+    ],
+    "gettingAround": [
+      "Metro: Qingdao Metro provides efficient transportation to major attractions and districts.",
+      "Bus: Comprehensive public bus network covering the urban area and coastal areas.",
+      "Taxi/Didi: Readily available for convenient city exploration.",
+      "Walking: The coastal areas and old town are best explored on foot."
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Coastal Exploration",
+      "activities": [
+        "Morning: Visit May Fourth Square and the modern coastal area.",
+        "Afternoon: Explore Badaguan Scenic Area with its European-style villas and gardens.",
+        "Evening: Stroll along Zhanqiao Pier and enjoy fresh seafood at a coastal restaurant."
+      ]
+    },
+    {
+      "day": "Day 2: Beer Culture and History",
+      "activities": [
+        "Morning: Tour the Tsingtao Beer Museum and learn about the brewing process.",
+        "Afternoon: Visit Beer Street for tastings and local beer culture.",
+        "Evening: Enjoy a traditional German-style beer garden experience."
+      ]
+    },
+    {
+      "day": "Day 3: Nature and Mountains",
+      "activities": [
+        "Morning: Hike Laoshan Mountain, known as the birthplace of Taoism and source of Laoshan mineral water.",
+        "Afternoon: Visit ancient temples and enjoy panoramic views of the Yellow Sea.",
+        "Evening: Relax at a beachside café with local craft beer."
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/qingdao_1.jpg",
+    "../images/user_photos/qingdao_2.jpg",
+    "../images/user_photos/qingdao_3.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "QINGDAO UNIVERSITY OF TECHNOLOGY"
+    }
+  ]
+}

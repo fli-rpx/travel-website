@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/travel-website/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
     <style>
         :root {
             --primary: #2563eb;
@@ -29,6 +29,7 @@
             padding: 120px 0 80px;
             text-align: center;
             margin-bottom: 60px;
+            --hero-image: url('https://images.unsplash.com/photo-1599266202441-8c5697e41003?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
         }
         
         .city-hero h1 {
@@ -91,62 +92,162 @@
             transform: scale(1.05);
         }
         
-        .back-to-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 30px;
-            transition: color 0.3s ease;
+        /* JUMP TO SECTION NAVIGATION */
+        .jump-nav {
+            position: sticky;
+            top: 80px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            z-index: 100;
+            border: 1px solid var(--gray-light);
         }
         
-        .back-to-home:hover {
+        .jump-nav h4 {
             color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .jump-nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .jump-nav-item {
+            flex: 1 1 auto;
+            min-width: 120px;
+        }
+        
+        .jump-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            background: var(--light);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .jump-nav-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        
+        .jump-nav-link.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .jump-nav-icon {
+            font-size: 0.8rem;
+            width: 16px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .jump-nav {
+                position: relative;
+                top: 0;
+                margin-bottom: 30px;
+            }
+            
+            .jump-nav-list {
+                flex-direction: column;
+            }
+            
+            .jump-nav-item {
+                flex: none;
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .city-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .city-hero .lead {
+                font-size: 1.2rem;
+            }
+        }
+        
+        .patent-table {
+            margin-top: 30px;
         }
         
         .city-nav {
+            margin-top: 60px;
+            padding: 40px 0;
             background: var(--light);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 40px;
+            border-radius: 15px;
         }
         
         .city-nav h3 {
             color: var(--secondary);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
         }
         
         .city-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 15px;
         }
         
         .city-link {
-            display: block;
-            padding: 12px 20px;
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
             background: white;
-            border-radius: 8px;
-            color: var(--dark);
+            color: var(--primary);
             text-decoration: none;
+            border-radius: 25px;
+            border: 2px solid var(--primary);
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            font-weight: 500;
         }
         
         .city-link:hover {
             background: var(--primary);
             color: white;
-            transform: translateY(-3px);
-            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
-
-        .patent-table {
-            margin-top: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-radius: 10px;
-            overflow: hidden;
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0;
+            margin-top: 80px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent);
         }
     </style>
 </head>
@@ -154,8 +255,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-3" href="/travel-website/index.html" style="color: var(--primary);">
-                <i class="fas fa-globe-americas me-2"></i>Traveling China like your home yard
+            <a class="navbar-brand fw-bold" href="../index.html" style="color: var(--primary);">
+                <i class="fas fa-globe-americas me-2"></i>Traveling China
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -171,12 +272,13 @@
             </div>
         </div>
     </nav>
-
+    
     <!-- City Hero Section -->
-    <section class="city-hero" style="--hero-image: url('https://images.unsplash.com/photo-1599266202441-8c5697e41003?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+    <section class="city-hero">
         <div class="container">
-            <a href="/travel-website/index.html" class="back-to-home">
-                <i class="fas fa-arrow-left"></i> Back to Home
+            <a href="../index.html" class="back-home-btn">
+                <i class="fas fa-arrow-left back-home-icon"></i>
+                <span class="back-home-text">Back to All Cities</span>
             </a>
             <h1>Tianjin</h1>
             <p class="lead">A port city with a blend of Chinese and Western architecture.</p>
@@ -187,16 +289,17 @@
     <section class="city-content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <!-- Main Content -->
+                <div class="col-lg-9">
                     <!-- Overview -->
-                    <div class="city-section">
-                        <h2>Overview</h2>
+                    <section id="overview" class="city-section">
+                        <h2><i class="fas fa-info-circle me-3"></i>Overview</h2>
                         <p>Tianjin is a major port city in northeastern China. Once home to foreign concessions, the city has a cosmopolitan feel, with a mix of European-style buildings and traditional Chinese architecture. The Hai River flows through the city, and its banks are a popular spot for locals and tourists alike.</p>
-                    </div>
+                    </section>
                     
                     <!-- Highlights -->
-                    <div class="city-section">
-                        <h2>Must-See Highlights</h2>
+                    <section id="highlights" class="city-section">
+                        <h2><i class="fas fa-star me-3"></i>Must-See Highlights</h2>
                         <div class="city-highlight">
                             <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
                             <p>Five Great Avenues, Tianjin Eye, Ancient Culture Street</p>
@@ -209,100 +312,159 @@
                             <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
                             <p>Spring and Autumn, with mild and pleasant weather.</p>
                         </div>
-                    </div>
-                    
-                    <!-- Travel Tips -->
-                    <div class="city-section">
-                        <h2>Travel Tips</h2>
-                        <ul>
-                            <li>Take a boat trip on the Hai River for stunning city views.</li>
-                            <li>Explore the different architectural styles in the Five Great Avenues.</li>
-                            <li>Bargain for souvenirs and try local snacks on Ancient Culture Street.</li>
-                            <li>Use the metro system for convenient travel around the city.</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4">
-                    <!-- Quick Facts -->
-                    <div class="city-section">
-                        <h2>Quick Facts</h2>
+                    </section>
+
+                    <!-- Local Cuisine -->
+                    <section id="cuisine" class="city-section">
+                        <h2><i class="fas fa-utensils me-3"></i>Local Cuisine</h2>
                         <div class="city-highlight">
-                            <h3><i class="fas fa-info-circle me-2"></i>Basic Info</h3>
-                            <p><strong>Population:</strong> Over 15 million</p>
-                            <p><strong>Province:</strong> Tianjin Municipality</p>
-                            <p><strong>Language:</strong> Mandarin, Tianjin dialect</p>
-                            <p><strong>Timezone:</strong> China Standard Time (UTC+8)</p>
+                            <h3><i class="fas fa-bread-slice me-2"></i>Must-Try Dishes</h3>
+                            <p><strong>Goubuli Buns:</strong> Famous steamed buns with savory fillings, a Tianjin specialty.</p>
+                            <p><strong>Mahua:</strong> Fried dough twists, crispy and sweet, perfect for snacking.</p>
+                            <p><strong>Erduoyan Fried Cakes:</strong> Traditional fried cakes with various fillings.</p>
                         </div>
-                        
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-map-marker-alt me-2"></i>Best Food Streets</h3>
+                            <p><strong>Ancient Culture Street:</strong> Traditional snacks and local delicacies.</p>
+                            <p><strong>Nanshi Food Street:</strong> Wide variety of Tianjin specialties.</p>
+                            <p><strong>Hai River Banks:</strong> Riverside restaurants with beautiful views.</p>
+                        </div>
+                    </section>
+
+                    <!-- Transportation -->
+                    <section id="transport" class="city-section">
+                        <h2><i class="fas fa-subway me-3"></i>Transportation</h2>
                         <div class="city-highlight">
                             <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
-                            <p><strong>Airport:</strong> Tianjin Binhai International Airport (TSN)</p>
-                            <p><strong>Train:</strong> High-speed rail from Beijing, Shanghai, and other major cities.</p>
-                            <p><strong>Best Transport:</strong> Metro, taxi</p>
+                            <p><strong>By Air:</strong> Tianjin Binhai International Airport (TSN) with domestic and international flights.</p>
+                            <p><strong>By Train:</strong> High-speed rail connections from Beijing (30 minutes), Shanghai, and other major cities.</p>
+                            <p><strong>By Car:</strong> Well-connected highway system, about 1.5 hours from Beijing.</p>
                         </div>
-                    </div>
-                    
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-bus me-2"></i>Getting Around</h3>
+                            <p><strong>Metro:</strong> Efficient metro system covering major attractions.</p>
+                            <p><strong>Bus:</strong> Extensive bus network throughout the city.</p>
+                            <p><strong>Taxi:</strong> Readily available and affordable.</p>
+                            <p><strong>Walking:</strong> Many attractions are within walking distance in the city center.</p>
+                        </div>
+                    </section>
+
+                    <!-- Suggested Itinerary -->
+                    <section id="itinerary" class="city-section">
+                        <h2><i class="fas fa-calendar-alt me-3"></i>Suggested Itinerary</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-sun me-2"></i>Day 1: Historical Tianjin</h3>
+                            <p><strong>Morning:</strong> Visit the Five Great Avenues to see European-style architecture.</p>
+                            <p><strong>Afternoon:</strong> Explore Ancient Culture Street for traditional crafts and snacks.</p>
+                            <p><strong>Evening:</strong> Take a boat ride on the Hai River for beautiful night views.</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-star me-2"></i>Day 2: Modern Tianjin</h3>
+                            <p><strong>Morning:</strong> Ride the Tianjin Eye Ferris wheel for panoramic city views.</p>
+                            <p><strong>Afternoon:</strong> Visit the Tianjin Museum to learn about the city's history.</p>
+                            <p><strong>Evening:</strong> Enjoy local cuisine at Nanshi Food Street.</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-shopping-bag me-2"></i>Day 3: Culture and Shopping</h3>
+                            <p><strong>Morning:</strong> Visit the Porcelain House, a unique architectural wonder.</p>
+                            <p><strong>Afternoon:</strong> Shop at Binjiang Road pedestrian street.</p>
+                            <p><strong>Evening:</strong> Experience Tianjin's nightlife in the Italian Style Town.</p>
+                        </div>
+                    </section>
+
                     <!-- Gallery -->
-                    <div class="city-section">
-                        <h2>Gallery</h2>
+                    <section id="gallery" class="city-section">
+                        <h2><i class="fas fa-camera-retro me-3"></i>Gallery</h2>
                         <div class="city-gallery">
-                            <img src="https://images.unsplash.com/photo-1569310173909-a0294f573543?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tianjin view 1">
-                            <img src="https://images.unsplash.com/photo-1610642289134-56e4216110a5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tianjin view 2">
-                            <img src="https://images.unsplash.com/photo-1558137343-c432a48cacec?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tianjin view 3">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1569310173909-a0294f573543?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tianjin skyline" class="gallery-img" data-caption="Tianjin skyline with modern architecture" data-index="0">
+                                <div class="gallery-caption">
+                                    <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Tianjin Skyline</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1610642289134-56e4216110a5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tianjin Eye" class="gallery-img" data-caption="The famous Tianjin Eye Ferris wheel" data-index="1">
+                                <div class="gallery-caption">
+                                    <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Tianjin Eye</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1558137343-c432a48cacec?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hai River" class="gallery-img" data-caption="The beautiful Hai River flowing through Tianjin" data-index="2">
+                                <div class="gallery-caption">
+                                    <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Hai River</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </section>
+                    
+                    <!-- Patent Data -->
+                    <section id="patent-data" class="city-section">
+                        <h2><i class="fas fa-file-alt me-3"></i>Patent Data</h2>
+                        <div class="patent-table">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Patent Number</th>
+                                        <th>Title</th>
+                                        <th>Current Assignee</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CN100389121C</td>
+                                        <td>Preparation method of mometasone furoate intermediate 21-hydroxyl</td>
+                                        <td>TIANJIN PHARMACEUTICAL INDUSTRY GROUP CORP Ltd</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CN101817783A</td>
+                                        <td>Method for preparing tolvaptan intermediate</td>
+                                        <td>Tianjin Taipu Pharmaceutical Science & Technology Development Co Ltd</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CN101347621A</td>
+                                        <td>A pharmaceutical composition for treating respiratory diseases</td>
+                                        <td>TIANJIN PHARMACEUTICALS GROUP CORP</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Sticky Navigation -->
+                <div class="col-lg-3">
+                    <nav class="jump-nav">
+                        <h4><i class="fas fa-compass"></i> Explore Tianjin</h4>
+                        <ul class="jump-nav-list">
+                            <li class="jump-nav-item"><a href="#overview" class="jump-nav-link active"><i class="fas fa-info-circle jump-nav-icon"></i>Overview</a></li>
+                            <li class="jump-nav-item"><a href="#highlights" class="jump-nav-link"><i class="fas fa-star jump-nav-icon"></i>Highlights</a></li>
+                            <li class="jump-nav-item"><a href="#cuisine" class="jump-nav-link"><i class="fas fa-utensils jump-nav-icon"></i>Cuisine</a></li>
+                            <li class="jump-nav-item"><a href="#transport" class="jump-nav-link"><i class="fas fa-subway jump-nav-icon"></i>Transport</a></li>
+                            <li class="jump-nav-item"><a href="#itinerary" class="jump-nav-link"><i class="fas fa-calendar-alt jump-nav-icon"></i>Itinerary</a></li>
+                            <li class="jump-nav-item"><a href="#gallery" class="jump-nav-link"><i class="fas fa-images jump-nav-icon"></i>Gallery</a></li>
+                            <li class="jump-nav-item"><a href="#patent-data" class="jump-nav-link"><i class="fas fa-file-alt jump-nav-icon"></i>Patents</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
 
-            <div class="city-section">
-                <h2>Patent Data</h2>
-                <div class="patent-table">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Patent Number</th>
-                                <th>Title</th>
-                                <th>Current Assignee</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>CN100389121C</td>
-                                <td>Preparation method of mometasone furoate intermediate 21-hydroxyl</td>
-                                <td>TIANJIN PHARMACEUTICAL INDUSTRY GROUP CORP Ltd</td>
-                            </tr>
-                            <tr>
-                                <td>CN101817783A</td>
-                                <td>Method for preparing tolvaptan intermediate</td>
-                                <td>Tianjin Taipu Pharmaceutical Science & Technology Development Co Ltd</td>
-                            </tr>
-                            <tr>
-                                <td>CN101347621A</td>
-                                <td>A pharmaceutical composition for treating respiratory diseases</td>
-                                <td>TIANJIN PHARMACEUTICALS GROUP CORP</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            
             <!-- Explore Other Cities -->
             <div class="city-nav">
                 <h3>Explore Other Chinese Cities</h3>
                 <div class="city-links">
-                    <a href="chengdu.html" class="city-link">Chengdu</a>
                     <a href="beijing.html" class="city-link">Beijing</a>
-                    <a href="wuxi.html" class="city-link">Wuxi</a>
+                    <a href="shanghai.html" class="city-link">Shanghai</a>
+                    <a href="chengdu.html" class="city-link">Chengdu</a>
+                    <a href="guangzhou.html" class="city-link">Guangzhou</a>
+                    <a href="shenzhen.html" class="city-link">Shenzhen</a>
+                    <a href="chongqing.html" class="city-link">Chongqing</a>
+                    <a href="xian.html" class="city-link">Xi'an</a>
+                    <a href="nanjing.html" class="city-link">Nanjing</a>
                     <a href="qingdao.html" class="city-link">Qingdao</a>
+                    <a href="wuxi.html" class="city-link">Wuxi</a>
                     <a href="xiamen.html" class="city-link">Xiamen</a>
                     <a href="harbin.html" class="city-link">Harbin</a>
-                    <a href="shanghai.html" class="city-link">Shanghai</a>
-                    <a href="nanjing.html" class="city-link">Nanjing</a>
-                    <a href="shenzhen.html" class="city-link">Shenzhen</a>
-                    <a href="guangzhou.html" class="city-link">Guangzhou</a>
-                    <a href="hongkong.html" class="city-link">Hongkong</a>
-                    <a href="chongqing.html" class="city-link">Chongqing</a>
                 </div>
             </div>
         </div>
@@ -321,16 +483,47 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Navbar Scroll Effect
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.jump-nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Update active state
+                    document.querySelectorAll('.jump-nav-link').forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Update active navigation on scroll
         window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            const sections = document.querySelectorAll('.city-section');
+            const navLinks = document.querySelectorAll('.jump-nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
 </body>

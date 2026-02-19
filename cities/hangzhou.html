@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hangzhou - Traveling China</title>
+    <title>Hangzhou - Traveling China like your home yard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,35 +22,35 @@
         }
         
         .city-hero {
-            color: white; padding: 100px 0 60px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--hero-image);
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 100px 0 60px;
+            padding: 120px 0 80px;
             text-align: center;
             margin-bottom: 60px;
+            --hero-image: url('../images/user_photos/hangzhou_hero_bg.jpg');
         }
         
         .city-hero h1 {
-            font-size: 2.5rem; /* Reduced from 3.5rem */
-            margin-bottom: 16px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         
         .city-hero .lead {
-            font-size: 1.25rem; /* Reduced from 1.5rem */
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: rgba(255,255,255,0.95);
-            line-height: 1.6;
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.9);
         }
         
         .city-content {
-            padding: 40px 0; /* Reduced from 60px */
+            padding: 60px 0;
         }
         
         .city-section {
-            margin-bottom: 40px; /* Reduced from 60px */
+            margin-bottom: 60px;
         }
         
         .city-section h2 {
@@ -58,22 +58,20 @@
             margin-bottom: 30px;
             padding-bottom: 15px;
             border-bottom: 3px solid var(--accent);
-        
-            font-size: 1.75rem;}
+        }
         
         .city-highlight {
             background: var(--light);
-            border-radius: 12px;
-            padding: 24px; /* Reduced from 30px */
-            margin-bottom: 24px; /* Reduced from 30px */
-            border-left: 4px solid var(--primary);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
         }
         
         .city-highlight h3 {
             color: var(--primary);
             margin-bottom: 15px;
-        
-            font-size: 1.3rem;}
+        }
         
         .city-gallery {
             display: grid;
@@ -94,79 +92,164 @@
             transform: scale(1.05);
         }
         
-        .back-to-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 30px;
-            transition: color 0.3s ease;
+        /* JUMP TO SECTION NAVIGATION */
+        .jump-nav {
+            position: sticky;
+            top: 80px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            z-index: 100;
+            border: 1px solid var(--gray-light);
         }
         
-        .back-to-home:hover {
+        .jump-nav h4 {
             color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .jump-nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .jump-nav-item {
+            flex: 1 1 auto;
+            min-width: 120px;
+        }
+        
+        .jump-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            background: var(--light);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .jump-nav-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        
+        .jump-nav-link.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .jump-nav-icon {
+            font-size: 0.8rem;
+            width: 16px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .jump-nav {
+                position: relative;
+                top: 0;
+                margin-bottom: 30px;
+            }
+            
+            .jump-nav-list {
+                flex-direction: column;
+            }
+            
+            .jump-nav-item {
+                flex: none;
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .city-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .city-hero .lead {
+                font-size: 1.2rem;
+            }
+        }
+        
+        .patent-table {
+            margin-top: 30px;
         }
         
         .city-nav {
+            margin-top: 60px;
+            padding: 40px 0;
             background: var(--light);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 40px;
+            border-radius: 15px;
         }
         
         .city-nav h3 {
             color: var(--secondary);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
         }
         
         .city-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 15px;
         }
         
         .city-link {
-            display: block;
-            padding: 12px 20px;
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
             background: white;
-            border-radius: 8px;
-            color: var(--dark);
+            color: var(--primary);
             text-decoration: none;
+            border-radius: 25px;
+            border: 2px solid var(--primary);
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            font-weight: 500;
         }
         
         .city-link:hover {
             background: var(--primary);
             color: white;
-            transform: translateY(-3px);
-            border-color: var(--primary);
-        }
-    
-        .back-link {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #3b82f6;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            margin: 20px 0;
-            transition: all 0.3s ease;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
         
-        .back-link:hover {
-            background: #2563eb;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0;
+            margin-top: 80px;
         }
-        .patent-table {
-            margin-top: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-radius: 10px;
-            overflow: hidden;
-        }</style>
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -189,9 +272,14 @@
             </div>
         </div>
     </nav>
+    
     <!-- City Hero Section -->
-    <section class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/user_photos/hangzhou_hero_bg.jpg'); background-size: cover; background-position: center; padding: 100px 0 60px; min-height: 400px; color: white">
+    <section class="city-hero">
         <div class="container">
+            <a href="../index.html" class="back-home-btn">
+                <i class="fas fa-arrow-left back-home-icon"></i>
+                <span class="back-home-text">Back to All Cities</span>
+            </a>
             <h1>Hangzhou</h1>
             <p class="lead">Ancient Capital & Modern Metropolis</p>
         </div>
@@ -201,152 +289,182 @@
     <section class="city-content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <!-- Main Content -->
+                <div class="col-lg-9">
                     <!-- Overview -->
-                    
-                    <div class="city-section">
-                        <h2>Detailed Overview</h2>
-                        <div class="city-highlight">
-                            <p>Hangzhou, the capital of Zhejiang province, represents the poetic soul of China, immortalized in countless poems, paintings, and literary works throughout Chinese history. Situated at the southern terminus of the Grand Canal and on the banks of the Qiantang River, Hangzhou's most famous feature is West Lake (Xi Hu), a UNESCO World Heritage Site that has inspired artists and poets for over a millennium. The city served as the capital of the Southern Song Dynasty (1127-1279), during which it became the world's largest city with a population exceeding one million and a center of Chinese culture, commerce, and innovation.
-
-        West Lake's beauty lies in its "Ten Scenes," carefully composed views that change with the seasons: "Spring Dawn at Su Causeway," "Lotus in the Breeze at Crooked Courtyard," "Autumn Moon over the Calm Lake," and "Remnant Snow on Broken Bridge" among them. These scenes represent the Chinese aesthetic ideal of harmony between human creation and natural beauty. The lake itself covers 6.5 square kilometers but feels much larger due to its intricate layout of causeways, islands, and temples that create constantly shifting perspectives. Su Causeway, built by the poet-governor Su Dongpo in the 11th century, and Bai Causeway, named after another poet-official Bai Juyi, serve as both practical transportation routes and artistic compositions.
-
-        Beyond West Lake, Hangzhou boasts significant cultural and historical sites. Lingyin Temple (Temple of the Soul's Retreat), founded in 328 AD, ranks among China's most important Buddhist temples. Its Feilai Feng (Peak Flown From Afar) grottoes contain over 470 stone carvings of Buddhist figures dating from the 10th to 14th centuries. The Six Harmonies Pagoda, originally built in 970 AD to suppress tidal bores on the Qiantang River, offers panoramic views of the river and city. The National Silk Museum, the world's largest dedicated to silk, showcases Hangzhou's 5,000-year history of silk production and the city's crucial role on the Maritime Silk Road.
-
-        Hangzhou's economic significance has evolved from historical silk production to modern technology leadership. As headquarters of Alibaba Group, Hangzhou has transformed into China's e-commerce capital, with the Cloud Town district housing countless tech startups. This blend of ancient tradition and cutting-edge innovation creates a unique urban character. The city's culinary reputation rests on its status as the birthplace of Zhejiang cuisine, known for fresh ingredients, subtle flavors, and artistic presentation. Signature dishes include Dongpo Pork (braised pork belly named after the Song Dynasty poet), West Lake Fish in Vinegar Gravy, Beggar's Chicken, and Longjing Tea Shrimp.
-
-        The surrounding countryside offers equally compelling attractions. Longjing (Dragon Well) tea plantations in the West Lake hills produce China's most famous green tea, with the best leaves harvested before the Qingming Festival in early April. Xixi National Wetland Park, China's first national wetland park, preserves traditional water village culture with waterways, ponds, and reed marshes. The Qiantang River tidal bore, the world's largest, creates a spectacular wall of water up to nine meters high during the autumn equinox, attracting thousands of spectators to specially built viewing platforms.</p>
-                        </div>
-                    </div><div class="city-section">
-                        <h2>Overview</h2>
-                        <p>Hangzhou is the capital of Zhejiang Province, famous for its picturesque West Lake, ancient temples, and rich cultural heritage. Known as 'Paradise on Earth' for its natural beauty, tea plantations, and historic sites dating back to the Southern Song Dynasty.</p>
-                    </div>
+                    <section id="overview" class="city-section">
+                        <h2><i class="fas fa-info-circle me-3"></i>Overview</h2>
+                        <p>Hangzhou, the capital of Zhejiang province, represents the poetic soul of China, immortalized in countless poems, paintings, and literary works throughout Chinese history. Situated at the southern terminus of the Grand Canal and on the banks of the Qiantang River, Hangzhou's most famous feature is West Lake (Xi Hu), a UNESCO World Heritage Site that has inspired artists and poets for over a millennium.</p>
+                    </section>
                     
                     <!-- Highlights -->
-                    <div class="city-section">
-                        <h2>Must-See Highlights</h2>
+                    <section id="highlights" class="city-section">
+                        <h2><i class="fas fa-star me-3"></i>Must-See Highlights</h2>
                         <div class="city-highlight">
                             <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
-                            <p>West Lake, Lingyin Temple, Six Harmonies Pagoda, West Lake, West Lake, West Lake</p>
+                            <p>West Lake, Lingyin Temple, Six Harmonies Pagoda, Su Causeway, Bai Causeway, Feilai Feng grottoes</p>
                         </div>
                         <div class="city-highlight">
                             <h3><i class="fas fa-utensils me-2"></i>Local Cuisine</h3>
-                            <p>Dongpo Pork, West Lake Fish in Vinegar Gravy, Longjing Tea, Mongolian Hot Pot, Hangzhou Yogurt</p>
+                            <p>Dongpo Pork, West Lake Fish in Vinegar Gravy, Longjing Tea, Beggar's Chicken, Hangzhou Yogurt</p>
                         </div>
                         <div class="city-highlight">
                             <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
-                            <p>Autumn (September-October) with clear skies and pleasant temperatures</p>
+                            <p>Autumn (September-October) with clear skies and pleasant temperatures, or Spring (March-May) for blooming flowers</p>
                         </div>
-                    </div>
-                    
-                                            <h2>Travel Tips</h2>
+                    </section>
+
+                    <!-- Local Cuisine -->
+                    <section id="cuisine" class="city-section">
+                        <h2><i class="fas fa-utensils me-3"></i>Local Cuisine</h2>
                         <div class="city-highlight">
-                            <h3><i class="fas fa-lightbulb me-2"></i>Comprehensive Travel Guide</h3>
-                            <p>Experiencing Hangzhou's beauty requires understanding its seasonal rhythms and strategic timing. West Lake attracts massive crowds during national holidays (especially Golden Week in October and Spring Festival), making weekdays and shoulder seasons (March-April, September-October) ideal for visitation. Arrive at popular sites like Leifeng Pagoda or Lingyin Temple right at opening time (typically 8:00 AM) to enjoy relative tranquility before tour groups arrive around 10:00 AM.
-
-        Transportation within Hangzhou has improved dramatically with the expansion of its metro system, but certain experiences demand specific approaches. Renting a bicycle offers the best way to explore West Lake's perimeter, with numerous rental stations and dedicated bike lanes along the lake. For the full West Lake experience, take a traditional wooden boat from one of several piers—the longer routes that include visits to islands provide better value than short crossings. Consider hiring a boat for a private tour during sunset for unforgettable views.
-
-        Tea culture forms an essential part of the Hangzhou experience. When visiting Longjing tea plantations, go with a local guide who can explain the tea-making process and help you distinguish authentic Longjing tea from imitations. The best tea purchases come directly from tea farmers in Meijiawu or Longjing villages rather than tourist shops. Participate in a traditional tea ceremony to appreciate the proper brewing technique and flavor nuances of different harvest times.
-
-        Accommodation choices significantly impact your Hangzhou experience. Lakeside hotels offer stunning views but come with premium prices and potential noise from evening light shows. Consider staying in the Hefang Street area for better access to local life, traditional architecture, and authentic dining options. Many historic courtyard homes have been converted into boutique hotels offering traditional Chinese aesthetics with modern comforts.
-
-        Dining in Hangzhou requires some local knowledge. While famous restaurants like Louwailou and Zhiweiguan serve excellent versions of classic dishes, venture into smaller family-run establishments in the Qinghefang Historic District for more authentic experiences. Street food along Hefang Street offers delicious snacks like stinky tofu, fried dumplings, and sweet osmanthus cakes. For the ultimate culinary experience, book a meal at one of Hangzhou's "black pearl" restaurants that reinterpret traditional Zhejiang cuisine with modern techniques.
-
-        Day trips from Hangzhou expand your understanding of the region. Shaoxing, an hour away by high-speed train, offers completely preserved water towns and is the birthplace of Chinese yellow rice wine. Thousand Island Lake (Qiandao Hu), created by damming the Xin'an River, provides stunning scenery and water activities. The ancient town of Wuzhen, though increasingly touristy, showcases traditional Jiangnan water town architecture and lifestyle. Plan these excursions on weekdays to avoid domestic tourist crowds.</p>
-                        </div></div>
-                
-                <div class="col-lg-4">
-                    <!-- Quick Facts -->
-                    <div class="city-section">
-                        <h2>Quick Facts</h2>
-                        <div class="city-highlight">
-                            <h3><i class="fas fa-info-circle me-2"></i>Basic Info</h3>
-                            <p><strong>Population:</strong> 12.2 million</p>
-                            <p><strong>Province:</strong> Hangzhou Municipality</p>
-                            <p><strong>Language:</strong> Mandarin, Hangzhou Mandarin</p>
-                            <p><strong>Timezone:</strong> China Standard Time (UTC+8)</p>
+                            <h3><i class="fas fa-pepper-hot me-2"></i>Must-Try Dishes</h3>
+                            <p><strong>Dongpo Pork:</strong> Braised pork belly named after the Song Dynasty poet Su Dongpo, known for its tender texture and rich flavor.</p>
+                            <p><strong>West Lake Fish in Vinegar Gravy:</strong> Fresh fish from West Lake served with a sweet and sour vinegar sauce.</p>
+                            <p><strong>Longjing Tea Shrimp:</strong> Fresh shrimp stir-fried with Longjing tea leaves, combining seafood with the famous local tea.</p>
+                            <p><strong>Beggar's Chicken:</strong> Chicken wrapped in lotus leaves and clay, then baked until tender and aromatic.</p>
                         </div>
-                        
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-map-marker-alt me-2"></i>Best Food Streets</h3>
+                            <p><strong>Hefang Street:</strong> Traditional snacks and street food in a historic setting with traditional architecture.</p>
+                            <p><strong>West Lake Area:</strong> Lakeside restaurants serving fresh fish and local specialties with scenic views.</p>
+                            <p><strong>Qinghefang Historic District:</strong> Family-run establishments offering authentic Hangzhou cuisine.</p>
+                        </div>
+                    </section>
+
+                    <!-- Transportation -->
+                    <section id="transport" class="city-section">
+                        <h2><i class="fas fa-subway me-3"></i>Transportation</h2>
                         <div class="city-highlight">
                             <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
-                            <p><strong>Airport:</strong> Hangzhou Capital International Airport (PEK) / Hangzhou Daxing International Airport (PKX)</p>
-                            <p><strong>Train:</strong> High-speed rail from Shanghai, Guangzhou, Xi'an (4-6 hours)</p>
-                            <p><strong>Best Transport:</strong> Extensive metro system, buses, and taxis</p>
+                            <p><strong>By Air:</strong> Hangzhou Xiaoshan International Airport (HGH) with domestic and international flights.</p>
+                            <p><strong>By Train:</strong> Major high-speed rail hub connecting to Shanghai, Guangzhou, Xi'an, and other cities.</p>
+                            <p><strong>By Bus:</strong> Extensive long-distance bus network connecting to nearby provinces and cities.</p>
                         </div>
-                    </div>
-                    
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-bus me-2"></i>Getting Around</h3>
+                            <p><strong>Metro:</strong> Hangzhou's metro system provides efficient transportation to major attractions and districts.</p>
+                            <p><strong>Bicycle:</strong> Renting a bicycle offers the best way to explore West Lake's perimeter with dedicated bike lanes.</p>
+                            <p><strong>Bus:</strong> Comprehensive public bus network covering the urban area and tourist attractions.</p>
+                            <p><strong>Boat:</strong> Traditional wooden boats on West Lake provide scenic transportation and tours.</p>
+                        </div>
+                    </section>
+
+                    <!-- Suggested Itinerary -->
+                    <section id="itinerary" class="city-section">
+                        <h2><i class="fas fa-calendar-alt me-3"></i>Suggested Itinerary</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-sun me-2"></i>Day 1: West Lake and Culture</h3>
+                            <p><strong>Morning:</strong> Explore West Lake by bicycle, visiting Su Causeway and Bai Causeway.</p>
+                            <p><strong>Afternoon:</strong> Visit Lingyin Temple and Feilai Feng grottoes.</p>
+                            <p><strong>Evening:</strong> Enjoy dinner at a lakeside restaurant with West Lake fish.</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-star me-2"></i>Day 2: History and Tea</h3>
+                            <p><strong>Morning:</strong> Visit Six Harmonies Pagoda for panoramic views.</p>
+                            <p><strong>Afternoon:</strong> Explore Longjing tea plantations and participate in a tea ceremony.</p>
+                            <p><strong>Evening:</strong> Stroll through Hefang Street for shopping and street food.</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-shopping-bag me-2"></i>Day 3: Modern Hangzhou</h3>
+                            <p><strong>Morning:</strong> Visit the National Silk Museum to learn about silk production.</p>
+                            <p><strong>Afternoon:</strong> Explore Xixi National Wetland Park for natural scenery.</p>
+                            <p><strong>Evening:</strong> Experience modern Hangzhou at the Cloud Town tech district.</p>
+                        </div>
+                    </section>
+
                     <!-- Gallery -->
-                    <div class="city-section">
-                        <h2>Gallery</h2>
+                    <section id="gallery" class="city-section">
+                        <h2><i class="fas fa-camera-retro me-3"></i>Gallery</h2>
                         <div class="city-gallery">
-                            <img src="../images/user_photos/hangzhou_1_optimized.jpg" alt="Hangzhou West Lake - Scenic lake with pavilions and willow trees">
-                            <img src="../images/user_photos/hangzhou_2_optimized.jpg" alt="Hangzhou Leifeng Pagoda - Historic pagoda overlooking West Lake">
-                            <img src="../images/user_photos/hangzhou_3_optimized.jpg" alt="Hangzhou Longjing Tea Plantations - Terraced tea fields">
+                            <img src="../images/user_photos/hangzhou_1_optimized.jpg" alt="Hangzhou West Lake - Scenic lake with pavilions and willow trees" class="gallery-img">
+                            <img src="../images/user_photos/hangzhou_2_optimized.jpg" alt="Hangzhou Leifeng Pagoda - Historic pagoda overlooking West Lake" class="gallery-img">
+                            <img src="../images/user_photos/hangzhou_3_optimized.jpg" alt="Hangzhou Longjing Tea Plantations - Terraced tea fields" class="gallery-img">
                         </div>
-                    </div>
+                    </section>
+                    
+                    <!-- Patent Data -->
+                    <section id="patent-data" class="city-section">
+                        <h2><i class="fas fa-file-alt me-3"></i>Patent Data</h2>
+                        <div class="patent-table">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Patent Number</th>
+                                        <th>Title</th>
+                                        <th>Current Assignee</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CN106897282B</td>
+                                        <td>User group classification method and device</td>
+                                        <td>Alibaba Group Holding Ltd</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CN108418780A</td>
+                                        <td>Filter method and device, system, the dns server of IP address</td>
+                                        <td>Alibaba Group Holding Ltd</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CN108804885B</td>
+                                        <td>Man-machine verification method and device, storage medium and processor</td>
+                                        <td>Alibaba Group Holding Ltd</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Sticky Navigation -->
+                <div class="col-lg-3">
+                    <nav class="jump-nav">
+                        <h4><i class="fas fa-compass"></i> Explore Hangzhou</h4>
+                        <ul class="jump-nav-list">
+                            <li class="jump-nav-item"><a href="#overview" class="jump-nav-link active"><i class="fas fa-info-circle jump-nav-icon"></i>Overview</a></li>
+                            <li class="jump-nav-item"><a href="#highlights" class="jump-nav-link"><i class="fas fa-star jump-nav-icon"></i>Highlights</a></li>
+                            <li class="jump-nav-item"><a href="#cuisine" class="jump-nav-link"><i class="fas fa-utensils jump-nav-icon"></i>Cuisine</a></li>
+                            <li class="jump-nav-item"><a href="#transport" class="jump-nav-link"><i class="fas fa-subway jump-nav-icon"></i>Transport</a></li>
+                            <li class="jump-nav-item"><a href="#itinerary" class="jump-nav-link"><i class="fas fa-calendar-alt jump-nav-icon"></i>Itinerary</a></li>
+                            <li class="jump-nav-item"><a href="#gallery" class="jump-nav-link"><i class="fas fa-images jump-nav-icon"></i>Gallery</a></li>
+                            <li class="jump-nav-item"><a href="#patent-data" class="jump-nav-link"><i class="fas fa-file-alt jump-nav-icon"></i>Patents</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            
-            <div class="city-section">
-                <h2>Patent Data</h2>
-                <div class="patent-table">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Patent Number</th>
-                                <th>Title</th>
-                                <th>Current Assignee</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>CN106897282B</td>
-                                <td>User group classification method and device</td>
-                                <td>Alibaba Group Holding Ltd</td>
-                            </tr>
-                            <tr>
-                                <td>CN108418780A</td>
-                                <td>Filter method and device, system, the dns server of IP address</td>
-                                <td>Alibaba Group Holding Ltd</td>
-                            </tr>
-                            <tr>
-                                <td>CN108804885B</td>
-                                <td>Man-machine verification method and device, storage medium and processor</td>
-                                <td>Alibaba Group Holding Ltd</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            
+
             <!-- Explore Other Cities -->
             <div class="city-nav">
                 <h3>Explore Other Chinese Cities</h3>
                 <div class="city-links">
-<a href="beijing.html" class="city-link">Beijing</a>
-<a href="shanghai.html" class="city-link">Shanghai</a>
-<a href="chengdu.html" class="city-link">Chengdu</a>
-<a href="qingdao.html" class="city-link">Qingdao</a>
-<a href="xiamen.html" class="city-link">Xiamen</a>
-<a href="wuxi.html" class="city-link">Wuxi</a>
-<a href="hongkong.html" class="city-link">Hongkong</a>
-<a href="chongqing.html" class="city-link">Chongqing</a>
-<a href="harbin.html" class="city-link">Harbin</a>
-<a href="guangzhou.html" class="city-link">Guangzhou</a>
-<a href="shenzhen.html" class="city-link">Shenzhen</a>
-<a href="nanjing.html" class="city-link">Nanjing</a>
-<a href="guilin.html" class="city-link">Guilin</a>
-<a href="guiyang.html" class="city-link">Guiyang</a>
-<a href="kunming.html" class="city-link">Kunming</a>
-<a href="dali.html" class="city-link">Dali</a>
-<a href="jinan.html" class="city-link">Jinan</a>
-<a href="datong.html" class="city-link">Datong</a>
-<a href="linyi.html" class="city-link">Linyi</a>
-<a href="taiyuan.html" class="city-link">Taiyuan</a>
-<a href="urumqi.html" class="city-link">Urumqi</a>
-<a href="kashi.html" class="city-link">Kashi</a>
-<a href="wuhan.html" class="city-link">Wuhan</a>
-<a href="suzhou.html" class="city-link">Suzhou</a>
+                    <a href="beijing.html" class="city-link">Beijing</a>
+                    <a href="shanghai.html" class="city-link">Shanghai</a>
+                    <a href="tianjin.html" class="city-link">Tianjin</a>
+                    <a href="chengdu.html" class="city-link">Chengdu</a>
+                    <a href="chongqing.html" class="city-link">Chongqing</a>
+                    <a href="guangzhou.html" class="city-link">Guangzhou</a>
+                    <a href="shenzhen.html" class="city-link">Shenzhen</a>
+                    <a href="xian.html" class="city-link">Xi'an</a>
+                    <a href="nanjing.html" class="city-link">Nanjing</a>
+                    <a href="qingdao.html" class="city-link">Qingdao</a>
+                    <a href="wuxi.html" class="city-link">Wuxi</a>
+                    <a href="xiamen.html" class="city-link">Xiamen</a>
+                    <a href="harbin.html" class="city-link">Harbin</a>
+                    <a href="guilin.html" class="city-link">Guilin</a>
+                    <a href="guiyang.html" class="city-link">Guiyang</a>
+                    <a href="kunming.html" class="city-link">Kunming</a>
+                    <a href="dali.html" class="city-link">Dali</a>
+                    <a href="jinan.html" class="city-link">Jinan</a>
+                    <a href="datong.html" class="city-link">Datong</a>
+                    <a href="linyi.html" class="city-link">Linyi</a>
+                    <a href="taiyuan.html" class="city-link">Taiyuan</a>
+                    <a href="urumqi.html" class="city-link">Urumqi</a>
+                    <a href="kashi.html" class="city-link">Kashi</a>
+                    <a href="wuhan.html" class="city-link">Wuhan</a>
+                    <a href="suzhou.html" class="city-link">Suzhou</a>
+                    <a href="kaifeng.html" class="city-link">Kaifeng</a>
                 </div>
             </div>
         </div>
@@ -355,7 +473,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>&copy; 2026 Traveling China. All rights reserved.</p>
+            <p>&copy; 2026 Traveling China like your home yard. All rights reserved.</p>
             <div class="social-icons mt-3">
                 <a href="#"><i class="fab fa-weixin"></i></a>
                 <a href="#"><i class="fab fa-weibo"></i></a>
@@ -365,25 +483,48 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Navbar Scroll Effect
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.jump-nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Update active state
+                    document.querySelectorAll('.jump-nav-link').forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Update active navigation on scroll
         window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            const sections = document.querySelectorAll('.city-section');
+            const navLinks = document.querySelectorAll('.jump-nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
-    <!-- Color references for monitoring system (hidden) -->
-    <div style="display: none;">
-        <span style="color: #2563eb;">primary</span>
-        <span style="color: #1e40af;">secondary</span>
-        <span style="color: #f59e0b;">accent</span>
-        <span style="color: #f8fafc;">light</span>
-        <span style="color: #1e293b;">dark</span>
-    </div>
 </body>
 </html>

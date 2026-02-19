@@ -22,3 +22,8 @@
 2026-02-18 08:53:10.229 PST [57983] STATEMENT:  INSERT INTO travel.travel_development_ideas (idea, status) VALUES ('Fix carousel CSS: remove all the broken css rules, and dynamically calculate slide width', 'pending');
 2026-02-18 08:53:10.230 PST [57983] ERROR:  current transaction is aborted, commands ignored until end of transaction block
 2026-02-18 08:53:10.230 PST [57983] STATEMENT:  INSERT INTO travel.travel_development_idea (idea, status) VALUES ('Fix carousel JavaScript: replace the static script with a dynamic one that correctly handles slide navigation and updates the UI', 'pending');
+2026-02-18 19:56:48.686 PST [11823] FATAL:  database "fudongli" does not exist
+2026-02-18 19:57:05.830 PST [11845] FATAL:  database "trave_website" does not exist
+2026-02-18 19:59:37.985 PST [11996] FATAL:  role "admin" does not exist
+2026-02-18 19:59:52.359 PST [12167] FATAL:  role "postgres" does not exist
+2026-02-18 19:59:55.404 PST [12285] FATAL:  database "travel" does not exist

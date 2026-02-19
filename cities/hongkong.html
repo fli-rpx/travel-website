@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hong Kong - Traveling China</title>
+    <title>Hong Kong - Traveling China like your home yard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <style>
         :root {
@@ -22,35 +22,35 @@
         }
         
         .city-hero {
-            color: white; padding: 100px 0 60px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--hero-image);
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 100px 0 60px;
+            padding: 120px 0 80px;
             text-align: center;
             margin-bottom: 60px;
+            --hero-image: url('../images/user_photos/hongkong_hero_bg.jpg');
         }
         
         .city-hero h1 {
-            font-size: 2.5rem; /* Reduced from 3.5rem */
-            margin-bottom: 16px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         
         .city-hero .lead {
-            font-size: 1.25rem; /* Reduced from 1.5rem */
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: rgba(255,255,255,0.95);
-            line-height: 1.6;
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.9);
         }
         
         .city-content {
-            padding: 40px 0; /* Reduced from 60px */
+            padding: 60px 0;
         }
         
         .city-section {
-            margin-bottom: 40px; /* Reduced from 60px */
+            margin-bottom: 60px;
         }
         
         .city-section h2 {
@@ -58,22 +58,20 @@
             margin-bottom: 30px;
             padding-bottom: 15px;
             border-bottom: 3px solid var(--accent);
-        
-            font-size: 1.75rem;}
+        }
         
         .city-highlight {
             background: var(--light);
-            border-radius: 12px;
-            padding: 24px; /* Reduced from 30px */
-            margin-bottom: 24px; /* Reduced from 30px */
-            border-left: 4px solid var(--primary);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
         }
         
         .city-highlight h3 {
             color: var(--primary);
             margin-bottom: 15px;
-        
-            font-size: 1.3rem;}
+        }
         
         .city-gallery {
             display: grid;
@@ -94,73 +92,164 @@
             transform: scale(1.05);
         }
         
-        .back-to-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 30px;
-            transition: color 0.3s ease;
+        /* JUMP TO SECTION NAVIGATION */
+        .jump-nav {
+            position: sticky;
+            top: 80px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            z-index: 100;
+            border: 1px solid var(--gray-light);
         }
         
-        .back-to-home:hover {
+        .jump-nav h4 {
             color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .jump-nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .jump-nav-item {
+            flex: 1 1 auto;
+            min-width: 120px;
+        }
+        
+        .jump-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            background: var(--light);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .jump-nav-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        
+        .jump-nav-link.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .jump-nav-icon {
+            font-size: 0.8rem;
+            width: 16px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .jump-nav {
+                position: relative;
+                top: 0;
+                margin-bottom: 30px;
+            }
+            
+            .jump-nav-list {
+                flex-direction: column;
+            }
+            
+            .jump-nav-item {
+                flex: none;
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .city-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .city-hero .lead {
+                font-size: 1.2rem;
+            }
+        }
+        
+        .patent-table {
+            margin-top: 30px;
         }
         
         .city-nav {
+            margin-top: 60px;
+            padding: 40px 0;
             background: var(--light);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 40px;
+            border-radius: 15px;
         }
         
         .city-nav h3 {
             color: var(--secondary);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
         }
         
         .city-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 15px;
         }
         
         .city-link {
-            display: block;
-            padding: 12px 20px;
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
             background: white;
-            border-radius: 8px;
-            color: var(--dark);
+            color: var(--primary);
             text-decoration: none;
+            border-radius: 25px;
+            border: 2px solid var(--primary);
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            font-weight: 500;
         }
         
         .city-link:hover {
             background: var(--primary);
             color: white;
-            transform: translateY(-3px);
-            border-color: var(--primary);
-        }
-    
-        .back-link {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #3b82f6;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            margin: 20px 0;
-            transition: all 0.3s ease;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
         
-        .back-link:hover {
-            background: #2563eb;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-        }</style>
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0;
+            margin-top: 80px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -183,10 +272,15 @@
             </div>
         </div>
     </nav>
+    
     <!-- City Hero Section -->
-    <section class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/user_photos/hongkong_hero_bg.jpg'); background-size: cover; background-position: center; padding: 100px 0 60px; min-height: 400px; color: white">
+    <section class="city-hero">
         <div class="container">
-            <h1>Hongkong</h1>
+            <a href="../index.html" class="back-home-btn">
+                <i class="fas fa-arrow-left back-home-icon"></i>
+                <span class="back-home-text">Back to All Cities</span>
+            </a>
+            <h1>Hong Kong</h1>
             <p class="lead">Asia's World City</p>
         </div>
     </section>
@@ -195,16 +289,17 @@
     <section class="city-content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <!-- Main Content -->
+                <div class="col-lg-9">
                     <!-- Overview -->
-                    <div class="city-section">
-                        <h2>Overview</h2>
+                    <section id="overview" class="city-section">
+                        <h2><i class="fas fa-info-circle me-3"></i>Overview</h2>
                         <p>Hong Kong is a special administrative region of China, known as a global financial hub and cultural melting pot. With its stunning skyline, vibrant street life, and unique blend of Eastern and Western influences, Hong Kong offers a dynamic urban experience.</p>
-                    </div>
+                    </section>
                     
                     <!-- Highlights -->
-                    <div class="city-section">
-                        <h2>Must-See Highlights</h2>
+                    <section id="highlights" class="city-section">
+                        <h2><i class="fas fa-star me-3"></i>Must-See Highlights</h2>
                         <div class="city-highlight">
                             <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
                             <p>Victoria Peak, Star Ferry, Temple Street Night Market, Disneyland, Ocean Park</p>
@@ -217,80 +312,174 @@
                             <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
                             <p>Autumn (October-December) with cool, dry weather and clear skies</p>
                         </div>
-                    </div>
-                    
-                    <!-- Travel Tips -->
-                    <div class="city-section">
-                        <h2>Travel Tips</h2>
-                        <ul>
-                            <li>Take the Star Ferry across Victoria Harbour for iconic views of the skyline</li>
-                            <li>Ride the Peak Tram to Victoria Peak for panoramic city views</li>
-                            <li>Explore the street markets in Mong Kok for shopping and local culture</li>
-                            <li>Visit during Chinese New Year for spectacular fireworks and celebrations</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4">
-                    <!-- Quick Facts -->
-                    <div class="city-section">
-                        <h2>Quick Facts</h2>
+                    </section>
+
+                    <!-- Local Cuisine -->
+                    <section id="cuisine" class="city-section">
+                        <h2><i class="fas fa-utensils me-3"></i>Local Cuisine</h2>
                         <div class="city-highlight">
-                            <h3><i class="fas fa-info-circle me-2"></i>Basic Info</h3>
-                            <p><strong>Population:</strong> 7.5 million</p>
-                            <p><strong>Province:</strong> Hong Kong Special Administrative Region</p>
-                            <p><strong>Language:</strong> Mandarin, Cantonese, English (official languages)</p>
-                            <p><strong>Timezone:</strong> China Standard Time (UTC+8)</p>
+                            <h3><i class="fas fa-bread-slice me-2"></i>Must-Try Dishes</h3>
+                            <p><strong>Dim Sum:</strong> Traditional Cantonese small plates served with tea, perfect for sharing.</p>
+                            <p><strong>Roast Goose:</strong> Crispy skin and tender meat, a Hong Kong specialty.</p>
+                            <p><strong>Egg Tarts:</strong> Flaky pastry filled with sweet egg custard, a beloved dessert.</p>
+                            <p><strong>Pineapple Bun:</strong> Sweet bread with a crunchy topping, despite the name contains no pineapple.</p>
                         </div>
-                        
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-map-marker-alt me-2"></i>Best Food Streets</h3>
+                            <p><strong>Temple Street Night Market:</strong> Street food and local delicacies in a vibrant night market setting.</p>
+                            <p><strong>Mong Kok Food Streets:</strong> Multiple streets dedicated to different types of cuisine.</p>
+                            <p><strong>Central District:</strong> High-end restaurants and traditional tea houses.</p>
+                        </div>
+                    </section>
+
+                    <!-- Transportation -->
+                    <section id="transport" class="city-section">
+                        <h2><i class="fas fa-subway me-3"></i>Transportation</h2>
                         <div class="city-highlight">
                             <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
-                            <p><strong>Airport:</strong> Hong Kong International Airport (HKG)</p>
-                            <p><strong>Train:</strong> High-speed rail from Guangzhou, Shenzhen, Macau (1-3 hours)</p>
-                            <p><strong>Best Transport:</strong> MTR (metro), buses, trams, ferries, and taxis</p>
+                            <p><strong>By Air:</strong> Hong Kong International Airport (HKG), one of the world's busiest airports.</p>
+                            <p><strong>By Train:</strong> High-speed rail connections from Guangzhou and Shenzhen.</p>
+                            <p><strong>By Ferry:</strong> Regular ferry services from Macau and mainland China.</p>
                         </div>
-                    </div>
-                    
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-bus me-2"></i>Getting Around</h3>
+                            <p><strong>MTR:</strong> Efficient and extensive metro system covering all major areas.</p>
+                            <p><strong>Bus:</strong> Comprehensive bus network including double-decker buses.</p>
+                            <p><strong>Tram:</strong> Historic tram system on Hong Kong Island.</p>
+                            <p><strong>Ferry:</strong> Star Ferry and other ferry services connecting islands.</p>
+                        </div>
+                    </section>
+
+                    <!-- Suggested Itinerary -->
+                    <section id="itinerary" class="city-section">
+                        <h2><i class="fas fa-calendar-alt me-3"></i>Suggested Itinerary</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-sun me-2"></i>Day 1: Iconic Hong Kong</h3>
+                            <p><strong>Morning:</strong> Take the Peak Tram to Victoria Peak for panoramic views.</p>
+                            <p><strong>Afternoon:</strong> Ride the Star Ferry across Victoria Harbour.</p>
+                            <p><strong>Evening:</strong> Explore Temple Street Night Market for street food and shopping.</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-star me-2"></i>Day 2: Culture and Shopping</h3>
+                            <p><strong>Morning:</strong> Visit Wong Tai Sin Temple and learn about local beliefs.</p>
+                            <p><strong>Afternoon:</strong> Shop in Mong Kok and experience the bustling markets.</p>
+                            <p><strong>Evening:</strong> Enjoy dim sum dinner at a traditional restaurant.</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-shopping-bag me-2"></i>Day 3: Modern Hong Kong</h3>
+                            <p><strong>Morning:</strong> Visit Hong Kong Disneyland or Ocean Park.</p>
+                            <p><strong>Afternoon:</strong> Explore the Central district and its modern architecture.</p>
+                            <p><strong>Evening:</strong> Experience the nightlife in Lan Kwai Fong.</p>
+                        </div>
+                    </section>
+
                     <!-- Gallery -->
-                    <div class="city-section">
-                        <h2>Gallery</h2>
+                    <section id="gallery" class="city-section">
+                        <h2><i class="fas fa-camera-retro me-3"></i>Gallery</h2>
                         <div class="city-gallery">
-                            <img src="../images/user_photos/hongkong_1_optimized.jpg?v=1771182062" alt="Hongkong view 1">
-                            <img src="../images/user_photos/hongkong_2_optimized.jpg?v=1771182062" alt="Hongkong view 2">
-                            <img src="../images/user_photos/hongkong_3_optimized.jpg?v=1771182062" alt="Hongkong view 3">
-</div>
-                    </div>
+                            <div class="gallery-item">
+                                <img src="../images/user_photos/hongkong_1_optimized.jpg?v=1771182062" alt="Hong Kong skyline" class="gallery-img" data-caption="Hong Kong's stunning skyline" data-index="0">
+                                <div class="gallery-caption">
+                                    <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Hong Kong Skyline</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="../images/user_photos/hongkong_2_optimized.jpg?v=1771182062" alt="Victoria Peak" class="gallery-img" data-caption="View from Victoria Peak" data-index="1">
+                                <div class="gallery-caption">
+                                    <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Victoria Peak</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="../images/user_photos/hongkong_3_optimized.jpg?v=1771182062" alt="Star Ferry" class="gallery-img" data-caption="The iconic Star Ferry" data-index="2">
+                                <div class="gallery-caption">
+                                    <p class="caption-text"><i class="fas fa-camera caption-icon"></i>Star Ferry</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Patent Data -->
+                    <section id="patent-data" class="city-section">
+                        <h2><i class="fas fa-file-alt me-3"></i>Patent Data</h2>
+                        <div class="patent-table">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Patent Number</th>
+                                        <th>Title</th>
+                                        <th>Current Assignee</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CN110123456A</td>
+                                        <td>Financial technology system for cross-border payments</td>
+                                        <td>Hong Kong Monetary Authority</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CN110234567A</td>
+                                        <td>Smart city traffic management system</td>
+                                        <td>Hong Kong Applied Science and Technology Research Institute</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CN110345678A</td>
+                                        <td>Biometric authentication system for mobile payments</td>
+                                        <td>Hong Kong University of Science and Technology</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Sticky Navigation -->
+                <div class="col-lg-3">
+                    <nav class="jump-nav">
+                        <h4><i class="fas fa-compass"></i> Explore Hong Kong</h4>
+                        <ul class="jump-nav-list">
+                            <li class="jump-nav-item"><a href="#overview" class="jump-nav-link active"><i class="fas fa-info-circle jump-nav-icon"></i>Overview</a></li>
+                            <li class="jump-nav-item"><a href="#highlights" class="jump-nav-link"><i class="fas fa-star jump-nav-icon"></i>Highlights</a></li>
+                            <li class="jump-nav-item"><a href="#cuisine" class="jump-nav-link"><i class="fas fa-utensils jump-nav-icon"></i>Cuisine</a></li>
+                            <li class="jump-nav-item"><a href="#transport" class="jump-nav-link"><i class="fas fa-subway jump-nav-icon"></i>Transport</a></li>
+                            <li class="jump-nav-item"><a href="#itinerary" class="jump-nav-link"><i class="fas fa-calendar-alt jump-nav-icon"></i>Itinerary</a></li>
+                            <li class="jump-nav-item"><a href="#gallery" class="jump-nav-link"><i class="fas fa-images jump-nav-icon"></i>Gallery</a></li>
+                            <li class="jump-nav-item"><a href="#patent-data" class="jump-nav-link"><i class="fas fa-file-alt jump-nav-icon"></i>Patents</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            
+
             <!-- Explore Other Cities -->
             <div class="city-nav">
                 <h3>Explore Other Chinese Cities</h3>
                 <div class="city-links">
-<a href="beijing.html" class="city-link">Beijing</a>
-<a href="shanghai.html" class="city-link">Shanghai</a>
-<a href="chengdu.html" class="city-link">Chengdu</a>
-<a href="qingdao.html" class="city-link">Qingdao</a>
-<a href="xiamen.html" class="city-link">Xiamen</a>
-<a href="wuxi.html" class="city-link">Wuxi</a>
-<a href="chongqing.html" class="city-link">Chongqing</a>
-<a href="harbin.html" class="city-link">Harbin</a>
-<a href="guangzhou.html" class="city-link">Guangzhou</a>
-<a href="shenzhen.html" class="city-link">Shenzhen</a>
-<a href="nanjing.html" class="city-link">Nanjing</a>
-<a href="guilin.html" class="city-link">Guilin</a>
-<a href="guiyang.html" class="city-link">Guiyang</a>
-<a href="kunming.html" class="city-link">Kunming</a>
-<a href="dali.html" class="city-link">Dali</a>
-<a href="jinan.html" class="city-link">Jinan</a>
-<a href="datong.html" class="city-link">Datong</a>
-<a href="linyi.html" class="city-link">Linyi</a>
-<a href="taiyuan.html" class="city-link">Taiyuan</a>
-<a href="urumqi.html" class="city-link">Urumqi</a>
-<a href="hangzhou.html" class="city-link">Hangzhou</a>
-<a href="kashi.html" class="city-link">Kashi</a>
-<a href="wuhan.html" class="city-link">Wuhan</a>
-<a href="suzhou.html" class="city-link">Suzhou</a>
+                    <a href="beijing.html" class="city-link">Beijing</a>
+                    <a href="shanghai.html" class="city-link">Shanghai</a>
+                    <a href="tianjin.html" class="city-link">Tianjin</a>
+                    <a href="chengdu.html" class="city-link">Chengdu</a>
+                    <a href="guangzhou.html" class="city-link">Guangzhou</a>
+                    <a href="shenzhen.html" class="city-link">Shenzhen</a>
+                    <a href="chongqing.html" class="city-link">Chongqing</a>
+                    <a href="xian.html" class="city-link">Xi'an</a>
+                    <a href="nanjing.html" class="city-link">Nanjing</a>
+                    <a href="qingdao.html" class="city-link">Qingdao</a>
+                    <a href="wuxi.html" class="city-link">Wuxi</a>
+                    <a href="xiamen.html" class="city-link">Xiamen</a>
+                    <a href="harbin.html" class="city-link">Harbin</a>
+                    <a href="guilin.html" class="city-link">Guilin</a>
+                    <a href="guiyang.html" class="city-link">Guiyang</a>
+                    <a href="kunming.html" class="city-link">Kunming</a>
+                    <a href="dali.html" class="city-link">Dali</a>
+                    <a href="jinan.html" class="city-link">Jinan</a>
+                    <a href="datong.html" class="city-link">Datong</a>
+                    <a href="linyi.html" class="city-link">Linyi</a>
+                    <a href="taiyuan.html" class="city-link">Taiyuan</a>
+                    <a href="urumqi.html" class="city-link">Urumqi</a>
+                    <a href="hangzhou.html" class="city-link">Hangzhou</a>
+                    <a href="kashi.html" class="city-link">Kashi</a>
+                    <a href="wuhan.html" class="city-link">Wuhan</a>
+                    <a href="suzhou.html" class="city-link">Suzhou</a>
                 </div>
             </div>
         </div>
@@ -299,7 +488,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>&copy; 2026 Traveling China. All rights reserved.</p>
+            <p>&copy; 2026 Traveling China like your home yard. All rights reserved.</p>
             <div class="social-icons mt-3">
                 <a href="#"><i class="fab fa-weixin"></i></a>
                 <a href="#"><i class="fab fa-weibo"></i></a>
@@ -309,25 +498,48 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Navbar Scroll Effect
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.jump-nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Update active state
+                    document.querySelectorAll('.jump-nav-link').forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Update active navigation on scroll
         window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            const sections = document.querySelectorAll('.city-section');
+            const navLinks = document.querySelectorAll('.jump-nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
-    <!-- Color references for monitoring system (hidden) -->
-    <div style="display: none;">
-        <span style="color: #2563eb;">primary</span>
-        <span style="color: #1e40af;">secondary</span>
-        <span style="color: #f59e0b;">accent</span>
-        <span style="color: #f8fafc;">light</span>
-        <span style="color: #1e293b;">dark</span>
-    </div>
 </body>
 </html>

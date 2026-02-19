@@ -1,0 +1,85 @@
+{
+  "name": "Chengdu",
+  "title": "Chengdu - Traveling China like your home yard",
+  "heroTitle": "Chengdu",
+  "heroSubtitle": "Home of Giant Pandas & Fiery Cuisine",
+  "heroImage": "../images/user_photos/chengdu_hero_bg.jpg",
+  "overview": "Chengdu, the capital of Sichuan province, is a vibrant and laid-back metropolis famed for its adorable giant pandas and fiery, flavorful cuisine. It's a city where ancient history, represented by sites like the Wuhou Shrine and Dufu's Thatched Cottage, coexists with a bustling modern culture. Known for its relaxed teahouse culture and lush green spaces, Chengdu offers a unique blend of urban energy and tranquil living, making it one of China's most livable cities.",
+  "highlights": {
+    "attractions": "Giant Panda Breeding Research Base, Jinli Ancient Street, Wuhou Shrine, Dufu's Thatched Cottage, Wenshu Monastery",
+    "cuisine": "Sichuan Hot Pot, Mapo Tofu, Kung Pao Chicken, Dan Dan Noodles, Sichuan Peppercorns",
+    "bestTime": "Spring (March-May) and Autumn (September-November) for mild weather and blooming flowers"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Sichuan Hot Pot",
+        "description": "A quintessential Chengdu experience. Gather around a bubbling pot of spicy broth and cook a variety of meats, vegetables, and more."
+      },
+      {
+        "name": "Mapo Tofu",
+        "description": "A classic dish of soft tofu in a spicy, bean-based sauce, often with minced meat."
+      },
+      {
+        "name": "Kung Pao Chicken",
+        "description": "A stir-fried dish with chicken, peanuts, vegetables, and chili peppers."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Jinli Ancient Street",
+        "description": "Offers a wide array of traditional snacks and street food in a historic setting."
+      },
+      {
+        "name": "Kuanzhai Alley (Wide and Narrow Alley)",
+        "description": "A mix of modern and traditional restaurants, teahouses, and snack stalls."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Chengdu Shuangliu International Airport (CTU) is one of China's busiest airports, with extensive domestic and international connections.",
+      "By Train: A major high-speed rail hub connecting to cities like Xi'an, Chongqing, and Beijing."
+    ],
+    "gettingAround": [
+      "Metro: The Chengdu Metro is a fast and efficient way to navigate the city, covering most major attractions.",
+      "Bus: An extensive public bus network provides comprehensive coverage of the urban area.",
+      "Taxi & Ride-Sharing: Taxis and services like DiDi are widely available and affordable."
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Pandas and Culture",
+      "activities": [
+        "Morning: Visit the Giant Panda Breeding Research Base.",
+        "Afternoon: Explore the Wenshu Monastery, a serene Buddhist temple.",
+        "Evening: Stroll and dine at Jinli Ancient Street."
+      ]
+    },
+    {
+      "day": "Day 2: History and Relaxation",
+      "activities": [
+        "Morning: Visit the Wuhou Shrine, dedicated to figures from the Three Kingdoms period.",
+        "Afternoon: Experience the local lifestyle at a teahouse in People's Park.",
+        "Evening: Enjoy a Sichuan Opera show, famous for its 'face-changing' performances."
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/chengdu_1.jpg",
+    "../images/user_photos/chengdu_2.jpg",
+    "../images/user_photos/chengdu_3.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN116322434A",
+      "title": "Sichuan-Chongqing regional multi-energy complementary optimal scheduling method considering source-load uncertainty",
+      "assignee": "State Grid Sichuan Electric Power Company"
+    },
+    {
+      "number": "CN116322839A",
+      "title": "Multi-objective optimal scheduling method for distribution network considering flexible load and new energy",
+      "assignee": "State Grid Sichuan Electric Power Company"
+    }
+  ]
+}

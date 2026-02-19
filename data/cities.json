@@ -1,0 +1,1246 @@
+{
+  "cities": {
+    "beijing": {
+      "name": "Beijing",
+      "title": "Beijing - Traveling China like your home yard",
+      "heroTitle": "Beijing",
+      "heroSubtitle": "The Heart of China",
+      "heroImage": "../images/user_photos/beijing_hero_bg.jpg",
+      "overview": "Beijing, the capital of China, is a city where ancient history meets modern innovation. Home to iconic landmarks like the Great Wall, Forbidden City, and Temple of Heaven, Beijing offers visitors an unparalleled journey through Chinese culture, cuisine, and civilization spanning over 3,000 years.",
+      "highlights": {
+        "attractions": "Great Wall of China, Forbidden City, Temple of Heaven, Summer Palace, Tiananmen Square",
+        "cuisine": "Peking Duck, Jianbing, Zhajiangmian, Mongolian Hot Pot, Beijing Yogurt",
+        "bestTime": "Autumn (September-October) with clear skies and pleasant temperatures"
+      },
+      "cuisine": {
+        "dishes": [
+          {
+            "name": "Peking Duck",
+            "description": "World-famous roasted duck with crispy skin, served with pancakes, scallions, and sweet bean sauce."
+          },
+          {
+            "name": "Jianbing",
+            "description": "Savory Chinese crepe with egg, crispy wonton, and various fillings - a popular breakfast item."
+          },
+          {
+            "name": "Zhajiangmian",
+            "description": "Hand-pulled noodles topped with fermented bean sauce, minced pork, and fresh vegetables."
+          }
+        ],
+        "foodStreets": [
+          {
+            "name": "Gui Street (Ghost Street)",
+            "description": "Famous late-night food street with red lanterns, known for spicy crayfish and hotpot."
+          },
+          {
+            "name": "Niujie Muslim Quarter",
+            "description": "Authentic halal cuisine including lamb skewers, beef noodles, and traditional pastries."
+          }
+        ]
+      },
+      "transportation": {
+        "gettingThere": [
+          "By Air: Beijing Capital International Airport (PEK) and Beijing Daxing International Airport (PKX)",
+          "By Train: High-speed rail connects Beijing to Shanghai, Xi'an, Guangzhou, and other major cities",
+          "By Bus: Long-distance bus services from neighboring provinces and cities"
+        ],
+        "gettingAround": [
+          "Subway: Extensive metro system covering all major attractions and districts",
+          "Bus: Comprehensive public bus network with air-conditioned vehicles",
+          "Taxi/Didi: Readily available, affordable for short distances",
+          "Bike-sharing: Convenient for exploring hutongs and parks"
+        ]
+      },
+      "itinerary": [
+        {
+          "day": "Day 1: Imperial Heritage",
+          "activities": [
+            "Morning: Visit Tiananmen Square and Forbidden City (allow 3-4 hours)",
+            "Afternoon: Explore Jingshan Park for panoramic city views",
+            "Evening: Traditional Peking Duck dinner at Quanjude or Dadong"
+          ]
+        },
+        {
+          "day": "Day 2: Great Wall Adventure",
+          "activities": [
+            "Morning: Hike Mutianyu section of Great Wall (less crowded, scenic)",
+            "Afternoon: Visit Temple of Heaven, UNESCO World Heritage site",
+            "Evening: Wangfujing pedestrian street for shopping and snacks"
+          ]
+        },
+        {
+          "day": "Day 3: Culture & Nature",
+          "activities": [
+            "Morning: Summer Palace with beautiful gardens and Kunming Lake",
+            "Afternoon: Hutong rickshaw tour to experience traditional courtyard life",
+            "Evening: Beijing Opera or acrobatics show"
+          ]
+        }
+      ],
+      "gallery": [
+        "../images/user_photos/beijing_1.jpg",
+        "../images/user_photos/beijing_2.jpg",
+        "../images/user_photos/beijing_3.jpg"
+      ],
+      "patents": [
+        {
+          "number": "CN117309262A",
+          "title": "Chip packaging structure and packaging method",
+          "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+        }
+      ]
+    },
+    "shanghai": {
+      "name": "Shanghai",
+      "title": "Shanghai - Traveling China like your home yard",
+      "heroTitle": "Shanghai",
+      "heroSubtitle": "The Pearl of the Orient",
+      "heroImage": "../images/user_photos/shanghai_hero_bg.jpg",
+      "overview": "Shanghai is China's largest city and global financial hub, where East meets West in a stunning blend of colonial architecture and futuristic skyscrapers. From the historic Bund waterfront to the cutting-edge skyline of Pudong, Shanghai offers an exciting mix of traditional culture, world-class dining, and vibrant nightlife.",
+      "highlights": {
+        "attractions": "The Bund, Yu Garden, Oriental Pearl Tower, Nanjing Road, Xintiandi",
+        "cuisine": "Xiaolongbao, Shengjianbao, Scallion Oil Noodles, Sweet and Sour Ribs",
+        "bestTime": "Spring (March-May) and Autumn (September-November) for mild weather"
+      },
+      "cuisine": {
+        "dishes": [
+          {
+            "name": "Xiaolongbao",
+            "description": "Delicate soup dumplings with pork filling, steamed in bamboo baskets."
+          },
+          {
+            "name": "Shengjianbao",
+            "description": "Pan-fried pork buns with crispy bottom and juicy filling."
+          },
+          {
+            "name": "Scallion Oil Noodles",
+            "description": "Simple but flavorful noodles tossed with fragrant scallion oil."
+          }
+        ],
+        "foodStreets": [
+          {
+            "name": "City God Temple (Chenghuangmiao)",
+            "description": "Traditional snack street with century-old shops and local delicacies."
+          },
+          {
+            "name": "Wujiang Road",
+            "description": "Pedestrian food street with both traditional and modern eateries."
+          }
+        ]
+      },
+      "transportation": {
+        "gettingThere": [
+          "By Air: Shanghai Pudong International Airport (PVG) and Shanghai Hongqiao (SHA)",
+          "By Train: High-speed rail connects Shanghai to Beijing, Nanjing, Hangzhou",
+          "By Bus: Long-distance buses from nearby cities and provinces"
+        ],
+        "gettingAround": [
+          "Metro: World's longest metro system, efficient and affordable",
+          "Bus: Extensive bus network covering all districts",
+          "Maglev: World's fastest commercial train from Pudong Airport",
+          "Huangpu River Ferry: Scenic transportation between Puxi and Pudong"
+        ]
+      },
+      "itinerary": [
+        {
+          "day": "Day 1: Historic Shanghai",
+          "activities": [
+            "Morning: Walk along the Bund waterfront for colonial architecture views",
+            "Afternoon: Explore Yu Garden and traditional bazaar area",
+            "Evening: Nanjing Road pedestrian street for shopping and dining"
+          ]
+        },
+        {
+          "day": "Day 2: Modern Shanghai",
+          "activities": [
+            "Morning: Visit Oriental Pearl Tower or Shanghai Tower observation deck",
+            "Afternoon: Explore Xintiandi for shopping and French Concession area",
+            "Evening: Huangpu River cruise for illuminated skyline views"
+          ]
+        },
+        {
+          "day": "Day 3: Culture & Gardens",
+          "activities": [
+            "Morning: Jade Buddha Temple or Longhua Temple",
+            "Afternoon: Shanghai Museum for ancient Chinese art and artifacts",
+            "Evening: Traditional acrobatics show or jazz bar in French Concession"
+          ]
+        }
+      ],
+      "gallery": [
+        "../images/user_photos/shanghai_1_optimized.jpg",
+        "../images/user_photos/shanghai_2_optimized.jpg",
+        "../images/user_photos/shanghai_3_optimized.jpg"
+      ],
+      "patents": [
+        {
+          "number": "CN117309262A",
+          "title": "Chip packaging structure and packaging method",
+          "assignee": "SHANGHAI INSTITUTE OF TECHNOLOGY"
+        }
+      ]
+    },
+    "suzhou": {
+      "name": "Suzhou",
+      "title": "Suzhou - Traveling China like your home yard",
+      "heroTitle": "Suzhou",
+      "heroSubtitle": "Venice of the East",
+      "heroImage": "../images/user_photos/suzhou_hero_bg.jpg",
+      "overview": "Suzhou is a historic city in Jiangsu Province, famous for its classical Chinese gardens, canals, and silk production. Known as the 'Venice of the East' for its network of waterways, Suzhou's UNESCO World Heritage gardens like the Humble Administrator's Garden and Lingering Garden showcase exquisite Ming and Qing Dynasty landscape design.",
+      "highlights": {
+        "attractions": "Humble Administrator's Garden, Tiger Hill, Suzhou Museum, Temple of Heaven, Summer Palace, Tiananmen Square",
+        "cuisine": "Suzhou-style Noodles, Sweet and Sour Mandarin Fish, Biluochun Tea, Mongolian Hot Pot, Suzhou Yogurt",
+        "bestTime": "Autumn (September-October) with clear skies and pleasant temperatures"
+      },
+      "cuisine": {
+        "dishes": [
+          {
+            "name": "Suzhou-style Noodles",
+            "description": "Hand-pulled noodles served in rich broth with local toppings and vegetables."
+          },
+          {
+            "name": "Sweet and Sour Mandarin Fish",
+            "description": "Freshwater fish prepared with a delicate sweet and sour sauce, a local specialty."
+          },
+          {
+            "name": "Biluochun Tea",
+            "description": "One of China's top ten famous teas, grown in the Dongting Mountains near Suzhou."
+          }
+        ],
+        "foodStreets": [
+          {
+            "name": "Guangqian Street",
+            "description": "Historic pedestrian street with traditional snack vendors and local restaurants."
+          },
+          {
+            "name": "Pingjiang Road",
+            "description": "Ancient canal-side street with teahouses and family-run eateries."
+          }
+        ]
+      },
+      "transportation": {
+        "gettingThere": [
+          "By Air: Suzhou doesn't have its own commercial airport. The nearest major airports are Shanghai Hongqiao (SHA) and Shanghai Pudong (PVG), both about 1-2 hours away by high-speed train or bus.",
+          "By Train: Suzhou is a major railway hub with high-speed rail connections to Shanghai, Nanjing, Hangzhou, and other cities.",
+          "By Bus: Long-distance bus services connect Suzhou to nearby cities and provinces."
+        ],
+        "gettingAround": [
+          "Metro: Suzhou's metro system provides efficient transportation to major attractions and districts.",
+          "Bus: Comprehensive public bus network covering the urban area and tourist attractions.",
+          "Canal Boats: Traditional canal boats offer scenic transportation through the ancient waterways.",
+          "Walking: The historic district is best explored on foot to appreciate the gardens and architecture."
+        ]
+      },
+      "itinerary": [
+        {
+          "day": "Day 1: Classical Gardens",
+          "activities": [
+            "Morning: Visit the Humble Administrator's Garden, the largest and most famous of Suzhou's gardens.",
+            "Afternoon: Explore the Lingering Garden with its unique rockery and pavilion designs.",
+            "Evening: Stroll along Pingjiang Road, enjoying the canal-side atmosphere and traditional architecture."
+          ]
+        },
+        {
+          "day": "Day 2: History and Culture",
+          "activities": [
+            "Morning: Visit Tiger Hill and its famous leaning pagoda, known as the 'Leaning Tower of China.'",
+            "Afternoon: Tour the Suzhou Museum designed by I.M. Pei, showcasing local history and art.",
+            "Evening: Experience a traditional Kunqu opera performance, a UNESCO Intangible Cultural Heritage."
+          ]
+        },
+        {
+          "day": "Day 3: Silk and Water Towns",
+          "activities": [
+            "Morning: Visit the Suzhou Silk Museum to learn about silk production and embroidery techniques.",
+            "Afternoon: Take a day trip to Zhouzhuang or Tongli water town to experience traditional canal life.",
+            "Evening: Enjoy a boat cruise on the ancient canals, viewing the city from the water."
+          ]
+        }
+      ],
+      "gallery": [
+        "../images/user_photos/suzhou_1_optimized.jpg",
+        "../images/user_photos/suzhou_2_optimized.jpg",
+        "../images/user_photos/suzhou_3_optimized.jpg"
+      ],
+      "patents": [
+        {
+          "number": "CN117309262A",
+          "title": "Chip packaging structure and packaging method",
+          "assignee": "HEJIAN TECHNOLOGY (SUZHOU) CO LTD"
+        }
+      ]
+    },
+    "kaifeng": {
+      "name": "Kaifeng",
+      "title": "Kaifeng - Traveling China like your home yard",
+      "heroTitle": "Kaifeng",
+      "heroSubtitle": "Ancient Capital of Seven Dynasties",
+      "heroImage": "../images/user_photos/kaifeng_hero_bg.jpg",
+      "overview": "Kaifeng, located in Henan Province, is one of the Eight Ancient Capitals of China, boasting a rich history that spans over 4,100 years. It served as the capital for seven dynasties, most notably the Northern Song Dynasty. The city is renowned for its historical sites, including the Iron Pagoda, Dragon Pavilion, and the Qingming Riverside Landscape Garden, which recreates the famous Song Dynasty painting.",
+      "highlights": {
+        "attractions": "Iron Pagoda, Dragon Pavilion, Qingming Riverside Landscape Garden, Kaifeng Fu (Prefecture), Xiangguo Temple",
+        "cuisine": "Kaifeng Roast Duck, Steamed Buns with Filling (Xiaolongbao), Peanut Cake, Stir-fried Buckwheat Noodles",
+        "bestTime": "Spring (April-May) and Autumn (September-October) for pleasant weather and cultural festivals."
+      },
+      "cuisine": {
+        "dishes": [
+          {
+            "name": "Kaifeng Roast Duck",
+            "description": "A local specialty, distinct from Beijing Roast Duck, known for its crispy skin and tender meat."
+          },
+          {
+            "name": "Steamed Buns with Filling (Xiaolongbao)",
+            "description": "Delicate steamed dumplings, often filled with pork and soup, a staple of Northern Chinese cuisine."
+          },
+          {
+            "name": "Peanut Cake",
+            "description": "A traditional snack made from peanuts, sugar, and flour, often pressed into intricate shapes."
+          }
+        ],
+        "foodStreets": [
+          {
+            "name": "Gulou Square Night Market",
+            "description": "Famous for its wide array of local snacks and street food, especially vibrant in the evenings."
+          },
+          {
+            "name": "Shudian Street",
+            "description": "Offers a mix of traditional restaurants and modern eateries, known for its historical ambiance."
+          }
+        ]
+      },
+      "transportation": {
+        "gettingThere": [
+          "By Air: The nearest major airport is Zhengzhou Xinzheng International Airport (CGO), about 70 km from Kaifeng. From there, you can take a bus or high-speed train to Kaifeng.",
+          "By Train: Kaifeng has a high-speed railway station with connections to major cities like Zhengzhou, Beijing, Shanghai, and Xi'an.",
+          "By Bus: Long-distance buses connect Kaifeng with various cities in Henan Province and neighboring regions."
+        ],
+        "gettingAround": [
+          "Public Bus: An extensive bus network covers most of the city's attractions.",
+          "Taxi/Didi: Readily available for convenient travel.",
+          "Bicycle: Renting a bicycle is a popular way to explore the ancient city walls and historical areas.",
+          "Walking: Many historical sites in the city center are within walking distance of each other."
+        ]
+      },
+      "itinerary": [
+        {
+          "day": "Day 1: Song Dynasty Grandeur",
+          "activities": [
+            "Morning: Visit the Qingming Riverside Landscape Garden, a large-scale theme park recreating the Song Dynasty capital.",
+            "Afternoon: Explore the Dragon Pavilion (Longting Park), the site of former imperial palaces, and the Kaifeng Fu (Prefecture).",
+            "Evening: Enjoy the vibrant Gulou Square Night Market for local street food and cultural performances."
+          ]
+        },
+        {
+          "day": "Day 2: Ancient Temples and Pagodas",
+          "activities": [
+            "Morning: Discover the Iron Pagoda (Youguo Temple), a magnificent 13-story pagoda built in 1049.",
+            "Afternoon: Visit Xiangguo Temple, a historic Buddhist monastery with a rich legacy.",
+            "Evening: Stroll along the ancient city walls or enjoy a traditional Henan opera performance."
+          ]
+        },
+        {
+          "day": "Day 3: Cultural Immersion",
+          "activities": [
+            "Morning: Explore the Kaifeng Museum to delve deeper into the city's history and cultural artifacts.",
+            "Afternoon: Visit the Memorial Temple of Lord Bao, dedicated to a revered Song Dynasty official for his integrity.",
+            "Evening: Relax by the lakes or enjoy a local tea ceremony."
+          ]
+        }
+      ],
+      "gallery": [
+        "../images/user_photos/kaifeng_1.jpg",
+        "../images/user_photos/kaifeng_2.jpg",
+        "../images/user_photos/kaifeng_3.jpg"
+      ],
+      "patents": [
+        {
+          "number": "CN117309262A",
+          "title": "Chip packaging structure and packaging method",
+          "assignee": "HEJIAN TECHNOLOGY (SUZHOU) CO LTD"
+        }
+      ]
+    },
+    "wuxi": {
+      "name": "Wuxi",
+      "title": "Wuxi - Traveling China like your home yard",
+      "heroTitle": "Wuxi",
+      "heroSubtitle": "The Pearl of Taihu Lake",
+      "heroImage": "../images/user_photos/wuxi_hero_bg.jpg",
+      "overview": "Wuxi is an industrial city in Jiangsu Province, situated on the shores of Taihu Lake. Known as the 'Pearl of Taihu Lake,' Wuxi combines natural beauty with economic prosperity, featuring beautiful lake scenery, ancient water towns, and significant Buddhist sites.",
+      "highlights": {
+        "attractions": "Lingshan Grand Buddha, Taihu Lake, Huishan Ancient Town, Nanchang Street",
+        "cuisine": "Wuxi Spareribs, Yangcheng Lake Crab, Braised Noodles",
+        "bestTime": "Spring (March-May) for pleasant weather and blooming flowers"
+      },
+      "cuisine": {
+        "dishes": [
+          {
+            "name": "Wuxi Spareribs",
+            "description": "Sweet and savory spareribs, a famous local specialty."},
+          {
+            "name": "Yangcheng Lake Crab",
+            "description": "Hairy crabs from the nearby Yangcheng Lake, a seasonal delicacy."},
+          {
+            "name": "Braised Noodles",
+            "description": "A savory noodle dish with various toppings."}
+        ],
+        "foodStreets": [
+          {
+            "name": "Nanchang Street",
+            "description": "A historic street with traditional architecture, canals, and local eateries."},
+          {
+            "name": "Chong'an Temple",
+            "description": "A bustling area with many restaurants and snack stalls."}
+        ]
+      },
+      "transportation": {
+        "gettingThere": [
+          "By Air: Sunan Shuofang International Airport (WUX)",
+          "By Train: High-speed rail from Shanghai, Suzhou, Nanjing (0.5-2 hours)"
+        ],
+        "gettingAround": [
+          "Metro: Efficient metro system connecting key areas.",
+          "Bus: Extensive public bus network.",
+          "Boat: Boat tours on Taihu Lake and the ancient canals."
+        ]
+      },
+      "itinerary": [
+        {
+          "day": "Day 1: Buddhist Wonders and Lake Views",
+          "activities": [
+            "Morning: Visit the Lingshan Grand Buddha, one of the largest Buddha statues in China.",
+            "Afternoon: Take a boat tour on Taihu Lake to see the Three Immortals Penglai Island.",
+            "Evening: Stroll along Nanchang Street and enjoy the canal-side nightlife."
+          ]
+        },
+        {
+          "day": "Day 2: Ancient Towns and Gardens",
+          "activities": [
+            "Morning: Explore Huishan Ancient Town for its traditional architecture and clay figurines.",
+            "Afternoon: Visit Jichang Garden, a classic Ming Dynasty garden.",
+            "Evening: Try Wuxi's famous sweet and savory spareribs at a local restaurant."
+          ]
+        },
+        {
+          "day": "Day 3: Cultural Exploration",
+          "activities": [
+            "Morning: Visit the Wuxi Museum to learn about the city's history and culture.",
+            "Afternoon: Explore the ancient water town of Dangkou.",
+            "Evening: Enjoy a traditional opera performance."
+          ]
+        }
+      ],
+      "gallery": [
+        "../images/user_photos/wuxi_1_optimized.jpg",
+        "../images/user_photos/wuxi_2_optimized.jpg",
+        "../images/user_photos/wuxi_3_optimized.jpg"
+      ],
+      "patents": [
+        {
+          "number": "CN117309262A",
+          "title": "Chip packaging structure and packaging method",
+          "assignee": "WUXI INSTITUTE OF TECHNOLOGY"
+        }
+      ]
+    },
+    "hangzhou": {
+      "name": "Hangzhou",
+      "title": "Hangzhou - Traveling China like your home yard",
+      "heroTitle": "Hangzhou",
+      "heroSubtitle": "Ancient Capital & Modern Metropolis",
+      "heroImage": "../images/user_photos/hangzhou_hero_bg.jpg",
+      "overview": "Hangzhou, the capital of Zhejiang province, represents the poetic soul of China, immortalized in countless poems, paintings, and literary works throughout Chinese history. Situated at the southern terminus of the Grand Canal and on the banks of the Qiantang River, Hangzhou's most famous feature is West Lake (Xi Hu), a UNESCO World Heritage Site that has inspired artists and poets for over a millennium.",
+      "highlights": {
+        "attractions": "West Lake, Lingyin Temple, Six Harmonies Pagoda, Su Causeway, Bai Causeway, Feilai Feng grottoes",
+        "cuisine": "Dongpo Pork, West Lake Fish in Vinegar Gravy, Longjing Tea, Beggar's Chicken, Hangzhou Yogurt",
+        "bestTime": "Autumn (September-October) with clear skies and pleasant temperatures, or Spring (March-May) for blooming flowers"
+      },
+      "cuisine": {
+        "dishes": [
+          {
+            "name": "Dongpo Pork",
+            "description": "Braised pork belly named after the Song Dynasty poet Su Dongpo, known for its tender texture and rich flavor."
+          },
+          {
+            "name": "West Lake Fish in Vinegar Gravy",
+            "description": "Fresh fish from West Lake served with a sweet and sour vinegar sauce."
+          },
+          {
+            "name": "Longjing Tea Shrimp",
+            "description": "Fresh shrimp stir-fried with Longjing tea leaves, combining seafood with the famous local tea."
+          },
+          {
+            "name": "Beggar's Chicken",
+            "description": "Chicken wrapped in lotus leaves and clay, then baked until tender and aromatic."
+          }
+        ],
+        "foodStreets": [
+          {
+            "name": "Hefang Street",
+            "description": "Traditional snacks and street food in a historic setting with traditional architecture."
+          },
+          {
+            "name": "West Lake Area",
+            "description": "Lakeside restaurants serving fresh fish and local specialties with scenic views."
+          },
+          {
+            "name": "Qinghefang Historic District",
+            "description": "Family-run establishments offering authentic Hangzhou cuisine."
+          }
+        ]
+      },
+      "transportation": {
+        "gettingThere": [
+          "By Air: Hangzhou Xiaoshan International Airport (HGH) with domestic and international flights.",
+          "By Train: Major high-speed rail hub connecting to Shanghai, Guangzhou, Xi'an, and other cities.",
+          "By Bus: Extensive long-distance bus network connecting to nearby provinces and cities."
+        ],
+        "gettingAround": [
+          "Metro: Hangzhou's metro system provides efficient transportation to major attractions and districts.",
+          "Bicycle: Renting a bicycle offers the best way to explore West Lake's perimeter with dedicated bike lanes.",
+          "Bus: Comprehensive public bus network covering the urban area and tourist attractions.",
+          "Boat: Traditional wooden boats on West Lake provide scenic transportation and tours."
+        ]
+      },
+      "itinerary": [
+        {
+          "day": "Day 1: West Lake and Culture",
+          "activities": [
+            "Morning: Explore West Lake by bicycle, visiting Su Causeway and Bai Causeway.",
+            "Afternoon: Visit Lingyin Temple and Feilai Feng grottoes.",
+            "Evening: Enjoy dinner at a lakeside restaurant with West Lake fish."
+          ]
+        },
+        {
+          "day": "Day 2: History and Tea",
+          "activities": [
+            "Morning: Visit Six Harmonies Pagoda for panoramic views.",
+            "Afternoon: Explore Longjing tea plantations and participate in a tea ceremony.",
+            "Evening: Stroll through Hefang Street for shopping and street food."
+          ]
+        },
+        {
+          "day": "Day 3: Modern Hangzhou",
+          "activities": [
+            "Morning: Visit the National Silk Museum to learn about silk production.",
+            "Afternoon: Explore Xixi National Wetland Park for natural scenery.",
+            "Evening: Experience modern Hangzhou at the Cloud Town tech district."
+          ]
+        }
+      ],
+      "gallery": [
+        "../images/user_photos/hangzhou_1_optimized.jpg",
+        "../images/user_photos/hangzhou_2_optimized.jpg",
+        "../images/user_photos/hangzhou_3_optimized.jpg"
+      ],
+      "patents": [
+        {
+          "number": "CN106897282B",
+          "title": "User group classification method and device",
+          "assignee": "Alibaba Group Holding Ltd"
+        },
+        {
+          "number": "CN108418780A",
+          "title": "Filter method and device, system, the dns server of IP address",
+          "assignee": "Alibaba Group Holding Ltd"
+        },
+        {
+          "number": "CN108804885B",
+          "title": "Man-machine verification method and device, storage medium and processor",
+          "assignee": "Alibaba Group Holding Ltd"
+        }
+      ]
+    },
+    "chengdu": {
+      "name": "Chengdu",
+      "title": "Chengdu - Traveling China like your home yard",
+      "heroTitle": "Chengdu",
+      "heroSubtitle": "Home of Giant Pandas & Fiery Cuisine",
+      "heroImage": "../images/user_photos/chengdu_hero_bg.jpg",
+      "overview": "Chengdu, the capital of Sichuan province, is a vibrant and laid-back metropolis famed for its adorable giant pandas and fiery, flavorful cuisine. It's a city where ancient history, represented by sites like the Wuhou Shrine and Dufu's Thatched Cottage, coexists with a bustling modern culture. Known for its relaxed teahouse culture and lush green spaces, Chengdu offers a unique blend of urban energy and tranquil living, making it one of China's most livable cities.",
+      "highlights": {
+        "attractions": "Get up close with China's national treasure. The best time to visit is in the morning when the pandas are most active.",
+        "cuisine": "Stroll through this bustling, recreated ancient street, filled with traditional architecture, local snacks, and lively teahouses.",
+        "bestTime": "Indulge in the world-famous flavors of Sichuan, from mouth-numbing Mapo Tofu to the communal joy of a spicy hot pot."
+      },
+      "cuisine": {
+        "dishes": [
+          {
+            "name": "Sichuan Hot Pot",
+            "description": "A quintessential Chengdu experience. Gather around a bubbling pot of spicy broth and cook a variety of meats, vegetables, and more."
+          },
+          {
+            "name": "Mapo Tofu",
+            "description": "A classic dish of soft tofu in a spicy, bean-based sauce, often with minced meat."
+          },
+          {
+            "name": "Kung Pao Chicken",
+            "description": "A stir-fried dish with chicken, peanuts, vegetables, and chili peppers."
+          }
+        ],
+        "foodStreets": [
+          {
+            "name": "Jinli Ancient Street",
+            "description": "Offers a wide array of traditional snacks and street food in a historic setting."
+          },
+          {
+            "name": "Kuanzhai Alley (Wide and Narrow Alley)",
+            "description": "A mix of modern and traditional restaurants, teahouses, and snack stalls."
+          }
+        ]
+      },
+      "transportation": {
+        "gettingThere": [
+          "By Air: Chengdu Shuangliu International Airport (CTU) is one of China's busiest airports, with extensive domestic and international connections.",
+          "By Train: A major high-speed rail hub connecting to cities like Xi'an, Chongqing, and Beijing."
+        ],
+        "gettingAround": [
+          "Metro: The Chengdu Metro is a fast and efficient way to navigate the city, covering most major attractions.",
+          "Bus: An extensive public bus network provides comprehensive coverage of the urban area.",
+          "Taxi & Ride-Sharing: Taxis and services like DiDi are widely available and affordable."
+        ]
+      },
+      "itinerary": [
+        {
+          "day": "Day 1: Pandas and Culture",
+          "activities": [
+            "Morning: Visit the Giant Panda Breeding Research Base.",
+            "Afternoon: Explore the Wenshu Monastery, a serene Buddhist temple.",
+            "Evening: Stroll and dine at Jinli Ancient Street."
+          ]
+        },
+        {
+          "day": "Day 2: History and Relaxation",
+          "activities": [
+            "Morning: Visit the Wuhou Shrine, dedicated to figures from the Three Kingdoms period.",
+            "Afternoon: Experience the local lifestyle at a teahouse in People's Park.",
+            "Evening: Enjoy a Sichuan Opera show, famous for its \"face-changing\" performances."
+          ]
+        }
+      ],
+      "gallery": [
+        "../images/user_photos/chengdu_1.jpg",
+        "../images/user_photos/chengdu_2.jpg",
+        "../images/user_photos/chengdu_3.jpg"
+      ],
+      "patents": [
+        {
+          "number": "CN116322434A",
+          "title": "Sichuan-Chongqing regional multi-energy complementary optimal scheduling method considering source-load uncertainty",
+          "assignee": "State Grid Sichuan Electric Power Company"
+        },
+        {
+          "number": "CN116322839A",
+          "title": "Multi-objective optimal scheduling method for distribution network considering flexible load and new energy",
+          "assignee": "State Grid Sichuan Electric Power Company"
+        }
+      ]
+    },
+    "guangzhou": {
+      "name": "Guangzhou",
+      "title": "Guangzhou - Traveling China like your home yard",
+      "heroTitle": "Guangzhou",
+      "heroSubtitle": "The Southern Gateway to China",
+      "heroImage": "../images/user_photos/guangzhou_hero_bg.jpg",
+      "overview": "Guangzhou, the capital of Guangdong Province, is a major port city and commercial hub in southern China. As one of China's largest and most prosperous cities, Guangzhou serves as the economic powerhouse of the Pearl River Delta. The city is renowned for its modern skyline, Cantonese cuisine, and rich trading history dating back over 2,200 years.",
+      "highlights": {
+        "attractions": "Canton Tower, Chen Clan Ancestral Hall, Shamian Island, Yuexiu Park, Temple of the Six Banyan Trees",
+        "cuisine": "Dim Sum, Cantonese Roast Duck, Double-skin Milk, Rice Noodle Rolls, Clay Pot Rice",
+        "bestTime": "October to December when the weather is mild and comfortable"
+      },
+      "cuisine": {
+        "dishes": [
+          {
+            "name": "Dim Sum",
+            "description": "Traditional Cantonese small plates including steamed dumplings, buns, and pastries, best enjoyed during yum cha (tea drinking)."
+          },
+          {
+            "name": "Cantonese Roast Duck",
+            "description": "Crispy-skinned duck with tender meat, seasoned with traditional Cantonese spices and roasted to perfection."
+          },
+          {
+            "name": "Double-skin Milk",
+            "description": "A delicate dessert made from milk, egg whites, and sugar, known for its smooth, custard-like texture."
+          }
+        ],
+        "foodStreets": [
+          {
+            "name": "Beijing Road Pedestrian Street",
+            "description": "Historic shopping street with numerous traditional Cantonese restaurants and modern eateries."
+          },
+          {
+            "name": "Shangxiajiu Pedestrian Street",
+            "description": "Famous food street offering authentic Cantonese cuisine and local snacks."
+          }
+        ]
+      },
+      "transportation": {
+        "gettingThere": [
+          "By Air: Guangzhou Baiyun International Airport (CAN) is one of China's busiest airports with extensive domestic and international flights.",
+          "By Train: Major high-speed rail hub connecting to Hong Kong, Shenzhen, Beijing, and Shanghai.",
+          "By Bus: Extensive long-distance bus network connecting to cities in Guangdong Province and neighboring regions."
+        ],
+        "gettingAround": [
+          "Metro: Guangzhou Metro is one of the world's largest metro systems, efficient and affordable.",
+          "Bus: Comprehensive public bus network covering all districts.",
+          "Water Bus: Ferry services along the Pearl River offering scenic transportation.",
+          "Taxi/Didi: Readily available throughout the city."
+        ]
+      },
+      "itinerary": [
+        {
+          "day": "Day 1: Modern Guangzhou",
+          "activities": [
+            "Morning: Visit Canton Tower for panoramic city views from the observation deck.",
+            "Afternoon: Explore the Guangzhou Opera House and stroll along the Pearl River waterfront.",
+            "Evening: Enjoy a Pearl River night cruise to see the illuminated skyline."
+          ]
+        },
+        {
+          "day": "Day 2: Cultural Heritage",
+          "activities": [
+            "Morning: Visit Chen Clan Ancestral Hall to admire traditional Cantonese architecture and craftsmanship.",
+            "Afternoon: Explore Shamian Island with its colonial-era buildings and banyan-lined streets.",
+            "Evening: Experience traditional Cantonese opera at the Guangzhou Opera House."
+          ]
+        },
+        {
+          "day": "Day 3: Parks and Markets",
+          "activities": [
+            "Morning: Visit Yuexiu Park to see the Five Rams Sculpture and Zhenhai Tower.",
+            "Afternoon: Shop and dine at Beijing Road Pedestrian Street, exploring both modern and traditional areas.",
+            "Evening: Visit the Temple of the Six Banyan Trees and enjoy local street food."
+          ]
+        }
+      ],
+      "gallery": [
+        "../images/user_photos/guangzhou_1.jpg",
+        "../images/user_photos/guangzhou_2.jpg",
+        "../images/user_photos/guangzhou_3.jpg"
+      ],
+      "patents": [
+        {
+          "number": "CN110304063B",
+          "title": "Automatic lane changing method and system for vehicle and vehicle",
+          "assignee": "Guangzhou Xiaopeng Automobile Technology Co Ltd"
+        }
+      ]
+    },
+    "chengdu": {
+      "name": "Chengdu",
+      "title": "Chengdu - Traveling China like your home yard",
+      "heroTitle": "Chengdu",
+      "heroSubtitle": "Home of Giant Pandas & Fiery Cuisine",
+      "heroImage": "../images/user_photos/chengdu_hero_bg.jpg",
+      "overview": "Chengdu, the capital of Sichuan province, is a vibrant and laid-back metropolis famed for its adorable giant pandas and fiery, flavorful cuisine. It's a city where ancient history, represented by sites like the Wuhou Shrine and Dufu's Thatched Cottage, coexists with a bustling modern culture. Known for its relaxed teahouse culture and lush green spaces, Chengdu offers a unique blend of urban energy and tranquil living, making it one of China's most livable cities.",
+      "highlights": {
+        "attractions": "Giant Panda Breeding Research Base, Jinli Ancient Street, Wuhou Shrine, Dufu's Thatched Cottage, Wenshu Monastery",
+        "cuisine": "Sichuan Hot Pot, Mapo Tofu, Kung Pao Chicken, Dan Dan Noodles, Sichuan Peppercorns",
+        "bestTime": "Spring (March-May) and Autumn (September-November) for mild weather and blooming flowers"
+      },
+      "cuisine": {
+        "dishes": [
+          {
+            "name": "Sichuan Hot Pot",
+            "description": "A quintessential Chengdu experience. Gather around a bubbling pot of spicy broth and cook a variety of meats, vegetables, and more."
+          },
+          {
+            "name": "Mapo Tofu",
+            "description": "A classic dish of soft tofu in a spicy, bean-based sauce, often with minced meat."
+          },
+          {
+            "name": "Kung Pao Chicken",
+            "description": "A stir-fried dish with chicken, peanuts, vegetables, and chili peppers."
+          }
+        ],
+        "foodStreets": [
+          {
+            "name": "Jinli Ancient Street",
+            "description": "Offers a wide array of traditional snacks and street food in a historic setting."
+          },
+          {
+            "name": "Kuanzhai Alley (Wide and Narrow Alley)",
+            "description": "A mix of modern and traditional restaurants, teahouses, and snack stalls."
+          }
+        ]
+      },
+      "transportation": {
+        "gettingThere": [
+          "By Air: Chengdu Shuangliu International Airport (CTU) is one of China's busiest airports, with extensive domestic and international connections.",
+          "By Train: A major high-speed rail hub connecting to cities like Xi'an, Chongqing, and Beijing."
+        ],
+        "gettingAround": [
+          "Metro: The Chengdu Metro is a fast and efficient way to navigate the city, covering most major attractions.",
+          "Bus: An extensive public bus network provides comprehensive coverage of the urban area.",
+          "Taxi & Ride-Sharing: Taxis and services like DiDi are widely available and affordable."
+        ]
+      },
+      "itinerary": [
+        {
+          "day": "Day 1: Pandas and Culture",
+          "activities": [
+            "Morning: Visit the Giant Panda Breeding Research Base.",
+            "Afternoon: Explore the Wenshu Monastery, a serene Buddhist temple.",
+            "Evening: Stroll and dine at Jinli Ancient Street."
+          ]
+        },
+        {
+          "day": "Day 2: History and Relaxation",
+          "activities": [
+            "Morning: Visit the Wuhou Shrine, dedicated to figures from the Three Kingdoms period.",
+            "Afternoon: Experience the local lifestyle at a teahouse in People's Park.",
+            "Evening: Enjoy a Sichuan Opera show, famous for its 'face-changing' performances."
+          ]
+        }
+      ],
+      "gallery": [
+        "../images/user_photos/chengdu_1.jpg",
+        "../images/user_photos/chengdu_2.jpg",
+        "../images/user_photos/chengdu_3.jpg"
+      ],
+      "patents": [
+        {
+          "number": "CN116322434A",
+          "title": "Sichuan-Chongqing regional multi-energy complementary optimal scheduling method considering source-load uncertainty",
+          "assignee": "State Grid Sichuan Electric Power Company"
+        },
+        {
+          "number": "CN116322839A",
+          "title": "Multi-objective optimal scheduling method for distribution network considering flexible load and new energy",
+          "assignee": "State Grid Sichuan Electric Power Company"
+        }
+      ]
+    },
+    "harbin": {
+      "name": "Harbin",
+      "title": "Harbin - Traveling China like your home yard",
+      "heroTitle": "Harbin",
+      "heroSubtitle": "Ice City of the North",
+      "heroImage": "../images/user_photos/harbin_hero_bg.jpg",
+      "overview": "Harbin, the capital of Heilongjiang province, is China's northernmost major city and serves as the gateway to Siberia. Known as the 'Ice City,' Harbin is famous for its spectacular winter ice and snow festivals, Russian-influenced architecture, and unique cultural blend of Chinese and European traditions. The city's strategic location near the Russian border has shaped its distinctive character and architectural heritage.",
+      "highlights": {
+        "attractions": "Ice and Snow World, Sun Island Snow Sculpture Art Expo, Saint Sophia Cathedral, Central Street, Siberian Tiger Park",
+        "cuisine": "Harbin Red Sausage, Russian Borscht, Guobaorou (Sweet and Sour Pork), Harbin Beer, Dongbei Dumplings",
+        "bestTime": "Winter (December-February) for ice festivals and snow activities, or Summer (June-August) for pleasant temperatures and outdoor activities"
+      },
+      "cuisine": {
+        "dishes": [
+          {
+            "name": "Harbin Red Sausage",
+            "description": "A smoked pork sausage with Russian origins, known for its distinctive flavor and firm texture."
+          },
+          {
+            "name": "Guobaorou (Sweet and Sour Pork)",
+            "description": "Northeastern-style crispy pork with a sweet and sour sauce, different from Cantonese versions."
+          },
+          {
+            "name": "Russian Borscht",
+            "description": "Beet soup with Russian influence, served hot with sour cream and bread."
+          },
+          {
+            "name": "Dongbei Dumplings",
+            "description": "Large, hearty dumplings filled with pork, cabbage, and other local ingredients."
+          }
+        ],
+        "foodStreets": [
+          {
+            "name": "Central Street",
+            "description": "Historic pedestrian street with Russian restaurants and local snack vendors."
+          },
+          {
+            "name": "Old Harbin District",
+            "description": "Traditional restaurants serving authentic Dongbei cuisine."
+          },
+          {
+            "name": "Harbin Beer Street",
+            "description": "Local beer culture with food stalls and traditional snacks."
+          }
+        ]
+      },
+      "transportation": {
+        "gettingThere": [
+          "By Air: Harbin Taiping International Airport (HRB) with domestic flights and international connections to Russia and other Asian countries.",
+          "By Train: Major railway hub with high-speed rail connections to Beijing, Shanghai, and other major cities.",
+          "By Bus: Long-distance bus services connecting to nearby provinces and Russian border areas."
+        ],
+        "gettingAround": [
+          "Metro: Harbin's metro system provides efficient transportation to major attractions and districts.",
+          "Bus: Comprehensive public bus network covering the urban area and tourist attractions.",
+          "Taxi: Readily available taxis with reasonable fares for city exploration.",
+          "Walking: Central areas like Central Street are best explored on foot to appreciate the architecture."
+        ]
+      },
+      "itinerary": [
+        {
+          "day": "Day 1: Ice Festival and Central Street",
+          "activities": [
+            "Morning: Visit Ice and Snow World for spectacular ice sculptures and ice architecture.",
+            "Afternoon: Explore Central Street with its Russian-style buildings and European architecture.",
+            "Evening: Enjoy Russian cuisine at a traditional restaurant on Central Street."
+          ]
+        },
+        {
+          "day": "Day 2: Wildlife and Culture",
+          "activities": [
+            "Morning: Visit the Siberian Tiger Park to see these magnificent animals in their natural habitat.",
+            "Afternoon: Explore Saint Sophia Cathedral and the Russian Orthodox Church complex.",
+            "Evening: Experience local nightlife and try Harbin beer at a traditional brewery."
+          ]
+        },
+        {
+          "day": "Day 3: Nature and Parks",
+          "activities": [
+            "Morning: Visit Sun Island Snow Sculpture Art Expo for incredible snow sculptures.",
+            "Afternoon: Explore the Songhua River waterfront and enjoy winter activities.",
+            "Evening: Take a river cruise or enjoy ice skating on the frozen Songhua River."
+          ]
+        }
+      ],
+      "gallery": [
+        "../images/user_photos/harbin_1_optimized.jpg",
+        "../images/user_photos/harbin_2_optimized.jpg",
+        "../images/user_photos/harbin_3_optimized.jpg"
+      ],
+      "patents": [
+        {
+          "number": "CN106897282B",
+          "title": "User group classification method and device",
+          "assignee": "Harbin Institute of Technology"
+        },
+        {
+          "number": "CN108418780A",
+          "title": "Filter method and device, system, the dns server of IP address",
+          "assignee": "Harbin Engineering University"
+        },
+        {
+          "number": "CN108804885B",
+          "title": "Man-machine verification method and device, storage medium and processor",
+          "assignee": "Harbin University of Science and Technology"
+        }
+      ]
+    },
+    "xian": {
+      "name": "Xi'an",
+      "title": "Xi'an - Traveling China like your home yard",
+      "heroTitle": "Xi'an",
+      "heroSubtitle": "Ancient Capital of 13 Dynasties",
+      "heroImage": "../images/user_photos/xian_hero_bg.jpg",
+      "overview": "Xi'an, the ancient capital of China, is a city steeped in history. It served as the capital for 13 dynasties and is home to the world-famous Terracotta Army. Today, it's a bustling metropolis that has beautifully preserved its rich cultural heritage.",
+      "highlights": {
+        "attractions": "Terracotta Army, Ancient City Wall, Big Wild Goose Pagoda",
+        "cuisine": "Roujiamo (meat burger), Yangrou Paomo (mutton soup with flatbread), Biangbiang Noodles",
+        "bestTime": "Autumn (September to November) with mild temperatures and clear skies."
+      },
+      "cuisine": {
+        "dishes": [],
+        "foodStreets": []
+      },
+      "transportation": {
+        "gettingThere": [],
+        "gettingAround": []
+      },
+      "itinerary": [],
+      "gallery": [
+        "https://images.unsplash.com/photo-1508824242335-5197fab439d2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1563390189-386f25a757a4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1613799842893-247143c3a7b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "patents": [
+        {
+          "number": "CN115188837A",
+          "title": "Back contact solar cell, preparation method and cell module",
+          "assignee": "LONGi Green Energy Technology Co., Ltd."
+        },
+        {
+          "number": "CN111793785A",
+          "title": "Production method of TCO thin film and magnetron sputtering coating machine",
+          "assignee": "LONGi Green Energy Technology Co., Ltd."
+        },
+        {
+          "number": "CN112466980A",
+          "title": "Silicon carbide cell",
+          "assignee": "LONGi Green Energy Technology Co., Ltd."
+        }
+      ]
+    },
+    "tianjin": {
+      "name": "Tianjin",
+      "title": "Tianjin - Traveling China like your home yard",
+      "heroTitle": "Tianjin",
+      "heroSubtitle": "A port city with a blend of Chinese and Western architecture.",
+      "heroImage": "https://images.unsplash.com/photo-1599266202441-8c5697e41003?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "overview": "Tianjin is a major port city in northeastern China. Once home to foreign concessions, the city has a cosmopolitan feel, with a mix of European-style buildings and traditional Chinese architecture. The Hai River flows through the city, and its banks are a popular spot for locals and tourists alike.",
+      "highlights": {
+        "attractions": "Five Great Avenues, Tianjin Eye, Ancient Culture Street",
+        "cuisine": "Goubuli buns, Mahua (fried dough twists), Erduoyan fried cakes",
+        "bestTime": "Spring and Autumn, with mild and pleasant weather."
+      },
+      "cuisine": {
+        "dishes": [
+          {
+            "name": "Goubuli Buns",
+            "description": "Famous steamed buns with savory fillings, a Tianjin specialty."
+          },
+          {
+            "name": "Mahua",
+            "description": "Fried dough twists, crispy and sweet, perfect for snacking."
+          },
+          {
+            "name": "Erduoyan Fried Cakes",
+            "description": "Traditional fried cakes with various fillings."
+          }
+        ],
+        "foodStreets": [
+          {
+            "name": "Ancient Culture Street",
+            "description": "Traditional snacks and local delicacies."
+          },
+          {
+            "name": "Nanshi Food Street",
+            "description": "Wide variety of Tianjin specialties."
+          },
+          {
+            "name": "Hai River Banks",
+            "description": "Riverside restaurants with beautiful views."
+          }
+        ]
+      },
+      "transportation": {
+        "gettingThere": [
+          "By Air: Tianjin Binhai International Airport (TSN) with domestic and international flights.",
+          "By Train: High-speed rail connections from Beijing (30 minutes), Shanghai, and other major cities.",
+          "By Car: Well-connected highway system, about 1.5 hours from Beijing."
+        ],
+        "gettingAround": [
+          "Metro: Efficient metro system covering major attractions.",
+          "Bus: Extensive bus network throughout the city.",
+          "Taxi: Readily available and affordable.",
+          "Walking: Many attractions are within walking distance in the city center."
+        ]
+      },
+      "itinerary": [
+        {
+          "day": "Day 1: Historical Tianjin",
+          "activities": [
+            "Morning: Visit the Five Great Avenues to see European-style architecture.",
+            "Afternoon: Explore Ancient Culture Street for traditional crafts and snacks.",
+            "Evening: Take a boat ride on the Hai River for beautiful night views."
+          ]
+        },
+        {
+          "day": "Day 2: Modern Tianjin",
+          "activities": [
+            "Morning: Ride the Tianjin Eye Ferris wheel for panoramic city views.",
+            "Afternoon: Visit the Tianjin Museum to learn about the city's history.",
+            "Evening: Enjoy local cuisine at Nanshi Food Street."
+          ]
+        },
+        {
+          "day": "Day 3: Culture and Shopping",
+          "activities": [
+            "Morning: Visit the Porcelain House, a unique architectural wonder.",
+            "Afternoon: Shop at Binjiang Road pedestrian street.",
+            "Evening: Experience Tianjin's nightlife in the Italian Style Town."
+          ]
+        }
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1569310173909-a0294f573543?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1610642289134-56e4216110a5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1558137343-c432a48cacec?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "patents": [
+        {
+          "number": "CN100389121C",
+          "title": "Preparation method of mometasone furoate intermediate 21-hydroxyl",
+          "assignee": "TIANJIN PHARMACEUTICAL INDUSTRY GROUP CORP Ltd"
+        },
+        {
+          "number": "CN101817783A",
+          "title": "Method for preparing tolvaptan intermediate",
+          "assignee": "Tianjin Taipu Pharmaceutical Science & Technology Development Co Ltd"
+        },
+        {
+          "number": "CN101347621A",
+          "title": "A pharmaceutical composition for treating respiratory diseases",
+          "assignee": "TIANJIN PHARMACEUTICALS GROUP CORP"
+        }
+      ]
+    },
+    "linyi": {
+      "name": "Linyi",
+      "title": "Linyi - Traveling China",
+      "heroTitle": "Discover Linyi",
+      "heroSubtitle": "A prefecture-level city in southern Shandong province, is a place where ancient history and modern dynamism converge.",
+      "heroImage": "../images/linyi-hero.jpg",
+      "overview": "Linyi, a prefecture-level city in southern Shandong province, is a place where ancient history and modern dynamism converge. Known as the 'City of Calligraphy' and the hometown of the sage Wang Xizhi, Linyi boasts a rich cultural heritage. Today, it is a major center for trade and logistics in eastern China, with a rapidly growing economy. The city's landscape is graced by the Yi and Shu rivers, offering scenic beauty alongside urban development.",
+      "highlights": {
+        "attractions": "Wang Xizhi's Former Residence, Mengshan Mountain National Forest Park, Linyi Trade City",
+        "cuisine": "Shandong Pancake (Jianbing), Braised Pork in Brown Sauce, Linyi Pancake",
+        "bestTime": "Spring and Autumn"
+      },
+      "cuisine": {
+        "dishes": [
+          {
+            "name": "Shandong Pancake (Jianbing)",
+            "description": "A savory crepe made from grain flour, often filled with egg, crispy crackers, and scallions."
+          },
+          {
+            "name": "Braised Pork in Brown Sauce",
+            "description": "A classic Chinese dish, slow-cooked to perfection with a rich, savory, and slightly sweet flavor."
+          }
+        ],
+        "foodStreets": []
+      },
+      "transportation": {
+        "gettingThere": [
+          "By Air: Linyi Shubuling Airport (LYI) connects the city to major domestic destinations."
+        ],
+        "gettingAround": [
+          "By Train: High-speed and conventional trains link Linyi to the national rail network.",
+          "Public Transit: An extensive bus system makes it easy and affordable to travel within the city."
+        ]
+      },
+      "itinerary": [
+        {
+          "day": "Day 1: Cultural Immersion",
+          "activities": [
+            "Morning: Wang Xizhi's Former Residence",
+            "Afternoon: Linyi Museum"
+          ]
+        }
+      ],
+      "gallery": [
+        "../images/linyi-gallery-1.jpg",
+        "../images/linyi-gallery-2.jpg",
+        "../images/linyi-gallery-3.jpg"
+      ],
+      "patents": [
+        {
+          "number": "CN113325699A",
+          "title": "A kind of environment-friendly high-elasticity flame-retardant artificial leather and preparation method thereof",
+          "assignee": "Liu, Wei"
+        },
+        {
+          "number": "CN113278688A",
+          "title": "A kind of wear-resistant and scratch-resistant solvent-free PU artificial leather and preparation method thereof",
+          "assignee": "Wang, Jian"
+        },
+        {
+          "number": "CN113122021A",
+          "title": "A kind of antibacterial and mildewproof PU synthetic leather and preparation method thereof",
+          "assignee": "Li, Na"
+        }
+      ]
+    },
+    "qingdao": {
+      "name": "Qingdao",
+      "title": "Qingdao - Traveling China like your home yard",
+      "heroTitle": "Qingdao",
+      "heroSubtitle": "Where East Meets West",
+      "heroImage": "../images/user_photos/qingdao_hero_bg.jpg",
+      "overview": "Qingdao is a major port city in Shandong Province, famous for its European architecture, beautiful coastline, and Tsingtao Beer. Originally a German concession, the city blends Chinese and Western influences with its red-roofed buildings, Catholic churches, and coastal scenery.",
+      "highlights": {
+        "attractions": "Zhanqiao Pier, Badaguan Scenic Area, Tsingtao Beer Museum, Laoshan Mountain",
+        "cuisine": "Seafood, Tsingtao Beer, Braised Abalone, Clams in Black Bean Sauce",
+        "bestTime": "Spring (April-June) and Autumn (September-October) with mild temperatures and clear skies"
+      },
+      "cuisine": {
+        "dishes": [
+          {
+            "name": "Fresh Seafood",
+            "description": "Clams in Black Bean Sauce, Braised Abalone, Steamed Fish"
+          },
+          {
+            "name": "Tsingtao Beer",
+            "description": "World-famous beer brewed locally since 1903"
+          },
+          {
+            "name": "Seafood Hotpot",
+            "description": "Fresh seafood cooked in flavorful broth"
+          }
+        ],
+        "foodStreets": [
+          {
+            "name": "Beer Street",
+            "description": "Traditional beer halls and seafood restaurants"
+          },
+          {
+            "name": "Badaguan Food Street",
+            "description": "International cuisine and local specialties"
+          },
+          {
+            "name": "Zhanqiao Pier",
+            "description": "Fresh seafood markets and restaurants"
+          }
+        ]
+      },
+      "transportation": {
+        "gettingThere": [
+          "By Air: Qingdao Jiaodong International Airport (TAO) with domestic and international flights",
+          "By Train: High-speed rail from Jinan, Yantai, Weihai (2-4 hours)",
+          "By Car: Well-connected highway system from major cities"
+        ],
+        "gettingAround": [
+          "Metro: Efficient metro system covering major attractions",
+          "Bus: Extensive bus network throughout the city",
+          "Taxi: Readily available and affordable",
+          "Ferry: Ferries to nearby islands and coastal areas"
+        ]
+      },
+      "itinerary": [
+        {
+          "day": "Day 1: Historical Qingdao",
+          "activities": [
+            "Morning: Visit Zhanqiao Pier and the iconic Huilan Pavilion",
+            "Afternoon: Explore Badaguan Scenic Area with its European architecture",
+            "Evening: Enjoy fresh seafood at Beer Street"
+          ]
+        },
+        {
+          "day": "Day 2: Beer Culture",
+          "activities": [
+            "Morning: Tour the Tsingtao Beer Museum and learn about brewing history",
+            "Afternoon: Visit the Catholic Church and Protestant Church",
+            "Evening: Sample local craft beers at waterfront bars"
+          ]
+        },
+        {
+          "day": "Day 3: Natural Beauty",
+          "activities": [
+            "Morning: Take a cable car up Laoshan Mountain for panoramic views",
+            "Afternoon: Visit the beautiful beaches and coastal parks",
+            "Evening: Watch the sunset from the Olympic Sailing Center"
+          ]
+        }
+      ],
+      "gallery": [
+        "../images/user_photos/qingdao_1_optimized.jpg",
+        "../images/user_photos/qingdao_2_optimized.jpg",
+        "../images/user_photos/qingdao_3_optimized.jpg"
+      ],
+      "patents": [
+        {
+          "number": "CN102839519B",
+          "title": "Household dry cleaning machine and clothes dry cleaning method",
+          "assignee": "Haier Group Corporation"
+        },
+        {
+          "number": "CN108360214A",
+          "title": "A kind of control method and washing machine of washing machine",
+          "assignee": "Haier Group Corporation"
+        },
+        {
+          "number": "CN113296415A",
+          "title": "Intelligent household electrical appliance control method, intelligent household electrical appliance control device and system",
+          "assignee": "Haier Group Corporation"
+        },
+        {
+          "number": "CN104268591A",
+          "title": "Face key point detecting method and device",
+          "assignee": "Hisense Group Co Ltd"
+        }
+      ]
+    }
+  }
+}

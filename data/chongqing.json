@@ -1,0 +1,82 @@
+{
+  "name": "Chongqing",
+  "title": "Chongqing - Traveling China like your home yard",
+  "heroTitle": "Chongqing",
+  "heroSubtitle": "The Mountain City & Hot Pot Capital",
+  "heroImage": "../images/user_photos/chongqing_hero_bg.jpg",
+  "overview": "Chongqing, a sprawling metropolis in southwestern China, is famous for its spicy cuisine, particularly hot pot, and its unique mountainous landscape. Intersected by the Yangtze and Jialing rivers, this vibrant city is a key economic hub and a gateway to the stunning Three Gorges. Its futuristic skyline, combined with historic sites and a lively street culture, makes Chongqing a fascinating destination.",
+  "highlights": {
+    "attractions": "Hongya Cave, Ciqikou Old Town, Three Gorges Museum, Eling Park, Yangtze River Cableway",
+    "cuisine": "Chongqing Hot Pot, Chongqing Noodles (Xiao Mian), Spicy Chicken (La Zi Ji), Mapo Tofu",
+    "bestTime": "Spring (March-May) and Autumn (September-November) for mild and comfortable weather"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Chongqing Hot Pot",
+        "description": "The city's most famous dish, known for its fiery and numbing mala broth, where diners cook a variety of meats, vegetables, and other ingredients."
+      },
+      {
+        "name": "Chongqing Noodles (Xiao Mian)",
+        "description": "A popular breakfast dish, these spicy noodles are a staple of local cuisine."
+      },
+      {
+        "name": "Spicy Chicken (La Zi Ji)",
+        "description": "A dish of fried chicken pieces buried in a mountain of dried chili peppers and Sichuan peppercorns."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Jiefangbei Pedestrian Street",
+        "description": "The central business district, which also hosts a vast number of restaurants and food stalls offering local delicacies."
+      },
+      {
+        "name": "Bayi Road Food Street",
+        "description": "A bustling street known for its variety of street food and snacks."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Chongqing Jiangbei International Airport (CKG) is a major aviation hub with extensive domestic and international flights.",
+      "By Train: A key high-speed rail hub connecting to major cities like Chengdu, Xi'an, and Shanghai.",
+      "By Boat: Chongqing is the starting point for many Yangtze River cruises."
+    ],
+    "gettingAround": [
+      "Monorail & Metro: Chongqing's unique topography has led to the development of an extensive monorail and metro system, which is the best way to get around.",
+      "Yangtze River Cableway: A cable car that offers stunning views of the city and the two rivers.",
+      "Bus: A comprehensive bus network covers the entire city.",
+      "Taxi & Ride-Sharing: Widely available, but be prepared for traffic."
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: City Highlights",
+      "activities": [
+        "Morning: Visit the Three Gorges Museum to learn about the region's history and the Yangtze River.",
+        "Afternoon: Explore the bustling Jiefangbei Pedestrian Street.",
+        "Evening: Experience the magical, multi-layered architecture of Hongya Cave at night."
+      ]
+    },
+    {
+      "day": "Day 2: Old Town and River Views",
+      "activities": [
+        "Morning: Wander through the ancient streets of Ciqikou Old Town.",
+        "Afternoon: Take a ride on the Yangtze River Cableway for panoramic city views.",
+        "Evening: Indulge in an authentic Chongqing hot pot dinner."
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/chongqing_1.jpg",
+    "../images/user_photos/chongqing_2.jpg",
+    "../images/user_photos/chongqing_3.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN116322434A",
+      "title": "Sichuan-Chongqing regional multi-energy complementary optimal scheduling method considering source-load uncertainty",
+      "assignee": "State Grid Chongqing Electric Power Company"
+    }
+  ]
+}

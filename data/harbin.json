@@ -1,0 +1,109 @@
+
+{
+  "name": "Harbin",
+  "title": "Harbin - Traveling China like your home yard",
+  "heroTitle": "Harbin",
+  "heroSubtitle": "Ice City of the North",
+  "heroImage": "../images/user_photos/harbin_hero_bg.jpg",
+  "overview": "Harbin, the capital of Heilongjiang province, is China's northernmost major city and serves as the gateway to Siberia. Known as the 'Ice City,' Harbin is famous for its spectacular winter ice and snow festivals, Russian-influenced architecture, and unique cultural blend of Chinese and European traditions. The city's strategic location near the Russian border has shaped its distinctive character and architectural heritage.",
+  "highlights": {
+    "attractions": "Ice and Snow World, Sun Island Snow Sculpture Art Expo, Saint Sophia Cathedral, Central Street, Siberian Tiger Park",
+    "cuisine": "Harbin Red Sausage, Russian Borscht, Guobaorou (Sweet and Sour Pork), Harbin Beer, Dongbei Dumplings",
+    "bestTime": "Winter (December-February) for ice festivals and snow activities, or Summer (June-August) for pleasant temperatures and outdoor activities"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Harbin Red Sausage",
+        "description": "A smoked pork sausage with Russian origins, known for its distinctive flavor and firm texture."
+      },
+      {
+        "name": "Guobaorou (Sweet and Sour Pork)",
+        "description": "Northeastern-style crispy pork with a sweet and sour sauce, different from Cantonese versions."
+      },
+      {
+        "name": "Russian Borscht",
+        "description": "Beet soup with Russian influence, served hot with sour cream and bread."
+      },
+      {
+        "name": "Dongbei Dumplings",
+        "description": "Large, hearty dumplings filled with pork, cabbage, and other local ingredients."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Central Street",
+        "description": "Historic pedestrian street with Russian restaurants and local snack vendors."
+      },
+      {
+        "name": "Old Harbin District",
+        "description": "Traditional restaurants serving authentic Dongbei cuisine."
+      },
+      {
+        "name": "Harbin Beer Street",
+        "description": "Local beer culture with food stalls and traditional snacks."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Harbin Taiping International Airport (HRB) with domestic flights and international connections to Russia and other Asian countries.",
+      "By Train: Major railway hub with high-speed rail connections to Beijing, Shanghai, and other major cities.",
+      "By Bus: Long-distance bus services connecting to nearby provinces and Russian border areas."
+    ],
+    "gettingAround": [
+      "Metro: Harbin's metro system provides efficient transportation to major attractions and districts.",
+      "Bus: Comprehensive public bus network covering the urban area and tourist attractions.",
+      "Taxi: Readily available taxis with reasonable fares for city exploration.",
+      "Walking: Central areas like Central Street are best explored on foot to appreciate the architecture."
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Ice Festival and Central Street",
+      "activities": [
+        "Morning: Visit Ice and Snow World for spectacular ice sculptures and ice architecture.",
+        "Afternoon: Explore Central Street with its Russian-style buildings and European architecture.",
+        "Evening: Enjoy Russian cuisine at a traditional restaurant on Central Street."
+      ]
+    },
+    {
+      "day": "Day 2: Wildlife and Culture",
+      "activities": [
+        "Morning: Visit the Siberian Tiger Park to see these magnificent animals in their natural habitat.",
+        "Afternoon: Explore Saint Sophia Cathedral and the Russian Orthodox Church complex.",
+        "Evening: Experience local nightlife and try Harbin beer at a traditional brewery."
+      ]
+    },
+    {
+      "day": "Day 3: Nature and Parks",
+      "activities": [
+        "Morning: Visit Sun Island Snow Sculpture Art Expo for incredible snow sculptures.",
+        "Afternoon: Explore the Songhua River waterfront and enjoy winter activities.",
+        "Evening: Take a river cruise or enjoy ice skating on the frozen Songhua River."
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/harbin_1_optimized.jpg",
+    "../images/user_photos/harbin_2_optimized.jpg",
+    "../images/user_photos/harbin_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN106897282B",
+      "title": "User group classification method and device",
+      "assignee": "Harbin Institute of Technology"
+    },
+    {
+      "number": "CN108418780A",
+      "title": "Filter method and device, system, the dns server of IP address",
+      "assignee": "Harbin Engineering University"
+    },
+    {
+      "number": "CN108804885B",
+      "title": "Man-machine verification method and device, storage medium and processor",
+      "assignee": "Harbin University of Science and Technology"
+    }
+  ]
+}

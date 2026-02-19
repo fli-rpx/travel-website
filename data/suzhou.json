@@ -1,0 +1,90 @@
+{
+  "name": "Suzhou",
+  "title": "Suzhou - Traveling China like your home yard",
+  "heroTitle": "Suzhou",
+  "heroSubtitle": "Venice of the East",
+  "heroImage": "../images/user_photos/suzhou_hero_bg.jpg",
+  "overview": "Suzhou is a historic city in Jiangsu Province, famous for its classical Chinese gardens, canals, and silk production. Known as the 'Venice of the East' for its network of waterways, Suzhou's UNESCO World Heritage gardens like the Humble Administrator's Garden and Lingering Garden showcase exquisite Ming and Qing Dynasty landscape design.",
+  "highlights": {
+    "attractions": "Humble Administrator's Garden, Tiger Hill, Suzhou Museum, Temple of Heaven, Summer Palace, Tiananmen Square",
+    "cuisine": "Suzhou-style Noodles, Sweet and Sour Mandarin Fish, Biluochun Tea, Mongolian Hot Pot, Suzhou Yogurt",
+    "bestTime": "Autumn (September-October) with clear skies and pleasant temperatures"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Suzhou-style Noodles",
+        "description": "Hand-pulled noodles served in rich broth with local toppings and vegetables."
+      },
+      {
+        "name": "Sweet and Sour Mandarin Fish",
+        "description": "Freshwater fish prepared with a delicate sweet and sour sauce, a local specialty."
+      },
+      {
+        "name": "Biluochun Tea",
+        "description": "One of China's top ten famous teas, grown in the Dongting Mountains near Suzhou."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Guangqian Street",
+        "description": "Historic pedestrian street with traditional snack vendors and local restaurants."
+      },
+      {
+        "name": "Pingjiang Road",
+        "description": "Ancient canal-side street with teahouses and family-run eateries."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Suzhou doesn't have its own commercial airport. The nearest major airports are Shanghai Hongqiao (SHA) and Shanghai Pudong (PVG), both about 1-2 hours away by high-speed train or bus.",
+      "By Train: Suzhou is a major railway hub with high-speed rail connections to Shanghai, Nanjing, Hangzhou, and other cities.",
+      "By Bus: Long-distance bus services connect Suzhou to nearby cities and provinces."
+    ],
+    "gettingAround": [
+      "Metro: Suzhou's metro system provides efficient transportation to major attractions and districts.",
+      "Bus: Comprehensive public bus network covering the urban area and tourist attractions.",
+      "Canal Boats: Traditional canal boats offer scenic transportation through the ancient waterways.",
+      "Walking: The historic district is best explored on foot to appreciate the gardens and architecture."
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Classical Gardens",
+      "activities": [
+        "Morning: Visit the Humble Administrator's Garden, the largest and most famous of Suzhou's gardens.",
+        "Afternoon: Explore the Lingering Garden with its unique rockery and pavilion designs.",
+        "Evening: Stroll along Pingjiang Road, enjoying the canal-side atmosphere and traditional architecture."
+      ]
+    },
+    {
+      "day": "Day 2: History and Culture",
+      "activities": [
+        "Morning: Visit Tiger Hill and its famous leaning pagoda, known as the 'Leaning Tower of China.'",
+        "Afternoon: Tour the Suzhou Museum designed by I.M. Pei, showcasing local history and art.",
+        "Evening: Experience a traditional Kunqu opera performance, a UNESCO Intangible Cultural Heritage."
+      ]
+    },
+    {
+      "day": "Day 3: Silk and Water Towns",
+      "activities": [
+        "Morning: Visit the Suzhou Silk Museum to learn about silk production and embroidery techniques.",
+        "Afternoon: Take a day trip to Zhouzhuang or Tongli water town to experience traditional canal life.",
+        "Evening: Enjoy a boat cruise on the ancient canals, viewing the city from the water."
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/suzhou_1_optimized.jpg",
+    "../images/user_photos/suzhou_2_optimized.jpg",
+    "../images/user_photos/suzhou_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "HEJIAN TECHNOLOGY (SUZHOU) CO LTD"
+    }
+  ]
+}

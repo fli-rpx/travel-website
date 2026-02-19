@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaifeng - Traveling China</title>
+    <title>Kaifeng - Traveling China like your home yard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,35 +22,35 @@
         }
         
         .city-hero {
-            color: white; padding: 100px 0 60px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--hero-image);
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 100px 0 60px;
+            padding: 120px 0 80px;
             text-align: center;
             margin-bottom: 60px;
+            --hero-image: url('../images/user_photos/kaifeng_hero_bg.jpg');
         }
         
         .city-hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         
         .city-hero .lead {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: rgba(255,255,255,0.95);
-            line-height: 1.6;
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.9);
         }
         
         .city-content {
-            padding: 40px 0;
+            padding: 60px 0;
         }
         
         .city-section {
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
         
         .city-section h2 {
@@ -58,21 +58,19 @@
             margin-bottom: 30px;
             padding-bottom: 15px;
             border-bottom: 3px solid var(--accent);
-            font-size: 1.75rem;
         }
         
         .city-highlight {
             background: var(--light);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 24px;
-            border-left: 4px solid var(--primary);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
         }
         
         .city-highlight h3 {
             color: var(--primary);
             margin-bottom: 15px;
-            font-size: 1.3rem;
         }
         
         .city-gallery {
@@ -94,78 +92,162 @@
             transform: scale(1.05);
         }
         
-        .back-to-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 30px;
-            transition: color 0.3s ease;
+        /* JUMP TO SECTION NAVIGATION */
+        .jump-nav {
+            position: sticky;
+            top: 80px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            z-index: 100;
+            border: 1px solid var(--gray-light);
         }
         
-        .back-to-home:hover {
+        .jump-nav h4 {
             color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .jump-nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .jump-nav-item {
+            flex: 1 1 auto;
+            min-width: 120px;
+        }
+        
+        .jump-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            background: var(--light);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .jump-nav-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        
+        .jump-nav-link.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .jump-nav-icon {
+            font-size: 0.8rem;
+            width: 16px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .jump-nav {
+                position: relative;
+                top: 0;
+                margin-bottom: 30px;
+            }
+            
+            .jump-nav-list {
+                flex-direction: column;
+            }
+            
+            .jump-nav-item {
+                flex: none;
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .city-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .city-hero .lead {
+                font-size: 1.2rem;
+            }
+        }
+        
+        .patent-table {
+            margin-top: 30px;
         }
         
         .city-nav {
+            margin-top: 60px;
+            padding: 40px 0;
             background: var(--light);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 40px;
+            border-radius: 15px;
         }
         
         .city-nav h3 {
             color: var(--secondary);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
         }
         
         .city-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 15px;
         }
         
         .city-link {
-            display: block;
-            padding: 12px 20px;
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
             background: white;
-            border-radius: 8px;
-            color: var(--dark);
+            color: var(--primary);
             text-decoration: none;
+            border-radius: 25px;
+            border: 2px solid var(--primary);
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            font-weight: 500;
         }
         
         .city-link:hover {
             background: var(--primary);
             color: white;
-            transform: translateY(-3px);
-            border-color: var(--primary);
-        }
-    
-        .back-link {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #3b82f6;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            margin: 20px 0;
-            transition: all 0.3s ease;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
         
-        .back-link:hover {
-            background: #2563eb;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0;
+            margin-top: 80px;
         }
-        .patent-table {
-            margin-top: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-radius: 10px;
-            overflow: hidden;
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent);
         }
     </style>
 </head>
@@ -190,10 +272,14 @@
             </div>
         </div>
     </nav>
-
+    
     <!-- City Hero Section -->
-    <section class="city-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/user_photos/kaifeng_hero_bg.jpg'); background-size: cover; background-position: center; padding: 100px 0 60px; min-height: 400px; color: white">
+    <section class="city-hero">
         <div class="container">
+            <a href="../index.html" class="back-home-btn">
+                <i class="fas fa-arrow-left back-home-icon"></i>
+                <span class="back-home-text">Back to All Cities</span>
+            </a>
             <h1>Kaifeng</h1>
             <p class="lead">Ancient Capital of Seven Dynasties</p>
         </div>
@@ -203,32 +289,18 @@
     <section class="city-content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <!-- Main Content -->
+                <div class="col-lg-9">
                     <!-- Overview -->
-                    
-                    <div class="city-section">
-                        <h2>Detailed Overview</h2>
-                        <div class="city-highlight">
-                            <p>Kaifeng, one of China's most historically significant cities, served as the capital of seven different dynasties and was once the largest city in the world during the Northern Song Dynasty (960-1127 AD). Located in eastern Henan province along the southern banks of the Yellow River, Kaifeng was known as Dongjing (Eastern Capital) during its golden age, when its population exceeded one million people and it became the political, economic, and cultural center of China. The city's strategic location at the intersection of major trade routes made it a thriving metropolis where merchants from across Asia converged, creating a cosmopolitan atmosphere that rivaled any city of its time.
-
-        The city's golden age during the Northern Song Dynasty represents one of the most sophisticated periods in Chinese urban development. Kaifeng was the first Chinese capital to break free from the rigid grid pattern of earlier cities, developing organically along the Yellow River with a more natural layout. The famous painting "Along the River During the Qingming Festival" by Zhang Zeduan depicts the bustling commercial activity of Kaifeng during this period, showing crowded markets, busy docks, and elaborate architecture that demonstrated the city's prosperity. The painting, now considered one of China's greatest artistic treasures, provides invaluable insight into urban life during medieval China's most advanced period.
-
-        Kaifeng's Jewish community, established during the Song Dynasty, represents one of the most fascinating chapters in Chinese Jewish history. The community, believed to have arrived via the Silk Road from Persia or India, maintained their traditions for centuries while gradually integrating into Chinese society. At its peak, the Jewish community numbered several thousand people and built multiple synagogues. Today, descendants of this community still live in Kaifeng, and their story has become an important part of the city's multicultural heritage. The Jewish Quarter, though much diminished, remains a point of interest for historians and tourists interested in China's religious diversity.
-
-        The city's modern identity is deeply connected to its imperial past while embracing contemporary development. Kaifeng's Drum Tower and Iron Pagoda stand as testaments to its architectural heritage, while the reconstructed Daxiangguo Temple showcases the religious significance that made Kaifeng a center of Buddhist learning. The city's night market culture, particularly famous for its variety of snacks and street food, continues traditions that date back to the Song Dynasty when Kaifeng's markets operated around the clock. The annual Chrysanthemum Festival, held each October, transforms the city into a spectacular display of floral artistry that attracts visitors from across China and beyond.
-
-        Kaifeng's culinary traditions reflect its position as a former imperial capital and major commercial center. The city's most famous dish, Kaifeng Soup Dumplings (Kaifeng xiaolongbao), differs from Shanghai's version in its thinner skin and more delicate broth. Other local specialties include Kaifeng sesame cakes, fried dough twists (mahua), and various noodle dishes that have been perfected over centuries. The city's Muslim Quarter, established during the Yuan Dynasty, continues to produce halal delicacies that reflect the cultural exchange that made Kaifeng a cosmopolitan center. These culinary traditions, passed down through generations, provide visitors with authentic tastes of China's imperial past.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="city-section">
-                        <h2>Overview</h2>
-                        <p>Kaifeng, ancient capital of seven dynasties, preserves the glory of the Northern Song Dynasty when it was the world's largest city. Today it offers visitors a journey through China's imperial past with its temples, pagodas, and living traditions.</p>
-                    </div>
+                    <section id="overview" class="city-section">
+                        <h2><i class="fas fa-info-circle me-3"></i>Overview</h2>
+                        <p>Kaifeng, one of China's most historically significant cities, served as the capital of seven different dynasties and was once the largest city in the world during the Northern Song Dynasty (960-1127 AD). Located in eastern Henan province along the southern banks of the Yellow River, Kaifeng was known as Dongjing (Eastern Capital) during its golden age, when its population exceeded one million people and it became the political, economic, and cultural center of China. The city's strategic location at the intersection of major trade routes made it a thriving metropolis where merchants from across Asia converged, creating a cosmopolitan atmosphere that rivaled any city of its time.</p>
+                        <p>The city's golden age during the Northern Song Dynasty represents one of the most sophisticated periods in Chinese urban development. Kaifeng was the first Chinese capital to break free from the rigid grid pattern of earlier cities, developing organically along the Yellow River with a more natural layout. The famous painting "Along the River During the Qingming Festival" by Zhang Zeduan depicts the bustling commercial activity of Kaifeng during this period, showing crowded markets, busy docks, and elaborate architecture that demonstrated the city's prosperity.</p>
+                    </section>
                     
                     <!-- Highlights -->
-                    <div class="city-section">
-                        <h2>Must-See Highlights</h2>
+                    <section id="highlights" class="city-section">
+                        <h2><i class="fas fa-star me-3"></i>Must-See Highlights</h2>
                         <div class="city-highlight">
                             <h3><i class="fas fa-landmark me-2"></i>Top Attractions</h3>
                             <p>Daxiangguo Temple, Iron Pagoda, Dragon Pavilion, Kaifeng Museum, Jewish Quarter, Millennium City Park</p>
@@ -241,124 +313,219 @@
                             <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
                             <p>Autumn (September-November) for the Chrysanthemum Festival and pleasant weather</p>
                         </div>
-                    </div>
-                    
-                    <h2>Travel Tips</h2>
+                    </section>
+
+                    <!-- Local Cuisine -->
+                    <section id="cuisine" class="city-section">
+                        <h2><i class="fas fa-utensils me-3"></i>Local Cuisine</h2>
                         <div class="city-highlight">
-                            <h3><i class="fas fa-lightbulb me-2"></i>Comprehensive Travel Guide</h3>
-                            <p>Kaifeng's compact size makes it ideal for walking exploration, though the city's flat terrain also makes cycling a popular option for visitors. The historic city center is concentrated around the Dragon Pavilion area, where most major attractions are within walking distance of each other. The city's efficient bus system connects all major sites, with clear signage in both Chinese and English. For a more authentic experience, consider hiring a local guide who can provide historical context and help navigate the city's hidden gems that are often missed by casual visitors.
-
-        The best time to visit Kaifeng is during the autumn months when the famous Chrysanthemum Festival transforms the city into a spectacular display of floral artistry. This annual celebration, held each October, features elaborate flower arrangements, cultural performances, and traditional markets that showcase the city's heritage. Spring is also pleasant, though occasional sandstorms from the nearby Yellow River region can affect visibility. Summer brings hot, humid weather that can make outdoor exploration uncomfortable, while winter, though cold, offers fewer crowds and the opportunity to experience local winter traditions.
-
-        Kaifeng's night market culture is one of its most authentic attractions, with food stalls operating from dusk until late evening around the Drum Tower area. The evening food tour should include sampling Kaifeng's famous soup dumplings, which are best enjoyed fresh from the steamer. Local restaurants typically offer more authentic versions than tourist-oriented establishments near major attractions. The Muslim Quarter, though smaller than those in Xi'an or Beijing, provides excellent halal options and a glimpse into the city's multicultural past.
-
-        Accommodation options range from budget guesthouses to mid-range hotels, with most properties concentrated in the city center near the main attractions. The area around the Dragon Pavilion offers convenient access to major sites, while hotels near the railway station provide easy transportation connections. For a more immersive experience, consider staying in a traditional courtyard-style guesthouse that reflects Kaifeng's architectural heritage. These properties often provide cultural activities like calligraphy lessons or traditional music performances.
-
-        Shopping in Kaifeng focuses on traditional crafts and local specialties rather than modern consumer goods. The city's most famous products include traditional Chinese paintings depicting scenes from the Song Dynasty, replicas of ancient pottery, and locally produced silk items. The annual Chrysanthemum Festival provides excellent opportunities to purchase flower-related crafts and artwork. Local markets offer authentic Kaifeng snacks that make excellent gifts, though be aware of transportation restrictions for perishable items.</p>
+                            <h3><i class="fas fa-pepper-hot me-2"></i>Must-Try Dishes</h3>
+                            <p><strong>Kaifeng Soup Dumplings:</strong> Delicate steamed dumplings with rich broth and savory filling, different from Shanghai's version with thinner skin.</p>
+                            <p><strong>Sesame Cakes:</strong> Traditional flatbread topped with sesame seeds, crispy on the outside and soft inside.</p>
+                            <p><strong>Fried Dough Twists:</strong> Sweet and crispy twisted dough snacks, perfect for breakfast or snacks.</p>
+                            <p><strong>Muslim Quarter Specialties:</strong> Halal dishes reflecting the city's multicultural heritage including lamb skewers and noodle dishes.</p>
                         </div>
-                </div>
-                
-                <div class="col-lg-4">
-                    <!-- Quick Facts -->
-                    <div class="city-section">
-                        <h2>Quick Facts</h2>
                         <div class="city-highlight">
-                            <h3><i class="fas fa-info-circle me-2"></i>Basic Info</h3>
-                            <p><strong>Population:</strong> 4.5 million</p>
-                            <p><strong>Province:</strong> Henan</p>
-                            <p><strong>Language:</strong> Mandarin, Henan dialect</p>
-                            <p><strong>Timezone:</strong> China Standard Time (UTC+8)</p>
+                            <h3><i class="fas fa-map-marker-alt me-2"></i>Best Food Streets</h3>
+                            <p><strong>Drum Tower Night Market:</strong> Historic evening market with traditional snacks and local specialties operating from dusk until late.</p>
+                            <p><strong>Muslim Quarter:</strong> Authentic halal cuisine and traditional Kaifeng snacks in a culturally rich setting.</p>
+                            <p><strong>Old Town Area:</strong> Family-run restaurants serving traditional recipes passed down through generations.</p>
                         </div>
-                        
+                    </section>
+
+                    <!-- Transportation -->
+                    <section id="transport" class="city-section">
+                        <h2><i class="fas fa-subway me-3"></i>Transportation</h2>
                         <div class="city-highlight">
                             <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
-                            <p><strong>Airport:</strong> Zhengzhou Xinzheng International Airport (CGO) - 70km away</p>
-                            <p><strong>Train:</strong> High-speed rail from Zhengzhou (30 minutes)</p>
-                            <p><strong>Best Transport:</strong> Local buses, walking, bicycle rental</p>
+                            <p><strong>By Air:</strong> Zhengzhou Xinzheng International Airport (CGO) is 70km away, with high-speed rail connections to Kaifeng (30 minutes).</p>
+                            <p><strong>By Train:</strong> Kaifeng has high-speed rail connections from Zhengzhou, Beijing, Shanghai, and other major cities.</p>
+                            <p><strong>By Bus:</strong> Long-distance bus services connect Kaifeng to nearby cities and provinces.</p>
                         </div>
-                    </div>
-                    
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-bus me-2"></i>Getting Around</h3>
+                            <p><strong>Walking:</strong> The historic city center is compact and ideal for walking exploration, with most attractions within walking distance.</p>
+                            <p><strong>Cycling:</strong> Bicycle rental is popular due to the city's flat terrain and bike-friendly streets.</p>
+                            <p><strong>Local Bus:</strong> Efficient bus system connects all major sites with clear signage in Chinese and English.</p>
+                            <p><strong>Taxi:</strong> Readily available and affordable for longer distances or when carrying luggage.</p>
+                        </div>
+                    </section>
+
+                    <!-- Suggested Itinerary -->
+                    <section id="itinerary" class="city-section">
+                        <h2><i class="fas fa-calendar-alt me-3"></i>Suggested Itinerary</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-sun me-2"></i>Day 1: Imperial Heritage</h3>
+                            <p><strong>Morning:</strong> Visit Daxiangguo Temple, one of China's most important Buddhist temples with stunning architecture.</p>
+                            <p><strong>Afternoon:</strong> Explore the Iron Pagoda, a historic landmark offering panoramic views of the city.</p>
+                            <p><strong>Evening:</strong> Stroll through the Drum Tower area and experience the famous night market culture.</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-star me-2"></i>Day 2: History and Culture</h3>
+                            <p><strong>Morning:</strong> Tour the Dragon Pavilion and learn about Kaifeng's imperial past as capital of seven dynasties.</p>
+                            <p><strong>Afternoon:</strong> Visit the Kaifeng Museum to understand the city's rich history and cultural significance.</p>
+                            <p><strong>Evening:</strong> Explore the Jewish Quarter and learn about Kaifeng's unique Jewish community history.</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-shopping-bag me-2"></i>Day 3: Gardens and Markets</h3>
+                            <p><strong>Morning:</strong> Visit Millennium City Park, a recreation of Song Dynasty Kaifeng with traditional performances.</p>
+                            <p><strong>Afternoon:</strong> Shop for traditional crafts and local specialties in the old town area.</p>
+                            <p><strong>Evening:</strong> Enjoy a traditional Chinese opera performance and sample more local cuisine.</p>
+                        </div>
+                    </section>
+
                     <!-- Gallery -->
-                    <div class="city-section">
-                        <h2>Gallery</h2>
+                    <section id="gallery" class="city-section">
+                        <h2><i class="fas fa-camera-retro me-3"></i>Gallery</h2>
                         <div class="city-gallery">
-                            <img src="../images/user_photos/kaifeng_1.jpg" alt="Kaifeng Daxiangguo Temple - Ancient Buddhist temple architecture">
-                            <img src="../images/user_photos/kaifeng_2.jpg" alt="Kaifeng Iron Pagoda - Historic pagoda and gardens">
-                            <img src="../images/user_photos/kaifeng_3.jpg" alt="Kaifeng night market - Traditional food stalls and cultural atmosphere">
+                            <img src="../images/user_photos/kaifeng_1.jpg" alt="Kaifeng Daxiangguo Temple - Ancient Buddhist temple architecture" class="gallery-img">
+                            <img src="../images/user_photos/kaifeng_2.jpg" alt="Kaifeng Iron Pagoda - Historic pagoda and gardens" class="gallery-img">
+                            <img src="../images/user_photos/kaifeng_3.jpg" alt="Kaifeng night market - Traditional food stalls and cultural atmosphere" class="gallery-img">
                         </div>
-                    </div>
+                    </section>
+                    
+                    <!-- Patent Data -->
+                    <section id="patent-data" class="city-section">
+                        <h2><i class="fas fa-file-alt me-3"></i>Patent Data</h2>
+                        <div class="patent-table">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Patent Number</th>
+                                        <th>Title</th>
+                                        <th>Current Assignee</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CN204006965U</td>
+                                        <td>A kind of liquid oxygen and liquid nitrogen device for making</td>
+                                        <td>Kaifeng Group Co., Ltd.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CN205079543U</td>
+                                        <td>Device of cryogenic separation and production low -purity oxygen, high purity oxygen and nitrogen</td>
+                                        <td>Kaifeng Group Co., Ltd.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CN110498763A</td>
+                                        <td>A method of separation includes each component in the mixture of toluene, 2- methylthiophene and 3 methyl thiophene</td>
+                                        <td>Henan Jinpeng Chemical Co.,ltd.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Sticky Navigation -->
+                <div class="col-lg-3">
+                    <nav class="jump-nav">
+                        <h4><i class="fas fa-compass"></i> Explore Kaifeng</h4>
+                        <ul class="jump-nav-list">
+                            <li class="jump-nav-item"><a href="#overview" class="jump-nav-link active"><i class="fas fa-info-circle jump-nav-icon"></i>Overview</a></li>
+                            <li class="jump-nav-item"><a href="#highlights" class="jump-nav-link"><i class="fas fa-star jump-nav-icon"></i>Highlights</a></li>
+                            <li class="jump-nav-item"><a href="#cuisine" class="jump-nav-link"><i class="fas fa-utensils jump-nav-icon"></i>Cuisine</a></li>
+                            <li class="jump-nav-item"><a href="#transport" class="jump-nav-link"><i class="fas fa-subway jump-nav-icon"></i>Transport</a></li>
+                            <li class="jump-nav-item"><a href="#itinerary" class="jump-nav-link"><i class="fas fa-calendar-alt jump-nav-icon"></i>Itinerary</a></li>
+                            <li class="jump-nav-item"><a href="#gallery" class="jump-nav-link"><i class="fas fa-images jump-nav-icon"></i>Gallery</a></li>
+                            <li class="jump-nav-item"><a href="#patent-data" class="jump-nav-link"><i class="fas fa-file-alt jump-nav-icon"></i>Patents</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            
-            <div class="city-section">
-                <h2>Patent Data</h2>
-                <div class="patent-table">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Patent Number</th>
-                                <th>Title</th>
-                                <th>Current Assignee</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>CN204006965U</td>
-                                <td>A kind of liquid oxygen and liquid nitrogen device for making</td>
-                                <td>Kaifeng Group Co., Ltd.</td>
-                            </tr>
-                            <tr>
-                                <td>CN205079543U</td>
-                                <td>Device of cryogenic separation and production low -purity oxygen, high purity oxygen and nitrogen</td>
-                                <td>Kaifeng Group Co., Ltd.</td>
-                            </tr>
-                            <tr>
-                                <td>CN110498763A</td>
-                                <td>A method of separation includes each component in the mixture of toluene, 2- methylthiophene and 3 methyl thiophene</td>
-                                <td>Henan Jinpeng Chemical Co.,ltd.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            
+
             <!-- Explore Other Cities -->
             <div class="city-nav">
                 <h3>Explore Other Chinese Cities</h3>
                 <div class="city-links">
-<a href="beijing.html" class="city-link">Beijing</a>
-<a href="shanghai.html" class="city-link">Shanghai</a>
-<a href="chengdu.html" class="city-link">Chengdu</a>
-<a href="qingdao.html" class="city-link">Qingdao</a>
-<a href="xiamen.html" class="city-link">Xiamen</a>
-<a href="wuxi.html" class="city-link">Wuxi</a>
-<a href="hongkong.html" class="city-link">Hongkong</a>
-<a href="chongqing.html" class="city-link">Chongqing</a>
-<a href="harbin.html" class="city-link">Harbin</a>
-<a href="guangzhou.html" class="city-link">Guangzhou</a>
-<a href="shenzhen.html" class="city-link">Shenzhen</a>
-<a href="nanjing.html" class="city-link">Nanjing</a>
-<a href="guilin.html" class="city-link">Guilin</a>
-</div>
+                    <a href="beijing.html" class="city-link">Beijing</a>
+                    <a href="shanghai.html" class="city-link">Shanghai</a>
+                    <a href="tianjin.html" class="city-link">Tianjin</a>
+                    <a href="chengdu.html" class="city-link">Chengdu</a>
+                    <a href="chongqing.html" class="city-link">Chongqing</a>
+                    <a href="guangzhou.html" class="city-link">Guangzhou</a>
+                    <a href="shenzhen.html" class="city-link">Shenzhen</a>
+                    <a href="xian.html" class="city-link">Xi'an</a>
+                    <a href="nanjing.html" class="city-link">Nanjing</a>
+                    <a href="qingdao.html" class="city-link">Qingdao</a>
+                    <a href="wuxi.html" class="city-link">Wuxi</a>
+                    <a href="xiamen.html" class="city-link">Xiamen</a>
+                    <a href="hangzhou.html" class="city-link">Hangzhou</a>
+                    <a href="guilin.html" class="city-link">Guilin</a>
+                    <a href="guiyang.html" class="city-link">Guiyang</a>
+                    <a href="kunming.html" class="city-link">Kunming</a>
+                    <a href="dali.html" class="city-link">Dali</a>
+                    <a href="jinan.html" class="city-link">Jinan</a>
+                    <a href="datong.html" class="city-link">Datong</a>
+                    <a href="linyi.html" class="city-link">Linyi</a>
+                    <a href="taiyuan.html" class="city-link">Taiyuan</a>
+                    <a href="urumqi.html" class="city-link">Urumqi</a>
+                    <a href="kashi.html" class="city-link">Kashi</a>
+                    <a href="wuhan.html" class="city-link">Wuhan</a>
+                    <a href="harbin.html" class="city-link">Harbin</a>
+                    <a href="suzhou.html" class="city-link">Suzhou</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Traveling China</h5>
-                    <p>Discover the beauty and culture of China's most fascinating cities.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p>&copy; 2024 Traveling China. All rights reserved.</p>
-                </div>
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 Traveling China like your home yard. All rights reserved.</p>
+            <div class="social-icons mt-3">
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-weibo"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.jump-nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Update active state
+                    document.querySelectorAll('.jump-nav-link').forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Update active navigation on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.city-section');
+            const navLinks = document.querySelectorAll('.jump-nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

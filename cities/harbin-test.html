@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harbin Test - Dynamic Template</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray-light: #e2e8f0;
+            --gray-medium: #94a3b8;
+        }
+        
+        .city-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--hero-image);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .city-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .city-hero .lead {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .city-content {
+            padding: 60px 0;
+        }
+        
+        .city-section {
+            margin-bottom: 60px;
+        }
+        
+        .city-section h2 {
+            color: var(--secondary);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent);
+        }
+        
+        .city-highlight {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .city-highlight h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .city-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .city-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .city-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .jump-nav {
+            position: sticky;
+            top: 80px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            z-index: 100;
+            border: 1px solid var(--gray-light);
+        }
+        
+        .jump-nav h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .jump-nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .jump-nav-item {
+            flex: 1 1 auto;
+            min-width: 120px;
+        }
+        
+        .jump-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            background: var(--light);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .jump-nav-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        
+        .jump-nav-link.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .jump-nav-icon {
+            font-size: 0.8rem;
+            width: 16px;
+            text-align: center;
+        }
+        
+        .patent-table {
+            margin-top: 30px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: var(--gray-medium);
+        }
+        
+        .error {
+            text-align: center;
+            padding: 50px;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html" style="color: var(--primary);">
+                <i class="fas fa-globe-americas me-2"></i>Traveling China
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- City Hero Section -->
+    <section class="city-hero" id="city-hero">
+        <div class="container">
+            <a href="../index.html" class="back-home-btn">
+                <i class="fas fa-arrow-left back-home-icon"></i>
+                <span class="back-home-text">Back to All Cities</span>
+            </a>
+            <h1 id="city-hero-title">Loading...</h1>
+            <p class="lead" id="city-hero-subtitle">Loading...</p>
+        </div>
+    </section>
+
+    <!-- City Content -->
+    <section class="city-content">
+        <div class="container">
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <div id="city-content-container">
+                        <div class="loading">
+                            <i class="fas fa-spinner fa-spin fa-2x"></i>
+                            <p>Loading city data...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sticky Navigation -->
+                <div class="col-lg-3">
+                    <nav class="jump-nav" id="jump-nav">
+                        <h4><i class="fas fa-compass"></i> Loading...</h4>
+                        <ul class="jump-nav-list" id="jump-nav-list">
+                            <li class="jump-nav-item"><a href="#overview" class="jump-nav-link active"><i class="fas fa-info-circle jump-nav-icon"></i>Overview</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load city data from JSON file
+        async function loadCityData() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const cityId = urlParams.get('city') || 'harbin'; // Default to harbin for this test
+                
+                const response = await fetch('../data/cities.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load cities data');
+                }
+                
+                const data = await response.json();
+                const cityData = data.cities[cityId];
+                
+                if (!cityData) {
+                    throw new Error(`City '${cityId}' not found in data`);
+                }
+                
+                // Update page content
+                document.title = cityData.title;
+                document.getElementById('city-hero-title').textContent = cityData.heroTitle;
+                document.getElementById('city-hero-subtitle').textContent = cityData.heroSubtitle;
+                document.getElementById('city-hero').style.setProperty('--hero-image', `url('${cityData.heroImage}')`);
+                
+                // Update jump navigation
+                document.querySelector('#jump-nav h4').innerHTML = `<i class="fas fa-compass"></i> Explore ${cityData.name}`;
+                
+                // Generate content sections
+                const contentContainer = document.getElementById('city-content-container');
+                contentContainer.innerHTML = `
+                    <!-- Overview -->
+                    <section id="overview" class="city-section">
+                        <h2><i class="fas fa-info-circle me-3"></i>Overview</h2>
+                        <p>${cityData.overview}</p>
+                    </section>
+                    
+                    <!-- Highlights -->
+                    <section id="highlights" class="city-section">
+                        <h2><i class="fas fa-star me-3"></i>Must-See Highlights</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-snowflake me-2"></i>Top Attractions</h3>
+                            <p>${cityData.highlights.attractions}</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-utensils me-2"></i>Local Cuisine</h3>
+                            <p>${cityData.highlights.cuisine}</p>
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
+                            <p>${cityData.highlights.bestTime}</p>
+                        </div>
+                    </section>
+
+                    <!-- Local Cuisine -->
+                    <section id="cuisine" class="city-section">
+                        <h2><i class="fas fa-utensils me-3"></i>Local Cuisine</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-pepper-hot me-2"></i>Must-Try Dishes</h3>
+                            ${cityData.cuisine.dishes.map(dish => `
+                                <p><strong>${dish.name}:</strong> ${dish.description}</p>
+                            `).join('')}
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-map-marker-alt me-2"></i>Best Food Streets</h3>
+                            ${cityData.cuisine.foodStreets.map(street => `
+                                <p><strong>${street.name}:</strong> ${street.description}</p>
+                            `).join('')}
+                        </div>
+                    </section>
+
+                    <!-- Transportation -->
+                    <section id="transport" class="city-section">
+                        <h2><i class="fas fa-subway me-3"></i>Transportation</h2>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-plane me-2"></i>Getting There</h3>
+                            ${cityData.transportation.gettingThere.map(item => `<p>${item}</p>`).join('')}
+                        </div>
+                        <div class="city-highlight">
+                            <h3><i class="fas fa-bus me-2"></i>Getting Around</h3>
+                            ${cityData.transportation.gettingAround.map(item => `<p>${item}</p>`).join('')}
+                        </div>
+                    </section>
+
+                    <!-- Suggested Itinerary -->
+                    <section id="itinerary" class="city-section">
+                        <h2><i class="fas fa-calendar-alt me-3"></i>Suggested Itinerary</h2>
+                        ${cityData.itinerary.map(day => `
+                            <div class="city-highlight">
+                                <h3><i class="fas fa-snowflake me-2"></i>${day.day}</h3>
+                                ${day.activities.map(activity => `<p>${activity}</p>`).join('')}
+                            </div>
+                        `).join('')}
+                    </section>
+
+                    <!-- Gallery -->
+                    <section id="gallery" class="city-section">
+                        <h2><i class="fas fa-camera-retro me-3"></i>Gallery</h2>
+                        <div class="city-gallery">
+                            ${cityData.gallery.map(image => `
+                                <img src="${image}" alt="${cityData.name} gallery image" class="gallery-img">
+                            `).join('')}
+                        </div>
+                    </section>
+                    
+                    <!-- Patent Data -->
+                    <section id="patent-data" class="city-section">
+                        <h2><i class="fas fa-file-alt me-3"></i>Patent Data</h2>
+                        <div class="patent-table">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Patent Number</th>
+                                        <th>Title</th>
+                                        <th>Current Assignee</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${cityData.patents.map(patent => `
+                                        <tr>
+                                            <td>${patent.number}</td>
+                                            <td>${patent.title}</td>
+                                            <td>${patent.assignee}</td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                `;
+                
+                console.log('City data loaded successfully:', cityData.name);
+                
+            } catch (error) {
+                console.error('Error loading city data:', error);
+                document.getElementById('city-content-container').innerHTML = `
+                    <div class="error">
+                        <i class="fas fa-exclamation-triangle fa-2x"></i>
+                        <p>Error loading city data: ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', loadCityData);
+    </script>
+</body>
+</html>

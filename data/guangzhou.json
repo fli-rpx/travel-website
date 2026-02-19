@@ -1,0 +1,90 @@
+{
+  "name": "Guangzhou",
+  "title": "Guangzhou - Traveling China like your home yard",
+  "heroTitle": "Guangzhou",
+  "heroSubtitle": "The Southern Gateway to China",
+  "heroImage": "../images/user_photos/guangzhou_hero_bg.jpg",
+  "overview": "Guangzhou, the capital of Guangdong Province, is a major port city and commercial hub in southern China. As one of China's largest and most prosperous cities, Guangzhou serves as the economic powerhouse of the Pearl River Delta. The city is renowned for its modern skyline, Cantonese cuisine, and rich trading history dating back over 2,200 years.",
+  "highlights": {
+    "attractions": "Canton Tower, Chen Clan Ancestral Hall, Shamian Island, Yuexiu Park, Temple of the Six Banyan Trees",
+    "cuisine": "Dim Sum, Cantonese Roast Duck, Double-skin Milk, Rice Noodle Rolls, Clay Pot Rice",
+    "bestTime": "October to December when the weather is mild and comfortable"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Dim Sum",
+        "description": "Traditional Cantonese small plates including steamed dumplings, buns, and pastries, best enjoyed during yum cha (tea drinking)."
+      },
+      {
+        "name": "Cantonese Roast Duck",
+        "description": "Crispy-skinned duck with tender meat, seasoned with traditional Cantonese spices and roasted to perfection."
+      },
+      {
+        "name": "Double-skin Milk",
+        "description": "A delicate dessert made from milk, egg whites, and sugar, known for its smooth, custard-like texture."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Beijing Road Pedestrian Street",
+        "description": "Historic shopping street with numerous traditional Cantonese restaurants and modern eateries."
+      },
+      {
+        "name": "Shangxiajiu Pedestrian Street",
+        "description": "Famous food street offering authentic Cantonese cuisine and local snacks."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Guangzhou Baiyun International Airport (CAN) is one of China's busiest airports with extensive domestic and international flights.",
+      "By Train: Major high-speed rail hub connecting to Hong Kong, Shenzhen, Beijing, and Shanghai.",
+      "By Bus: Extensive long-distance bus network connecting to cities in Guangdong Province and neighboring regions."
+    ],
+    "gettingAround": [
+      "Metro: Guangzhou Metro is one of the world's largest metro systems, efficient and affordable.",
+      "Bus: Comprehensive public bus network covering all districts.",
+      "Water Bus: Ferry services along the Pearl River offering scenic transportation.",
+      "Taxi/Didi: Readily available throughout the city."
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Modern Guangzhou",
+      "activities": [
+        "Morning: Visit Canton Tower for panoramic city views from the observation deck.",
+        "Afternoon: Explore the Guangzhou Opera House and stroll along the Pearl River waterfront.",
+        "Evening: Enjoy a Pearl River night cruise to see the illuminated skyline."
+      ]
+    },
+    {
+      "day": "Day 2: Cultural Heritage",
+      "activities": [
+        "Morning: Visit Chen Clan Ancestral Hall to admire traditional Cantonese architecture and craftsmanship.",
+        "Afternoon: Explore Shamian Island with its colonial-era buildings and banyan-lined streets.",
+        "Evening: Experience traditional Cantonese opera at the Guangzhou Opera House."
+      ]
+    },
+    {
+      "day": "Day 3: Parks and Markets",
+      "activities": [
+        "Morning: Visit Yuexiu Park to see the Five Rams Sculpture and Zhenhai Tower.",
+        "Afternoon: Shop and dine at Beijing Road Pedestrian Street, exploring both modern and traditional areas.",
+        "Evening: Visit the Temple of the Six Banyan Trees and enjoy local street food."
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/guangzhou_1.jpg",
+    "../images/user_photos/guangzhou_2.jpg",
+    "../images/user_photos/guangzhou_3.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN110304063B",
+      "title": "Automatic lane changing method and system for vehicle and vehicle",
+      "assignee": "Guangzhou Xiaopeng Automobile Technology Co Ltd"
+    }
+  ]
+}

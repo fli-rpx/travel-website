@@ -1,0 +1,88 @@
+{
+  "name": "Wuxi",
+  "title": "Wuxi - Traveling China like your home yard",
+  "heroTitle": "Wuxi",
+  "heroSubtitle": "The Pearl of Taihu Lake",
+  "heroImage": "../images/user_photos/wuxi_hero_bg.jpg",
+  "overview": "Wuxi is an industrial city in Jiangsu Province, situated on the shores of Taihu Lake. Known as the 'Pearl of Taihu Lake,' Wuxi combines natural beauty with economic prosperity, featuring beautiful lake scenery, ancient water towns, and significant Buddhist sites.",
+  "highlights": {
+    "attractions": "Lingshan Grand Buddha, Taihu Lake, Huishan Ancient Town, Nanchang Street",
+    "cuisine": "Wuxi Spareribs, Yangcheng Lake Crab, Braised Noodles",
+    "bestTime": "Spring (March-May) for pleasant weather and blooming flowers"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Wuxi Spareribs",
+        "description": "Sweet and savory spareribs, a famous local specialty."
+      },
+      {
+        "name": "Yangcheng Lake Crab",
+        "description": "Hairy crabs from the nearby Yangcheng Lake, a seasonal delicacy."
+      },
+      {
+        "name": "Braised Noodles",
+        "description": "A savory noodle dish with various toppings."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Nanchang Street",
+        "description": "A historic street with traditional architecture, canals, and local eateries."
+      },
+      {
+        "name": "Chong'an Temple",
+        "description": "A bustling area with many restaurants and snack stalls."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Sunan Shuofang International Airport (WUX)",
+      "By Train: High-speed rail from Shanghai, Suzhou, Nanjing (0.5-2 hours)"
+    ],
+    "gettingAround": [
+      "Metro: Efficient metro system connecting key areas.",
+      "Bus: Extensive public bus network.",
+      "Boat: Boat tours on Taihu Lake and the ancient canals."
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Buddhist Wonders and Lake Views",
+      "activities": [
+        "Morning: Visit the Lingshan Grand Buddha, one of the largest Buddha statues in China.",
+        "Afternoon: Take a boat tour on Taihu Lake to see the Three Immortals Penglai Island.",
+        "Evening: Stroll along Nanchang Street and enjoy the canal-side nightlife."
+      ]
+    },
+    {
+      "day": "Day 2: Ancient Towns and Gardens",
+      "activities": [
+        "Morning: Explore Huishan Ancient Town for its traditional architecture and clay figurines.",
+        "Afternoon: Visit Jichang Garden, a classic Ming Dynasty garden.",
+        "Evening: Try Wuxi's famous sweet and savory spareribs at a local restaurant."
+      ]
+    },
+    {
+      "day": "Day 3: Cultural Exploration",
+      "activities": [
+        "Morning: Visit the Wuxi Museum to learn about the city's history and culture.",
+        "Afternoon: Explore the ancient water town of Dangkou.",
+        "Evening: Enjoy a traditional opera performance."
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/wuxi_1_optimized.jpg",
+    "../images/user_photos/wuxi_2_optimized.jpg",
+    "../images/user_photos/wuxi_3_optimized.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "WUXI INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

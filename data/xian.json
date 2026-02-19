@@ -1,0 +1,100 @@
+{
+  "name": "Xi'an",
+  "title": "Xi'an - Traveling China like your home yard",
+  "heroTitle": "Xi'an",
+  "heroSubtitle": "Ancient Capital of 13 Dynasties",
+  "heroImage": "../images/user_photos/xian_hero_bg.jpg",
+  "overview": "Xi'an, the ancient capital of China, is a city steeped in history. It served as the capital for 13 dynasties and is home to the world-famous Terracotta Army. Today, it's a bustling metropolis that has beautifully preserved its rich cultural heritage.",
+  "highlights": {
+    "attractions": "Terracotta Army, Ancient City Wall, Big Wild Goose Pagoda, Muslim Quarter",
+    "cuisine": "Roujiamo (meat burger), Yangrou Paomo (mutton soup with flatbread), Biangbiang Noodles",
+    "bestTime": "Autumn (September to November) with mild temperatures and clear skies."
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Roujiamo (meat burger)",
+        "description": "A local specialty of spiced meat stuffed in a crispy flatbread."
+      },
+      {
+        "name": "Yangrou Paomo (mutton soup with flatbread)",
+        "description": "A hearty soup with shredded flatbread and tender mutton."
+      },
+      {
+        "name": "Biangbiang Noodles",
+        "description": "Wide, hand-pulled noodles with a spicy sauce."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Muslim Quarter",
+        "description": "Famous food street with traditional halal cuisine and local snacks."
+      },
+      {
+        "name": "Yongxingfang",
+        "description": "Modern food court showcasing Xi'an's culinary heritage."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Xi'an Xianyang International Airport (XIY) with domestic and international flights.",
+      "By Train: Major high-speed rail hub connecting to Beijing, Shanghai, and other cities.",
+      "By Bus: Long-distance bus services from nearby provinces and cities."
+    ],
+    "gettingAround": [
+      "Metro: Xi'an Metro provides efficient transportation to major attractions.",
+      "Bus: Comprehensive public bus network covering all districts.",
+      "Taxi/Didi: Readily available for convenient travel.",
+      "Bike-sharing: Convenient for exploring the ancient city walls and historic areas."
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Ancient Wonders",
+      "activities": [
+        "Morning: Visit the world-famous Terracotta Army archaeological site.",
+        "Afternoon: Explore the Ancient City Wall, one of the best-preserved in China.",
+        "Evening: Stroll through the Muslim Quarter for dinner and shopping."
+      ]
+    },
+    {
+      "day": "Day 2: Cultural Heritage",
+      "activities": [
+        "Morning: Visit the Big Wild Goose Pagoda and its surrounding temple complex.",
+        "Afternoon: Explore the Shaanxi History Museum for ancient artifacts.",
+        "Evening: Enjoy traditional Tang Dynasty music and dance show."
+      ]
+    },
+    {
+      "day": "Day 3: Modern Xi'an",
+      "activities": [
+        "Morning: Visit the Xi'an Museum and Small Wild Goose Pagoda.",
+        "Afternoon: Explore modern shopping districts and local markets.",
+        "Evening: Experience Xi'an's vibrant nightlife and modern dining scene."
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/xian_1.jpg",
+    "../images/user_photos/xian_2.jpg",
+    "../images/user_photos/xian_3.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN115188837A",
+      "title": "Back contact solar cell, preparation method and cell module",
+      "assignee": "LONGi Green Energy Technology Co., Ltd."
+    },
+    {
+      "number": "CN111793785A",
+      "title": "Production method of TCO thin film and magnetron sputtering coating machine",
+      "assignee": "LONGi Green Energy Technology Co., Ltd."
+    },
+    {
+      "number": "CN112466980A",
+      "title": "Silicon carbide cell",
+      "assignee": "LONGi Green Energy Technology Co., Ltd."
+    }
+  ]
+}

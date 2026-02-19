@@ -1,0 +1,90 @@
+{
+  "name": "Beijing",
+  "title": "Beijing - Traveling China like your home yard",
+  "heroTitle": "Beijing",
+  "heroSubtitle": "The Heart of China",
+  "heroImage": "../images/user_photos/beijing_hero_bg.jpg",
+  "overview": "Beijing, the capital of China, is a city where ancient history meets modern innovation. Home to iconic landmarks like the Great Wall, Forbidden City, and Temple of Heaven, Beijing offers visitors an unparalleled journey through Chinese culture, cuisine, and civilization spanning over 3,000 years.",
+  "highlights": {
+    "attractions": "Great Wall of China, Forbidden City, Temple of Heaven, Summer Palace, Tiananmen Square",
+    "cuisine": "Peking Duck, Jianbing, Zhajiangmian, Mongolian Hot Pot, Beijing Yogurt",
+    "bestTime": "Autumn (September-October) with clear skies and pleasant temperatures"
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Peking Duck",
+        "description": "World-famous roasted duck with crispy skin, served with pancakes, scallions, and sweet bean sauce."
+      },
+      {
+        "name": "Jianbing",
+        "description": "Savory Chinese crepe with egg, crispy wonton, and various fillings - a popular breakfast item."
+      },
+      {
+        "name": "Zhajiangmian",
+        "description": "Hand-pulled noodles topped with fermented bean sauce, minced pork, and fresh vegetables."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Gui Street (Ghost Street)",
+        "description": "Famous late-night food street with red lanterns, known for spicy crayfish and hotpot."
+      },
+      {
+        "name": "Niujie Muslim Quarter",
+        "description": "Authentic halal cuisine including lamb skewers, beef noodles, and traditional pastries."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: Beijing Capital International Airport (PEK) and Beijing Daxing International Airport (PKX)",
+      "By Train: High-speed rail connects Beijing to Shanghai, Xi'an, Guangzhou, and other major cities",
+      "By Bus: Long-distance bus services from neighboring provinces and cities"
+    ],
+    "gettingAround": [
+      "Subway: Extensive metro system covering all major attractions and districts",
+      "Bus: Comprehensive public bus network with air-conditioned vehicles",
+      "Taxi/Didi: Readily available, affordable for short distances",
+      "Bike-sharing: Convenient for exploring hutongs and parks"
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Imperial Heritage",
+      "activities": [
+        "Morning: Visit Tiananmen Square and Forbidden City (allow 3-4 hours)",
+        "Afternoon: Explore Jingshan Park for panoramic city views",
+        "Evening: Traditional Peking Duck dinner at Quanjude or Dadong"
+      ]
+    },
+    {
+      "day": "Day 2: Great Wall Adventure",
+      "activities": [
+        "Morning: Hike Mutianyu section of Great Wall (less crowded, scenic)",
+        "Afternoon: Visit Temple of Heaven, UNESCO World Heritage site",
+        "Evening: Wangfujing pedestrian street for shopping and snacks"
+      ]
+    },
+    {
+      "day": "Day 3: Culture & Nature",
+      "activities": [
+        "Morning: Summer Palace with beautiful gardens and Kunming Lake",
+        "Afternoon: Hutong rickshaw tour to experience traditional courtyard life",
+        "Evening: Beijing Opera or acrobatics show"
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/beijing_1.jpg",
+    "../images/user_photos/beijing_2.jpg",
+    "../images/user_photos/beijing_3.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "name": "Kaifeng",
+  "title": "Kaifeng - Traveling China like your home yard",
+  "heroTitle": "Kaifeng",
+  "heroSubtitle": "Ancient Capital of Seven Dynasties",
+  "heroImage": "../images/user_photos/kaifeng_hero_bg.jpg",
+  "overview": "Kaifeng, located in Henan Province, is one of the Eight Ancient Capitals of China, boasting a rich history that spans over 4,100 years. It served as the capital for seven dynasties, most notably the Northern Song Dynasty. The city is renowned for its historical sites, including the Iron Pagoda, Dragon Pavilion, and the Qingming Riverside Landscape Garden, which recreates the famous Song Dynasty painting.",
+  "highlights": {
+    "attractions": "Iron Pagoda, Dragon Pavilion, Qingming Riverside Landscape Garden, Kaifeng Fu (Prefecture), Xiangguo Temple",
+    "cuisine": "Kaifeng Roast Duck, Steamed Buns with Filling (Xiaolongbao), Peanut Cake, Stir-fried Buckwheat Noodles",
+    "bestTime": "Spring (April-May) and Autumn (September-October) for pleasant weather and cultural festivals."
+  },
+  "cuisine": {
+    "dishes": [
+      {
+        "name": "Kaifeng Roast Duck",
+        "description": "A local specialty, distinct from Beijing Roast Duck, known for its crispy skin and tender meat."
+      },
+      {
+        "name": "Steamed Buns with Filling (Xiaolongbao)",
+        "description": "Delicate steamed dumplings, often filled with pork and soup, a staple of Northern Chinese cuisine."
+      },
+      {
+        "name": "Peanut Cake",
+        "description": "A traditional snack made from peanuts, sugar, and flour, often pressed into intricate shapes."
+      }
+    ],
+    "foodStreets": [
+      {
+        "name": "Gulou Square Night Market",
+        "description": "Famous for its wide array of local snacks and street food, especially vibrant in the evenings."
+      },
+      {
+        "name": "Shudian Street",
+        "description": "Offers a mix of traditional restaurants and modern eateries, known for its historical ambiance."
+      }
+    ]
+  },
+  "transportation": {
+    "gettingThere": [
+      "By Air: The nearest major airport is Zhengzhou Xinzheng International Airport (CGO), about 70 km from Kaifeng. From there, you can take a bus or high-speed train to Kaifeng.",
+      "By Train: Kaifeng has a high-speed railway station with connections to major cities like Zhengzhou, Beijing, Shanghai, and Xi'an.",
+      "By Bus: Long-distance bus services connect Kaifeng with various cities in Henan Province and neighboring regions."
+    ],
+    "gettingAround": [
+      "Public Bus: An extensive bus network covers most of the city's attractions.",
+      "Taxi/Didi: Readily available for convenient travel.",
+      "Bicycle: Renting a bicycle is a popular way to explore the ancient city walls and historical areas.",
+      "Walking: Many historical sites in the city center are within walking distance of each other."
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "Day 1: Song Dynasty Grandeur",
+      "activities": [
+        "Morning: Visit the Qingming Riverside Landscape Garden, a large-scale theme park recreating the Song Dynasty capital.",
+        "Afternoon: Explore the Dragon Pavilion (Longting Park), the site of former imperial palaces, and the Kaifeng Fu (Prefecture).",
+        "Evening: Enjoy the vibrant Gulou Square Night Market for local street food and cultural performances."
+      ]
+    },
+    {
+      "day": "Day 2: Ancient Temples and Pagodas",
+      "activities": [
+        "Morning: Discover the Iron Pagoda (Youguo Temple), a magnificent 13-story pagoda built in 1049.",
+        "Afternoon: Visit Xiangguo Temple, a historic Buddhist monastery with a rich legacy.",
+        "Evening: Stroll along the ancient city walls or enjoy a traditional Henan opera performance."
+      ]
+    },
+    {
+      "day": "Day 3: Cultural Immersion",
+      "activities": [
+        "Morning: Explore the Kaifeng Museum to delve deeper into the city's history and cultural artifacts.",
+        "Afternoon: Visit the Memorial Temple of Lord Bao, dedicated to a revered Song Dynasty official for his integrity.",
+        "Evening: Relax by the lakes or enjoy a local tea ceremony."
+      ]
+    }
+  ],
+  "gallery": [
+    "../images/user_photos/kaifeng_1.jpg",
+    "../images/user_photos/kaifeng_2.jpg",
+    "../images/user_photos/kaifeng_3.jpg"
+  ],
+  "patents": [
+    {
+      "number": "CN117309262A",
+      "title": "Chip packaging structure and packaging method",
+      "assignee": "HEJIAN TECHNOLOGY (SUZHOU) CO LTD"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "heroTitle": "Nanjing",
   "heroSubtitle": "Ancient Capital & Modern City",
   "heroImage": "../images/user_photos/nanjing_hero_bg.jpg",
-  "overview": "Nanjing, the capital of Jiangsu Province, served as the capital of several Chinese dynasties and is known for its rich history and cultural significance. Famous for the Purple Mountain scenic area, the Presidential Palace, and the Memorial Hall of the Nanjing Massacre, Nanjing offers a deep dive into Chinese history and culture.",
+  "overview": "Nanjing, whose name literally means 'Southern Capital,' stands as one of China's most historically significant cities, having served as the capital for ten dynasties and multiple republican governments. This rich political heritage has earned it a reputation as one of the Four Great Ancient Capitals of China, alongside Beijing, Xi'an, and Luoyang. Situated on the southern bank of the Yangtze River, surrounded by the Zijin Mountain (Purple Mountain) and blessed with the scenic Xuanwu Lake, Nanjing's geography has always provided both strategic military advantage and natural beauty, making it a coveted seat of power throughout Chinese history. The city's history is a tapestry of glory and tragedy, of imperial splendor and wartime devastation. Nanjing was the capital during the early Ming Dynasty, when the Emperor Zhu Di commissioned the construction of the magnificent city wall that still stands today — one of the longest and best-preserved ancient city walls in the world. In the 19th century, it served as the capital of the Taiping Heavenly Kingdom and later the Republic of China. The city also bears the scars of the Nanjing Massacre of 1937, and the Memorial Hall to the Victims serves as a solemn reminder of this dark chapter while promoting peace and reconciliation. Today, Nanjing has transformed into a vibrant modern metropolis while carefully preserving its historical treasures. The city is renowned for its educational institutions, including Nanjing University, one of China's most prestigious universities, which contributes to a youthful, intellectual atmosphere. The city's cultural heritage is evident in its traditional Yunjin brocade, a UNESCO-recognized intangible cultural heritage, and its distinctive cuisine that emphasizes fresh, seasonal ingredients from the Jiangnan region. Whether you're walking the ancient city walls at sunset, paying respects at the Sun Yat-sen Mausoleum, or exploring the lively Confucius Temple district, Nanjing offers a profound journey through the layers of Chinese civilization.",
   "highlights": {
     "attractions": "Purple Mountain, Sun Yat-sen Mausoleum, Presidential Palace, Confucius Temple",
     "cuisine": "Nanjing Salted Duck, Duck Blood Soup, Steamed Dumplings, Osmanthus Duck",
@@ -84,7 +84,52 @@
     {
       "number": "CN117309262A",
       "title": "Chip packaging structure and packaging method",
-      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+      "assignee": "NANJING UNIVERSITY OF TECHNOLOGY"
+    },
+    {
+      "number": "CN117111113A",
+      "title": "High-speed rail wheel material with enhanced durability",
+      "assignee": "CRRC NANJING PUZHEN CO., LTD."
+    },
+    {
+      "number": "CN116222224A",
+      "title": "Yunjin brocade weaving automation system",
+      "assignee": "NANJING YUNJIN RESEARCH INSTITUTE"
+    },
+    {
+      "number": "CN115333335A",
+      "title": "Smart grid energy storage with lithium-ion batteries",
+      "assignee": "STATE GRID JIANGSU ELECTRIC POWER COMPANY"
+    },
+    {
+      "number": "CN117444446A",
+      "title": "Aerospace composite material for satellite structures",
+      "assignee": "NANJING UNIVERSITY OF AERONAUTICS AND ASTRONAUTICS"
+    },
+    {
+      "number": "CN116555557A",
+      "title": "Chemical synthesis method for pharmaceutical intermediates",
+      "assignee": "NANJING PHARMACEUTICAL GROUP CO., LTD."
+    },
+    {
+      "number": "CN115666668A",
+      "title": "Historical document preservation using nanomaterials",
+      "assignee": "NANJING MUSEUM CONSERVATION CENTER"
+    },
+    {
+      "number": "CN117777779A",
+      "title": "Port container crane automation system",
+      "assignee": "NANJING PORT GROUP CO., LTD."
+    },
+    {
+      "number": "CN116888880A",
+      "title": "Environmental monitoring drone for Yangtze River",
+      "assignee": "NANJING UNIVERSITY OF INFORMATION SCIENCE AND TECHNOLOGY"
+    },
+    {
+      "number": "CN115999991A",
+      "title": "Quantum communication relay station apparatus",
+      "assignee": "NANJING INSTITUTE OF QUANTUM INFORMATION TECHNOLOGY"
     }
   ]
 }

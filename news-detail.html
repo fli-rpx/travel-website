@@ -135,7 +135,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html" style="color: var(--primary);">
+            <a class="navbar-brand fw-bold" href="index.html" style="color: var(--primary);">
                 <i class="fas fa-globe-americas me-2"></i>Traveling China
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -143,12 +143,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#destinations">Destinations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#blog">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -157,7 +157,7 @@
     <!-- News Detail Hero -->
     <section class="news-detail-hero">
         <div class="container">
-            <a href="../index.html#news" class="back-btn">
+            <a href="index.html#news" class="back-btn">
                 <i class="fas fa-arrow-left"></i>
                 <span>Back to News</span>
             </a>
@@ -218,7 +218,10 @@
             }
             
             try {
-                const response = await fetch('../data/travel_news.json');
+                const response = await fetch('data/travel_news.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load: ' + response.status);
+                }
                 const data = await response.json();
                 
                 const newsItem = data.news.find(item => item.id === newsId);

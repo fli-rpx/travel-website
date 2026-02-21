@@ -67,7 +67,8 @@
       "Panxi Restaurant",
       "Lianxianglou",
       "Taotaoju"
-    ]
+    ],
+    "food_icon": "https://kimi-web-img.moonshot.cn/img/global.gcdn.top/a2fc4a87a659bd32ba3a8668ff07b656abdedf08.png"
   },
   "transportation": {
     "gettingThere": [

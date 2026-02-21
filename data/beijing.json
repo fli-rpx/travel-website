@@ -68,7 +68,8 @@
         "name": "Niujie Muslim Quarter",
         "description": "Authentic halal cuisine including lamb skewers, beef noodles, and traditional pastries."
       }
-    ]
+    ],
+    "food_icon": "https://kimi-web-img.moonshot.cn/img/media.istockphoto.com/f85a35c490a0365984f5cae797a7b97baf1c12d9.jpg"
   },
   "transportation": {
     "gettingThere": [

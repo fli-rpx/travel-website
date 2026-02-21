@@ -72,8 +72,8 @@ function renderCityContent(cityData, cityId) {
     const heroSection = document.getElementById('city-hero');
     heroSection.style.setProperty('--hero-image', `url('${city.heroImage}')`);
 
-    // Get food icon for this city
-    const foodIcon = foodIcons[cityId] || '';
+    // Get food icon for this city - use from JSON if available, otherwise fallback to mapping
+    const foodIcon = city.cuisine?.food_icon || foodIcons[cityId] || '';
     const foodIconHtml = foodIcon ? `<img src="${foodIcon}" alt="${city.name} food" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover; margin-right: 8px; vertical-align: middle;">` : '<i class="fas fa-star me-2"></i>';
 
     // Generate content HTML

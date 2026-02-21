@@ -3,10 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>China Travel Guide - Working Carousel</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>China Travel Guide - Explore 28+ Amazing Chinese Cities</title>
+    <meta name="description" content="Discover China's most fascinating cities with our comprehensive travel guide. Explore Beijing, Shanghai, Xi'an, Chengdu and 24+ more destinations with detailed itineraries, local cuisine guides, and travel tips.">
+    <meta name="keywords" content="China travel, Chinese cities, Beijing, Shanghai, Xi'an, Chengdu, travel guide, China tourism">
+    <meta name="author" content="Traveling China">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="China Travel Guide - Explore 28+ Amazing Chinese Cities">
+    <meta property="og:description" content="Discover China's most fascinating cities with our comprehensive travel guide. Explore Beijing, Shanghai, Xi'an, Chengdu and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fli-rpx.github.io/travel-website/">
+    <meta property="og:image" content="images/hero-bg.jpg">
+    <meta property="og:site_name" content="Traveling China">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="China Travel Guide - Explore 28+ Amazing Chinese Cities">
+    <meta name="twitter:description" content="Discover China's most fascinating cities with our comprehensive travel guide.">
+    <meta name="twitter:image" content="images/hero-bg.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fli-rpx.github.io/travel-website/">
+    
     <!-- Version: 1770601828 -->
     <style>
         /* RESET AND BASICS */
@@ -3167,6 +3191,37 @@
         
         console.log('✅ Testimonials slider and newsletter form initialized');
     });
+    </script>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Traveling China",
+        "description": "Comprehensive travel guide for exploring Chinese cities",
+        "url": "https://fli-rpx.github.io/travel-website/",
+        "logo": "https://fli-rpx.github.io/travel-website/images/logo.png",
+        "sameAs": [
+            "https://weibo.com/travelingchina",
+            "https://instagram.com/travelingchina"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "CN"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "China City Tours",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "TouristAttraction", "name": "Beijing Tour"}},
+                {"@type": "Offer", "itemOffered": {"@type": "TouristAttraction", "name": "Shanghai Tour"}},
+                {"@type": "Offer", "itemOffered": {"@type": "TouristAttraction", "name": "Xi'an Tour"}},
+                {"@type": "Offer", "itemOffered": {"@type": "TouristAttraction", "name": "Chengdu Tour"}},
+                {"@type": "Offer", "itemOffered": {"@type": "TouristAttraction", "name": "Guilin Tour"}}
+            ]
+        }
+    }
     </script>
 </body>
 </html>

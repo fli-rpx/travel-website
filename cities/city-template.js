@@ -110,8 +110,8 @@ function renderCityContent(cityData, cityId) {
         <section id="gallery" class="city-section">
             <h2><i class="fas fa-camera-retro me-3"></i>Gallery</h2>
             <div class="city-gallery">
-                ${city.gallery.map(image => `
-                    <img src="${image}" alt="${city.name} view" class="gallery-img">
+                ${city.gallery.map((image, index) => `
+                    <img src="${image}" alt="${city.name} view ${index + 1}" class="gallery-img" loading="lazy">
                 `).join('')}
             </div>
         </section>

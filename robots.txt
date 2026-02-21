@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://fli-rpx.github.io/travel-website/sitemap.xml
+
+# Disallow admin and utility pages
+Disallow: /change_history/
+Disallow: /data/
+Disallow: /*.py$
+Disallow: /debug_*.html
+Disallow: /test_*.html
+Disallow: /preview_*.html
+Disallow: /nuclear_*.html
+Disallow: /clean_from_scratch.html
+Disallow: /final_diagnostic.html
+Disallow: /minimal_test.html
+
+# Allow main content
+Allow: /index.html
+Allow: /cities/
+Allow: /images/
+Allow: /style.css
+Allow: /cities/city-template.html

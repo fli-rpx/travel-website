@@ -706,29 +706,62 @@
         <div class="container">
             <h2 class="section-title">Latest Travel News</h2>
             <div id="news-grid" class="news-grid">
-                <div class="news-card">
-                    <div class="news-date">Feb 21, 2026</div>
-                    <h3 class="news-title">New Airport Opens in Southwest China</h3>
-                    <p class="news-excerpt">Chengdu Tianfu International Airport opens with direct flights to Europe, America, and Asia, easing access to Sichuan and Yunnan.</p>
-                    <a href="#" class="news-link">Read more →</a>
-                </div>
-                
-                <div class="news-card">
-                    <div class="news-date">Feb 20, 2026</div>
-                    <h3 class="news-title">China Launches 'Night Tourism' Initiative</h3>
-                    <p class="news-excerpt">Extended hours at major attractions, night markets, and cultural performances aim to boost evening tourism economy.</p>
-                    <a href="#" class="news-link">Read more →</a>
-                </div>
-                
-                <div class="news-card">
-                    <div class="news-date">Feb 19, 2026</div>
-                    <h3 class="news-title">Eco-Tourism Booms in Rural China</h3>
-                    <p class="news-excerpt">Sustainable travel options expand with new eco-lodges, farm stays, and conservation programs in picturesque villages.</p>
-                    <a href="#" class="news-link">Read more →</a>
-                </div>
+                <!-- News will be loaded dynamically -->
             </div>
         </div>
     </section>
+    
+    <script>
+    // Load travel news from JSON
+    async function loadTravelNews() {
+        try {
+            const response = await fetch('data/travel_news.json');
+            const data = await response.json();
+            
+            const newsGrid = document.getElementById('news-grid');
+            if (!newsGrid) return;
+            
+            // Take first 3 news items
+            const newsItems = data.news.slice(0, 3);
+            
+            newsGrid.innerHTML = newsItems.map(item => `
+                <div class="news-card">
+                    <div class="news-date">${item.date}</div>
+                    <h3 class="news-title">${item.title}</h3>
+                    <p class="news-excerpt">${item.excerpt}</p>
+                    <a href="news-detail.html?id=${item.id}" class="news-link">Read more →</a>
+                </div>
+            `).join('');
+            
+        } catch (error) {
+            console.error('Error loading news:', error);
+            // Fallback static content
+            document.getElementById('news-grid').innerHTML = `
+                <div class="news-card">
+                    <div class="news-date">Feb 21, 2026</div>
+                    <h3 class="news-title">China Expands Visa-Free Transit to 240 Hours</h3>
+                    <p class="news-excerpt">Foreign travelers can now enjoy visa-free stays up to 10 days in 60+ cities across China.</p>
+                    <a href="news-detail.html?id=news-001" class="news-link">Read more →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">Feb 20, 2026</div>
+                    <h3 class="news-title">New Direct Flights Connect US and China</h3>
+                    <p class="news-excerpt">Major airlines announce new direct routes between Los Angeles, New York and Beijing, Shanghai.</p>
+                    <a href="news-detail.html?id=news-002" class="news-link">Read more →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">Feb 19, 2026</div>
+                    <h3 class="news-title">Spring Festival Travel Sets New Records</h3>
+                    <p class="news-excerpt">Over 9 billion trips made during Chinese New Year 2026, with tourism revenue up 15%.</p>
+                    <a href="news-detail.html?id=news-003" class="news-link">Read more →</a>
+                </div>
+            `;
+        }
+    }
+    
+    // Load news when page loads
+    document.addEventListener('DOMContentLoaded', loadTravelNews);
+    </script>
     
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact-section">

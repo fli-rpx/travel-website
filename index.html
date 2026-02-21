@@ -701,16 +701,30 @@
         </div>
     </section>
     
-    <!-- NEWS SECTION -->
+        <!-- NEWS SECTION -->
     <section id="news" class="news-section">
         <div class="container">
             <h2 class="section-title">Latest Travel News</h2>
             <div id="news-grid" class="news-grid">
-                <!-- News will be loaded dynamically from travel_news.json -->
                 <div class="news-card">
-                    <div class="news-date">Loading...</div>
-                    <h3 class="news-title">Loading news...</h3>
-                    <p class="news-excerpt">Please wait while we fetch the latest travel updates.</p>
+                    <div class="news-date">Feb 21, 2026</div>
+                    <h3 class="news-title">New Airport Opens in Southwest China</h3>
+                    <p class="news-excerpt">Chengdu Tianfu International Airport opens with direct flights to Europe, America, and Asia, easing access to Sichuan and Yunnan.</p>
+                    <a href="#" class="news-link">Read more →</a>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-date">Feb 20, 2026</div>
+                    <h3 class="news-title">China Launches 'Night Tourism' Initiative</h3>
+                    <p class="news-excerpt">Extended hours at major attractions, night markets, and cultural performances aim to boost evening tourism economy.</p>
+                    <a href="#" class="news-link">Read more →</a>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-date">Feb 19, 2026</div>
+                    <h3 class="news-title">Eco-Tourism Booms in Rural China</h3>
+                    <p class="news-excerpt">Sustainable travel options expand with new eco-lodges, farm stays, and conservation programs in picturesque villages.</p>
+                    <a href="#" class="news-link">Read more →</a>
                 </div>
             </div>
         </div>
@@ -1363,66 +1377,6 @@
             ]
         }
     }
-    // Load Travel News dynamically
-    async function loadTravelNews() {
-        try {
-            const response = await fetch('data/travel_news.json?v=' + new Date().getTime());
-            if (!response.ok) {
-                throw new Error('Failed to fetch: ' + response.status);
-            }
-            const data = await response.json();
-            
-            const newsGrid = document.getElementById('news-grid');
-            if (!newsGrid) return;
-            
-            // Clear loading message
-            newsGrid.innerHTML = '';
-            
-            // Render news cards
-            data.news.forEach(item => {
-                const newsCard = document.createElement('div');
-                newsCard.className = 'news-card';
-                newsCard.innerHTML = `
-                    <div class="news-date">${item.date}</div>
-                    <h3 class="news-title">${item.title}</h3>
-                    <p class="news-excerpt">${item.excerpt}</p>
-                    <a href="${item.link}" class="news-link">Read more →</a>
-                `;
-                newsGrid.appendChild(newsCard);
-            });
-            
-            console.log('✅ Travel news loaded successfully');
-        } catch (error) {
-            console.error('Error loading travel news:', error);
-            // Show fallback content
-            const newsGrid = document.getElementById('news-grid');
-            if (newsGrid) {
-                newsGrid.innerHTML = `
-                    <div class="news-card">
-                        <div class="news-date">Feb 21, 2026</div>
-                        <h3 class="news-title">New Airport Opens in Southwest China</h3>
-                        <p class="news-excerpt">Chengdu Tianfu International Airport opens with direct flights to Europe, America, and Asia.</p>
-                        <a href="#" class="news-link">Read more →</a>
-                    </div>
-                    <div class="news-card">
-                        <div class="news-date">Feb 20, 2026</div>
-                        <h3 class="news-title">China Launches 'Night Tourism' Initiative</h3>
-                        <p class="news-excerpt">Extended hours at major attractions, night markets, and cultural performances.</p>
-                        <a href="#" class="news-link">Read more →</a>
-                    </div>
-                    <div class="news-card">
-                        <div class="news-date">Feb 19, 2026</div>
-                        <h3 class="news-title">Eco-Tourism Booms in Rural China</h3>
-                        <p class="news-excerpt">Sustainable travel options expand with new eco-lodges and farm stays.</p>
-                        <a href="#" class="news-link">Read more →</a>
-                    </div>
-                `;
-            }
-        }
-    }
-    
-    // Load news when page loads
-    document.addEventListener('DOMContentLoaded', loadTravelNews);
     </script>
 </body>
 </html>

@@ -2987,16 +2987,34 @@
     <script>
     // City data - in a real app, this would come from a database or API
     const cities = [
-        { name: "Beijing", description: "Capital city of China with rich history", page: "cities/beijing.html" },
-        { name: "Shanghai", description: "Modern metropolis and financial center", page: "cities/shanghai.html" },
-        { name: "Kaifeng", description: "Ancient capital of seven dynasties", page: "cities/kaifeng.html" },
-        { name: "Xiamen", description: "Coastal city with beautiful beaches", page: "cities/xiamen.html" },
-        { name: "Chengdu", description: "Home of pandas and spicy cuisine", page: "cities/chengdu.html" },
-        { name: "Xi'an", description: "Ancient capital with Terracotta Army", page: "cities/xian.html" },
-        { name: "Guilin", description: "Famous for stunning karst landscapes", page: "cities/guilin.html" },
-        { name: "Hangzhou", description: "Beautiful West Lake and tea plantations", page: "cities/hangzhou.html" },
-        { name: "Suzhou", description: "Classical gardens and canals", page: "cities/suzhou.html" },
-        { name: "Lhasa", description: "Capital of Tibet with rich culture", page: "cities/lhasa.html" }
+        { name: "Beijing", description: "Capital city with rich history and iconic landmarks", page: "cities/city-template.html?city=beijing" },
+        { name: "Shanghai", description: "Modern metropolis and financial center", page: "cities/city-template.html?city=shanghai" },
+        { name: "Guangzhou", description: "Southern gateway with Cantonese culture", page: "cities/city-template.html?city=guangzhou" },
+        { name: "Shenzhen", description: "Tech hub and modern coastal city", page: "cities/city-template.html?city=shenzhen" },
+        { name: "Chengdu", description: "Home of pandas and spicy Sichuan cuisine", page: "cities/city-template.html?city=chengdu" },
+        { name: "Hangzhou", description: "Beautiful West Lake and tea plantations", page: "cities/city-template.html?city=hangzhou" },
+        { name: "Wuhan", description: "Central China hub on the Yangtze River", page: "cities/city-template.html?city=wuhan" },
+        { name: "Xi'an", description: "Ancient capital with Terracotta Army", page: "cities/city-template.html?city=xian" },
+        { name: "Nanjing", description: "Historic capital with rich cultural heritage", page: "cities/city-template.html?city=nanjing" },
+        { name: "Chongqing", description: "Mountain city with spicy hot pot", page: "cities/city-template.html?city=chongqing" },
+        { name: "Tianjin", description: "Port city with colonial architecture", page: "cities/city-template.html?city=tianjin" },
+        { name: "Suzhou", description: "Classical gardens and silk production", page: "cities/city-template.html?city=suzhou" },
+        { name: "Qingdao", description: "Coastal city with German heritage and beer", page: "cities/city-template.html?city=qingdao" },
+        { name: "Harbin", description: "Ice city with Russian architecture", page: "cities/city-template.html?city=harbin" },
+        { name: "Hong Kong", description: "International financial hub", page: "cities/city-template.html?city=hongkong" },
+        { name: "Kunming", description: "Spring city with diverse ethnic culture", page: "cities/city-template.html?city=kunming" },
+        { name: "Xiamen", description: "Coastal garden city with Gulangyu Island", page: "cities/city-template.html?city=xiamen" },
+        { name: "Dali", description: "Ancient town by Erhai Lake with Bai culture", page: "cities/city-template.html?city=dali" },
+        { name: "Datong", description: "Ancient capital with Buddhist grottoes", page: "cities/city-template.html?city=datong" },
+        { name: "Guilin", description: "Famous for stunning karst landscapes", page: "cities/city-template.html?city=guilin" },
+        { name: "Guiyang", description: "Mountain city with big data industry", page: "cities/city-template.html?city=guiyang" },
+        { name: "Jinan", description: "City of springs with rich history", page: "cities/city-template.html?city=jinan" },
+        { name: "Kaifeng", description: "Ancient capital of seven dynasties", page: "cities/city-template.html?city=kaifeng" },
+        { name: "Kashi", description: "Silk Road hub with Uyghur culture", page: "cities/city-template.html?city=kashi" },
+        { name: "Linyi", description: "Logistics hub with ancient history", page: "cities/city-template.html?city=linyi" },
+        { name: "Taiyuan", description: "Capital of Shanxi with coal industry", page: "cities/city-template.html?city=taiyuan" },
+        { name: "Urumqi", description: "Gateway to Xinjiang and Central Asia", page: "cities/city-template.html?city=urumqi" },
+        { name: "Wuxi", description: "Lake Tai city with silk and industry", page: "cities/city-template.html?city=wuxi" }
     ];
     
     // Initialize search functionality

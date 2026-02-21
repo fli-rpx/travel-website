@@ -143,6 +143,40 @@ function renderCityContent(cityData, cityId) {
     `;
 
     document.getElementById('city-content').innerHTML = contentHTML;
+    
+    // Update breadcrumb with city name
+    document.getElementById('breadcrumb-city-name').textContent = city.name;
+    
+    // Update prev/next navigation
+    updatePrevNextNavigation(cityId);
+}
+
+// Update previous/next city navigation
+function updatePrevNextNavigation(currentCityId) {
+    const currentIndex = availableCities.findIndex(city => city.id === currentCityId);
+    if (currentIndex === -1) return;
+    
+    const prevCity = currentIndex > 0 ? availableCities[currentIndex - 1] : null;
+    const nextCity = currentIndex < availableCities.length - 1 ? availableCities[currentIndex + 1] : null;
+    
+    const prevLink = document.getElementById('prev-city');
+    const nextLink = document.getElementById('next-city');
+    
+    if (prevCity) {
+        prevLink.href = `city-template.html?city=${prevCity.id}`;
+        prevLink.innerHTML = `<i class="fas fa-arrow-left"></i><span>${prevCity.name}</span>`;
+        prevLink.style.visibility = 'visible';
+    } else {
+        prevLink.style.visibility = 'hidden';
+    }
+    
+    if (nextCity) {
+        nextLink.href = `city-template.html?city=${nextCity.id}`;
+        nextLink.innerHTML = `<span>${nextCity.name}</span><i class="fas fa-arrow-right"></i>`;
+        nextLink.style.visibility = 'visible';
+    } else {
+        nextLink.style.visibility = 'hidden';
+    }
 }
 
 // List of available cities

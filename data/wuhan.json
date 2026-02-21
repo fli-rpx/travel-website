@@ -34,6 +34,39 @@
         "name": "Jiqing Street",
         "description": "Popular night market area with street food and local cuisine."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Hot Dry Noodles (热干面)",
+        "description": "Sesame paste noodles, Wuhan's signature breakfast"
+      },
+      {
+        "name": "Wuchang Fish (武昌鱼)",
+        "description": "Steamed fish with chili and fermented black beans"
+      },
+      {
+        "name": "Doupi (豆皮)",
+        "description": "Pan-fried bean skin with sticky rice and pork"
+      },
+      {
+        "name": "Mian Wo (面窝)",
+        "description": "Crispy fried dough with scallions"
+      },
+      {
+        "name": "Jingwu Duck (精武鸭脖)",
+        "description": "Spicy braised duck neck"
+      }
+    ],
+    "street_food": [
+      "Hot Dry Noodles",
+      "Xiaolongbao",
+      "Fried Dumplings",
+      "Rice Wine"
+    ],
+    "famous_restaurants": [
+      "Cai Lin Ji",
+      "Lao Tong Cheng",
+      "Xiao Tao Yuan"
     ]
   },
   "transportation": {

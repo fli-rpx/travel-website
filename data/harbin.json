@@ -1,4 +1,3 @@
-
 {
   "name": "Harbin",
   "title": "Harbin - Traveling China like your home yard",
@@ -43,6 +42,39 @@
         "name": "Harbin Beer Street",
         "description": "Local beer culture with food stalls and traditional snacks."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Guo Bao Rou (锅包肉)",
+        "description": "Sweet and sour crispy pork slices"
+      },
+      {
+        "name": "Harbin Sausage (哈尔滨红肠)",
+        "description": "Smoked Russian-style sausage"
+      },
+      {
+        "name": "Stewed Chicken with Mushrooms (小鸡炖蘑菇)",
+        "description": "Hearty chicken stew with wild mushrooms"
+      },
+      {
+        "name": "Braised Pork with Vermicelli (猪肉炖粉条)",
+        "description": "Pork belly with glass noodles"
+      },
+      {
+        "name": "Russian Bread (大列巴)",
+        "description": "Large dense rye bread"
+      }
+    ],
+    "street_food": [
+      "Grilled Cold Noodles",
+      "Sugar Gourd",
+      "Ice Cream",
+      "Sausage"
+    ],
+    "famous_restaurants": [
+      "Lao Chang Chun",
+      "Hua Mei",
+      "Da Lie Ba"
     ]
   },
   "transportation": {

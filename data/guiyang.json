@@ -34,6 +34,39 @@
         "name": "Qingyan Ancient Town",
         "description": "Traditional food street in the historic town with local specialties."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Sour Soup Fish (酸汤鱼)",
+        "description": "Fish in sour tomato-based soup"
+      },
+      {
+        "name": "Siwawa (丝娃娃)",
+        "description": "Vegetable wraps with spicy dipping sauce"
+      },
+      {
+        "name": "Changwang Noodles (肠旺面)",
+        "description": "Noodles with pork intestines and blood"
+      },
+      {
+        "name": "La Rou (腊肉)",
+        "description": "Smoked and cured pork"
+      },
+      {
+        "name": "Spicy Chicken (辣子鸡)",
+        "description": "Fried chicken with chili and Sichuan pepper"
+      }
+    ],
+    "street_food": [
+      "Siwawa",
+      "Tofu Balls",
+      "Rice Tofu",
+      "Grilled Tofu"
+    ],
+    "famous_restaurants": [
+      "Lao Kai Li",
+      "Yang Ming Can",
+      "He Ji"
     ]
   },
   "transportation": {

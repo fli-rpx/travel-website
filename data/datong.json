@@ -34,6 +34,39 @@
         "name": "Yungang Grottoes Area",
         "description": "Local restaurants serving authentic Datong dishes near the famous grottoes."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Datong Knife-Cut Noodles (大同刀削面)",
+        "description": "Hand-cut noodles with savory sauce"
+      },
+      {
+        "name": "Stuffed Duck (大同扒肉条)",
+        "description": "Braised pork belly slices"
+      },
+      {
+        "name": "Fried Dough Twists (大同麻花)",
+        "description": "Crispy twisted fried dough"
+      },
+      {
+        "name": "Sour Porridge (酸粥)",
+        "description": "Fermented millet porridge"
+      },
+      {
+        "name": "Yanggao Apricot (阳高杏脯)",
+        "description": "Dried apricots from Yanggao county"
+      }
+    ],
+    "street_food": [
+      "Knife-Cut Noodles",
+      "Fried Dough",
+      "Apricots",
+      "Sour Porridge"
+    ],
+    "famous_restaurants": [
+      "Liu Yuan",
+      "Hua Mei",
+      "De Yi Ju"
     ]
   },
   "transportation": {

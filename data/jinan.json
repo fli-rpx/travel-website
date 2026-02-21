@@ -34,6 +34,39 @@
         "name": "Quancheng Road",
         "description": "Popular dining area with restaurants serving local specialties."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Sweet and Sour Carp (糖醋鲤鱼)",
+        "description": "Yellow River carp in sweet and sour sauce"
+      },
+      {
+        "name": "Braised Intestines (九转大肠)",
+        "description": "Pork intestines braised with spices"
+      },
+      {
+        "name": "Jinan Dumplings (济南饺子)",
+        "description": "Handmade dumplings with various fillings"
+      },
+      {
+        "name": "Oil Spinach (油旋)",
+        "description": "Layered flaky scallion bread"
+      },
+      {
+        "name": "Yellow River Carp (黄河鲤鱼)",
+        "description": "Fresh carp from the Yellow River"
+      }
+    ],
+    "street_food": [
+      "Oil Spinach",
+      "Sweet Foam",
+      "Roujiamo",
+      "Tofu Jelly"
+    ],
+    "famous_restaurants": [
+      "De Xing She",
+      "Yan Xi",
+      "Ju Feng De"
     ]
   },
   "transportation": {

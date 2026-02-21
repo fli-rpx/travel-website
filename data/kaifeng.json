@@ -34,6 +34,39 @@
         "name": "Shudian Street",
         "description": "Offers a mix of traditional restaurants and modern eateries, known for its historical ambiance."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Kaifeng Dumplings (开封灌汤包)",
+        "description": "Soup-filled dumplings with pork filling"
+      },
+      {
+        "name": "Peanut Cake (花生糕)",
+        "description": "Crispy peanut candy"
+      },
+      {
+        "name": "Almond Tea (杏仁茶)",
+        "description": "Sweet almond-flavored drink"
+      },
+      {
+        "name": "Bucket Chicken (桶子鸡)",
+        "description": "Braised chicken in special sauce"
+      },
+      {
+        "name": "Sweet Potato Noodles (红薯面条)",
+        "description": "Noodles made from sweet potato starch"
+      }
+    ],
+    "street_food": [
+      "Dumplings",
+      "Peanut Cake",
+      "Almond Tea",
+      "Rice Cakes"
+    ],
+    "famous_restaurants": [
+      "Di Yi Lou",
+      "Xiao Song Cheng",
+      "Lao Bian Jiao Zi"
     ]
   },
   "transportation": {

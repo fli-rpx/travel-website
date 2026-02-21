@@ -34,6 +34,40 @@
         "name": "Night Market Area",
         "description": "Popular night market with street food and ethnic cuisine."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Pilaf (抓饭)",
+        "description": "Uyghur rice with lamb, carrots, and raisins"
+      },
+      {
+        "name": "Lamb Kebabs (烤羊肉串)",
+        "description": "Spicy grilled lamb skewers"
+      },
+      {
+        "name": "Hui BanMian (新疆拌面)",
+        "description": "Xinjiang-style hand-pulled noodles"
+      },
+      {
+        "name": "Naan (馕)",
+        "description": "Traditional Uyghur bread"
+      },
+      {
+        "name": "Roasted Whole Lamb (烤全羊)",
+        "description": "Whole lamb roasted over open fire"
+      }
+    ],
+    "street_food": [
+      "Kebabs",
+      "Naan",
+      "Yogurt",
+      "Melons",
+      "Pilaf"
+    ],
+    "famous_restaurants": [
+      "Hai Li",
+      "Mi Ji Ti",
+      "A Yi Lai"
     ]
   },
   "transportation": {

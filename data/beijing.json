@@ -11,6 +11,40 @@
     "bestTime": "Autumn (September-October) with clear skies and pleasant temperatures"
   },
   "cuisine": {
+    "signature_dishes": [
+      {
+        "name": "Peking Duck (北京烤鸭)",
+        "description": "Crispy skin duck served with thin pancakes, hoisin sauce, and scallions"
+      },
+      {
+        "name": "Zhajiangmian (炸酱面)",
+        "description": "Noodles with fermented soybean paste, vegetables, and minced pork"
+      },
+      {
+        "name": "Jianbing (煎饼)",
+        "description": "Crispy breakfast crepe with egg, cilantro, and crunchy cracker"
+      },
+      {
+        "name": "Chuan'r (串儿)",
+        "description": "Grilled lamb skewers with cumin and chili"
+      },
+      {
+        "name": "Baozi (包子)",
+        "description": "Steamed buns filled with pork, vegetables, or sweet bean paste"
+      }
+    ],
+    "street_food": [
+      "Jianbing",
+      "Chuan'r",
+      "Tanghulu",
+      "Douzhi",
+      "Lǘdagun"
+    ],
+    "famous_restaurants": [
+      "Quanjude",
+      "Bianyifang",
+      "Huguosi Snack Bar"
+    ],
     "dishes": [
       {
         "name": "Peking Duck",

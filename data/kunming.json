@@ -34,6 +34,39 @@
         "name": "Green Lake Area",
         "description": "Restaurants and cafes around the scenic lake area."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Crossing Bridge Noodles (过桥米线)",
+        "description": "Rice noodle soup with ingredients added at table"
+      },
+      {
+        "name": "Steam Pot Chicken (汽锅鸡)",
+        "description": "Chicken steamed in special clay pot"
+      },
+      {
+        "name": "Yunnan Rice Noodles (小锅米线)",
+        "description": "Spicy rice noodles in small copper pot"
+      },
+      {
+        "name": "Wild Mushroom Hot Pot (野生菌火锅)",
+        "description": "Seasonal wild mushroom hot pot"
+      },
+      {
+        "name": "Er Kuai (饵块)",
+        "description": "Rice cakes with various fillings"
+      }
+    ],
+    "street_food": [
+      "Rice Noodles",
+      "Grilled Tofu",
+      "Flower Cake",
+      "Dairy Fan"
+    ],
+    "famous_restaurants": [
+      "Jian Xin Yuan",
+      "Fu Zhao Lou",
+      "Lao Fang Zi"
     ]
   },
   "transportation": {

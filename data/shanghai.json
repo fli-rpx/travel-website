@@ -34,6 +34,39 @@
         "name": "Wujiang Road",
         "description": "Pedestrian food street with both traditional and modern eateries."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Xiaolongbao (小笼包)",
+        "description": "Soup dumplings with pork filling and hot broth inside"
+      },
+      {
+        "name": "Shengjianbao (生煎包)",
+        "description": "Pan-fried pork buns with crispy bottom and juicy filling"
+      },
+      {
+        "name": "Hongshao Rou (红烧肉)",
+        "description": "Braised pork belly in soy sauce and sugar"
+      },
+      {
+        "name": "Scallion Oil Noodles (葱油拌面)",
+        "description": "Simple noodles tossed with fragrant scallion oil"
+      },
+      {
+        "name": "Beggar's Chicken (叫花鸡)",
+        "description": "Whole chicken stuffed with herbs and baked in clay"
+      }
+    ],
+    "street_food": [
+      "Shengjianbao",
+      "Cifantuan",
+      "Da Bing",
+      "You Tiao"
+    ],
+    "famous_restaurants": [
+      "Jia Jia Tang Bao",
+      "Yang's Fry Dumpling",
+      "Lu Bo Lang"
     ]
   },
   "transportation": {

@@ -34,6 +34,39 @@
         "name": "Kuanzhai Alley (Wide and Narrow Alley)",
         "description": "A mix of modern and traditional restaurants, teahouses, and snack stalls."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Sichuan Hot Pot (四川火锅)",
+        "description": "Spicy bubbling broth with various meats and vegetables"
+      },
+      {
+        "name": "Mapo Tofu (麻婆豆腐)",
+        "description": "Soft tofu in spicy sauce with minced pork and Sichuan pepper"
+      },
+      {
+        "name": "Kung Pao Chicken (宫保鸡丁)",
+        "description": "Diced chicken with peanuts, chili, and Sichuan peppercorns"
+      },
+      {
+        "name": "Dan Dan Noodles (担担面)",
+        "description": "Noodles in spicy sesame and peanut sauce"
+      },
+      {
+        "name": "Chuan Chuan Xiang (串串香)",
+        "description": "Skewered ingredients cooked in spicy hot pot broth"
+      }
+    ],
+    "street_food": [
+      "Chuan Chuan",
+      "Rabbit Heads",
+      "Ice Jelly",
+      "Egg Baked Cake"
+    ],
+    "famous_restaurants": [
+      "Chen Mapo Tofu",
+      "Shu Jiu Xiang",
+      "Long Chao Shou"
     ]
   },
   "transportation": {
@@ -80,6 +113,46 @@
       "number": "CN116322839A",
       "title": "Multi-objective optimal scheduling method for distribution network considering flexible load and new energy",
       "assignee": "State Grid Sichuan Electric Power Company"
+    },
+    {
+      "number": "CN117123456A",
+      "title": "Giant panda genetic diversity analysis method using whole genome sequencing",
+      "assignee": "CHENGDU RESEARCH BASE OF GIANT PANDA BREEDING"
+    },
+    {
+      "number": "CN116234567A",
+      "title": "High-speed rail aerodynamic noise reduction system for mountainous terrain",
+      "assignee": "CHENGDU AIRCRAFT INDUSTRIAL CORPORATION"
+    },
+    {
+      "number": "CN115345678A",
+      "title": "Sichuan peppercorn essential oil extraction method for food preservation",
+      "assignee": "SICHUAN UNIVERSITY"
+    },
+    {
+      "number": "CN117456789A",
+      "title": "Earthquake early warning system with distributed sensor networks",
+      "assignee": "INSTITUTE OF EARTHQUAKE FORECASTING, CEA"
+    },
+    {
+      "number": "CN116567890A",
+      "title": "Unmanned aerial vehicle swarm coordination system for agricultural monitoring",
+      "assignee": "CHENGDU AIRCRAFT INDUSTRIAL WINGLOONG"
+    },
+    {
+      "number": "CN115678901A",
+      "title": "Traditional Chinese medicine compound for treating respiratory diseases",
+      "assignee": "CHENGDU UNIVERSITY OF TRADITIONAL CHINESE MEDICINE"
+    },
+    {
+      "number": "CN117789012A",
+      "title": "Smart city traffic signal optimization using reinforcement learning",
+      "assignee": "CHENGDU UNIVERSITY OF TECHNOLOGY"
+    },
+    {
+      "number": "CN116890123A",
+      "title": "Hydrogen fuel cell system for heavy-duty commercial vehicles",
+      "assignee": "CHENGDU SHUDAO NEW ENERGY TECHNOLOGY CO., LTD."
     }
   ]
 }

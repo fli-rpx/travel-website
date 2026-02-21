@@ -34,6 +34,39 @@
         "name": "Bayi Road Food Street",
         "description": "A bustling street known for its variety of street food and snacks."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Chongqing Hot Pot (重庆火锅)",
+        "description": "Fiery hot pot with Sichuan pepper and chili oil"
+      },
+      {
+        "name": "Spicy Chicken (辣子鸡)",
+        "description": "Fried chicken buried in mountain of dried chilies"
+      },
+      {
+        "name": "Chuan Chuan (串串)",
+        "description": "Skewered ingredients in spicy broth"
+      },
+      {
+        "name": "Xiaomian (小面)",
+        "description": "Spicy noodles with numbing Sichuan pepper"
+      },
+      {
+        "name": "Mao Xue Wang (毛血旺)",
+        "description": "Spicy duck blood soup with various ingredients"
+      }
+    ],
+    "street_food": [
+      "Xiaomian",
+      "Chuan Chuan",
+      "Spicy Rabbit",
+      "Fried Potatoes"
+    ],
+    "famous_restaurants": [
+      "Qi Qi Hot Pot",
+      "Hua Shi Wan",
+      "Qin Ma"
     ]
   },
   "transportation": {

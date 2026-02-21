@@ -34,6 +34,39 @@
         "name": "Pingjiang Road",
         "description": "Ancient canal-side street with teahouses and family-run eateries."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Squirrel Fish (松鼠桂鱼)",
+        "description": "Deep-fried fish in sweet and sour sauce"
+      },
+      {
+        "name": "Biluochun Shrimp (碧螺虾仁)",
+        "description": "Shrimp with local Biluochun tea"
+      },
+      {
+        "name": "Sweet and Sour Pork (糖醋排骨)",
+        "description": "Tender pork ribs in sweet and sour glaze"
+      },
+      {
+        "name": "Osmanthus Cake (桂花糕)",
+        "description": "Sweet rice cake with osmanthus flowers"
+      },
+      {
+        "name": "Suzhou Noodles (苏式面)",
+        "description": "Delicate noodles with various toppings"
+      }
+    ],
+    "street_food": [
+      "Osmanthus Cake",
+      "Suzhou Noodles",
+      "Green Dumplings",
+      "Sugar Porridge"
+    ],
+    "famous_restaurants": [
+      "De Yue Lou",
+      "Song He Lou",
+      "De Tai Feng"
     ]
   },
   "transportation": {

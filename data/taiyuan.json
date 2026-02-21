@@ -34,6 +34,39 @@
         "name": "Old Town Area",
         "description": "Historic district with local restaurants serving authentic dishes."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Taiyuan Noodles (太原头脑)",
+        "description": "Traditional breakfast soup with mutton"
+      },
+      {
+        "name": "Mature Vinegar (老陈醋)",
+        "description": "Famous Shanxi aged vinegar"
+      },
+      {
+        "name": "Sliced Noodles (刀削面)",
+        "description": "Hand-sliced noodles with meat sauce"
+      },
+      {
+        "name": "Youmian Kaolaoli (莜面栲栳栳)",
+        "description": "Oat flour rolled noodles"
+      },
+      {
+        "name": "Guoyou Rou (过油肉)",
+        "description": "Deep-fried pork with vegetables"
+      }
+    ],
+    "street_food": [
+      "Sliced Noodles",
+      "Vinegar Peanuts",
+      "Fried Dough",
+      "Tofu"
+    ],
+    "famous_restaurants": [
+      "Qing He Yuan",
+      "Lao Xi Fan",
+      "Hao Gang Gang"
     ]
   },
   "transportation": {

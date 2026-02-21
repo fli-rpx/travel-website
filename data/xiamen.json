@@ -34,6 +34,39 @@
         "name": "Taiwan Snack Street",
         "description": "Food street with Taiwanese specialties and local cuisine."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Oyster Omelette (海蛎煎)",
+        "description": "Crispy omelette with fresh oysters"
+      },
+      {
+        "name": "Satay Noodles (沙茶面)",
+        "description": "Noodles in spicy peanut satay sauce"
+      },
+      {
+        "name": "Peanut Soup (花生汤)",
+        "description": "Sweet creamy peanut soup"
+      },
+      {
+        "name": "Fish Balls (鱼丸汤)",
+        "description": "Handmade fish balls in clear soup"
+      },
+      {
+        "name": "Spring Roll (春卷)",
+        "description": "Crispy rolls with vegetable filling"
+      }
+    ],
+    "street_food": [
+      "Oyster Omelette",
+      "Shacha Noodles",
+      "Tusu Jelly",
+      "Meat Wraps"
+    ],
+    "famous_restaurants": [
+      "Wu Zai Tian",
+      "Hao Qing Xiang",
+      "Lao Xiamen"
     ]
   },
   "transportation": {

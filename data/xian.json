@@ -34,6 +34,39 @@
         "name": "Yongxingfang",
         "description": "Modern food court showcasing Xi'an's culinary heritage."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Roujiamo (肉夹馍)",
+        "description": "Chinese hamburger with braised pork in crispy bread"
+      },
+      {
+        "name": "Yangrou Paomo (羊肉泡馍)",
+        "description": "Mutton soup with hand-torn flatbread"
+      },
+      {
+        "name": "Biangbiang Noodles (biangbiang面)",
+        "description": "Wide, hand-pulled noodles with chili oil"
+      },
+      {
+        "name": "Liangpi (凉皮)",
+        "description": "Cold skin noodles with sesame sauce and chili"
+      },
+      {
+        "name": "Hulutou (葫芦头)",
+        "description": "Pork intestine soup with bread"
+      }
+    ],
+    "street_food": [
+      "Roujiamo",
+      "Yangrou Paomo",
+      "Liangpi",
+      "Persimmon Cake"
+    ],
+    "famous_restaurants": [
+      "Lao Tong Guan",
+      "De Fa Chang",
+      "Jia San"
     ]
   },
   "transportation": {

@@ -34,6 +34,39 @@
         "name": "Taidong Night Market",
         "description": "Vibrant night market offering fresh seafood, local snacks, and street food."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Seafood Feast (海鲜大餐)",
+        "description": "Fresh local seafood including clams, oysters, and fish"
+      },
+      {
+        "name": "Tsingtao Beer (青岛啤酒)",
+        "description": "World-famous local lager beer"
+      },
+      {
+        "name": "Stewed Clams (辣炒蛤蜊)",
+        "description": "Spicy stir-fried clams with chili"
+      },
+      {
+        "name": "Sea Cucumber (葱烧海参)",
+        "description": "Braised sea cucumber with scallions"
+      },
+      {
+        "name": "Qingdao Dumplings (青岛饺子)",
+        "description": "Fresh seafood-filled dumplings"
+      }
+    ],
+    "street_food": [
+      "Grilled Seafood",
+      "Beer Snacks",
+      "Clams",
+      "Squid"
+    ],
+    "famous_restaurants": [
+      "Chunhe Lou",
+      "Wanhechun",
+      "Da Huai Shu"
     ]
   },
   "transportation": {

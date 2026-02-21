@@ -34,6 +34,39 @@
         "name": "Laomendong",
         "description": "Restored historic district with local restaurants and tea houses."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Salted Duck (盐水鸭)",
+        "description": "Cold poached duck with subtle salt flavor"
+      },
+      {
+        "name": "Duck Blood Soup (鸭血粉丝汤)",
+        "description": "Vermicelli soup with duck blood and organs"
+      },
+      {
+        "name": "Lion's Head Meatballs (狮子头)",
+        "description": "Large pork meatballs with vegetables"
+      },
+      {
+        "name": "Nanjing Roast Duck (南京烤鸭)",
+        "description": "Crispy duck with sweet bean sauce"
+      },
+      {
+        "name": "Tofu Dumplings (豆腐涝)",
+        "description": "Soft tofu with savory toppings"
+      }
+    ],
+    "street_food": [
+      "Salted Duck",
+      "Sesame Pancake",
+      "Tofu Dumplings",
+      "Sugar Porridge"
+    ],
+    "famous_restaurants": [
+      "De Ji",
+      "Ma Xiang Xing",
+      "Liu Feng Ju"
     ]
   },
   "transportation": {

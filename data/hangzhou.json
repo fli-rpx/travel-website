@@ -42,6 +42,39 @@
         "name": "Qinghefang Historic District",
         "description": "Family-run establishments offering authentic Hangzhou cuisine."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Dongpo Pork (东坡肉)",
+        "description": "Braised pork belly with soy sauce and rock sugar"
+      },
+      {
+        "name": "West Lake Fish in Vinegar (西湖醋鱼)",
+        "description": "Fresh grass carp in sweet and sour sauce"
+      },
+      {
+        "name": "Longjing Shrimp (龙井虾仁)",
+        "description": "Stir-fried shrimp with Longjing tea leaves"
+      },
+      {
+        "name": "Beggar's Chicken (叫花鸡)",
+        "description": "Chicken stuffed with herbs and baked in lotus leaves"
+      },
+      {
+        "name": "Bamboo Shoot Soup (腌笃鲜)",
+        "description": "Soup with bamboo shoots, pork, and salted ham"
+      }
+    ],
+    "street_food": [
+      "Shengjian",
+      "Cong Bao Hui",
+      "Pian Er Chuan",
+      "You Mao Er"
+    ],
+    "famous_restaurants": [
+      "Lou Wai Lou",
+      "Zhi Wei Guan",
+      "Kui Yuan Guan"
     ]
   },
   "transportation": {

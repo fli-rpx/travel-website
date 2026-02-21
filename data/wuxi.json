@@ -34,6 +34,39 @@
         "name": "Chong'an Temple",
         "description": "A bustling area with many restaurants and snack stalls."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Wuxi Spareribs (无锡排骨)",
+        "description": "Sweet and savory braised pork ribs"
+      },
+      {
+        "name": "Wuxi Xiaolongbao (无锡小笼包)",
+        "description": "Sweet soup dumplings with pork"
+      },
+      {
+        "name": "Lake Tai Whitebait (太湖银鱼)",
+        "description": "Delicate whitefish from Lake Tai"
+      },
+      {
+        "name": "Yangchun Noodles (阳春面)",
+        "description": "Simple noodles in clear broth"
+      },
+      {
+        "name": "Wuxi Fried Rice (无锡炒饭)",
+        "description": "Fried rice with local ingredients"
+      }
+    ],
+    "street_food": [
+      "Spareribs",
+      "Soup Dumplings",
+      "Oil Gluten",
+      "Rice Cakes"
+    ],
+    "famous_restaurants": [
+      "San Feng Qiao",
+      "Wang Xing Ji",
+      "De Tai Feng"
     ]
   },
   "transportation": {

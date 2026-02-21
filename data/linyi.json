@@ -1,4 +1,3 @@
-
 {
   "name": "Linyi",
   "title": "Linyi - Traveling China",
@@ -22,7 +21,40 @@
         "description": "A classic Chinese dish, slow-cooked to perfection with a rich, savory, and slightly sweet flavor."
       }
     ],
-    "foodStreets": []
+    "foodStreets": [],
+    "signature_dishes": [
+      {
+        "name": "Linyi Fried Chicken (临沂炒鸡)",
+        "description": "Spicy stir-fried chicken with potatoes"
+      },
+      {
+        "name": "Pancake (沂蒙煎饼)",
+        "description": "Crispy millet pancakes"
+      },
+      {
+        "name": "Donkey Meat (驴肉)",
+        "description": "Braised donkey meat, local specialty"
+      },
+      {
+        "name": "Braised Fish (红烧鱼)",
+        "description": "Yi River fish in soy sauce"
+      },
+      {
+        "name": "Sweet Potato (烤地瓜)",
+        "description": "Roasted sweet potatoes"
+      }
+    ],
+    "street_food": [
+      "Pancake",
+      "Grilled Corn",
+      "Sweet Potato",
+      "Fried Dough"
+    ],
+    "famous_restaurants": [
+      "Wang Shi",
+      "Lao Di Fang",
+      "Yi Meng Shan"
+    ]
   },
   "transportation": {
     "gettingThere": [

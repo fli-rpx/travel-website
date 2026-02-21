@@ -34,6 +34,39 @@
         "name": "Luohu Commercial City",
         "description": "Shopping and dining area with diverse food options."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Seafood Hotpot (海鲜火锅)",
+        "description": "Fresh seafood cooked at table in flavorful broth"
+      },
+      {
+        "name": "Claypot Rice (煲仔饭)",
+        "description": "Rice with toppings cooked in clay pot with crispy bottom"
+      },
+      {
+        "name": "Oyster Omelette (蚝仔烙)",
+        "description": "Crispy omelette with fresh oysters"
+      },
+      {
+        "name": "Cantonese BBQ (烧腊)",
+        "description": "Assorted roasted meats including duck, pork, and chicken"
+      },
+      {
+        "name": "Dim Sum (早茶)",
+        "description": "Morning tea with variety of steamed and fried dishes"
+      }
+    ],
+    "street_food": [
+      "Fish Balls",
+      "Stinky Tofu",
+      "Egg Waffles",
+      "Bubble Tea"
+    ],
+    "famous_restaurants": [
+      "Spring Bamboo",
+      "The Kitchen",
+      "Tequila Coyote's"
     ]
   },
   "transportation": {

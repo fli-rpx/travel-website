@@ -34,6 +34,39 @@
         "name": "Shangxiajiu Pedestrian Street",
         "description": "Famous food street offering authentic Cantonese cuisine and local snacks."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Dim Sum (点心)",
+        "description": "Variety of small dishes including har gow, siu mai, and char siu bao"
+      },
+      {
+        "name": "White Cut Chicken (白切鸡)",
+        "description": "Poached chicken served with ginger-scallion sauce"
+      },
+      {
+        "name": "Char Siu (叉烧)",
+        "description": "Barbecued pork with sweet maltose glaze"
+      },
+      {
+        "name": "Wonton Noodles (云吞面)",
+        "description": "Egg noodles with shrimp wontons in clear broth"
+      },
+      {
+        "name": "Cantonese Roast Goose (烧鹅)",
+        "description": "Crispy skin goose with sweet plum sauce"
+      }
+    ],
+    "street_food": [
+      "Cheung Fun",
+      "Egg Tarts",
+      "Fish Balls",
+      "Double Skin Milk"
+    ],
+    "famous_restaurants": [
+      "Panxi Restaurant",
+      "Lianxianglou",
+      "Taotaoju"
     ]
   },
   "transportation": {

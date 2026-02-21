@@ -34,6 +34,39 @@
         "name": "Xizhou Town",
         "description": "Famous for local snacks and traditional Bai ethnic minority cuisine."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Dali Clay Pot Fish (大理砂锅鱼)",
+        "description": "Fish stewed in clay pot with tofu and vegetables"
+      },
+      {
+        "name": "Rushan (乳扇)",
+        "description": "Fried cheese made from cow's milk"
+      },
+      {
+        "name": "Bai Ethnic Sour Fish (白族酸辣鱼)",
+        "description": "Sour and spicy fish with papaya"
+      },
+      {
+        "name": "Crossing Bridge Noodles (过桥米线)",
+        "description": "Local version of famous Yunnan noodles"
+      },
+      {
+        "name": "Wild Mushroom Hot Pot (野生菌火锅)",
+        "description": "Seasonal mushroom hot pot"
+      }
+    ],
+    "street_food": [
+      "Rushan",
+      "Grilled Erkuai",
+      "Rose Cake",
+      "Yogurt"
+    ],
+    "famous_restaurants": [
+      "Yang Can Zi",
+      "Mei Zi Jing",
+      "Xiao Pi Jiu"
     ]
   },
   "transportation": {

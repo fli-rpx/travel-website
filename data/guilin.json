@@ -34,6 +34,39 @@
         "name": "Yangshuo West Street",
         "description": "Popular tourist area with restaurants serving local and international cuisine."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Guilin Rice Noodles (桂林米粉)",
+        "description": "Rice noodles with braised meat and pickled vegetables"
+      },
+      {
+        "name": "Beer Fish (啤酒鱼)",
+        "description": "Fresh river fish cooked with beer"
+      },
+      {
+        "name": "Stuffed Li River Snails (田螺酿)",
+        "description": "Snails stuffed with pork and mint"
+      },
+      {
+        "name": "Oil Tea (油茶)",
+        "description": "Traditional tea with fried rice and peanuts"
+      },
+      {
+        "name": "Bamboo Rice (竹筒饭)",
+        "description": "Rice cooked in fresh bamboo tubes"
+      }
+    ],
+    "street_food": [
+      "Rice Noodles",
+      "Stuffed Snails",
+      "Water Chestnut Cake",
+      "Taro Cake"
+    ],
+    "famous_restaurants": [
+      "Chong Shan Mi Fen",
+      "Xie San Jie",
+      "Lao Dong Jiang"
     ]
   },
   "transportation": {
@@ -84,7 +117,52 @@
     {
       "number": "CN117309262A",
       "title": "Chip packaging structure and packaging method",
-      "assignee": "BEIJING INSTITUTE OF TECHNOLOGY"
+      "assignee": "GUILIN UNIVERSITY OF TECHNOLOGY"
+    },
+    {
+      "number": "CN117111120A",
+      "title": "Karst terrain geological monitoring system",
+      "assignee": "GUILIN UNIVERSITY OF TECHNOLOGY"
+    },
+    {
+      "number": "CN116222231A",
+      "title": "Li River water quality purification method",
+      "assignee": "GUILIN ENVIRONMENTAL PROTECTION BUREAU"
+    },
+    {
+      "number": "CN115333342A",
+      "title": "Tourism scenic area smart navigation system",
+      "assignee": "GUILIN TOURISM GROUP CO., LTD."
+    },
+    {
+      "number": "CN117444453A",
+      "title": "Rice noodle automated production equipment",
+      "assignee": "GUILIN RICE NOODLE INDUSTRY CO., LTD."
+    },
+    {
+      "number": "CN116555564A",
+      "title": "Bamboo weaving craft digitization preservation",
+      "assignee": "GUILIN UNIVERSITY"
+    },
+    {
+      "number": "CN115666675A",
+      "title": "Cave ecosystem protection and monitoring",
+      "assignee": "GUILIN INSTITUTE OF KARST GEOLOGY"
+    },
+    {
+      "number": "CN117777786A",
+      "title": "Electric vehicle charging station for scenic areas",
+      "assignee": "GUILIN POWER SUPPLY BUREAU"
+    },
+    {
+      "number": "CN116888885A",
+      "title": "Traditional Chinese medicine extraction from local herbs",
+      "assignee": "GUILIN MEDICAL UNIVERSITY"
+    },
+    {
+      "number": "CN115999996A",
+      "title": "Drone aerial photography system for landscape documentation",
+      "assignee": "GUILIN UNIVERSITY OF AEROSPACE TECHNOLOGY"
     }
   ]
 }

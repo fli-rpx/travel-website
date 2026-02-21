@@ -34,6 +34,40 @@
         "name": "Old Town Food Area",
         "description": "Traditional Uyghur restaurants in the historic old town."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Pilaf (抓饭)",
+        "description": "Uyghur rice dish with lamb and carrots"
+      },
+      {
+        "name": "Lamb Kebabs (烤羊肉串)",
+        "description": "Grilled lamb skewers with cumin"
+      },
+      {
+        "name": "Naan Bread (馕)",
+        "description": "Traditional Uyghur flatbread"
+      },
+      {
+        "name": "Laghman Noodles (拉条子)",
+        "description": "Hand-pulled noodles with lamb and vegetables"
+      },
+      {
+        "name": "Hui BanMian (拌面)",
+        "description": "Stir-fried noodles with meat and vegetables"
+      }
+    ],
+    "street_food": [
+      "Kebabs",
+      "Naan",
+      "Pilaf",
+      "Yogurt",
+      "Melons"
+    ],
+    "famous_restaurants": [
+      "Ou Yi Da",
+      "Mi Ji Ti",
+      "Ka Wa Pu"
     ]
   },
   "transportation": {

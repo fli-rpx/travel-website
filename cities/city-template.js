@@ -68,6 +68,26 @@ function renderCityContent(cityData, cityId) {
         <!-- Local Cuisine -->
         <section id="cuisine" class="city-section">
             <h2><i class="fas fa-utensils me-3"></i>Local Cuisine</h2>
+            ${city.cuisine.signature_dishes ? `
+            <div class="city-highlight">
+                <h3><i class="fas fa-star me-2"></i>Signature Dishes</h3>
+                ${city.cuisine.signature_dishes.map(dish => `
+                    <p><strong>${dish.name}:</strong> ${dish.description}</p>
+                `).join('')}
+            </div>
+            ` : ''}
+            ${city.cuisine.street_food ? `
+            <div class="city-highlight">
+                <h3><i class="fas fa-fire me-2"></i>Street Food</h3>
+                <p>${city.cuisine.street_food.join(', ')}</p>
+            </div>
+            ` : ''}
+            ${city.cuisine.famous_restaurants ? `
+            <div class="city-highlight">
+                <h3><i class="fas fa-store me-2"></i>Famous Restaurants</h3>
+                <p>${city.cuisine.famous_restaurants.join(', ')}</p>
+            </div>
+            ` : ''}
             <div class="city-highlight">
                 <h3><i class="fas fa-pepper-hot me-2"></i>Must-Try Dishes</h3>
                 ${city.cuisine.dishes.map(dish => `

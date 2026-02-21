@@ -34,6 +34,39 @@
         "name": "Mongkok Food Streets",
         "description": "Multiple food streets in Mongkok offering diverse local and international cuisine."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Dim Sum (点心)",
+        "description": "Variety of steamed and fried small dishes"
+      },
+      {
+        "name": "Roast Goose (烧鹅)",
+        "description": "Crispy Cantonese-style roast goose"
+      },
+      {
+        "name": "Wonton Noodles (云吞面)",
+        "description": "Shrimp wontons in egg noodle soup"
+      },
+      {
+        "name": "Egg Tart (蛋挞)",
+        "description": "Flaky pastry with creamy egg custard"
+      },
+      {
+        "name": "Pineapple Bun (菠萝包)",
+        "description": "Sweet bun with crispy sugar topping"
+      }
+    ],
+    "street_food": [
+      "Egg Waffles",
+      "Fish Balls",
+      "Stinky Tofu",
+      "Milk Tea"
+    ],
+    "famous_restaurants": [
+      "Yung Kee",
+      "Tim Ho Wan",
+      "One Dim Sum"
     ]
   },
   "transportation": {

@@ -38,6 +38,39 @@
         "name": "Hai River Banks",
         "description": "Riverside restaurants with beautiful views."
       }
+    ],
+    "signature_dishes": [
+      {
+        "name": "Goubuli Baozi (狗不理包子)",
+        "description": "Famous steamed buns with 18 pleats"
+      },
+      {
+        "name": "Jianbing Guozi (煎饼果子)",
+        "description": "Crispy crepe with fried cracker inside"
+      },
+      {
+        "name": "Ear-Hole Fried Cake (耳朵眼炸糕)",
+        "description": "Sweet fried glutinous rice cake"
+      },
+      {
+        "name": "Mahua (麻花)",
+        "description": "Twisted crispy fried dough sticks"
+      },
+      {
+        "name": "Caobing (槽糕)",
+        "description": "Traditional steamed sponge cake"
+      }
+    ],
+    "street_food": [
+      "Jianbing",
+      "Mahua",
+      "Fried Cake",
+      "Tanghulu"
+    ],
+    "famous_restaurants": [
+      "Goubuli",
+      "Shi Ba Jie",
+      "Er Duo Yan"
     ]
   },
   "transportation": {

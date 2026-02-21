@@ -56,10 +56,6 @@ function renderCityContent(cityData, cityId) {
                 <p>${city.highlights.attractions}</p>
             </div>
             <div class="city-highlight">
-                <h3><i class="fas fa-utensils me-2"></i>Local Cuisine</h3>
-                <p>${city.highlights.cuisine}</p>
-            </div>
-            <div class="city-highlight">
                 <h3><i class="fas fa-calendar-alt me-2"></i>Best Time to Visit</h3>
                 <p>${city.highlights.bestTime}</p>
             </div>

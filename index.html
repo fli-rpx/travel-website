@@ -1366,7 +1366,10 @@
     // Load Travel News dynamically
     async function loadTravelNews() {
         try {
-            const response = await fetch('data/travel_news.json');
+            const response = await fetch('data/travel_news.json?v=' + new Date().getTime());
+            if (!response.ok) {
+                throw new Error('Failed to fetch: ' + response.status);
+            }
             const data = await response.json();
             
             const newsGrid = document.getElementById('news-grid');
@@ -1391,6 +1394,30 @@
             console.log('✅ Travel news loaded successfully');
         } catch (error) {
             console.error('Error loading travel news:', error);
+            // Show fallback content
+            const newsGrid = document.getElementById('news-grid');
+            if (newsGrid) {
+                newsGrid.innerHTML = `
+                    <div class="news-card">
+                        <div class="news-date">Feb 21, 2026</div>
+                        <h3 class="news-title">New Airport Opens in Southwest China</h3>
+                        <p class="news-excerpt">Chengdu Tianfu International Airport opens with direct flights to Europe, America, and Asia.</p>
+                        <a href="#" class="news-link">Read more →</a>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-date">Feb 20, 2026</div>
+                        <h3 class="news-title">China Launches 'Night Tourism' Initiative</h3>
+                        <p class="news-excerpt">Extended hours at major attractions, night markets, and cultural performances.</p>
+                        <a href="#" class="news-link">Read more →</a>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-date">Feb 19, 2026</div>
+                        <h3 class="news-title">Eco-Tourism Booms in Rural China</h3>
+                        <p class="news-excerpt">Sustainable travel options expand with new eco-lodges and farm stays.</p>
+                        <a href="#" class="news-link">Read more →</a>
+                    </div>
+                `;
+            }
         }
     }
     

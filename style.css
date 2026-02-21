@@ -303,21 +303,18 @@ footer a:hover {
 }
 
 .carousel-slide {
-    flex: 0 0 100%; /* Each slide takes full width of carousel viewport */
+    flex: 0 0 calc(33.333% - 14px); /* 3 slides with gap */
     margin: 0;
-    background: transparent; /* Transparent background since cards have their own */
-    border-radius: 0;
-    box-shadow: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 15px;
-    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
 }
 
 .carousel-slide:hover {
-    /* No hover effect on slide container */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 .carousel-nav {
@@ -807,56 +804,19 @@ footer a:hover {
             align-items: stretch;
         }
         
-        /* CITY CARDS - WITHIN CAROUSEL SLIDE */
-        .carousel-slide {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: stretch;
-            gap: 15px;
-            padding: 20px;
-        }
-        
-        .city-card {
-            flex: 0 0 calc(20% - 12px); /* 5 cards per slide: 100% ÷ 5 = 20% */
-            max-width: calc(20% - 12px);
-            display: flex;
-            flex-direction: column;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            height: 320px;
-        }
-        
-        @media (max-width: 1200px) {
-            .city-card {
-                flex: 0 0 calc(25% - 12px); /* 4 cards on large tablets */
-                max-width: calc(25% - 12px);
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .city-card {
-                flex: 0 0 calc(33.333% - 12px); /* 3 cards on tablets */
-                max-width: calc(33.333% - 12px);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .city-card {
-                flex: 0 0 calc(50% - 10px); /* 2 cards on mobile */
-                max-width: calc(50% - 10px);
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .city-card {
-                flex: 0 0 100%; /* 1 card on small mobile */
-                max-width: 100%;
-            }
-        }
+        /* CITY CARDS - NO IMAGES */
+                .city-card {
+        flex: 0 0 calc(16.666% - 20px); /* 6 cards: 100% ÷ 6 = 16.666% */
+        display: flex;
+        flex-direction: column;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        margin: 10px;
+        height: 320px;
+    }
     /* Simple hover effect - no brightness change */
     .city-card:hover {
         transform: translateY(-5px);

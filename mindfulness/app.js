@@ -63,6 +63,9 @@ const app = {
         }
     },
 
+    hoverTimeout: null,
+    currentHoverState: null,
+
     // Salad Questions
     spicyQuestions: [
         { id: 'emotion_now', text: 'What emotion am I feeling most right now?', options: ['Anger', 'Fear', 'Shame', 'Emptiness', 'Powerlessness', 'Anxiety', 'Sadness'] },
@@ -283,15 +286,29 @@ const app = {
         // Only apply dark mode on cycle tab
         if (this.currentTab !== 'cycle') return;
         
+        // Clear any pending reset
+        if (this.hoverTimeout) {
+            clearTimeout(this.hoverTimeout);
+            this.hoverTimeout = null;
+        }
+        
+        // Only change if it's a different state
+        if (this.currentHoverState === color) return;
+        this.currentHoverState = color;
+        
         document.body.classList.add('cycle-dark-mode');
         document.body.style.transition = 'background 10s ease-in-out';
         document.body.style.background = `radial-gradient(ellipse at center, ${bgColor} 0%, ${color}30 50%, #1a1a1a 100%)`;
     },
 
     resetBackgroundColor() {
-        document.body.classList.remove('cycle-dark-mode');
-        document.body.style.transition = 'background 10s ease-in-out';
-        document.body.style.background = 'linear-gradient(135deg, #fafaf9 0%, #f5f2ed 100%)';
+        // Debounce the reset - wait 100ms to see if user entered another circle
+        this.hoverTimeout = setTimeout(() => {
+            this.currentHoverState = null;
+            document.body.classList.remove('cycle-dark-mode');
+            document.body.style.transition = 'background 10s ease-in-out';
+            document.body.style.background = 'linear-gradient(135deg, #fafaf9 0%, #f5f2ed 100%)';
+        }, 100);
     },
 
     // AI Chat

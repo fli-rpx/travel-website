@@ -10,13 +10,13 @@
     --color-emptiness: #6b7280;
     --color-craving: #f59e0b;
     --color-return: #22c55e;
-    --bg: #f8fafc;
-    --card: #ffffff;
-    --text: #1e293b;
-    --text-light: #64748b;
-    --border: #e2e8f0;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --bg: #1a1a1a;
+    --card: #262626;
+    --text: #f1f5f9;
+    --text-light: #94a3b8;
+    --border: #404040;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -47,12 +47,12 @@ h1, h2, h3 {
     width: 280px;
     max-height: calc(100vh - 4rem);
     overflow-y: auto;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(30, 30, 30, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: var(--shadow-lg);
-    border: 1px solid rgba(212, 165, 116, 0.2);
+    border: 1px solid var(--border);
     z-index: 100;
 }
 
@@ -103,7 +103,7 @@ h1, h2, h3 {
 
 /* Navigation Bar */
 .nav-bar {
-    background: var(--card);
+    background: rgba(30, 30, 30, 0.95);
     border-bottom: 1px solid var(--border);
     padding: 1rem 2rem;
     position: sticky;
@@ -141,7 +141,7 @@ h1, h2, h3 {
 }
 
 .nav-btn:hover {
-    background: var(--bg);
+    background: rgba(255, 255, 255, 0.1);
     color: var(--text);
 }
 
@@ -253,7 +253,7 @@ h1, h2, h3 {
 }
 
 .stat-card {
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     border-radius: 1rem;
     padding: 1.5rem;
     text-align: center;
@@ -285,7 +285,7 @@ h1, h2, h3 {
 }
 
 .feature-card {
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: var(--shadow);
@@ -362,7 +362,7 @@ h2 {
 }
 
 .cycle-visualization {
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: var(--shadow);
@@ -387,7 +387,7 @@ h2 {
 }
 
 .cycle-info {
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: var(--shadow);
@@ -414,7 +414,7 @@ h2 {
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem;
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     border-radius: 0.5rem;
     font-size: 0.875rem;
 }
@@ -440,7 +440,7 @@ h2 {
 }
 
 .chat-interface {
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     border-radius: 1rem;
     box-shadow: var(--shadow);
     overflow: hidden;
@@ -534,7 +534,7 @@ h2 {
 .mode-btn {
     padding: 0.5rem 1rem;
     border: 1px solid var(--border);
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     border-radius: 0.5rem;
     font-size: 0.875rem;
     cursor: pointer;
@@ -586,7 +586,7 @@ h2 {
 .detected-state,
 .confidence-score,
 .suggested-actions {
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: var(--shadow);
@@ -648,7 +648,7 @@ h2 {
 }
 
 .question-card {
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: var(--shadow);
@@ -683,7 +683,7 @@ h2 {
     padding: 1rem;
     border: 1px solid var(--border);
     border-radius: 0.75rem;
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     text-align: left;
     cursor: pointer;
     transition: all 0.2s;
@@ -712,7 +712,7 @@ h2 {
 /* Results */
 .results-plate,
 .protocol-section {
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: var(--shadow);
@@ -798,7 +798,7 @@ h2 {
 }
 
 .intervention-card {
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     border-radius: 0.75rem;
     padding: 1rem;
     box-shadow: var(--shadow);
@@ -842,7 +842,7 @@ h2 {
 
 .mood-tracker-card,
 .quick-entry-card {
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: var(--shadow);
@@ -859,7 +859,7 @@ h2 {
     padding: 1rem 0.5rem;
     border: 1px solid var(--border);
     border-radius: 0.75rem;
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     cursor: pointer;
     transition: all 0.2s;
     text-align: center;
@@ -920,7 +920,7 @@ h2 {
 }
 
 .stat-box {
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     border-radius: 1rem;
     padding: 1.5rem;
     text-align: center;
@@ -941,7 +941,7 @@ h2 {
 .chart-card,
 .achievements-card,
 .insights-card {
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: var(--shadow);
@@ -967,7 +967,7 @@ h2 {
 }
 
 .modal-content {
-    background: var(--card);
+    background: #262626; border: 1px solid #404040; color: #f1f5f9;
     border-radius: 1.5rem;
     padding: 2rem;
     width: 90%;

@@ -1,14 +1,14 @@
 {
-  "last_check": "2026-02-20T09:00:00.809305",
+  "last_check": "2026-02-21T18:20:01.070627",
   "results": {
     "Images Readiness": false,
-    "Pages Readiness": true,
+    "Pages Readiness": false,
     "Layout & Color Consistency": false,
     "Navigation Links": false,
     "News Section": true
   },
-  "issues_found": 17,
-  "improvements_made": 0,
+  "issues_found": 22,
+  "improvements_made": 1,
   "all_passed": false,
   "cities_checked": [
     "Beijing",

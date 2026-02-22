@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-20T09:00:00.886561",
+  "timestamp": "2026-02-21T18:20:01.141221",
   "checks": [
     {
       "check": "Images",
@@ -20,12 +20,16 @@
     },
     {
       "check": "Pages",
-      "passed": true,
-      "issues": [],
-      "fixes": [
-        "All 12 city pages exist"
+      "passed": false,
+      "issues": [
+        "5 pages missing"
       ],
-      "remaining": []
+      "fixes": [],
+      "remaining": [
+        "beijing",
+        "shanghai",
+        "chengdu"
+      ]
     },
     {
       "check": "Navigation",
@@ -40,15 +44,18 @@
     },
     {
       "check": "Layout",
-      "passed": true,
-      "issues": [],
-      "fixes": [
-        "Colors consistent"
+      "passed": false,
+      "issues": [
+        "Missing colors: 2"
       ],
-      "remaining": []
+      "fixes": [],
+      "remaining": [
+        "#2563eb",
+        "#1e40af"
+      ]
     }
   ],
-  "passed": 2,
+  "passed": 0,
   "total": 4,
   "message_sent": true
 }

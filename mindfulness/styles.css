@@ -27,10 +27,15 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-    color: #f1f5f9;
+    background: linear-gradient(135deg, #fafaf9 0%, #f5f2ed 100%);
+    color: #1e293b;
     line-height: 1.6;
     min-height: 100vh;
+}
+
+body.cycle-dark-mode {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    color: #1e293b;
 }
 
 /* Typography */
@@ -47,7 +52,7 @@ h1, h2, h3 {
     width: 280px;
     max-height: calc(100vh - 4rem);
     overflow-y: auto;
-    background: rgba(30, 30, 30, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 1rem;
     padding: 1.5rem;
@@ -103,7 +108,7 @@ h1, h2, h3 {
 
 /* Navigation Bar */
 .nav-bar {
-    background: rgba(30, 30, 30, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     border-bottom: 1px solid var(--border);
     padding: 1rem 2rem;
     position: sticky;
@@ -253,7 +258,7 @@ h1, h2, h3 {
 }
 
 .stat-card {
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     border-radius: 1rem;
     padding: 1.5rem;
     text-align: center;
@@ -285,7 +290,7 @@ h1, h2, h3 {
 }
 
 .feature-card {
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: var(--shadow);
@@ -362,7 +367,7 @@ h2 {
 }
 
 .cycle-visualization {
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: var(--shadow);
@@ -387,7 +392,7 @@ h2 {
 }
 
 .cycle-info {
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: var(--shadow);
@@ -414,7 +419,7 @@ h2 {
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem;
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     border-radius: 0.5rem;
     font-size: 0.875rem;
 }
@@ -440,7 +445,7 @@ h2 {
 }
 
 .chat-interface {
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     border-radius: 1rem;
     box-shadow: var(--shadow);
     overflow: hidden;
@@ -534,7 +539,7 @@ h2 {
 .mode-btn {
     padding: 0.5rem 1rem;
     border: 1px solid var(--border);
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     border-radius: 0.5rem;
     font-size: 0.875rem;
     cursor: pointer;
@@ -586,7 +591,7 @@ h2 {
 .detected-state,
 .confidence-score,
 .suggested-actions {
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: var(--shadow);
@@ -648,7 +653,7 @@ h2 {
 }
 
 .question-card {
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: var(--shadow);
@@ -683,7 +688,7 @@ h2 {
     padding: 1rem;
     border: 1px solid var(--border);
     border-radius: 0.75rem;
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     text-align: left;
     cursor: pointer;
     transition: all 0.2s;
@@ -712,7 +717,7 @@ h2 {
 /* Results */
 .results-plate,
 .protocol-section {
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: var(--shadow);
@@ -798,7 +803,7 @@ h2 {
 }
 
 .intervention-card {
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     border-radius: 0.75rem;
     padding: 1rem;
     box-shadow: var(--shadow);
@@ -842,7 +847,7 @@ h2 {
 
 .mood-tracker-card,
 .quick-entry-card {
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: var(--shadow);
@@ -859,7 +864,7 @@ h2 {
     padding: 1rem 0.5rem;
     border: 1px solid var(--border);
     border-radius: 0.75rem;
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     cursor: pointer;
     transition: all 0.2s;
     text-align: center;
@@ -920,7 +925,7 @@ h2 {
 }
 
 .stat-box {
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     border-radius: 1rem;
     padding: 1.5rem;
     text-align: center;
@@ -941,7 +946,7 @@ h2 {
 .chart-card,
 .achievements-card,
 .insights-card {
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: var(--shadow);
@@ -967,7 +972,7 @@ h2 {
 }
 
 .modal-content {
-    background: #262626; border: 1px solid #404040; color: #f1f5f9;
+    background: #ffffff; border: 1px solid #e2e8f0; color: #1e293b;
     border-radius: 1.5rem;
     padding: 2rem;
     width: 90%;

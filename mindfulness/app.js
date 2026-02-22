@@ -238,11 +238,10 @@ const app = {
                    onclick="app.showStateDetail('${stateKey}')" 
                    onmouseenter="app.changeBackgroundColor('${state.color}', '${state.bgColor}')"
                    onmouseleave="app.resetBackgroundColor()"
-                   style="cursor: pointer; filter: drop-shadow(0 0 20px ${state.color}80);">
-                    <circle cx="${x}" cy="${y}" r="45" fill="${state.bgColor}" stroke="${state.color}" stroke-width="4"/>
-                    <circle cx="${x}" cy="${y}" r="35" fill="${state.color}" opacity="0.9"/>
-                    <text x="${x}" y="${y - 8}" text-anchor="middle" font-size="14" font-weight="700" fill="white" style="text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${state.name}</text>
-                    <text x="${x}" y="${y + 12}" text-anchor="middle" font-size="20">${['🔥', '💜', '💙', '⚪', '🟠', '🟢'][i]}</text>
+                   style="cursor: pointer;">
+                    <circle cx="${x}" cy="${y}" r="40" fill="${state.color}20" stroke="${state.color}" stroke-width="3"/>
+                    <text x="${x}" y="${y - 5}" text-anchor="middle" font-size="13" font-weight="600" fill="${state.color}">${state.name}</text>
+                    <text x="${x}" y="${y + 12}" text-anchor="middle" font-size="18">${['🔥', '💜', '💙', '⚪', '🟠', '🟢'][i]}</text>
                 </g>
             `;
         });
@@ -279,15 +278,20 @@ const app = {
         `;
     },
 
-    // Background color change for cycle
+    // Background color change for cycle - only on cycle page
     changeBackgroundColor(color, bgColor) {
+        // Only apply dark mode on cycle tab
+        if (this.currentTab !== 'cycle') return;
+        
+        document.body.classList.add('cycle-dark-mode');
         document.body.style.transition = 'background 0.8s ease';
         document.body.style.background = `radial-gradient(ellipse at center, ${bgColor} 0%, ${color}40 40%, #0f0f0f 100%)`;
     },
 
     resetBackgroundColor() {
+        document.body.classList.remove('cycle-dark-mode');
         document.body.style.transition = 'background 0.8s ease';
-        document.body.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%)';
+        document.body.style.background = 'linear-gradient(135deg, #fafaf9 0%, #f5f2ed 100%)';
     },
 
     // AI Chat

@@ -31,7 +31,25 @@ body {
     color: #1e293b;
     line-height: 1.6;
     min-height: 100vh;
-    transition: background 10s ease-in-out;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, #450a0a 0%, #991b1b30 50%, #1a1a1a 100%);
+    opacity: 0;
+    transition: opacity 10s ease-in-out;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body.cycle-hover::before {
+    opacity: 1;
 }
 
 body.cycle-dark-mode {

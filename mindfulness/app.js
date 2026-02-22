@@ -296,18 +296,50 @@ const app = {
         if (this.currentHoverState === color) return;
         this.currentHoverState = color;
         
-        document.body.classList.add('cycle-dark-mode');
-        document.body.style.transition = 'background 10s ease-in-out';
-        document.body.style.background = `radial-gradient(ellipse at center, ${bgColor} 0%, ${color}30 50%, #1a1a1a 100%)`;
+        // Create or update overlay
+        let overlay = document.getElementById('cycle-bg-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.id = 'cycle-bg-overlay';
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: radial-gradient(ellipse at center, ${bgColor} 0%, ${color}40 50%, #0a0a0a 100%);
+                opacity: 0;
+                transition: opacity 10s ease-in-out;
+                pointer-events: none;
+                z-index: -1;
+            `;
+            document.body.appendChild(overlay);
+            // Force reflow
+            overlay.offsetHeight;
+        } else {
+            overlay.style.background = `radial-gradient(ellipse at center, ${bgColor} 0%, ${color}40 50%, #0a0a0a 100%)`;
+        }
+        
+        // Fade in
+        requestAnimationFrame(() => {
+            overlay.style.opacity = '1';
+        });
     },
 
     resetBackgroundColor() {
-        // Debounce the reset - wait 100ms to see if user entered another circle
+        // Debounce the reset
         this.hoverTimeout = setTimeout(() => {
             this.currentHoverState = null;
-            document.body.classList.remove('cycle-dark-mode');
-            document.body.style.transition = 'background 10s ease-in-out';
-            document.body.style.background = 'linear-gradient(135deg, #fafaf9 0%, #f5f2ed 100%)';
+            const overlay = document.getElementById('cycle-bg-overlay');
+            if (overlay) {
+                overlay.style.opacity = '0';
+                // Remove after fade out
+                setTimeout(() => {
+                    if (overlay.parentNode) {
+                        overlay.parentNode.removeChild(overlay);
+                    }
+                }, 10000);
+            }
         }, 100);
     },
 

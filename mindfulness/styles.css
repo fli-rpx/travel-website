@@ -31,11 +31,12 @@ body {
     color: #1e293b;
     line-height: 1.6;
     min-height: 100vh;
+    transition: background 2s ease-in-out;
 }
 
 body.cycle-dark-mode {
     background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-    color: #1e293b;
+    color: #f1f5f9;
 }
 
 /* Typography */

@@ -284,13 +284,13 @@ const app = {
         if (this.currentTab !== 'cycle') return;
         
         document.body.classList.add('cycle-dark-mode');
-        document.body.style.transition = 'background 0.8s ease';
-        document.body.style.background = `radial-gradient(ellipse at center, ${bgColor} 0%, ${color}40 40%, #0f0f0f 100%)`;
+        document.body.style.transition = 'background 2s ease-in-out';
+        document.body.style.background = `radial-gradient(ellipse at center, ${bgColor} 0%, ${color}30 50%, #1a1a1a 100%)`;
     },
 
     resetBackgroundColor() {
         document.body.classList.remove('cycle-dark-mode');
-        document.body.style.transition = 'background 0.8s ease';
+        document.body.style.transition = 'background 2s ease-in-out';
         document.body.style.background = 'linear-gradient(135deg, #fafaf9 0%, #f5f2ed 100%)';
     },
 

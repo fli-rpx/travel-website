@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="copyright" content="© 2026 Mindfulness Therapy. All rights reserved.">
-    <meta name="author" content="Mindfulness Therapy">
-    <title>Mindfulness Therapy - Emotional Balancing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="copyright" content="© 2026 正念疗法. 保留所有权利.">
+    <meta name="author" content="正念疗法">
+    <title>正念疗法 - 情绪平衡</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Noto Serif SC', serif;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
         <!-- Fixed Table of Contents -->
         <nav class="toc-fixed">
-            <h3>Contents</h3>
+            <h3>目录</h3>
             <ul>
-                <li><a href="#" onclick="app.navigate('home')">Home</a></li>
-                <li><a href="#" onclick="app.navigate('cycle')">Power-Possession Cycle</a></li>
-                <li><a href="#" onclick="app.navigate('assessment')">AI Assessment</a></li>
-                <li><a href="#" onclick="app.navigate('salad')">Salad Check</a></li>
-                <li><a href="#" onclick="app.navigate('interventions')">Interventions</a></li>
-                <li><a href="#" onclick="app.navigate('journal')">Journal</a></li>
-                <li><a href="#" onclick="app.navigate('progress')">Progress</a></li>
+                <li><a href="#" onclick="app.navigate('home')">首页</a></li>
+                <li><a href="#" onclick="app.navigate('cycle')">权力-占有循环</a></li>
+                <li><a href="#" onclick="app.navigate('assessment')">AI评估</a></li>
+                <li><a href="#" onclick="app.navigate('salad')">情绪沙拉检测</a></li>
+                <li><a href="#" onclick="app.navigate('interventions')">干预工具</a></li>
+                <li><a href="#" onclick="app.navigate('journal')">日记</a></li>
+                <li><a href="#" onclick="app.navigate('progress')">进度</a></li>
             </ul>
         </nav>
 
@@ -30,16 +39,16 @@
         <div class="content-main">
             <!-- Navigation Bar -->
             <nav class="nav-bar">
-                <div class="nav-brand" onclick="app.navigate('home')" style="cursor: pointer;">🧘 Mindfulness Therapy</div>
+                <div class="nav-brand" onclick="app.navigate('home')" style="cursor: pointer;">🧘 正念疗法</div>
                 <div class="nav-links">
-                    <button class="nav-btn" onclick="window.location.href='index-zh.html'">中文</button>
-                    <button class="nav-btn active" data-tab="home">Home</button>
-                    <button class="nav-btn" data-tab="cycle">Cycle</button>
-                    <button class="nav-btn" data-tab="assessment">AI Chat</button>
-                    <button class="nav-btn" data-tab="salad">Salad</button>
-                    <button class="nav-btn" data-tab="interventions">Tools</button>
-                    <button class="nav-btn" data-tab="journal">Journal</button>
-                    <button class="nav-btn" data-tab="progress">Progress</button>
+                    <button class="nav-btn" onclick="window.location.href='index.html'">English</button>
+                    <button class="nav-btn active" data-tab="home">首页</button>
+                    <button class="nav-btn" data-tab="cycle">循环</button>
+                    <button class="nav-btn" data-tab="assessment">AI聊天</button>
+                    <button class="nav-btn" data-tab="salad">沙拉</button>
+                    <button class="nav-btn" data-tab="interventions">工具</button>
+                    <button class="nav-btn" data-tab="journal">日记</button>
+                    <button class="nav-btn" data-tab="progress">进度</button>
                 </div>
             </nav>
 
@@ -47,14 +56,14 @@
             <div id="home" class="tab active">
                 <div class="hero-section">
                     <div class="hero-content">
-                        <h1 id="greeting">Good morning,</h1>
-                        <p>Ready to understand and balance your emotional state?</p>
+                        <h1 id="greeting">早上好,</h1>
+                        <p>准备好理解和平衡你的情绪状态了吗？</p>
                         <div class="hero-actions">
                             <button class="btn-primary" onclick="app.navigate('assessment')">
-                                <i class="fas fa-robot"></i> Start AI Assessment
+                                <i class="fas fa-robot"></i> 开始AI评估
                             </button>
                             <button class="btn-secondary" onclick="app.navigate('cycle')">
-                                <i class="fas fa-sync-alt"></i> View Cycle
+                                <i class="fas fa-sync-alt"></i> 查看循环
                             </button>
                         </div>
                     </div>
@@ -67,17 +76,17 @@
                     <div class="stat-card">
                         <div class="stat-icon">🔥</div>
                         <div class="stat-value" id="streakValue">0</div>
-                        <div class="stat-label">Day Streak</div>
+                        <div class="stat-label">天连续</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon">🧘</div>
                         <div class="stat-value" id="sessionValue">0</div>
-                        <div class="stat-label">Sessions</div>
+                        <div class="stat-label">次练习</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon">⏱️</div>
                         <div class="stat-value" id="minuteValue">0</div>
-                        <div class="stat-label">Minutes</div>
+                        <div class="stat-label">分钟</div>
                     </div>
                 </div>
 
@@ -86,39 +95,39 @@
                         <div class="feature-icon ai-icon">
                             <i class="fas fa-brain"></i>
                         </div>
-                        <h3>AI Assessment</h3>
-                        <p>94% accurate emotion detection with multimodal analysis</p>
+                        <h3>AI评估</h3>
+                        <p>94%准确度的情绪检测，多模态分析</p>
                     </div>
                     <div class="feature-card" onclick="app.navigate('cycle')">
                         <div class="feature-icon cycle-icon">
                             <i class="fas fa-sync-alt"></i>
                         </div>
-                        <h3>Power-Possession Cycle</h3>
-                        <p>Interactive visualization of your emotional journey</p>
+                        <h3>权力-占有循环</h3>
+                        <p>情绪旅程的互动可视化</p>
                     </div>
                     <div class="feature-card" onclick="app.navigate('interventions')">
                         <div class="feature-icon tools-icon">
                             <i class="fas fa-toolbox"></i>
                         </div>
-                        <h3>Micro-Interventions</h3>
-                        <p>60-second techniques for rapid emotional regulation</p>
+                        <h3>微干预</h3>
+                        <p>60秒快速情绪调节技巧</p>
                     </div>
                     <div class="feature-card" onclick="app.navigate('salad')">
                         <div class="feature-icon salad-icon">
                             <i class="fas fa-leaf"></i>
                         </div>
-                        <h3>Emotional Salad</h3>
-                        <p>20-question diagnostic with personalized protocol</p>
+                        <h3>情绪沙拉</h3>
+                        <p>20题诊断，个性化方案</p>
                     </div>
                 </div>
             </div>
 
             <!-- Power-Possession Cycle Tab -->
             <div id="cycle" class="tab">
-                <h2>Power-Possession Cycle</h2>
+                <h2>权力-占有循环</h2>
                 <p class="section-description">
-                    A self-reinforcing emotional pattern: acquisition of external power → inevitable loss → 
-                    collapse into emptiness → urgent craving → return to power-seeking.
+                    一个自我强化的情绪模式：获得外部权力 → 不可避免的失去 → 
+                    陷入空虚 → 迫切渴望替代满足 → 回到寻求权力。
                 </p>
                 
                 <div class="cycle-container">
@@ -128,8 +137,8 @@
                     
                     <div class="cycle-info" id="cycleInfo">
                         <div class="state-detail">
-                            <h3>Click on a state to learn more</h3>
-                            <p>Explore each phase of the emotional cycle and discover personalized strategies.</p>
+                            <h3>点击状态了解更多</h3>
+                            <p>探索情绪循环的每个阶段，发现个性化策略。</p>
                         </div>
                     </div>
                 </div>
@@ -137,36 +146,36 @@
                 <div class="cycle-legend">
                     <div class="legend-item">
                         <span class="legend-color power"></span>
-                        <span>Power - External validation</span>
+                        <span>权力 - 外部认可</span>
                     </div>
                     <div class="legend-item">
                         <span class="legend-color possession"></span>
-                        <span>Possession - Owning phase</span>
+                        <span>占有 - 拥有阶段</span>
                     </div>
                     <div class="legend-item">
                         <span class="legend-color loss"></span>
-                        <span>Loss - Inevitability</span>
+                        <span>失去 - 不可避免</span>
                     </div>
                     <div class="legend-item">
                         <span class="legend-color emptiness"></span>
-                        <span>Emptiness - Collapse</span>
+                        <span>空虚 - 崩溃</span>
                     </div>
                     <div class="legend-item">
                         <span class="legend-color craving"></span>
-                        <span>Craving - Compulsive</span>
+                        <span>渴望 - 强迫性</span>
                     </div>
                     <div class="legend-item">
                         <span class="legend-color return"></span>
-                        <span>Return - Power-seeking</span>
+                        <span>回归 - 寻求权力</span>
                     </div>
                 </div>
             </div>
 
             <!-- AI Assessment Tab -->
             <div id="assessment" class="tab">
-                <h2>AI Emotional Assessment</h2>
+                <h2>AI情绪评估</h2>
                 <p class="section-description">
-                    Multimodal emotion detection with 94% accuracy. Chat naturally or use structured assessment.
+                    多模态情绪检测，94%准确度。自然聊天或使用结构化评估。
                 </p>
 
                 <div class="assessment-container">
@@ -176,32 +185,32 @@
                                 <i class="fas fa-robot"></i>
                             </div>
                             <div class="ai-info">
-                                <h3>Emotion AI</h3>
-                                <span class="status">Online</span>
+                                <h3>情绪AI</h3>
+                                <span class="status">在线</span>
                             </div>
-                            <div class="accuracy-badge">94% accuracy</div>
+                            <div class="accuracy-badge">94% 准确度</div>
                         </div>
                         
                         <div class="chat-messages" id="chatMessages">
                             <div class="message ai-message">
-                                <p>Hello! I'm here to help you understand your current emotional state. What's happening for you right now?</p>
+                                <p>你好！我在这里帮助你了解当前的情绪状态。你现在感觉怎么样？</p>
                             </div>
                         </div>
 
                         <div class="chat-input-area">
                             <div class="input-modes">
                                 <button class="mode-btn active" data-mode="text">
-                                    <i class="fas fa-keyboard"></i> Text
+                                    <i class="fas fa-keyboard"></i> 文字
                                 </button>
                                 <button class="mode-btn" data-mode="voice" onclick="app.toggleVoiceInput()">
-                                    <i class="fas fa-microphone"></i> Voice
+                                    <i class="fas fa-microphone"></i> 语音
                                 </button>
                                 <button class="mode-btn" data-mode="quiz" onclick="app.startStructuredAssessment()">
-                                    <i class="fas fa-clipboard-check"></i> Quiz
+                                    <i class="fas fa-clipboard-check"></i> 问卷
                                 </button>
                             </div>
                             <div class="input-container">
-                                <textarea id="chatInput" placeholder="Describe how you're feeling..."></textarea>
+                                <textarea id="chatInput" placeholder="描述你的感受..."></textarea>
                                 <button class="send-btn" onclick="app.sendMessage()">
                                     <i class="fas fa-paper-plane"></i>
                                 </button>
@@ -211,12 +220,12 @@
 
                     <div class="assessment-sidebar">
                         <div class="detected-state" id="detectedState">
-                            <h4>Detected State</h4>
-                            <div class="state-placeholder">Start chatting to detect your emotional state</div>
+                            <h4>检测到的状态</h4>
+                            <div class="state-placeholder">开始聊天以检测你的情绪状态</div>
                         </div>
                         
                         <div class="confidence-score" id="confidenceScore">
-                            <h4>Confidence</h4>
+                            <h4>置信度</h4>
                             <div class="score-bar">
                                 <div class="score-fill" style="width: 0%"></div>
                             </div>
@@ -224,8 +233,8 @@
                         </div>
 
                         <div class="suggested-actions" id="suggestedActions">
-                            <h4>Suggested Actions</h4>
-                            <div class="actions-placeholder">Actions will appear here</div>
+                            <h4>建议行动</h4>
+                            <div class="actions-placeholder">行动将显示在这里</div>
                         </div>
                     </div>
                 </div>
@@ -233,9 +242,9 @@
 
             <!-- Salad Check Tab -->
             <div id="salad" class="tab">
-                <h2>Emotional Salad Check</h2>
+                <h2>情绪沙拉检测</h2>
                 <p class="section-description">
-                    Identify your 🔥 Spicy (overwhelming), 🧈 Greasy (compulsive), and 🥗 Vegetable (nourishing) elements.
+                    识别你的 🔥 辛辣（压倒性）、🧈 油腻（强迫性）和 🥗 蔬菜（滋养性）元素。
                 </p>
 
                 <div class="salad-container">
@@ -243,7 +252,7 @@
                         <div class="progress-bar">
                             <div class="progress-fill" id="saladProgress"></div>
                         </div>
-                        <span class="progress-text" id="saladProgressText">Question 1 of 21</span>
+                        <span class="progress-text" id="saladProgressText">问题 1 / 21</span>
                     </div>
 
                     <div id="saladQuestions">
@@ -252,93 +261,93 @@
 
                     <div id="saladResults" class="hidden">
                         <div class="results-plate">
-                            <h3>Your Emotional Salad</h3>
+                            <h3>你的情绪沙拉</h3>
                             <div id="plateContent"></div>
                         </div>
                         
                         <div class="protocol-section">
-                            <h3>7-Step Balancing Protocol</h3>
+                            <h3>7步平衡方案</h3>
                             <div id="protocolSteps"></div>
                         </div>
 
-                        <button class="btn-primary" onclick="app.resetSalad()">Start New Check</button>
+                        <button class="btn-primary" onclick="app.resetSalad()">开始新检测</button>
                     </div>
                 </div>
             </div>
 
             <!-- Interventions Tab -->
             <div id="interventions" class="tab">
-                <h2>Micro-Interventions</h2>
+                <h2>微干预</h2>
                 <p class="section-description">
-                    60-second techniques for rapid emotional regulation. State-matched interventions for immediate relief.
+                    60秒快速情绪调节技巧。根据状态匹配的即时缓解干预。
                 </p>
 
                 <div class="interventions-grid">
                     <div class="intervention-category">
-                        <h3><i class="fas fa-fire"></i> Power State</h3>
+                        <h3><i class="fas fa-fire"></i> 权力状态</h3>
                         <div class="intervention-list">
                             <div class="intervention-card" onclick="app.startIntervention('grounding')">
-                                <span class="duration">60s</span>
-                                <h4>Values Grounding</h4>
-                                <p>Reconnect with internal values vs external validation</p>
+                                <span class="duration">60秒</span>
+                                <h4>价值观扎根</h4>
+                                <p>重新连接内在价值 vs 外部认可</p>
                             </div>
                             <div class="intervention-card" onclick="app.startIntervention('powerbreathing')">
-                                <span class="duration">2min</span>
-                                <h4>Power Breathing</h4>
-                                <p>Channel energy through controlled breath</p>
+                                <span class="duration">2分钟</span>
+                                <h4>权力呼吸</h4>
+                                <p>通过控制呼吸引导能量</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="intervention-category">
-                        <h3><i class="fas fa-heart-broken"></i> Loss & Emptiness</h3>
+                        <h3><i class="fas fa-heart-broken"></i> 失去 & 空虚</h3>
                         <div class="intervention-list">
                             <div class="intervention-card" onclick="app.startIntervention('somatic')">
-                                <span class="duration">3min</span>
-                                <h4>Somatic Anchoring</h4>
-                                <p>Ground through body awareness</p>
+                                <span class="duration">3分钟</span>
+                                <h4>身体锚定</h4>
+                                <p>通过身体意识扎根</p>
                             </div>
                             <div class="intervention-card" onclick="app.startIntervention('reframe')">
-                                <span class="duration">2min</span>
-                                <h4>Cognitive Reframe</h4>
-                                <p>Shift perspective on the loss</p>
+                                <span class="duration">2分钟</span>
+                                <h4>认知重构</h4>
+                                <p>转换对失去的视角</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="intervention-category">
-                        <h3><i class="fas fa-fire-alt"></i> Craving Phase</h3>
+                        <h3><i class="fas fa-fire-alt"></i> 渴望阶段</h3>
                         <div class="intervention-list">
                             <div class="intervention-card" onclick="app.startIntervention('urgesurfing')">
-                                <span class="duration">5min</span>
-                                <h4>Urge Surfing</h4>
-                                <p>Ride the wave of craving without acting</p>
+                                <span class="duration">5分钟</span>
+                                <h4>渴望冲浪</h4>
+                                <p>像波浪一样观察渴望，不行动</p>
                             </div>
                             <div class="intervention-card" onclick="app.startIntervention('patternbreak')">
-                                <span class="duration">60s</span>
-                                <h4>Pattern Interrupt</h4>
-                                <p>Quick-action checklist to break the cycle</p>
+                                <span class="duration">60秒</span>
+                                <h4>模式中断</h4>
+                                <p>快速检查清单打破循环</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="intervention-category">
-                        <h3><i class="fas fa-bolt"></i> Universal Tools</h3>
+                        <h3><i class="fas fa-bolt"></i> 通用工具</h3>
                         <div class="intervention-list">
                             <div class="intervention-card" onclick="app.startIntervention('sigh')">
-                                <span class="duration">60s</span>
-                                <h4>Physiological Sigh</h4>
-                                <p>Two inhales, extended exhale</p>
+                                <span class="duration">60秒</span>
+                                <h4>生理叹息</h4>
+                                <p>两次吸气，延长呼气</p>
                             </div>
                             <div class="intervention-card" onclick="app.startIntervention('54321')">
-                                <span class="duration">60s</span>
-                                <h4>5-4-3-2-1 Grounding</h4>
-                                <p>Sensory orientation technique</p>
+                                <span class="duration">60秒</span>
+                                <h4>5-4-3-2-1 扎根</h4>
+                                <p>感官定位技巧</p>
                             </div>
                             <div class="intervention-card" onclick="app.startIntervention('compassion')">
-                                <span class="duration">60s</span>
-                                <h4>Self-Compassion Break</h4>
-                                <p>Acknowledge suffering with kindness</p>
+                                <span class="duration">60秒</span>
+                                <h4>自我慈悲暂停</h4>
+                                <p>以善意承认痛苦</p>
                             </div>
                         </div>
                     </div>
@@ -347,42 +356,42 @@
 
             <!-- Journal Tab -->
             <div id="journal" class="tab">
-                <h2>Journal</h2>
+                <h2>日记</h2>
                 
                 <div class="journal-section">
                     <div class="mood-tracker-card">
-                        <h3>How are you feeling?</h3>
+                        <h3>你感觉怎么样？</h3>
                         <div class="mood-scale">
                             <button class="mood-btn" data-mood="1" onclick="app.logMood(1)">
                                 <span class="mood-emoji">😢</span>
-                                <span class="mood-label">Sad</span>
+                                <span class="mood-label">难过</span>
                             </button>
                             <button class="mood-btn" data-mood="2" onclick="app.logMood(2)">
                                 <span class="mood-emoji">😕</span>
-                                <span class="mood-label">Down</span>
+                                <span class="mood-label">低落</span>
                             </button>
                             <button class="mood-btn" data-mood="3" onclick="app.logMood(3)">
                                 <span class="mood-emoji">😐</span>
-                                <span class="mood-label">Okay</span>
+                                <span class="mood-label">一般</span>
                             </button>
                             <button class="mood-btn" data-mood="4" onclick="app.logMood(4)">
                                 <span class="mood-emoji">🙂</span>
-                                <span class="mood-label">Good</span>
+                                <span class="mood-label">不错</span>
                             </button>
                             <button class="mood-btn" data-mood="5" onclick="app.logMood(5)">
                                 <span class="mood-emoji">😊</span>
-                                <span class="mood-label">Great</span>
+                                <span class="mood-label">很好</span>
                             </button>
                         </div>
                     </div>
 
                     <div class="quick-entry-card">
-                        <h3>Quick Entry</h3>
-                        <p class="prompt" id="journalPrompt">What are you grateful for today?</p>
-                        <textarea id="journalText" placeholder="Write your thoughts..."></textarea>
+                        <h3>快速记录</h3>
+                        <p class="prompt" id="journalPrompt">今天你有什么感恩的事？</p>
+                        <textarea id="journalText" placeholder="写下你的想法..."></textarea>
                         <div class="entry-actions">
-                            <button class="btn-secondary" onclick="app.newJournalPrompt()">New Prompt</button>
-                            <button class="btn-primary" onclick="app.saveJournalEntry()">Save Entry</button>
+                            <button class="btn-secondary" onclick="app.newJournalPrompt()">新提示</button>
+                            <button class="btn-primary" onclick="app.saveJournalEntry()">保存记录</button>
                         </div>
                     </div>
 
@@ -392,39 +401,39 @@
 
             <!-- Progress Tab -->
             <div id="progress" class="tab">
-                <h2>Progress</h2>
+                <h2>进度</h2>
                 
                 <div class="progress-dashboard">
                     <div class="stats-row">
                         <div class="stat-box">
                             <div class="stat-icon-large">🔥</div>
                             <div class="stat-number" id="progressStreak">0</div>
-                            <div class="stat-label">Day Streak</div>
+                            <div class="stat-label">天连续</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-icon-large">✅</div>
                             <div class="stat-number" id="progressSessions">0</div>
-                            <div class="stat-label">Sessions</div>
+                            <div class="stat-label">次练习</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-icon-large">⏱️</div>
                             <div class="stat-number" id="progressMinutes">0</div>
-                            <div class="stat-label">Minutes</div>
+                            <div class="stat-label">分钟</div>
                         </div>
                     </div>
 
                     <div class="chart-card">
-                        <h3>Weekly Activity</h3>
+                        <h3>每周活动</h3>
                         <canvas id="weeklyChart"></canvas>
                     </div>
 
                     <div class="achievements-card">
-                        <h3>Achievements</h3>
+                        <h3>成就</h3>
                         <div id="achievementsList"></div>
                     </div>
 
                     <div class="insights-card">
-                        <h3>Insights</h3>
+                        <h3>洞察</h3>
                         <div id="insightsList"></div>
                     </div>
                 </div>
@@ -435,7 +444,7 @@
         <div id="interventionModal" class="modal hidden">
             <div class="modal-content">
                 <div class="intervention-player">
-                    <h2 id="interventionTitle">Intervention</h2>
+                    <h2 id="interventionTitle">干预</h2>
                     <div class="timer-container">
                         <svg viewBox="0 0 100 100" class="timer-svg">
                             <circle class="timer-bg" cx="50" cy="50" r="45"/>
@@ -444,7 +453,7 @@
                         <div class="timer-display" id="interventionTimer">60</div>
                     </div>
                     <div class="intervention-instructions" id="interventionInstructions">
-                        Follow the guided practice
+                        跟随引导练习
                     </div>
                     <div class="timer-controls">
                         <button class="control-btn" id="playPauseBtn" onclick="app.toggleIntervention()">
@@ -462,12 +471,12 @@
     <!-- Footer with Copyright -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2026 Mindfulness Therapy. All rights reserved.</p>
+            <p>&copy; 2026 正念疗法. 保留所有权利.</p>
             <p class="footer-links">
-                <a href="#" onclick="app.navigate('home')">Home</a> |
-                <a href="#" onclick="app.showPrivacyPolicy()">Privacy Policy</a> |
-                <a href="#" onclick="app.showTerms()">Terms of Use</a> |
-                <a href="index-zh.html">中文</a>
+                <a href="#" onclick="app.navigate('home')">首页</a> |
+                <a href="#" onclick="app.showPrivacyPolicy()">隐私政策</a> |
+                <a href="#" onclick="app.showTerms()">使用条款</a> |
+                <a href="index.html">English</a>
             </p>
         </div>
     </footer>

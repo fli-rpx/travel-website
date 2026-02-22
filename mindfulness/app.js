@@ -228,7 +228,11 @@ const app = {
             const y = centerY + radius * Math.sin(angle);
             
             svg += `
-                <g class="cycle-node" onclick="app.showStateDetail('${stateKey}')" style="cursor: pointer;">
+                <g class="cycle-node" 
+                   onclick="app.showStateDetail('${stateKey}')" 
+                   onmouseenter="app.changeBackgroundColor('${state.color}')"
+                   onmouseleave="app.resetBackgroundColor()"
+                   style="cursor: pointer;">
                     <circle cx="${x}" cy="${y}" r="35" fill="${state.color}" opacity="0.2" stroke="${state.color}" stroke-width="3"/>
                     <text x="${x}" y="${y - 5}" text-anchor="middle" font-size="12" font-weight="600" fill="${state.color}">${state.name}</text>
                     <text x="${x}" y="${y + 10}" text-anchor="middle" font-size="10" fill="#64748b">${['🔥', '💜', '💙', '⚪', '🟠', '🟢'][i]}</text>
@@ -266,6 +270,17 @@ const app = {
                 </ul>
             </div>
         `;
+    },
+
+    // Background color change for cycle
+    changeBackgroundColor(color) {
+        document.body.style.transition = 'background 1s ease';
+        document.body.style.background = `linear-gradient(135deg, ${color}15 0%, ${color}08 50%, #f5f2ed 100%)`;
+    },
+
+    resetBackgroundColor() {
+        document.body.style.transition = 'background 1s ease';
+        document.body.style.background = 'linear-gradient(135deg, #fafaf9 0%, #f5f2ed 100%)';
     },
 
     // AI Chat

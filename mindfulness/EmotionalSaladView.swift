@@ -14,34 +14,34 @@ struct EmotionalSaladView: View {
     @State private var selectedGrease: String = ""
     @State private var selectedVegetable: String = ""
     
-    let spicyQuestions = [
+    let spicyQuestions: [(id: String, text: String, options: [String])] = [
         ("emotion_now", "What emotion am I feeling most right now?", ["Anger", "Fear", "Shame", "Emptiness", "Powerlessness", "Anxiety", "Sadness"]),
-        ("body_location", "Where in my body do I feel this emotion?", ["Chest tightness", "Stomach knot", "Heat in face", "Cold hands", "Tension in shoulders", "Lump in throat", "Can't feel anything"]),
+        ("body_location", "Where in my body do I feel this emotion?", ["Chest tightness", "Stomach knot", "Heat in face", "Cold hands", "Tension in shoulders", "Lump in throat", "Cannot feel anything"]),
         ("intensity", "On a scale of 1-10, how intense is this feeling?", ["1-3 (Mild)", "4-6 (Moderate)", "7-8 (Strong)", "9-10 (Overwhelming)"]),
         ("trigger", "What just happened before this feeling arose?", ["A loss", "Rejection", "Failure", "Reminded of past", "Conflict", "Uncertainty", "Nothing specific"]),
         ("familiar", "Does this feeling remind me of any past situation?", ["Childhood", "Past relationship", "Work situation", "Family pattern", "This is new", "Happens often"]),
-        ("story", "What story is my mind telling me?", ["I'm not enough", "I'm losing control", "I need to fix this", "I'm being abandoned", "I must prove myself", "Something else"]),
+        ("story", "What story is my mind telling me?", ["I am not enough", "I am losing control", "I need to fix this", "I am being abandoned", "I must prove myself", "Something else"]),
         ("need", "If this emotion could speak, what would it say it needs?", ["Safety", "Connection", "Recognition", "Rest", "Control", "Love", "Just to be heard"])
     ]
     
-    let greasyQuestions = [
+    let greasyQuestions: [(id: String, text: String, options: [String])] = [
         ("urge", "What do I urgently want to do right now?", ["Reach out to someone", "Seek attention", "Escape/avoid", "Control something", "Prove myself", "Get validation", "Something else"]),
-        ("fixation", "Is there a specific person or type of person I'm fixating on?", ["Ex/partner", "Authority figure", "Someone I'm attracted to", "Family member", "No one specific", "A fantasy/ideal"]),
+        ("fixation", "Is there a specific person or type of person I am fixating on?", ["Ex/partner", "Authority figure", "Someone I am attracted to", "Family member", "No one specific", "A fantasy/ideal"]),
         ("aftermath", "If I acted on this urge, how would I feel immediately after?", ["Relieved temporarily", "Ashamed", "Empty", "Powerful briefly", "Regretful", "Satisfied"]),
         ("next_day", "How would I feel the next day?", ["Regret", "Same emptiness", "Shame", "Nothing changed", "Briefly better", "Worse than before"]),
-        ("avoiding", "What would I be avoiding feeling if I gave in?", ["Emptiness", "Powerlessness", "Shame", "Fear", "Loneliness", "I don't know"]),
-        ("greasy_food", "What's the 'greasy food' I'm reaching for?", ["Attention/affection", "Control/power", "Validation", "Escape", "Temporary high", "Sense of winning"])
+        ("avoiding", "What would I be avoiding feeling if I gave in?", ["Emptiness", "Powerlessness", "Shame", "Fear", "Loneliness", "I do not know"]),
+        ("greasy_food", "What is the greasy food I am reaching for?", ["Attention/affection", "Control/power", "Validation", "Escape", "Temporary high", "Sense of winning"])
     ]
     
-    let vegetableQuestions = [
+    let vegetableQuestions: [(id: String, text: String, options: [String])] = [
         ("opposite", "What would the opposite of this craving feel like?", ["Letting go", "Being present", "Accepting", "Connecting genuinely", "Resting", "Being vulnerable"]),
         ("true_need", "What do I truly need right now?", ["Connection", "Rest", "Safety", "Recognition", "Purpose", "Self-compassion", "Truth"]),
         ("genuine_connect", "Is there someone I could connect with genuinely, without agenda?", ["Yes, a friend", "Yes, family", "A therapist/counselor", "Not right now", "I need to be alone first"]),
-        ("sit_with_it", "What would it feel like to sit with this emotion for 5 minutes?", ["Scary but possible", "Overwhelming", "Like it would pass", "I don't know", "I've done it before"]),
-        ("proud_action", "What's one small thing I could do to feel proud tomorrow?", ["Journal honestly", "Reach out to someone", "Complete a small task", "Rest without guilt", "Practice mindfulness", "Set a boundary"]),
-        ("without_power", "If I weren't trying to feel powerful, what would I want?", ["Peace", "Connection", "Meaning", "Rest", "To be seen", "To create something", "Just to be"]),
-        ("which_self", "Which version of me is running the show?", ["The powerful one (owning)", "The weak one (hiding)", "The clear one (connecting)", "A mix of all three", "I don't know"]),
-        ("add_vegetable", "If I could add one 'vegetable' to balance this, which would help most?", ["Calm", "Connection", "Rest", "Meaning", "Truth", "Self-compassion", "Presence"])
+        ("sit_with_it", "What would it feel like to sit with this emotion for 5 minutes?", ["Scary but possible", "Overwhelming", "Like it would pass", "I do not know", "I have done it before"]),
+        ("proud_action", "What is one small thing I could do to feel proud tomorrow?", ["Journal honestly", "Reach out to someone", "Complete a small task", "Rest without guilt", "Practice mindfulness", "Set a boundary"]),
+        ("without_power", "If I were not trying to feel powerful, what would I want?", ["Peace", "Connection", "Meaning", "Rest", "To be seen", "To create something", "Just to be"]),
+        ("which_self", "Which version of me is running the show?", ["The powerful one (owning)", "The weak one (hiding)", "The clear one (connecting)", "A mix of all three", "I do not know"]),
+        ("add_vegetable", "If I could add one vegetable to balance this, which would help most?", ["Calm", "Connection", "Rest", "Meaning", "Truth", "Self-compassion", "Presence"])
     ]
     
     var body: some View {
@@ -49,7 +49,6 @@ struct EmotionalSaladView: View {
             ScrollView {
                 VStack(spacing: 24) {
                     if !showResults {
-                        // Progress indicator
                         ProgressView(value: Double(currentStep), total: Double(totalSteps))
                             .padding(.horizontal)
                         
@@ -57,16 +56,15 @@ struct EmotionalSaladView: View {
                             .font(.caption)
                             .foregroundColor(.secondary)
                         
-                        // Current question
                         if currentStep < spicyQuestions.count {
                             QuestionCard(
-                                title: "🔥 Spicy (Overwhelming)",
-                                question: spicyQuestions[currentStep].1,
-                                options: spicyQuestions[currentStep].2,
-                                selected: answers[spicyQuestions[currentStep].0],
+                                title: "Spicy (Overwhelming)",
+                                question: spicyQuestions[currentStep].text,
+                                options: spicyQuestions[currentStep].options,
+                                selected: answers[spicyQuestions[currentStep].id],
                                 color: .red
                             ) { answer in
-                                answers[spicyQuestions[currentStep].0] = answer
+                                answers[spicyQuestions[currentStep].id] = answer
                                 if answer.contains("Anger") || answer.contains("Fear") || answer.contains("Shame") {
                                     selectedSpice = answer
                                 }
@@ -74,30 +72,29 @@ struct EmotionalSaladView: View {
                         } else if currentStep < spicyQuestions.count + greasyQuestions.count {
                             let idx = currentStep - spicyQuestions.count
                             QuestionCard(
-                                title: "🧈 Greasy (Compulsive)",
-                                question: greasyQuestions[idx].1,
-                                options: greasyQuestions[idx].2,
-                                selected: answers[greasyQuestions[idx].0],
+                                title: "Greasy (Compulsive)",
+                                question: greasyQuestions[idx].text,
+                                options: greasyQuestions[idx].options,
+                                selected: answers[greasyQuestions[idx].id],
                                 color: .orange
                             ) { answer in
-                                answers[greasyQuestions[idx].0] = answer
+                                answers[greasyQuestions[idx].id] = answer
                                 selectedGrease = answer
                             }
                         } else {
                             let idx = currentStep - spicyQuestions.count - greasyQuestions.count
                             QuestionCard(
-                                title: "🥗 Vegetables (Nourishing)",
-                                question: vegetableQuestions[idx].1,
-                                options: vegetableQuestions[idx].2,
-                                selected: answers[vegetableQuestions[idx].0],
+                                title: "Vegetables (Nourishing)",
+                                question: vegetableQuestions[idx].text,
+                                options: vegetableQuestions[idx].options,
+                                selected: answers[vegetableQuestions[idx].id],
                                 color: .green
                             ) { answer in
-                                answers[vegetableQuestions[idx].0] = answer
+                                answers[vegetableQuestions[idx].id] = answer
                                 selectedVegetable = answer
                             }
                         }
                         
-                        // Navigation buttons
                         HStack(spacing: 20) {
                             if currentStep > 0 {
                                 Button("Previous") {
@@ -124,7 +121,6 @@ struct EmotionalSaladView: View {
                         }
                         .padding(.horizontal)
                     } else {
-                        // Results view
                         SaladResultsView(
                             spice: selectedSpice,
                             grease: selectedGrease,
@@ -173,7 +169,6 @@ struct QuestionCard: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            // Header
             Text(title)
                 .font(.caption)
                 .fontWeight(.bold)
@@ -186,7 +181,6 @@ struct QuestionCard: View {
                 .fontWeight(.medium)
                 .fixedSize(horizontal: false, vertical: true)
             
-            // Options
             VStack(spacing: 8) {
                 ForEach(options, id: \.self) { option in
                     Button(action: { onSelect(option) }) {
@@ -227,36 +221,34 @@ struct SaladResultsView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            // Header
             Text("Your Emotional Salad")
                 .font(.title)
                 .fontWeight(.bold)
             
-            // The plate visualization
             VStack(spacing: 16) {
                 if !spice.isEmpty {
                     ResultItem(
-                        icon: "🔥",
+                        icon: "Spicy",
                         title: "Spicy",
                         subtitle: spice,
                         color: .red,
-                        description: "This is what's overwhelming you right now."
+                        description: "This is what is overwhelming you right now."
                     )
                 }
                 
                 if !grease.isEmpty {
                     ResultItem(
-                        icon: "🧈",
+                        icon: "Greasy",
                         title: "Greasy",
                         subtitle: grease,
                         color: .orange,
-                        description: "This is what you're reaching for to cope."
+                        description: "This is what you are reaching for to cope."
                     )
                 }
                 
                 if !vegetable.isEmpty {
                     ResultItem(
-                        icon: "🥗",
+                        icon: "Vegetable",
                         title: "Vegetable",
                         subtitle: vegetable,
                         color: .green,
@@ -265,7 +257,6 @@ struct SaladResultsView: View {
                 }
             }
             
-            // 7-step protocol
             VStack(alignment: .leading, spacing: 12) {
                 Text("Your 7-Step Balancing Protocol")
                     .font(.headline)
@@ -296,10 +287,8 @@ struct SaladResultsView: View {
             .background(Color(.secondarySystemBackground))
             .cornerRadius(12)
             
-            // Actions based on state
             RecommendedActions(spice: spice, vegetable: vegetable)
             
-            // Reset button
             Button("Start New Check-in") {
                 onReset()
             }
@@ -310,13 +299,13 @@ struct SaladResultsView: View {
     
     var protocolSteps: [(title: String, description: String)] {
         [
-            ("Stop", "Physically pause. Don't act. Take one slow breath."),
-            ("Name the Spiciness", "What's too spicy? '\(spice.isEmpty ? "Powerlessness" : spice)'"),
+            ("Stop", "Physically pause. Do not act. Take one slow breath."),
+            ("Name the Spiciness", "What is too spicy? \(spice.isEmpty ? "Powerlessness" : spice)"),
             ("Locate It", "Where do you feel this in your body? Just notice."),
-            ("Identify the Craving", "What are you reaching for? '\(grease.isEmpty ? "External validation" : grease)'"),
-            ("Choose a Vegetable", "What would nourish you? '\(vegetable.isEmpty ? "Rest" : vegetable)'"),
+            ("Identify the Craving", "What are you reaching for? \(grease.isEmpty ? "External validation" : grease)"),
+            ("Choose a Vegetable", "What would nourish you? \(vegetable.isEmpty ? "Rest" : vegetable)"),
             ("Take Action", "Do it for just 2 minutes."),
-            ("Notice", "How do you feel? Not perfect—just different.")
+            ("Notice", "How do you feel? Not perfect, just different.")
         ]
     }
 }
@@ -409,7 +398,6 @@ struct ActionRow: View {
     }
 }
 
-// MARK: - Button Styles
 struct PrimaryButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label

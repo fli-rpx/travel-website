@@ -31,7 +31,7 @@ body {
     color: #1e293b;
     line-height: 1.6;
     min-height: 100vh;
-    transition: background 2s ease-in-out;
+    transition: background 10s ease-in-out;
 }
 
 body.cycle-dark-mode {

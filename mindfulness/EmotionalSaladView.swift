@@ -8,7 +8,7 @@ import SwiftUI
 struct EmotionalSaladView: View {
     @ObservedObject var viewModel: MindfulnessViewModel
     @State private var currentStep = 0
-    @State private var answers: [String: String] = [:"
+    @State private var answers: [String: String] = [:]
     @State private var showResults = false
     @State private var selectedSpice: String = ""
     @State private var selectedGrease: String = ""
@@ -132,7 +132,7 @@ struct EmotionalSaladView: View {
                             answers: answers,
                             onReset: {
                                 currentStep = 0
-                                answers = [:"
+                                answers = [:]
                                 showResults = false
                                 selectedSpice = ""
                                 selectedGrease = ""

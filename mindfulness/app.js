@@ -344,12 +344,10 @@ const app = {
         }, 100);
     },
 
-    // DeepSeek API Configuration
-    deepseekConfig: {
-        apiKey: '', // User should set their API key here
-        apiUrl: 'https://api.deepseek.com/v1/chat/completions',
-        model: 'deepseek-chat',
-        useRealAI: false // Toggle between real AI and local fallback
+    // Backend API Configuration
+    apiConfig: {
+        baseUrl: '', // Empty for same-origin, or set to 'http://localhost:3000' for local dev
+        useBackend: true // Set to true to use backend proxy, false for local analysis only
     },
 
     // AI Chat
@@ -365,9 +363,9 @@ const app = {
         // Show typing indicator
         this.showTypingIndicator();
 
-        // Use DeepSeek API if configured, otherwise fallback to local analysis
-        if (this.deepseekConfig.useRealAI && this.deepseekConfig.apiKey) {
-            this.callDeepSeekAPI(message);
+        // Use backend API if configured, otherwise fallback to local analysis
+        if (this.apiConfig.useBackend) {
+            this.callBackendAPI(message);
         } else {
             // Simulate AI analysis with local fallback
             setTimeout(() => {
@@ -394,92 +392,85 @@ const app = {
         if (indicator) indicator.remove();
     },
 
-    async callDeepSeekAPI(userMessage) {
-        const systemPrompt = `You are an empathetic AI therapist specializing in the "Power-Possession Cycle" - a psychological pattern where people seek external validation (power), possess it, inevitably lose it, collapse into emptiness, crave substitutes, and return to power-seeking.
-
-The six states are:
-1. Power - External validation, feeling in control
-2. Possession - Owning phase, attachment to external power  
-3. Loss - Inevitable decline, external power fading
-4. Emptiness - Collapse, void when external validation gone
-5. Craving - Compulsive urge for substitute satisfaction
-6. Return - Power-seeking behavior restarting cycle
-
-Analyze the user's emotional state and respond with:
-1. A brief empathetic acknowledgment (1-2 sentences)
-2. Identify which state(s) they seem to be in
-3. Suggest one specific intervention from: Values grounding, Somatic anchoring, Urge surfing, Pattern interrupt, Physiological sigh, 5-4-3-2-1 grounding, or Self-compassion break
-
-Keep your response concise (3-4 sentences max) and warm.`;
-
+    async callBackendAPI(userMessage) {
+        const apiUrl = this.apiConfig.baseUrl || '';
+        
         try {
-            const response = await fetch(this.deepseekConfig.apiUrl, {
+            const response = await fetch(`${apiUrl}/api/chat`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${this.deepseekConfig.apiKey}`
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({
-                    model: this.deepseekConfig.model,
-                    messages: [
-                        { role: 'system', content: systemPrompt },
-                        { role: 'user', content: userMessage }
-                    ],
-                    temperature: 0.7,
-                    max_tokens: 200
-                })
+                body: JSON.stringify({ message: userMessage })
             });
 
             this.hideTypingIndicator();
 
             if (!response.ok) {
+                // If backend fails, try fallback endpoint
+                if (response.status === 503) {
+                    console.log('AI not configured on backend, using fallback');
+                    return this.callFallbackAPI(userMessage);
+                }
                 throw new Error(`API error: ${response.status}`);
             }
 
             const data = await response.json();
-            const aiResponse = data.choices[0].message.content;
 
             // Add AI response to chat
-            this.addChatMessage(aiResponse, 'ai');
+            this.addChatMessage(data.response, 'ai');
 
-            // Try to extract state and update sidebar
-            this.inferStateFromResponse(aiResponse);
+            // Update sidebar with detected state
+            if (data.state && this.cycleStates[data.state]) {
+                this.updateDetectedState(this.cycleStates[data.state], data.confidence || 85);
+            }
 
         } catch (error) {
-            console.error('DeepSeek API error:', error);
+            console.error('Backend API error:', error);
             this.hideTypingIndicator();
             
             // Fallback to local analysis on error
             this.addChatMessage(
-                "I'm having trouble connecting right now. Let me analyze this locally for you.",
+                "I'm having trouble connecting to the AI service. Let me analyze this locally for you.",
                 'ai'
             );
             this.analyzeEmotionLocal(userMessage);
         }
     },
 
-    inferStateFromResponse(response) {
-        // Try to infer which state was detected from the AI response
-        const lowerResponse = response.toLowerCase();
-        let detectedState = 'emptiness';
-        let confidence = 75;
+    async callFallbackAPI(userMessage) {
+        const apiUrl = this.apiConfig.baseUrl || '';
+        
+        try {
+            const response = await fetch(`${apiUrl}/api/chat-fallback`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: userMessage })
+            });
 
-        if (lowerResponse.includes('power') && !lowerResponse.includes('power-seeking')) {
-            detectedState = 'power';
-        } else if (lowerResponse.includes('possession') || lowerResponse.includes('attachment')) {
-            detectedState = 'possession';
-        } else if (lowerResponse.includes('loss') || lowerResponse.includes('lost')) {
-            detectedState = 'loss';
-        } else if (lowerResponse.includes('emptiness') || lowerResponse.includes('empty')) {
-            detectedState = 'emptiness';
-        } else if (lowerResponse.includes('craving') || lowerResponse.includes('crave')) {
-            detectedState = 'craving';
-        } else if (lowerResponse.includes('return') || lowerResponse.includes('seeking')) {
-            detectedState = 'return';
+            this.hideTypingIndicator();
+
+            if (!response.ok) {
+                throw new Error(`Fallback API error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            // Add AI response to chat
+            this.addChatMessage(data.response, 'ai');
+
+            // Update sidebar with detected state
+            if (data.state && this.cycleStates[data.state]) {
+                this.updateDetectedState(this.cycleStates[data.state], data.confidence || 70);
+            }
+
+        } catch (error) {
+            console.error('Fallback API error:', error);
+            this.hideTypingIndicator();
+            this.analyzeEmotionLocal(userMessage);
         }
-
-        const state = this.cycleStates[detectedState];
-        this.updateDetectedState(state, confidence);
     },
 
     addChatMessage(text, sender) {

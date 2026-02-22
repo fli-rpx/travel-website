@@ -1,0 +1,18 @@
+{
+  "name": "mindfulness-therapy-server",
+  "version": "1.0.0",
+  "description": "Backend proxy for Mindfulness Therapy app with DeepSeek AI integration",
+  "main": "mindfulness-server.js",
+  "scripts": {
+    "start": "node mindfulness-server.js",
+    "dev": "DEEPSEEK_API_KEY=$DEEPSEEK_API_KEY node mindfulness-server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "node-fetch": "^2.7.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

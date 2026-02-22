@@ -1,0 +1,847 @@
+/* Mindfulness Therapy Web App Styles */
+
+:root {
+    --primary: #14b8a6;
+    --primary-dark: #0d9488;
+    --secondary: #f97316;
+    --danger: #ef4444;
+    --success: #22c55e;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --text-light: #64748b;
+    --border: #e2e8f0;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Navigation */
+.nav {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+}
+
+.nav-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: transparent;
+    color: var(--text-light);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 9999px;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    background: var(--bg);
+}
+
+.nav-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Tabs */
+.tab {
+    display: none;
+    padding: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tab.active {
+    display: block;
+}
+
+/* Cards */
+.card {
+    background: var(--card);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+.last-checkin {
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+/* Salad Card */
+.salad-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    color: white;
+    transition: transform 0.2s;
+}
+
+.salad-card:hover {
+    transform: translateY(-2px);
+}
+
+.salad-icon {
+    font-size: 2.5rem;
+}
+
+.salad-content h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+}
+
+.salad-content p {
+    opacity: 0.9;
+    font-size: 0.875rem;
+}
+
+.arrow {
+    margin-left: auto;
+    font-size: 1.5rem;
+}
+
+/* Streak Card */
+.streak-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.streak-icon {
+    font-size: 2rem;
+}
+
+.streak-content h3 {
+    font-size: 1.125rem;
+}
+
+.streak-content p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.streak-dots {
+    margin-left: auto;
+    display: flex;
+    gap: 0.25rem;
+}
+
+.streak-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+}
+
+.streak-dot.active {
+    background: var(--primary);
+}
+
+/* Quick Exercises */
+.quick-exercises h3 {
+    margin-bottom: 1rem;
+}
+
+.exercise-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.exercise-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.exercise-btn:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
+}
+
+.exercise-btn .icon {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.exercise-btn span {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.exercise-btn small {
+    color: var(--text-light);
+    font-size: 0.75rem;
+}
+
+/* Quote Card */
+.quote-card {
+    background: var(--card);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+.quote-card::before {
+    content: '"';
+    font-size: 3rem;
+    color: var(--primary);
+    line-height: 1;
+}
+
+/* Salad Check */
+.salad-header {
+    margin-bottom: 1.5rem;
+}
+
+.salad-header h2 {
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 4px;
+    transition: width 0.3s;
+}
+
+.progress-text {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+/* Question Card */
+.question-card {
+    background: var(--card);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.question-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.question-category.spicy {
+    color: var(--danger);
+}
+
+.question-category.greasy {
+    color: var(--secondary);
+}
+
+.question-category.vegetable {
+    color: var(--success);
+}
+
+.question-text {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.option-btn {
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background: var(--card);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.option-btn:hover {
+    border-color: var(--primary);
+    background: var(--bg);
+}
+
+.option-btn.selected {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.option-btn .check {
+    margin-left: auto;
+    opacity: 0;
+}
+
+.option-btn.selected .check {
+    opacity: 1;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.btn-primary {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg);
+    color: var(--text);
+    border: none;
+    border-radius: 9999px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: var(--border);
+}
+
+/* Results */
+.result-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.result-item.spicy {
+    background: #fef2f2;
+}
+
+.result-item.greasy {
+    background: #fff7ed;
+}
+
+.result-item.vegetable {
+    background: #f0fdf4;
+}
+
+.result-icon {
+    font-size: 1.5rem;
+}
+
+.result-content h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.result-item.spicy .result-content h4 {
+    color: var(--danger);
+}
+
+.result-item.greasy .result-content h4 {
+    color: var(--secondary);
+}
+
+.result-item.vegetable .result-content h4 {
+    color: var(--success);
+}
+
+.protocol {
+    background: var(--bg);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.protocol h3 {
+    margin-bottom: 1rem;
+}
+
+.protocol-step {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.step-number {
+    width: 24px;
+    height: 24px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.step-content p {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+/* Exercises */
+.exercise-section {
+    margin-bottom: 2rem;
+}
+
+.exercise-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.exercise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.exercise-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--card);
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid var(--border);
+}
+
+.exercise-item:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
+}
+
+.exercise-icon {
+    font-size: 1.5rem;
+}
+
+.exercise-info h4 {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.exercise-info p {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+}
+
+.duration {
+    font-size: 0.75rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: var(--card);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+}
+
+.exercise-player {
+    text-align: center;
+}
+
+.exercise-player h2 {
+    margin-bottom: 2rem;
+}
+
+.timer-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+}
+
+.timer-circle svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.timer-bg {
+    fill: none;
+    stroke: var(--border);
+    stroke-width: 8;
+}
+
+.timer-progress {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+}
+
+.timer-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.control-btn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Journal */
+.mood-tracker {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.mood-btn {
+    flex: 1;
+    padding: 1rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background: var(--card);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mood-btn:hover {
+    border-color: var(--primary);
+}
+
+.mood-btn.selected {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.mood-btn span {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.mood-btn small {
+    font-size: 0.75rem;
+}
+
+.prompt {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.journal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.journal-entry {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--card);
+    border-radius: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.journal-entry .mood {
+    font-size: 1.5rem;
+}
+
+.journal-entry-content h4 {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.journal-entry-content p {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+}
+
+.journal-entry-content small {
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+/* Progress */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-card {
+    background: var(--card);
+    border-radius: 1rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+.weekly-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100px;
+    padding: 1rem 0;
+}
+
+.chart-bar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chart-bar-fill {
+    width: 100%;
+    max-width: 30px;
+    background: var(--primary);
+    border-radius: 4px 4px 0 0;
+    transition: height 0.3s;
+}
+
+.chart-bar-fill.empty {
+    background: var(--border);
+}
+
+.chart-bar-label {
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+.achievements {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.achievement {
+    text-align: center;
+    padding: 1rem;
+    background: var(--bg);
+    border-radius: 0.75rem;
+}
+
+.achievement.unlocked {
+    background: #f0fdf4;
+}
+
+.achievement-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-name {
+    font-size: 0.75rem;
+}
+
+.insight {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.insight-icon {
+    font-size: 1.25rem;
+}
+
+.insight-text {
+    font-size: 0.875rem;
+}
+
+/* Utilities */
+.hidden {
+    display: none !important;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .nav-links {
+        padding-bottom: 0.5rem;
+    }
+    
+    .exercise-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .achievements {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

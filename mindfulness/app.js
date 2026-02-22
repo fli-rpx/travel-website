@@ -344,6 +344,14 @@ const app = {
         }, 100);
     },
 
+    // DeepSeek API Configuration
+    deepseekConfig: {
+        apiKey: '', // User should set their API key here
+        apiUrl: 'https://api.deepseek.com/v1/chat/completions',
+        model: 'deepseek-chat',
+        useRealAI: false // Toggle between real AI and local fallback
+    },
+
     // AI Chat
     sendMessage() {
         const input = document.getElementById('chatInput');
@@ -354,10 +362,124 @@ const app = {
         this.addChatMessage(message, 'user');
         input.value = '';
 
-        // Simulate AI analysis
-        setTimeout(() => {
-            this.analyzeEmotion(message);
-        }, 1000);
+        // Show typing indicator
+        this.showTypingIndicator();
+
+        // Use DeepSeek API if configured, otherwise fallback to local analysis
+        if (this.deepseekConfig.useRealAI && this.deepseekConfig.apiKey) {
+            this.callDeepSeekAPI(message);
+        } else {
+            // Simulate AI analysis with local fallback
+            setTimeout(() => {
+                this.hideTypingIndicator();
+                this.analyzeEmotionLocal(message);
+            }, 1000);
+        }
+    },
+
+    showTypingIndicator() {
+        const container = document.getElementById('chatMessages');
+        if (!container) return;
+
+        const div = document.createElement('div');
+        div.className = 'message ai-message typing-indicator';
+        div.id = 'typingIndicator';
+        div.innerHTML = '<p><span class="dot"></span><span class="dot"></span><span class="dot"></span></p>';
+        container.appendChild(div);
+        container.scrollTop = container.scrollHeight;
+    },
+
+    hideTypingIndicator() {
+        const indicator = document.getElementById('typingIndicator');
+        if (indicator) indicator.remove();
+    },
+
+    async callDeepSeekAPI(userMessage) {
+        const systemPrompt = `You are an empathetic AI therapist specializing in the "Power-Possession Cycle" - a psychological pattern where people seek external validation (power), possess it, inevitably lose it, collapse into emptiness, crave substitutes, and return to power-seeking.
+
+The six states are:
+1. Power - External validation, feeling in control
+2. Possession - Owning phase, attachment to external power  
+3. Loss - Inevitable decline, external power fading
+4. Emptiness - Collapse, void when external validation gone
+5. Craving - Compulsive urge for substitute satisfaction
+6. Return - Power-seeking behavior restarting cycle
+
+Analyze the user's emotional state and respond with:
+1. A brief empathetic acknowledgment (1-2 sentences)
+2. Identify which state(s) they seem to be in
+3. Suggest one specific intervention from: Values grounding, Somatic anchoring, Urge surfing, Pattern interrupt, Physiological sigh, 5-4-3-2-1 grounding, or Self-compassion break
+
+Keep your response concise (3-4 sentences max) and warm.`;
+
+        try {
+            const response = await fetch(this.deepseekConfig.apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${this.deepseekConfig.apiKey}`
+                },
+                body: JSON.stringify({
+                    model: this.deepseekConfig.model,
+                    messages: [
+                        { role: 'system', content: systemPrompt },
+                        { role: 'user', content: userMessage }
+                    ],
+                    temperature: 0.7,
+                    max_tokens: 200
+                })
+            });
+
+            this.hideTypingIndicator();
+
+            if (!response.ok) {
+                throw new Error(`API error: ${response.status}`);
+            }
+
+            const data = await response.json();
+            const aiResponse = data.choices[0].message.content;
+
+            // Add AI response to chat
+            this.addChatMessage(aiResponse, 'ai');
+
+            // Try to extract state and update sidebar
+            this.inferStateFromResponse(aiResponse);
+
+        } catch (error) {
+            console.error('DeepSeek API error:', error);
+            this.hideTypingIndicator();
+            
+            // Fallback to local analysis on error
+            this.addChatMessage(
+                "I'm having trouble connecting right now. Let me analyze this locally for you.",
+                'ai'
+            );
+            this.analyzeEmotionLocal(userMessage);
+        }
+    },
+
+    inferStateFromResponse(response) {
+        // Try to infer which state was detected from the AI response
+        const lowerResponse = response.toLowerCase();
+        let detectedState = 'emptiness';
+        let confidence = 75;
+
+        if (lowerResponse.includes('power') && !lowerResponse.includes('power-seeking')) {
+            detectedState = 'power';
+        } else if (lowerResponse.includes('possession') || lowerResponse.includes('attachment')) {
+            detectedState = 'possession';
+        } else if (lowerResponse.includes('loss') || lowerResponse.includes('lost')) {
+            detectedState = 'loss';
+        } else if (lowerResponse.includes('emptiness') || lowerResponse.includes('empty')) {
+            detectedState = 'emptiness';
+        } else if (lowerResponse.includes('craving') || lowerResponse.includes('crave')) {
+            detectedState = 'craving';
+        } else if (lowerResponse.includes('return') || lowerResponse.includes('seeking')) {
+            detectedState = 'return';
+        }
+
+        const state = this.cycleStates[detectedState];
+        this.updateDetectedState(state, confidence);
     },
 
     addChatMessage(text, sender) {
@@ -371,8 +493,8 @@ const app = {
         container.scrollTop = container.scrollHeight;
     },
 
-    analyzeEmotion(text) {
-        // Simple keyword-based analysis (in real app, this would use an AI API)
+    analyzeEmotionLocal(text) {
+        // Simple keyword-based analysis (fallback when API is not available)
         const lowerText = text.toLowerCase();
         let detectedState = 'emptiness';
         let confidence = 70;

@@ -15,42 +15,48 @@ const app = {
     cycleStates: {
         power: {
             name: 'Power',
-            color: '#dc2626',
+            color: '#991b1b',
+            bgColor: '#450a0a',
             description: 'External validation, feeling in control',
             triggers: ['Achievement', 'Recognition', 'Status gain'],
             strategies: ['Values grounding', 'Internal validation', 'Preventive balance']
         },
         possession: {
             name: 'Possession',
-            color: '#7c3aed',
+            color: '#6b21a8',
+            bgColor: '#3b0764',
             description: 'Owning phase, attachment to external power',
             triggers: ['Control behaviors', 'Territoriality', 'Acquisition'],
             strategies: ['Letting go practice', 'Non-attachment', 'Impermanence awareness']
         },
         loss: {
             name: 'Loss',
-            color: '#2563eb',
+            color: '#1e40af',
+            bgColor: '#172554',
             description: 'Inevitable decline, external power fading',
             triggers: ['Status loss', 'Rejection', 'Failure'],
             strategies: ['Acceptance', 'Grief processing', 'Reality orientation']
         },
         emptiness: {
             name: 'Emptiness',
-            color: '#6b7280',
+            color: '#374151',
+            bgColor: '#111827',
             description: 'Collapse, void when external validation gone',
             triggers: ['Isolation', 'Meaninglessness', 'Disconnection'],
             strategies: ['Somatic anchoring', 'Presence', 'Self-compassion']
         },
         craving: {
             name: 'Craving',
-            color: '#f59e0b',
+            color: '#b45309',
+            bgColor: '#451a03',
             description: 'Compulsive urge for substitute satisfaction',
             triggers: ['Emptiness', 'Boredom', 'Restlessness'],
             strategies: ['Urge surfing', 'Pattern interruption', 'Alternative satisfaction']
         },
         return: {
             name: 'Return',
-            color: '#22c55e',
+            color: '#15803d',
+            bgColor: '#052e16',
             description: 'Power-seeking behavior restarting cycle',
             triggers: ['Hope', 'Opportunity', 'New validation source'],
             strategies: ['Cycle awareness', 'Conscious choice', 'Break pattern']
@@ -230,12 +236,13 @@ const app = {
             svg += `
                 <g class="cycle-node" 
                    onclick="app.showStateDetail('${stateKey}')" 
-                   onmouseenter="app.changeBackgroundColor('${state.color}')"
+                   onmouseenter="app.changeBackgroundColor('${state.color}', '${state.bgColor}')"
                    onmouseleave="app.resetBackgroundColor()"
-                   style="cursor: pointer;">
-                    <circle cx="${x}" cy="${y}" r="35" fill="${state.color}" opacity="0.2" stroke="${state.color}" stroke-width="3"/>
-                    <text x="${x}" y="${y - 5}" text-anchor="middle" font-size="12" font-weight="600" fill="${state.color}">${state.name}</text>
-                    <text x="${x}" y="${y + 10}" text-anchor="middle" font-size="10" fill="#64748b">${['🔥', '💜', '💙', '⚪', '🟠', '🟢'][i]}</text>
+                   style="cursor: pointer; filter: drop-shadow(0 0 20px ${state.color}80);">
+                    <circle cx="${x}" cy="${y}" r="45" fill="${state.bgColor}" stroke="${state.color}" stroke-width="4"/>
+                    <circle cx="${x}" cy="${y}" r="35" fill="${state.color}" opacity="0.9"/>
+                    <text x="${x}" y="${y - 8}" text-anchor="middle" font-size="14" font-weight="700" fill="white" style="text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${state.name}</text>
+                    <text x="${x}" y="${y + 12}" text-anchor="middle" font-size="20">${['🔥', '💜', '💙', '⚪', '🟠', '🟢'][i]}</text>
                 </g>
             `;
         });
@@ -273,14 +280,14 @@ const app = {
     },
 
     // Background color change for cycle
-    changeBackgroundColor(color) {
-        document.body.style.transition = 'background 1s ease';
-        document.body.style.background = `linear-gradient(135deg, ${color}15 0%, ${color}08 50%, #f5f2ed 100%)`;
+    changeBackgroundColor(color, bgColor) {
+        document.body.style.transition = 'background 0.8s ease';
+        document.body.style.background = `radial-gradient(ellipse at center, ${bgColor} 0%, ${color}40 40%, #0f0f0f 100%)`;
     },
 
     resetBackgroundColor() {
-        document.body.style.transition = 'background 1s ease';
-        document.body.style.background = 'linear-gradient(135deg, #fafaf9 0%, #f5f2ed 100%)';
+        document.body.style.transition = 'background 0.8s ease';
+        document.body.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%)';
     },
 
     // AI Chat

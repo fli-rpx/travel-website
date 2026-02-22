@@ -1071,9 +1071,47 @@ h2 {
     background: var(--color-primary-dark);
 }
 
-/* Utilities */
-.hidden {
-    display: none !important;
+/* Footer */
+.footer {
+    background: #1e293b;
+    color: #94a3b8;
+    padding: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #14b8a6;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Copyright Protection */
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body.allow-select {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 /* Responsive */

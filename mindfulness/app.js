@@ -1,5 +1,6 @@
 // Mindfulness Therapy - Enhanced JavaScript
 // Features: Power-Possession Cycle, AI Assessment, Micro-Interventions
+// Copyright © 2026 Mindfulness Therapy. All rights reserved.
 
 const app = {
     currentTab: 'home',
@@ -830,8 +831,42 @@ const app = {
         const mood = localStorage.getItem('todayMood');
         if (mood) this.logMood(parseInt(mood));
         this.renderJournalEntries();
+    },
+
+    // Copyright protection - show privacy policy
+    showPrivacyPolicy() {
+        alert('Privacy Policy:\n\n' +
+            '© 2026 Mindfulness Therapy. All rights reserved.\n\n' +
+            'Your data is stored locally on your device.\n' +
+            'We do not collect or share personal information.\n' +
+            'All journal entries and progress data remain private.');
+    },
+
+    // Copyright protection - show terms
+    showTerms() {
+        alert('Terms of Use:\n\n' +
+            '© 2026 Mindfulness Therapy. All rights reserved.\n\n' +
+            'This application is for personal use only.\n' +
+            'Unauthorized copying, distribution, or modification is prohibited.\n' +
+            'The content and design are protected by copyright law.');
     }
 };
+
+// Copyright Protection - Disable right-click and certain keyboard shortcuts
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    return false;
+});
+
+document.addEventListener('keydown', (e) => {
+    // Disable F12, Ctrl+Shift+I, Ctrl+U
+    if (e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+        (e.ctrlKey && e.key === 'u')) {
+        e.preventDefault();
+        return false;
+    }
+});
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {

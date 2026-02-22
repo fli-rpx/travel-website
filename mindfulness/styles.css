@@ -10,13 +10,13 @@
     --color-emptiness: #6b7280;
     --color-craving: #f59e0b;
     --color-return: #22c55e;
-    --bg: #1a1a1a;
-    --card: #262626;
-    --text: #f1f5f9;
-    --text-light: #94a3b8;
-    --border: #404040;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --text-light: #64748b;
+    --border: #e2e8f0;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 * {

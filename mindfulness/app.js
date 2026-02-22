@@ -1,4 +1,5 @@
-// Mindfulness Therapy Web App - JavaScript
+// Mindfulness Therapy - Enhanced JavaScript
+// Features: Power-Possession Cycle, AI Assessment, Micro-Interventions
 
 const app = {
     currentTab: 'home',
@@ -8,8 +9,55 @@ const app = {
     timerSeconds: 0,
     timerTotal: 0,
     isRunning: false,
+    currentIntervention: null,
 
-    // Data
+    // Power-Possession Cycle Data
+    cycleStates: {
+        power: {
+            name: 'Power',
+            color: '#dc2626',
+            description: 'External validation, feeling in control',
+            triggers: ['Achievement', 'Recognition', 'Status gain'],
+            strategies: ['Values grounding', 'Internal validation', 'Preventive balance']
+        },
+        possession: {
+            name: 'Possession',
+            color: '#7c3aed',
+            description: 'Owning phase, attachment to external power',
+            triggers: ['Control behaviors', 'Territoriality', 'Acquisition'],
+            strategies: ['Letting go practice', 'Non-attachment', 'Impermanence awareness']
+        },
+        loss: {
+            name: 'Loss',
+            color: '#2563eb',
+            description: 'Inevitable decline, external power fading',
+            triggers: ['Status loss', 'Rejection', 'Failure'],
+            strategies: ['Acceptance', 'Grief processing', 'Reality orientation']
+        },
+        emptiness: {
+            name: 'Emptiness',
+            color: '#6b7280',
+            description: 'Collapse, void when external validation gone',
+            triggers: ['Isolation', 'Meaninglessness', 'Disconnection'],
+            strategies: ['Somatic anchoring', 'Presence', 'Self-compassion']
+        },
+        craving: {
+            name: 'Craving',
+            color: '#f59e0b',
+            description: 'Compulsive urge for substitute satisfaction',
+            triggers: ['Emptiness', 'Boredom', 'Restlessness'],
+            strategies: ['Urge surfing', 'Pattern interruption', 'Alternative satisfaction']
+        },
+        return: {
+            name: 'Return',
+            color: '#22c55e',
+            description: 'Power-seeking behavior restarting cycle',
+            triggers: ['Hope', 'Opportunity', 'New validation source'],
+            strategies: ['Cycle awareness', 'Conscious choice', 'Break pattern']
+        }
+    },
+
+    // Salad Questions
     spicyQuestions: [
         { id: 'emotion_now', text: 'What emotion am I feeling most right now?', options: ['Anger', 'Fear', 'Shame', 'Emptiness', 'Powerlessness', 'Anxiety', 'Sadness'] },
         { id: 'body_location', text: 'Where in my body do I feel this emotion?', options: ['Chest tightness', 'Stomach knot', 'Heat in face', 'Cold hands', 'Tension in shoulders', 'Lump in throat', 'Cannot feel anything'] },
@@ -42,9 +90,9 @@ const app = {
 
     quotes: [
         'The old you just reacted. The you now is learning to choose.',
-        'If I were not trying to feel powerful at all, what would I want?',
         'The pause between feeling and action is where freedom lives.',
-        'Inner power is the capacity to tolerate emptiness without panic.'
+        'Inner power is the capacity to tolerate emptiness without panic.',
+        'If I were not trying to feel powerful at all, what would I want?'
     ],
 
     journalPrompts: [
@@ -56,13 +104,27 @@ const app = {
         'What vegetable do you actually need?'
     ],
 
+    interventions: {
+        grounding: { name: 'Values Grounding', duration: 60, instructions: 'Take a deep breath. Ask yourself: What truly matters to me beyond external validation?' },
+        powerbreathing: { name: 'Power Breathing', duration: 120, instructions: 'Inhale for 4 counts, hold for 4, exhale for 6. Feel the energy settle.' },
+        somatic: { name: 'Somatic Anchoring', duration: 180, instructions: 'Feel your feet on the ground. Notice 3 sensations in your body right now.' },
+        reframe: { name: 'Cognitive Reframe', duration: 120, instructions: 'What is another way to view this situation? What would you tell a friend?' },
+        urgesurfing: { name: 'Urge Surfing', duration: 300, instructions: 'Observe the craving like a wave. It will rise, peak, and fall. You do not need to act.' },
+        patternbreak: { name: 'Pattern Interrupt', duration: 60, instructions: 'Stand up. Stretch. Splash cold water on your face. Change your physical state.' },
+        sigh: { name: 'Physiological Sigh', duration: 60, instructions: 'Take two quick inhales through nose, then one long exhale through mouth. Repeat 3 times.' },
+        '54321': { name: '5-4-3-2-1 Grounding', duration: 60, instructions: 'Name 5 things you see, 4 you can touch, 3 you hear, 2 you smell, 1 you taste.' },
+        compassion: { name: 'Self-Compassion Break', duration: 60, instructions: 'Place hand on heart. Say: This is hard. I am not alone. May I be kind to myself.' }
+    },
+
     init() {
         this.setupNavigation();
         this.updateGreeting();
         this.loadData();
         this.renderQuote();
         this.renderStreak();
+        this.renderCycle();
         this.setupSaladCheck();
+        this.renderProgress();
     },
 
     setupNavigation() {
@@ -87,6 +149,8 @@ const app = {
 
         if (tab === 'progress') {
             this.renderProgress();
+        } else if (tab === 'cycle') {
+            this.renderCycle();
         }
     },
 
@@ -97,54 +161,258 @@ const app = {
         else if (hour >= 17) greeting = 'Good evening';
         else if (hour < 5) greeting = 'Good night';
         
-        document.getElementById('greeting').textContent = greeting + ',';
+        const el = document.getElementById('greeting');
+        if (el) el.textContent = greeting + ',';
     },
 
     renderQuote() {
         const quote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
-        document.getElementById('quoteCard').innerHTML = `<p>${quote}</p>`;
+        const el = document.getElementById('quoteCard');
+        if (el) el.innerHTML = `<p>${quote}</p>`;
     },
 
     renderStreak() {
         const streak = this.getStreak();
-        document.getElementById('streakCount').textContent = `${streak} Day Streak`;
+        const el = document.getElementById('streakValue');
+        if (el) el.textContent = streak;
         
-        const dotsContainer = document.getElementById('streakDots');
-        dotsContainer.innerHTML = '';
-        for (let i = 0; i < 7; i++) {
-            const dot = document.createElement('div');
-            dot.className = 'streak-dot' + (i < streak % 7 ? ' active' : '');
-            dotsContainer.appendChild(dot);
+        const sessionEl = document.getElementById('sessionValue');
+        const minuteEl = document.getElementById('minuteValue');
+        
+        if (sessionEl) {
+            const sessions = JSON.parse(localStorage.getItem('sessions') || '[]');
+            sessionEl.textContent = sessions.length;
+        }
+        
+        if (minuteEl) {
+            const sessions = JSON.parse(localStorage.getItem('sessions') || '[]');
+            const minutes = sessions.reduce((sum, s) => sum + (s.duration || 0), 0);
+            minuteEl.textContent = minutes;
         }
     },
 
     getStreak() {
         const checkins = JSON.parse(localStorage.getItem('checkins') || '[]');
-        if (checkins.length === 0) return 0;
-        
-        // Simple streak calculation
         return Math.min(checkins.length, 7);
+    },
+
+    // Power-Possession Cycle Visualization
+    renderCycle() {
+        const container = document.getElementById('cycleVisualization');
+        if (!container) return;
+
+        const states = ['power', 'possession', 'loss', 'emptiness', 'craving', 'return'];
+        const centerX = 200;
+        const centerY = 200;
+        const radius = 120;
+
+        let svg = `<svg viewBox="0 0 400 400" class="cycle-svg">`;
+        
+        // Draw connecting lines
+        for (let i = 0; i < states.length; i++) {
+            const angle1 = (i * 60 - 90) * Math.PI / 180;
+            const angle2 = ((i + 1) % states.length * 60 - 90) * Math.PI / 180;
+            const x1 = centerX + radius * Math.cos(angle1);
+            const y1 = centerY + radius * Math.sin(angle1);
+            const x2 = centerX + radius * Math.cos(angle2);
+            const y2 = centerY + radius * Math.sin(angle2);
+            
+            svg += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#e2e8f0" stroke-width="3" />`;
+        }
+
+        // Draw nodes
+        states.forEach((stateKey, i) => {
+            const state = this.cycleStates[stateKey];
+            const angle = (i * 60 - 90) * Math.PI / 180;
+            const x = centerX + radius * Math.cos(angle);
+            const y = centerY + radius * Math.sin(angle);
+            
+            svg += `
+                <g class="cycle-node" onclick="app.showStateDetail('${stateKey}')" style="cursor: pointer;">
+                    <circle cx="${x}" cy="${y}" r="35" fill="${state.color}" opacity="0.2" stroke="${state.color}" stroke-width="3"/>
+                    <text x="${x}" y="${y - 5}" text-anchor="middle" font-size="12" font-weight="600" fill="${state.color}">${state.name}</text>
+                    <text x="${x}" y="${y + 10}" text-anchor="middle" font-size="10" fill="#64748b">${['🔥', '💜', '💙', '⚪', '🟠', '🟢'][i]}</text>
+                </g>
+            `;
+        });
+
+        // Center label
+        svg += `
+            <circle cx="${centerX}" cy="${centerY}" r="50" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+            <text x="${centerX}" y="${centerY - 5}" text-anchor="middle" font-size="12" font-weight="600" fill="#1e293b">Power-Possession</text>
+            <text x="${centerX}" y="${centerY + 10}" text-anchor="middle" font-size="12" font-weight="600" fill="#1e293b">Cycle</text>
+        `;
+
+        svg += '</svg>';
+        container.innerHTML = svg;
+    },
+
+    showStateDetail(stateKey) {
+        const state = this.cycleStates[stateKey];
+        const container = document.getElementById('cycleInfo');
+        if (!container) return;
+
+        container.innerHTML = `
+            <div class="state-detail">
+                <h3 style="color: ${state.color}">${state.name}</h3>
+                <p>${state.description}</p>
+                <h4>Common Triggers:</h4>
+                <ul>
+                    ${state.triggers.map(t => `<li>${t}</li>`).join('')}
+                </ul>
+                <h4>Helpful Strategies:</h4>
+                <ul>
+                    ${state.strategies.map(s => `<li>${s}</li>`).join('')}
+                </ul>
+            </div>
+        `;
+    },
+
+    // AI Chat
+    sendMessage() {
+        const input = document.getElementById('chatInput');
+        const message = input.value.trim();
+        if (!message) return;
+
+        // Add user message
+        this.addChatMessage(message, 'user');
+        input.value = '';
+
+        // Simulate AI analysis
+        setTimeout(() => {
+            this.analyzeEmotion(message);
+        }, 1000);
+    },
+
+    addChatMessage(text, sender) {
+        const container = document.getElementById('chatMessages');
+        if (!container) return;
+
+        const div = document.createElement('div');
+        div.className = `message ${sender}-message`;
+        div.innerHTML = `<p>${text}</p>`;
+        container.appendChild(div);
+        container.scrollTop = container.scrollHeight;
+    },
+
+    analyzeEmotion(text) {
+        // Simple keyword-based analysis (in real app, this would use an AI API)
+        const lowerText = text.toLowerCase();
+        let detectedState = 'emptiness';
+        let confidence = 70;
+
+        if (lowerText.includes('angry') || lowerText.includes('power') || lowerText.includes('control')) {
+            detectedState = 'power';
+            confidence = 85;
+        } else if (lowerText.includes('want') || lowerText.includes('need') || lowerText.includes('crave')) {
+            detectedState = 'craving';
+            confidence = 80;
+        } else if (lowerText.includes('lost') || lowerText.includes('failed') || lowerText.includes('rejected')) {
+            detectedState = 'loss';
+            confidence = 82;
+        } else if (lowerText.includes('empty') || lowerText.includes('nothing') || lowerText.includes('numb')) {
+            detectedState = 'emptiness';
+            confidence = 88;
+        }
+
+        const state = this.cycleStates[detectedState];
+
+        // AI response
+        this.addChatMessage(
+            `I hear you. It sounds like you might be in the <strong>${state.name}</strong> state. ` +
+            `This is when ${state.description.toLowerCase()}. ` +
+            `Would you like to try a ${state.strategies[0].toLowerCase()} exercise?`,
+            'ai'
+        );
+
+        // Update sidebar
+        this.updateDetectedState(state, confidence);
+    },
+
+    updateDetectedState(state, confidence) {
+        const stateEl = document.getElementById('detectedState');
+        const scoreEl = document.getElementById('confidenceScore');
+        const actionsEl = document.getElementById('suggestedActions');
+
+        if (stateEl) {
+            stateEl.innerHTML = `
+                <h4>Detected State</h4>
+                <div style="padding: 1rem; background: ${state.color}20; border-radius: 0.5rem; border-left: 4px solid ${state.color}">
+                    <strong style="color: ${state.color}">${state.name}</strong>
+                    <p style="margin-top: 0.5rem; font-size: 0.875rem; color: #64748b">${state.description}</p>
+                </div>
+            `;
+        }
+
+        if (scoreEl) {
+            scoreEl.innerHTML = `
+                <h4>Confidence</h4>
+                <div class="score-bar">
+                    <div class="score-fill" style="width: ${confidence}%"></div>
+                </div>
+                <span class="score-value">${confidence}%</span>
+            `;
+        }
+
+        if (actionsEl) {
+            actionsEl.innerHTML = `
+                <h4>Suggested Actions</h4>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    ${state.strategies.map(s => `
+                        <button class="option-btn" onclick="app.startInterventionFromState('${s}')" style="text-align: left;">
+                            ${s}
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+        }
+    },
+
+    startInterventionFromState(strategy) {
+        // Map strategy to intervention
+        const mapping = {
+            'Values grounding': 'grounding',
+            'Somatic anchoring': 'somatic',
+            'Urge surfing': 'urgesurfing',
+            'Pattern interruption': 'patternbreak'
+        };
+        
+        const intervention = mapping[strategy] || 'sigh';
+        this.startIntervention(intervention);
+    },
+
+    toggleVoiceInput() {
+        alert('Voice input would use Web Speech API in production');
+    },
+
+    startStructuredAssessment() {
+        this.navigate('salad');
     },
 
     // Salad Check
     setupSaladCheck() {
         this.currentStep = 0;
         this.answers = {};
-        this.renderQuestion();
+        this.renderSaladQuestion();
     },
 
-    renderQuestion() {
-        const container = document.getElementById('questionContainer');
+    renderSaladQuestion() {
+        const container = document.getElementById('saladQuestions');
         const totalSteps = this.spicyQuestions.length + this.greasyQuestions.length + this.vegetableQuestions.length;
         
-        document.getElementById('progressFill').style.width = `${(this.currentStep / totalSteps) * 100}%`;
-        document.getElementById('progressText').textContent = `Question ${this.currentStep + 1} of ${totalSteps}`;
+        const progressEl = document.getElementById('saladProgress');
+        const textEl = document.getElementById('saladProgressText');
+        
+        if (progressEl) progressEl.style.width = `${(this.currentStep / totalSteps) * 100}%`;
+        if (textEl) textEl.textContent = `Question ${this.currentStep + 1} of ${totalSteps}`;
+
+        if (!container) return;
 
         let question, category, color;
         if (this.currentStep < this.spicyQuestions.length) {
             question = this.spicyQuestions[this.currentStep];
             category = 'spicy';
-            color = '#ef4444';
+            color = '#dc2626';
         } else if (this.currentStep < this.spicyQuestions.length + this.greasyQuestions.length) {
             question = this.greasyQuestions[this.currentStep - this.spicyQuestions.length];
             category = 'greasy';
@@ -157,50 +425,50 @@ const app = {
 
         container.innerHTML = `
             <div class="question-card">
-                <div class="question-category ${category}" style="color: ${color}">${category.toUpperCase()}</div>
+                <div class="question-category ${category}">${category}</div>
                 <div class="question-text">${question.text}</div>
                 <div class="options">
                     ${question.options.map(opt => `
-                        <button class="option-btn ${this.answers[question.id] === opt ? 'selected' : ''}" onclick="app.selectOption('${question.id}', '${opt}')">
+                        <button class="option-btn ${this.answers[question.id] === opt ? 'selected' : ''}" onclick="app.selectSaladOption('${question.id}', '${opt}')">
                             ${opt}
                             <span class="check">✓</span>
                         </button>
                     `).join('')}
                 </div>
                 <div class="nav-buttons">
-                    ${this.currentStep > 0 ? '<button class="btn-secondary" onclick="app.prevStep()">Previous</button>' : '<div></div>'}
-                    <button class="btn-primary" onclick="app.nextStep()">${this.currentStep < totalSteps - 1 ? 'Next' : 'See Results'}</button>
+                    ${this.currentStep > 0 ? `<button class="btn-secondary" onclick="app.prevSaladStep()">Previous</button>` : '<div></div>'}
+                    <button class="btn-primary" onclick="app.nextSaladStep()">${this.currentStep < totalSteps - 1 ? 'Next' : 'See Results'}</button>
                 </div>
             </div>
         `;
     },
 
-    selectOption(questionId, option) {
+    selectSaladOption(questionId, option) {
         this.answers[questionId] = option;
-        this.renderQuestion();
+        this.renderSaladQuestion();
     },
 
-    nextStep() {
+    nextSaladStep() {
         const totalSteps = this.spicyQuestions.length + this.greasyQuestions.length + this.vegetableQuestions.length;
         
         if (this.currentStep < totalSteps - 1) {
             this.currentStep++;
-            this.renderQuestion();
+            this.renderSaladQuestion();
         } else {
-            this.showResults();
+            this.showSaladResults();
         }
     },
 
-    prevStep() {
+    prevSaladStep() {
         if (this.currentStep > 0) {
             this.currentStep--;
-            this.renderQuestion();
+            this.renderSaladQuestion();
         }
     },
 
-    showResults() {
-        document.getElementById('questionContainer').classList.add('hidden');
-        document.getElementById('resultsContainer').classList.remove('hidden');
+    showSaladResults() {
+        document.getElementById('saladQuestions').classList.add('hidden');
+        document.getElementById('saladResults').classList.remove('hidden');
         
         const spice = this.answers['emotion_now'] || '';
         const grease = this.answers['greasy_food'] || '';
@@ -217,91 +485,64 @@ const app = {
         });
         localStorage.setItem('checkins', JSON.stringify(checkins));
         
-        document.getElementById('resultsContent').innerHTML = `
-            ${spice ? `
-                <div class="result-item spicy">
-                    <div class="result-icon">🔥</div>
-                    <div class="result-content">
-                        <h4>Spicy</h4>
-                        <p><strong>${spice}</strong></p>
-                        <p>This is what is overwhelming you right now.</p>
+        // Render plate
+        const plateEl = document.getElementById('plateContent');
+        if (plateEl) {
+            plateEl.innerHTML = `
+                ${spice ? `
+                    <div class="result-item spicy">
+                        <div class="result-icon">🔥</div>
+                        <div class="result-content">
+                            <h4>Spicy</h4>
+                            <p><strong>${spice}</strong></p>
+                            <p>This is what is overwhelming you right now.</p>
+                        </div>
                     </div>
-                </div>
-            ` : ''}
-            ${grease ? `
-                <div class="result-item greasy">
-                    <div class="result-icon">🧈</div>
-                    <div class="result-content">
-                        <h4>Greasy</h4>
-                        <p><strong>${grease}</strong></p>
-                        <p>This is what you are reaching for to cope.</p>
+                ` : ''}
+                ${grease ? `
+                    <div class="result-item greasy">
+                        <div class="result-icon">🧈</div>
+                        <div class="result-content">
+                            <h4>Greasy</h4>
+                            <p><strong>${grease}</strong></p>
+                            <p>This is what you are reaching for to cope.</p>
+                        </div>
                     </div>
-                </div>
-            ` : ''}
-            ${vegetable ? `
-                <div class="result-item vegetable">
-                    <div class="result-icon">🥗</div>
-                    <div class="result-content">
-                        <h4>Vegetable</h4>
-                        <p><strong>${vegetable}</strong></p>
-                        <p>This is what would actually nourish you.</p>
+                ` : ''}
+                ${vegetable ? `
+                    <div class="result-item vegetable">
+                        <div class="result-icon">🥗</div>
+                        <div class="result-content">
+                            <h4>Vegetable</h4>
+                            <p><strong>${vegetable}</strong></p>
+                            <p>This is what would actually nourish you.</p>
+                        </div>
                     </div>
-                </div>
-            ` : ''}
-            
-            <div class="protocol">
-                <h3>Your 7-Step Balancing Protocol</h3>
+                ` : ''}
+            `;
+        }
+        
+        // Render protocol
+        const protocolEl = document.getElementById('protocolSteps');
+        if (protocolEl) {
+            protocolEl.innerHTML = [
+                { title: 'Stop', desc: 'Physically pause. Do not act. Take one slow breath.' },
+                { title: 'Name the Spiciness', desc: `What is too spicy? "${spice || 'Powerlessness'}"` },
+                { title: 'Locate It', desc: 'Where do you feel this in your body? Just notice.' },
+                { title: 'Identify the Craving', desc: `What are you reaching for? "${grease || 'External validation'}"` },
+                { title: 'Choose a Vegetable', desc: `What would nourish you? "${vegetable || 'Rest'}"` },
+                { title: 'Take Action', desc: 'Do it for just 2 minutes.' },
+                { title: 'Notice', desc: 'How do you feel? Not perfect, just different.' }
+            ].map((step, i) => `
                 <div class="protocol-step">
-                    <div class="step-number">1</div>
+                    <div class="step-number">${i + 1}</div>
                     <div class="step-content">
-                        <h4>Stop</h4>
-                        <p>Physically pause. Do not act. Take one slow breath.</p>
+                        <h4>${step.title}</h4>
+                        <p>${step.desc}</p>
                     </div>
                 </div>
-                <div class="protocol-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>Name the Spiciness</h4>
-                        <p>What is too spicy? "${spice || 'Powerlessness'}"</p>
-                    </div>
-                </div>
-                <div class="protocol-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>Locate It</h4>
-                        <p>Where do you feel this in your body? Just notice.</p>
-                    </div>
-                </div>
-                <div class="protocol-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h4>Identify the Craving</h4>
-                        <p>What are you reaching for? "${grease || 'External validation'}"</p>
-                    </div>
-                </div>
-                <div class="protocol-step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h4>Choose a Vegetable</h4>
-                        <p>What would nourish you? "${vegetable || 'Rest'}"</p>
-                    </div>
-                </div>
-                <div class="protocol-step">
-                    <div class="step-number">6</div>
-                    <div class="step-content">
-                        <h4>Take Action</h4>
-                        <p>Do it for just 2 minutes.</p>
-                    </div>
-                </div>
-                <div class="protocol-step">
-                    <div class="step-number">7</div>
-                    <div class="step-content">
-                        <h4>Notice</h4>
-                        <p>How do you feel? Not perfect, just different.</p>
-                    </div>
-                </div>
-            </div>
-        `;
+            `).join('');
+        }
         
         this.renderStreak();
     },
@@ -309,76 +550,90 @@ const app = {
     resetSalad() {
         this.currentStep = 0;
         this.answers = {};
-        document.getElementById('questionContainer').classList.remove('hidden');
-        document.getElementById('resultsContainer').classList.add('hidden');
-        this.renderQuestion();
+        document.getElementById('saladQuestions').classList.remove('hidden');
+        document.getElementById('saladResults').classList.add('hidden');
+        this.renderSaladQuestion();
     },
 
-    // Exercises
-    startExercise(type) {
-        const exercises = {
-            breathing: { name: 'Breathing', duration: 5 },
-            bodyscan: { name: 'Body Scan', duration: 15 },
-            lovingkindness: { name: 'Loving Kindness', duration: 10 },
-            sleep: { name: 'Sleep Relaxation', duration: 20 },
-            anxiety: { name: 'Anxiety Relief', duration: 10 },
-            gratitude: { name: 'Gratitude', duration: 5 },
-            walking: { name: 'Mindful Walking', duration: 10 }
-        };
+    // Interventions
+    startIntervention(type) {
+        const intervention = this.interventions[type];
+        if (!intervention) return;
+
+        this.currentIntervention = type;
+        document.getElementById('interventionModal').classList.remove('hidden');
+        document.getElementById('interventionTitle').textContent = intervention.name;
+        document.getElementById('interventionInstructions').textContent = intervention.instructions;
         
-        const exercise = exercises[type];
-        if (!exercise) return;
-        
-        document.getElementById('exerciseTitle').textContent = exercise.name;
-        document.getElementById('exerciseModal').classList.remove('hidden');
-        
-        this.timerSeconds = exercise.duration * 60;
-        this.timerTotal = exercise.duration * 60;
+        this.timerSeconds = intervention.duration;
+        this.timerTotal = intervention.duration;
         this.isRunning = false;
-        this.updateTimerDisplay();
+        this.updateInterventionTimer();
+        
+        // Update play button
+        const btn = document.getElementById('playPauseBtn');
+        if (btn) btn.innerHTML = '<i class="fas fa-play"></i>';
     },
 
-    toggleTimer() {
+    toggleIntervention() {
         this.isRunning = !this.isRunning;
-        document.getElementById('playPauseBtn').textContent = this.isRunning ? '⏸️' : '▶️';
+        const btn = document.getElementById('playPauseBtn');
         
         if (this.isRunning) {
+            if (btn) btn.innerHTML = '<i class="fas fa-pause"></i>';
             this.timerInterval = setInterval(() => {
                 this.timerSeconds--;
-                this.updateTimerDisplay();
+                this.updateInterventionTimer();
                 
                 if (this.timerSeconds <= 0) {
-                    this.stopExercise();
-                    alert('Exercise complete! 🎉');
+                    this.completeIntervention();
                 }
             }, 1000);
         } else {
+            if (btn) btn.innerHTML = '<i class="fas fa-play"></i>';
             clearInterval(this.timerInterval);
         }
     },
 
-    updateTimerDisplay() {
-        const minutes = Math.floor(this.timerSeconds / 60);
-        const seconds = this.timerSeconds % 60;
-        document.getElementById('timerText').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    updateInterventionTimer() {
+        const display = document.getElementById('interventionTimer');
+        const circle = document.getElementById('interventionProgress');
         
-        const progress = (this.timerTotal - this.timerSeconds) / this.timerTotal;
-        const offset = 283 - (283 * progress);
-        document.getElementById('timerProgress').style.strokeDashoffset = offset;
+        if (display) {
+            const minutes = Math.floor(this.timerSeconds / 60);
+            const seconds = this.timerSeconds % 60;
+            display.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        if (circle) {
+            const progress = (this.timerTotal - this.timerSeconds) / this.timerTotal;
+            const offset = 283 - (283 * progress);
+            circle.style.strokeDashoffset = offset;
+        }
     },
 
-    stopExercise() {
+    stopIntervention() {
         clearInterval(this.timerInterval);
         this.isRunning = false;
-        document.getElementById('exerciseModal').classList.add('hidden');
+        document.getElementById('interventionModal').classList.add('hidden');
+    },
+
+    completeIntervention() {
+        clearInterval(this.timerInterval);
+        this.isRunning = false;
         
         // Save session
         const sessions = JSON.parse(localStorage.getItem('sessions') || '[]');
         sessions.push({
             date: new Date().toISOString(),
-            duration: Math.floor((this.timerTotal - this.timerSeconds) / 60)
+            type: this.currentIntervention,
+            duration: this.interventions[this.currentIntervention].duration
         });
         localStorage.setItem('sessions', JSON.stringify(sessions));
+        
+        alert('Exercise complete! 🎉 Great job taking care of yourself.');
+        document.getElementById('interventionModal').classList.add('hidden');
+        this.renderStreak();
     },
 
     // Journal
@@ -389,32 +644,34 @@ const app = {
         });
     },
 
-    newPrompt() {
+    newJournalPrompt() {
         const prompt = this.journalPrompts[Math.floor(Math.random() * this.journalPrompts.length)];
-        document.getElementById('journalPrompt').textContent = prompt;
+        const el = document.getElementById('journalPrompt');
+        if (el) el.textContent = prompt;
     },
 
-    saveJournal() {
-        const content = document.getElementById('journalEntry').value;
-        if (!content.trim()) return;
+    saveJournalEntry() {
+        const content = document.getElementById('journalText');
+        if (!content || !content.value.trim()) return;
         
         const entries = JSON.parse(localStorage.getItem('journalEntries') || '[]');
         entries.unshift({
             date: new Date().toISOString(),
             title: 'Journal Entry',
-            content,
+            content: content.value,
             mood: localStorage.getItem('todayMood') || 3
         });
         localStorage.setItem('journalEntries', JSON.stringify(entries));
         
-        document.getElementById('journalEntry').value = '';
+        content.value = '';
         this.renderJournalEntries();
     },
 
     renderJournalEntries() {
-        const entries = JSON.parse(localStorage.getItem('journalEntries') || '[]');
         const container = document.getElementById('journalEntries');
+        if (!container) return;
         
+        const entries = JSON.parse(localStorage.getItem('journalEntries') || '[]');
         const moods = ['', '😢', '😕', '😐', '🙂', '😊'];
         
         container.innerHTML = entries.slice(0, 5).map(entry => `
@@ -437,28 +694,46 @@ const app = {
         const totalSessions = sessions.length + checkins.length;
         const totalMinutes = sessions.reduce((sum, s) => sum + (s.duration || 0), 0) + (checkins.length * 5);
         
-        document.getElementById('totalSessions').textContent = totalSessions;
-        document.getElementById('totalMinutes').textContent = totalMinutes;
-        document.getElementById('streakDays').textContent = this.getStreak();
+        const streakEl = document.getElementById('progressStreak');
+        const sessionsEl = document.getElementById('progressSessions');
+        const minutesEl = document.getElementById('progressMinutes');
+        
+        if (streakEl) streakEl.textContent = this.getStreak();
+        if (sessionsEl) sessionsEl.textContent = totalSessions;
+        if (minutesEl) minutesEl.textContent = totalMinutes;
         
         this.renderWeeklyChart();
         this.renderAchievements(totalSessions, totalMinutes);
-        this.renderInsights();
     },
 
     renderWeeklyChart() {
-        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-        const container = document.getElementById('weeklyChart');
+        const ctx = document.getElementById('weeklyChart');
+        if (!ctx || typeof Chart === 'undefined') return;
         
-        container.innerHTML = days.map(day => `
-            <div class="chart-bar">
-                <div class="chart-bar-fill" style="height: ${Math.random() * 60 + 20}px"></div>
-                <div class="chart-bar-label">${day}</div>
-            </div>
-        `).join('');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Minutes',
+                    data: [15, 30, 10, 45, 20, 60, 25],
+                    backgroundColor: '#14b8a6',
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
     },
 
     renderAchievements(sessions, minutes) {
+        const container = document.getElementById('achievementsList');
+        if (!container) return;
+        
         const achievements = [
             { icon: '✨', name: 'First Step', unlocked: sessions >= 1 },
             { icon: '🥗', name: 'Salad Master', unlocked: sessions >= 5 },
@@ -468,7 +743,7 @@ const app = {
             { icon: '⏸️', name: 'The Pause', unlocked: sessions >= 10 }
         ];
         
-        document.getElementById('achievements').innerHTML = achievements.map(a => `
+        container.innerHTML = achievements.map(a => `
             <div class="achievement ${a.unlocked ? 'unlocked' : ''}">
                 <div class="achievement-icon">${a.icon}</div>
                 <div class="achievement-name">${a.name}</div>
@@ -476,34 +751,14 @@ const app = {
         `).join('');
     },
 
-    renderInsights() {
-        const streak = this.getStreak();
-        let insight = 'Start your mindfulness journey today!';
-        if (streak >= 7) insight = `Amazing! You have practiced for ${streak} days in a row.`;
-        else if (streak > 0) insight = `Great job! You are on a ${streak}-day streak.`;
-        
-        document.getElementById('insights').innerHTML = `
-            <div class="insight">
-                <div class="insight-icon">📈</div>
-                <div class="insight-text">${insight}</div>
-            </div>
-            <div class="insight">
-                <div class="insight-icon">🥗</div>
-                <div class="insight-text">The old you just reacted. The you now is learning to choose.</div>
-            </div>
-        `;
-    },
-
     loadData() {
         const mood = localStorage.getItem('todayMood');
-        if (mood) {
-            this.logMood(parseInt(mood));
-        }
+        if (mood) this.logMood(parseInt(mood));
         this.renderJournalEntries();
     }
 };
 
-// Initialize app when DOM is loaded
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
     app.init();
 });

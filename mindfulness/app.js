@@ -309,7 +309,7 @@ const app = {
                 bottom: 0;
                 background: radial-gradient(ellipse at center, ${bgColor} 0%, ${color}40 50%, #0a0a0a 100%);
                 opacity: 0;
-                transition: opacity 10s ease-in-out;
+                transition: opacity 3s ease-in-out;
                 pointer-events: none;
                 z-index: -1;
             `;

@@ -43,7 +43,7 @@ body::before {
     bottom: 0;
     background: radial-gradient(ellipse at center, #450a0a 0%, #991b1b30 50%, #1a1a1a 100%);
     opacity: 0;
-    transition: opacity 10s ease-in-out;
+    transition: opacity 3s ease-in-out;
     pointer-events: none;
     z-index: -1;
 }

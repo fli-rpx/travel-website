@@ -1162,26 +1162,40 @@ body.allow-select {
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--text);
+    padding: 0.5rem;
+    z-index: 200;
 }
 
-.nav-links.mobile-open {
-    display: flex !important;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background: white;
-    padding: 1rem;
-    box-shadow: var(--shadow-lg);
-    z-index: 100;
-}
+/* Force show mobile menu when open */
+@media (max-width: 768px) {
+    .nav-links.mobile-open {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        box-shadow: var(--shadow-lg);
+        z-index: 150;
+        border-top: 1px solid var(--border);
+    }
 
-.nav-links.mobile-open .nav-btn {
-    width: 100%;
-    text-align: left;
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid var(--border);
+    .nav-links.mobile-open .nav-btn {
+        width: 100%;
+        text-align: left;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid var(--border);
+        background: none;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    .nav-links.mobile-open .nav-btn:hover {
+        background: var(--bg);
+    }
 }
 
 /* Responsive */
@@ -1226,6 +1240,7 @@ body.allow-select {
 
     .nav-bar {
         padding: 0.75rem 1rem;
+        position: relative;
     }
 
     .nav-brand {

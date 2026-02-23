@@ -192,10 +192,30 @@ const app = {
                 maxSegments: 8
             });
             this.renderRibbonLegend();
+            
+            // Setup real-time input detection
+            this.setupRealTimeDetection();
         }
 
         // Add CSS
         this.addRibbonStyles();
+    },
+
+    setupRealTimeDetection() {
+        const chatInput = document.getElementById('chatInput');
+        if (!chatInput || !this.emotionRibbon) return;
+
+        let debounceTimer;
+        
+        chatInput.addEventListener('input', (e) => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                const text = e.target.value.trim();
+                if (text.length > 2) {
+                    this.analyzeWithRibbon(text);
+                }
+            }, 300); // Debounce 300ms
+        });
     },
 
     renderRibbonLegend() {

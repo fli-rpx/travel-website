@@ -148,19 +148,36 @@ const app = {
 
     navigate(tab) {
         this.currentTab = tab;
-        
+
         document.querySelectorAll('.nav-btn').forEach(btn => {
             btn.classList.toggle('active', btn.dataset.tab === tab);
         });
-        
+
         document.querySelectorAll('.tab').forEach(t => {
             t.classList.toggle('active', t.id === tab);
         });
+
+        // Close mobile menu after navigation
+        this.closeMobileMenu();
 
         if (tab === 'progress') {
             this.renderProgress();
         } else if (tab === 'cycle') {
             this.renderCycle();
+        }
+    },
+
+    toggleMobileMenu() {
+        const navLinks = document.getElementById('navLinks');
+        if (navLinks) {
+            navLinks.classList.toggle('mobile-open');
+        }
+    },
+
+    closeMobileMenu() {
+        const navLinks = document.getElementById('navLinks');
+        if (navLinks) {
+            navLinks.classList.remove('mobile-open');
         }
     },
 

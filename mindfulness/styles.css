@@ -1154,29 +1154,81 @@ body.allow-select {
     user-select: text;
 }
 
+/* Mobile Navigation */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text);
+}
+
+.nav-links.mobile-open {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1rem;
+    box-shadow: var(--shadow-lg);
+    z-index: 100;
+}
+
+.nav-links.mobile-open .nav-btn {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .hero-section {
         grid-template-columns: 1fr;
     }
-    
+
     .feature-grid,
     .interventions-grid,
     .cycle-container,
     .assessment-container {
         grid-template-columns: 1fr;
     }
-    
+
     .quick-stats,
     .stats-row {
         grid-template-columns: 1fr;
     }
-    
+
     .nav-links {
         display: none;
     }
-    
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
     .cycle-legend {
         grid-template-columns: 1fr;
+    }
+
+    /* Fixed TOC adjustments for mobile */
+    .toc-fixed {
+        display: none;
+    }
+
+    .content-main {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .nav-bar {
+        padding: 0.75rem 1rem;
+    }
+
+    .nav-brand {
+        font-size: 1rem;
     }
 }

@@ -40,7 +40,10 @@
             <!-- Navigation Bar -->
             <nav class="nav-bar">
                 <div class="nav-brand" onclick="app.navigate('home')" style="cursor: pointer;">🧘 正念疗法</div>
-                <div class="nav-links">
+                <button class="mobile-menu-btn" onclick="app.toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-links" id="navLinks">
                     <button class="nav-btn" onclick="window.location.href='index.html'">English</button>
                     <button class="nav-btn active" data-tab="home">首页</button>
                     <button class="nav-btn" data-tab="cycle">循环</button>

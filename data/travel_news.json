@@ -1,27 +1,6 @@
 {
-  "last_updated": "2026-02-22",
+  "last_updated": "2026-02-23",
   "news": [
-    {
-      "id": "news-001",
-      "date": "Feb 21, 2026",
-      "title": "China Expands Visa-Free Transit to 240 Hours",
-      "excerpt": "Foreign travelers can now enjoy visa-free stays up to 10 days in 60+ cities across China, making multi-city tours easier than ever.",
-      "content": "China has significantly expanded its visa-free transit policy, allowing foreign travelers to stay for up to 240 hours (10 days) without a visa. This new policy covers over 60 cities across the country, including major tourist destinations like Beijing, Shanghai, Guangzhou, Shenzhen, Chengdu, and Xi'an.\n\nThe expansion is part of China's efforts to boost tourism and business travel. Under the new rules, travelers can enter through any of the designated ports and travel freely within the allowed regions. This makes it much easier for tourists to plan multi-city itineraries without the hassle of obtaining multiple visas.\n\nKey highlights of the new policy:\n- Stay duration: Up to 240 hours (10 days)\n- Coverage: 60+ cities across China\n- Entry ports: 38 designated ports including major airports and cruise terminals\n- Activities allowed: Tourism, business meetings, and short-term visits\n\nTravelers must have a confirmed onward ticket to a third country or region and valid travel documents. The policy applies to citizens of most countries including the United States, Canada, United Kingdom, Australia, and most European nations."
-    },
-    {
-      "id": "news-002",
-      "date": "Feb 20, 2026",
-      "title": "New Direct Flights Connect US and China",
-      "excerpt": "Major airlines announce new direct routes between Los Angeles, New York and Beijing, Shanghai with increased weekly frequency.",
-      "content": "Major international airlines have announced significant expansion of direct flight routes between the United States and China, making travel between the two countries more convenient than ever.\n\nThe new routes include:\n- Los Angeles to Beijing: Daily flights on Air China and United Airlines\n- New York to Shanghai: Daily flights on China Eastern and Delta\n- San Francisco to Guangzhou: 5 weekly flights on China Southern\n- Seattle to Chengdu: 3 weekly flights on Hainan Airlines\n\nThese new connections reduce travel time by eliminating layovers and provide more options for travelers. Flight frequencies have increased by 40% compared to last year, with over 100 weekly flights now operating between major US and Chinese cities.\n\nAirlines are also introducing newer aircraft with improved comfort features, including lie-flat business class seats, enhanced entertainment systems, and better dining options. Economy class passengers will benefit from increased legroom and USB charging ports at every seat.\n\nThe expansion comes as travel demand between the two countries continues to grow, with both business and leisure travelers seeking more convenient options."
-    },
-    {
-      "id": "news-003",
-      "date": "Feb 19, 2026",
-      "title": "Spring Festival Travel Sets New Records",
-      "excerpt": "Over 9 billion trips made during Chinese New Year 2026, with tourism revenue up 15% compared to last year.",
-      "content": "The 2026 Spring Festival (Chinese New Year) travel period has set new records, with over 9 billion trips made across China, marking a significant increase from previous years. Tourism revenue reached unprecedented levels, up 15% compared to 2025.\n\nThe 40-day travel rush, known as 'Chunyun,' saw millions of Chinese citizens traveling to their hometowns for family reunions and exploring domestic tourist destinations. Popular destinations included:\n\n- Harbin: Ice and snow festival attracted record visitors\n- Sanya: Warm weather destination saw 30% increase in bookings\n- Beijing: Cultural sites and temple fairs drew millions\n- Shanghai: Modern attractions and shopping districts were packed\n- Xi'an: Historical sites and lantern festivals were major draws\n\nThe transportation network handled the surge efficiently, with high-speed rail carrying over 400 million passengers and domestic flights operating at full capacity. New rail lines and airport expansions helped distribute the passenger load more evenly.\n\nInternational tourism also benefited, with foreign visitors experiencing traditional Chinese New Year celebrations. Hotels in major cities reported 95% occupancy rates during the peak period.\n\nThe strong performance signals continued recovery and growth in China's tourism sector, with experts predicting similar trends for upcoming holidays."
-    },
     {
       "id": "news-004",
       "date": "Feb 18, 2026",
@@ -265,6 +244,27 @@
       "title": "Xiaomi Integrates AI Throughout Smart Home Ecosystem",
       "excerpt": "HyperOS update brings unified AI assistant to 200+ million connected devices in Chinese households.",
       "content": "Xiaomi has released a major HyperOS update integrating AI capabilities throughout its smart home ecosystem, affecting over 200 million connected devices in Chinese households.\n\nAI Features:\n- Unified voice assistant across all devices\n- Predictive automation based on user habits\n- Energy optimization for connected appliances\n- AI-powered security monitoring and alerts\n- Health monitoring integration with wearable devices\n\nThe update creates a seamless AI experience across smartphones, TVs, home appliances, and IoT devices. Xiaomi reports that 80% of eligible devices have already received the update, with the rollout completing by March 2026."
+    },
+    {
+      "id": "news-001",
+      "date": "Feb 21, 2026",
+      "title": "China Expands Visa-Free Transit to 240 Hours",
+      "excerpt": "Foreign travelers can now enjoy visa-free stays up to 10 days in 60+ cities across China, making multi-city tours easier than ever.",
+      "content": "China has significantly expanded its visa-free transit policy, allowing foreign travelers to stay for up to 240 hours (10 days) without a visa. This new policy covers over 60 cities across the country, including major tourist destinations like Beijing, Shanghai, Guangzhou, Shenzhen, Chengdu, and Xi'an.\n\nThe expansion is part of China's efforts to boost tourism and business travel. Under the new rules, travelers can enter through any of the designated ports and travel freely within the allowed regions. This makes it much easier for tourists to plan multi-city itineraries without the hassle of obtaining multiple visas.\n\nKey highlights of the new policy:\n- Stay duration: Up to 240 hours (10 days)\n- Coverage: 60+ cities across China\n- Entry ports: 38 designated ports including major airports and cruise terminals\n- Activities allowed: Tourism, business meetings, and short-term visits\n\nTravelers must have a confirmed onward ticket to a third country or region and valid travel documents. The policy applies to citizens of most countries including the United States, Canada, United Kingdom, Australia, and most European nations."
+    },
+    {
+      "id": "news-002",
+      "date": "Feb 20, 2026",
+      "title": "New Direct Flights Connect US and China",
+      "excerpt": "Major airlines announce new direct routes between Los Angeles, New York and Beijing, Shanghai with increased weekly frequency.",
+      "content": "Major international airlines have announced significant expansion of direct flight routes between the United States and China, making travel between the two countries more convenient than ever.\n\nThe new routes include:\n- Los Angeles to Beijing: Daily flights on Air China and United Airlines\n- New York to Shanghai: Daily flights on China Eastern and Delta\n- San Francisco to Guangzhou: 5 weekly flights on China Southern\n- Seattle to Chengdu: 3 weekly flights on Hainan Airlines\n\nThese new connections reduce travel time by eliminating layovers and provide more options for travelers. Flight frequencies have increased by 40% compared to last year, with over 100 weekly flights now operating between major US and Chinese cities.\n\nAirlines are also introducing newer aircraft with improved comfort features, including lie-flat business class seats, enhanced entertainment systems, and better dining options. Economy class passengers will benefit from increased legroom and USB charging ports at every seat.\n\nThe expansion comes as travel demand between the two countries continues to grow, with both business and leisure travelers seeking more convenient options."
+    },
+    {
+      "id": "news-003",
+      "date": "Feb 19, 2026",
+      "title": "Spring Festival Travel Sets New Records",
+      "excerpt": "Over 9 billion trips made during Chinese New Year 2026, with tourism revenue up 15% compared to last year.",
+      "content": "The 2026 Spring Festival (Chinese New Year) travel period has set new records, with over 9 billion trips made across China, marking a significant increase from previous years. Tourism revenue reached unprecedented levels, up 15% compared to 2025.\n\nThe 40-day travel rush, known as 'Chunyun,' saw millions of Chinese citizens traveling to their hometowns for family reunions and exploring domestic tourist destinations. Popular destinations included:\n\n- Harbin: Ice and snow festival attracted record visitors\n- Sanya: Warm weather destination saw 30% increase in bookings\n- Beijing: Cultural sites and temple fairs drew millions\n- Shanghai: Modern attractions and shopping districts were packed\n- Xi'an: Historical sites and lantern festivals were major draws\n\nThe transportation network handled the surge efficiently, with high-speed rail carrying over 400 million passengers and domestic flights operating at full capacity. New rail lines and airport expansions helped distribute the passenger load more evenly.\n\nInternational tourism also benefited, with foreign visitors experiencing traditional Chinese New Year celebrations. Hotels in major cities reported 95% occupancy rates during the peak period.\n\nThe strong performance signals continued recovery and growth in China's tourism sector, with experts predicting similar trends for upcoming holidays."
     }
   ]
 }

@@ -31,7 +31,10 @@
             <!-- Navigation Bar -->
             <nav class="nav-bar">
                 <div class="nav-brand" onclick="app.navigate('home')" style="cursor: pointer;">🧘 Mindfulness Therapy</div>
-                <div class="nav-links">
+                <button class="mobile-menu-btn" onclick="app.toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-links" id="navLinks">
                     <button class="nav-btn" onclick="window.location.href='index-zh.html'">中文</button>
                     <button class="nav-btn active" data-tab="home">Home</button>
                     <button class="nav-btn" data-tab="cycle">Cycle</button>

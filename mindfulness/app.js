@@ -1,5 +1,5 @@
-// Mindfulness Therapy - Enhanced JavaScript
-// Features: Power-Possession Cycle, AI Assessment, Micro-Interventions, Emotion Ribbon
+// Mindfulness Therapy - Enhanced JavaScript with Emotion Ribbon Integration
+// Features: Power-Possession Cycle, AI Assessment with Emotion Ribbon, Micro-Interventions
 // Copyright © 2026 Mindfulness Therapy. All rights reserved.
 
 const app = {
@@ -12,11 +12,16 @@ const app = {
     isRunning: false,
     currentIntervention: null,
 
+    // Emotion Ribbon Integration
+    emotionRibbon: null,
+    ribbonVisualizer: null,
+    chatMessages: [],
+
     // Power-Possession Cycle Data
     cycleStates: {
         power: {
             name: 'Power',
-            color: '#991b1b',
+            color: '#8B0000',
             bgColor: '#450a0a',
             description: 'External validation, feeling in control',
             triggers: ['Achievement', 'Recognition', 'Status gain'],
@@ -24,7 +29,7 @@ const app = {
         },
         possession: {
             name: 'Possession',
-            color: '#6b21a8',
+            color: '#FF6B35',
             bgColor: '#3b0764',
             description: 'Owning phase, attachment to external power',
             triggers: ['Control behaviors', 'Territoriality', 'Acquisition'],
@@ -32,7 +37,7 @@ const app = {
         },
         loss: {
             name: 'Loss',
-            color: '#1e40af',
+            color: '#191970',
             bgColor: '#172554',
             description: 'Inevitable decline, external power fading',
             triggers: ['Status loss', 'Rejection', 'Failure'],
@@ -40,7 +45,7 @@ const app = {
         },
         emptiness: {
             name: 'Emptiness',
-            color: '#374151',
+            color: '#36454F',
             bgColor: '#111827',
             description: 'Collapse, void when external validation gone',
             triggers: ['Isolation', 'Meaninglessness', 'Disconnection'],
@@ -48,7 +53,7 @@ const app = {
         },
         craving: {
             name: 'Craving',
-            color: '#b45309',
+            color: '#DC143C',
             bgColor: '#451a03',
             description: 'Compulsive urge for substitute satisfaction',
             triggers: ['Emptiness', 'Boredom', 'Restlessness'],
@@ -56,7 +61,7 @@ const app = {
         },
         return: {
             name: 'Return',
-            color: '#15803d',
+            color: '#2E8B57',
             bgColor: '#052e16',
             description: 'Power-seeking behavior restarting cycle',
             triggers: ['Hope', 'Opportunity', 'New validation source'],
@@ -140,77 +145,147 @@ const app = {
 
     // Initialize Emotion Ribbon
     initEmotionRibbon() {
-        // Create ribbon container if on assessment page
-        const chatInterface = document.querySelector('.chat-interface');
-        if (chatInterface && typeof EmotionRibbon !== 'undefined') {
-            // Insert ribbon before chat interface
-            const ribbonContainer = document.createElement('div');
-            ribbonContainer.id = 'emotionRibbonContainer';
-            ribbonContainer.className = 'emotion-ribbon-container';
-            ribbonContainer.innerHTML = `
-                <div class="ribbon-header">
-                    <span class="ribbon-title">🎨 Emotion Ribbon</span>
-                    <span class="ribbon-subtitle">Real-time emotional awareness</span>
-                </div>
-                <div id="ribbonVisualization"></div>
-            `;
-            chatInterface.parentNode.insertBefore(ribbonContainer, chatInterface);
-            
-            // Initialize visualizer
-            if (typeof EmotionRibbonVisualizer !== 'undefined') {
-                this.emotionRibbonVisualizer = new EmotionRibbonVisualizer('ribbonVisualization', {
-                    width: 600,
-                    height: 100,
-                    maxSegments: 8
-                });
-            }
+        // Load Emotion Ribbon scripts dynamically
+        this.loadScript('emotion-ribbon.js', () => {
+            this.loadScript('emotion-ribbon-visualizer.js', () => {
+                this.setupEmotionRibbonUI();
+            });
+        });
+    },
+
+    loadScript(src, callback) {
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = callback;
+        script.onerror = () => console.error(`Failed to load ${src}`);
+        document.head.appendChild(script);
+    },
+
+    setupEmotionRibbonUI() {
+        // Add ribbon container to assessment tab if not exists
+        const assessmentTab = document.getElementById('assessment');
+        if (!assessmentTab || document.getElementById('emotionRibbonContainer')) return;
+
+        const ribbonSection = document.createElement('div');
+        ribbonSection.className = 'emotion-ribbon-section';
+        ribbonSection.innerHTML = `
+            <div class="ribbon-header">
+                <h3><i class="fas fa-palette"></i> Emotion Ribbon</h3>
+                <span class="ribbon-status">Real-time emotion detection</span>
+            </div>
+            <div id="emotionRibbonContainer" class="ribbon-container"></div>
+            <div id="emotionRibbonLegend" class="ribbon-legend"></div>
+        `;
+
+        // Insert after chat interface
+        const chatInterface = assessmentTab.querySelector('.chat-interface');
+        if (chatInterface) {
+            chatInterface.parentNode.insertBefore(ribbonSection, chatInterface.nextSibling);
         }
+
+        // Initialize visualizer
+        if (window.EmotionRibbon && window.EmotionRibbonVisualizer) {
+            this.emotionRibbon = EmotionRibbon;
+            this.ribbonVisualizer = new EmotionRibbonVisualizer('emotionRibbonContainer', {
+                width: 600,
+                height: 100,
+                maxSegments: 8
+            });
+            this.renderRibbonLegend();
+        }
+
+        // Add CSS
+        this.addRibbonStyles();
+    },
+
+    renderRibbonLegend() {
+        const legend = document.getElementById('emotionRibbonLegend');
+        if (!legend || !this.emotionRibbon) return;
+
+        const categories = this.emotionRibbon.getAllCategories();
+        legend.innerHTML = categories.map(cat => `
+            <div class="ribbon-legend-item" title="${cat.description}">
+                <span class="legend-dot" style="background: ${cat.color}"></span>
+                <span class="legend-name">${cat.emoji} ${cat.name}</span>
+            </div>
+        `).join('');
+    },
+
+    addRibbonStyles() {
+        if (document.getElementById('ribbon-styles')) return;
         
-        // Add styles
         const style = document.createElement('style');
+        style.id = 'ribbon-styles';
         style.textContent = `
-            .emotion-ribbon-container {
+            .emotion-ribbon-section {
                 background: white;
                 border-radius: 1rem;
-                padding: 1rem 1.5rem;
-                margin-bottom: 1.5rem;
-                box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
                 border: 1px solid #e2e8f0;
             }
             .ribbon-header {
                 display: flex;
+                justify-content: space-between;
                 align-items: center;
-                gap: 0.75rem;
-                margin-bottom: 0.75rem;
+                margin-bottom: 1rem;
             }
-            .ribbon-title {
-                font-weight: 600;
+            .ribbon-header h3 {
+                font-size: 1rem;
+                margin: 0;
                 color: #1e293b;
             }
-            .ribbon-subtitle {
+            .ribbon-status {
                 font-size: 0.75rem;
                 color: #64748b;
-            }
-            #ribbonVisualization {
-                min-height: 80px;
-            }
-            .emotion-journey-btn {
-                margin-top: 1rem;
-                padding: 0.5rem 1rem;
-                background: linear-gradient(135deg, #14b8a6, #0d9488);
-                color: white;
-                border: none;
+                background: #f1f5f9;
+                padding: 0.25rem 0.75rem;
                 border-radius: 9999px;
-                font-size: 0.875rem;
-                cursor: pointer;
-                transition: all 0.2s;
             }
-            .emotion-journey-btn:hover {
-                transform: translateY(-1px);
-                box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+            .ribbon-container {
+                min-height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .ribbon-legend {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.75rem;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid #e2e8f0;
+            }
+            .ribbon-legend-item {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.75rem;
+                color: #64748b;
+                cursor: help;
+            }
+            .legend-dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
             }
         `;
         document.head.appendChild(style);
+    },
+
+    // Analyze message with Emotion Ribbon
+    analyzeWithRibbon(text) {
+        if (!this.emotionRibbon) return null;
+        
+        const analysis = this.emotionRibbon.analyze(text);
+        
+        // Update visualizer
+        if (this.ribbonVisualizer && analysis.detected) {
+            this.ribbonVisualizer.updateFromAnalysis(analysis);
+        }
+        
+        return analysis;
     },
 
     setupNavigation() {
@@ -240,6 +315,9 @@ const app = {
             this.renderProgress();
         } else if (tab === 'cycle') {
             this.renderCycle();
+        } else if (tab === 'assessment') {
+            // Initialize ribbon if not already done
+            setTimeout(() => this.setupEmotionRibbonUI(), 100);
         }
     },
 
@@ -338,7 +416,7 @@ const app = {
                    style="cursor: pointer;">
                     <circle cx="${x}" cy="${y}" r="40" fill="${state.color}20" stroke="${state.color}" stroke-width="3"/>
                     <text x="${x}" y="${y - 5}" text-anchor="middle" font-size="13" font-weight="600" fill="${state.color}">${state.name}</text>
-                    <text x="${x}" y="${y + 12}" text-anchor="middle" font-size="18">${['🔥', '💜', '💙', '⚪', '🟠', '🟢'][i]}</text>
+                    <text x="${x}" y="${y + 12}" text-anchor="middle" font-size="18">${['🔴', '🟠', '🔵', '⚫', '🔴', '🟢'][i]}</text>
                 </g>
             `;
         });
@@ -437,17 +515,13 @@ const app = {
         }, 100);
     },
 
-    // Emotion Ribbon Visualizer
-    emotionRibbonVisualizer: null,
-    sessionEmotions: [],
-
     // Backend API Configuration
     apiConfig: {
         baseUrl: '', // Empty for same-origin, or set to 'http://localhost:3000' for local dev
         useBackend: true // Set to true to use backend proxy, false for local analysis only
     },
 
-    // AI Chat
+    // AI Chat with Emotion Ribbon Integration
     sendMessage() {
         const input = document.getElementById('chatInput');
         const message = input.value.trim();
@@ -457,35 +531,57 @@ const app = {
         this.addChatMessage(message, 'user');
         input.value = '';
 
-        // Analyze emotions locally first for real-time ribbon
-        if (typeof EmotionRibbon !== 'undefined') {
-            const analysis = EmotionRibbon.analyze(message);
-            if (analysis.detected && Object.keys(analysis.detected).length > 0) {
-                // Update ribbon
-                if (this.emotionRibbonVisualizer) {
-                    this.emotionRibbonVisualizer.updateFromAnalysis(analysis);
-                }
-                // Store for session
-                this.sessionEmotions.push({
-                    timestamp: Date.now(),
-                    message: message.substring(0, 100),
-                    emotions: analysis.detected
-                });
-            }
+        // Store message for session journey
+        this.chatMessages.push({ text: message, sender: 'user', timestamp: Date.now() });
+
+        // Analyze with Emotion Ribbon (real-time)
+        const ribbonAnalysis = this.analyzeWithRibbon(message);
+        if (ribbonAnalysis && ribbonAnalysis.dominant) {
+            this.updateEmotionSidebar(ribbonAnalysis);
         }
 
         // Show typing indicator
         this.showTypingIndicator();
 
-        // Use backend API if configured, otherwise fallback to local analysis
+        // Use backend API if configured
         if (this.apiConfig.useBackend) {
-            this.callBackendAPI(message);
+            this.callBackendAPI(message, ribbonAnalysis);
         } else {
             // Simulate AI analysis with local fallback
             setTimeout(() => {
                 this.hideTypingIndicator();
                 this.analyzeEmotionLocal(message);
             }, 1000);
+        }
+    },
+
+    updateEmotionSidebar(analysis) {
+        const { dominant } = analysis;
+        if (!dominant) return;
+
+        const stateEl = document.getElementById('detectedState');
+        const scoreEl = document.getElementById('confidenceScore');
+        
+        if (stateEl && this.emotionRibbon) {
+            const cat = this.emotionRibbon.categories[dominant[0]];
+            stateEl.innerHTML = `
+                <h4>Detected Emotion</h4>
+                <div style="padding: 1rem; background: ${cat.color}20; border-radius: 0.5rem; border-left: 4px solid ${cat.color}">
+                    <strong style="color: ${cat.color}">${cat.emoji} ${cat.name}</strong>
+                    <p style="margin-top: 0.5rem; font-size: 0.875rem; color: #64748b">${cat.description}</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #94a3b8">Words: ${dominant[1].words.slice(0, 3).join(', ')}</p>
+                </div>
+            `;
+        }
+
+        if (scoreEl) {
+            scoreEl.innerHTML = `
+                <h4>Confidence</h4>
+                <div class="score-bar">
+                    <div class="score-fill" style="width: ${dominant[1].confidence}%; background: ${this.emotionRibbon?.categories[dominant[0]]?.color || '#14b8a6'}"></div>
+                </div>
+                <span class="score-value">${dominant[1].confidence}%</span>
+            `;
         }
     },
 
@@ -506,7 +602,7 @@ const app = {
         if (indicator) indicator.remove();
     },
 
-    async callBackendAPI(userMessage) {
+    async callBackendAPI(userMessage, ribbonAnalysis) {
         const apiUrl = this.apiConfig.baseUrl || '';
         
         try {
@@ -515,7 +611,10 @@ const app = {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ message: userMessage, includeEmotions: true })
+                body: JSON.stringify({ 
+                    message: userMessage,
+                    emotionContext: ribbonAnalysis
+                })
             });
 
             this.hideTypingIndicator();
@@ -533,25 +632,19 @@ const app = {
 
             // Add AI response to chat
             this.addChatMessage(data.response, 'ai');
-
-            // Update ribbon with server-side emotion analysis if available
-            if (data.emotionRibbon) {
-                this.updateEmotionRibbonFromServer(data.emotionRibbon);
-            }
+            this.chatMessages.push({ text: data.response, sender: 'ai', timestamp: Date.now() });
 
             // Update sidebar with detected state
             if (data.state && this.cycleStates[data.state]) {
                 this.updateDetectedState(this.cycleStates[data.state], data.confidence || 85);
             }
 
-            // Store emotion data
-            if (data.emotions) {
-                this.sessionEmotions.push({
-                    timestamp: Date.now(),
-                    message: userMessage.substring(0, 100),
-                    emotions: data.emotions,
-                    aiDetected: data.state
-                });
+            // Update ribbon with server emotions if different
+            if (data.emotionRibbon && data.emotionRibbon.dominant) {
+                const dom = data.emotionRibbon.dominant;
+                if (this.ribbonVisualizer) {
+                    this.ribbonVisualizer.addSegment(dom.category, dom.intensity);
+                }
             }
 
         } catch (error) {
@@ -564,18 +657,6 @@ const app = {
                 'ai'
             );
             this.analyzeEmotionLocal(userMessage);
-        }
-    },
-
-    // Update ribbon from server analysis
-    updateEmotionRibbonFromServer(emotionRibbon) {
-        if (!this.emotionRibbonVisualizer || !emotionRibbon) return;
-        
-        // Add all detected emotions from server
-        if (emotionRibbon.all) {
-            emotionRibbon.all.forEach(emo => {
-                this.emotionRibbonVisualizer.addSegment(emo.category, emo.intensity);
-            });
         }
     },
 
@@ -602,24 +683,9 @@ const app = {
             // Add AI response to chat
             this.addChatMessage(data.response, 'ai');
 
-            // Update ribbon with emotion data
-            if (data.emotionRibbon) {
-                this.updateEmotionRibbonFromServer(data.emotionRibbon);
-            }
-
             // Update sidebar with detected state
             if (data.state && this.cycleStates[data.state]) {
                 this.updateDetectedState(this.cycleStates[data.state], data.confidence || 70);
-            }
-
-            // Store emotion data
-            if (data.emotions) {
-                this.sessionEmotions.push({
-                    timestamp: Date.now(),
-                    message: userMessage.substring(0, 100),
-                    emotions: data.emotions,
-                    aiDetected: data.state
-                });
             }
 
         } catch (error) {
@@ -1049,6 +1115,51 @@ const app = {
         
         this.renderWeeklyChart();
         this.renderAchievements(totalSessions, totalMinutes);
+        
+        // Render Emotion Ribbon journey if available
+        this.renderEmotionJourney();
+    },
+
+    renderEmotionJourney() {
+        const container = document.getElementById('insightsList');
+        if (!container) return;
+
+        // Get chat history emotions
+        if (!this.emotionRibbon || this.emotionRibbon.sessionHistory.length === 0) {
+            container.innerHTML = '<p style="color: #64748b; font-size: 0.875rem;">Complete an AI chat session to see your emotional journey.</p>';
+            return;
+        }
+
+        const journey = this.emotionRibbon.getSessionJourney();
+        if (!journey) return;
+
+        container.innerHTML = `
+            <div class="emotion-journey">
+                <h4>Session Emotional Journey</h4>
+                <div class="journey-stats">
+                    <div class="journey-stat">
+                        <span class="stat-label">Messages analyzed:</span>
+                        <span class="stat-value">${journey.totalMessages}</span>
+                    </div>
+                    <div class="journey-stat">
+                        <span class="stat-label">Dominant emotion:</span>
+                        <span class="stat-value" style="color: ${this.emotionRibbon.categories[journey.dominantEmotion]?.color || '#64748b'}">
+                            ${this.emotionRibbon.categories[journey.dominantEmotion]?.emoji || ''} ${journey.dominantEmotion || 'None'}
+                        </span>
+                    </div>
+                </div>
+                <div class="journey-timeline">
+                    ${journey.timeline.slice(-5).map(t => `
+                        <div class="timeline-item">
+                            <span class="time">${t.time}</span>
+                            <span class="emotions">
+                                ${t.emotions.map(e => `<span style="color: ${e.color}">${e.emoji}</span>`).join(' ')}
+                            </span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
     },
 
     renderWeeklyChart() {
@@ -1085,6 +1196,7 @@ const app = {
             { icon: '🔥', name: 'On Fire', unlocked: this.getStreak() >= 7 },
             { icon: '⏱️', name: 'Time Master', unlocked: minutes >= 100 },
             { icon: '❤️', name: 'Self-Compassion', unlocked: sessions >= 3 },
+            { icon: '🎨', name: 'Emotion Explorer', unlocked: this.emotionRibbon?.sessionHistory?.length >= 5 },
             { icon: '⏸️', name: 'The Pause', unlocked: sessions >= 10 }
         ];
         
@@ -1102,266 +1214,8 @@ const app = {
         this.renderJournalEntries();
     },
 
-    // Show Emotion Journey Dashboard
-    showEmotionJourney() {
-        if (this.sessionEmotions.length === 0) {
-            alert('No emotions detected yet. Start a conversation to see your emotional journey!');
-            return;
-        }
-
-        // Calculate statistics
-        const emotionCounts = {};
-        const timeline = [];
-        
-        this.sessionEmotions.forEach((entry, index) => {
-            const emotions = Object.keys(entry.emotions);
-            emotions.forEach(emo => {
-                emotionCounts[emo] = (emotionCounts[emo] || 0) + entry.emotions[emo].count;
-            });
-            
-            timeline.push({
-                index: index + 1,
-                time: new Date(entry.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-                emotions: emotions,
-                dominant: emotions[0]
-            });
-        });
-
-        const dominantEmotion = Object.entries(emotionCounts)
-            .sort((a, b) => b[1] - a[1])[0];
-
-        // Create modal content
-        const modalContent = `
-            <div class="emotion-journey-modal">
-                <h2>🎨 Your Emotional Journey</h2>
-                <div class="journey-stats">
-                    <div class="stat">
-                        <span class="stat-value">${this.sessionEmotions.length}</span>
-                        <span class="stat-label">Messages Analyzed</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">${Object.keys(emotionCounts).length}</span>
-                        <span class="stat-label">Emotions Detected</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">${dominantEmotion ? dominantEmotion[0] : 'None'}</span>
-                        <span class="stat-label">Dominant Emotion</span>
-                    </div>
-                </div>
-                
-                <div class="emotion-distribution">
-                    <h3>Emotion Distribution</h3>
-                    <div class="emotion-bars">
-                        ${Object.entries(emotionCounts).map(([emotion, count]) => {
-                            const cat = EmotionRibbon.categories[emotion];
-                            const percentage = (count / Object.values(emotionCounts).reduce((a, b) => a + b, 0) * 100).toFixed(1);
-                            return `
-                                <div class="emotion-bar">
-                                    <span class="bar-label">${cat.emoji} ${cat.name}</span>
-                                    <div class="bar-track">
-                                        <div class="bar-fill" style="width: ${percentage}%; background: ${cat.color};"></div>
-                                    </div>
-                                    <span class="bar-value">${percentage}%</span>
-                                </div>
-                            `;
-                        }).join('')}
-                    </div>
-                </div>
-
-                <div class="emotion-timeline">
-                    <h3>Session Timeline</h3>
-                    <div class="timeline">
-                        ${timeline.map((t, i) => `
-                            <div class="timeline-item">
-                                <span class="timeline-index">${t.index}</span>
-                                <span class="timeline-time">${t.time}</span>
-                                <div class="timeline-emotions">
-                                    ${t.emotions.map(e => {
-                                        const cat = EmotionRibbon.categories[e];
-                                        return `<span class="timeline-badge" style="background: ${cat.color}20; color: ${cat.color};">${cat.emoji} ${cat.name}</span>`;
-                                    }).join('')}
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-
-                <div class="journey-insights">
-                    <h3>💡 Insights</h3>
-                    <ul>
-                        ${this.generateInsights(emotionCounts, timeline)}
-                    </ul>
-                </div>
-
-                <button class="btn-primary" onclick="app.closeEmotionJourney()">Close</button>
-            </div>
-        `;
-
-        // Show modal
-        const modal = document.createElement('div');
-        modal.className = 'modal emotion-journey-overlay';
-        modal.innerHTML = `<div class="modal-content journey-content">${modalContent}</div>`;
-        document.body.appendChild(modal);
-
-        // Add styles
-        const style = document.createElement('style');
-        style.textContent = `
-            .emotion-journey-overlay {
-                z-index: 300;
-            }
-            .journey-content {
-                max-width: 700px;
-                max-height: 90vh;
-                overflow-y: auto;
-            }
-            .emotion-journey-modal h2 {
-                margin-bottom: 1.5rem;
-                text-align: center;
-            }
-            .journey-stats {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1rem;
-                margin-bottom: 2rem;
-            }
-            .journey-stats .stat {
-                text-align: center;
-                padding: 1rem;
-                background: #f8fafc;
-                border-radius: 0.75rem;
-            }
-            .journey-stats .stat-value {
-                display: block;
-                font-size: 1.5rem;
-                font-weight: 700;
-                color: #14b8a6;
-            }
-            .journey-stats .stat-label {
-                font-size: 0.75rem;
-                color: #64748b;
-            }
-            .emotion-distribution, .emotion-timeline, .journey-insights {
-                margin-bottom: 2rem;
-            }
-            .emotion-distribution h3, .emotion-timeline h3, .journey-insights h3 {
-                margin-bottom: 1rem;
-                font-size: 1.125rem;
-            }
-            .emotion-bar {
-                display: flex;
-                align-items: center;
-                gap: 0.75rem;
-                margin-bottom: 0.5rem;
-            }
-            .bar-label {
-                width: 120px;
-                font-size: 0.875rem;
-                font-weight: 500;
-            }
-            .bar-track {
-                flex: 1;
-                height: 24px;
-                background: #e2e8f0;
-                border-radius: 12px;
-                overflow: hidden;
-            }
-            .bar-fill {
-                height: 100%;
-                border-radius: 12px;
-                transition: width 0.5s ease;
-            }
-            .bar-value {
-                width: 50px;
-                text-align: right;
-                font-size: 0.875rem;
-                color: #64748b;
-            }
-            .timeline {
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            .timeline-item {
-                display: flex;
-                align-items: center;
-                gap: 0.75rem;
-                padding: 0.75rem;
-                background: #f8fafc;
-                border-radius: 0.5rem;
-            }
-            .timeline-index {
-                width: 24px;
-                height: 24px;
-                background: #14b8a6;
-                color: white;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 0.75rem;
-                font-weight: 600;
-            }
-            .timeline-time {
-                width: 60px;
-                font-size: 0.75rem;
-                color: #64748b;
-            }
-            .timeline-emotions {
-                display: flex;
-                gap: 0.5rem;
-                flex-wrap: wrap;
-            }
-            .timeline-badge {
-                padding: 0.25rem 0.5rem;
-                border-radius: 9999px;
-                font-size: 0.75rem;
-                font-weight: 500;
-            }
-            .journey-insights ul {
-                list-style: none;
-                padding: 0;
-            }
-            .journey-insights li {
-                padding: 0.5rem 0;
-                padding-left: 1.5rem;
-                position: relative;
-            }
-            .journey-insights li::before {
-                content: '💡';
-                position: absolute;
-                left: 0;
-            }
-        `;
-        document.head.appendChild(style);
-    },
-
-    generateInsights(emotionCounts, timeline) {
-        const insights = [];
-        const emotions = Object.keys(emotionCounts);
-        
-        if (emotions.includes('POWER') && emotions.includes('LOSS')) {
-            insights.push('You cycled between feeling powerful and experiencing loss — this is a common pattern.');
-        }
-        if (emotions.includes('CRAVE') && emotions.includes('EMPTINESS')) {
-            insights.push('Craving often follows emptiness. Notice when you reach for something to fill a void.');
-        }
-        if (emotions.includes('EMPATHY')) {
-            insights.push('You showed self-awareness and compassion — a sign of emotional growth.');
-        }
-        if (timeline.length > 5) {
-            insights.push('You engaged deeply with your emotions. Regular reflection builds resilience.');
-        }
-        if (insights.length === 0) {
-            insights.push('Every emotional experience is valid. Continue exploring your inner world.');
-        }
-        
-        return insights.map(i => `<li>${i}</li>`).join('');
-    },
-
-    closeEmotionJourney() {
-        const modal = document.querySelector('.emotion-journey-overlay');
-        if (modal) modal.remove();
-    },
+    // Copyright protection - show privacy policy
+    showPrivacyPolicy() {
         alert('Privacy Policy:\n\n' +
             '© 2026 Mindfulness Therapy. All rights reserved.\n\n' +
             'Your data is stored locally on your device.\n' +

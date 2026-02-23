@@ -265,6 +265,43 @@ app.post('/api/session-journey', (req, res) => {
     });
 });
 
+// Emotion Ribbon Lexicon for server-side analysis
+const emotionRibbonLexicon = {
+    POWER: ['powerful','mighty','strength','dominant','authority','control','master','leader','confident','capable','triumph','victory','success','courage','brave','energy','vigor','accomplish','achievement','agency','ambition','excellence','hero','champion','conquer','prevail','supreme','almighty','potent','robust','excel','authority','competent','expert','accomplished','skilled','superior','bold','determined','resolute','backbone','command','dominance','empower','force','influence','mastery','powerful','strength','strong','superior','triumph','victory','win','winning'],
+    POSSESSION: ['possess','own','acquire','obtain','gain','seize','claim','desire','want','covet','greed','hoard','wealth','treasure','have','hold','keep','mine','property','belongings','assets','collection','accumulation','retention','custody','capture','grasp','attain','accumulate','amass','property','belongings','mine','cling','fortune','treasure','gain','wealth','acquire','obtain'],
+    LOSS: ['loss','lose','grief','mourn','sorrow','anguish','pain','separation','abandonment','deprived','bereft','missing','forfeit','surrender','death','divorce','disaster','devastation','distress','lament','weep','cry','heartbreak','mourning','widow','lost','grief','mourn','ache','parting','departure','bereavement','denied','hurt','sorrow','pain','forsaken','orphan','surrender'],
+    EMPTINESS: ['empty','void','hollow','numb','dead','lifeless','meaningless','pointless','isolated','lonely','despair','disconnected','alienated','vacant','blank','drained','exhausted','depleted','barren','desolate','abandoned','forsaken','lonely','despair','worthless','isolated','absence','hollow','barren','apathetic','meaningless','pointless','futile','disconnected','alienated','depression','detached','useless','lack','deficiency'],
+    CRAVE: ['crave','long','yearn','desire','hunger','thirst','urge','obsession','passion','lust','desperate','urgent','burning','addicted','impatient','aching','pining','starving','ravenous','insatiable','voracious','appetency','covetous','intense','eager','frantic','thirst','passion','fierce','ardent','anxious','compulsion','dependent','pine','impatient','obsession','fixation','desperate','burning','hooked','withdrawal','itch'],
+    EMPATHY: ['empathy','compassion','sympathy','understand','care','kind','gentle','tender','love','connect','bond','support','comfort','nurture','share','listen','concern','affection','warmth','solace','mercy','kindness','tenderness','nurture','comfort','share','intimate','kind','tender','affection','heal','compassion','sympathy','love','console','empathy','care','concern','kindness','connect','bond','attach','relate','identify','feel','listen','hear','soothe','unite','join','link','close','sensitive']
+};
+
+// Analyze text with Emotion Ribbon Lexicon
+function analyzeEmotionRibbon(text) {
+    const words = text.toLowerCase().match(/\b[a-z]+\b/g) || [];
+    const detected = {};
+    
+    for (const [category, wordList] of Object.entries(emotionRibbonLexicon)) {
+        const matches = words.filter(word => wordList.includes(word));
+        if (matches.length > 0) {
+            detected[category] = {
+                count: matches.length,
+                words: matches,
+                intensity: Math.min(matches.length / 3, 1),
+                confidence: Math.min(70 + matches.length * 10, 95)
+            };
+        }
+    }
+    
+    // Get dominant emotion
+    const dominant = Object.entries(detected).sort((a, b) => b[1].count - a[1].count)[0];
+    
+    return {
+        detected,
+        dominant: dominant ? { category: dominant[0], ...dominant[1] } : null,
+        categories: Object.keys(detected)
+    };
+}
+
 // Helper to infer state from AI response
 function inferStateFromResponse(response) {
     const lowerResponse = response.toLowerCase();

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Ribbon Explorer - Mindfulness Therapy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --power-color: #8B0000;
+            --possession-color: #FF6B35;
+            --loss-color: #191970;
+            --emptiness-color: #36454F;
+            --crave-color: #DC143C;
+            --empathy-color: #2E8B57;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fafaf9 0%, #f5f2ed 100%);
+            min-height: 100vh;
+            color: #1e293b;
+        }
+
+        .explorer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .explorer-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .explorer-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #8B0000, #FF6B35, #191970, #2E8B57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .explorer-header p {
+            color: #64748b;
+            font-size: 1.125rem;
+        }
+
+        /* Ribbon Display Section */
+        .ribbon-display-section {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .ribbon-container-wrapper {
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #emotionRibbonDisplay {
+            width: 100%;
+            max-width: 800px;
+            height: 120px;
+        }
+
+        .selected-words-display {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 0.75rem;
+            min-height: 60px;
+        }
+
+        .selected-words-display h4 {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+
+        #selectedWordsList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .selected-word-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.375rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .selected-word-tag:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .selected-word-tag .remove {
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        .clear-all-btn {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #f1f5f9;
+            border: none;
+            border-radius: 0.5rem;
+            color: #64748b;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .clear-all-btn:hover {
+            background: #e2e8f0;
+            color: #1e293b;
+        }
+
+        /* Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        .category-card.active {
+            border-color: currentColor;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid currentColor;
+        }
+
+        .category-emoji {
+            font-size: 2rem;
+        }
+
+        .category-title {
+            flex: 1;
+        }
+
+        .category-title h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .category-title p {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-top: 0.25rem;
+        }
+
+        .category-count {
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            background: currentColor;
+            color: white;
+        }
+
+        .words-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        .words-grid::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .words-grid::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 3px;
+        }
+
+        .words-grid::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+
+        .word-chip {
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        .word-chip:hover {
+            transform: scale(1.05);
+            border-color: currentColor;
+        }
+
+        .word-chip.selected {
+            background: currentColor;
+            color: white;
+            border-color: currentColor;
+        }
+
+        /* Category-specific colors */
+        .category-power { color: var(--power-color); }
+        .category-power .word-chip:hover,
+        .category-power .word-chip.selected {
+            background: var(--power-color);
+            border-color: var(--power-color);
+        }
+
+        .category-possession { color: var(--possession-color); }
+        .category-possession .word-chip:hover,
+        .category-possession .word-chip.selected {
+            background: var(--possession-color);
+            border-color: var(--possession-color);
+        }
+
+        .category-loss { color: var(--loss-color); }
+        .category-loss .word-chip:hover,
+        .category-loss .word-chip.selected {
+            background: var(--loss-color);
+            border-color: var(--loss-color);
+        }
+
+        .category-emptiness { color: var(--emptiness-color); }
+        .category-emptiness .word-chip:hover,
+        .category-emptiness .word-chip.selected {
+            background: var(--emptiness-color);
+            border-color: var(--emptiness-color);
+        }
+
+        .category-crave { color: var(--crave-color); }
+        .category-crave .word-chip:hover,
+        .category-crave .word-chip.selected {
+            background: var(--crave-color);
+            border-color: var(--crave-color);
+        }
+
+        .category-empathy { color: var(--empathy-color); }
+        .category-empathy .word-chip:hover,
+        .category-empathy .word-chip.selected {
+            background: var(--empathy-color);
+            border-color: var(--empathy-color);
+        }
+
+        /* Back button */
+        .back-nav {
+            margin-bottom: 1.5rem;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #f8fafc;
+            color: #1e293b;
+            border-color: #cbd5e1;
+        }
+
+        /* Empty state */
+        .empty-ribbon {
+            text-align: center;
+            color: #94a3b8;
+            padding: 2rem;
+        }
+
+        .empty-ribbon i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .empty-ribbon p {
+            font-size: 1rem;
+        }
+
+        /* Stats bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+    <div class="explorer-container">
+        <!-- Back Navigation -->
+        <nav class="back-nav">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Therapy App
+            </a>
+        </nav>
+
+        <!-- Header -->
+        <header class="explorer-header">
+            <h1>🎨 Emotion Ribbon Explorer</h1>
+            <p>Click on words to build your emotion ribbon. Discover how different emotions combine.</p>
+        </header>
+
+        <!-- Ribbon Display -->
+        <section class="ribbon-display-section">
+            <div class="ribbon-container-wrapper">
+                <div id="emotionRibbonDisplay">
+                    <div class="empty-ribbon">
+                        <i class="fas fa-palette"></i>
+                        <p>Click on emotion words below to build your ribbon</p>
+                    </div>
+                </div>
+                
+                <div class="selected-words-display">
+                    <h4><i class="fas fa-check-circle"></i> Selected Words</h4>
+                    <div id="selectedWordsList">
+                        <span style="color: #94a3b8; font-size: 0.875rem;">No words selected yet...</span>
+                    </div>
+                </div>
+
+                <button class="clear-all-btn" onclick="clearAllWords()">
+                    <i class="fas fa-trash-alt"></i> Clear All
+                </button>
+
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalSelected">0</div>
+                        <div class="stat-label">Words Selected</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="categoriesActive">0</div>
+                        <div class="stat-label">Categories</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="dominantCategory">-</div>
+                        <div class="stat-label">Dominant</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Grid -->
+        <section class="categories-grid" id="categoriesGrid">
+            <!-- Categories will be populated by JavaScript -->
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="emotion-ribbon.js"></script>
+    <script src="emotion-ribbon-visualizer.js"></script>
+    <script>
+        // Selected words state
+        let selectedWords = [];
+        let ribbonVisualizer = null;
+
+        // Category data with all words
+        const categories = {
+            POWER: {
+                name: 'Power',
+                emoji: '🔴',
+                description: 'Agency, Control, Mastery',
+                color: '#8B0000',
+                words: ['powerful','mighty','strength','dominant','authority','control','master','leader','confident','capable','triumph','victory','success','courage','brave','energy','vigor','accomplish','achievement','agency','ambition','excellence','hero','champion','conquer','prevail','supreme','almighty','potent','robust','excel','competent','expert','accomplished','skilled','superior','bold','determined','resolute','backbone','command','dominance','empower','force','influence','mastery','strong','win','winning']
+            },
+            POSSESSION: {
+                name: 'Possession',
+                emoji: '🟠',
+                description: 'Desire to Own, Acquire',
+                color: '#FF6B35',
+                words: ['possess','own','acquire','obtain','gain','seize','claim','desire','want','covet','greed','hoard','wealth','treasure','have','hold','keep','mine','property','belongings','assets','collection','accumulation','retention','custody','capture','grasp','attain','accumulate','amass','cling','fortune']
+            },
+            LOSS: {
+                name: 'Loss',
+                emoji: '🔵',
+                description: 'Grief, Deprivation',
+                color: '#191970',
+                words: ['loss','lose','grief','mourn','sorrow','anguish','pain','separation','abandonment','deprived','bereft','missing','forfeit','surrender','death','divorce','disaster','devastation','distress','lament','weep','cry','heartbreak','mourning','widow','lost','ache','parting','departure','bereavement','denied','hurt','forsaken','orphan','sad','sadness','unhappy','depressed','melancholy','gloomy','down','blue','tearful','crying','upset','disappointed']
+            },
+            EMPTINESS: {
+                name: 'Emptiness',
+                emoji: '⚫',
+                description: 'Void, Numbness',
+                color: '#36454F',
+                words: ['empty','void','hollow','numb','dead','lifeless','meaningless','pointless','isolated','lonely','despair','disconnected','alienated','vacant','blank','drained','exhausted','depleted','barren','desolate','abandoned','worthless','absence','apathetic','futile','depression','detached','useless','lack','deficiency']
+            },
+            CRAVE: {
+                name: 'Crave',
+                emoji: '🔴',
+                description: 'Urgent Desire, Compulsion',
+                color: '#DC143C',
+                words: ['crave','long','yearn','desire','hunger','thirst','urge','obsession','passion','lust','desperate','urgent','burning','addicted','impatient','aching','pining','starving','ravenous','insatiable','voracious','intense','eager','frantic','fierce','ardent','anxious','compulsion','dependent','fixation','hooked','withdrawal','itch']
+            },
+            EMPATHY: {
+                name: 'Empathy',
+                emoji: '🟢',
+                description: 'Connection, Compassion',
+                color: '#2E8B57',
+                words: ['empathy','compassion','sympathy','understand','care','kind','gentle','tender','love','connect','bond','support','comfort','nurture','share','listen','concern','affection','warmth','solace','mercy','kindness','tenderness','intimate','heal','console','attach','relate','identify','feel','hear','soothe','unite','join','link','close','sensitive']
+            }
+        };
+
+        // Initialize the explorer
+        function init() {
+            renderCategories();
+            initRibbonVisualizer();
+        }
+
+        // Initialize ribbon visualizer
+        function initRibbonVisualizer() {
+            const container = document.getElementById('emotionRibbonDisplay');
+            container.innerHTML = ''; // Clear empty state
+            
+            ribbonVisualizer = new EmotionRibbonVisualizer('emotionRibbonDisplay', {
+                width: 800,
+                height: 120,
+                maxSegments: 12
+            });
+        }
+
+        // Render category cards
+        function renderCategories() {
+            const grid = document.getElementById('categoriesGrid');
+            
+            grid.innerHTML = Object.entries(categories).map(([key, cat]) => `
+                <div class="category-card category-${key.toLowerCase()}" data-category="${key}">
+                    <div class="category-header">
+                        <span class="category-emoji">${cat.emoji}</span>
+                        <div class="category-title">
+                            <h3>${cat.name}</h3>
+                            <p>${cat.description}</p>
+                        </div>
+                        <span class="category-count">${cat.words.length}</span>
+                    </div>
+                    <div class="words-grid">
+                        ${cat.words.map(word => `
+                            <span class="word-chip" 
+                                  data-word="${word}" 
+                                  data-category="${key}"
+                                  onclick="toggleWord('${word}', '${key}', '${cat.color}')"
+                                  title="Click to add to ribbon">
+                                ${word}
+                            </span>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Toggle word selection
+        function toggleWord(word, category, color) {
+            const existingIndex = selectedWords.findIndex(w => w.word === word && w.category === category);
+            
+            if (existingIndex >= 0) {
+                // Remove word
+                selectedWords.splice(existingIndex, 1);
+            } else {
+                // Add word
+                selectedWords.push({ word, category, color });
+            }
+            
+            updateUI();
+        }
+
+        // Update all UI elements
+        function updateUI() {
+            updateWordChips();
+            updateSelectedWordsList();
+            updateRibbon();
+            updateStats();
+        }
+
+        // Update word chip styles
+        function updateWordChips() {
+            document.querySelectorAll('.word-chip').forEach(chip => {
+                const word = chip.dataset.word;
+                const category = chip.dataset.category;
+                const isSelected = selectedWords.some(w => w.word === word && w.category === category);
+                
+                chip.classList.toggle('selected', isSelected);
+            });
+        }
+
+        // Update selected words list
+        function updateSelectedWordsList() {
+            const container = document.getElementById('selectedWordsList');
+            
+            if (selectedWords.length === 0) {
+                container.innerHTML = '<span style="color: #94a3b8; font-size: 0.875rem;">No words selected yet...</span>';
+                return;
+            }
+            
+            container.innerHTML = selectedWords.map(w => `
+                <span class="selected-word-tag" 
+                      style="background: ${w.color}"
+                      onclick="toggleWord('${w.word}', '${w.category}', '${w.color}')"
+                      title="Click to remove">
+                    ${categories[w.category].emoji} ${w.word}
+                    <span class="remove">×</span>
+                </span>
+            `).join('');
+        }
+
+        // Update ribbon visualization
+        function updateRibbon() {
+            if (!ribbonVisualizer) return;
+            
+            // Clear existing segments
+            ribbonVisualizer.clear();
+            
+            // Add segments for each selected word
+            selectedWords.forEach(({ word, category, color }) => {
+                ribbonVisualizer.addSegment(category, 0.7, word);
+            });
+        }
+
+        // Update statistics
+        function updateStats() {
+            document.getElementById('totalSelected').textContent = selectedWords.length;
+            
+            const uniqueCategories = [...new Set(selectedWords.map(w => w.category))];
+            document.getElementById('categoriesActive').textContent = uniqueCategories.length;
+            
+            // Find dominant category
+            if (selectedWords.length === 0) {
+                document.getElementById('dominantCategory').textContent = '-';
+                return;
+            }
+            
+            const counts = {};
+            selectedWords.forEach(w => {
+                counts[w.category] = (counts[w.category] || 0) + 1;
+            });
+            
+            const dominant = Object.entries(counts).sort((a, b) => b[1] - a[1])[0];
+            const domCat = categories[dominant[0]];
+            document.getElementById('dominantCategory').innerHTML = 
+                `${domCat.emoji} ${domCat.name}`;
+        }
+
+        // Clear all words
+        function clearAllWords() {
+            selectedWords = [];
+            updateUI();
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

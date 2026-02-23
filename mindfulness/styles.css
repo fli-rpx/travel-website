@@ -4,12 +4,12 @@
     --color-primary: #14b8a6;
     --color-primary-dark: #0d9488;
     --color-secondary: #f97316;
-    --color-power: #dc2626;
-    --color-possession: #7c3aed;
-    --color-loss: #2563eb;
-    --color-emptiness: #6b7280;
-    --color-craving: #f59e0b;
-    --color-return: #22c55e;
+    --color-power: #8B0000;
+    --color-possession: #FF6B35;
+    --color-loss: #191970;
+    --color-emptiness: #36454F;
+    --color-crave: #DC143C;
+    --color-empathy: #2E8B57;
     --bg: #f8fafc;
     --card: #ffffff;
     --text: #1e293b;
@@ -1212,7 +1212,8 @@ body.allow-select {
     }
 
     .quick-stats,
-    .stats-row {
+    .stats-row,
+    .journey-stats {
         grid-template-columns: 1fr;
     }
 
@@ -1245,5 +1246,25 @@ body.allow-select {
 
     .nav-brand {
         font-size: 1rem;
+    }
+
+    /* Emotion Ribbon mobile */
+    .emotion-ribbon-container {
+        padding: 0.75rem;
+    }
+
+    .ribbon-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .input-modes {
+        flex-wrap: wrap;
+    }
+
+    .mode-btn {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.6rem;
     }
 }

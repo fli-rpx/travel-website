@@ -1,5 +1,5 @@
 // Mindfulness Therapy - Enhanced JavaScript
-// Features: Power-Possession Cycle, AI Assessment, Micro-Interventions
+// Features: Power-Possession Cycle, AI Assessment, Micro-Interventions, Emotion Ribbon
 // Copyright © 2026 Mindfulness Therapy. All rights reserved.
 
 const app = {
@@ -135,6 +135,82 @@ const app = {
         this.renderCycle();
         this.setupSaladCheck();
         this.renderProgress();
+        this.initEmotionRibbon();
+    },
+
+    // Initialize Emotion Ribbon
+    initEmotionRibbon() {
+        // Create ribbon container if on assessment page
+        const chatInterface = document.querySelector('.chat-interface');
+        if (chatInterface && typeof EmotionRibbon !== 'undefined') {
+            // Insert ribbon before chat interface
+            const ribbonContainer = document.createElement('div');
+            ribbonContainer.id = 'emotionRibbonContainer';
+            ribbonContainer.className = 'emotion-ribbon-container';
+            ribbonContainer.innerHTML = `
+                <div class="ribbon-header">
+                    <span class="ribbon-title">🎨 Emotion Ribbon</span>
+                    <span class="ribbon-subtitle">Real-time emotional awareness</span>
+                </div>
+                <div id="ribbonVisualization"></div>
+            `;
+            chatInterface.parentNode.insertBefore(ribbonContainer, chatInterface);
+            
+            // Initialize visualizer
+            if (typeof EmotionRibbonVisualizer !== 'undefined') {
+                this.emotionRibbonVisualizer = new EmotionRibbonVisualizer('ribbonVisualization', {
+                    width: 600,
+                    height: 100,
+                    maxSegments: 8
+                });
+            }
+        }
+        
+        // Add styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .emotion-ribbon-container {
+                background: white;
+                border-radius: 1rem;
+                padding: 1rem 1.5rem;
+                margin-bottom: 1.5rem;
+                box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+                border: 1px solid #e2e8f0;
+            }
+            .ribbon-header {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                margin-bottom: 0.75rem;
+            }
+            .ribbon-title {
+                font-weight: 600;
+                color: #1e293b;
+            }
+            .ribbon-subtitle {
+                font-size: 0.75rem;
+                color: #64748b;
+            }
+            #ribbonVisualization {
+                min-height: 80px;
+            }
+            .emotion-journey-btn {
+                margin-top: 1rem;
+                padding: 0.5rem 1rem;
+                background: linear-gradient(135deg, #14b8a6, #0d9488);
+                color: white;
+                border: none;
+                border-radius: 9999px;
+                font-size: 0.875rem;
+                cursor: pointer;
+                transition: all 0.2s;
+            }
+            .emotion-journey-btn:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+            }
+        `;
+        document.head.appendChild(style);
     },
 
     setupNavigation() {
@@ -361,6 +437,10 @@ const app = {
         }, 100);
     },
 
+    // Emotion Ribbon Visualizer
+    emotionRibbonVisualizer: null,
+    sessionEmotions: [],
+
     // Backend API Configuration
     apiConfig: {
         baseUrl: '', // Empty for same-origin, or set to 'http://localhost:3000' for local dev
@@ -376,6 +456,23 @@ const app = {
         // Add user message
         this.addChatMessage(message, 'user');
         input.value = '';
+
+        // Analyze emotions locally first for real-time ribbon
+        if (typeof EmotionRibbon !== 'undefined') {
+            const analysis = EmotionRibbon.analyze(message);
+            if (analysis.detected && Object.keys(analysis.detected).length > 0) {
+                // Update ribbon
+                if (this.emotionRibbonVisualizer) {
+                    this.emotionRibbonVisualizer.updateFromAnalysis(analysis);
+                }
+                // Store for session
+                this.sessionEmotions.push({
+                    timestamp: Date.now(),
+                    message: message.substring(0, 100),
+                    emotions: analysis.detected
+                });
+            }
+        }
 
         // Show typing indicator
         this.showTypingIndicator();
@@ -418,7 +515,7 @@ const app = {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ message: userMessage })
+                body: JSON.stringify({ message: userMessage, includeEmotions: true })
             });
 
             this.hideTypingIndicator();
@@ -437,9 +534,24 @@ const app = {
             // Add AI response to chat
             this.addChatMessage(data.response, 'ai');
 
+            // Update ribbon with server-side emotion analysis if available
+            if (data.emotionRibbon) {
+                this.updateEmotionRibbonFromServer(data.emotionRibbon);
+            }
+
             // Update sidebar with detected state
             if (data.state && this.cycleStates[data.state]) {
                 this.updateDetectedState(this.cycleStates[data.state], data.confidence || 85);
+            }
+
+            // Store emotion data
+            if (data.emotions) {
+                this.sessionEmotions.push({
+                    timestamp: Date.now(),
+                    message: userMessage.substring(0, 100),
+                    emotions: data.emotions,
+                    aiDetected: data.state
+                });
             }
 
         } catch (error) {
@@ -452,6 +564,18 @@ const app = {
                 'ai'
             );
             this.analyzeEmotionLocal(userMessage);
+        }
+    },
+
+    // Update ribbon from server analysis
+    updateEmotionRibbonFromServer(emotionRibbon) {
+        if (!this.emotionRibbonVisualizer || !emotionRibbon) return;
+        
+        // Add all detected emotions from server
+        if (emotionRibbon.all) {
+            emotionRibbon.all.forEach(emo => {
+                this.emotionRibbonVisualizer.addSegment(emo.category, emo.intensity);
+            });
         }
     },
 
@@ -478,9 +602,24 @@ const app = {
             // Add AI response to chat
             this.addChatMessage(data.response, 'ai');
 
+            // Update ribbon with emotion data
+            if (data.emotionRibbon) {
+                this.updateEmotionRibbonFromServer(data.emotionRibbon);
+            }
+
             // Update sidebar with detected state
             if (data.state && this.cycleStates[data.state]) {
                 this.updateDetectedState(this.cycleStates[data.state], data.confidence || 70);
+            }
+
+            // Store emotion data
+            if (data.emotions) {
+                this.sessionEmotions.push({
+                    timestamp: Date.now(),
+                    message: userMessage.substring(0, 100),
+                    emotions: data.emotions,
+                    aiDetected: data.state
+                });
             }
 
         } catch (error) {
@@ -963,8 +1102,266 @@ const app = {
         this.renderJournalEntries();
     },
 
-    // Copyright protection - show privacy policy
-    showPrivacyPolicy() {
+    // Show Emotion Journey Dashboard
+    showEmotionJourney() {
+        if (this.sessionEmotions.length === 0) {
+            alert('No emotions detected yet. Start a conversation to see your emotional journey!');
+            return;
+        }
+
+        // Calculate statistics
+        const emotionCounts = {};
+        const timeline = [];
+        
+        this.sessionEmotions.forEach((entry, index) => {
+            const emotions = Object.keys(entry.emotions);
+            emotions.forEach(emo => {
+                emotionCounts[emo] = (emotionCounts[emo] || 0) + entry.emotions[emo].count;
+            });
+            
+            timeline.push({
+                index: index + 1,
+                time: new Date(entry.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                emotions: emotions,
+                dominant: emotions[0]
+            });
+        });
+
+        const dominantEmotion = Object.entries(emotionCounts)
+            .sort((a, b) => b[1] - a[1])[0];
+
+        // Create modal content
+        const modalContent = `
+            <div class="emotion-journey-modal">
+                <h2>🎨 Your Emotional Journey</h2>
+                <div class="journey-stats">
+                    <div class="stat">
+                        <span class="stat-value">${this.sessionEmotions.length}</span>
+                        <span class="stat-label">Messages Analyzed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">${Object.keys(emotionCounts).length}</span>
+                        <span class="stat-label">Emotions Detected</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">${dominantEmotion ? dominantEmotion[0] : 'None'}</span>
+                        <span class="stat-label">Dominant Emotion</span>
+                    </div>
+                </div>
+                
+                <div class="emotion-distribution">
+                    <h3>Emotion Distribution</h3>
+                    <div class="emotion-bars">
+                        ${Object.entries(emotionCounts).map(([emotion, count]) => {
+                            const cat = EmotionRibbon.categories[emotion];
+                            const percentage = (count / Object.values(emotionCounts).reduce((a, b) => a + b, 0) * 100).toFixed(1);
+                            return `
+                                <div class="emotion-bar">
+                                    <span class="bar-label">${cat.emoji} ${cat.name}</span>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="width: ${percentage}%; background: ${cat.color};"></div>
+                                    </div>
+                                    <span class="bar-value">${percentage}%</span>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+
+                <div class="emotion-timeline">
+                    <h3>Session Timeline</h3>
+                    <div class="timeline">
+                        ${timeline.map((t, i) => `
+                            <div class="timeline-item">
+                                <span class="timeline-index">${t.index}</span>
+                                <span class="timeline-time">${t.time}</span>
+                                <div class="timeline-emotions">
+                                    ${t.emotions.map(e => {
+                                        const cat = EmotionRibbon.categories[e];
+                                        return `<span class="timeline-badge" style="background: ${cat.color}20; color: ${cat.color};">${cat.emoji} ${cat.name}</span>`;
+                                    }).join('')}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="journey-insights">
+                    <h3>💡 Insights</h3>
+                    <ul>
+                        ${this.generateInsights(emotionCounts, timeline)}
+                    </ul>
+                </div>
+
+                <button class="btn-primary" onclick="app.closeEmotionJourney()">Close</button>
+            </div>
+        `;
+
+        // Show modal
+        const modal = document.createElement('div');
+        modal.className = 'modal emotion-journey-overlay';
+        modal.innerHTML = `<div class="modal-content journey-content">${modalContent}</div>`;
+        document.body.appendChild(modal);
+
+        // Add styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .emotion-journey-overlay {
+                z-index: 300;
+            }
+            .journey-content {
+                max-width: 700px;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+            .emotion-journey-modal h2 {
+                margin-bottom: 1.5rem;
+                text-align: center;
+            }
+            .journey-stats {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+            .journey-stats .stat {
+                text-align: center;
+                padding: 1rem;
+                background: #f8fafc;
+                border-radius: 0.75rem;
+            }
+            .journey-stats .stat-value {
+                display: block;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #14b8a6;
+            }
+            .journey-stats .stat-label {
+                font-size: 0.75rem;
+                color: #64748b;
+            }
+            .emotion-distribution, .emotion-timeline, .journey-insights {
+                margin-bottom: 2rem;
+            }
+            .emotion-distribution h3, .emotion-timeline h3, .journey-insights h3 {
+                margin-bottom: 1rem;
+                font-size: 1.125rem;
+            }
+            .emotion-bar {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                margin-bottom: 0.5rem;
+            }
+            .bar-label {
+                width: 120px;
+                font-size: 0.875rem;
+                font-weight: 500;
+            }
+            .bar-track {
+                flex: 1;
+                height: 24px;
+                background: #e2e8f0;
+                border-radius: 12px;
+                overflow: hidden;
+            }
+            .bar-fill {
+                height: 100%;
+                border-radius: 12px;
+                transition: width 0.5s ease;
+            }
+            .bar-value {
+                width: 50px;
+                text-align: right;
+                font-size: 0.875rem;
+                color: #64748b;
+            }
+            .timeline {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .timeline-item {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                padding: 0.75rem;
+                background: #f8fafc;
+                border-radius: 0.5rem;
+            }
+            .timeline-index {
+                width: 24px;
+                height: 24px;
+                background: #14b8a6;
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.75rem;
+                font-weight: 600;
+            }
+            .timeline-time {
+                width: 60px;
+                font-size: 0.75rem;
+                color: #64748b;
+            }
+            .timeline-emotions {
+                display: flex;
+                gap: 0.5rem;
+                flex-wrap: wrap;
+            }
+            .timeline-badge {
+                padding: 0.25rem 0.5rem;
+                border-radius: 9999px;
+                font-size: 0.75rem;
+                font-weight: 500;
+            }
+            .journey-insights ul {
+                list-style: none;
+                padding: 0;
+            }
+            .journey-insights li {
+                padding: 0.5rem 0;
+                padding-left: 1.5rem;
+                position: relative;
+            }
+            .journey-insights li::before {
+                content: '💡';
+                position: absolute;
+                left: 0;
+            }
+        `;
+        document.head.appendChild(style);
+    },
+
+    generateInsights(emotionCounts, timeline) {
+        const insights = [];
+        const emotions = Object.keys(emotionCounts);
+        
+        if (emotions.includes('POWER') && emotions.includes('LOSS')) {
+            insights.push('You cycled between feeling powerful and experiencing loss — this is a common pattern.');
+        }
+        if (emotions.includes('CRAVE') && emotions.includes('EMPTINESS')) {
+            insights.push('Craving often follows emptiness. Notice when you reach for something to fill a void.');
+        }
+        if (emotions.includes('EMPATHY')) {
+            insights.push('You showed self-awareness and compassion — a sign of emotional growth.');
+        }
+        if (timeline.length > 5) {
+            insights.push('You engaged deeply with your emotions. Regular reflection builds resilience.');
+        }
+        if (insights.length === 0) {
+            insights.push('Every emotional experience is valid. Continue exploring your inner world.');
+        }
+        
+        return insights.map(i => `<li>${i}</li>`).join('');
+    },
+
+    closeEmotionJourney() {
+        const modal = document.querySelector('.emotion-journey-overlay');
+        if (modal) modal.remove();
+    },
         alert('Privacy Policy:\n\n' +
             '© 2026 Mindfulness Therapy. All rights reserved.\n\n' +
             'Your data is stored locally on your device.\n' +

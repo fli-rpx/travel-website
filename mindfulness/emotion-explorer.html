@@ -23,6 +23,87 @@
             box-sizing: border-box;
         }
 
+        /* Navigation Bar Styles */
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 2rem;
+            height: 60px;
+        }
+
+        .nav-brand {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            background: transparent;
+            color: #64748b;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(135deg, #50c8b8, #4a90d9);
+            color: white;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: #64748b;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+                gap: 0.5rem;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-btn {
+                width: 100%;
+                text-align: left;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, #fafaf9 0%, #f5f2ed 100%);
@@ -372,7 +453,27 @@
     </style>
 </head>
 <body>
-    <div class="explorer-container">
+    <!-- Full Navigation Bar -->
+    <nav class="nav-bar" style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e2e8f0;">
+        <div class="nav-brand" onclick="window.location.href='index.html'" style="cursor: pointer;">🧘 Mindfulness Therapy</div>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <button class="nav-btn" onclick="window.location.href='index-zh.html'">中文</button>
+            <button class="nav-btn" onclick="window.location.href='index.html'">Home</button>
+            <button class="nav-btn" onclick="window.location.href='index.html#cycle'">Cycle</button>
+            <button class="nav-btn" onclick="window.location.href='index.html#assessment'">AI Chat</button>
+            <button class="nav-btn active">🎨 Explorer</button>
+            <button class="nav-btn" onclick="window.location.href='emotion-balance.html'">⚡ Balance</button>
+            <button class="nav-btn" onclick="window.location.href='index.html#salad'">Salad</button>
+            <button class="nav-btn" onclick="window.location.href='index.html#interventions'">Tools</button>
+            <button class="nav-btn" onclick="window.location.href='index.html#journal'">Journal</button>
+            <button class="nav-btn" onclick="window.location.href='index.html#progress'">Progress</button>
+        </div>
+    </nav>
+
+    <div class="explorer-container" style="padding-top: 80px;">
         <!-- Back Navigation -->
         <nav class="back-nav">
             <a href="index.html" class="back-btn">
@@ -630,6 +731,12 @@
 
         // Initialize on load
         document.addEventListener('DOMContentLoaded', init);
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
     </script>
 </body>
 </html>

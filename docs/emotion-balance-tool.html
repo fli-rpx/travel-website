@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Balance Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #fff;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2rem;
+            background: linear-gradient(90deg, #50c8b8, #4a90d9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #b0b0b8;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+        
+        .question {
+            margin-bottom: 25px;
+        }
+        
+        .question-label {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            color: #e0e0e8;
+        }
+        
+        .slider-container {
+            position: relative;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #50c8b8, #4a90d9);
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(80, 200, 184, 0.4);
+            transition: transform 0.2s;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+        
+        .scale-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        .value-display {
+            text-align: center;
+            margin-top: 8px;
+            font-size: 1.2rem;
+            color: #50c8b8;
+            font-weight: 600;
+        }
+        
+        button {
+            width: 100%;
+            padding: 16px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #50c8b8, #4a90d9);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(80, 200, 184, 0.3);
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(80, 200, 184, 0.4);
+        }
+        
+        .result {
+            display: none;
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .result.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            position: relative;
+        }
+        
+        .score-circle::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            background: conic-gradient(var(--score-color) var(--score-deg), rgba(255,255,255,0.1) 0);
+            z-index: -1;
+        }
+        
+        .state-title {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--score-color);
+        }
+        
+        .advice-section {
+            margin-top: 20px;
+        }
+        
+        .advice-section h3 {
+            color: #50c8b8;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .advice-list {
+            list-style: none;
+        }
+        
+        .advice-list li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #d0d0d8;
+            line-height: 1.6;
+        }
+        
+        .advice-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #50c8b8;
+        }
+        
+        .quick-actions {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .quick-actions h3 {
+            color: #4a90d9;
+            margin-bottom: 15px;
+        }
+        
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .action-btn {
+            padding: 12px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e0e0e8;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        
+        .action-btn:hover {
+            background: rgba(80, 200, 184, 0.2);
+            border-color: #50c8b8;
+        }
+        
+        .breathing-exercise {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .breathing-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #50c8b8, #4a90d9);
+            margin: 20px auto;
+            animation: breathe 4s ease-in-out infinite;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.3); opacity: 1; }
+        }
+        
+        .reset-btn {
+            margin-top: 20px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: none;
+        }
+        
+        .reset-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ Emotion Balance Tool</h1>
+        <p class="subtitle">Check in. Get balanced. Move forward.</p>
+        
+        <div id="quiz">
+            <div class="question">
+                <label class="question-label">1. Energy Level</label>
+                <div class="slider-container">
+                    <input type="range" id="energy" min="1" max="10" value="5" oninput="updateValue('energy', this.value)">
+                    <div class="scale-labels">
+                        <span>Drained</span>
+                        <span>Balanced</span>
+                        <span>Hyper</span>
+                    </div>
+                    <div class="value-display" id="energy-val">5</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <label class="question-label">2. Mental Clarity</label>
+                <div class="slider-container">
+                    <input type="range" id="clarity" min="1" max="10" value="5" oninput="updateValue('clarity', this.value)">
+                    <div class="scale-labels">
+                        <span>Foggy</span>
+                        <span>Clear</span>
+                        <span>Sharp</span>
+                    </div>
+                    <div class="value-display" id="clarity-val">5</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <label class="question-label">3. Emotional Stability</label>
+                <div class="slider-container">
+                    <input type="range" id="stability" min="1" max="10" value="5" oninput="updateValue('stability', this.value)">
+                    <div class="scale-labels">
+                        <span>Volatile</span>
+                        <span>Steady</span>
+                        <span>Centered</span>
+                    </div>
+                    <div class="value-display" id="stability-val">5</div>
+                </div>
+            </div>
+            
+            <div class="question">
+                <label class="question-label">4. Stress Level</label>
+                <div class="slider-container">
+                    <input type="range" id="stress" min="1" max="10" value="5" oninput="updateValue('stress', this.value)">
+                    <div class="scale-labels">
+                        <span>Calm</span>
+                        <span>Manageable</span>
+                        <span>Overwhelmed</span>
+                    </div>
+                    <div class="value-display" id="stress-val">5</div>
+                </div>
+            </div>
+            
+            <button onclick="calculateState()">Analyze My State</button>
+        </div>
+        
+        <div id="result" class="result">
+            <div class="score-circle" id="score-circle">--</div>
+            <h2 class="state-title" id="state-title">--</h2>
+            <p id="state-desc" style="text-align: center; color: #b0b0b8; margin-bottom: 20px;"></p>
+            
+            <div class="advice-section">
+                <h3>🎯 Quick Rebalance Actions</h3>
+                <ul class="advice-list" id="advice-list"></ul>
+            </div>
+            
+            <div class="quick-actions">
+                <h3>⚡ Instant Tools</h3>
+                <div class="action-grid">
+                    <button class="action-btn" onclick="showBreathing()">🫁 Breathing</button>
+                    <button class="action-btn" onclick="groundingExercise()">🌍 Grounding</button>
+                    <button class="action-btn" onclick="resetTool()">🔄 Reset</button>
+                    <button class="action-btn" onclick="window.open('https://www.youtube.com/results?search_query=lofi+beats', '_blank')">🎵 Lofi</button>
+                </div>
+            </div>
+            
+            <div id="breathing" class="breathing-exercise">
+                <p style="color: #50c8b8;">Breathe with the circle...</p>
+                <div class="breathing-circle"></div>
+                <p style="color: #888; font-size: 0.9rem;">Inhale as it expands, exhale as it contracts</p>
+                <button class="reset-btn" onclick="hideBreathing()">Stop</button>
+            </div>
+            
+            <button class="reset-btn" onclick="resetAll()">Check Again</button>
+        </div>
+    </div>
+    
+    <script>
+        function updateValue(id, value) {
+            document.getElementById(id + '-val').textContent = value;
+        }
+        
+        function calculateState() {
+            const energy = parseInt(document.getElementById('energy').value);
+            const clarity = parseInt(document.getElementById('clarity').value);
+            const stability = parseInt(document.getElementById('stability').value);
+            const stress = parseInt(document.getElementById('stress').value);
+            
+            // Calculate balance score (stress is inverted)
+            const balanceScore = Math.round((energy + clarity + stability + (11 - stress)) / 4 * 10);
+            
+            // Determine state
+            let state, color, desc, advice;
+            
+            if (balanceScore >= 80) {
+                state = "⚡ Peak State";
+                color = "#50c8b8";
+                desc = "You're in a strong position. Channel this energy into meaningful work.";
+                advice = [
+                    "Tackle your most important task now — you're sharp",
+                    "Document what's working so you can replicate it",
+                    "Help someone else — your clarity is contagious",
+                    "Set a boundary: protect this state from interruptions"
+                ];
+            } else if (balanceScore >= 60) {
+                state = "🌊 Balanced Flow";
+                color = "#4a90d9";
+                desc = "Good equilibrium. Small adjustments will optimize your day.";
+                advice = [
+                    "Take a 5-minute walk to maintain momentum",
+                    "Drink water — hydration affects clarity more than you think",
+                    "Do one thing that moves your main goal forward",
+                    "Check in with yourself again in 2 hours"
+                ];
+            } else if (balanceScore >= 40) {
+                state = "🌫️ Drift Mode";
+                color = "#f5a623";
+                desc = "You're functional but not firing on all cylinders. Time to recalibrate.";
+                advice = [
+                    "Close all tabs except the one you need right now",
+                    "Do a 2-minute body scan — where are you holding tension?",
+                    "Eat something with protein if you haven't recently",
+                    "Lower the bar: what's the smallest next step you can take?"
+                ];
+            } else {
+                state = "⛈️ Storm Mode";
+                color = "#e74c3c";
+                desc = "Your system needs care before productivity. Recovery first.";
+                advice = [
+                    "Step away from the screen for 10 minutes minimum",
+                    "Name three things you can see, hear, and feel (grounding)",
+                    "Text someone you trust: 'Having a rough moment'",
+                    "Ask: what's the kindest thing I could do for myself right now?",
+                    "Consider postponing non-urgent tasks until tomorrow"
+                ];
+            }
+            
+            // Display results
+            const resultDiv = document.getElementById('result');
+            const scoreCircle = document.getElementById('score-circle');
+            const stateTitle = document.getElementById('state-title');
+            
+            scoreCircle.textContent = balanceScore;
+            scoreCircle.style.setProperty('--score-color', color);
+            scoreCircle.style.setProperty('--score-deg', (balanceScore * 3.6) + 'deg');
+            
+            stateTitle.textContent = state;
+            stateTitle.style.setProperty('--score-color', color);
+            
+            document.getElementById('state-desc').textContent = desc;
+            
+            const adviceList = document.getElementById('advice-list');
+            adviceList.innerHTML = advice.map(a => `<li>${a}</li>`).join('');
+            
+            document.getElementById('quiz').style.display = 'none';
+            resultDiv.classList.add('show');
+        }
+        
+        function showBreathing() {
+            document.getElementById('breathing').style.display = 'block';
+        }
+        
+        function hideBreathing() {
+            document.getElementById('breathing').style.display = 'none';
+        }
+        
+        function groundingExercise() {
+            alert(`5-4-3-2-1 Grounding Exercise:
+
+👁️ 5 things you can SEE
+👂 4 things you can HEAR
+✋ 3 things you can TOUCH
+👃 2 things you can SMELL
+👅 1 thing you can TASTE
+
+Take your time. Come back to now.`);
+        }
+        
+        function resetTool() {
+            document.getElementById('energy').value = 5;
+            document.getElementById('clarity').value = 5;
+            document.getElementById('stability').value = 5;
+            document.getElementById('stress').value = 5;
+            
+            ['energy', 'clarity', 'stability', 'stress'].forEach(id => {
+                document.getElementById(id + '-val').textContent = '5';
+            });
+        }
+        
+        function resetAll() {
+            document.getElementById('result').classList.remove('show');
+            document.getElementById('quiz').style.display = 'block';
+            hideBreathing();
+            resetTool();
+        }
+    </script>
+</body>
+</html>

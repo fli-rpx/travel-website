@@ -45,7 +45,7 @@
                     <button class="nav-btn" data-tab="cycle">Cycle</button>
                     <button class="nav-btn" data-tab="assessment">AI Chat</button>
                     <div class="nav-dropdown">
-                        <button class="nav-btn dropdown-toggle" onclick="toggleDropdown('toolsDropdown')">
+                        <button class="nav-btn dropdown-toggle" onclick="toggleDropdown('toolsDropdown', event)">
                             Tools <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="dropdown-menu" id="toolsDropdown">
@@ -562,7 +562,7 @@
     <script src="app.js"></script>
     <script>
         // Dropdown toggle function
-        function toggleDropdown(dropdownId) {
+        function toggleDropdown(dropdownId, event) {
             const dropdown = document.getElementById(dropdownId);
             const toggle = event.currentTarget;
             

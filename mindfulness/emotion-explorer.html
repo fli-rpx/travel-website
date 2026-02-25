@@ -465,7 +465,7 @@
             <button class="nav-btn" onclick="window.location.href='index.html#cycle'">Cycle</button>
             <button class="nav-btn" onclick="window.location.href='index.html#assessment'">AI Chat</button>
             <div class="nav-dropdown">
-                <button class="nav-btn dropdown-toggle" onclick="toggleDropdown('toolsDropdown')">
+                <button class="nav-btn dropdown-toggle" onclick="toggleDropdown('toolsDropdown', event)">
                     Tools <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="dropdown-menu" id="toolsDropdown">
@@ -747,7 +747,7 @@
         }
 
         // Dropdown toggle
-        function toggleDropdown(dropdownId) {
+        function toggleDropdown(dropdownId, event) {
             const dropdown = document.getElementById(dropdownId);
             const toggle = event.currentTarget;
             

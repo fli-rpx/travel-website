@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="copyright" content="© 2026 Mindfulness Therapy. All rights reserved.">
     <meta name="author" content="Mindfulness Therapy">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mindfulness Therapy - Emotional Balancing</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,6 +23,20 @@
             display: flex;
             align-items: center;
             gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            background: transparent;
+            color: #64748b;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 9999px;
+            font-family: inherit;
+        }
+        
+        .tools-dropdown-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #1e293b;
         }
         
         .tools-dropdown-btn.active {
@@ -100,15 +115,15 @@
                     
                     <!-- Tools Dropdown -->
                     <div class="tools-dropdown-container" id="toolsContainer">
-                        <button class="nav-btn tools-dropdown-btn" id="toolsBtn" type="button" onclick="toggleToolsMenu();">
+                        <button class="tools-dropdown-btn" id="toolsBtn" type="button" onclick="toggleToolsMenu();">
                             Tools <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
                         </button>
                         <div class="tools-dropdown-menu" id="toolsMenu">
-                            <a href="emotion-explorer.html">🎨 Emotion Explorer</a>
-                            <a href="emotion-balance.html">⚡ Emotion Balance</a>
-                            <a href="salad-compass.html">🥗 Salad Compass</a>
-                            <a href="#" onclick="app.navigate('salad'); closeToolsDropdown();">🥬 Full Salad Check</a>
-                            <a href="#" onclick="app.navigate('interventions'); closeToolsDropdown();">🧰 Interventions</a>
+                            <a href="emotion-explorer.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🎨 Emotion Explorer</a>
+                            <a href="emotion-balance.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">⚡ Emotion Balance</a>
+                            <a href="salad-compass.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥗 Salad Compass</a>
+                            <a href="#" onclick="app.navigate('salad'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥬 Full Salad Check</a>
+                            <a href="#" onclick="app.navigate('interventions'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🧰 Interventions</a>
                         </div>
                     </div>
                     

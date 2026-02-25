@@ -39,13 +39,23 @@
                 <button class="mobile-menu-btn" onclick="app.toggleMobileMenu()">
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="nav-links" id="navLinks">
+                <div class="nav-links" id="navLinks" style="position: relative; z-index: 200;">
                     <button class="nav-btn" onclick="window.location.href='index-zh.html'">中文</button>
                     <button class="nav-btn active" data-tab="home">Home</button>
                     <button class="nav-btn" data-tab="cycle">Cycle</button>
                     <button class="nav-btn" data-tab="assessment">AI Chat</button>
-                    <button class="nav-btn" onclick="window.location.href='emotion-balance.html'">⚡ Balance</button>
-                    <button class="nav-btn" onclick="window.location.href='salad-compass.html'">🥗 Compass</button>
+                    <div class="nav-dropdown" style="position: relative;">
+                        <button class="nav-btn dropdown-toggle" id="toolsDropdownBtn" type="button" onclick="var d=document.getElementById('toolsDropdown'); if(d.style.display==='block'){d.style.display='none'}else{d.style.display='block'};">
+                            Tools <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
+                        </button>
+                        <div class="dropdown-menu" id="toolsDropdown" style="display: none; position: absolute; top: 100%; left: 0; z-index: 9999; background: white; border: 1px solid #e2e8f0; border-radius: 0.75rem; box-shadow: 0 10px 40px rgba(0,0,0,0.15); min-width: 220px; padding: 0.5rem;">
+                            <a href="emotion-explorer.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem;">🎨 Emotion Explorer</a>
+                            <a href="emotion-balance.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem;">⚡ Emotion Balance</a>
+                            <a href="salad-compass.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem;">🥗 Salad Compass</a>
+                            <a href="#" onclick="app.navigate('salad')" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem;">🥬 Full Salad Check</a>
+                            <a href="#" onclick="app.navigate('interventions')" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem;">🧰 Interventions</a>
+                        </div>
+                    </div>
                     <button class="nav-btn" data-tab="journal">Journal</button>
                     <button class="nav-btn" data-tab="progress">Progress</button>
                 </div>

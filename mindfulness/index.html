@@ -44,18 +44,9 @@
                     <button class="nav-btn active" data-tab="home">Home</button>
                     <button class="nav-btn" data-tab="cycle">Cycle</button>
                     <button class="nav-btn" data-tab="assessment">AI Chat</button>
-                    <div class="nav-dropdown">
-                        <button class="nav-btn dropdown-toggle" id="toolsDropdownBtn">
-                            Tools <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <div class="dropdown-menu" id="toolsDropdown">
-                            <a href="emotion-explorer.html">🎨 Emotion Explorer</a>
-                            <a href="emotion-balance.html">⚡ Emotion Balance</a>
-                            <a href="salad-compass.html">🥗 Salad Compass</a>
-                            <a href="#" onclick="app.navigate('salad')">🥬 Full Salad Check</a>
-                            <a href="#" onclick="app.navigate('interventions')">🧰 Interventions</a>
-                        </div>
-                    </div>
+                    <button class="nav-btn" onclick="window.location.href='emotion-explorer.html'">🎨 Explorer</button>
+                    <button class="nav-btn" onclick="window.location.href='emotion-balance.html'">⚡ Balance</button>
+                    <button class="nav-btn" onclick="window.location.href='salad-compass.html'">🥗 Compass</button>
                     <button class="nav-btn" data-tab="journal">Journal</button>
                     <button class="nav-btn" data-tab="progress">Progress</button>
                 </div>
@@ -560,25 +551,5 @@
     </footer>
 
     <script src="app.js"></script>
-    <script>
-        // Dropdown toggle
-        document.getElementById('toolsDropdownBtn').addEventListener('click', function(e) {
-            e.stopPropagation();
-            const dropdown = document.getElementById('toolsDropdown');
-            const toggle = this;
-            
-            // Toggle current
-            dropdown.classList.toggle('show');
-            toggle.classList.toggle('active');
-        });
-        
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.nav-dropdown')) {
-                document.getElementById('toolsDropdown').classList.remove('show');
-                document.getElementById('toolsDropdownBtn').classList.remove('active');
-            }
-        });
-    </script>
 </body>
 </html>

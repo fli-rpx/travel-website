@@ -566,11 +566,17 @@
             const dropdownBtn = document.getElementById('toolsDropdownBtn');
             const dropdown = document.getElementById('toolsDropdown');
             
+            console.log('Dropdown button:', dropdownBtn);
+            console.log('Dropdown menu:', dropdown);
+            
             if (dropdownBtn && dropdown) {
                 dropdownBtn.addEventListener('click', function(e) {
+                    console.log('Tools button clicked');
+                    e.preventDefault();
                     e.stopPropagation();
                     dropdown.classList.toggle('show');
                     this.classList.toggle('active');
+                    console.log('Dropdown classes:', dropdown.classList);
                 });
                 
                 // Close dropdowns when clicking outside
@@ -580,6 +586,8 @@
                         dropdownBtn.classList.remove('active');
                     }
                 });
+            } else {
+                console.error('Dropdown elements not found');
             }
         });
     </script>

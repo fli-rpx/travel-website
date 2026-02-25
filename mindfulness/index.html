@@ -11,6 +11,59 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="emotion-ribbon.js"></script>
     <script src="emotion-ribbon-visualizer.js"></script>
+    <style>
+        /* Tools Dropdown Styles */
+        .tools-dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tools-dropdown-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .tools-dropdown-btn.active {
+            background: #14b8a6;
+            color: white;
+        }
+        
+        .tools-dropdown-menu {
+            display: none;
+            position: fixed;
+            top: auto;
+            left: auto;
+            margin-top: 0.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            min-width: 220px;
+            padding: 0.5rem;
+            z-index: 9999;
+        }
+        
+        .tools-dropdown-menu.open {
+            display: block;
+        }
+        
+        .tools-dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #1e293b;
+            text-decoration: none;
+            font-size: 0.875rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        
+        .tools-dropdown-menu a:hover {
+            background: rgba(20, 184, 166, 0.1);
+            color: #14b8a6;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -44,8 +97,21 @@
                     <button class="nav-btn active" data-tab="home">Home</button>
                     <button class="nav-btn" data-tab="cycle">Cycle</button>
                     <button class="nav-btn" data-tab="assessment">AI Chat</button>
-                    <button class="nav-btn" onclick="window.location.href='emotion-balance.html?v=2'">⚡ Balance</button>
-                    <button class="nav-btn" onclick="window.location.href='salad-compass.html?v=2'">🥗 Compass</button>
+                    
+                    <!-- Tools Dropdown -->
+                    <div class="tools-dropdown-container" id="toolsContainer">
+                        <button class="nav-btn tools-dropdown-btn" id="toolsBtn" type="button" onclick="toggleToolsMenu();">
+                            Tools <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
+                        </button>
+                        <div class="tools-dropdown-menu" id="toolsMenu">
+                            <a href="emotion-explorer.html">🎨 Emotion Explorer</a>
+                            <a href="emotion-balance.html">⚡ Emotion Balance</a>
+                            <a href="salad-compass.html">🥗 Salad Compass</a>
+                            <a href="#" onclick="app.navigate('salad'); closeToolsDropdown();">🥬 Full Salad Check</a>
+                            <a href="#" onclick="app.navigate('interventions'); closeToolsDropdown();">🧰 Interventions</a>
+                        </div>
+                    </div>
+                    
                     <button class="nav-btn" data-tab="journal">Journal</button>
                     <button class="nav-btn" data-tab="progress">Progress</button>
                 </div>
@@ -550,5 +616,48 @@
     </footer>
 
     <script src="app.js"></script>
+    <script>
+        // Tools dropdown functions
+        function toggleToolsMenu() {
+            var menu = document.getElementById('toolsMenu');
+            var btn = document.getElementById('toolsBtn');
+            if (!menu || !btn) return;
+            
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+                menu.classList.remove('open');
+                btn.classList.remove('active');
+            } else {
+                // Calculate position relative to button
+                var btnRect = btn.getBoundingClientRect();
+                menu.style.top = (btnRect.bottom + 8) + 'px';
+                menu.style.left = btnRect.left + 'px';
+                menu.style.display = 'block';
+                menu.classList.add('open');
+                btn.classList.add('active');
+            }
+        }
+        
+        function closeToolsDropdown() {
+            var menu = document.getElementById('toolsMenu');
+            var btn = document.getElementById('toolsBtn');
+            if (menu) {
+                menu.style.display = 'none';
+                menu.classList.remove('open');
+                menu.style.top = 'auto';
+                menu.style.left = 'auto';
+            }
+            if (btn) btn.classList.remove('active');
+        }
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            var btn = document.getElementById('toolsBtn');
+            var menu = document.getElementById('toolsMenu');
+            if (btn && menu && !btn.contains(e.target) && !menu.contains(e.target)) {
+                closeToolsDropdown();
+            }
+        });
+    </script>
 </body>
 </html>

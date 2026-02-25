@@ -48,7 +48,7 @@
                         <button class="nav-btn dropdown-toggle" id="toolsDropdownBtn">
                             Tools <i class="fas fa-chevron-down"></i>
                         </button>
-                        <div class="dropdown-menu show" id="toolsDropdown" style="display: block !important; visibility: visible; opacity: 1;">
+                        <div class="dropdown-menu" id="toolsDropdown">
                             <a href="emotion-explorer.html">🎨 Emotion Explorer</a>
                             <a href="emotion-balance.html">⚡ Emotion Balance</a>
                             <a href="salad-compass.html">🥗 Salad Compass</a>
@@ -566,28 +566,27 @@
             const dropdownBtn = document.getElementById('toolsDropdownBtn');
             const dropdown = document.getElementById('toolsDropdown');
             
-            console.log('Dropdown button:', dropdownBtn);
-            console.log('Dropdown menu:', dropdown);
-            
             if (dropdownBtn && dropdown) {
                 dropdownBtn.addEventListener('click', function(e) {
-                    console.log('Tools button clicked');
                     e.preventDefault();
                     e.stopPropagation();
-                    dropdown.classList.toggle('show');
-                    this.classList.toggle('active');
-                    console.log('Dropdown classes:', dropdown.classList);
+                    // Force display with inline style
+                    if (dropdown.style.display === 'block') {
+                        dropdown.style.display = 'none';
+                        this.classList.remove('active');
+                    } else {
+                        dropdown.style.display = 'block';
+                        this.classList.add('active');
+                    }
                 });
                 
                 // Close dropdowns when clicking outside
                 document.addEventListener('click', function(e) {
                     if (!e.target.closest('.nav-dropdown')) {
-                        dropdown.classList.remove('show');
+                        dropdown.style.display = 'none';
                         dropdownBtn.classList.remove('active');
                     }
                 });
-            } else {
-                console.error('Dropdown elements not found');
             }
         });
     </script>

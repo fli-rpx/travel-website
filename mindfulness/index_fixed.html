@@ -563,14 +563,13 @@
                 alert('Menu not found!');
                 return;
             }
-            if (menu.classList.contains('open')) {
-                menu.classList.remove('open');
+            // Force display with inline style
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
                 btn.classList.remove('active');
-                alert('Closing menu');
             } else {
-                menu.classList.add('open');
+                menu.style.display = 'block';
                 btn.classList.add('active');
-                alert('Opening menu, classList: ' + menu.classList);
             }
         }
         

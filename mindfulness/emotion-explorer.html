@@ -66,6 +66,72 @@
             color: white;
         }
 
+        /* Tools Dropdown Styles */
+        .tools-dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tools-dropdown-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            background: transparent;
+            color: #64748b;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 9999px;
+            font-family: inherit;
+        }
+
+        .tools-dropdown-btn:hover {
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        .tools-dropdown-btn.active {
+            background: linear-gradient(135deg, #50c8b8, #4a90d9);
+            color: white;
+        }
+
+        .tools-dropdown-menu {
+            display: none;
+            position: fixed;
+            top: auto;
+            left: auto;
+            margin-top: 0.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            min-width: 220px;
+            padding: 0.5rem;
+            z-index: 9999;
+        }
+
+        .tools-dropdown-menu.open {
+            display: block;
+        }
+
+        .tools-dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #1e293b;
+            text-decoration: none;
+            font-size: 0.875rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .tools-dropdown-menu a:hover {
+            background: rgba(20, 184, 166, 0.1);
+            color: #14b8a6;
+        }
+
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -464,18 +530,21 @@
             <button class="nav-btn" onclick="window.location.href='index.html'">Home</button>
             <button class="nav-btn" onclick="window.location.href='index.html#cycle'">Cycle</button>
             <button class="nav-btn" onclick="window.location.href='index.html#assessment'">AI Chat</button>
-            <div class="nav-dropdown">
-                <button class="nav-btn dropdown-toggle" onclick="toggleDropdown.call(this, 'toolsDropdown')">
-                    Tools <i class="fas fa-chevron-down"></i>
+
+            <!-- Tools Dropdown -->
+            <div class="tools-dropdown-container" id="toolsContainer">
+                <button class="tools-dropdown-btn" id="toolsBtn" type="button" onclick="toggleToolsMenu();">
+                    Tools <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
                 </button>
-                <div class="dropdown-menu" id="toolsDropdown">
+                <div class="tools-dropdown-menu" id="toolsMenu">
                     <a href="emotion-explorer.html">🎨 Emotion Explorer</a>
                     <a href="emotion-balance.html">⚡ Emotion Balance</a>
                     <a href="salad-compass.html">🥗 Salad Compass</a>
-                    <a href="index.html#salad">🥬 Full Salad Check</a>
-                    <a href="index.html#interventions">🧰 Interventions</a>
+                    <a href="index.html#salad" onclick="closeToolsDropdown();">🥬 Full Salad Check</a>
+                    <a href="index.html#interventions" onclick="closeToolsDropdown();">🧰 Interventions</a>
                 </div>
             </div>
+
             <button class="nav-btn" onclick="window.location.href='index.html#journal'">Journal</button>
             <button class="nav-btn" onclick="window.location.href='index.html#progress'">Progress</button>
         </div>
@@ -746,39 +815,43 @@
             navLinks.classList.toggle('show');
         }
 
-        // Dropdown toggle
-        function toggleDropdown(dropdownId) {
-            const dropdown = document.getElementById(dropdownId);
-            const toggle = this;
-            
-            document.querySelectorAll('.dropdown-menu').forEach(d => {
-                if (d.id !== dropdownId) d.classList.remove('show');
-            });
-            document.querySelectorAll('.dropdown-toggle').forEach(t => {
-                if (t !== toggle) t.classList.remove('active');
-            });
-            
-            dropdown.classList.toggle('show');
-            toggle.classList.toggle('active');
-            
-            return false;
+        // Tools dropdown functions
+        function toggleToolsMenu() {
+            var menu = document.getElementById('toolsMenu');
+            var btn = document.getElementById('toolsBtn');
+            if (!menu || !btn) return;
+
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+                menu.classList.remove('open');
+                btn.classList.remove('active');
+            } else {
+                var btnRect = btn.getBoundingClientRect();
+                menu.style.top = (btnRect.bottom + 8) + 'px';
+                menu.style.left = btnRect.left + 'px';
+                menu.style.display = 'block';
+                menu.classList.add('open');
+                btn.classList.add('active');
+            }
         }
-            
-            document.querySelectorAll('.dropdown-menu').forEach(d => {
-                if (d.id !== dropdownId) d.classList.remove('show');
-            });
-            document.querySelectorAll('.dropdown-toggle').forEach(t => {
-                if (t !== toggle) t.classList.remove('active');
-            });
-            
-            dropdown.classList.toggle('show');
-            toggle.classList.toggle('active');
+
+        function closeToolsDropdown() {
+            var menu = document.getElementById('toolsMenu');
+            var btn = document.getElementById('toolsBtn');
+            if (menu) {
+                menu.style.display = 'none';
+                menu.classList.remove('open');
+                menu.style.top = 'auto';
+                menu.style.left = 'auto';
+            }
+            if (btn) btn.classList.remove('active');
         }
-        
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('.nav-dropdown')) {
-                document.querySelectorAll('.dropdown-menu').forEach(d => d.classList.remove('show'));
-                document.querySelectorAll('.dropdown-toggle').forEach(t => t.classList.remove('active'));
+
+        document.addEventListener('click', function(e) {
+            var btn = document.getElementById('toolsBtn');
+            var menu = document.getElementById('toolsMenu');
+            if (btn && menu && !btn.contains(e.target) && !menu.contains(e.target)) {
+                closeToolsDropdown();
             }
         });
     </script>

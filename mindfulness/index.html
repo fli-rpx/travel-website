@@ -45,7 +45,7 @@
                     <button class="nav-btn" data-tab="cycle">Cycle</button>
                     <button class="nav-btn" data-tab="assessment">AI Chat</button>
                     <div class="nav-dropdown">
-                        <button class="nav-btn dropdown-toggle" onclick="toggleDropdown.call(this, 'toolsDropdown')">
+                        <button class="nav-btn dropdown-toggle" id="toolsDropdownBtn">
                             Tools <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="dropdown-menu" id="toolsDropdown">
@@ -561,32 +561,22 @@
 
     <script src="app.js"></script>
     <script>
-        // Dropdown toggle function
-        function toggleDropdown(dropdownId) {
-            const dropdown = document.getElementById(dropdownId);
+        // Dropdown toggle
+        document.getElementById('toolsDropdownBtn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            const dropdown = document.getElementById('toolsDropdown');
             const toggle = this;
-            
-            // Close other dropdowns
-            document.querySelectorAll('.dropdown-menu').forEach(d => {
-                if (d.id !== dropdownId) d.classList.remove('show');
-            });
-            document.querySelectorAll('.dropdown-toggle').forEach(t => {
-                if (t !== toggle) t.classList.remove('active');
-            });
             
             // Toggle current
             dropdown.classList.toggle('show');
             toggle.classList.toggle('active');
-            
-            // Prevent event bubbling
-            return false;
-        }
+        });
         
         // Close dropdowns when clicking outside
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.nav-dropdown')) {
-                document.querySelectorAll('.dropdown-menu').forEach(d => d.classList.remove('show'));
-                document.querySelectorAll('.dropdown-toggle').forEach(t => t.classList.remove('active'));
+                document.getElementById('toolsDropdown').classList.remove('show');
+                document.getElementById('toolsDropdownBtn').classList.remove('active');
             }
         });
     </script>

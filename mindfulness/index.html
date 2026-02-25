@@ -45,7 +45,7 @@
                     <button class="nav-btn" data-tab="cycle">Cycle</button>
                     <button class="nav-btn" data-tab="assessment">AI Chat</button>
                     <div class="nav-dropdown">
-                        <button class="nav-btn dropdown-toggle" id="toolsDropdownBtn">
+                        <button class="nav-btn dropdown-toggle" onclick="var d=document.getElementById('toolsDropdown'); d.style.display=d.style.display==='block'?'none':'block'; this.classList.toggle('active'); return false;">
                             Tools <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="dropdown-menu" id="toolsDropdown">
@@ -560,35 +560,5 @@
     </footer>
 
     <script src="app.js"></script>
-    <script>
-        // Dropdown toggle - wait for DOM to be ready
-        document.addEventListener('DOMContentLoaded', function() {
-            const dropdownBtn = document.getElementById('toolsDropdownBtn');
-            const dropdown = document.getElementById('toolsDropdown');
-            
-            if (dropdownBtn && dropdown) {
-                dropdownBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    // Force display with inline style
-                    if (dropdown.style.display === 'block') {
-                        dropdown.style.display = 'none';
-                        this.classList.remove('active');
-                    } else {
-                        dropdown.style.display = 'block';
-                        this.classList.add('active');
-                    }
-                });
-                
-                // Close dropdowns when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!e.target.closest('.nav-dropdown')) {
-                        dropdown.style.display = 'none';
-                        dropdownBtn.classList.remove('active');
-                    }
-                });
-            }
-        });
-    </script>
 </body>
 </html>

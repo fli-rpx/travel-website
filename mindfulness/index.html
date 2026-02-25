@@ -48,16 +48,18 @@
                         <button class="nav-btn dropdown-toggle" id="toolsDropdownBtn" type="button" onclick="toggleToolsDropdown();">
                             Tools <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
                         </button>
-                        <div class="dropdown-menu" id="toolsDropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 8px; z-index: 99999; background: white; border: 1px solid #e2e8f0; border-radius: 0.75rem; box-shadow: 0 10px 40px rgba(0,0,0,0.15); min-width: 220px; padding: 0.5rem;">
-                            <a href="emotion-explorer.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🎨 Emotion Explorer</a>
-                            <a href="emotion-balance.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">⚡ Emotion Balance</a>
-                            <a href="salad-compass.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥗 Salad Compass</a>
-                            <a href="#" onclick="app.navigate('salad'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥬 Full Salad Check</a>
-                            <a href="#" onclick="app.navigate('interventions'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🧰 Interventions</a>
-                        </div>
                     </div>
                     <button class="nav-btn" data-tab="journal">Journal</button>
                     <button class="nav-btn" data-tab="progress">Progress</button>
+                </div>
+                
+                <!-- Dropdown menu moved outside nav-links to avoid stacking context issues -->
+                <div class="dropdown-menu" id="toolsDropdown" style="display: none; position: fixed; z-index: 99999; background: white; border: 1px solid #e2e8f0; border-radius: 0.75rem; box-shadow: 0 10px 40px rgba(0,0,0,0.15); min-width: 220px; padding: 0.5rem;">
+                    <a href="emotion-explorer.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🎨 Emotion Explorer</a>
+                    <a href="emotion-balance.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">⚡ Emotion Balance</a>
+                    <a href="salad-compass.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥗 Salad Compass</a>
+                    <a href="#" onclick="app.navigate('salad'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥬 Full Salad Check</a>
+                    <a href="#" onclick="app.navigate('interventions'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🧰 Interventions</a>
                 </div>
             </nav>
 
@@ -569,6 +571,10 @@
                 dropdown.style.display = 'none';
                 btn.classList.remove('active');
             } else {
+                // Position dropdown under the button
+                var rect = btn.getBoundingClientRect();
+                dropdown.style.top = (rect.bottom + 8) + 'px';
+                dropdown.style.left = rect.left + 'px';
                 dropdown.style.display = 'block';
                 btn.classList.add('active');
             }
@@ -583,8 +589,9 @@
         
         // Close dropdown when clicking outside
         document.addEventListener('click', function(e) {
-            var container = document.querySelector('.nav-dropdown');
-            if (container && !container.contains(e.target)) {
+            var btn = document.getElementById('toolsDropdownBtn');
+            var dropdown = document.getElementById('toolsDropdown');
+            if (btn && dropdown && !btn.contains(e.target) && !dropdown.contains(e.target)) {
                 closeToolsDropdown();
             }
         });

@@ -365,6 +365,149 @@ h1, h2, h3 {
     color: var(--text-light);
 }
 
+/* New Layout Styles */
+.tools-section {
+    margin-bottom: 3rem;
+}
+
+.tools-section .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.tools-section .section-subtitle {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.feature-grid.quick-tools {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.feature-card.featured {
+    border: 2px solid var(--color-primary);
+    position: relative;
+}
+
+.feature-card.featured::before {
+    content: 'POPULAR';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0 0.75rem 0 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.card-badge {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(20, 184, 166, 0.1);
+    color: var(--color-primary-dark);
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 9999px;
+}
+
+.balance-icon {
+    background: linear-gradient(135deg, #50c8b8, #4a90d9);
+    color: white;
+}
+
+.compass-icon {
+    background: linear-gradient(135deg, #f5a623, #f27935);
+    color: white;
+}
+
+.explorer-icon {
+    background: linear-gradient(135deg, #8B0000, #FF6B35, #191970, #2E8B57);
+    color: white;
+}
+
+/* Emergency Section */
+.emergency-section {
+    background: linear-gradient(135deg, rgba(220, 20, 60, 0.05), rgba(139, 0, 0, 0.05));
+    border: 1px solid rgba(220, 20, 60, 0.15);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.emergency-section .section-title {
+    color: #dc143c;
+    font-size: 1.25rem;
+}
+
+.emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.emergency-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.25rem;
+    background: white;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(220, 20, 60, 0.2);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.emergency-card:hover {
+    background: rgba(220, 20, 60, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.15);
+}
+
+.emergency-card i {
+    font-size: 1.5rem;
+    color: #dc143c;
+    margin-bottom: 0.5rem;
+}
+
+.emergency-card span {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+.emergency-card small {
+    color: var(--text-light);
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+@media (max-width: 1024px) {
+    .feature-grid.quick-tools {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .emergency-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .feature-grid.quick-tools {
+        grid-template-columns: 1fr;
+    }
+    
+    .emergency-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Section Headers */
 h2 {
     font-size: 2rem;

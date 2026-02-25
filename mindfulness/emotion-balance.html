@@ -31,12 +31,12 @@
         }
 
         .tools-dropdown-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: #f1f5f9;
             color: #1e293b;
         }
 
         .tools-dropdown-btn.active {
-            background: #14b8a6;
+            background: linear-gradient(135deg, #50c8b8, #4a90d9);
             color: white;
         }
 
@@ -73,6 +73,87 @@
         .tools-dropdown-menu a:hover {
             background: rgba(20, 184, 166, 0.1);
             color: #14b8a6;
+        }
+
+        /* Navigation Bar Styles */
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 2rem;
+            height: 60px;
+        }
+
+        .nav-brand {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            background: transparent;
+            color: #64748b;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(135deg, #50c8b8, #4a90d9);
+            color: white;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: #64748b;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+                gap: 0.5rem;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-btn {
+                width: 100%;
+                text-align: left;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
         }
 
         .emotion-balance-container {
@@ -381,7 +462,38 @@
     </style>
 </head>
 <body>
-    <div id="app">
+    <!-- Full Navigation Bar -->
+    <nav class="nav-bar" style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e2e8f0;">
+        <div class="nav-brand" onclick="window.location.href='index.html'" style="cursor: pointer;">🧘 Mindfulness Therapy</div>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <button class="nav-btn" onclick="window.location.href='index-zh.html'">中文</button>
+            <button class="nav-btn" onclick="window.location.href='index.html'">Home</button>
+            <button class="nav-btn" onclick="window.location.href='index.html#cycle'">Cycle</button>
+            <button class="nav-btn" onclick="window.location.href='index.html#assessment'">AI Chat</button>
+
+            <!-- Tools Dropdown -->
+            <div class="tools-dropdown-container" id="toolsContainer">
+                <button class="tools-dropdown-btn" id="toolsBtn" type="button" onclick="toggleToolsMenu();">
+                    Tools <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
+                </button>
+                <div class="tools-dropdown-menu" id="toolsMenu">
+                    <a href="emotion-explorer.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🎨 Emotion Explorer</a>
+                    <a href="emotion-balance.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">⚡ Emotion Balance</a>
+                    <a href="salad-compass.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥗 Salad Compass</a>
+                    <a href="index.html#salad" onclick="closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥬 Full Salad Check</a>
+                    <a href="index.html#interventions" onclick="closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🧰 Interventions</a>
+                </div>
+            </div>
+
+            <button class="nav-btn" onclick="window.location.href='index.html#journal'">Journal</button>
+            <button class="nav-btn" onclick="window.location.href='index.html#progress'">Progress</button>
+        </div>
+    </nav>
+
+    <div id="app" style="padding-top: 60px;">
         <!-- Fixed Table of Contents -->
         <nav class="toc-fixed">
             <h3>Contents</h3>
@@ -394,36 +506,6 @@
 
         <!-- Main Content -->
         <div class="content-main">
-            <!-- Navigation Bar -->
-            <nav class="nav-bar" style="position: relative; z-index: 1000;">
-                <div class="nav-brand" onclick="window.location.href='index.html'" style="cursor: pointer;">🧘 Mindfulness Therapy</div>
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="nav-links" id="navLinks">
-                    <button class="nav-btn" onclick="window.location.href='index-zh.html'">中文</button>
-                    <button class="nav-btn" onclick="window.location.href='index.html'">Home</button>
-                    <button class="nav-btn" onclick="window.location.href='index.html#cycle'">Cycle</button>
-                    <button class="nav-btn" onclick="window.location.href='index.html#assessment'">AI Chat</button>
-
-                    <!-- Tools Dropdown -->
-                    <div class="tools-dropdown-container" id="toolsContainer">
-                        <button class="tools-dropdown-btn" id="toolsBtn" type="button" onclick="toggleToolsMenu();">
-                            Tools <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
-                        </button>
-                        <div class="tools-dropdown-menu" id="toolsMenu">
-                            <a href="emotion-explorer.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🎨 Emotion Explorer</a>
-                            <a href="emotion-balance.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">⚡ Emotion Balance</a>
-                            <a href="salad-compass.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥗 Salad Compass</a>
-                            <a href="index.html#salad" onclick="closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥬 Full Salad Check</a>
-                            <a href="index.html#interventions" onclick="closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🧰 Interventions</a>
-                        </div>
-                    </div>
-
-                    <button class="nav-btn" onclick="window.location.href='index.html#journal'">Journal</button>
-                    <button class="nav-btn" onclick="window.location.href='index.html#progress'">Progress</button>
-                </div>
-            </nav>
 
             <!-- Emotion Balance Tool -->
             <div class="emotion-balance-container">

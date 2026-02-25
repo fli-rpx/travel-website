@@ -45,10 +45,10 @@
                     <button class="nav-btn" data-tab="cycle">Cycle</button>
                     <button class="nav-btn" data-tab="assessment">AI Chat</button>
                     <div class="nav-dropdown">
-                        <button class="nav-btn dropdown-toggle" onclick="var d=document.getElementById('toolsDropdown'); d.style.display=d.style.display==='block'?'none':'block'; this.classList.toggle('active'); return false;">
+                        <button class="nav-btn dropdown-toggle" onclick="var d=document.getElementById('toolsDropdown'); if(d.style.display=='block'){d.style.display='none'}else{d.style.display='block'}; return false;">
                             Tools <i class="fas fa-chevron-down"></i>
                         </button>
-                        <div class="dropdown-menu" id="toolsDropdown">
+                        <div class="dropdown-menu" id="toolsDropdown" style="display: none;">
                             <a href="emotion-explorer.html">🎨 Emotion Explorer</a>
                             <a href="emotion-balance.html">⚡ Emotion Balance</a>
                             <a href="salad-compass.html">🥗 Salad Compass</a>

@@ -44,18 +44,8 @@
                     <button class="nav-btn active" data-tab="home">Home</button>
                     <button class="nav-btn" data-tab="cycle">Cycle</button>
                     <button class="nav-btn" data-tab="assessment">AI Chat</button>
-                    <div class="nav-dropdown">
-                        <button class="dropdown-toggle" style="padding: 0.5rem 1rem; border: none; background: transparent; color: #64748b; font-size: 0.875rem; font-weight: 500; cursor: pointer; border-radius: 9999px; display: flex; align-items: center; gap: 0.25rem;" onclick="var d=document.getElementById('toolsDropdown'); if(d.style.display=='block'){d.style.display='none'}else{d.style.display='block'}; return false;">
-                            Tools <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
-                        </button>
-                        <div class="dropdown-menu" id="toolsDropdown" style="display: none;">
-                            <a href="emotion-explorer.html">🎨 Emotion Explorer</a>
-                            <a href="emotion-balance.html">⚡ Emotion Balance</a>
-                            <a href="salad-compass.html">🥗 Salad Compass</a>
-                            <a href="#" onclick="app.navigate('salad')">🥬 Full Salad Check</a>
-                            <a href="#" onclick="app.navigate('interventions')">🧰 Interventions</a>
-                        </div>
-                    </div>
+                    <button class="nav-btn" onclick="window.location.href='emotion-balance.html'">⚡ Balance</button>
+                    <button class="nav-btn" onclick="window.location.href='salad-compass.html'">🥗 Compass</button>
                     <button class="nav-btn" data-tab="journal">Journal</button>
                     <button class="nav-btn" data-tab="progress">Progress</button>
                 </div>

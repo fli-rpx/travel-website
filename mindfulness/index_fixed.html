@@ -117,13 +117,12 @@
                         <button class="tools-dropdown-btn" id="toolsBtn" type="button" onclick="toggleToolsMenu();">
                             Tools <i class="fas fa-chevron-down"></i>
                         </button>
-                        <div class="tools-dropdown-menu" id="toolsMenu" style="display: block !important; position: fixed; top: 100px; left: 100px; z-index: 999999; background: red; border: 5px solid black; padding: 20px; width: 200px; height: 200px; color: white; font-size: 20px; font-weight: bold;">
-                            <p style="color: white; font-size: 24px; margin: 0;">TOOLS MENU</p>
-                            <a href="emotion-explorer.html" style="color: white; display: block; margin: 10px 0;">🎨 Emotion Explorer</a>
-                            <a href="emotion-balance.html" style="color: white; display: block; margin: 10px 0;">⚡ Emotion Balance</a>
-                            <a href="salad-compass.html" style="color: white; display: block; margin: 10px 0;">🥗 Salad Compass</a>
-                            <a href="#" onclick="app.navigate('salad');" style="color: white; display: block; margin: 10px 0;">🥬 Full Salad Check</a>
-                            <a href="#" onclick="app.navigate('interventions');" style="color: white; display: block; margin: 10px 0;">🧰 Interventions</a>
+                        <div class="tools-dropdown-menu" id="toolsMenu" style="display: none; position: absolute; top: calc(100% + 8px); left: 0; z-index: 10000; background: white; border: 1px solid #e2e8f0; border-radius: 0.75rem; box-shadow: 0 10px 40px rgba(0,0,0,0.15); min-width: 220px; padding: 0.5rem;">
+                            <a href="emotion-explorer.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🎨 Emotion Explorer</a>
+                            <a href="emotion-balance.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">⚡ Emotion Balance</a>
+                            <a href="salad-compass.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥗 Salad Compass</a>
+                            <a href="#" onclick="app.navigate('salad'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥬 Full Salad Check</a>
+                            <a href="#" onclick="app.navigate('interventions'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🧰 Interventions</a>
                         </div>
                     </div>
                     

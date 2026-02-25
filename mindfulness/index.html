@@ -551,5 +551,28 @@
     </footer>
 
     <script src="app.js"></script>
+    <script>
+        // Dropdown toggle - wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownBtn = document.getElementById('toolsDropdownBtn');
+            const dropdown = document.getElementById('toolsDropdown');
+            
+            if (dropdownBtn && dropdown) {
+                dropdownBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdown.classList.toggle('show');
+                    this.classList.toggle('active');
+                });
+                
+                // Close dropdowns when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.nav-dropdown')) {
+                        dropdown.classList.remove('show');
+                        dropdownBtn.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

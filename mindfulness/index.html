@@ -44,11 +44,11 @@
                     <button class="nav-btn active" data-tab="home">Home</button>
                     <button class="nav-btn" data-tab="cycle">Cycle</button>
                     <button class="nav-btn" data-tab="assessment">AI Chat</button>
-                    <div class="nav-dropdown" style="position: relative; display: inline-block;">
+                    <div class="nav-dropdown" style="position: static;">
                         <button class="nav-btn dropdown-toggle" id="toolsDropdownBtn" type="button" onclick="var d=document.getElementById('toolsDropdown'); if(d.style.display==='block'){d.style.display='none'}else{d.style.display='block'};">
                             Tools <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
                         </button>
-                        <div class="dropdown-menu" id="toolsDropdown" style="display: none; position: absolute; top: calc(100% + 8px); left: 0; margin-top: 0; z-index: 10000; background: white; border: 1px solid #e2e8f0; border-radius: 0.75rem; box-shadow: 0 10px 40px rgba(0,0,0,0.15); min-width: 220px; padding: 0.5rem;">
+                        <div class="dropdown-menu" id="toolsDropdown" style="display: none; position: fixed; top: 60px; left: auto; margin-top: 0; z-index: 99999; background: white; border: 1px solid #e2e8f0; border-radius: 0.75rem; box-shadow: 0 10px 40px rgba(0,0,0,0.15); min-width: 220px; padding: 0.5rem;">
                             <a href="emotion-explorer.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🎨 Emotion Explorer</a>
                             <a href="emotion-balance.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">⚡ Emotion Balance</a>
                             <a href="salad-compass.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥗 Salad Compass</a>

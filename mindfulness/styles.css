@@ -177,6 +177,7 @@ h1, h2, h3 {
 /* Dropdown Menu */
 .nav-dropdown {
     position: relative;
+    display: inline-block;
 }
 
 .dropdown-toggle {
@@ -204,13 +205,13 @@ h1, h2, h3 {
     border-radius: 0.75rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     border: 1px solid var(--border);
-    min-width: 200px;
+    min-width: 220px;
     padding: 0.5rem;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .dropdown-menu.show {
-    display: block;
+    display: block !important;
 }
 
 .dropdown-menu a {

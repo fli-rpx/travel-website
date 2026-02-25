@@ -465,7 +465,7 @@
             <button class="nav-btn" onclick="window.location.href='index.html#cycle'">Cycle</button>
             <button class="nav-btn" onclick="window.location.href='index.html#assessment'">AI Chat</button>
             <div class="nav-dropdown">
-                <button class="nav-btn dropdown-toggle" onclick="toggleDropdown('toolsDropdown', event)">
+                <button class="nav-btn dropdown-toggle" onclick="toggleDropdown.call(this, 'toolsDropdown')">
                     Tools <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="dropdown-menu" id="toolsDropdown">
@@ -747,9 +747,22 @@
         }
 
         // Dropdown toggle
-        function toggleDropdown(dropdownId, event) {
+        function toggleDropdown(dropdownId) {
             const dropdown = document.getElementById(dropdownId);
-            const toggle = event.currentTarget;
+            const toggle = this;
+            
+            document.querySelectorAll('.dropdown-menu').forEach(d => {
+                if (d.id !== dropdownId) d.classList.remove('show');
+            });
+            document.querySelectorAll('.dropdown-toggle').forEach(t => {
+                if (t !== toggle) t.classList.remove('active');
+            });
+            
+            dropdown.classList.toggle('show');
+            toggle.classList.toggle('active');
+            
+            return false;
+        }
             
             document.querySelectorAll('.dropdown-menu').forEach(d => {
                 if (d.id !== dropdownId) d.classList.remove('show');

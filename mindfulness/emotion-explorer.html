@@ -801,14 +801,15 @@
                     // Make color darker/deeper based on intensity
                     const darkenedColor = darkenColor(baseColor, intensity * 30);
                     
-                    // Make segment thicker based on intensity (increase y-radius for thickness)
-                    const thicknessBonus = intensity * 5; // Up to 5px thicker
-                    const newYR = base.yR + thicknessBonus;
-                    const newInnerYR = base.innerYR + thicknessBonus;
-                    const newOuterY = base.outerY;
-                    const newInnerY = base.innerY;
+                    // Make segment thicker based on intensity
+                    // Decrease inner y-radius more than outer to increase thickness
+                    const thicknessBonus = intensity * 8; // Up to 8px thicker
+                    const newYR = base.yR + thicknessBonus * 0.3; // Outer edge moves up slightly
+                    const newInnerYR = base.innerYR - thicknessBonus; // Inner edge moves down more
+                    const newOuterY = base.outerY + thicknessBonus * 0.2;
+                    const newInnerY = base.innerY - thicknessBonus * 0.5;
                     
-                    // Update the path with new thickness - keep within viewBox
+                    // Update the path with new thickness
                     const newPath = `M 0,${newOuterY} A ${base.xR},${newYR} 0 0 1 1200,${newOuterY} L 1200,${newInnerY} A ${base.xR},${newInnerYR} 0 0 0 0,${newInnerY} Z`;
                     segment.setAttribute('d', newPath);
                     

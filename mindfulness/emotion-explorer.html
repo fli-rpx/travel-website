@@ -803,8 +803,8 @@
                     
                     // Make segment thicker based on intensity
                     // Decrease inner y-radius more than outer to increase thickness
-                    const thicknessBonus = intensity * 8; // Up to 8px thicker
-                    const newYR = base.yR + thicknessBonus * 0.3; // Outer edge moves up slightly
+                    const thicknessBonus = intensity * 24; // Triple the thickness (was 8)
+                    const newYR = base.yR + thicknessBonus * 0.3; // Outer edge moves up
                     const newInnerYR = base.innerYR - thicknessBonus; // Inner edge moves down more
                     const newOuterY = base.outerY + thicknessBonus * 0.2;
                     const newInnerY = base.innerY - thicknessBonus * 0.5;

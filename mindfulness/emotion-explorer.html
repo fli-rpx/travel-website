@@ -776,6 +776,16 @@
                 categoryCounts[w.category] = (categoryCounts[w.category] || 0) + 1;
             });
 
+            // Base path configurations for each category (outer radius, inner radius, y positions)
+            const basePaths = {
+                POWER: { outerR: 600, innerR: 590, outerY: 120, innerY: 110 },
+                POSSESSION: { outerR: 590, innerR: 580, outerY: 110, innerY: 100 },
+                CRAVE: { outerR: 580, innerR: 570, outerY: 100, innerY: 90 },
+                EMPATHY: { outerR: 570, innerR: 560, outerY: 90, innerY: 80 },
+                LOSS: { outerR: 560, innerR: 550, outerY: 80, innerY: 70 },
+                EMPTINESS: { outerR: 550, innerR: 540, outerY: 70, innerY: 60 }
+            };
+
             // Fill active rainbow segments with colors based on intensity
             activeCategories.forEach(category => {
                 const segmentId = `rainbow-${category.toLowerCase()}`;
@@ -783,13 +793,28 @@
                 if (segment && rainbowColors[category]) {
                     const count = categoryCounts[category];
                     const baseColor = rainbowColors[category];
+                    const base = basePaths[category];
                     
-                    // Calculate opacity based on word count (max 5 words for full opacity)
-                    const opacity = Math.min(count / 5, 1);
+                    // Calculate intensity (max 5 words for full intensity)
+                    const intensity = Math.min(count / 5, 1);
                     
-                    // Apply color with calculated opacity
-                    segment.setAttribute('fill', baseColor);
-                    segment.setAttribute('fill-opacity', opacity);
+                    // Make color darker/deeper based on intensity
+                    const darkenedColor = darkenColor(baseColor, intensity * 30);
+                    
+                    // Make segment thicker based on intensity (increase outer radius, decrease inner radius)
+                    const thicknessBonus = intensity * 15; // Up to 15px thicker
+                    const newOuterR = base.outerR + thicknessBonus;
+                    const newInnerR = base.innerR - thicknessBonus * 0.5;
+                    const newOuterY = base.outerY + thicknessBonus;
+                    const newInnerY = base.innerY - thicknessBonus * 0.3;
+                    
+                    // Update the path with new thickness
+                    const newPath = `M 0,${newOuterY} A ${newOuterR},${newOuterR - 20} 0 0 1 1200,${newOuterY} L 1200,${newInnerY} A ${newInnerR},${newInnerR - 20} 0 0 0 0,${newInnerY} Z`;
+                    segment.setAttribute('d', newPath);
+                    
+                    // Apply darkened color with opacity
+                    segment.setAttribute('fill', darkenedColor);
+                    segment.setAttribute('fill-opacity', 0.7 + intensity * 0.3);
                 }
             });
 
@@ -804,6 +829,30 @@
             document.getElementById('totalSelected').textContent = selectedWords.length;
             document.getElementById('categoriesActive').textContent = activeCategories.size;
             document.getElementById('dominantCategory').textContent = dominantCategory;
+        }
+
+        // Helper function to darken a hex color
+        function darkenColor(hex, percent) {
+            // Remove # if present
+            hex = hex.replace('#', '');
+            
+            // Parse RGB
+            let r = parseInt(hex.substring(0, 2), 16);
+            let g = parseInt(hex.substring(2, 4), 16);
+            let b = parseInt(hex.substring(4, 6), 16);
+            
+            // Darken by reducing each component
+            r = Math.floor(r * (1 - percent / 100));
+            g = Math.floor(g * (1 - percent / 100));
+            b = Math.floor(b * (1 - percent / 100));
+            
+            // Clamp to 0-255
+            r = Math.max(0, Math.min(255, r));
+            g = Math.max(0, Math.min(255, g));
+            b = Math.max(0, Math.min(255, b));
+            
+            // Convert back to hex
+            return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
         }
 
         // Clear all words

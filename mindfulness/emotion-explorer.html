@@ -645,14 +645,25 @@
             EMPATHY: { name: 'Empathy', emoji: '🤝', color: '#2E8B57' }
         };
 
-        // Rainbow color mapping
+        // Rainbow color mapping - complementary pairs that cancel to white
+        // Red ↔ Cyan, Green ↔ Magenta, Orange ↔ Azure
         const rainbowColors = {
             POWER: '#FF0000',      // Red
-            POSSESSION: '#FF8C00', // Orange
-            CRAVE: '#FF1493',      // Pink
-            EMPATHY: '#008000',    // Green
-            LOSS: '#800080',       // Purple
-            EMPTINESS: '#000080'   // Deep Blue
+            EMPATHY: '#00FFFF',    // Cyan (complementary to Red)
+            EMPTINESS: '#00FF00',  // Green
+            POSSESSION: '#FF00FF', // Magenta (complementary to Green)
+            CRAVE: '#FFA500',      // Orange
+            LOSS: '#007FFF'        // Azure (complementary to Orange)
+        };
+
+        // Complementary color pairs that cancel to white
+        const complementaryPairs = {
+            POWER: 'EMPATHY',
+            EMPATHY: 'POWER',
+            EMPTINESS: 'POSSESSION',
+            POSSESSION: 'EMPTINESS',
+            CRAVE: 'LOSS',
+            LOSS: 'CRAVE'
         };
 
         // Initialize the explorer
@@ -792,14 +803,25 @@
                 const segment = document.getElementById(segmentId);
                 if (segment && rainbowColors[category]) {
                     const count = categoryCounts[category];
-                    const baseColor = rainbowColors[category];
                     const base = basePaths[category];
                     
                     // Calculate intensity (max 5 words for full intensity)
                     const intensity = Math.min(count / 5, 1);
                     
-                    // Make color darker/deeper based on intensity
-                    const darkenedColor = darkenColor(baseColor, intensity * 30);
+                    // Check if complementary category is also active
+                    const complementary = complementaryPairs[category];
+                    let finalColor = rainbowColors[category];
+                    
+                    if (complementary && activeCategories.has(complementary)) {
+                        // Both complementary colors are active - blend toward white
+                        const compCount = categoryCounts[complementary];
+                        const compIntensity = Math.min(compCount / 5, 1);
+                        // Blend based on the complementary intensity
+                        finalColor = blendTowardWhite(rainbowColors[category], rainbowColors[complementary], compIntensity);
+                    } else {
+                        // Only this color is active - darken based on intensity
+                        finalColor = darkenColor(rainbowColors[category], intensity * 30);
+                    }
                     
                     // Make segment thicker based on intensity
                     // Decrease inner y-radius more than outer to increase thickness
@@ -813,8 +835,8 @@
                     const newPath = `M 0,${newOuterY} A ${base.xR},${newYR} 0 0 1 1200,${newOuterY} L 1200,${newInnerY} A ${base.xR},${newInnerYR} 0 0 0 0,${newInnerY} Z`;
                     segment.setAttribute('d', newPath);
                     
-                    // Apply darkened color with opacity
-                    segment.setAttribute('fill', darkenedColor);
+                    // Apply final color with opacity
+                    segment.setAttribute('fill', finalColor);
                     segment.setAttribute('fill-opacity', 0.7 + intensity * 0.3);
                 }
             });
@@ -830,6 +852,30 @@
             document.getElementById('totalSelected').textContent = selectedWords.length;
             document.getElementById('categoriesActive').textContent = activeCategories.size;
             document.getElementById('dominantCategory').textContent = dominantCategory;
+        }
+
+        // Helper function to blend two colors toward white (additive mixing)
+        function blendTowardWhite(color1, color2, ratio) {
+            // Remove # if present
+            color1 = color1.replace('#', '');
+            color2 = color2.replace('#', '');
+            
+            // Parse RGB for both colors
+            let r1 = parseInt(color1.substring(0, 2), 16);
+            let g1 = parseInt(color1.substring(2, 4), 16);
+            let b1 = parseInt(color1.substring(4, 6), 16);
+            
+            let r2 = parseInt(color2.substring(0, 2), 16);
+            let g2 = parseInt(color2.substring(2, 4), 16);
+            let b2 = parseInt(color2.substring(4, 6), 16);
+            
+            // Additive mixing: add the RGB values and clamp to 255 (white)
+            let r = Math.min(255, r1 + r2 * ratio);
+            let g = Math.min(255, g1 + g2 * ratio);
+            let b = Math.min(255, b1 + b2 * ratio);
+            
+            // Convert back to hex
+            return `#${Math.floor(r).toString(16).padStart(2, '0')}${Math.floor(g).toString(16).padStart(2, '0')}${Math.floor(b).toString(16).padStart(2, '0')}`;
         }
 
         // Helper function to darken a hex color

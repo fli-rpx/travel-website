@@ -827,6 +827,18 @@ const app = {
         alert('Voice input would use Web Speech API in production');
     },
 
+    toggleLearnSection(header) {
+        header.classList.toggle('active');
+        const content = header.nextElementSibling;
+        if (content) {
+            if (header.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+                content.style.maxHeight = '0';
+            }
+        }
+    },
+
     startStructuredAssessment() {
         this.navigate('salad');
     },
@@ -1284,3 +1296,8 @@ document.addEventListener('keydown', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     app.init();
 });
+
+// Learn section toggle function
+function toggleLearnSection(header) {
+    header.classList.toggle('active');
+}

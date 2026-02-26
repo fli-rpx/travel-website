@@ -78,6 +78,235 @@
             background: rgba(20, 184, 166, 0.1);
             color: #14b8a6;
         }
+
+        /* Learn Tab Styles */
+        .learn-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 1rem;
+            color: white;
+        }
+
+        .learn-header h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.75rem;
+        }
+
+        .learn-subtitle {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .learn-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .learn-section {
+            background: white;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .learn-section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .learn-section-header:hover {
+            background: #f8fafc;
+        }
+
+        .learn-section-header.active {
+            border-bottom-color: #e2e8f0;
+        }
+
+        .learn-icon {
+            font-size: 1.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            border-radius: 0.75rem;
+        }
+
+        .learn-section-header h3 {
+            flex: 1;
+            margin: 0;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+
+        .learn-toggle {
+            color: #64748b;
+            transition: transform 0.3s;
+        }
+
+        .learn-section-header.active .learn-toggle {
+            transform: rotate(180deg);
+        }
+
+        .learn-section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .learn-section-header.active + .learn-section-content {
+            max-height: 2000px;
+        }
+
+        .learn-summary {
+            padding: 1rem 1.5rem;
+            margin: 0;
+            color: #64748b;
+            font-style: italic;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .learn-detail {
+            padding: 1.5rem;
+        }
+
+        .learn-detail p {
+            margin: 0 0 1rem 0;
+            line-height: 1.6;
+            color: #334155;
+        }
+
+        .learn-key-point {
+            display: flex;
+            gap: 1rem;
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .key-icon {
+            font-size: 1.25rem;
+        }
+
+        .learn-key-point p {
+            margin: 0;
+            flex: 1;
+        }
+
+        .learn-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .learn-comparison-item {
+            padding: 1rem;
+            border-radius: 0.75rem;
+        }
+
+        .learn-comparison-item.negative {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+
+        .learn-comparison-item.positive {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+
+        .learn-comparison-item h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .learn-comparison-item p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .learn-exercises {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .learn-exercise {
+            background: #f8fafc;
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .learn-exercise h4 {
+            margin: 0 0 0.75rem 0;
+            color: #1e293b;
+        }
+
+        .learn-exercise p {
+            margin: 0 0 0.5rem 0;
+        }
+
+        .learn-exercise ul {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.5rem;
+        }
+
+        .learn-exercise li {
+            margin-bottom: 0.5rem;
+        }
+
+        .learn-summary-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+        }
+
+        .learn-summary-card h3 {
+            margin: 0 0 1rem 0;
+        }
+
+        .learn-summary-card p {
+            margin: 0 0 1rem 0;
+            line-height: 1.6;
+        }
+
+        .learn-summary-card ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .learn-summary-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .learn-final {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 1.5rem !important;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .learn-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -96,6 +325,7 @@
                 <li><a href="#" onclick="app.navigate('interventions')">Interventions</a></li>
                 <li><a href="#" onclick="app.navigate('journal')">Journal</a></li>
                 <li><a href="#" onclick="app.navigate('progress')">Progress</a></li>
+                <li><a href="#" onclick="app.navigate('learn')">📚 Learn</a></li>
             </ul>
         </nav>
 
@@ -129,6 +359,7 @@
                     
                     <button class="nav-btn" data-tab="journal">Journal</button>
                     <button class="nav-btn" data-tab="progress">Progress</button>
+                    <button class="nav-btn" data-tab="learn">Learn</button>
                 </div>
             </nav>
 
@@ -581,6 +812,211 @@
                     <div class="insights-card">
                         <h3>Emotion Journey</h3>
                         <div id="insightsList"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learn Tab -->
+            <div id="learn" class="tab">
+                <div class="learn-header">
+                    <h2>📚 Insights & Understanding</h2>
+                    <p class="learn-subtitle">The psychology behind why we get hooked—and how to reclaim your power</p>
+                </div>
+
+                <div class="learn-content">
+                    <!-- Section 1: Visual Hook -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">👁️</span>
+                            <h3>Why Your Brain Loves Certain Colors and Looks</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">Your eyes use 44% of your brain's energy. Because seeing is expensive, your brain rewards "easy" visuals with dopamine and endorphins.</p>
+                            <div class="learn-detail">
+                                <p><strong>The Science:</strong> Your brain is an energy miser. When you see something visually "fluent" (symmetrical, clear, appealing), your brain goes "Ah, that was easy!" and gives you a pleasure reward.</p>
+                                <div class="learn-key-point">
+                                    <span class="key-icon">⚠️</span>
+                                    <p><strong>The Catch:</strong> Just because something feels good to look at doesn't mean it's good for you. It can be empty calories for your eyes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Stroop Effect -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">🧠</span>
+                            <h3>The Stroop Effect: Colors Can Hijack Your Brain</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">Visual information competes with conceptual information in your brain—and sometimes visuals win automatically.</p>
+                            <div class="learn-detail">
+                                <p><strong>The Experiment:</strong> Show someone the word "RED" written in blue ink. Their brain slows down because it has to fight between the word and the color.</p>
+                                <div class="learn-key-point">
+                                    <span class="key-icon">💡</span>
+                                    <p><strong>What This Means:</strong> Colors and appearances have power over your attention whether you want them to or not. Your brain processes them automatically before you can decide.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Aesthetic Arrest -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">✨</span>
+                            <h3>Aesthetic Arrest: When Beauty Stops You Cold</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">That feeling when you're "stopped dead in your tracks" by something beautiful—a temporary escape from desire and struggle.</p>
+                            <div class="learn-detail">
+                                <p>Philosopher Schopenhauer called this becoming a "pure, will-less, painless subject of knowledge." For a moment, you forget your problems and cravings.</p>
+                                <div class="learn-key-point">
+                                    <span class="key-icon">⚠️</span>
+                                    <p><strong>The Problem:</strong> You're not in control during aesthetic arrest. The thing controls you. You're a spectator, not an agent.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Animism -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">🎭</span>
+                            <h3>Animism: Why Objects Feel Alive</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">Humans naturally project life and intention onto inanimate things—judging them by Evaluation, Potency, and Activity.</p>
+                            <div class="learn-detail">
+                                <p>Your brain is wired to treat certain things as if they have power or intention. That's why a color can feel "strong" or a face can feel "magnetic."</p>
+                                <div class="learn-key-point">
+                                    <span class="key-icon">💡</span>
+                                    <p><strong>The Insight:</strong> Your brain evolved to pay attention to things that might be important—but sometimes it overdoes it, and you get hooked by something empty.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 5: Locus of Control -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">🎯</span>
+                            <h3>Locus of Control: Where Do You Put Your Power?</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">Internal vs External: Do you believe your actions shape your life, or that luck/fate/others control what happens?</p>
+                            <div class="learn-detail">
+                                <p><strong>External Locus:</strong> You believe power comes from outside—other people's attention, owning things, how you look. You're constantly scanning for hooks because you need them as fuel.</p>
+                                <p><strong>Internal Locus:</strong> You believe power comes from inside—your choices, your values, how you respond. Hooks lose their grip because you don't need them.</p>
+                                <div class="learn-key-point">
+                                    <span class="key-icon">🔗</span>
+                                    <p><strong>Connection to Trauma:</strong> Growing up in an unpredictable environment teaches you to surrender control—it kept you alive. But as an adult, this leaves you vulnerable to every shiny thing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 6: Triggers vs Glimmers -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">⚡</span>
+                            <h3>Triggers vs. Glimmers: What Your Nervous System Seeks</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">Your body scans for danger (triggers) and safety (glimmers). Both can "hook" you—but one leads to harm, the other to healing.</p>
+                            <div class="learn-detail">
+                                <div class="learn-comparison">
+                                    <div class="learn-comparison-item negative">
+                                        <h4>🔴 Triggers</h4>
+                                        <p>Sensory cues that activate survival mode—fight, flight, or freeze. Based on past danger stored in your body.</p>
+                                    </div>
+                                    <div class="learn-comparison-item positive">
+                                        <h4>🟢 Glimmers</h4>
+                                        <p>Tiny cues that tell your nervous system "you're safe." A warm color, a bird singing, a sunbeam. Activates your ventral vagus nerve (calm and connection).</p>
+                                    </div>
+                                </div>
+                                <div class="learn-key-point">
+                                    <span class="key-icon">💡</span>
+                                    <p><strong>The Practice:</strong> You can train yourself to notice glimmers. The more you notice moments of safety, the more your nervous system learns the world isn't all danger.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 7: Gendlin's Focusing -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">🔍</span>
+                            <h3>Gendlin's Focusing: Listen to Your Body's Wisdom</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">Your body knows things your brain hasn't figured out yet. Learn to tune into your "felt sense"—a bodily intuition not yet in words.</p>
+                            <div class="learn-detail">
+                                <p><strong>The Felt Sense:</strong> A heaviness in your chest, a knot in your stomach, a fluttering sensation. By gently paying attention and asking it questions, you unlock a "felt shift"—physical release bringing new understanding.</p>
+                                <div class="learn-key-point">
+                                    <span class="key-icon">💡</span>
+                                    <p><strong>When Hooked:</strong> Instead of chasing what caught your eye, turn inward: "What is this feeling in my body?" Stay with it gently, without trying to fix it. The shift is your body releasing something.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 8: Somatic Exercises -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">🧘</span>
+                            <h3>Somatic Exercises: Practical Tools for Reclaiming Agency</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">Specific practices to build inner power that doesn't depend on outside hooks.</p>
+                            <div class="learn-exercises">
+                                <div class="learn-exercise">
+                                    <h4>🤲 The Container Exercise (Self-Holding)</h4>
+                                    <p><strong>How:</strong> Put one hand on your forehead, one on your heart. Feel the warmth. Imagine your body as a container that can hold any feeling without breaking.</p>
+                                    <p><strong>Why:</strong> Creates physical boundaries. Tells your nervous system: "I can hold this. I'm still in control."</p>
+                                </div>
+                                <div class="learn-exercise">
+                                    <h4>📢 The Voo Sound</h4>
+                                    <p><strong>How:</strong> Take a deep breath and make a low "voooo" sound like a foghorn. Feel it vibrate in your chest.</p>
+                                    <p><strong>Why:</strong> The vibration stimulates your vagus nerve, calming your nervous system. Good for when you feel frozen.</p>
+                                </div>
+                                <div class="learn-exercise">
+                                    <h4>🔄 Pendulation</h4>
+                                    <p><strong>How:</strong> Gently move attention between distress and safety. Notice the tightness... then your feet on the floor... then back to tightness... then your breath.</p>
+                                    <p><strong>Why:</strong> Teaches your nervous system it can move in and out of discomfort without being destroyed.</p>
+                                </div>
+                                <div class="learn-exercise">
+                                    <h4>🦶 Grounding Exercises</h4>
+                                    <ul>
+                                        <li><strong>Heel drops:</strong> Lift heels, drop with a thud. Feel the impact. "It's safe to take up space."</li>
+                                        <li><strong>Body scan:</strong> Slowly notice each body part from head to toe, just observing.</li>
+                                        <li><strong>Box breathing:</strong> Inhale 4s, hold 4s, exhale 4s, hold 4s. Cues relaxation.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary -->
+                    <div class="learn-summary-card">
+                        <h3>🎯 What This All Means</h3>
+                        <p>When you get hooked by a color, a face, an appearance—it's not weakness. It's your brain doing what brains do.</p>
+                        <p><strong>The problem isn't the hook. The problem is when the hook becomes the only way you feel alive.</strong></p>
+                        <p>The solution is to build something inside that's stronger than any outside hook:</p>
+                        <ul>
+                            <li>Notice when you're hooked</li>
+                            <li>Feel what's happening in your body</li>
+                            <li>Choose a different response—even for a moment</li>
+                            <li>Find safety and power inside yourself</li>
+                        </ul>
+                        <p class="learn-final">The hook will always be there. But you don't have to be at its mercy anymore.</p>
                     </div>
                 </div>
             </div>

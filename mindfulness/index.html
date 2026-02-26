@@ -302,9 +302,84 @@
             border-top: 1px solid rgba(255,255,255,0.3);
         }
 
+        .learn-subsection {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .learn-subsection:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .learn-subsection h4 {
+            margin: 0 0 0.75rem 0;
+            color: #1e293b;
+            font-size: 1.05rem;
+        }
+
+        .learn-parts-list {
+            margin: 0.75rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .learn-parts-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .learn-transformation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 1rem;
+        }
+
+        .learn-from, .learn-to {
+            text-align: center;
+            flex: 1;
+        }
+
+        .learn-from h5, .learn-to h5 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1rem;
+        }
+
+        .learn-from ul, .learn-to ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .learn-from li, .learn-to li {
+            margin-bottom: 0.25rem;
+            color: #64748b;
+        }
+
+        .learn-arrow {
+            font-size: 2rem;
+            color: #667eea;
+            font-weight: bold;
+        }
+
         @media (max-width: 768px) {
             .learn-comparison {
                 grid-template-columns: 1fr;
+            }
+            
+            .learn-transformation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .learn-arrow {
+                transform: rotate(90deg);
             }
         }
     </style>
@@ -999,6 +1074,126 @@
                                         <li><strong>Body scan:</strong> Slowly notice each body part from head to toe, just observing.</li>
                                         <li><strong>Box breathing:</strong> Inhale 4s, hold 4s, exhale 4s, hold 4s. Cues relaxation.</li>
                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 9: Emotional Transformation -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">🦋</span>
+                            <h3>Emotional Transformation: From External to Inner Power</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">Understanding your emotional patterns and the journey from grasping power through possession to finding power within yourself.</p>
+                            <div class="learn-detail">
+                                <!-- 1. Emotional Plate Metaphor -->
+                                <div class="learn-subsection">
+                                    <h4>🥗 The Emotional Plate Metaphor (Your Salad)</h4>
+                                    <p>You already have a smart way of thinking about your feelings. You know that when one feeling takes over (too "spicy"), you look for something to balance it—even if you sometimes pick the wrong thing (something "greasy").</p>
+                                    <div class="learn-key-point">
+                                        <span class="key-icon">💡</span>
+                                        <p><strong>The Insight:</strong> You're naturally good at noticing your own emotional patterns. The Salad metaphor helps you see when one emotion dominates and what you reach for to compensate.</p>
+                                    </div>
+                                </div>
+
+                                <!-- 2. Shifting Values -->
+                                <div class="learn-subsection">
+                                    <h4>🔄 Why Your Values Shift Depending on How You Feel</h4>
+                                    <p>Your internal state acts like a filter that changes which values feel important. When you feel powerful, "owning" matters most. When you feel weak, you want safety. When you feel clear, you want real connection.</p>
+                                    <div class="learn-key-point">
+                                        <span class="key-icon">💡</span>
+                                        <p><strong>The Insight:</strong> You're not broken or inconsistent. Your values shift because your emotional state literally changes what your brain cares about at that moment. It's like wanting different foods depending on whether you're starving or just a little hungry.</p>
+                                    </div>
+                                </div>
+
+                                <!-- 3. Spicy and Greasy Cycle -->
+                                <div class="learn-subsection">
+                                    <h4>🌶️ The "Spicy and Greasy" Cycle (Compensatory Control)</h4>
+                                    <p>Humans need to feel like life is orderly. When something shakes that feeling (losing power), it creates anxiety—the "spicy" feeling. To cope, you reach for something that restores control. The "greasy" choice gives quick relief but causes problems later.</p>
+                                    <div class="learn-key-point">
+                                        <span class="key-icon">⚠️</span>
+                                        <p><strong>The Pattern:</strong> When life feels chaotic and you lose power, your brain panics and grabs for anything that makes you feel in control again—even if it's unhealthy. Like fast food for your emotions: satisfying now, worse later.</p>
+                                    </div>
+                                </div>
+
+                                <!-- 4. Objectification -->
+                                <div class="learn-subsection">
+                                    <h4>🎯 Why You Want to "Own" (Objectification Theory)</h4>
+                                    <p>When people feel powerful, they tend to see others as tools to achieve goals. The desire to "own" comes from a need to impose order on chaos. By reducing a complex person to a "target," you feel false mastery. But this backfires—it denies their humanity and damages your own sense of self.</p>
+                                    <div class="learn-key-point">
+                                        <span class="key-icon">🔗</span>
+                                        <p><strong>The Truth:</strong> When you lose power, you look for something to control to feel better. But treating a person like an object doesn't fix the emptiness—it creates more problems and guilt afterward.</p>
+                                    </div>
+                                </div>
+
+                                <!-- 5. Internal Family Systems -->
+                                <div class="learn-subsection">
+                                    <h4>👥 The "Parts" of You (Internal Family Systems)</h4>
+                                    <p>Your psyche has different "parts" with different jobs:</p>
+                                    <ul class="learn-parts-list">
+                                        <li><strong>The Exile:</strong> Carries the pain of powerlessness and emptiness.</li>
+                                        <li><strong>The Manager:</strong> Tries to get power through achievements to protect you from feeling the pain.</li>
+                                        <li><strong>The Firefighter:</strong> When the Manager fails and pain breaks through, this part panics and grabs for quick fixes.</li>
+                                        <li><strong>The Self:</strong> The "you" that watches all this and knows it's wrong. That calm part is your real self.</li>
+                                    </ul>
+                                    <div class="learn-key-point">
+                                        <span class="key-icon">💡</span>
+                                        <p><strong>The Insight:</strong> Your mind is like a team. One part holds old wounds. Another tries to prevent pain by chasing success. When that fails, a third part freaks out and reaches for anything to make the pain stop. And there's a calm part watching it all—that's your real self.</p>
+                                    </div>
+                                </div>
+
+                                <!-- 6. The Neutral Zone -->
+                                <div class="learn-subsection">
+                                    <h4>🌫️ Why You Feel Lost Right Now (The Neutral Zone)</h4>
+                                    <p>You're in the "Neutral Zone"—a period between identities. You've let go of the old way (grabbing power through possession), but the new way (finding power within) isn't fully formed yet. This stage feels like confusion, emptiness, and not knowing what to do.</p>
+                                    <div class="learn-key-point">
+                                        <span class="key-icon">✨</span>
+                                        <p><strong>The Hope:</strong> This is normal and necessary. It's like being in a hallway between two rooms. You've left one room but haven't entered the next. The confusion means you're exactly where you need to be—growing.</p>
+                                    </div>
+                                </div>
+
+                                <!-- 7. What Inner Power Actually Is -->
+                                <div class="learn-subsection">
+                                    <h4>💪 What Inner Power Actually Is (Stoicism)</h4>
+                                    <p>Real power comes from distinguishing what you can control from what you can't. You can't control whether people stay, whether projects succeed, or whether you lose status. But you can control your judgments, intentions, and how you respond to cravings.</p>
+                                    <div class="learn-key-point">
+                                        <span class="key-icon">💡</span>
+                                        <p><strong>The Truth:</strong> True power isn't about controlling others or holding onto things. Real power is being able to sit with discomfort, choose how you respond, and know your worth without needing proof from the outside. It's quiet. It doesn't need an audience. And no one can take it from you.</p>
+                                    </div>
+                                </div>
+
+                                <!-- 8. The Bottom Line -->
+                                <div class="learn-subsection">
+                                    <h4>🎯 The Bottom Line: What This Means for You</h4>
+                                    <p>You're in the middle of a profound transformation. You've moved from:</p>
+                                    <div class="learn-transformation">
+                                        <div class="learn-from">
+                                            <h5>External Power</h5>
+                                            <ul>
+                                                <li>Grabbing</li>
+                                                <li>Owning</li>
+                                                <li>Controlling</li>
+                                            </ul>
+                                        </div>
+                                        <div class="learn-arrow">→</div>
+                                        <div class="learn-to">
+                                            <h5>Inner Power</h5>
+                                            <ul>
+                                                <li>Being</li>
+                                                <li>Connecting</li>
+                                                <li>Choosing</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p>The confusion and emptiness aren't signs of failure. They're signs that the old patterns are dying and something new is being born. The urge to own was never really about the target—it was a misguided attempt to fill a void left by early wounds and lost power.</p>
+                                    <p><strong>The fact that you're asking "what now?" and "what is inner power?" proves you're already on the right path.</strong> You're not reaching for the quick fix anymore. You're sitting in the silence, waiting to see what you actually hunger for.</p>
+                                    <div class="learn-key-point">
+                                        <span class="key-icon">🔥</span>
+                                        <p><strong>The Power Was Always in You.</strong> You're just learning how to feel it now. Keep sitting with the questions. Keep noticing when the hook pulls. Keep choosing the pause instead of the grab.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>情绪丝带探索器 - 正念疗法</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Updated color scheme */
+            --power-color: #FF0000;      /* Red */
+            --possession-color: #FFFF00; /* Yellow */
+            --loss-color: #800080;       /* Purple */
+            --emptiness-color: #000080;  /* Deep Blue */
+            --crave-color: #FF1493;      /* Pink */
+            --empathy-color: #008000;    /* Green */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #fafaf9 0%, #f5f2ed 100%);
+            min-height: 100vh;
+            color: #1e293b;
+        }
+
+        .explorer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .explorer-header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .explorer-header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+            background: linear-gradient(135deg, #8B0000, #FF6B35, #191970, #2E8B57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        .explorer-header p {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .ribbon-display-section {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .ribbon-container-wrapper {
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #emotionRibbonDisplay {
+            width: 100%;
+            height: 120px;
+            background-color: #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .selected-words-display {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 0.75rem;
+            min-height: 60px;
+        }
+
+        .selected-words-display h4 {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+
+        #selectedWordsList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .selected-word-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.375rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .selected-word-tag:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .selected-word-tag .remove {
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        .clear-all-btn {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #f1f5f9;
+            border: none;
+            border-radius: 0.5rem;
+            color: #64748b;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .clear-all-btn:hover {
+            background: #e2e8f0;
+            color: #1e293b;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        .category-card.active {
+            border-color: currentColor;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid currentColor;
+        }
+
+        .category-emoji {
+            font-size: 2rem;
+        }
+
+        .category-title {
+            flex: 1;
+        }
+
+        .category-title h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .category-title p {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-top: 0.25rem;
+        }
+
+        .category-count {
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            background: currentColor;
+            color: white;
+        }
+
+        .words-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        .words-grid::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .words-grid::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 3px;
+        }
+
+        .words-grid::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+
+        .word-chip {
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        .word-chip:hover {
+            transform: scale(1.05);
+            border-color: currentColor;
+        }
+
+        .word-chip.selected {
+            background: currentColor;
+            color: white;
+            border-color: currentColor;
+        }
+
+        /* Category-specific colors */
+        .category-power { color: var(--power-color); }
+        .category-power .word-chip:hover,
+        .category-power .word-chip.selected {
+            background: var(--power-color);
+            border-color: var(--power-color);
+        }
+
+        .category-possession { color: var(--possession-color); }
+        .category-possession .word-chip:hover,
+        .category-possession .word-chip.selected {
+            background: var(--possession-color);
+            border-color: var(--possession-color);
+        }
+
+        .category-loss { color: var(--loss-color); }
+        .category-loss .word-chip:hover,
+        .category-loss .word-chip.selected {
+            background: var(--loss-color);
+            border-color: var(--loss-color);
+        }
+
+        .category-emptiness { color: var(--emptiness-color); }
+        .category-emptiness .word-chip:hover,
+        .category-emptiness .word-chip.selected {
+            background: var(--emptiness-color);
+            border-color: var(--emptiness-color);
+        }
+
+        .category-crave { color: var(--crave-color); }
+        .category-crave .word-chip:hover,
+        .category-crave .word-chip.selected {
+            background: var(--crave-color);
+            border-color: var(--crave-color);
+        }
+
+        .category-empathy { color: var(--empathy-color); }
+        .category-empathy .word-chip:hover,
+        .category-empathy .word-chip.selected {
+            background: var(--empathy-color);
+            border-color: var(--empathy-color);
+        }
+
+        .back-nav {
+            margin-bottom: 1.5rem;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .back-btn:hover {
+            background: #f8fafc;
+            color: #1e293b;
+            border-color: #cbd5e1;
+        }
+
+        .empty-ribbon {
+            text-align: center;
+            color: #94a3b8;
+            padding: 2rem;
+        }
+
+        .empty-ribbon i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .empty-ribbon p {
+            font-size: 1rem;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            overflow-x: visible;
+        }
+
+        .nav-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: transparent;
+            color: #64748b;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 9999px;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #1e293b;
+        }
+
+        .nav-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        /* Tools Dropdown */
+        .tools-dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tools-dropdown-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            background: transparent;
+            color: #64748b;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 9999px;
+            font-family: inherit;
+        }
+
+        .tools-dropdown-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #1e293b;
+        }
+
+        .tools-dropdown-btn.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .tools-dropdown-menu {
+            display: none;
+            position: fixed;
+            top: auto;
+            left: auto;
+            margin-top: 0.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            min-width: 220px;
+            padding: 0.5rem;
+            z-index: 9999;
+        }
+
+        .tools-dropdown-menu.open {
+            display: block;
+        }
+
+        .tools-dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #1e293b;
+            text-decoration: none;
+            font-size: 0.875rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .tools-dropdown-menu a:hover {
+            background: rgba(20, 184, 166, 0.1);
+            color: #14b8a6;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: #64748b;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+                gap: 0.5rem;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-btn {
+                width: 100%;
+                text-align: left;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Full Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-brand" onclick="window.location.href='index-zh.html'">🧘 正念疗法</div>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <button class="nav-btn" onclick="window.location.href='index.html'">English</button>
+            <button class="nav-btn" onclick="window.location.href='index-zh.html'">首页</button>
+            <button class="nav-btn" onclick="window.location.href='index-zh.html?tab=cycle'">循环</button>
+            <button class="nav-btn" onclick="window.location.href='index-zh.html?tab=assessment'">AI聊天</button>
+
+            <!-- Tools Dropdown -->
+            <div class="tools-dropdown-container" id="toolsContainer">
+                <button class="tools-dropdown-btn" id="toolsBtn" type="button" onclick="toggleToolsMenu();">
+                    工具 <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
+                </button>
+                <div class="tools-dropdown-menu" id="toolsMenu">
+                    <a href="emotion-explorer-zh.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🎨 情绪探索器</a>
+                    <a href="emotion-balance-zh.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">⚡ 情绪平衡</a>
+                    <a href="salad-compass-zh.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥗 沙拉指南针</a>
+                    <a href="index-zh.html?tab=salad" onclick="closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥬 完整沙拉检测</a>
+                    <a href="index-zh.html?tab=interventions" onclick="closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🧰 干预工具</a>
+                </div>
+            </div>
+
+            <button class="nav-btn" onclick="window.location.href='index-zh.html?tab=journal'">日记</button>
+            <button class="nav-btn" onclick="window.location.href='index-zh.html?tab=progress'">进度</button>
+            <button class="nav-btn" onclick="window.location.href='index-zh.html?tab=learn'">学习</button>
+        </div>
+    </nav>
+
+    <div class="explorer-container" style="padding-top: 80px;">
+        <!-- Back Navigation -->
+        <nav class="back-nav">
+            <a href="index-zh.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> 返回疗法应用
+            </a>
+        </nav>
+
+        <!-- Header -->
+        <header class="explorer-header">
+            <h1>🎨 情绪丝带探索器</h1>
+            <p>点击词语构建你的情绪丝带。发现不同情绪如何组合。</p>
+        </header>
+
+        <!-- Ribbon Display -->
+        <section class="ribbon-display-section">
+            <div class="ribbon-container-wrapper">
+                <div id="emotionRibbonDisplay">
+                    <div id="rainbowSvgContainer" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+                        <svg id="emotionRainbowSvg" viewBox="0 0 1200 120" style="width: 100%; height: 100%;">
+                            <!-- Rainbow segments - initially transparent -->
+                            <!-- POWER (Red) - Outermost -->
+                            <path id="rainbow-power" d="M 0,120 A 600,100 0 0 1 1200,120 L 1200,110 A 590,90 0 0 0 0,110 Z" fill="transparent" stroke="none"></path>
+                            <!-- POSSESSION (Orange) -->
+                            <path id="rainbow-possession" d="M 0,110 A 590,90 0 0 1 1200,110 L 1200,100 A 580,80 0 0 0 0,100 Z" fill="transparent" stroke="none"></path>
+                            <!-- CRAVE (Pink) -->
+                            <path id="rainbow-crave" d="M 0,100 A 580,80 0 0 1 1200,100 L 1200,90 A 570,70 0 0 0 0,90 Z" fill="transparent" stroke="none"></path>
+                            <!-- EMPATHY (Green) -->
+                            <path id="rainbow-empathy" d="M 0,90 A 570,70 0 0 1 1200,90 L 1200,80 A 560,60 0 0 0 0,80 Z" fill="transparent" stroke="none"></path>
+                            <!-- LOSS (Purple) -->
+                            <path id="rainbow-loss" d="M 0,80 A 560,60 0 0 1 1200,80 L 1200,70 A 550,50 0 0 0 0,70 Z" fill="transparent" stroke="none"></path>
+                            <!-- EMPTINESS (Deep Blue) - Innermost -->
+                            <path id="rainbow-emptiness" d="M 0,70 A 550,50 0 0 1 1200,70 L 1200,60 A 540,40 0 0 0 0,60 Z" fill="transparent" stroke="none"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="selected-words-display">
+                    <h4><i class="fas fa-check-circle"></i> 已选词语</h4>
+                    <div id="selectedWordsList">
+                        <span style="color: #94a3b8; font-size: 0.875rem;">尚未选择词语...</span>
+                    </div>
+                </div>
+
+                <button class="clear-all-btn" onclick="clearAllWords()">
+                    <i class="fas fa-trash-alt"></i> 清除全部
+                </button>
+
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalSelected">0</div>
+                        <div class="stat-label">已选词语</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="categoriesActive">0</div>
+                        <div class="stat-label">类别</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="dominantCategory">-</div>
+                        <div class="stat-label">主导</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Grid -->
+        <section class="categories-grid" id="categoriesGrid">
+            <!-- Categories will be populated by JavaScript -->
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="emotion-ribbon.js"></script>
+    <script>
+        // Selected words state
+        let selectedWords = [];
+
+        // Category data with all words
+        const categories = {
+            POWER: { name: '权力', emoji: '💪', color: '#8B0000' },
+            POSSESSION: { name: '占有', emoji: '🏠', color: '#FF6B35' },
+            LOSS: { name: '失去', emoji: '💔', color: '#191970' },
+            EMPTINESS: { name: '空虚', emoji: '⭕', color: '#36454F' },
+            CRAVE: { name: '渴望', emoji: '🔥', color: '#DC143C' },
+            EMPATHY: { name: '共情', emoji: '🤝', color: '#2E8B57' }
+        };
+
+        // Rainbow color mapping
+        const rainbowColors = {
+            POWER: '#FF0000',      // Red
+            POSSESSION: '#FFFF00', // Yellow
+            CRAVE: '#FF1493',      // Pink
+            EMPATHY: '#008000',    // Green
+            LOSS: '#800080',       // Purple
+            EMPTINESS: '#000080'   // Deep Blue
+        };
+
+        // Initialize the explorer
+        function init() {
+            renderCategories();
+            updateUI();
+        }
+
+        // Render all categories
+        function renderCategories() {
+            const grid = document.getElementById('categoriesGrid');
+            grid.innerHTML = '';
+
+            Object.keys(categories).forEach(categoryKey => {
+                const category = categories[categoryKey];
+                const words = EmotionRibbon.lexicon[categoryKey] || [];
+                
+                const card = document.createElement('div');
+                card.className = `category-card category-${categoryKey.toLowerCase()}`;
+                
+                card.innerHTML = `
+                    <div class="category-header">
+                        <div class="category-emoji">${category.emoji}</div>
+                        <div class="category-title">
+                            <h3>${category.name}</h3>
+                            <p>${categoryKey === 'POWER' ? '权力' : categoryKey === 'POSSESSION' ? '占有' : categoryKey === 'LOSS' ? '失去' : categoryKey === 'EMPTINESS' ? '空虚' : categoryKey === 'CRAVE' ? '渴望' : '共情'}情绪</p>
+                        </div>
+                        <div class="category-count">${words.length}</div>
+                    </div>
+                    <div class="words-grid" id="words-${categoryKey.toLowerCase()}">
+                        ${words.map(word => `
+                            <button class="word-chip" onclick="toggleWord('${word}', '${categoryKey}')" data-word="${word}" data-category="${categoryKey}">
+                                ${word}
+                            </button>
+                        `).join('')}
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        // Toggle word selection
+        function toggleWord(word, category) {
+            const existingIndex = selectedWords.findIndex(w => w.word === word && w.category === category);
+            
+            if (existingIndex >= 0) {
+                // Remove word
+                selectedWords.splice(existingIndex, 1);
+            } else {
+                // Add word
+                selectedWords.push({ word, category });
+            }
+            
+            updateUI();
+        }
+
+        // Update all UI elements
+        function updateUI() {
+            updateWordChips();
+            updateSelectedWordsList();
+            updateRibbon();
+        }
+
+        // Update word chips visual state
+        function updateWordChips() {
+            document.querySelectorAll('.word-chip').forEach(chip => {
+                const word = chip.dataset.word;
+                const category = chip.dataset.category;
+                const isSelected = selectedWords.some(w => w.word === word && w.category === category);
+                
+                if (isSelected) {
+                    chip.classList.add('selected');
+                } else {
+                    chip.classList.remove('selected');
+                }
+            });
+        }
+
+        // Update selected words list
+        function updateSelectedWordsList() {
+            const list = document.getElementById('selectedWordsList');
+            
+            if (selectedWords.length === 0) {
+                list.innerHTML = '<span style="color: #94a3b8; font-size: 0.875rem;">No words selected yet...</span>';
+                return;
+            }
+            
+            list.innerHTML = selectedWords.map(word => {
+                const category = categories[word.category];
+                const colorVar = getComputedStyle(document.documentElement).getPropertyValue(`--${word.category.toLowerCase()}-color`);
+                return `
+                    <span class="selected-word-tag" style="background: ${colorVar};" onclick="toggleWord('${word.word}', '${word.category}')">
+                        ${category.emoji} ${word.word}
+                        <i class="fas fa-times remove"></i>
+                    </span>
+                `;
+            }).join('');
+        }
+
+        // Update ribbon visualization
+        function updateRibbon() {
+            // Reset all rainbow segments to transparent
+            const rainbowSegments = document.querySelectorAll('#emotionRainbowSvg path');
+            rainbowSegments.forEach(segment => {
+                segment.setAttribute('fill', 'transparent');
+            });
+
+            if (selectedWords.length === 0) {
+                document.getElementById('totalSelected').textContent = '0';
+                document.getElementById('categoriesActive').textContent = '0';
+                document.getElementById('dominantCategory').textContent = '-';
+                return;
+            }
+
+            // Determine active categories and their counts
+            const activeCategories = new Set();
+            const categoryCounts = {};
+            selectedWords.forEach(w => {
+                activeCategories.add(w.category);
+                categoryCounts[w.category] = (categoryCounts[w.category] || 0) + 1;
+            });
+
+            // Fill active rainbow segments with colors based on intensity
+            activeCategories.forEach(category => {
+                const segmentId = `rainbow-${category.toLowerCase()}`;
+                const segment = document.getElementById(segmentId);
+                if (segment && rainbowColors[category]) {
+                    const count = categoryCounts[category];
+                    const baseColor = rainbowColors[category];
+                    
+                    // Calculate opacity based on word count (max 5 words for full opacity)
+                    const opacity = Math.min(count / 5, 1);
+                    
+                    // Apply color with calculated opacity
+                    segment.setAttribute('fill', baseColor);
+                    segment.setAttribute('fill-opacity', opacity);
+                }
+            });
+
+            // Determine the dominant category for display
+            let dominantCategory = '-';
+            if (selectedWords.length > 0) {
+                const sortedCategories = Object.entries(categoryCounts).sort((a, b) => b[1] - a[1]);
+                dominantCategory = sortedCategories[0][0];
+            }
+
+            // Update stats bar
+            document.getElementById('totalSelected').textContent = selectedWords.length;
+            document.getElementById('categoriesActive').textContent = activeCategories.size;
+            document.getElementById('dominantCategory').textContent = dominantCategory;
+        }
+
+        // Clear all words
+        function clearAllWords() {
+            selectedWords = [];
+            updateUI();
+        }
+
+        // Tools dropdown functions
+        function toggleToolsMenu() {
+            const menu = document.getElementById('toolsMenu');
+            const btn = document.getElementById('toolsBtn');
+            
+            if (menu.classList.contains('open')) {
+                menu.classList.remove('open');
+                btn.classList.remove('active');
+            } else {
+                menu.classList.add('open');
+                btn.classList.add('active');
+                
+                // Position the menu relative to the button
+                const btnRect = btn.getBoundingClientRect();
+                menu.style.top = (btnRect.bottom + 8) + 'px';
+                menu.style.left = btnRect.left + 'px';
+            }
+        }
+
+        function closeToolsDropdown() {
+            document.getElementById('toolsMenu').classList.remove('open');
+            document.getElementById('toolsBtn').classList.remove('active');
+        }
+
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const container = document.getElementById('toolsContainer');
+            const menu = document.getElementById('toolsMenu');
+            const btn = document.getElementById('toolsBtn');
+            
+            if (!container.contains(event.target)) {
+                menu.classList.remove('open');
+                btn.classList.remove('active');
+            }
+        });
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

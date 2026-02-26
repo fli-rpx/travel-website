@@ -859,23 +859,30 @@
             // Remove # if present
             color1 = color1.replace('#', '');
             color2 = color2.replace('#', '');
-            
+
             // Parse RGB for both colors
             let r1 = parseInt(color1.substring(0, 2), 16);
             let g1 = parseInt(color1.substring(2, 4), 16);
             let b1 = parseInt(color1.substring(4, 6), 16);
-            
+
             let r2 = parseInt(color2.substring(0, 2), 16);
             let g2 = parseInt(color2.substring(2, 4), 16);
             let b2 = parseInt(color2.substring(4, 6), 16);
-            
-            // Additive mixing: add the RGB values and clamp to 255 (white)
-            let r = Math.min(255, r1 + r2 * ratio);
-            let g = Math.min(255, g1 + g2 * ratio);
-            let b = Math.min(255, b1 + b2 * ratio);
-            
+
+            // Additive mixing: add the RGB values
+            // When complementary colors are added, they create white
+            let r = Math.min(255, r1 + r2);
+            let g = Math.min(255, g1 + g2);
+            let b = Math.min(255, b1 + b2);
+
+            // Blend toward the mixed color based on ratio
+            // ratio 0 = original color, ratio 1 = fully mixed (toward white)
+            r = Math.floor(r1 + (r - r1) * ratio);
+            g = Math.floor(g1 + (g - g1) * ratio);
+            b = Math.floor(b1 + (b - b1) * ratio);
+
             // Convert back to hex
-            return `#${Math.floor(r).toString(16).padStart(2, '0')}${Math.floor(g).toString(16).padStart(2, '0')}${Math.floor(b).toString(16).padStart(2, '0')}`;
+            return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
         }
 
         // Helper function to darken a hex color

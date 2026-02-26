@@ -580,17 +580,17 @@
                         <svg id="emotionRainbowSvg" viewBox="0 0 1200 120" style="width: 100%; height: 100%;">
                             <!-- Rainbow segments - initially transparent -->
                             <!-- POWER (Red) - Outermost -->
-                            <path id="rainbow-power" d="M 0,120 A 100,100 0 0 1 1200,120 L 1200,110 A 90,90 0 0 0 0,110 Z" fill="transparent" stroke="none"></path>
+                            <path id="rainbow-power" d="M 0,120 A 600,40 0 0 1 1200,120 L 1200,110 A 600,30 0 0 0 0,110 Z" fill="transparent" stroke="none"></path>
                             <!-- POSSESSION (Orange) -->
-                            <path id="rainbow-possession" d="M 0,110 A 90,90 0 0 1 1200,110 L 1200,100 A 80,80 0 0 0 0,100 Z" fill="transparent" stroke="none"></path>
+                            <path id="rainbow-possession" d="M 0,110 A 600,30 0 0 1 1200,110 L 1200,100 A 600,20 0 0 0 0,100 Z" fill="transparent" stroke="none"></path>
                             <!-- CRAVE (Pink) -->
-                            <path id="rainbow-crave" d="M 0,100 A 80,80 0 0 1 1200,100 L 1200,90 A 70,70 0 0 0 0,90 Z" fill="transparent" stroke="none"></path>
+                            <path id="rainbow-crave" d="M 0,100 A 600,20 0 0 1 1200,100 L 1200,90 A 600,10 0 0 0 0,90 Z" fill="transparent" stroke="none"></path>
                             <!-- EMPATHY (Green) -->
-                            <path id="rainbow-empathy" d="M 0,90 A 70,70 0 0 1 1200,90 L 1200,80 A 60,60 0 0 0 0,80 Z" fill="transparent" stroke="none"></path>
+                            <path id="rainbow-empathy" d="M 0,90 A 600,10 0 0 1 1200,90 L 1200,80 A 600,0 0 0 0 0,80 Z" fill="transparent" stroke="none"></path>
                             <!-- LOSS (Purple) -->
-                            <path id="rainbow-loss" d="M 0,80 A 60,60 0 0 1 1200,80 L 1200,70 A 50,50 0 0 0 0,70 Z" fill="transparent" stroke="none"></path>
+                            <path id="rainbow-loss" d="M 0,80 A 600,0 0 0 1 1200,80 L 1200,70 A 600,-10 0 0 0 0,70 Z" fill="transparent" stroke="none"></path>
                             <!-- EMPTINESS (Deep Blue) - Innermost -->
-                            <path id="rainbow-emptiness" d="M 0,70 A 50,50 0 0 1 1200,70 L 1200,60 A 40,40 0 0 0 0,60 Z" fill="transparent" stroke="none"></path>
+                            <path id="rainbow-emptiness" d="M 0,70 A 600,-10 0 0 1 1200,70 L 1200,60 A 600,-20 0 0 0 0,60 Z" fill="transparent" stroke="none"></path>
                         </svg>
                     </div>
                 </div>
@@ -776,14 +776,14 @@
                 categoryCounts[w.category] = (categoryCounts[w.category] || 0) + 1;
             });
 
-            // Base path configurations for each category (outer radius, inner radius, y positions)
+            // Base path configurations for each category (x-radius, y-radius, y positions)
             const basePaths = {
-                POWER: { outerR: 100, innerR: 90, outerY: 120, innerY: 110 },
-                POSSESSION: { outerR: 90, innerR: 80, outerY: 110, innerY: 100 },
-                CRAVE: { outerR: 80, innerR: 70, outerY: 100, innerY: 90 },
-                EMPATHY: { outerR: 70, innerR: 60, outerY: 90, innerY: 80 },
-                LOSS: { outerR: 60, innerR: 50, outerY: 80, innerY: 70 },
-                EMPTINESS: { outerR: 50, innerR: 40, outerY: 70, innerY: 60 }
+                POWER: { xR: 600, yR: 40, innerYR: 30, outerY: 120, innerY: 110 },
+                POSSESSION: { xR: 600, yR: 30, innerYR: 20, outerY: 110, innerY: 100 },
+                CRAVE: { xR: 600, yR: 20, innerYR: 10, outerY: 100, innerY: 90 },
+                EMPATHY: { xR: 600, yR: 10, innerYR: 0, outerY: 90, innerY: 80 },
+                LOSS: { xR: 600, yR: 0, innerYR: -10, outerY: 80, innerY: 70 },
+                EMPTINESS: { xR: 600, yR: -10, innerYR: -20, outerY: 70, innerY: 60 }
             };
 
             // Fill active rainbow segments with colors based on intensity
@@ -801,15 +801,15 @@
                     // Make color darker/deeper based on intensity
                     const darkenedColor = darkenColor(baseColor, intensity * 30);
                     
-                    // Make segment thicker based on intensity (increase outer radius, decrease inner radius)
-                    const thicknessBonus = intensity * 8; // Up to 8px thicker
-                    const newOuterR = base.outerR + thicknessBonus;
-                    const newInnerR = Math.max(10, base.innerR - thicknessBonus * 0.3);
-                    const newOuterY = Math.min(118, base.outerY + thicknessBonus * 0.5);
-                    const newInnerY = Math.max(10, base.innerY - thicknessBonus * 0.2);
+                    // Make segment thicker based on intensity (increase y-radius for thickness)
+                    const thicknessBonus = intensity * 5; // Up to 5px thicker
+                    const newYR = base.yR + thicknessBonus;
+                    const newInnerYR = base.innerYR + thicknessBonus;
+                    const newOuterY = base.outerY;
+                    const newInnerY = base.innerY;
                     
                     // Update the path with new thickness - keep within viewBox
-                    const newPath = `M 0,${newOuterY} A ${newOuterR},${newOuterR} 0 0 1 1200,${newOuterY} L 1200,${newInnerY} A ${newInnerR},${newInnerR} 0 0 0 0,${newInnerY} Z`;
+                    const newPath = `M 0,${newOuterY} A ${base.xR},${newYR} 0 0 1 1200,${newOuterY} L 1200,${newInnerY} A ${base.xR},${newInnerYR} 0 0 0 0,${newInnerY} Z`;
                     segment.setAttribute('d', newPath);
                     
                     // Apply darkened color with opacity

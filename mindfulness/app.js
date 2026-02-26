@@ -141,6 +141,13 @@ const app = {
         this.setupSaladCheck();
         this.renderProgress();
         this.initEmotionRibbon();
+        
+        // Check for tab query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const tabParam = urlParams.get('tab');
+        if (tabParam) {
+            this.navigate(tabParam);
+        }
     },
 
     // Initialize Emotion Ribbon

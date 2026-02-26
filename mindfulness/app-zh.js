@@ -849,6 +849,18 @@ const app = {
             '本应用仅供个人使用。\n' +
             '未经授权的复制、分发或修改被禁止。\n' +
             '内容和设计受版权法保护。');
+    },
+
+    toggleLearnSection(header) {
+        header.classList.toggle('active');
+        const content = header.nextElementSibling;
+        if (content) {
+            if (header.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+                content.style.maxHeight = '0';
+            }
+        }
     }
 };
 
@@ -871,4 +883,44 @@ document.addEventListener('keydown', (e) => {
 // 初始化
 document.addEventListener('DOMContentLoaded', () => {
     app.init();
+});
+
+// Tools dropdown functions
+function toggleToolsMenu() {
+    var menu = document.getElementById('toolsMenu');
+    var btn = document.getElementById('toolsBtn');
+    if (!menu || !btn) return;
+
+    if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+        menu.classList.remove('open');
+        btn.classList.remove('active');
+    } else {
+        var btnRect = btn.getBoundingClientRect();
+        menu.style.top = (btnRect.bottom + 8) + 'px';
+        menu.style.left = btnRect.left + 'px';
+        menu.style.display = 'block';
+        menu.classList.add('open');
+        btn.classList.add('active');
+    }
+}
+
+function closeToolsDropdown() {
+    var menu = document.getElementById('toolsMenu');
+    var btn = document.getElementById('toolsBtn');
+    if (menu) {
+        menu.style.display = 'none';
+        menu.classList.remove('open');
+        menu.style.top = 'auto';
+        menu.style.left = 'auto';
+    }
+    if (btn) btn.classList.remove('active');
+}
+
+document.addEventListener('click', function(e) {
+    var btn = document.getElementById('toolsBtn');
+    var menu = document.getElementById('toolsMenu');
+    if (btn && menu && !btn.contains(e.target) && !menu.contains(e.target)) {
+        closeToolsDropdown();
+    }
 });

@@ -17,6 +17,376 @@
         h1, h2, h3 {
             font-family: 'Noto Serif SC', serif;
         }
+
+        /* Tools Dropdown Styles */
+        .tools-dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tools-dropdown-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            background: transparent;
+            color: #64748b;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 9999px;
+            font-family: inherit;
+        }
+
+        .tools-dropdown-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #1e293b;
+        }
+
+        .tools-dropdown-btn.active {
+            background: #14b8a6;
+            color: white;
+        }
+
+        .tools-dropdown-menu {
+            display: none;
+            position: fixed;
+            top: auto;
+            left: auto;
+            margin-top: 0.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            min-width: 220px;
+            padding: 0.5rem;
+            z-index: 9999;
+        }
+
+        .tools-dropdown-menu.open {
+            display: block;
+        }
+
+        .tools-dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #1e293b;
+            text-decoration: none;
+            font-size: 0.875rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .tools-dropdown-menu a:hover {
+            background: rgba(20, 184, 166, 0.1);
+            color: #14b8a6;
+        }
+
+        /* Learn Tab Styles */
+        .learn-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 1rem;
+            color: white;
+        }
+
+        .learn-header h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.75rem;
+        }
+
+        .learn-subtitle {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .learn-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .learn-section {
+            background: white;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .learn-section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .learn-section-header:hover {
+            background: #f8fafc;
+        }
+
+        .learn-section-header.active {
+            border-bottom-color: #e2e8f0;
+        }
+
+        .learn-icon {
+            font-size: 1.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            border-radius: 0.75rem;
+        }
+
+        .learn-section-header h3 {
+            flex: 1;
+            margin: 0;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+
+        .learn-toggle {
+            color: #64748b;
+            transition: transform 0.3s;
+        }
+
+        .learn-section-header.active .learn-toggle {
+            transform: rotate(180deg);
+        }
+
+        .learn-section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .learn-section-header.active + .learn-section-content {
+            max-height: 2000px;
+        }
+
+        .learn-summary {
+            padding: 1rem 1.5rem;
+            margin: 0;
+            color: #64748b;
+            font-style: italic;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .learn-detail {
+            padding: 1.5rem;
+        }
+
+        .learn-detail p {
+            margin: 0 0 1rem 0;
+            line-height: 1.6;
+            color: #334155;
+        }
+
+        .learn-key-point {
+            display: flex;
+            gap: 1rem;
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .key-icon {
+            font-size: 1.25rem;
+        }
+
+        .learn-key-point p {
+            margin: 0;
+            flex: 1;
+        }
+
+        .learn-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .learn-comparison-item {
+            padding: 1rem;
+            border-radius: 0.75rem;
+        }
+
+        .learn-comparison-item.negative {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+
+        .learn-comparison-item.positive {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+
+        .learn-comparison-item h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .learn-comparison-item p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .learn-exercises {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .learn-exercise {
+            background: #f8fafc;
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .learn-exercise h4 {
+            margin: 0 0 0.75rem 0;
+            color: #1e293b;
+        }
+
+        .learn-exercise p {
+            margin: 0 0 0.5rem 0;
+        }
+
+        .learn-exercise ul {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.5rem;
+        }
+
+        .learn-exercise li {
+            margin-bottom: 0.5rem;
+        }
+
+        .learn-summary-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+        }
+
+        .learn-summary-card h3 {
+            margin: 0 0 1rem 0;
+        }
+
+        .learn-summary-card p {
+            margin: 0 0 1rem 0;
+            line-height: 1.6;
+        }
+
+        .learn-summary-card ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .learn-summary-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .learn-final {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 1.5rem !important;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .learn-subsection {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .learn-subsection:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .learn-subsection h4 {
+            margin: 0 0 0.75rem 0;
+            color: #1e293b;
+            font-size: 1.05rem;
+        }
+
+        .learn-parts-list {
+            margin: 0.75rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .learn-parts-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .learn-transformation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 1rem;
+        }
+
+        .learn-from, .learn-to {
+            text-align: center;
+            flex: 1;
+        }
+
+        .learn-from h5, .learn-to h5 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1rem;
+        }
+
+        .learn-from ul, .learn-to ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .learn-from li, .learn-to li {
+            margin-bottom: 0.25rem;
+            color: #64748b;
+        }
+
+        .learn-arrow {
+            font-size: 2rem;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .learn-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .learn-transformation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .learn-arrow {
+                transform: rotate(90deg);
+            }
+        }
     </style>
 </head>
 <body>
@@ -28,10 +398,14 @@
                 <li><a href="#" onclick="app.navigate('home')">首页</a></li>
                 <li><a href="#" onclick="app.navigate('cycle')">权力-占有循环</a></li>
                 <li><a href="#" onclick="app.navigate('assessment')">AI评估</a></li>
+                <li><a href="emotion-explorer.html">🎨 情绪探索器</a></li>
+                <li><a href="emotion-balance.html">⚡ 情绪平衡</a></li>
                 <li><a href="#" onclick="app.navigate('salad')">情绪沙拉检测</a></li>
+                <li><a href="salad-compass.html">🥗 沙拉指南针</a></li>
                 <li><a href="#" onclick="app.navigate('interventions')">干预工具</a></li>
                 <li><a href="#" onclick="app.navigate('journal')">日记</a></li>
                 <li><a href="#" onclick="app.navigate('progress')">进度</a></li>
+                <li><a href="#" onclick="app.navigate('learn')">📚 学习</a></li>
             </ul>
         </nav>
 
@@ -48,10 +422,24 @@
                     <button class="nav-btn active" data-tab="home">首页</button>
                     <button class="nav-btn" data-tab="cycle">循环</button>
                     <button class="nav-btn" data-tab="assessment">AI聊天</button>
-                    <button class="nav-btn" data-tab="salad">沙拉</button>
-                    <button class="nav-btn" data-tab="interventions">工具</button>
+                    
+                    <!-- Tools Dropdown -->
+                    <div class="tools-dropdown-container" id="toolsContainer">
+                        <button class="tools-dropdown-btn" id="toolsBtn" type="button" onclick="toggleToolsMenu();">
+                            工具 <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
+                        </button>
+                        <div class="tools-dropdown-menu" id="toolsMenu">
+                            <a href="emotion-explorer.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🎨 情绪探索器</a>
+                            <a href="emotion-balance.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">⚡ 情绪平衡</a>
+                            <a href="salad-compass.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥗 沙拉指南针</a>
+                            <a href="#" onclick="app.navigate('salad'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥬 完整沙拉检测</a>
+                            <a href="#" onclick="app.navigate('interventions'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🧰 干预工具</a>
+                        </div>
+                    </div>
+                    
                     <button class="nav-btn" data-tab="journal">日记</button>
                     <button class="nav-btn" data-tab="progress">进度</button>
+                    <button class="nav-btn" data-tab="learn">学习</button>
                 </div>
             </nav>
 
@@ -438,6 +826,254 @@
                     <div class="insights-card">
                         <h3>洞察</h3>
                         <div id="insightsList"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learn Tab -->
+            <div id="learn" class="tab">
+                <div class="learn-header">
+                    <h2>📚 学习与理解</h2>
+                    <p class="learn-subtitle">了解为什么我们会被吸引——以及如何重获你的力量</p>
+                </div>
+
+                <div class="learn-content">
+                    <!-- Section 1: Visual Hook -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">👁️</span>
+                            <h3>为什么大脑喜欢某些颜色和外观</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">你的眼睛消耗大脑44%的能量。因为视觉处理很昂贵，大脑会用多巴胺和内啡肽奖励"简单"的视觉。</p>
+                            <div class="learn-detail">
+                                <p><strong>科学原理：</strong>你的大脑是个节能主义者。当你看到视觉"流畅"的东西（对称、清晰、吸引人），大脑会说"啊，真轻松！"并给你愉悦奖励。</p>
+                                <div class="learn-key-point">
+                                    <span class="key-icon">⚠️</span>
+                                    <p><strong>注意：</strong>看起来感觉好的东西不一定对你有好处。这可能是你眼睛的"空热量"。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Stroop Effect -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">🧠</span>
+                            <h3>斯特鲁普效应：颜色可以劫持你的大脑</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">视觉信息和概念信息在大脑中竞争——有时视觉会自动获胜。</p>
+                            <div class="learn-detail">
+                                <p><strong>实验：</strong>给某人看用蓝色墨水写的"红"字。他们的大脑会慢下来，因为它必须在文字和颜色之间斗争。</p>
+                                <div class="learn-key-point">
+                                    <span class="key-icon">💡</span>
+                                    <p><strong>这意味着：</strong>颜色和外观对你的注意力有控制力，无论你是否愿意。你的大脑在你决定之前自动处理它们。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Aesthetic Arrest -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">✨</span>
+                            <h3>审美停滞：当美让你呆住</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">那种被某物美丽"惊得呆住"的感觉——暂时逃离欲望和挣扎。</p>
+                            <div class="learn-detail">
+                                <p>哲学家叔本华称这为成为"纯粹的、无意志的、无痛苦的知识主体"。那一刻，你忘记了问题和渴望。</p>
+                                <div class="learn-key-point">
+                                    <span class="key-icon">⚠️</span>
+                                    <p><strong>问题：</strong>在审美停滞期间，你并不在控制中。那个东西控制了你。你是旁观者，不是行动者。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Locus of Control -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">🎯</span>
+                            <h3>控制点：你把力量放在哪里？</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">内在 vs 外在：你相信行动塑造生活，还是运气/命运/他人控制发生的一切？</p>
+                            <div class="learn-detail">
+                                <p><strong>外在控制点：</strong>你相信力量来自外部——他人的关注、拥有的东西、外表。你不断寻找钩子，因为需要它们作为燃料。</p>
+                                <p><strong>内在控制点：</strong>你相信力量来自内部——你的选择、价值观、回应方式。钩子失去控制，因为你不需要它们。</p>
+                                <div class="learn-key-point">
+                                    <span class="key-icon">🔗</span>
+                                    <p><strong>与创伤的联系：</strong>在不可预测的环境中成长教会你放弃控制——这让你活了下来。但作为成年人，这让你容易受到每个闪亮事物的影响。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 5: Triggers vs Glimmers -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">⚡</span>
+                            <h3>触发器与微光：神经系统寻找什么</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">你的身体扫描危险（触发器）和安全（微光）。两者都能"钩住"你——但一个导致伤害，另一个带来治愈。</p>
+                            <div class="learn-detail">
+                                <div class="learn-comparison">
+                                    <div class="learn-comparison-item negative">
+                                        <h4>🔴 触发器</h4>
+                                        <p>激活生存模式的感官提示——战斗、逃跑或冻结。基于储存在你身体里的过去危险。</p>
+                                    </div>
+                                    <div class="learn-comparison-item positive">
+                                        <h4>🟢 微光</h4>
+                                        <p>告诉神经系统"你安全了"的小提示。温暖的颜色、鸟鸣、阳光。激活迷走神经（平静和连接）。</p>
+                                    </div>
+                                </div>
+                                <div class="learn-key-point">
+                                    <span class="key-icon">💡</span>
+                                    <p><strong>练习：</strong>你可以训练自己注意微光。你注意到越多的安全时刻，神经系统就越明白世界不全是危险。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 6: Somatic Exercises -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">🧘</span>
+                            <h3>身体练习：重获代理权的实用工具</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">建立不依赖外部钩子的内在力量的具体练习。</p>
+                            <div class="learn-exercises">
+                                <div class="learn-exercise">
+                                    <h4>🤲 容器练习（自我拥抱）</h4>
+                                    <p><strong>方法：</strong>一只手放在额头，一只手放在心口。感受温暖。想象你的身体是一个可以容纳任何感觉而不会破碎的容器。</p>
+                                    <p><strong>为什么：</strong>创造身体边界。告诉神经系统："我能承受这个。我仍在控制中。"</p>
+                                </div>
+                                <div class="learn-exercise">
+                                    <h4>📢 Voo声音</h4>
+                                    <p><strong>方法：</strong>深吸一口气，发出低沉的"voooo"声音，像雾号一样。感受它在胸腔的振动。</p>
+                                    <p><strong>为什么：</strong>振动刺激迷走神经，平静神经系统。适合当你感到冻结时。</p>
+                                </div>
+                                <div class="learn-exercise">
+                                    <h4>🔄 摆动</h4>
+                                    <p><strong>方法：</strong>在痛苦和安全之间轻轻移动注意力。注意紧绷感...然后是你脚下的地板...然后回到紧绷感...然后是你的呼吸。</p>
+                                    <p><strong>为什么：</strong>教会神经系统它可以在不适中进出而不会被摧毁。</p>
+                                </div>
+                                <div class="learn-exercise">
+                                    <h4>🦶 接地练习</h4>
+                                    <ul>
+                                        <li><strong>脚跟下落：</strong>抬起脚跟，砰地落下。感受冲击。"占据空间是安全的。"</li>
+                                        <li><strong>身体扫描：</strong>慢慢注意身体每个部位，只是观察。</li>
+                                        <li><strong>盒式呼吸：</strong>吸气4秒，屏息4秒，呼气4秒，屏息4秒。提示放松。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 7: Emotional Transformation -->
+                    <div class="learn-section">
+                        <div class="learn-section-header" onclick="app.toggleLearnSection(this)">
+                            <span class="learn-icon">🦋</span>
+                            <h3>情绪转变：从外在力量到内在力量</h3>
+                            <i class="fas fa-chevron-down learn-toggle"></i>
+                        </div>
+                        <div class="learn-section-content">
+                            <p class="learn-summary">理解你的情绪模式，以及从通过占有获取力量到在内心找到力量的旅程。</p>
+                            <div class="learn-detail">
+                                <div class="learn-subsection">
+                                    <h4>🥗 情绪盘子隐喻（你的沙拉）</h4>
+                                    <p>你已经有一种聪明的方式来思考你的感受。你知道当一种感觉占据主导（太"辣"）时，你会寻找平衡——即使有时你选择错误的东西（"油腻"的东西）。</p>
+                                </div>
+
+                                <div class="learn-subsection">
+                                    <h4>🌶️ "辛辣和油腻"循环（补偿控制）</h4>
+                                    <p>人类需要感觉生活是有秩序的。当某事动摇这种感觉（失去力量）时，会产生焦虑——"辣"的感觉。为了应对，你伸手去抓能恢复控制的东西。"油腻"的选择提供快速缓解但之后造成问题。</p>
+                                </div>
+
+                                <div class="learn-subsection">
+                                    <h4>👥 你的"部分"（内部家庭系统）</h4>
+                                    <p>你的心理有不同的"部分"，有不同的工作：</p>
+                                    <ul class="learn-parts-list">
+                                        <li><strong>被放逐者：</strong>承载无力感和空虚感的痛苦。</li>
+                                        <li><strong>管理者：</strong>试图通过成就获得力量来保护你免受痛苦。</li>
+                                        <li><strong>消防员：</strong>当管理者失败，痛苦突破时，这部分恐慌并抓取快速修复。</li>
+                                        <li><strong>真我：</strong>观察这一切并知道它是错的"你"。那平静的部分是你真正的自己。</li>
+                                    </ul>
+                                </div>
+
+                                <div class="learn-subsection">
+                                    <h4>🌫️ 为什么你现在感到迷失（中性区）</h4>
+                                    <p>你在"中性区"——身份之间的时期。你已经放弃了旧的方式（通过占有抓取力量），但新的方式（在内心找到力量）还没有完全形成。这个阶段感觉像困惑、空虚，不知道做什么。</p>
+                                    <div class="learn-key-point">
+                                        <span class="key-icon">✨</span>
+                                        <p><strong>希望：</strong>这是正常和必要的。就像在两个房间之间的走廊。你离开了一个房间但还没进入下一个。困惑意味着你正好在需要的地方——成长中。</p>
+                                    </div>
+                                </div>
+
+                                <div class="learn-subsection">
+                                    <h4>💪 内在力量实际是什么（斯多葛主义）</h4>
+                                    <p>真正的力量来自区分你能控制什么和不能控制什么。你无法控制人们是否留下、项目是否成功、你是否失去地位。但你能控制你的判断、意图，以及如何应对渴望。</p>
+                                    <div class="learn-key-point">
+                                        <span class="key-icon">💡</span>
+                                        <p><strong>真相：</strong>真正的力量不是关于控制他人或抓住东西。真正的力量是能够与不适共处，选择如何回应，并在不需要外部证明的情况下知道你的价值。它是安静的。不需要观众。没人能夺走它。</p>
+                                    </div>
+                                </div>
+
+                                <div class="learn-subsection">
+                                    <h4>🎯 底线：这对你意味着什么</h4>
+                                    <p>你正处于深刻转变的中间。你已经从：</p>
+                                    <div class="learn-transformation">
+                                        <div class="learn-from">
+                                            <h5>外在力量</h5>
+                                            <ul>
+                                                <li>抓取</li>
+                                                <li>占有</li>
+                                                <li>控制</li>
+                                            </ul>
+                                        </div>
+                                        <div class="learn-arrow">→</div>
+                                        <div class="learn-to">
+                                            <h5>内在力量</h5>
+                                            <ul>
+                                                <li>存在</li>
+                                                <li>连接</li>
+                                                <li>选择</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p>困惑和空虚不是失败的迹象。它们是旧模式正在消亡、新东西正在诞生的迹象。占有的冲动从来不是关于目标——它是试图填补早期创伤和失去力量留下的空虚。</p>
+                                    <div class="learn-key-point">
+                                        <span class="key-icon">🔥</span>
+                                        <p><strong>力量一直在你里面。</strong>你只是现在才学习如何感受它。继续与问题共处。继续注意钩子何时拉动。继续选择暂停而不是抓取。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary -->
+                    <div class="learn-summary-card">
+                        <h3>🎯 这一切意味着什么</h3>
+                        <p>当你被颜色、面孔、外观钩住时——这不是软弱。这是你的大脑在做大脑该做的事。</p>
+                        <p><strong>问题不是钩子。问题是当钩子成为感受活着的唯一方式。</strong></p>
+                        <p>解决方案是建立比任何外部钩子都强大的内在东西：</p>
+                        <ul>
+                            <li>注意何时被钩住</li>
+                            <li>感受身体里正在发生什么</li>
+                            <li>选择不同的回应——即使只是一瞬间</li>
+                            <li>在自己内心找到安全和力量</li>
+                        </ul>
+                        <p class="learn-final">钩子永远会在那里。但你不必再受它摆布。</p>
                     </div>
                 </div>
             </div>

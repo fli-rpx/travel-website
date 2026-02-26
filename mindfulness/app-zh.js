@@ -135,6 +135,17 @@ const app = {
         this.renderCycle();
         this.setupSaladCheck();
         this.renderProgress();
+        
+        // Check for tab query parameter or hash
+        const urlParams = new URLSearchParams(window.location.search);
+        const tabParam = urlParams.get('tab');
+        const hash = window.location.hash.replace('#', '');
+        
+        if (tabParam) {
+            this.navigate(tabParam);
+        } else if (hash) {
+            this.navigate(hash);
+        }
     },
 
     setupNavigation() {

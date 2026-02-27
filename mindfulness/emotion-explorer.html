@@ -916,7 +916,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="emotion-ribbon.js"></script>
+    <script src="emotion-ribbon.js?v=2"></script>
     <script>
         // Selected words state
         let selectedWords = [];
@@ -969,8 +969,15 @@
         let currentTab = 'POWER';
 
         function init() {
-            switchTab('POWER');
-            updateUI();
+            console.log('Initializing emotion explorer...');
+            console.log('EmotionRibbon available:', !!window.EmotionRibbon);
+            console.log('EmotionRibbon.lexicon:', window.EmotionRibbon ? Object.keys(window.EmotionRibbon.lexicon || {}) : 'N/A');
+            
+            // Wait a bit to ensure script is loaded
+            setTimeout(() => {
+                switchTab('POWER');
+                updateUI();
+            }, 100);
         }
 
         // Switch between category tabs

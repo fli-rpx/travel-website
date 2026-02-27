@@ -585,12 +585,87 @@
             margin-top: 0.25rem;
         }
 
+        .words-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .words-display-area {
             background: white;
             border-radius: 1.5rem;
             padding: 2rem;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            min-height: 300px;
+            min-height: 400px;
+        }
+
+        .selected-words-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .selected-words-display {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            flex: 1;
+            min-height: 200px;
+        }
+
+        .selected-words-display h4 {
+            font-size: 1rem;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        #selectedWordsList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .selected-word-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .selected-word-tag:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .selected-word-tag .remove {
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        @media (max-width: 900px) {
+            .words-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .selected-words-panel {
+                order: -1;
+            }
+            
+            .selected-words-display {
+                min-height: auto;
+            }
         }
 
         .words-category-header {
@@ -738,34 +813,6 @@
                     </div>
                 </div>
 
-                <div class="selected-words-display">
-                    <h4><i class="fas fa-check-circle"></i> Selected Words</h4>
-                    <div id="selectedWordsList">
-                        <span style="color: #94a3b8; font-size: 0.875rem;">No words selected yet...</span>
-                    </div>
-                </div>
-
-                <button class="clear-all-btn" onclick="clearAllWords()">
-                    <i class="fas fa-trash-alt"></i> Clear All
-                </button>
-
-                <div class="stats-bar">
-                    <div class="stat-item">
-                        <div class="stat-value" id="totalSelected">0</div>
-                        <div class="stat-label">Words Selected</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value" id="categoriesActive">0</div>
-                        <div class="stat-label">Categories</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value" id="dominantCategory">-</div>
-                        <div class="stat-label">Dominant</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Categories Tabs -->
         <section class="categories-tabs-section">
             <div class="tabs-container">
@@ -801,8 +848,39 @@
                 </button>
             </div>
             
-            <div class="words-display-area" id="wordsDisplayArea">
-                <!-- Words will be populated by JavaScript -->
+            <!-- Two column layout: Words selection + Selected words -->
+            <div class="words-layout">
+                <div class="words-display-area" id="wordsDisplayArea">
+                    <!-- Words will be populated by JavaScript -->
+                </div>
+                
+                <div class="selected-words-panel">
+                    <div class="selected-words-display">
+                        <h4><i class="fas fa-check-circle"></i> Selected Words</h4>
+                        <div id="selectedWordsList">
+                            <span style="color: #94a3b8; font-size: 0.875rem;">No words selected yet...</span>
+                        </div>
+                    </div>
+                    
+                    <button class="clear-all-btn" onclick="clearAllWords()">
+                        <i class="fas fa-trash-alt"></i> Clear All
+                    </button>
+                    
+                    <div class="stats-bar">
+                        <div class="stat-item">
+                            <div class="stat-value" id="totalSelected">0</div>
+                            <div class="stat-label">Words</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="categoriesActive">0</div>
+                            <div class="stat-label">Categories</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="dominantCategory">-</div>
+                            <div class="stat-label">Dominant</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>

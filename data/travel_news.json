@@ -1,126 +1,6 @@
 {
-  "last_updated": "2026-02-25",
+  "last_updated": "2026-02-27",
   "news": [
-    {
-      "id": "news-019",
-      "date": "Feb 21, 2026",
-      "category": "World AI",
-      "title": "Google DeepMind Achieves Breakthrough in Protein Folding",
-      "excerpt": "New AI model predicts protein structures with 99% accuracy, opening new possibilities for drug discovery and disease treatment.",
-      "content": "Google DeepMind has announced a major breakthrough in protein folding prediction with their new AI model achieving 99% accuracy in predicting protein structures. This development could revolutionize drug discovery and our understanding of diseases.\n\nThe new model, an evolution of AlphaFold, can predict protein structures in minutes rather than months, dramatically accelerating research timelines.\n\nApplications Include:\n- Drug discovery for previously untreatable diseases\n- Understanding genetic disorders at molecular level\n- Developing new enzymes for industrial applications\n- Personalized medicine based on individual protein profiles\n\nPharmaceutical companies are already partnering with DeepMind to apply this technology to their research pipelines, with several promising drug candidates expected to enter clinical trials within the next two years."
-    },
-    {
-      "id": "news-020",
-      "date": "Feb 20, 2026",
-      "category": "World AI",
-      "title": "EU Passes Comprehensive AI Act Implementation Rules",
-      "excerpt": "European Union finalizes detailed regulations for AI systems, establishing global standards for transparency and accountability.",
-      "content": "The European Union has passed comprehensive implementation rules for the AI Act, establishing the world's most detailed regulatory framework for artificial intelligence systems.\n\nThe new rules categorize AI applications by risk level and impose strict requirements on high-risk systems used in healthcare, transportation, and criminal justice.\n\nKey Provisions:\n- Mandatory transparency for AI-generated content\n- Strict limits on facial recognition in public spaces\n- Requirements for human oversight of high-risk AI\n- Heavy fines for non-compliance (up to 7% of global revenue)\n- Bans on social scoring systems and manipulative AI\n\nThe regulations are expected to influence AI policy worldwide, with many countries likely to adopt similar frameworks. Tech companies are racing to ensure compliance before the rules take effect in 2027."
-    },
-    {
-      "id": "news-021",
-      "date": "Feb 19, 2026",
-      "category": "World AI",
-      "title": "Microsoft Integrates Copilot Across Entire Office Suite",
-      "excerpt": "AI assistant now available in Word, Excel, PowerPoint, Outlook, and Teams with new collaborative features.",
-      "content": "Microsoft has completed the integration of Copilot AI across its entire Office 365 suite, bringing AI-powered assistance to Word, Excel, PowerPoint, Outlook, and Teams.\n\nThe update introduces new collaborative features allowing multiple users to work with AI simultaneously on shared documents.\n\nNew Capabilities:\n- Real-time document co-creation with AI suggestions\n- Automated data analysis and visualization in Excel\n- AI-generated presentation designs in PowerPoint\n- Smart email drafting and prioritization in Outlook\n- Meeting transcription and action item tracking in Teams\n\nMicrosoft reports that over 100 million users have already adopted Copilot features, with productivity improvements averaging 30% according to early studies."
-    },
-    {
-      "id": "news-022",
-      "date": "Feb 18, 2026",
-      "category": "World AI",
-      "title": "Tesla Unveils Next-Gen Full Self-Driving System",
-      "excerpt": "Version 13 of FSD promises true autonomous driving capabilities with improved safety and broader road coverage.",
-      "content": "Tesla has unveiled version 13 of its Full Self-Driving (FSD) system, claiming it achieves true Level 4 autonomy in most driving conditions. The update represents a significant leap forward in autonomous vehicle technology.\n\nKey Improvements:\n- 40% reduction in required human interventions\n- Expanded coverage to rural roads and complex urban environments\n- Enhanced handling of adverse weather conditions\n- Improved pedestrian and cyclist detection\n- New fleet learning from millions of vehicles\n\nTesla plans to begin robotaxi trials in select cities by mid-2026, pending regulatory approval. The company is also negotiating with multiple countries to deploy autonomous taxi services."
-    },
-    {
-      "id": "news-023",
-      "date": "Feb 17, 2026",
-      "category": "World AI",
-      "title": "Anthropic's Claude 4 Sets New Standards for AI Safety",
-      "excerpt": "Latest version of Claude demonstrates improved reasoning while maintaining strong safety guardrails and transparency.",
-      "content": "Anthropic has released Claude 4, setting new benchmarks for AI safety and reliability while matching or exceeding the capabilities of competing models.\n\nThe new version features improved reasoning abilities, better handling of ambiguous queries, and enhanced transparency about its limitations and uncertainties.\n\nSafety Features:\n- Advanced constitutional AI training\n- Improved refusal of harmful requests\n- Better calibration of confidence levels\n- Transparent reasoning process explanations\n- Reduced hallucination rates by 60%\n\nAnthropic has also published detailed research on Claude 4's training methodology and safety evaluations, setting a new standard for transparency in the industry."
-    },
-    {
-      "id": "news-024",
-      "date": "Feb 16, 2026",
-      "category": "World AI",
-      "title": "Amazon Launches AI-Powered Healthcare Diagnostics",
-      "excerpt": "New service uses machine learning to analyze medical images and patient data for early disease detection.",
-      "content": "Amazon has launched a new AI-powered healthcare diagnostics service that can analyze medical images, lab results, and patient history to assist doctors in early disease detection.\n\nThe system has demonstrated high accuracy in identifying early signs of cancer, heart disease, and neurological conditions.\n\nKey Features:\n- Analysis of X-rays, CT scans, and MRIs\n- Integration with electronic health records\n- Predictive risk assessment for chronic diseases\n- Real-time alerts for critical findings\n- HIPAA-compliant cloud infrastructure\n\nThe service is initially available to healthcare providers in the United States, with plans for international expansion later this year."
-    },
-    {
-      "id": "news-025",
-      "date": "Feb 15, 2026",
-      "category": "World AI",
-      "title": "Meta Releases Open-Source Llama 4 Model",
-      "excerpt": "Latest version of popular open-source AI model rivals commercial competitors while remaining freely available.",
-      "content": "Meta has released Llama 4, the latest version of its popular open-source AI model, which matches or exceeds the performance of many commercial alternatives while remaining freely available to researchers and developers.\n\nThe new model features improved multilingual capabilities, better code generation, and enhanced reasoning abilities.\n\nKey Improvements:\n- 2 trillion parameter model available for free\n- Support for 100+ languages\n- Improved coding capabilities across 50+ programming languages\n- Better instruction following and reasoning\n- New safety training techniques\n\nMeta's continued commitment to open-source AI has been praised by the research community, though some critics raise concerns about potential misuse of powerful freely available models."
-    },
-    {
-      "id": "news-026",
-      "date": "Feb 22, 2026",
-      "category": "China AI",
-      "title": "Baidu's Ernie Bot Surpasses 400 Million Users",
-      "excerpt": "China's leading AI chatbot continues rapid growth with new enterprise features and multimodal capabilities.",
-      "content": "Baidu has announced that its Ernie Bot AI assistant has surpassed 400 million users, cementing its position as China's most popular AI chatbot. The company also unveiled new enterprise-focused features and enhanced multimodal capabilities.\n\nNew Features:\n- Integration with Baidu's search and cloud services\n- Enterprise API for business applications\n- Image generation and analysis capabilities\n- Voice interaction improvements\n- Support for 50+ document formats\n\nBaidu is positioning Ernie Bot as the foundation for China's AI ecosystem, with thousands of developers building applications on top of the platform. The company plans to expand internationally later this year."
-    },
-    {
-      "id": "news-027",
-      "date": "Feb 21, 2026",
-      "category": "China AI",
-      "title": "Alibaba Unveils Tongyi Qianwen 3.0 with Video Generation",
-      "excerpt": "Latest version of Alibaba's AI model adds text-to-video capabilities and improved reasoning for business applications.",
-      "content": "Alibaba has released Tongyi Qianwen 3.0, the latest version of its large language model, featuring new text-to-video generation capabilities and enhanced reasoning for enterprise applications.\n\nThe update positions Alibaba as a major competitor in the generative AI space, with capabilities matching or exceeding many Western alternatives.\n\nNew Capabilities:\n- Text-to-video generation up to 60 seconds\n- Advanced code generation and debugging\n- Enhanced mathematical reasoning\n- Multilingual support including 10 Chinese dialects\n- Integration with Alibaba Cloud services\n\nAlibaba is offering the model through its cloud platform, targeting businesses looking to build AI-powered applications with strong data sovereignty guarantees."
-    },
-    {
-      "id": "news-028",
-      "date": "Feb 20, 2026",
-      "category": "China AI",
-      "title": "China Approves 40+ New AI Models for Public Use",
-      "excerpt": "Regulatory clearance for new AI services signals continued government support for domestic AI development.",
-      "content": "Chinese regulators have approved over 40 new AI models for public use, including large language models from ByteDance, Tencent, and several startups. This latest batch of approvals brings the total number of licensed AI services in China to over 200.\n\nApproved Models Include:\n- ByteDance's Doubao chatbot\n- Tencent's Hunyuan model updates\n- Several industry-specific models for healthcare and finance\n- Educational AI tutoring systems\n- Manufacturing optimization tools\n\nThe approvals demonstrate China's commitment to fostering domestic AI development while maintaining regulatory oversight. All approved models must comply with content moderation requirements and data localization rules."
-    },
-    {
-      "id": "news-029",
-      "date": "Feb 19, 2026",
-      "category": "China AI",
-      "title": "SenseTime Launches New AI Chip for Edge Computing",
-      "excerpt": "Chinese AI unicorn releases domestically produced chip designed for smart cities and autonomous vehicles.",
-      "content": "SenseTime has launched a new AI chip designed specifically for edge computing applications, including smart cities, autonomous vehicles, and industrial automation. The chip is produced using domestic manufacturing processes.\n\nTechnical Specifications:\n- 200 TOPS AI computing power\n- Low power consumption for edge deployment\n- Support for multiple AI frameworks\n- Designed for harsh environmental conditions\n- Full software development kit available\n\nThe launch represents a significant step in China's push for AI chip self-sufficiency, reducing dependence on foreign semiconductor technology. SenseTime has already secured orders from several smart city projects."
-    },
-    {
-      "id": "news-030",
-      "date": "Feb 18, 2026",
-      "category": "China AI",
-      "title": "Huawei's Pangu Model Powers Smart Manufacturing",
-      "excerpt": "Industrial AI system deployed across thousands of Chinese factories, improving efficiency and reducing defects.",
-      "content": "Huawei's Pangu industrial AI model is now deployed across thousands of Chinese manufacturing facilities, delivering significant improvements in production efficiency and quality control.\n\nImplementation Results:\n- 25% average reduction in manufacturing defects\n- 15% improvement in production line efficiency\n- Predictive maintenance reducing downtime by 30%\n- Energy consumption optimization saving 20% on power costs\n- Quality inspection automation at 99.5% accuracy\n\nThe system is particularly effective in electronics, automotive, and textile manufacturing. Huawei is working with industry partners to expand deployment to overseas factories."
-    },
-    {
-      "id": "news-031",
-      "date": "Feb 17, 2026",
-      "category": "China AI",
-      "title": "Tencent's Hunyuan AI Integrates with WeChat",
-      "excerpt": "One billion WeChat users gain access to AI assistant for messaging, payments, and mini-program interactions.",
-      "content": "Tencent has integrated its Hunyuan AI model into WeChat, bringing AI capabilities to over one billion monthly active users. The integration allows users to access AI assistance directly within China's most popular messaging app.\n\nNew Capabilities:\n- AI-powered message composition and translation\n- Smart recommendations for mini-programs and services\n- Automated payment categorization and budgeting\n- Image and video content analysis\n- Voice-to-text with dialect support\n\nThe integration represents one of the largest AI deployments in history by user base. Tencent is gradually rolling out features to avoid overwhelming users and infrastructure."
-    },
-    {
-      "id": "news-032",
-      "date": "Feb 16, 2026",
-      "category": "China AI",
-      "title": "DJI Unveils AI-Powered Agricultural Drones",
-      "excerpt": "New drone systems use computer vision to optimize crop spraying, monitoring, and yield prediction for farmers.",
-      "content": "DJI has unveiled a new line of agricultural drones featuring advanced AI capabilities for precision farming. The systems use computer vision and machine learning to optimize crop management.\n\nKey Features:\n- Automated crop health monitoring and diagnosis\n- Precision pesticide and fertilizer application\n- Yield prediction with 95% accuracy\n- Integration with farm management software\n- Autonomous operation with obstacle avoidance\n\nThe drones are already deployed across millions of acres in China, with expansion to Southeast Asia and Latin America planned. DJI reports average cost savings of 30% and yield improvements of 15% for early adopters."
-    },
-    {
-      "id": "news-033",
-      "date": "Feb 15, 2026",
-      "category": "China AI",
-      "title": "iFlytek's Spark Model Revolutionizes Education",
-      "excerpt": "AI tutoring system now used by 50 million students across China for personalized learning and exam preparation.",
-      "content": "iFlytek's Spark AI model has become the dominant educational AI platform in China, with over 50 million students using the system for personalized learning and exam preparation.\n\nEducational Features:\n- Personalized study plans based on student performance\n- AI-powered essay grading and feedback\n- Real-time math problem solving with step-by-step explanations\n- Language learning with pronunciation correction\n- Mock exam generation based on curriculum\n\nThe system has demonstrated significant improvements in student outcomes, with users showing average score improvements of 15-20% on standardized tests. iFlytek is partnering with publishers to digitize textbooks and create interactive learning materials."
-    },
     {
       "id": "news-034",
       "date": "Feb 14, 2026",
@@ -265,6 +145,126 @@
       "title": "OpenAI Flagged School Shooting Suspect's Account But Didn't Alert Police",
       "excerpt": "OpenAI identified and banned a ChatGPT account belonging to a mass shooting suspect more than six months before the attack.",
       "content": "A troubling revelation: OpenAI identified and banned a ChatGPT account belonging to Jesse Van Rootselaar — the suspect in a recent mass shooting in British Columbia — more than six months before the attack.\n\nWhile the company detected concerning conversations through abuse detection systems, it did not notify Canadian authorities. The case raises serious questions about AI companies' responsibilities when they detect potential threats.\n\nKey Issues:\n- Account flagged and banned 6 months before incident\n- Concerning conversations detected by automated systems\n- No notification made to law enforcement\n- Raises questions about AI monitoring responsibilities\n\nThis incident highlights the complex ethical and legal questions surrounding AI platform monitoring and the balance between user privacy and public safety."
+    },
+    {
+      "id": "news-019",
+      "date": "Feb 21, 2026",
+      "category": "World AI",
+      "title": "Google DeepMind Achieves Breakthrough in Protein Folding",
+      "excerpt": "New AI model predicts protein structures with 99% accuracy, opening new possibilities for drug discovery and disease treatment.",
+      "content": "Google DeepMind has announced a major breakthrough in protein folding prediction with their new AI model achieving 99% accuracy in predicting protein structures. This development could revolutionize drug discovery and our understanding of diseases.\n\nThe new model, an evolution of AlphaFold, can predict protein structures in minutes rather than months, dramatically accelerating research timelines.\n\nApplications Include:\n- Drug discovery for previously untreatable diseases\n- Understanding genetic disorders at molecular level\n- Developing new enzymes for industrial applications\n- Personalized medicine based on individual protein profiles\n\nPharmaceutical companies are already partnering with DeepMind to apply this technology to their research pipelines, with several promising drug candidates expected to enter clinical trials within the next two years."
+    },
+    {
+      "id": "news-020",
+      "date": "Feb 20, 2026",
+      "category": "World AI",
+      "title": "EU Passes Comprehensive AI Act Implementation Rules",
+      "excerpt": "European Union finalizes detailed regulations for AI systems, establishing global standards for transparency and accountability.",
+      "content": "The European Union has passed comprehensive implementation rules for the AI Act, establishing the world's most detailed regulatory framework for artificial intelligence systems.\n\nThe new rules categorize AI applications by risk level and impose strict requirements on high-risk systems used in healthcare, transportation, and criminal justice.\n\nKey Provisions:\n- Mandatory transparency for AI-generated content\n- Strict limits on facial recognition in public spaces\n- Requirements for human oversight of high-risk AI\n- Heavy fines for non-compliance (up to 7% of global revenue)\n- Bans on social scoring systems and manipulative AI\n\nThe regulations are expected to influence AI policy worldwide, with many countries likely to adopt similar frameworks. Tech companies are racing to ensure compliance before the rules take effect in 2027."
+    },
+    {
+      "id": "news-021",
+      "date": "Feb 19, 2026",
+      "category": "World AI",
+      "title": "Microsoft Integrates Copilot Across Entire Office Suite",
+      "excerpt": "AI assistant now available in Word, Excel, PowerPoint, Outlook, and Teams with new collaborative features.",
+      "content": "Microsoft has completed the integration of Copilot AI across its entire Office 365 suite, bringing AI-powered assistance to Word, Excel, PowerPoint, Outlook, and Teams.\n\nThe update introduces new collaborative features allowing multiple users to work with AI simultaneously on shared documents.\n\nNew Capabilities:\n- Real-time document co-creation with AI suggestions\n- Automated data analysis and visualization in Excel\n- AI-generated presentation designs in PowerPoint\n- Smart email drafting and prioritization in Outlook\n- Meeting transcription and action item tracking in Teams\n\nMicrosoft reports that over 100 million users have already adopted Copilot features, with productivity improvements averaging 30% according to early studies."
+    },
+    {
+      "id": "news-022",
+      "date": "Feb 18, 2026",
+      "category": "World AI",
+      "title": "Tesla Unveils Next-Gen Full Self-Driving System",
+      "excerpt": "Version 13 of FSD promises true autonomous driving capabilities with improved safety and broader road coverage.",
+      "content": "Tesla has unveiled version 13 of its Full Self-Driving (FSD) system, claiming it achieves true Level 4 autonomy in most driving conditions. The update represents a significant leap forward in autonomous vehicle technology.\n\nKey Improvements:\n- 40% reduction in required human interventions\n- Expanded coverage to rural roads and complex urban environments\n- Enhanced handling of adverse weather conditions\n- Improved pedestrian and cyclist detection\n- New fleet learning from millions of vehicles\n\nTesla plans to begin robotaxi trials in select cities by mid-2026, pending regulatory approval. The company is also negotiating with multiple countries to deploy autonomous taxi services."
+    },
+    {
+      "id": "news-023",
+      "date": "Feb 17, 2026",
+      "category": "World AI",
+      "title": "Anthropic's Claude 4 Sets New Standards for AI Safety",
+      "excerpt": "Latest version of Claude demonstrates improved reasoning while maintaining strong safety guardrails and transparency.",
+      "content": "Anthropic has released Claude 4, setting new benchmarks for AI safety and reliability while matching or exceeding the capabilities of competing models.\n\nThe new version features improved reasoning abilities, better handling of ambiguous queries, and enhanced transparency about its limitations and uncertainties.\n\nSafety Features:\n- Advanced constitutional AI training\n- Improved refusal of harmful requests\n- Better calibration of confidence levels\n- Transparent reasoning process explanations\n- Reduced hallucination rates by 60%\n\nAnthropic has also published detailed research on Claude 4's training methodology and safety evaluations, setting a new standard for transparency in the industry."
+    },
+    {
+      "id": "news-024",
+      "date": "Feb 16, 2026",
+      "category": "World AI",
+      "title": "Amazon Launches AI-Powered Healthcare Diagnostics",
+      "excerpt": "New service uses machine learning to analyze medical images and patient data for early disease detection.",
+      "content": "Amazon has launched a new AI-powered healthcare diagnostics service that can analyze medical images, lab results, and patient history to assist doctors in early disease detection.\n\nThe system has demonstrated high accuracy in identifying early signs of cancer, heart disease, and neurological conditions.\n\nKey Features:\n- Analysis of X-rays, CT scans, and MRIs\n- Integration with electronic health records\n- Predictive risk assessment for chronic diseases\n- Real-time alerts for critical findings\n- HIPAA-compliant cloud infrastructure\n\nThe service is initially available to healthcare providers in the United States, with plans for international expansion later this year."
+    },
+    {
+      "id": "news-025",
+      "date": "Feb 15, 2026",
+      "category": "World AI",
+      "title": "Meta Releases Open-Source Llama 4 Model",
+      "excerpt": "Latest version of popular open-source AI model rivals commercial competitors while remaining freely available.",
+      "content": "Meta has released Llama 4, the latest version of its popular open-source AI model, which matches or exceeds the performance of many commercial alternatives while remaining freely available to researchers and developers.\n\nThe new model features improved multilingual capabilities, better code generation, and enhanced reasoning abilities.\n\nKey Improvements:\n- 2 trillion parameter model available for free\n- Support for 100+ languages\n- Improved coding capabilities across 50+ programming languages\n- Better instruction following and reasoning\n- New safety training techniques\n\nMeta's continued commitment to open-source AI has been praised by the research community, though some critics raise concerns about potential misuse of powerful freely available models."
+    },
+    {
+      "id": "news-026",
+      "date": "Feb 22, 2026",
+      "category": "China AI",
+      "title": "Baidu's Ernie Bot Surpasses 400 Million Users",
+      "excerpt": "China's leading AI chatbot continues rapid growth with new enterprise features and multimodal capabilities.",
+      "content": "Baidu has announced that its Ernie Bot AI assistant has surpassed 400 million users, cementing its position as China's most popular AI chatbot. The company also unveiled new enterprise-focused features and enhanced multimodal capabilities.\n\nNew Features:\n- Integration with Baidu's search and cloud services\n- Enterprise API for business applications\n- Image generation and analysis capabilities\n- Voice interaction improvements\n- Support for 50+ document formats\n\nBaidu is positioning Ernie Bot as the foundation for China's AI ecosystem, with thousands of developers building applications on top of the platform. The company plans to expand internationally later this year."
+    },
+    {
+      "id": "news-027",
+      "date": "Feb 21, 2026",
+      "category": "China AI",
+      "title": "Alibaba Unveils Tongyi Qianwen 3.0 with Video Generation",
+      "excerpt": "Latest version of Alibaba's AI model adds text-to-video capabilities and improved reasoning for business applications.",
+      "content": "Alibaba has released Tongyi Qianwen 3.0, the latest version of its large language model, featuring new text-to-video generation capabilities and enhanced reasoning for enterprise applications.\n\nThe update positions Alibaba as a major competitor in the generative AI space, with capabilities matching or exceeding many Western alternatives.\n\nNew Capabilities:\n- Text-to-video generation up to 60 seconds\n- Advanced code generation and debugging\n- Enhanced mathematical reasoning\n- Multilingual support including 10 Chinese dialects\n- Integration with Alibaba Cloud services\n\nAlibaba is offering the model through its cloud platform, targeting businesses looking to build AI-powered applications with strong data sovereignty guarantees."
+    },
+    {
+      "id": "news-028",
+      "date": "Feb 20, 2026",
+      "category": "China AI",
+      "title": "China Approves 40+ New AI Models for Public Use",
+      "excerpt": "Regulatory clearance for new AI services signals continued government support for domestic AI development.",
+      "content": "Chinese regulators have approved over 40 new AI models for public use, including large language models from ByteDance, Tencent, and several startups. This latest batch of approvals brings the total number of licensed AI services in China to over 200.\n\nApproved Models Include:\n- ByteDance's Doubao chatbot\n- Tencent's Hunyuan model updates\n- Several industry-specific models for healthcare and finance\n- Educational AI tutoring systems\n- Manufacturing optimization tools\n\nThe approvals demonstrate China's commitment to fostering domestic AI development while maintaining regulatory oversight. All approved models must comply with content moderation requirements and data localization rules."
+    },
+    {
+      "id": "news-029",
+      "date": "Feb 19, 2026",
+      "category": "China AI",
+      "title": "SenseTime Launches New AI Chip for Edge Computing",
+      "excerpt": "Chinese AI unicorn releases domestically produced chip designed for smart cities and autonomous vehicles.",
+      "content": "SenseTime has launched a new AI chip designed specifically for edge computing applications, including smart cities, autonomous vehicles, and industrial automation. The chip is produced using domestic manufacturing processes.\n\nTechnical Specifications:\n- 200 TOPS AI computing power\n- Low power consumption for edge deployment\n- Support for multiple AI frameworks\n- Designed for harsh environmental conditions\n- Full software development kit available\n\nThe launch represents a significant step in China's push for AI chip self-sufficiency, reducing dependence on foreign semiconductor technology. SenseTime has already secured orders from several smart city projects."
+    },
+    {
+      "id": "news-030",
+      "date": "Feb 18, 2026",
+      "category": "China AI",
+      "title": "Huawei's Pangu Model Powers Smart Manufacturing",
+      "excerpt": "Industrial AI system deployed across thousands of Chinese factories, improving efficiency and reducing defects.",
+      "content": "Huawei's Pangu industrial AI model is now deployed across thousands of Chinese manufacturing facilities, delivering significant improvements in production efficiency and quality control.\n\nImplementation Results:\n- 25% average reduction in manufacturing defects\n- 15% improvement in production line efficiency\n- Predictive maintenance reducing downtime by 30%\n- Energy consumption optimization saving 20% on power costs\n- Quality inspection automation at 99.5% accuracy\n\nThe system is particularly effective in electronics, automotive, and textile manufacturing. Huawei is working with industry partners to expand deployment to overseas factories."
+    },
+    {
+      "id": "news-031",
+      "date": "Feb 17, 2026",
+      "category": "China AI",
+      "title": "Tencent's Hunyuan AI Integrates with WeChat",
+      "excerpt": "One billion WeChat users gain access to AI assistant for messaging, payments, and mini-program interactions.",
+      "content": "Tencent has integrated its Hunyuan AI model into WeChat, bringing AI capabilities to over one billion monthly active users. The integration allows users to access AI assistance directly within China's most popular messaging app.\n\nNew Capabilities:\n- AI-powered message composition and translation\n- Smart recommendations for mini-programs and services\n- Automated payment categorization and budgeting\n- Image and video content analysis\n- Voice-to-text with dialect support\n\nThe integration represents one of the largest AI deployments in history by user base. Tencent is gradually rolling out features to avoid overwhelming users and infrastructure."
+    },
+    {
+      "id": "news-032",
+      "date": "Feb 16, 2026",
+      "category": "China AI",
+      "title": "DJI Unveils AI-Powered Agricultural Drones",
+      "excerpt": "New drone systems use computer vision to optimize crop spraying, monitoring, and yield prediction for farmers.",
+      "content": "DJI has unveiled a new line of agricultural drones featuring advanced AI capabilities for precision farming. The systems use computer vision and machine learning to optimize crop management.\n\nKey Features:\n- Automated crop health monitoring and diagnosis\n- Precision pesticide and fertilizer application\n- Yield prediction with 95% accuracy\n- Integration with farm management software\n- Autonomous operation with obstacle avoidance\n\nThe drones are already deployed across millions of acres in China, with expansion to Southeast Asia and Latin America planned. DJI reports average cost savings of 30% and yield improvements of 15% for early adopters."
+    },
+    {
+      "id": "news-033",
+      "date": "Feb 15, 2026",
+      "category": "China AI",
+      "title": "iFlytek's Spark Model Revolutionizes Education",
+      "excerpt": "AI tutoring system now used by 50 million students across China for personalized learning and exam preparation.",
+      "content": "iFlytek's Spark AI model has become the dominant educational AI platform in China, with over 50 million students using the system for personalized learning and exam preparation.\n\nEducational Features:\n- Personalized study plans based on student performance\n- AI-powered essay grading and feedback\n- Real-time math problem solving with step-by-step explanations\n- Language learning with pronunciation correction\n- Mock exam generation based on curriculum\n\nThe system has demonstrated significant improvements in student outcomes, with users showing average score improvements of 15-20% on standardized tests. iFlytek is partnering with publishers to digitize textbooks and create interactive learning materials."
     }
   ]
 }

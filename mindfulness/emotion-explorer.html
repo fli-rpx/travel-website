@@ -524,6 +524,155 @@
                 display: block;
             }
         }
+
+        /* Categories Tabs Styles */
+        .categories-tabs-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .tabs-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .category-tab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            border: 2px solid transparent;
+            border-radius: 1rem;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            min-width: 80px;
+        }
+
+        .category-tab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .category-tab.active {
+            border-color: #1e293b;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .tab-emoji {
+            font-size: 1.5rem;
+        }
+
+        .tab-name {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #1e293b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tab-color-indicator {
+            width: 24px;
+            height: 4px;
+            border-radius: 2px;
+            margin-top: 0.25rem;
+        }
+
+        .words-display-area {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            min-height: 300px;
+        }
+
+        .words-category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .words-category-emoji {
+            font-size: 2rem;
+        }
+
+        .words-category-info h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        .words-category-info p {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin: 0.25rem 0 0 0;
+        }
+
+        .words-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .word-bubble {
+            padding: 0.75rem 1.25rem;
+            border-radius: 9999px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        .word-bubble:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .word-bubble.selected {
+            background: #1e293b;
+            color: white;
+            border-color: #1e293b;
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .tabs-container {
+                gap: 0.35rem;
+            }
+            
+            .category-tab {
+                padding: 0.75rem 1rem;
+                min-width: 60px;
+            }
+            
+            .tab-emoji {
+                font-size: 1.25rem;
+            }
+            
+            .tab-name {
+                font-size: 0.65rem;
+            }
+            
+            .words-display-area {
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -617,9 +766,44 @@
             </div>
         </section>
 
-        <!-- Categories Grid -->
-        <section class="categories-grid" id="categoriesGrid">
-            <!-- Categories will be populated by JavaScript -->
+        <!-- Categories Tabs -->
+        <section class="categories-tabs-section">
+            <div class="tabs-container">
+                <button class="category-tab active" data-category="POWER" onclick="switchTab('POWER')">
+                    <span class="tab-emoji">💪</span>
+                    <span class="tab-name">Power</span>
+                    <span class="tab-color-indicator" style="background: #FF0000;"></span>
+                </button>
+                <button class="category-tab" data-category="POSSESSION" onclick="switchTab('POSSESSION')">
+                    <span class="tab-emoji">🏠</span>
+                    <span class="tab-name">Possession</span>
+                    <span class="tab-color-indicator" style="background: #FF00FF;"></span>
+                </button>
+                <button class="category-tab" data-category="LOSS" onclick="switchTab('LOSS')">
+                    <span class="tab-emoji">💔</span>
+                    <span class="tab-name">Loss</span>
+                    <span class="tab-color-indicator" style="background: #0000FF;"></span>
+                </button>
+                <button class="category-tab" data-category="EMPTINESS" onclick="switchTab('EMPTINESS')">
+                    <span class="tab-emoji">⭕</span>
+                    <span class="tab-name">Emptiness</span>
+                    <span class="tab-color-indicator" style="background: #00FF00;"></span>
+                </button>
+                <button class="category-tab" data-category="CRAVE" onclick="switchTab('CRAVE')">
+                    <span class="tab-emoji">🔥</span>
+                    <span class="tab-name">Crave</span>
+                    <span class="tab-color-indicator" style="background: #FFFF00;"></span>
+                </button>
+                <button class="category-tab" data-category="EMPATHY" onclick="switchTab('EMPATHY')">
+                    <span class="tab-emoji">🤝</span>
+                    <span class="tab-name">Empathy</span>
+                    <span class="tab-color-indicator" style="background: #00FFFF;"></span>
+                </button>
+            </div>
+            
+            <div class="words-display-area" id="wordsDisplayArea">
+                <!-- Words will be populated by JavaScript -->
+            </div>
         </section>
     </div>
 
@@ -673,43 +857,65 @@
         };
 
         // Initialize the explorer
+        // Current active tab
+        let currentTab = 'POWER';
+
         function init() {
-            renderCategories();
+            switchTab('POWER');
             updateUI();
         }
 
-        // Render all categories
-        function renderCategories() {
-            const grid = document.getElementById('categoriesGrid');
-            grid.innerHTML = '';
+        // Switch between category tabs
+        function switchTab(category) {
+            currentTab = category;
+            
+            // Update tab buttons
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.dataset.category === category) {
+                    tab.classList.add('active');
+                }
+            });
+            
+            // Display words for selected category
+            displayWordsForCategory(category);
+        }
 
-            Object.keys(categories).forEach(categoryKey => {
-                const category = categories[categoryKey];
-                const words = EmotionRibbon.lexicon[categoryKey] || [];
-
-                const card = document.createElement('div');
-                card.className = `category-card category-${categoryKey.toLowerCase()}`;
-
-                card.innerHTML = `
-                    <div class="category-header">
-                        <div class="category-emoji">${category.emoji}</div>
-                        <div class="category-title">
-                            <h3>${category.name}</h3>
-                            <p>${categoryKey} emotions</p>
-                        </div>
-                        <div class="category-count">${words.length}</div>
+        // Display words for a specific category
+        function displayWordsForCategory(categoryKey) {
+            const displayArea = document.getElementById('wordsDisplayArea');
+            const category = categories[categoryKey];
+            const words = EmotionRibbon.lexicon[categoryKey] || [];
+            
+            displayArea.innerHTML = `
+                <div class="words-category-header">
+                    <div class="words-category-emoji">${category.emoji}</div>
+                    <div class="words-category-info">
+                        <h3>${category.name}</h3>
+                        <p>${words.length} words • Click to select</p>
                     </div>
-                    <div class="words-grid" id="words-${categoryKey.toLowerCase()}">
-                        ${words.map(word => `
-                            <button class="word-chip" onclick="toggleWord('${word}', '${categoryKey}')" data-word="${word}" data-category="${categoryKey}">
+                </div>
+                <div class="words-cloud">
+                    ${words.map(word => {
+                        const isSelected = selectedWords.some(w => w.word === word && w.category === categoryKey);
+                        return `
+                            <button class="word-bubble ${isSelected ? 'selected' : ''}" 
+                                    onclick="toggleWord('${word}', '${categoryKey}')"
+                                    data-word="${word}" 
+                                    data-category="${categoryKey}">
                                 ${word}
                             </button>
-                        `).join('')}
-                    </div>
-                `;
+                        `;
+                    }).join('')}
+                </div>
+            `;
+        }
 
-                grid.appendChild(card);
-            });
+        // Render all categories (deprecated, kept for compatibility)
+        function renderCategories() {
+            // This function is no longer needed with tab interface
+            // But we call displayWordsForCategory to show initial tab
+            displayWordsForCategory(currentTab);
         }
 
         // Toggle word selection
@@ -729,22 +935,23 @@
 
         // Update all UI elements
         function updateUI() {
-            updateWordChips();
+            // Refresh current tab's word display
+            displayWordsForCategory(currentTab);
             updateSelectedWordsList();
             updateRibbon();
         }
 
-        // Update word chips visual state
-        function updateWordChips() {
-            document.querySelectorAll('.word-chip').forEach(chip => {
-                const word = chip.dataset.word;
-                const category = chip.dataset.category;
+        // Update word bubbles visual state
+        function updateWordBubbles() {
+            document.querySelectorAll('.word-bubble').forEach(bubble => {
+                const word = bubble.dataset.word;
+                const category = bubble.dataset.category;
                 const isSelected = selectedWords.some(w => w.word === word && w.category === category);
 
                 if (isSelected) {
-                    chip.classList.add('selected');
+                    bubble.classList.add('selected');
                 } else {
-                    chip.classList.remove('selected');
+                    bubble.classList.remove('selected');
                 }
             });
         }

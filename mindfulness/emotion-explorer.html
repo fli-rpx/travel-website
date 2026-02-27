@@ -814,23 +814,18 @@
                     // Neither category active - keep transparent
                     band.setAttribute('fill', 'transparent');
                 } else if (cat1Active && !cat2Active) {
-                    // Only first category active - show its color
-                    const intensity = Math.min(count1 / 5, 1);
-                    const color = darkenColor(rainbowColors[pair.cat1], intensity * 30);
+                    // Only first category active - show full intensity color
+                    const color = rainbowColors[pair.cat1];
                     band.setAttribute('fill', color);
-                    band.setAttribute('fill-opacity', 0.7 + intensity * 0.3);
+                    band.setAttribute('fill-opacity', 1);
                 } else if (!cat1Active && cat2Active) {
-                    // Only second category active - show its color
-                    const intensity = Math.min(count2 / 5, 1);
-                    const color = darkenColor(rainbowColors[pair.cat2], intensity * 30);
+                    // Only second category active - show full intensity color
+                    const color = rainbowColors[pair.cat2];
                     band.setAttribute('fill', color);
-                    band.setAttribute('fill-opacity', 0.7 + intensity * 0.3);
+                    band.setAttribute('fill-opacity', 1);
                 } else {
-                    // Both categories active - blend toward white using TRUE additive mixing
-                    const intensity1 = Math.min(count1 / 3, 1); // Max 3 words for full intensity
-                    const intensity2 = Math.min(count2 / 3, 1);
-
-                    // Get base colors
+                    // Both categories active - immediately blend to white
+                    // Use full intensity (1.0) for both colors to get white
                     const color1 = rainbowColors[pair.cat1];
                     const color2 = rainbowColors[pair.cat2];
 
@@ -843,17 +838,13 @@
                     const g2 = parseInt(color2.substring(3, 5), 16);
                     const b2 = parseInt(color2.substring(5, 7), 16);
 
-                    // TRUE additive mixing: simply add the RGB values
-                    // Red(255,0,0) + Cyan(0,255,255) = White(255,255,255)
-                    // Green(0,255,0) + Magenta(255,0,255) = White(255,255,255)
-                    // Blue(0,0,255) + Yellow(255,255,0) = White(255,255,255)
-                    const r = Math.min(255, Math.floor(r1 * intensity1 + r2 * intensity2));
-                    const g = Math.min(255, Math.floor(g1 * intensity1 + g2 * intensity2));
-                    const b = Math.min(255, Math.floor(b1 * intensity1 + b2 * intensity2));
+                    // Add full intensity colors to get white
+                    const r = Math.min(255, r1 + r2);
+                    const g = Math.min(255, g1 + g2);
+                    const b = Math.min(255, b1 + b2);
 
                     const blendedColor = `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
 
-                    // When both at full intensity, color is white
                     band.setAttribute('fill', blendedColor);
                     band.setAttribute('fill-opacity', 1);
                 }

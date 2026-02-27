@@ -39,12 +39,12 @@
 
         .explorer-header {
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         .explorer-header h1 {
-            font-size: 1.5rem;
-            margin-bottom: 0.25rem;
+            font-size: 1.25rem;
+            margin-bottom: 0.15rem;
             background: linear-gradient(135deg, #8B0000, #FF6B35, #191970, #2E8B57);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -54,20 +54,20 @@
 
         .explorer-header p {
             color: #64748b;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .ribbon-display-section {
             background: white;
-            border-radius: 1.5rem;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-radius: 1rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             border: 1px solid #e2e8f0;
         }
 
         .ribbon-container-wrapper {
-            min-height: 150px;
+            min-height: 100px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -76,10 +76,11 @@
 
         #emotionRibbonDisplay {
             width: 100%;
-            height: 120px;
+            height: 100px;
             background-color: #f0f0f0;
             position: relative;
             overflow: hidden;
+            border-radius: 0.5rem;
         }
 
         .selected-words-display {
@@ -525,6 +526,228 @@
                 display: block;
             }
         }
+
+        /* 情绪类别标签样式 */
+        .categories-tabs-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .tabs-container {
+            display: flex;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .category-tab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.6rem 1rem;
+            border: 2px solid transparent;
+            border-radius: 0.75rem;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            min-width: 70px;
+        }
+
+        .category-tab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+
+        .category-tab.active {
+            border-color: #1e293b;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .tab-emoji {
+            font-size: 1.25rem;
+        }
+
+        .tab-name {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #1e293b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tab-color-indicator {
+            width: 20px;
+            height: 3px;
+            border-radius: 2px;
+            margin-top: 0.2rem;
+        }
+
+        /* 双栏布局 */
+        .words-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .words-display-area {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-height: calc(100vh - 350px);
+            overflow-y: auto;
+        }
+
+        .selected-words-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-height: calc(100vh - 350px);
+        }
+
+        .selected-words-display {
+            background: white;
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            flex: 1;
+            overflow-y: auto;
+            min-height: 0;
+        }
+
+        .selected-words-display h4 {
+            font-size: 0.875rem;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .words-category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .words-category-emoji {
+            font-size: 1.75rem;
+        }
+
+        .words-category-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        .words-category-info p {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin: 0.15rem 0 0 0;
+        }
+
+        .words-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .word-bubble {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        .word-bubble:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .word-bubble.selected {
+            background: #1e293b;
+            color: white;
+            border-color: #1e293b;
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            border-radius: 1rem;
+            padding: 0.75rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.1rem;
+        }
+
+        .clear-all-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .clear-all-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+        }
+
+        @media (max-width: 900px) {
+            .words-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .selected-words-panel {
+                order: -1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -619,14 +842,80 @@
             </div>
         </section>
 
-        <!-- Categories Grid -->
-        <section class="categories-grid" id="categoriesGrid">
-            <!-- Categories will be populated by JavaScript -->
+        <!-- 情绪类别标签 -->
+        <section class="categories-tabs-section">
+            <div class="tabs-container">
+                <button class="category-tab active" data-category="POWER" onclick="switchTab('POWER')">
+                    <span class="tab-emoji">💪</span>
+                    <span class="tab-name">权力</span>
+                    <span class="tab-color-indicator" style="background: #FF0000;"></span>
+                </button>
+                <button class="category-tab" data-category="POSSESSION" onclick="switchTab('POSSESSION')">
+                    <span class="tab-emoji">🏠</span>
+                    <span class="tab-name">占有</span>
+                    <span class="tab-color-indicator" style="background: #FF00FF;"></span>
+                </button>
+                <button class="category-tab" data-category="LOSS" onclick="switchTab('LOSS')">
+                    <span class="tab-emoji">💔</span>
+                    <span class="tab-name">失去</span>
+                    <span class="tab-color-indicator" style="background: #0000FF;"></span>
+                </button>
+                <button class="category-tab" data-category="EMPTINESS" onclick="switchTab('EMPTINESS')">
+                    <span class="tab-emoji">⭕</span>
+                    <span class="tab-name">空虚</span>
+                    <span class="tab-color-indicator" style="background: #00FF00;"></span>
+                </button>
+                <button class="category-tab" data-category="CRAVE" onclick="switchTab('CRAVE')">
+                    <span class="tab-emoji">🔥</span>
+                    <span class="tab-name">渴望</span>
+                    <span class="tab-color-indicator" style="background: #FFFF00;"></span>
+                </button>
+                <button class="category-tab" data-category="EMPATHY" onclick="switchTab('EMPATHY')">
+                    <span class="tab-emoji">🤝</span>
+                    <span class="tab-name">共情</span>
+                    <span class="tab-color-indicator" style="background: #00FFFF;"></span>
+                </button>
+            </div>
+            
+            <!-- 双栏布局：词语选择 + 已选词语 -->
+            <div class="words-layout">
+                <div class="words-display-area" id="wordsDisplayArea">
+                    <!-- 词语将由JavaScript填充 -->
+                </div>
+                
+                <div class="selected-words-panel">
+                    <div class="selected-words-display">
+                        <h4><i class="fas fa-check-circle"></i> 已选词语</h4>
+                        <div id="selectedWordsList">
+                            <span style="color: #94a3b8; font-size: 0.875rem;">尚未选择词语...</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-bar">
+                        <div class="stat-item">
+                            <div class="stat-value" id="totalSelected">0</div>
+                            <div class="stat-label">词语</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="categoriesActive">0</div>
+                            <div class="stat-label">类别</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="dominantCategory">-</div>
+                            <div class="stat-label">主导</div>
+                        </div>
+                    </div>
+                    
+                    <button class="clear-all-btn" onclick="clearAllWords()">
+                        <i class="fas fa-trash-alt"></i> 清除全部
+                    </button>
+                </div>
+            </div>
         </section>
     </div>
 
     <!-- Scripts -->
-    <script src="emotion-ribbon.js"></script>
+    <script src="emotion-ribbon-zh.js"></script>
     <script>
         // Selected words state
         let selectedWords = [];
@@ -674,44 +963,65 @@
             LOSS: 'CRAVE'
         };
 
-        // Initialize the explorer
+        // Current active tab
+        let currentTab = 'POWER';
+
         function init() {
-            renderCategories();
+            switchTab('POWER');
             updateUI();
         }
 
-        // Render all categories
-        function renderCategories() {
-            const grid = document.getElementById('categoriesGrid');
-            grid.innerHTML = '';
+        // Switch between category tabs
+        function switchTab(category) {
+            currentTab = category;
+            
+            // Update tab buttons
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.dataset.category === category) {
+                    tab.classList.add('active');
+                }
+            });
+            
+            // Display words for selected category
+            displayWordsForCategory(category);
+        }
 
-            Object.keys(categories).forEach(categoryKey => {
-                const category = categories[categoryKey];
-                const words = EmotionRibbon.lexicon[categoryKey] || [];
-                
-                const card = document.createElement('div');
-                card.className = `category-card category-${categoryKey.toLowerCase()}`;
-                
-                card.innerHTML = `
-                    <div class="category-header">
-                        <div class="category-emoji">${category.emoji}</div>
-                        <div class="category-title">
-                            <h3>${category.name}</h3>
-                            <p>${categoryKey === 'POWER' ? '权力' : categoryKey === 'POSSESSION' ? '占有' : categoryKey === 'LOSS' ? '失去' : categoryKey === 'EMPTINESS' ? '空虚' : categoryKey === 'CRAVE' ? '渴望' : '共情'}情绪</p>
-                        </div>
-                        <div class="category-count">${words.length}</div>
+        // Display words for a specific category
+        function displayWordsForCategory(categoryKey) {
+            const displayArea = document.getElementById('wordsDisplayArea');
+            const category = categories[categoryKey];
+            const words = EmotionRibbon.lexicon[categoryKey] || [];
+            
+            displayArea.innerHTML = `
+                <div class="words-category-header">
+                    <div class="words-category-emoji">${category.emoji}</div>
+                    <div class="words-category-info">
+                        <h3>${category.name}</h3>
+                        <p>${words.length} 个词语 • 点击选择</p>
                     </div>
-                    <div class="words-grid" id="words-${categoryKey.toLowerCase()}">
-                        ${words.map(word => `
-                            <button class="word-chip" onclick="toggleWord('${word}', '${categoryKey}')" data-word="${word}" data-category="${categoryKey}">
+                </div>
+                <div class="words-cloud">
+                    ${words.map(word => {
+                        const isSelected = selectedWords.some(w => w.word === word && w.category === categoryKey);
+                        return `
+                            <button class="word-bubble ${isSelected ? 'selected' : ''}" 
+                                    onclick="toggleWord('${word}', '${categoryKey}')"
+                                    data-word="${word}" 
+                                    data-category="${categoryKey}">
                                 ${word}
                             </button>
-                        `).join('')}
-                    </div>
-                `;
-                
-                grid.appendChild(card);
-            });
+                        `;
+                    }).join('')}
+                </div>
+            `;
+        }
+
+        // Render all categories (deprecated, kept for compatibility)
+        function renderCategories() {
+            // This function is no longer needed with tab interface
+            // But we call displayWordsForCategory to show initial tab
+            displayWordsForCategory(currentTab);
         }
 
         // Toggle word selection
@@ -731,23 +1041,26 @@
 
         // Update all UI elements
         function updateUI() {
-            updateWordChips();
+            // Refresh current tab's word display
+            displayWordsForCategory(currentTab);
             updateSelectedWordsList();
             updateRibbon();
         }
 
-        // Update word chips visual state
-        function updateWordChips() {
-            document.querySelectorAll('.word-chip').forEach(chip => {
-                const word = chip.dataset.word;
-                const category = chip.dataset.category;
+        // Update word bubbles visual state
+        function updateWordBubbles() {
+            document.querySelectorAll('.word-bubble').forEach(bubble => {
+                const word = bubble.dataset.word;
+                const category = bubble.dataset.category;
                 const isSelected = selectedWords.some(w => w.word === word && w.category === category);
-                
+
                 if (isSelected) {
-                    chip.classList.add('selected');
+                    bubble.classList.add('selected');
                 } else {
-                    chip.classList.remove('selected');
+                    bubble.classList.remove('selected');
                 }
+            });
+        }
             });
         }
 

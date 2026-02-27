@@ -991,7 +991,19 @@
         function displayWordsForCategory(categoryKey) {
             const displayArea = document.getElementById('wordsDisplayArea');
             const category = categories[categoryKey];
-            const words = EmotionRibbon.lexicon[categoryKey] || [];
+            
+            // Check if EmotionRibbon is loaded
+            if (!window.EmotionRibbon || !window.EmotionRibbon.lexicon) {
+                displayArea.innerHTML = '<p style="text-align: center; color: #94a3b8; padding: 2rem;">加载词语中...</p>';
+                return;
+            }
+            
+            const words = window.EmotionRibbon.lexicon[categoryKey] || [];
+            
+            if (words.length === 0) {
+                displayArea.innerHTML = '<p style="text-align: center; color: #94a3b8; padding: 2rem;">此类别暂无词语。</p>';
+                return;
+            }
             
             displayArea.innerHTML = `
                 <div class="words-category-header">

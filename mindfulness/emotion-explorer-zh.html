@@ -9,10 +9,10 @@
     <style>
         :root {
             --power-color: #FF0000;
-            --possession-color: #FFFF00;
-            --loss-color: #800080;
-            --emptiness-color: #00008B;
-            --crave-color: #FF1493;
+            --possession-color: #00FF00;
+            --loss-color: #FF00FF;
+            --emptiness-color: #FFFF00;
+            --crave-color: #0000FF;
             --empathy-color: #00FFFF;
         }
 
@@ -520,21 +520,34 @@
         // Category data
         const categories = {
             POWER: { name: '权力', emoji: '💪', color: '#FF0000' },
-            POSSESSION: { name: '占有', emoji: '🏠', color: '#FFFF00' },
-            LOSS: { name: '失去', emoji: '💔', color: '#800080' },
-            EMPTINESS: { name: '空虚', emoji: '⭕', color: '#00008B' },
-            CRAVE: { name: '渴望', emoji: '🔥', color: '#FF1493' },
+            POSSESSION: { name: '占有', emoji: '🏠', color: '#00FF00' },
+            LOSS: { name: '失去', emoji: '💔', color: '#FF00FF' },
+            EMPTINESS: { name: '空虚', emoji: '⭕', color: '#FFFF00' },
+            CRAVE: { name: '渴望', emoji: '🔥', color: '#0000FF' },
             EMPATHY: { name: '共情', emoji: '🤝', color: '#00FFFF' }
         };
 
-        // Rainbow color mapping
+        // Rainbow color mapping - 互补色对
+        // 红色 (255,0,0) + 青色 (0,255,255) = 白色
+        // 绿色 (0,255,0) + 品红色 (255,0,255) = 白色
+        // 蓝色 (0,0,255) + 黄色 (255,255,0) = 白色
         const rainbowColors = {
-            POWER: '#FF0000',
-            POSSESSION: '#FFFF00',
-            LOSS: '#800080',
-            EMPTINESS: '#00008B',
-            CRAVE: '#FF1493',
-            EMPATHY: '#00FFFF'
+            POWER: '#FF0000',      // 红色
+            EMPATHY: '#00FFFF',    // 青色 (红色的互补色)
+            POSSESSION: '#00FF00', // 绿色
+            LOSS: '#FF00FF',       // 品红色 (绿色的互补色)
+            CRAVE: '#0000FF',      // 蓝色
+            EMPTINESS: '#FFFF00'   // 黄色 (蓝色的互补色)
+        };
+
+        // 类别配对
+        const categoryToBand = {
+            POWER: 'pair-1',
+            EMPATHY: 'pair-1',
+            POSSESSION: 'pair-2',
+            LOSS: 'pair-2',
+            CRAVE: 'pair-3',
+            EMPTINESS: 'pair-3'
         };
 
         // Initialize
@@ -651,8 +664,8 @@
             
             const bandPairs = [
                 { band: 'pair-1', categories: ['POWER', 'EMPATHY'] },
-                { band: 'pair-2', categories: ['POSSESSION', 'EMPTINESS'] },
-                { band: 'pair-3', categories: ['CRAVE', 'LOSS'] }
+                { band: 'pair-2', categories: ['POSSESSION', 'LOSS'] },
+                { band: 'pair-3', categories: ['CRAVE', 'EMPTINESS'] }
             ];
             
             bandPairs.forEach(pair => {

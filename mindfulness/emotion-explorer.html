@@ -886,22 +886,22 @@
                 <button class="category-tab" data-category="POSSESSION" onclick="switchTab('POSSESSION')">
                     <span class="tab-emoji">🏠</span>
                     <span class="tab-name">Possession</span>
-                    <span class="tab-color-indicator" style="background: #FF00FF;"></span>
+                    <span class="tab-color-indicator" style="background: #00FF00;"></span>
                 </button>
                 <button class="category-tab" data-category="LOSS" onclick="switchTab('LOSS')">
                     <span class="tab-emoji">💔</span>
                     <span class="tab-name">Loss</span>
-                    <span class="tab-color-indicator" style="background: #0000FF;"></span>
+                    <span class="tab-color-indicator" style="background: #FF00FF;"></span>
                 </button>
                 <button class="category-tab" data-category="EMPTINESS" onclick="switchTab('EMPTINESS')">
                     <span class="tab-emoji">⭕</span>
                     <span class="tab-name">Emptiness</span>
-                    <span class="tab-color-indicator" style="background: #00FF00;"></span>
+                    <span class="tab-color-indicator" style="background: #FFFF00;"></span>
                 </button>
                 <button class="category-tab" data-category="CRAVE" onclick="switchTab('CRAVE')">
                     <span class="tab-emoji">🔥</span>
                     <span class="tab-name">Crave</span>
-                    <span class="tab-color-indicator" style="background: #FFFF00;"></span>
+                    <span class="tab-color-indicator" style="background: #0000FF;"></span>
                 </button>
                 <button class="category-tab" data-category="EMPATHY" onclick="switchTab('EMPATHY')">
                     <span class="tab-emoji">🤝</span>
@@ -983,10 +983,10 @@
         const rainbowColors = {
             POWER: '#FF0000',      // Red
             EMPATHY: '#00FFFF',    // Cyan (true complement of Red)
-            EMPTINESS: '#00FF00',  // Green
-            POSSESSION: '#FF00FF', // Magenta (true complement of Green)
-            LOSS: '#0000FF',       // Blue
-            CRAVE: '#FFFF00'       // Yellow (true complement of Blue)
+            POSSESSION: '#00FF00', // Green
+            LOSS: '#FF00FF',       // Magenta (true complement of Green)
+            CRAVE: '#0000FF',      // Blue
+            EMPTINESS: '#FFFF00'   // Yellow (true complement of Blue)
         };
 
         // Map categories to their pair bands
@@ -994,19 +994,19 @@
             POWER: 'pair-1',
             EMPATHY: 'pair-1',
             POSSESSION: 'pair-2',
-            EMPTINESS: 'pair-2',
+            LOSS: 'pair-2',
             CRAVE: 'pair-3',
-            LOSS: 'pair-3'
+            EMPTINESS: 'pair-3'
         };
 
         // Complementary color pairs
         const complementaryPairs = {
             POWER: 'EMPATHY',
             EMPATHY: 'POWER',
-            EMPTINESS: 'POSSESSION',
-            POSSESSION: 'EMPTINESS',
-            CRAVE: 'LOSS',
-            LOSS: 'CRAVE'
+            POSSESSION: 'LOSS',
+            LOSS: 'POSSESSION',
+            CRAVE: 'EMPTINESS',
+            EMPTINESS: 'CRAVE'
         };
 
         // Initialize the explorer
@@ -1175,8 +1175,8 @@
             // Process each of the 3 bands
             const bandPairs = [
                 { band: 'pair-1', cat1: 'POWER', cat2: 'EMPATHY' },
-                { band: 'pair-2', cat1: 'POSSESSION', cat2: 'EMPTINESS' },
-                { band: 'pair-3', cat1: 'CRAVE', cat2: 'LOSS' }
+                { band: 'pair-2', cat1: 'POSSESSION', cat2: 'LOSS' },
+                { band: 'pair-3', cat1: 'CRAVE', cat2: 'EMPTINESS' }
             ];
 
             bandPairs.forEach(pair => {

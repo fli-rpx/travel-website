@@ -1,29 +1,6 @@
 {
-  "last_updated": "2026-02-27",
+  "last_updated": "2026-03-01",
   "news": [
-    {
-      "id": "news-034",
-      "date": "Feb 14, 2026",
-      "category": "China AI",
-      "title": "Beijing Establishes National AI Computing Center",
-      "excerpt": "Massive new facility provides computing resources to domestic AI researchers and startups, reducing reliance on foreign cloud services.",
-      "content": "Beijing has inaugurated a national AI computing center providing high-performance computing resources to domestic researchers and startups. The facility represents China's largest investment in AI infrastructure to date.\n\nFacility Specifications:\n- 100 exaflops of AI computing capacity\n- Support for training models with trillions of parameters\n- Energy-efficient liquid cooling systems\n- Direct fiber connections to major universities\n- 24/7 operation with 99.99% uptime guarantee\n\nThe center will provide subsidized computing resources to approved researchers and startups, aiming to accelerate China's AI development while maintaining data sovereignty. Access is prioritized for projects with national strategic importance."
-    },
-    {
-      "id": "news-035",
-      "date": "Feb 13, 2026",
-      "category": "China AI",
-      "title": "Xiaomi Integrates AI Throughout Smart Home Ecosystem",
-      "excerpt": "HyperOS update brings unified AI assistant to 200+ million connected devices in Chinese households.",
-      "content": "Xiaomi has released a major HyperOS update integrating AI capabilities throughout its smart home ecosystem, affecting over 200 million connected devices in Chinese households.\n\nAI Features:\n- Unified voice assistant across all devices\n- Predictive automation based on user habits\n- Energy optimization for connected appliances\n- AI-powered security monitoring and alerts\n- Health monitoring integration with wearable devices\n\nThe update creates a seamless AI experience across smartphones, TVs, home appliances, and IoT devices. Xiaomi reports that 80% of eligible devices have already received the update, with the rollout completing by March 2026."
-    },
-    {
-      "id": "news-001",
-      "date": "Feb 21, 2026",
-      "title": "China Expands Visa-Free Transit to 240 Hours",
-      "excerpt": "Foreign travelers can now enjoy visa-free stays up to 10 days in 60+ cities across China, making multi-city tours easier than ever.",
-      "content": "China has significantly expanded its visa-free transit policy, allowing foreign travelers to stay for up to 240 hours (10 days) without a visa. This new policy covers over 60 cities across the country, including major tourist destinations like Beijing, Shanghai, Guangzhou, Shenzhen, Chengdu, and Xi'an.\n\nThe expansion is part of China's efforts to boost tourism and business travel. Under the new rules, travelers can enter through any of the designated ports and travel freely within the allowed regions. This makes it much easier for tourists to plan multi-city itineraries without the hassle of obtaining multiple visas.\n\nKey highlights of the new policy:\n- Stay duration: Up to 240 hours (10 days)\n- Coverage: 60+ cities across China\n- Entry ports: 38 designated ports including major airports and cruise terminals\n- Activities allowed: Tourism, business meetings, and short-term visits\n\nTravelers must have a confirmed onward ticket to a third country or region and valid travel documents. The policy applies to citizens of most countries including the United States, Canada, United Kingdom, Australia, and most European nations."
-    },
     {
       "id": "news-002",
       "date": "Feb 20, 2026",
@@ -265,6 +242,29 @@
       "title": "iFlytek's Spark Model Revolutionizes Education",
       "excerpt": "AI tutoring system now used by 50 million students across China for personalized learning and exam preparation.",
       "content": "iFlytek's Spark AI model has become the dominant educational AI platform in China, with over 50 million students using the system for personalized learning and exam preparation.\n\nEducational Features:\n- Personalized study plans based on student performance\n- AI-powered essay grading and feedback\n- Real-time math problem solving with step-by-step explanations\n- Language learning with pronunciation correction\n- Mock exam generation based on curriculum\n\nThe system has demonstrated significant improvements in student outcomes, with users showing average score improvements of 15-20% on standardized tests. iFlytek is partnering with publishers to digitize textbooks and create interactive learning materials."
+    },
+    {
+      "id": "news-034",
+      "date": "Feb 14, 2026",
+      "category": "China AI",
+      "title": "Beijing Establishes National AI Computing Center",
+      "excerpt": "Massive new facility provides computing resources to domestic AI researchers and startups, reducing reliance on foreign cloud services.",
+      "content": "Beijing has inaugurated a national AI computing center providing high-performance computing resources to domestic researchers and startups. The facility represents China's largest investment in AI infrastructure to date.\n\nFacility Specifications:\n- 100 exaflops of AI computing capacity\n- Support for training models with trillions of parameters\n- Energy-efficient liquid cooling systems\n- Direct fiber connections to major universities\n- 24/7 operation with 99.99% uptime guarantee\n\nThe center will provide subsidized computing resources to approved researchers and startups, aiming to accelerate China's AI development while maintaining data sovereignty. Access is prioritized for projects with national strategic importance."
+    },
+    {
+      "id": "news-035",
+      "date": "Feb 13, 2026",
+      "category": "China AI",
+      "title": "Xiaomi Integrates AI Throughout Smart Home Ecosystem",
+      "excerpt": "HyperOS update brings unified AI assistant to 200+ million connected devices in Chinese households.",
+      "content": "Xiaomi has released a major HyperOS update integrating AI capabilities throughout its smart home ecosystem, affecting over 200 million connected devices in Chinese households.\n\nAI Features:\n- Unified voice assistant across all devices\n- Predictive automation based on user habits\n- Energy optimization for connected appliances\n- AI-powered security monitoring and alerts\n- Health monitoring integration with wearable devices\n\nThe update creates a seamless AI experience across smartphones, TVs, home appliances, and IoT devices. Xiaomi reports that 80% of eligible devices have already received the update, with the rollout completing by March 2026."
+    },
+    {
+      "id": "news-001",
+      "date": "Feb 21, 2026",
+      "title": "China Expands Visa-Free Transit to 240 Hours",
+      "excerpt": "Foreign travelers can now enjoy visa-free stays up to 10 days in 60+ cities across China, making multi-city tours easier than ever.",
+      "content": "China has significantly expanded its visa-free transit policy, allowing foreign travelers to stay for up to 240 hours (10 days) without a visa. This new policy covers over 60 cities across the country, including major tourist destinations like Beijing, Shanghai, Guangzhou, Shenzhen, Chengdu, and Xi'an.\n\nThe expansion is part of China's efforts to boost tourism and business travel. Under the new rules, travelers can enter through any of the designated ports and travel freely within the allowed regions. This makes it much easier for tourists to plan multi-city itineraries without the hassle of obtaining multiple visas.\n\nKey highlights of the new policy:\n- Stay duration: Up to 240 hours (10 days)\n- Coverage: 60+ cities across China\n- Entry ports: 38 designated ports including major airports and cruise terminals\n- Activities allowed: Tourism, business meetings, and short-term visits\n\nTravelers must have a confirmed onward ticket to a third country or region and valid travel documents. The policy applies to citizens of most countries including the United States, Canada, United Kingdom, Australia, and most European nations."
     }
   ]
 }

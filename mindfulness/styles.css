@@ -13,10 +13,14 @@
     --bg: #f8fafc;
     --card: #ffffff;
     --text: #1e293b;
-    --text-light: #64748b;
+    --text-light: #4b5563;  /* Improved contrast from #64748b */
     --border: #e2e8f0;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    
+    /* Performance: Optimize transitions for better performance */
+    --transition-fast: all 0.15s ease-out;
+    --transition-smooth: transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 * {
@@ -601,7 +605,7 @@ h2 {
 
 .cycle-node {
     cursor: pointer;
-    transition: all 0.3s;
+    transition: var(--transition-smooth);
 }
 
 .cycle-node:hover {
@@ -1352,7 +1356,19 @@ body.allow-select {
     user-select: text;
 }
 
-/* Mobile Navigation */
+/* Accessibility: Add visible focus indicators */
+*:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.4);
+    border-radius: 4px; /* Optional: for consistency */
+}
+
+/* For elements that already have an outline */
+a:focus-visible, button:focus-visible {
+    outline-offset: 2px;
+}
+
 .mobile-menu-btn {
     display: none;
     background: none;
@@ -1378,21 +1394,61 @@ body.allow-select {
         box-shadow: var(--shadow-lg);
         z-index: 150;
         border-top: 1px solid var(--border);
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
     }
 
     .nav-links.mobile-open .nav-btn {
         width: 100%;
         text-align: left;
-        padding: 0.75rem 1rem;
+        padding: 1rem 1.25rem;
         border-bottom: 1px solid var(--border);
         background: none;
         border: none;
-        font-size: 1rem;
+        font-size: 1.1rem;
         cursor: pointer;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
     }
 
     .nav-links.mobile-open .nav-btn:hover {
         background: var(--bg);
+    }
+
+    /* Mobile tools dropdown improvements */
+    .nav-links.mobile-open .tools-dropdown-container {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .nav-links.mobile-open .tools-dropdown-btn {
+        width: 100%;
+        text-align: left;
+        padding: 1rem 1.25rem;
+        font-size: 1.1rem;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-links.mobile-open .tools-dropdown-menu {
+        position: static !important;
+        width: 100%;
+        margin-top: 0.5rem;
+        box-shadow: none;
+        border: 1px solid var(--border);
+        border-radius: 0.5rem;
+        background: var(--bg);
+    }
+
+    .nav-links.mobile-open .tools-dropdown-menu a {
+        padding: 1rem 1.25rem !important;
+        font-size: 1rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -1435,11 +1491,35 @@ body.allow-select {
     .content-main {
         margin-left: 0;
         padding: 1rem;
+        padding-top: 1.5rem;
+    }
+
+    /* Improve mobile typography */
+    .hero-section h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    /* Better mobile spacing for sections */
+    .section {
+        margin-bottom: 2rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .hero-section {
+        padding: 2rem 1rem;
+        margin: -1rem -1rem 2rem -1rem;
     }
 
     .nav-bar {
         padding: 0.75rem 1rem;
         position: relative;
+        min-height: 60px;
     }
 
     .nav-brand {
@@ -1449,6 +1529,53 @@ body.allow-select {
     /* Emotion Ribbon mobile */
     .emotion-ribbon-container {
         padding: 0.75rem;
+    }
+
+    /* Improve mobile button touch targets */
+    .btn, .nav-btn, .tools-dropdown-btn, .mode-btn {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+
+    /* Better mobile form elements */
+    input[type="text"], input[type="number"], textarea, select {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 0.75rem;
+        min-height: 44px;
+    }
+
+    /* Improve mobile card spacing */
+    .card {
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Better mobile grid spacing */
+    .feature-grid > *,
+    .interventions-grid > *,
+    .cycle-container > *,
+    .assessment-container > * {
+        margin-bottom: 1rem;
+    }
+
+    /* Prevent horizontal overflow on mobile */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Improve mobile scrolling */
+    .nav-links.mobile-open {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Better mobile focus indicators */
+    .nav-links.mobile-open .nav-btn:focus-visible,
+    .nav-links.mobile-open .tools-dropdown-btn:focus-visible {
+        outline: 3px solid #3b82f6;
+        outline-offset: 2px;
+        background: rgba(59, 130, 246, 0.1);
     }
 
     .ribbon-header {

@@ -5,13 +5,54 @@
     <meta name="copyright" content="© 2026 Mindfulness Therapy. All rights reserved.">
     <meta name="author" content="Mindfulness Therapy">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Security: Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    
+    <!-- Security: Additional security headers via meta tags -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
     <title>Mindfulness Therapy - Emotional Balancing</title>
+    
+    <!-- Performance: DNS preconnect for external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Performance: Inline critical CSS for faster rendering -->
+    <style>
+        /* Critical CSS for initial render */
+        .nav-bar { display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background: rgba(255,255,255,0.95); border-bottom: 1px solid #e5e7eb; }
+        .nav-brand { font-size: 1.25rem; font-weight: 600; cursor: pointer; }
+        .nav-links { display: flex; align-items: center; gap: 0.5rem; }
+        .mobile-menu-btn { display: none; }
+        @media (max-width: 768px) { .nav-links { display: none; } .mobile-menu-btn { display: block; } }
+        .content-main { margin-left: 320px; max-width: calc(100vw - 360px); min-height: 100vh; }
+        @media (max-width: 1280px) { .content-main { margin-left: 0; max-width: 100%; } }
+        .hero-section { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; padding: 3rem 2rem; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-radius: 1rem; margin-bottom: 2rem; }
+        @media (max-width: 768px) { .hero-section { grid-template-columns: 1fr; } }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.5rem; border: none; border-radius: 0.5rem; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+        .btn-primary { background: #0d9488; color: white; }
+        .btn-primary:hover { background: #0f766e; }
+    </style>
+    
+    <!-- Performance: Load fonts with display=swap for better rendering -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="emotion-ribbon.js"></script>
-    <script src="emotion-ribbon-visualizer.js"></script>
+    
+    <!-- Performance: Load Font Awesome with preconnect established -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Performance: Defer non-critical scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="emotion-ribbon.js" defer></script>
+    <script src="emotion-ribbon-visualizer.js" defer></script>
     <style>
         /* Tools Dropdown Styles */
         .tools-dropdown-container {
@@ -421,17 +462,22 @@
                     
                     <!-- Tools Dropdown -->
                     <div class="tools-dropdown-container" id="toolsContainer">
-                        <button class="tools-dropdown-btn" id="toolsBtn" type="button" onclick="toggleToolsMenu();">
-                            Tools <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
-                        </button>
-                        <div class="tools-dropdown-menu" id="toolsMenu">
-                            <a href="emotion-explorer.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🎨 Emotion Explorer</a>
-                            <a href="emotion-balance.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">⚡ Emotion Balance</a>
-                            <a href="salad-compass.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥗 Salad Compass</a>
-                            <a href="#" onclick="app.navigate('salad'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥬 Full Salad Check</a>
-                            <a href="#" onclick="app.navigate('interventions'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🧰 Interventions</a>
-                        </div>
-                    </div>
+            <button class="tools-dropdown-btn" id="toolsBtn" type="button" 
+                    onclick="toggleToolsMenu();" 
+                    onkeydown="handleToolsDropdownKeydown(event);"
+                    aria-haspopup="true" 
+                    aria-expanded="false"
+                    aria-label="Tools menu">
+                Tools <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
+            </button>
+            <div class="tools-dropdown-menu" id="toolsMenu" role="menu" aria-label="Tools menu">
+                <a href="emotion-explorer.html" role="menuitem" tabindex="-1" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🎨 Emotion Explorer</a>
+                <a href="emotion-balance.html" role="menuitem" tabindex="-1" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">⚡ Emotion Balance</a>
+                <a href="salad-compass.html" role="menuitem" tabindex="-1" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥗 Salad Compass</a>
+                <a href="#" role="menuitem" tabindex="-1" onclick="app.navigate('salad'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥬 Full Salad Check</a>
+                <a href="#" role="menuitem" tabindex="-1" onclick="app.navigate('interventions'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🧰 Interventions</a>
+            </div>
+        </div>
                     
                     <button class="nav-btn" data-tab="journal">Journal</button>
                     <button class="nav-btn" data-tab="progress">Progress</button>
@@ -1264,6 +1310,23 @@
 
     <script src="app.js"></script>
     <script>
+        /* --- Security --- */
+        const security = {
+            sanitize: (str) => {
+                if (!str) return '';
+                const temp = document.createElement('div');
+                temp.textContent = str;
+                return temp.innerHTML;
+            },
+            
+            validate: (str, maxLength = 500) => {
+                if (!str) return { isValid: false, message: 'Input cannot be empty.' };
+                if (str.length > maxLength) return { isValid: false, message: `Input cannot exceed ${maxLength} characters.` };
+                // Add more validation rules as needed
+                return { isValid: true };
+            }
+        };
+
         // Tools dropdown functions
         function toggleToolsMenu() {
             var menu = document.getElementById('toolsMenu');
@@ -1274,6 +1337,10 @@
                 menu.style.display = 'none';
                 menu.classList.remove('open');
                 btn.classList.remove('active');
+                btn.setAttribute('aria-expanded', 'false');
+                // Remove menuitem tabindex management
+                var menuItems = menu.querySelectorAll('[role="menuitem"]');
+                menuItems.forEach(item => item.setAttribute('tabindex', '-1'));
             } else {
                 // Calculate position relative to button
                 var btnRect = btn.getBoundingClientRect();
@@ -1282,6 +1349,14 @@
                 menu.style.display = 'block';
                 menu.classList.add('open');
                 btn.classList.add('active');
+                btn.setAttribute('aria-expanded', 'true');
+                // Make menuitems focusable
+                var menuItems = menu.querySelectorAll('[role="menuitem"]');
+                menuItems.forEach(item => item.setAttribute('tabindex', '0'));
+                // Focus first menu item
+                if (menuItems.length > 0) {
+                    menuItems[0].focus();
+                }
             }
         }
         
@@ -1293,8 +1368,14 @@
                 menu.classList.remove('open');
                 menu.style.top = 'auto';
                 menu.style.left = 'auto';
+                // Remove menuitem tabindex management
+                var menuItems = menu.querySelectorAll('[role="menuitem"]');
+                menuItems.forEach(item => item.setAttribute('tabindex', '-1'));
             }
-            if (btn) btn.classList.remove('active');
+            if (btn) {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-expanded', 'false');
+            }
         }
         
         // Close dropdown when clicking outside
@@ -1303,6 +1384,95 @@
             var menu = document.getElementById('toolsMenu');
             if (btn && menu && !btn.contains(e.target) && !menu.contains(e.target)) {
                 closeToolsDropdown();
+            }
+        });
+
+        // Keyboard navigation for dropdown menu
+        function handleToolsDropdownKeydown(event) {
+            var menu = document.getElementById('toolsMenu');
+            var btn = document.getElementById('toolsBtn');
+            if (!menu || !btn) return;
+            
+            var menuItems = Array.from(menu.querySelectorAll('[role="menuitem"]'));
+            var currentIndex = menuItems.indexOf(document.activeElement);
+            
+            switch (event.key) {
+                case 'ArrowDown':
+                    event.preventDefault();
+                    if (btn.getAttribute('aria-expanded') === 'false') {
+                        toggleToolsMenu();
+                    } else if (menuItems.length > 0) {
+                        var nextIndex = (currentIndex + 1) % menuItems.length;
+                        menuItems[nextIndex].focus();
+                    }
+                    break;
+                    
+                case 'ArrowUp':
+                    event.preventDefault();
+                    if (btn.getAttribute('aria-expanded') === 'true' && menuItems.length > 0) {
+                        var prevIndex = currentIndex <= 0 ? menuItems.length - 1 : currentIndex - 1;
+                        menuItems[prevIndex].focus();
+                    }
+                    break;
+                    
+                case 'Escape':
+                    event.preventDefault();
+                    if (btn.getAttribute('aria-expanded') === 'true') {
+                        closeToolsDropdown();
+                        btn.focus();
+                    }
+                    break;
+                    
+                case 'Enter':
+                case ' ':
+                    if (document.activeElement === btn) {
+                        event.preventDefault();
+                        toggleToolsMenu();
+                    }
+                    break;
+                    
+                case 'Tab':
+                    // Let default tab behavior handle focus movement
+                    if (btn.getAttribute('aria-expanded') === 'true') {
+                        closeToolsDropdown();
+                    }
+                    break;
+            }
+        }
+
+        // Add keyboard navigation for menu items
+        document.addEventListener('keydown', function(e) {
+            var menu = document.getElementById('toolsMenu');
+            if (menu && menu.style.display === 'block') {
+                var menuItems = Array.from(menu.querySelectorAll('[role="menuitem"]'));
+                var currentIndex = menuItems.indexOf(document.activeElement);
+                
+                if (currentIndex !== -1) {
+                    switch (e.key) {
+                        case 'ArrowDown':
+                            e.preventDefault();
+                            var nextIndex = (currentIndex + 1) % menuItems.length;
+                            menuItems[nextIndex].focus();
+                            break;
+                            
+                        case 'ArrowUp':
+                            e.preventDefault();
+                            var prevIndex = currentIndex <= 0 ? menuItems.length - 1 : currentIndex - 1;
+                            menuItems[prevIndex].focus();
+                            break;
+                            
+                        case 'Escape':
+                            e.preventDefault();
+                            closeToolsDropdown();
+                            document.getElementById('toolsBtn').focus();
+                            break;
+                            
+                        case 'Enter':
+                            e.preventDefault();
+                            document.activeElement.click();
+                            break;
+                    }
+                }
             }
         });
     </script>

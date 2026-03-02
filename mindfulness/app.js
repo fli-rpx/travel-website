@@ -17,6 +17,21 @@ const app = {
     ribbonVisualizer: null,
     chatMessages: [],
 
+            security: {
+                sanitize: (str) => {
+                    if (!str) return '';
+                    const temp = document.createElement('div');
+                    temp.textContent = str;
+                    return temp.innerHTML;
+                },
+                validate: (str, maxLength = 500) => {
+                    if (!str) return { isValid: false, message: 'Input cannot be empty.' };
+                    if (str.length > maxLength) return { isValid: false, message: `Input cannot exceed ${maxLength} characters.` };
+                    // Add more validation rules as needed
+                    return { isValid: true };
+                }
+            },
+
     // Power-Possession Cycle Data
     cycleStates: {
         power: {
@@ -555,8 +570,15 @@ const app = {
     // AI Chat with Emotion Ribbon Integration
     sendMessage() {
         const input = document.getElementById('chatInput');
-        const message = input.value.trim();
-        if (!message) return;
+        const sanitizedMessage = this.security.sanitize(input.value);
+        const validation = this.security.validate(sanitizedMessage);
+
+        if (!validation.isValid) {
+            alert(`Validation Error: ${validation.message}`);
+            return;
+        }
+
+        if (!sanitizedMessage) return;
 
         // Add user message
         this.addChatMessage(message, 'user');
@@ -1106,7 +1128,15 @@ const app = {
 
     saveJournalEntry() {
         const content = document.getElementById('journalText');
-        if (!content || !content.value.trim()) return;
+        const sanitizedContent = this.security.sanitize(content.value);
+        const validation = this.security.validate(sanitizedContent, 10000); // Larger max length for journal
+
+        if (!validation.isValid) {
+            alert(`Validation Error: ${validation.message}`);
+            return;
+        }
+
+        if (!sanitizedContent) return;
         
         const entries = JSON.parse(localStorage.getItem('journalEntries') || '[]');
         entries.unshift({

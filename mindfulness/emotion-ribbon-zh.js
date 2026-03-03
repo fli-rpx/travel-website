@@ -71,4 +71,8 @@ const EmotionRibbon = {
 // Make it available globally
 if (typeof window !== 'undefined') {
     window.EmotionRibbon = EmotionRibbon;
+    console.log('EmotionRibbon loaded successfully!');
+    console.log('Available categories:', Object.keys(EmotionRibbon.lexicon));
+} else {
+    console.log('window not available');
 }

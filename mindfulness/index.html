@@ -393,10 +393,10 @@
                 <li><a href="#" onclick="app.navigate('home')">Home</a></li>
                 <li><a href="#" onclick="app.navigate('cycle')">Power-Possession Cycle</a></li>
                 <li><a href="#" onclick="app.navigate('assessment')">AI Assessment</a></li>
-                <li><a href="emotion-explorer.html">🎨 Emotion Explorer</a></li>
-                <li><a href="emotion-balance.html">⚡ Emotion Balance</a></li>
-                <li><a href="#" onclick="app.navigate('salad')">Salad Check</a></li>
-                <li><a href="salad-compass.html">🥗 Salad Compass</a></li>
+                <li><a href="#" onclick="app.navigate('explorer')">🎨 Emotion Explorer</a></li>
+                <li><a href="#" onclick="app.navigate('balance')">⚡ Emotion Balance</a></li>
+                <li><a href="#" onclick="app.navigate('salad')">🥗 Salad Check</a></li>
+                <li><a href="#" onclick="app.navigate('compass')">🧭 Salad Compass</a></li>
                 <li><a href="#" onclick="app.navigate('interventions')">Interventions</a></li>
                 <li><a href="#" onclick="app.navigate('journal')">Journal</a></li>
                 <li><a href="#" onclick="app.navigate('progress')">Progress</a></li>
@@ -424,10 +424,10 @@
                             Tools <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
                         </button>
                         <div class="tools-dropdown-menu" id="toolsMenu">
-                            <a href="emotion-explorer.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🎨 Emotion Explorer</a>
-                            <a href="emotion-balance.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">⚡ Emotion Balance</a>
-                            <a href="salad-compass.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥗 Salad Compass</a>
-                            <a href="#" onclick="app.navigate('salad'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥬 Full Salad Check</a>
+                            <a href="#" onclick="app.navigate('explorer'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🎨 Emotion Explorer</a>
+                            <a href="#" onclick="app.navigate('balance'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">⚡ Emotion Balance</a>
+                            <a href="#" onclick="app.navigate('salad'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥗 Salad Check</a>
+                            <a href="#" onclick="app.navigate('compass'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🧭 Salad Compass</a>
                             <a href="#" onclick="app.navigate('interventions'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🧰 Interventions</a>
                         </div>
                     </div>
@@ -435,6 +435,7 @@
                     <button class="nav-btn" data-tab="journal">Journal</button>
                     <button class="nav-btn" data-tab="progress">Progress</button>
                     <button class="nav-btn" data-tab="learn">Learn</button>
+                    <button class="nav-btn" data-tab="balance">Balance</button>
                 </div>
             </nav>
 
@@ -448,7 +449,7 @@
                             <button class="btn-primary" onclick="app.navigate('assessment')">
                                 <i class="fas fa-robot"></i> Start AI Assessment
                             </button>
-                            <button class="btn-secondary" onclick="window.location.href='emotion-balance.html'">
+                            <button class="btn-secondary" onclick="app.navigate('balance')">
                                 <i class="fas fa-bolt"></i> Quick Check-In
                             </button>
                         </div>
@@ -481,7 +482,7 @@
                     <h2 class="section-title">⚡ Quick Tools</h2>
                     <p class="section-subtitle">Fast check-ins for immediate clarity</p>
                     <div class="feature-grid quick-tools">
-                        <div class="feature-card featured" onclick="window.location.href='emotion-balance.html'">
+                        <div class="feature-card featured" onclick="app.navigate('balance')">
                             <div class="feature-icon balance-icon">
                                 <i class="fas fa-balance-scale"></i>
                             </div>
@@ -489,7 +490,7 @@
                             <p>4 sliders, instant score, personalized actions</p>
                             <span class="card-badge">30 seconds</span>
                         </div>
-                        <div class="feature-card featured" onclick="window.location.href='salad-compass.html'">
+                        <div class="feature-card featured" onclick="app.navigate('compass')">
                             <div class="feature-icon compass-icon">
                                 <i class="fas fa-compass"></i>
                             </div>
@@ -497,7 +498,7 @@
                             <p>Identify your state, find the missing vegetable</p>
                             <span class="card-badge">1 minute</span>
                         </div>
-                        <div class="feature-card" onclick="window.location.href='emotion-explorer.html'">
+                        <div class="feature-card" onclick="app.navigate('explorer')">
                             <div class="feature-icon explorer-icon">
                                 <i class="fas fa-palette"></i>
                             </div>
@@ -681,23 +682,23 @@
                 </div>
             </div>
 
+            <!-- Emotion Explorer Tab -->
+            <div id="explorer" class="tab">
+                <h2>Emotion Explorer</h2>
+                <p class="section-description">
+                    Explore and visualize your emotions with interactive tools and the emotion ribbon.
+                </p>
+                <div id="explorerContainer">
+                    <!-- Emotion Explorer content will be rendered here -->
+                </div>
+            </div>
+
             <!-- Salad Check Tab -->
             <div id="salad" class="tab">
                 <h2>Emotional Salad Check</h2>
                 <p class="section-description">
                     Identify your 🔥 Spicy (overwhelming), 🧈 Greasy (compulsive), and 🥗 Vegetable (nourishing) elements.
                 </p>
-
-                <!-- Quick Access to Salad Compass -->
-                <div style="background: rgba(80, 200, 184, 0.1); border: 1px solid rgba(80, 200, 184, 0.2); border-radius: 12px; padding: 20px; margin-bottom: 30px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
-                    <div>
-                        <div style="font-weight: 600; color: #50c8b8; margin-bottom: 5px;"><i class="fas fa-compass"></i> Need a quick check-in?</div>
-                        <div style="color: #b0b0b8; font-size: 0.95rem;">Use the Salad Plate Compass for instant emotional navigation.</div>
-                    </div>
-                    <button class="btn-secondary" onclick="window.location.href='salad-compass.html'" style="white-space: nowrap;">
-                        <i class="fas fa-compass"></i> Open Compass
-                    </button>
-                </div>
 
                 <div class="salad-container">
                     <div class="progress-section">
@@ -724,6 +725,17 @@
 
                         <button class="btn-primary" onclick="app.resetSalad()">Start New Check</button>
                     </div>
+                </div>
+
+                <!-- Quick Access to Salad Compass -->
+                <div style="background: rgba(80, 200, 184, 0.1); border: 1px solid rgba(80, 200, 184, 0.2); border-radius: 12px; padding: 20px; margin-bottom: 30px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                    <div>
+                        <div style="font-weight: 600; color: #50c8b8; margin-bottom: 5px;"><i class="fas fa-compass"></i> Need a quick check-in?</div>
+                        <div style="color: #b0b0b8; font-size: 0.95rem;">Use the Salad Plate Compass for instant emotional navigation.</div>
+                    </div>
+                    <button class="btn-secondary" onclick="app.navigate('compass')" style="white-space: nowrap;">
+                        <i class="fas fa-compass"></i> Open Compass
+                    </button>
                 </div>
             </div>
 
@@ -803,6 +815,17 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Salad Compass Tab -->
+            <div id="compass" class="tab">
+                <h2>Salad Plate Compass</h2>
+                <p class="section-description">
+                    Your personal emotional navigation tool - identify your state and find the missing vegetable.
+                </p>
+                <div id="compassContainer">
+                    <!-- Compass content will be rendered here -->
                 </div>
             </div>
 
@@ -1245,15 +1268,20 @@
         </div>
     </div>
 
-    <!-- Footer with Copyright -->
+        <!-- Balance Tab -->
+        <div id="balance" class="tab">
+            <!-- Balance content will be rendered here by renderBalance() -->
+        </div>
+
+        <!-- Footer with Copyright -->
     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2026 Mindfulness Therapy. All rights reserved.</p>
             <p class="footer-links">
                 <a href="#" onclick="app.navigate('home')">Home</a> |
-                <a href="emotion-explorer.html">🎨 Emotion Explorer</a> |
-                <a href="emotion-balance.html">⚡ Emotion Balance</a> |
-                <a href="salad-compass.html">🥗 Salad Compass</a> |
+                <a href="#" onclick="app.navigate('explorer')">🎨 Emotion Explorer</a> |
+                <a href="#" onclick="app.navigate('balance')">⚡ Emotion Balance</a> |
+                <a href="#" onclick="app.navigate('compass')">🧭 Salad Compass</a> |
                 <a href="#" onclick="app.showPrivacyPolicy()">Privacy Policy</a> |
                 <a href="#" onclick="app.showTerms()">Terms of Use</a> |
                 <a href="index-zh.html">中文</a>

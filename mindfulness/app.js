@@ -195,7 +195,15 @@ const app = {
         }
 
         // Initialize visualizer
-        if (window.EmotionRibbon && window.EmotionRibbonVisualizer) {
+        this.initEmotionRibbon();
+
+        // Add CSS
+        this.addRibbonStyles();
+    },
+
+    initEmotionRibbon() {
+        // Check if EmotionRibbon is available
+        if (typeof EmotionRibbon !== 'undefined' && typeof EmotionRibbonVisualizer !== 'undefined') {
             this.emotionRibbon = EmotionRibbon;
             this.ribbonVisualizer = new EmotionRibbonVisualizer('emotionRibbonContainer', {
                 width: 600,
@@ -206,10 +214,10 @@ const app = {
             
             // Setup real-time input detection
             this.setupRealTimeDetection();
+        } else {
+            // Retry after a short delay
+            setTimeout(() => this.initEmotionRibbon(), 100);
         }
-
-        // Add CSS
-        this.addRibbonStyles();
     },
 
     setupRealTimeDetection() {
@@ -349,6 +357,21 @@ const app = {
         } else if (tab === 'assessment') {
             // Initialize ribbon if not already done
             setTimeout(() => this.setupEmotionRibbonUI(), 100);
+        } else if (tab === 'balance') {
+            // Add a small delay to ensure DOM is ready
+            setTimeout(() => {
+                this.renderBalance();
+            }, 50);
+        } else if (tab === 'compass') {
+            // Add a small delay to ensure DOM is ready
+            setTimeout(() => {
+                this.renderCompass();
+            }, 50);
+        } else if (tab === 'explorer') {
+            // Add a small delay to ensure DOM is ready
+            setTimeout(() => {
+                this.renderExplorer();
+            }, 50);
         }
     },
 
@@ -482,6 +505,323 @@ const app = {
                 </ul>
             </div>
         `;
+    },
+
+    renderExplorer() {
+        const explorerContainer = document.getElementById('explorerContainer');
+        if (!explorerContainer) {
+            setTimeout(() => this.renderExplorer(), 100);
+            return;
+        }
+
+        explorerContainer.innerHTML = `
+            <div class="explorer-container" style="padding-top: 2rem;">
+                <section class="ribbon-display-section">
+                    <div class="ribbon-container-wrapper">
+                        <div id="emotionRibbonDisplay">
+                            <div id="rainbowSvgContainer" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+                                <svg id="emotionRainbowSvg" viewBox="0 0 1200 120" style="width: 100%; height: 100%;">
+                                    <path id="rainbow-pair-1" d="M 0,120 A 600,35 0 0 1 1200,120 L 1200,95 A 600,35 0 0 0 0,95 Z" fill="transparent" stroke="none"></path>
+                                    <path id="rainbow-pair-2" d="M 0,100 A 600,25 0 0 1 1200,100 L 1200,75 A 600,25 0 0 0 0,75 Z" fill="transparent" stroke="none"></path>
+                                    <path id="rainbow-pair-3" d="M 0,80 A 600,15 0 0 1 1200,80 L 1200,55 A 600,15 0 0 0 0,55 Z" fill="transparent" stroke="none"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="categories-tabs-section">
+                    <div class="tabs-container">
+                        <button class="category-tab active" data-category="POWER" onclick="app.switchExplorerTab('POWER')">
+                            <span class="tab-emoji">💪</span>
+                            <span class="tab-name">Power</span>
+                            <span class="tab-color-indicator" style="background: #FF0000;"></span>
+                        </button>
+                        <button class="category-tab" data-category="POSSESSION" onclick="app.switchExplorerTab('POSSESSION')">
+                            <span class="tab-emoji">🏠</span>
+                            <span class="tab-name">Possession</span>
+                            <span class="tab-color-indicator" style="background: #FF00FF;"></span>
+                        </button>
+                        <button class="category-tab" data-category="LOSS" onclick="app.switchExplorerTab('LOSS')">
+                            <span class="tab-emoji">💔</span>
+                            <span class="tab-name">Loss</span>
+                            <span class="tab-color-indicator" style="background: #0000FF;"></span>
+                        </button>
+                        <button class="category-tab" data-category="EMPTINESS" onclick="app.switchExplorerTab('EMPTINESS')">
+                            <span class="tab-emoji">⭕</span>
+                            <span class="tab-name">Emptiness</span>
+                            <span class="tab-color-indicator" style="background: #00FF00;"></span>
+                        </button>
+                        <button class="category-tab" data-category="CRAVE" onclick="app.switchExplorerTab('CRAVE')">
+                            <span class="tab-emoji">🔥</span>
+                            <span class="tab-name">Crave</span>
+                            <span class="tab-color-indicator" style="background: #FFFF00;"></span>
+                        </button>
+                        <button class="category-tab" data-category="EMPATHY" onclick="app.switchExplorerTab('EMPATHY')">
+                            <span class="tab-emoji">🤝</span>
+                            <span class="tab-name">Empathy</span>
+                            <span class="tab-color-indicator" style="background: #00FFFF;"></span>
+                        </button>
+                    </div>
+                    
+                    <div class="words-layout">
+                        <div class="words-display-area" id="wordsDisplayArea">
+                        </div>
+                        
+                        <div class="selected-words-panel">
+                            <div class="selected-words-display">
+                                <h4><i class="fas fa-check-circle"></i> Selected Words</h4>
+                                <div id="selectedWordsList">
+                                    <span style="color: #94a3b8; font-size: 0.875rem;">No words selected yet...</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stats-bar">
+                                <div class="stat-item">
+                                    <div class="stat-value" id="totalSelected">0</div>
+                                    <div class="stat-label">Words</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value" id="categoriesActive">0</div>
+                                    <div class="stat-label">Categories</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value" id="dominantCategory">-</div>
+                                    <div class="stat-label">Dominant</div>
+                                </div>
+                            </div>
+                            
+                            <button class="clear-all-btn" onclick="app.clearAllExplorerWords()">
+                                <i class="fas fa-trash-alt"></i> Clear All
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        `;
+        this.initExplorer();
+    },
+
+    // Explorer helper functions
+    initExplorer() {
+        this.explorerSelectedWords = [];
+        this.explorerCurrentTab = 'POWER';
+        this.explorerCategories = {
+            POWER: { name: 'Power', emoji: '💪', color: '#FF0000' },
+            POSSESSION: { name: 'Possession', emoji: '🏠', color: '#FF00FF' },
+            LOSS: { name: 'Loss', emoji: '💔', color: '#0000FF' },
+            EMPTINESS: { name: 'Emptiness', emoji: '⭕', color: '#00FF00' },
+            CRAVE: { name: 'Crave', emoji: '🔥', color: '#FFFF00' },
+            EMPATHY: { name: 'Empathy', emoji: '🤝', color: '#00FFFF' }
+        };
+        this.explorerRainbowColors = {
+            POWER: '#FF0000',
+            EMPATHY: '#00FFFF',
+            EMPTINESS: '#00FF00',
+            POSSESSION: '#FF00FF',
+            LOSS: '#0000FF',
+            CRAVE: '#FFFF00'
+        };
+        this.explorerCategoryToBand = {
+            POWER: 'pair-1',
+            EMPATHY: 'pair-1',
+            POSSESSION: 'pair-2',
+            EMPTINESS: 'pair-2',
+            CRAVE: 'pair-3',
+            LOSS: 'pair-3'
+        };
+        this.explorerComplementaryPairs = {
+            POWER: 'EMPATHY',
+            EMPATHY: 'POWER',
+            EMPTINESS: 'POSSESSION',
+            POSSESSION: 'EMPTINESS',
+            CRAVE: 'LOSS',
+            LOSS: 'CRAVE'
+        };
+
+        // Load Emotion Ribbon scripts if not already loaded
+        if (!window.EmotionRibbon) {
+            this.loadScript('emotion-ribbon.js', () => {
+                this.switchExplorerTab('POWER');
+                this.updateExplorerUI();
+            });
+        } else {
+            this.switchExplorerTab('POWER');
+            this.updateExplorerUI();
+        }
+    },
+
+    switchExplorerTab(category) {
+        this.explorerCurrentTab = category;
+        
+        // Update tab buttons
+        document.querySelectorAll('#explorer .category-tab').forEach(tab => {
+            tab.classList.remove('active');
+            if (tab.dataset.category === category) {
+                tab.classList.add('active');
+            }
+        });
+        
+        // Display words for selected category
+        this.displayExplorerWordsForCategory(category);
+    },
+
+    displayExplorerWordsForCategory(categoryKey) {
+        const displayArea = document.querySelector('#explorer #wordsDisplayArea');
+        const category = this.explorerCategories[categoryKey];
+        
+        if (!window.EmotionRibbon || !window.EmotionRibbon.lexicon) {
+            displayArea.innerHTML = '<p style="text-align: center; color: #94a3b8; padding: 2rem;">Loading words...</p>';
+            return;
+        }
+        
+        const words = window.EmotionRibbon.lexicon[categoryKey] || [];
+        
+        if (words.length === 0) {
+            displayArea.innerHTML = '<p style="text-align: center; color: #94a3b8; padding: 2rem;">No words found for this category.</p>';
+            return;
+        }
+        
+        displayArea.innerHTML = words.map(word => `
+            <div class="word-bubble ${this.explorerSelectedWords.some(w => w.word === word) ? 'selected' : ''}"
+                 style="border-color: ${category.color}; color: ${category.color};"
+                 onclick="app.toggleExplorerWord('${word}', '${categoryKey}')">
+                ${word}
+            </div>
+        `).join('');
+    },
+
+    toggleExplorerWord(word, category) {
+        const existingIndex = this.explorerSelectedWords.findIndex(w => w.word === word);
+        
+        if (existingIndex >= 0) {
+            // Remove word
+            this.explorerSelectedWords.splice(existingIndex, 1);
+        } else {
+            // Add word
+            this.explorerSelectedWords.push({ word, category, timestamp: Date.now() });
+        }
+        
+        // Update UI
+        this.updateExplorerUI();
+        this.displayExplorerWordsForCategory(this.explorerCurrentTab);
+    },
+
+    updateExplorerUI() {
+        this.updateExplorerSelectedWordsList();
+        this.updateExplorerStats();
+        this.updateExplorerRibbon();
+    },
+
+    updateExplorerSelectedWordsList() {
+        const selectedWordsList = document.querySelector('#explorer #selectedWordsList');
+        
+        if (this.explorerSelectedWords.length === 0) {
+            selectedWordsList.innerHTML = '<span style="color: #94a3b8; font-size: 0.875rem;">No words selected yet...</span>';
+            return;
+        }
+        
+        selectedWordsList.innerHTML = this.explorerSelectedWords.map(item => {
+            const category = this.explorerCategories[item.category];
+            return `<span class="selected-word" style="background: ${category.color}20; color: ${category.color}; border: 1px solid ${category.color};">
+                ${category.emoji} ${item.word}
+                <i class="fas fa-times" onclick="app.toggleExplorerWord('${item.word}', '${item.category}')" style="cursor: pointer; margin-left: 0.25rem;"></i>
+            </span>`;
+        }).join('');
+    },
+
+    updateExplorerStats() {
+        const totalSelected = this.explorerSelectedWords.length;
+        const categoriesActive = new Set(this.explorerSelectedWords.map(w => w.category)).size;
+        
+        // Find dominant category
+        const categoryCounts = {};
+        this.explorerSelectedWords.forEach(w => {
+            categoryCounts[w.category] = (categoryCounts[w.category] || 0) + 1;
+        });
+        
+        const dominantCategory = Object.keys(categoryCounts).reduce((a, b) => 
+            categoryCounts[a] > categoryCounts[b] ? a : b, Object.keys(categoryCounts)[0] || '-'
+        );
+        
+        document.querySelector('#explorer #totalSelected').textContent = totalSelected;
+        document.querySelector('#explorer #categoriesActive').textContent = categoriesActive;
+        document.querySelector('#explorer #dominantCategory').textContent = 
+            dominantCategory !== '-' ? this.explorerCategories[dominantCategory].emoji : '-';
+    },
+
+    updateExplorerRibbon() {
+        const rainbowSvg = document.querySelector('#explorer #emotionRainbowSvg');
+        if (!rainbowSvg || this.explorerSelectedWords.length === 0) {
+            // Reset all bands to transparent
+            for (let i = 1; i <= 3; i++) {
+                const band = document.querySelector(`#explorer #rainbow-pair-${i}`);
+                if (band) band.style.fill = 'transparent';
+            }
+            return;
+        }
+        
+        // Group words by their band
+        const wordsByBand = {};
+        this.explorerSelectedWords.forEach(word => {
+            const band = this.explorerCategoryToBand[word.category];
+            if (!wordsByBand[band]) wordsByBand[band] = [];
+            wordsByBand[band].push(word);
+        });
+        
+        // Update each band with blended color
+        for (let i = 1; i <= 3; i++) {
+            const band = document.querySelector(`#explorer #rainbow-pair-${i}`);
+            const bandWords = wordsByBand[`pair-${i}`] || [];
+            
+            if (bandWords.length === 0) {
+                band.style.fill = 'transparent';
+            } else if (bandWords.length === 1) {
+                const category = bandWords[0].category;
+                band.style.fill = this.explorerRainbowColors[category];
+                band.style.opacity = '0.7';
+            } else {
+                // Blend colors toward white (additive mixing)
+                const colors = bandWords.map(w => this.explorerRainbowColors[w.category]);
+                const blendedColor = this.blendExplorerColorsTowardWhite(colors);
+                band.style.fill = blendedColor;
+                band.style.opacity = '0.8';
+            }
+        }
+    },
+
+    blendExplorerColorsTowardWhite(colors) {
+        if (colors.length === 0) return 'transparent';
+        if (colors.length === 1) return colors[0];
+        
+        // Convert hex to RGB and average
+        const rgbColors = colors.map(hex => {
+            const r = parseInt(hex.slice(1, 3), 16);
+            const g = parseInt(hex.slice(3, 5), 16);
+            const b = parseInt(hex.slice(5, 7), 16);
+            return { r, g, b };
+        });
+        
+        const avg = {
+            r: Math.round(rgbColors.reduce((sum, c) => sum + c.r, 0) / rgbColors.length),
+            g: Math.round(rgbColors.reduce((sum, c) => sum + c.g, 0) / rgbColors.length),
+            b: Math.round(rgbColors.reduce((sum, c) => sum + c.b, 0) / rgbColors.length)
+        };
+        
+        // Blend toward white (add 50% white)
+        const blended = {
+            r: Math.round(avg.r * 0.5 + 255 * 0.5),
+            g: Math.round(avg.g * 0.5 + 255 * 0.5),
+            b: Math.round(avg.b * 0.5 + 255 * 0.5)
+        };
+        
+        return `#${blended.r.toString(16).padStart(2, '0')}${blended.g.toString(16).padStart(2, '0')}${blended.b.toString(16).padStart(2, '0')}`;
+    },
+
+    clearAllExplorerWords() {
+        this.explorerSelectedWords = [];
+        this.updateExplorerUI();
+        this.displayExplorerWordsForCategory(this.explorerCurrentTab);
     },
 
     // Background color change for cycle - only on cycle page
@@ -1255,6 +1595,437 @@ const app = {
         const mood = localStorage.getItem('todayMood');
         if (mood) this.logMood(parseInt(mood));
         this.renderJournalEntries();
+    },
+
+    // Balance Tool Functions
+    renderBalance() {
+        const balanceContainer = document.getElementById('balance');
+        if (!balanceContainer) {
+            setTimeout(() => this.renderBalance(), 100);
+            return;
+        }
+
+        balanceContainer.innerHTML = `
+            <h2>Balance</h2>
+            <div class="emotion-balance-container">
+                <div class="balance-card">
+                    <div class="balance-header">
+                        <h1>⚡ Emotion Balance Tool</h1>
+                        <p class="subtitle">Check in. Get balanced. Move forward.</p>
+                    </div>
+                    
+                    <div id="quiz-section">
+                        <div class="slider-question">
+                            <label>1. Energy Level</label>
+                            <div class="slider-container">
+                                <input type="range" id="energy" class="slider-track" min="1" max="10" value="5" oninput="app.updateBalanceValue('energy', this.value)">
+                                <div class="slider-labels">
+                                    <span>Drained</span>
+                                    <span>Balanced</span>
+                                    <span>Hyper</span>
+                                </div>
+                                <div class="slider-value" id="energy-val">5</div>
+                            </div>
+                        </div>
+                        
+                        <div class="slider-question">
+                            <label>2. Mental Clarity</label>
+                            <div class="slider-container">
+                                <input type="range" id="clarity" class="slider-track" min="1" max="10" value="5" oninput="app.updateBalanceValue('clarity', this.value)">
+                                <div class="slider-labels">
+                                    <span>Foggy</span>
+                                    <span>Clear</span>
+                                    <span>Sharp</span>
+                                </div>
+                                <div class="slider-value" id="clarity-val">5</div>
+                            </div>
+                        </div>
+                        
+                        <div class="slider-question">
+                            <label>3. Emotional Stability</label>
+                            <div class="slider-container">
+                                <input type="range" id="stability" class="slider-track" min="1" max="10" value="5" oninput="app.updateBalanceValue('stability', this.value)">
+                                <div class="slider-labels">
+                                    <span>Volatile</span>
+                                    <span>Steady</span>
+                                    <span>Centered</span>
+                                </div>
+                                <div class="slider-value" id="stability-val">5</div>
+                            </div>
+                        </div>
+                        
+                        <div class="slider-question">
+                            <label>4. Stress Level</label>
+                            <div class="slider-container">
+                                <input type="range" id="stress" class="slider-track" min="1" max="10" value="5" oninput="app.updateBalanceValue('stress', this.value)">
+                                <div class="slider-labels">
+                                    <span>Calm</span>
+                                    <span>Manageable</span>
+                                    <span>Overwhelmed</span>
+                                </div>
+                                <div class="slider-value" id="stress-val">5</div>
+                            </div>
+                        </div>
+                        
+                        <button class="analyze-btn" onclick="app.calculateBalanceState()">
+                            Analyze My State
+                        </button>
+                    </div>
+                    
+                    <div id="result-section" style="display: none;">
+                        <div class="result-section">
+                            <div class="score-display">
+                                <div class="score-circle" id="score-circle">
+                                    <span id="score-text">--</span>
+                                </div>
+                                <div class="state-info">
+                                    <h3 class="state-title" id="state-title">Calculating...</h3>
+                                    <p class="state-description" id="state-description"></p>
+                                </div>
+                            </div>
+                            
+                            <div class="advice-section">
+                                <h4>Personalized Recommendations</h4>
+                                <div class="advice-list" id="advice-list"></div>
+                            </div>
+                            
+                            <div class="quick-actions-section">
+                                <h4>Quick Actions</h4>
+                                <div class="action-grid">
+                                    <button class="action-btn grounding-btn" onclick="app.groundingExercise()">
+                                        <i class="fas fa-feather"></i>
+                                        Grounding
+                                    </button>
+                                    <button class="action-btn breathing-btn" onclick="app.showBreathing()">
+                                        <i class="fas fa-wind"></i>
+                                        Breathing
+                                    </button>
+                                    <button class="action-btn reset-btn" onclick="app.resetBalanceTool()">
+                                        <i class="fas fa-redo"></i>
+                                        Reset
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="breathing-exercise" id="breathing-exercise" style="display: none;">
+                    <h3>Breathing Exercise</h3>
+                    <div class="breathing-circle" id="breathing-circle"></div>
+                    <p id="breathing-text">Breathe in...</p>
+                    <button class="btn" onclick="app.hideBreathing()">Stop Exercise</button>
+                </div>
+            </div>`;
+    },
+
+    updateBalanceValue(id, value) {
+        const valEl = document.getElementById(id + '-val');
+        if (valEl) valEl.textContent = value;
+    },
+
+    calculateBalanceState() {
+        const energy = parseInt(document.getElementById('energy').value);
+        const clarity = parseInt(document.getElementById('clarity').value);
+        const stability = parseInt(document.getElementById('stability').value);
+        const stress = parseInt(document.getElementById('stress').value);
+        
+        // Calculate balance score (stress is inverted)
+        const balanceScore = Math.round((energy + clarity + stability + (11 - stress)) / 4 * 10);
+        
+        // Determine state
+        let state, color, desc, advice;
+        
+        if (balanceScore >= 80) {
+            state = "⚡ Peak State";
+            color = "#50c8b8";
+            desc = "You're in a strong position. Channel this energy into meaningful work.";
+            advice = [
+                "Tackle your most important task now — you're sharp",
+                "Document what's working so you can replicate it",
+                "Help someone else — your clarity is contagious",
+                "Set a boundary: protect this state from interruptions"
+            ];
+        } else if (balanceScore >= 60) {
+            state = "🌊 Balanced Flow";
+            color = "#4a90d9";
+            desc = "Good equilibrium. Small adjustments will optimize your day.";
+            advice = [
+                "Take a 5-minute walk to maintain momentum",
+                "Drink water — hydration affects clarity more than you think",
+                "Do one thing that moves your main goal forward",
+                "Check in with yourself again in 2 hours"
+            ];
+        } else if (balanceScore >= 40) {
+            state = "🌫️ Drift Mode";
+            color = "#f5a623";
+            desc = "You're functional but not firing on all cylinders. Time to recalibrate.";
+            advice = [
+                "Close all tabs except the one you need right now",
+                "Do a 2-minute body scan — where are you holding tension?",
+                "Eat something with protein if you haven't recently",
+                "Lower the bar: what's the smallest next step you can take?"
+            ];
+        } else {
+            state = "⛈️ Storm Mode";
+            color = "#e74c3c";
+            desc = "Your system needs care before productivity. Recovery first.";
+            advice = [
+                "Step away from the screen for 10 minutes minimum",
+                "Name three things you can see, hear, and feel (grounding)",
+                "Text someone you trust: 'Having a rough moment'",
+                "Ask: what's the kindest thing I could do for myself right now?",
+                "Consider postponing non-urgent tasks until tomorrow"
+            ];
+        }
+        
+        // Display results
+        const resultDiv = document.getElementById('result-section');
+        const scoreCircle = document.getElementById('score-circle');
+        const stateTitle = document.getElementById('state-title');
+        
+        if (scoreCircle) {
+            scoreCircle.textContent = balanceScore;
+            scoreCircle.style.setProperty('--score-color', color);
+            scoreCircle.style.setProperty('--score-deg', (balanceScore * 3.6) + 'deg');
+        }
+        
+        if (stateTitle) {
+            stateTitle.textContent = state;
+            stateTitle.style.setProperty('--score-color', color);
+        }
+        
+        const stateDesc = document.getElementById('state-desc');
+        if (stateDesc) stateDesc.textContent = desc;
+        
+        const adviceList = document.getElementById('advice-list');
+        if (adviceList) adviceList.innerHTML = advice.map(a => `<li>${a}</li>`).join('');
+        
+        const quizSection = document.getElementById('quiz-section');
+        if (quizSection) quizSection.style.display = 'none';
+        
+        if (resultDiv) resultDiv.classList.add('show');
+        
+        // Scroll to results
+        if (resultDiv) {
+            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    },
+
+    showBreathing() {
+        const breathingSection = document.getElementById('breathing-section');
+        if (breathingSection) breathingSection.classList.add('show');
+    },
+
+    hideBreathing() {
+        const breathingSection = document.getElementById('breathing-section');
+        if (breathingSection) breathingSection.classList.remove('show');
+    },
+
+    groundingExercise() {
+        alert(`5-4-3-2-1 Grounding Exercise:
+
+👁️ 5 things you can SEE
+👂 4 things you can HEAR
+✋ 3 things you can TOUCH
+👃 2 things you can SMELL
+👅 1 thing you can TASTE
+
+Take your time. Come back to now.`);
+    },
+
+    resetBalanceTool() {
+        const energy = document.getElementById('energy');
+        const clarity = document.getElementById('clarity');
+        const stability = document.getElementById('stability');
+        const stress = document.getElementById('stress');
+        
+        if (energy) energy.value = 5;
+        if (clarity) clarity.value = 5;
+        if (stability) stability.value = 5;
+        if (stress) stress.value = 5;
+        
+        ['energy', 'clarity', 'stability', 'stress'].forEach(id => {
+            const valEl = document.getElementById(id + '-val');
+            if (valEl) valEl.textContent = '5';
+        });
+    },
+
+    renderCompass() {
+        const compassContainer = document.getElementById('compassContainer');
+        if (!compassContainer) {
+            setTimeout(() => this.renderCompass(), 100);
+            return;
+        }
+
+        compassContainer.innerHTML = `
+            <div class="compass-container">
+                <div class="compass-card">
+                    <div class="compass-header">
+                        <h1>🧭 Salad Plate Compass</h1>
+                        <p class="subtitle">Your personal emotional navigation tool</p>
+                    </div>
+                    
+                    <div class="compass-instructions">
+                        <h3>How to Use This Compass</h3>
+                        <ol>
+                            <li><strong>Identify your state:</strong> Look at the table below and find where you are right now.</li>
+                            <li><strong>Find the missing vegetable:</strong> Each state has a "missing vegetable" that brings balance.</li>
+                            <li><strong>Take one action:</strong> Do the suggested action to add that vegetable to your plate.</li>
+                        </ol>
+                    </div>
+                    
+                    <!-- The Compass Table -->
+                    <table class="compass-table">
+                        <thead>
+                            <tr>
+                                <th>Your State</th>
+                                <th>How It Feels</th>
+                                <th>Quick Self-Check</th>
+                                <th>The Missing Vegetable</th>
+                                <th>One Action to Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="state-badge state-power">
+                                        <i class="fas fa-bolt"></i> Power
+                                    </span>
+                                </td>
+                                <td>Excited, happy, optimistic</td>
+                                <td class="self-check">"Am I riding high?"</td>
+                                <td class="missing-veg">Connection</td>
+                                <td class="action-cell">Share your excitement with someone you trust—without needing anything back.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="state-badge state-possession">
+                                        <i class="fas fa-hand-holding"></i> Possession
+                                    </span>
+                                </td>
+                                <td>Satisfied, full, occupied</td>
+                                <td class="self-check">"Am I holding onto something too tightly?"</td>
+                                <td class="missing-veg">Release</td>
+                                <td class="action-cell">Let go of one small thing—a plan, an opinion, a need to control. Notice how it feels.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="state-badge state-loss">
+                                        <i class="fas fa-heart-broken"></i> Loss
+                                    </span>
+                                </td>
+                                <td>Disappointed, frustrated, powerless</td>
+                                <td class="self-check">"Did something slip away?"</td>
+                                <td class="missing-veg">Grieve</td>
+                                <td class="action-cell">Sit for 3 minutes and just name what you lost. No fixing. Just naming.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="state-badge state-emptiness">
+                                        <i class="fas fa-circle"></i> Emptiness
+                                    </span>
+                                </td>
+                                <td>Unrestful, slightly panicked, mindless</td>
+                                <td class="self-check">"Is there a hollow feeling?"</td>
+                                <td class="missing-veg">Ground</td>
+                                <td class="action-cell"><strong>5-4-3-2-1 grounding:</strong> 5 things you see, 4 you touch, 3 you hear, 2 you smell, 1 you taste.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="state-badge state-crave">
+                                        <i class="fas fa-fire"></i> Crave
+                                    </span>
+                                </td>
+                                <td>Like eating something—urgent, hungry</td>
+                                <td class="self-check">"What am I hungry for right now?"</td>
+                                <td class="missing-veg">Pause</td>
+                                <td class="action-cell">Wait 10 minutes before acting. Notice the urge in your body. Don't feed it—just watch it.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <!-- Color Key -->
+                    <div class="color-key">
+                        <h3><i class="fas fa-palette"></i> Color Quick Reference</h3>
+                        <p style="color: #888; margin-bottom: 20px;">Assign colors to make recognition even faster. When you feel "a lot of red"—you know you need the pause.</p>
+                        
+                        <div class="color-grid">
+                            <div class="color-item">
+                                <div class="color-dot color-power"></div>
+                                <div>
+                                    <strong style="color: #ffd700;">Power</strong>
+                                    <div style="font-size: 0.85rem; color: #888;">Gold / Yellow</div>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-dot color-possession"></div>
+                                <div>
+                                    <strong style="color: #ff6b35;">Possession</strong>
+                                    <div style="font-size: 0.85rem; color: #888;">Deep Orange</div>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-dot color-loss"></div>
+                                <div>
+                                    <strong style="color: #a0a0a0;">Loss</strong>
+                                    <div style="font-size: 0.85rem; color: #888;">Dark Gray</div>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-dot color-emptiness"></div>
+                                <div>
+                                    <strong style="color: #c0c0c0;">Emptiness</strong>
+                                    <div style="font-size: 0.85rem; color: #888;">Light Gray / Pale Blue</div>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-dot color-crave"></div>
+                                <div>
+                                    <strong style="color: #dc143c;">Crave</strong>
+                                    <div style="font-size: 0.85rem; color: #888;">Deep Red</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Why This Works -->
+                    <div class="why-works">
+                        <h3><i class="fas fa-lightbulb"></i> Why This Works</h3>
+                        <ul>
+                            <li>It uses <strong>your words</strong>, not clinical terms.</li>
+                            <li>It's <strong>fast</strong>—one glance, one action.</li>
+                            <li>It's built on <strong>your own salad plate metaphor</strong> (spicy emotions, missing vegetables, balancing actions).</li>
+                            <li>It gives you <strong>agency</strong>—you're not just reacting; you're choosing a different vegetable.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Quick Access Buttons -->
+                    <div class="quick-access">
+                        <a href="#" onclick="app.navigate('salad')" class="quick-access-btn">
+                            <i class="fas fa-clipboard-check"></i> Take the Full Salad Check
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+    },
+
+    resetBalanceAll() {
+        const resultSection = document.getElementById('result-section');
+        const quizSection = document.getElementById('quiz-section');
+        
+        if (resultSection) resultSection.classList.remove('show');
+        if (quizSection) quizSection.style.display = 'block';
+        
+        this.hideBreathing();
+        this.resetBalanceTool();
+        
+        // Scroll back to top
+        const balanceCard = document.querySelector('.balance-card');
+        if (balanceCard) {
+            balanceCard.scrollIntoView({ behavior: 'smooth' });
+        }
     },
 
     // Copyright protection - show privacy policy

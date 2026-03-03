@@ -47,6 +47,11 @@ class EmotionRibbonVisualizer {
     }
 
     createGradients() {
+        // Check if EmotionRibbon is available
+        if (typeof EmotionRibbon === 'undefined' || !EmotionRibbon.getAllCategories) {
+            return '';
+        }
+        
         const categories = EmotionRibbon.getAllCategories();
         return categories.map(cat => `
             <linearGradient id="grad-${cat.key}" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -95,9 +100,29 @@ class EmotionRibbonVisualizer {
     }
 
     /**
+     * Update gradients when EmotionRibbon becomes available
+     */
+    updateGradients() {
+        if (typeof EmotionRibbon === 'undefined' || !EmotionRibbon.getAllCategories) {
+            return;
+        }
+        
+        const defs = this.svg.querySelector('defs');
+        if (defs) {
+            defs.innerHTML = this.createGradients();
+        }
+    }
+
+    /**
      * Add a new emotion segment to the ribbon
      */
     addSegment(category, intensity = 0.5, label = null) {
+        // Ensure EmotionRibbon is available
+        if (typeof EmotionRibbon === 'undefined' || !EmotionRibbon.categories) {
+            console.warn('EmotionRibbon not available yet');
+            return;
+        }
+        
         const cat = EmotionRibbon.categories[category];
         if (!cat) return;
 

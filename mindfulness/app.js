@@ -17,20 +17,21 @@ const app = {
     ribbonVisualizer: null,
     chatMessages: [],
 
-            security: {
-                sanitize: (str) => {
-                    if (!str) return '';
-                    const temp = document.createElement('div');
-                    temp.textContent = str;
-                    return temp.innerHTML;
-                },
-                validate: (str, maxLength = 500) => {
-                    if (!str) return { isValid: false, message: 'Input cannot be empty.' };
-                    if (str.length > maxLength) return { isValid: false, message: `Input cannot exceed ${maxLength} characters.` };
-                    // Add more validation rules as needed
-                    return { isValid: true };
-                }
-            },
+    // Security functions
+    security: {
+        sanitize: (str) => {
+            if (!str) return '';
+            const temp = document.createElement('div');
+            temp.textContent = str;
+            return temp.innerHTML;
+        },
+        validate: (str, maxLength = 500) => {
+            if (!str) return { isValid: false, message: 'Input cannot be empty.' };
+            if (str.length > maxLength) return { isValid: false, message: `Input cannot exceed ${maxLength} characters.` };
+            // Add more validation rules as needed
+            return { isValid: true };
+        }
+    },
 
     // Power-Possession Cycle Data
     cycleStates: {
@@ -921,14 +922,14 @@ const app = {
         if (!sanitizedMessage) return;
 
         // Add user message
-        this.addChatMessage(message, 'user');
+        this.addChatMessage(sanitizedMessage, 'user');
         input.value = '';
 
         // Store message for session journey
-        this.chatMessages.push({ text: message, sender: 'user', timestamp: Date.now() });
+        this.chatMessages.push({ text: sanitizedMessage, sender: 'user', timestamp: Date.now() });
 
         // Analyze with Emotion Ribbon (real-time)
-        const ribbonAnalysis = this.analyzeWithRibbon(message);
+        const ribbonAnalysis = this.analyzeWithRibbon(sanitizedMessage);
         if (ribbonAnalysis && ribbonAnalysis.dominant) {
             this.updateEmotionSidebar(ribbonAnalysis);
         }
@@ -1482,7 +1483,7 @@ const app = {
         entries.unshift({
             date: new Date().toISOString(),
             title: 'Journal Entry',
-            content: content.value,
+            content: sanitizedContent,
             mood: localStorage.getItem('todayMood') || 3
         });
         localStorage.setItem('journalEntries', JSON.stringify(entries));

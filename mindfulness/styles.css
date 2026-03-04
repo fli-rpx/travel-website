@@ -113,17 +113,12 @@ h1, h2, h3 {
 
 /* Main Content */
 .content-main {
-    margin-left: 320px;
-    max-width: calc(100vw - 360px);
+    margin: 0 auto;
+    max-width: 1200px;
     min-height: 100vh;
 }
 
-@media (max-width: 1280px) {
-    .content-main {
-        margin-left: 0;
-        max-width: 100%;
-    }
-}
+
 
 /* Navigation Bar */
 .nav-bar {

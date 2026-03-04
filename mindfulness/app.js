@@ -140,7 +140,6 @@ const app = {
         this.renderCycle();
         this.setupSaladCheck();
         this.renderProgress();
-        this.initEmotionRibbon();
         
         // Check for tab query parameter or hash
         const urlParams = new URLSearchParams(window.location.search);
@@ -165,6 +164,10 @@ const app = {
     },
 
     loadScript(src, callback) {
+        if (document.querySelector(`script[src="${src}"]`)) {
+            if (callback) callback();
+            return;
+        }
         const script = document.createElement('script');
         script.src = src;
         script.onload = callback;
@@ -347,8 +350,7 @@ const app = {
         } else if (tab === 'cycle') {
             this.renderCycle();
         } else if (tab === 'assessment') {
-            // Initialize ribbon if not already done
-            setTimeout(() => this.setupEmotionRibbonUI(), 100);
+            this.initEmotionRibbon();
         }
     },
 

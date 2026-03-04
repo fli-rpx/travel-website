@@ -757,25 +757,57 @@
         }
 
         @media (max-width: 768px) {
+            .words-layout {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            
+            .selected-words-panel {
+                order: -1;
+                max-height: none;
+            }
+            
+            .words-display-area {
+                max-height: none;
+                padding: 1rem;
+            }
+            
+            .selected-words-display {
+                max-height: 150px;
+            }
+            
             .tabs-container {
                 gap: 0.35rem;
             }
             
             .category-tab {
-                padding: 0.75rem 1rem;
-                min-width: 60px;
+                padding: 0.5rem 0.75rem;
+                min-width: 55px;
             }
             
             .tab-emoji {
-                font-size: 1.25rem;
+                font-size: 1.1rem;
             }
             
             .tab-name {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
             }
             
-            .words-display-area {
-                padding: 1.5rem;
+            .word-bubble {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.8rem;
+            }
+            
+            .stats-bar {
+                padding: 0.5rem;
+            }
+            
+            .stat-value {
+                font-size: 1rem;
+            }
+            
+            .stat-label {
+                font-size: 0.6rem;
             }
         }
     </style>
@@ -789,6 +821,7 @@
         </button>
         <div class="nav-links" id="navLinks">
             <button class="nav-btn" onclick="window.location.href='index-zh.html'">中文</button>
+            <button class="nav-btn" onclick="window.location.href='index-ru.html'">Русский</button>
             <button class="nav-btn" onclick="window.location.href='index.html'">Home</button>
             <button class="nav-btn" onclick="window.location.href='index.html?tab=cycle'">Cycle</button>
             <button class="nav-btn" onclick="window.location.href='index.html?tab=assessment'">AI Chat</button>
@@ -854,22 +887,22 @@
                 <button class="category-tab" data-category="POSSESSION" onclick="switchTab('POSSESSION')">
                     <span class="tab-emoji">🏠</span>
                     <span class="tab-name">Possession</span>
-                    <span class="tab-color-indicator" style="background: #FF00FF;"></span>
+                    <span class="tab-color-indicator" style="background: #00FF00;"></span>
                 </button>
                 <button class="category-tab" data-category="LOSS" onclick="switchTab('LOSS')">
                     <span class="tab-emoji">💔</span>
                     <span class="tab-name">Loss</span>
-                    <span class="tab-color-indicator" style="background: #0000FF;"></span>
+                    <span class="tab-color-indicator" style="background: #FF00FF;"></span>
                 </button>
                 <button class="category-tab" data-category="EMPTINESS" onclick="switchTab('EMPTINESS')">
                     <span class="tab-emoji">⭕</span>
                     <span class="tab-name">Emptiness</span>
-                    <span class="tab-color-indicator" style="background: #00FF00;"></span>
+                    <span class="tab-color-indicator" style="background: #FFFF00;"></span>
                 </button>
                 <button class="category-tab" data-category="CRAVE" onclick="switchTab('CRAVE')">
                     <span class="tab-emoji">🔥</span>
                     <span class="tab-name">Crave</span>
-                    <span class="tab-color-indicator" style="background: #FFFF00;"></span>
+                    <span class="tab-color-indicator" style="background: #0000FF;"></span>
                 </button>
                 <button class="category-tab" data-category="EMPATHY" onclick="switchTab('EMPATHY')">
                     <span class="tab-emoji">🤝</span>
@@ -916,7 +949,20 @@
     </div>
 
     <!-- Scripts -->
-    <script src="emotion-ribbon.js?v=2"></script>
+    <script>
+        // Inline EmotionRibbon lexicon to ensure it loads
+        const EmotionRibbon = {
+            lexicon: {
+                POWER: ['powerful','mighty','strength','dominant','authority','control','master','leader','confident','capable','triumph','victory','success','courage','brave','energy','vigor','accomplish','achievement','agency','ambition','excellence','hero','champion','conquer','prevail','supreme','almighty','potent','robust','excel','competent','expert','accomplished','skilled','superior','bold','determined','resolute','backbone','command','dominance','empower','force','influence','mastery','strong','win','winning','excited','happy','optimistic','light','forward','possible'],
+                POSSESSION: ['possess','own','acquire','obtain','gain','seize','claim','desire','want','covet','greed','hoard','wealth','treasure','have','hold','keep','mine','property','belongings','assets','collection','accumulation','retention','custody','capture','grasp','attain','accumulate','amass','cling','fortune','satisfied','full','occupied','complete','held','enough'],
+                LOSS: ['loss','lose','grief','mourn','sorrow','anguish','pain','separation','abandonment','deprived','bereft','missing','forfeit','surrender','death','divorce','disaster','devastation','distress','lament','weep','cry','heartbreak','mourning','widow','lost','ache','parting','departure','bereavement','denied','hurt','forsaken','orphan','sad','sadness','unhappy','depressed','melancholy','gloomy','down','blue','tearful','crying','upset','disappointed','frustrated','powerless','deflated','stuck','helpless'],
+                EMPTINESS: ['empty','void','hollow','numb','dead','lifeless','meaningless','pointless','isolated','lonely','despair','disconnected','alienated','vacant','blank','drained','exhausted','depleted','barren','desolate','abandoned','forsaken','worthless','absence','apathetic','futile','depression','detached','useless','lack','deficiency','unrestful','panicked','mindless','restless','numb-scattered'],
+                CRAVE: ['crave','long','yearn','desire','hunger','thirst','urge','obsession','passion','lust','desperate','urgent','burning','addicted','impatient','aching','pining','starving','ravenous','insatiable','voracious','appetency','covetous','intense','eager','frantic','fierce','ardent','anxious','compulsion','dependent','pine','fixation','hooked','withdrawal','itch','eating','hungry','need-to-consume','fill','consume'],
+                EMPATHY: ['empathy','compassion','sympathy','understand','care','kind','gentle','tender','love','connect','bond','support','comfort','nurture','share','listen','concern','affection','warmth','solace','mercy','kindness','tenderness','intimate','heal','console','attach','relate','identify','feel','hear','soothe','unite','join','link','close','sensitive']
+            }
+        };
+        window.EmotionRibbon = EmotionRibbon;
+    </script>
     <script>
         // Selected words state
         let selectedWords = [];
@@ -938,10 +984,10 @@
         const rainbowColors = {
             POWER: '#FF0000',      // Red
             EMPATHY: '#00FFFF',    // Cyan (true complement of Red)
-            EMPTINESS: '#00FF00',  // Green
-            POSSESSION: '#FF00FF', // Magenta (true complement of Green)
-            LOSS: '#0000FF',       // Blue
-            CRAVE: '#FFFF00'       // Yellow (true complement of Blue)
+            POSSESSION: '#00FF00', // Green
+            LOSS: '#FF00FF',       // Magenta (true complement of Green)
+            CRAVE: '#0000FF',      // Blue
+            EMPTINESS: '#FFFF00'   // Yellow (true complement of Blue)
         };
 
         // Map categories to their pair bands
@@ -949,19 +995,19 @@
             POWER: 'pair-1',
             EMPATHY: 'pair-1',
             POSSESSION: 'pair-2',
-            EMPTINESS: 'pair-2',
+            LOSS: 'pair-2',
             CRAVE: 'pair-3',
-            LOSS: 'pair-3'
+            EMPTINESS: 'pair-3'
         };
 
         // Complementary color pairs
         const complementaryPairs = {
             POWER: 'EMPATHY',
             EMPATHY: 'POWER',
-            EMPTINESS: 'POSSESSION',
-            POSSESSION: 'EMPTINESS',
-            CRAVE: 'LOSS',
-            LOSS: 'CRAVE'
+            POSSESSION: 'LOSS',
+            LOSS: 'POSSESSION',
+            CRAVE: 'EMPTINESS',
+            EMPTINESS: 'CRAVE'
         };
 
         // Initialize the explorer
@@ -1130,8 +1176,8 @@
             // Process each of the 3 bands
             const bandPairs = [
                 { band: 'pair-1', cat1: 'POWER', cat2: 'EMPATHY' },
-                { band: 'pair-2', cat1: 'POSSESSION', cat2: 'EMPTINESS' },
-                { band: 'pair-3', cat1: 'CRAVE', cat2: 'LOSS' }
+                { band: 'pair-2', cat1: 'POSSESSION', cat2: 'LOSS' },
+                { band: 'pair-3', cat1: 'CRAVE', cat2: 'EMPTINESS' }
             ];
 
             bandPairs.forEach(pair => {

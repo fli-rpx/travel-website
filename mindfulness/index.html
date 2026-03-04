@@ -5,47 +5,13 @@
     <meta name="copyright" content="© 2026 Mindfulness Therapy. All rights reserved.">
     <meta name="author" content="Mindfulness Therapy">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Security: Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
-    
-    <!-- Security: Additional security headers via meta tags -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    
     <title>Mindfulness Therapy - Emotional Balancing</title>
-    
-    <!-- Performance: DNS preconnect for external resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Performance: Inline critical CSS for faster rendering -->
-    <style>
-        /* Critical CSS for initial render */
-        .nav-bar { display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background: rgba(255,255,255,0.95); border-bottom: 1px solid #e5e7eb; }
-        .nav-brand { font-size: 1.25rem; font-weight: 600; cursor: pointer; }
-        .nav-links { display: flex; align-items: center; gap: 0.5rem; }
-        .mobile-menu-btn { display: none; }
-        @media (max-width: 768px) { .nav-links { display: none; } .mobile-menu-btn { display: block; } }
-        .content-main { margin-left: 320px; max-width: calc(100vw - 360px); min-height: 100vh; }
-        @media (max-width: 1280px) { .content-main { margin-left: 0; max-width: 100%; } }
-        .hero-section { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; padding: 3rem 2rem; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-radius: 1rem; margin-bottom: 2rem; }
-        @media (max-width: 768px) { .hero-section { grid-template-columns: 1fr; } }
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.5rem; border: none; border-radius: 0.5rem; font-weight: 500; cursor: pointer; transition: all 0.2s; }
-        .btn-primary { background: #0d9488; color: white; }
-        .btn-primary:hover { background: #0f766e; }
-    </style>
-    
-    <!-- Performance: Load fonts with display=swap for better rendering -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="emotion-ribbon.js"></script>
+    <script src="emotion-ribbon-visualizer.js"></script>
     <style>
         /* Tools Dropdown Styles */
         .tools-dropdown-container {
@@ -421,6 +387,7 @@
 <body>
     <div id="app">
 
+
         <!-- Main Content -->
         <div class="content-main">
             <!-- Navigation Bar -->
@@ -438,27 +405,21 @@
                     
                     <!-- Tools Dropdown -->
                     <div class="tools-dropdown-container" id="toolsContainer">
-                        <button class="tools-dropdown-btn" id="toolsBtn" type="button" 
-                                onclick="toggleToolsMenu();" 
-                                onkeydown="handleToolsDropdownKeydown(event);"
-                                aria-haspopup="true" 
-                                aria-expanded="false"
-                                aria-label="Tools menu">
+                        <button class="tools-dropdown-btn" id="toolsBtn" type="button" onclick="toggleToolsMenu();">
                             Tools <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
                         </button>
-                        <div class="tools-dropdown-menu" id="toolsMenu" role="menu" aria-label="Tools menu">
-                            <a href="#" onclick="app.navigate('explorer'); closeToolsDropdown();" role="menuitem" tabindex="-1" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🎨 Emotion Explorer</a>
-                            <a href="#" onclick="app.navigate('balance'); closeToolsDropdown();" role="menuitem" tabindex="-1" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">⚡ Emotion Balance</a>
-                            <a href="#" onclick="app.navigate('salad'); closeToolsDropdown();" role="menuitem" tabindex="-1" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥗 Salad Check</a>
-                            <a href="#" onclick="app.navigate('compass'); closeToolsDropdown();" role="menuitem" tabindex="-1" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🧭 Salad Compass</a>
-                            <a href="#" onclick="app.navigate('interventions'); closeToolsDropdown();" role="menuitem" tabindex="-1" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🧰 Interventions</a>
+                        <div class="tools-dropdown-menu" id="toolsMenu">
+                            <a href="emotion-explorer.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🎨 Emotion Explorer</a>
+                            <a href="emotion-balance.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">⚡ Emotion Balance</a>
+                            <a href="salad-compass.html" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥗 Salad Compass</a>
+                            <a href="#" onclick="app.navigate('salad'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🥬 Full Salad Check</a>
+                            <a href="#" onclick="app.navigate('interventions'); closeToolsDropdown();" style="display: block; padding: 0.75rem 1rem; color: #1e293b; text-decoration: none; border-radius: 0.5rem; white-space: nowrap;">🧰 Interventions</a>
                         </div>
                     </div>
                     
                     <button class="nav-btn" data-tab="journal">Journal</button>
                     <button class="nav-btn" data-tab="progress">Progress</button>
                     <button class="nav-btn" data-tab="learn">Learn</button>
-                    <button class="nav-btn" data-tab="balance">Balance</button>
                 </div>
             </nav>
 
@@ -472,7 +433,7 @@
                             <button class="btn-primary" onclick="app.navigate('assessment')">
                                 <i class="fas fa-robot"></i> Start AI Assessment
                             </button>
-                            <button class="btn-secondary" onclick="app.navigate('balance')">
+                            <button class="btn-secondary" onclick="window.location.href='emotion-balance.html'">
                                 <i class="fas fa-bolt"></i> Quick Check-In
                             </button>
                         </div>
@@ -505,7 +466,7 @@
                     <h2 class="section-title">⚡ Quick Tools</h2>
                     <p class="section-subtitle">Fast check-ins for immediate clarity</p>
                     <div class="feature-grid quick-tools">
-                        <div class="feature-card featured" onclick="app.navigate('balance')">
+                        <div class="feature-card featured" onclick="window.location.href='emotion-balance.html'">
                             <div class="feature-icon balance-icon">
                                 <i class="fas fa-balance-scale"></i>
                             </div>
@@ -513,7 +474,7 @@
                             <p>4 sliders, instant score, personalized actions</p>
                             <span class="card-badge">30 seconds</span>
                         </div>
-                        <div class="feature-card featured" onclick="app.navigate('compass')">
+                        <div class="feature-card featured" onclick="window.location.href='salad-compass.html'">
                             <div class="feature-icon compass-icon">
                                 <i class="fas fa-compass"></i>
                             </div>
@@ -521,7 +482,7 @@
                             <p>Identify your state, find the missing vegetable</p>
                             <span class="card-badge">1 minute</span>
                         </div>
-                        <div class="feature-card" onclick="app.navigate('explorer')">
+                        <div class="feature-card" onclick="window.location.href='emotion-explorer.html'">
                             <div class="feature-icon explorer-icon">
                                 <i class="fas fa-palette"></i>
                             </div>
@@ -705,23 +666,23 @@
                 </div>
             </div>
 
-            <!-- Emotion Explorer Tab -->
-            <div id="explorer" class="tab">
-                <h2>Emotion Explorer</h2>
-                <p class="section-description">
-                    Explore and visualize your emotions with interactive tools and the emotion ribbon.
-                </p>
-                <div id="explorerContainer">
-                    <!-- Emotion Explorer content will be rendered here -->
-                </div>
-            </div>
-
             <!-- Salad Check Tab -->
             <div id="salad" class="tab">
                 <h2>Emotional Salad Check</h2>
                 <p class="section-description">
                     Identify your 🔥 Spicy (overwhelming), 🧈 Greasy (compulsive), and 🥗 Vegetable (nourishing) elements.
                 </p>
+
+                <!-- Quick Access to Salad Compass -->
+                <div style="background: rgba(80, 200, 184, 0.1); border: 1px solid rgba(80, 200, 184, 0.2); border-radius: 12px; padding: 20px; margin-bottom: 30px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                    <div>
+                        <div style="font-weight: 600; color: #50c8b8; margin-bottom: 5px;"><i class="fas fa-compass"></i> Need a quick check-in?</div>
+                        <div style="color: #b0b0b8; font-size: 0.95rem;">Use the Salad Plate Compass for instant emotional navigation.</div>
+                    </div>
+                    <button class="btn-secondary" onclick="window.location.href='salad-compass.html'" style="white-space: nowrap;">
+                        <i class="fas fa-compass"></i> Open Compass
+                    </button>
+                </div>
 
                 <div class="salad-container">
                     <div class="progress-section">
@@ -748,17 +709,6 @@
 
                         <button class="btn-primary" onclick="app.resetSalad()">Start New Check</button>
                     </div>
-                </div>
-
-                <!-- Quick Access to Salad Compass -->
-                <div style="background: rgba(80, 200, 184, 0.1); border: 1px solid rgba(80, 200, 184, 0.2); border-radius: 12px; padding: 20px; margin-bottom: 30px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
-                    <div>
-                        <div style="font-weight: 600; color: #50c8b8; margin-bottom: 5px;"><i class="fas fa-compass"></i> Need a quick check-in?</div>
-                        <div style="color: #b0b0b8; font-size: 0.95rem;">Use the Salad Plate Compass for instant emotional navigation.</div>
-                    </div>
-                    <button class="btn-secondary" onclick="app.navigate('compass')" style="white-space: nowrap;">
-                        <i class="fas fa-compass"></i> Open Compass
-                    </button>
                 </div>
             </div>
 
@@ -838,17 +788,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Salad Compass Tab -->
-            <div id="compass" class="tab">
-                <h2>Salad Plate Compass</h2>
-                <p class="section-description">
-                    Your personal emotional navigation tool - identify your state and find the missing vegetable.
-                </p>
-                <div id="compassContainer">
-                    <!-- Compass content will be rendered here -->
                 </div>
             </div>
 
@@ -1291,20 +1230,15 @@
         </div>
     </div>
 
-        <!-- Balance Tab -->
-        <div id="balance" class="tab">
-            <!-- Balance content will be rendered here by renderBalance() -->
-        </div>
-
-        <!-- Footer with Copyright -->
+    <!-- Footer with Copyright -->
     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2026 Mindfulness Therapy. All rights reserved.</p>
             <p class="footer-links">
                 <a href="#" onclick="app.navigate('home')">Home</a> |
-                <a href="#" onclick="app.navigate('explorer')">🎨 Emotion Explorer</a> |
-                <a href="#" onclick="app.navigate('balance')">⚡ Emotion Balance</a> |
-                <a href="#" onclick="app.navigate('compass')">🧭 Salad Compass</a> |
+                <a href="emotion-explorer.html">🎨 Emotion Explorer</a> |
+                <a href="emotion-balance.html">⚡ Emotion Balance</a> |
+                <a href="salad-compass.html">🥗 Salad Compass</a> |
                 <a href="#" onclick="app.showPrivacyPolicy()">Privacy Policy</a> |
                 <a href="#" onclick="app.showTerms()">Terms of Use</a> |
                 <a href="index-zh.html">中文</a>
@@ -1314,23 +1248,6 @@
 
     <script src="app.js"></script>
     <script>
-        /* --- Security --- */
-        const security = {
-            sanitize: (str) => {
-                if (!str) return '';
-                const temp = document.createElement('div');
-                temp.textContent = str;
-                return temp.innerHTML;
-            },
-            
-            validate: (str, maxLength = 500) => {
-                if (!str) return { isValid: false, message: 'Input cannot be empty.' };
-                if (str.length > maxLength) return { isValid: false, message: `Input cannot exceed ${maxLength} characters.` };
-                // Add more validation rules as needed
-                return { isValid: true };
-            }
-        };
-
         // Tools dropdown functions
         function toggleToolsMenu() {
             var menu = document.getElementById('toolsMenu');
@@ -1341,10 +1258,6 @@
                 menu.style.display = 'none';
                 menu.classList.remove('open');
                 btn.classList.remove('active');
-                btn.setAttribute('aria-expanded', 'false');
-                // Remove menuitem tabindex management
-                var menuItems = menu.querySelectorAll('[role="menuitem"]');
-                menuItems.forEach(item => item.setAttribute('tabindex', '-1'));
             } else {
                 // Calculate position relative to button
                 var btnRect = btn.getBoundingClientRect();
@@ -1353,14 +1266,6 @@
                 menu.style.display = 'block';
                 menu.classList.add('open');
                 btn.classList.add('active');
-                btn.setAttribute('aria-expanded', 'true');
-                // Make menuitems focusable
-                var menuItems = menu.querySelectorAll('[role="menuitem"]');
-                menuItems.forEach(item => item.setAttribute('tabindex', '0'));
-                // Focus first menu item
-                if (menuItems.length > 0) {
-                    menuItems[0].focus();
-                }
             }
         }
         
@@ -1372,14 +1277,8 @@
                 menu.classList.remove('open');
                 menu.style.top = 'auto';
                 menu.style.left = 'auto';
-                // Remove menuitem tabindex management
-                var menuItems = menu.querySelectorAll('[role="menuitem"]');
-                menuItems.forEach(item => item.setAttribute('tabindex', '-1'));
             }
-            if (btn) {
-                btn.classList.remove('active');
-                btn.setAttribute('aria-expanded', 'false');
-            }
+            if (btn) btn.classList.remove('active');
         }
         
         // Close dropdown when clicking outside
@@ -1388,95 +1287,6 @@
             var menu = document.getElementById('toolsMenu');
             if (btn && menu && !btn.contains(e.target) && !menu.contains(e.target)) {
                 closeToolsDropdown();
-            }
-        });
-
-        // Keyboard navigation for dropdown menu
-        function handleToolsDropdownKeydown(event) {
-            var menu = document.getElementById('toolsMenu');
-            var btn = document.getElementById('toolsBtn');
-            if (!menu || !btn) return;
-            
-            var menuItems = Array.from(menu.querySelectorAll('[role="menuitem"]'));
-            var currentIndex = menuItems.indexOf(document.activeElement);
-            
-            switch (event.key) {
-                case 'ArrowDown':
-                    event.preventDefault();
-                    if (btn.getAttribute('aria-expanded') === 'false') {
-                        toggleToolsMenu();
-                    } else if (menuItems.length > 0) {
-                        var nextIndex = (currentIndex + 1) % menuItems.length;
-                        menuItems[nextIndex].focus();
-                    }
-                    break;
-                    
-                case 'ArrowUp':
-                    event.preventDefault();
-                    if (btn.getAttribute('aria-expanded') === 'true' && menuItems.length > 0) {
-                        var prevIndex = currentIndex <= 0 ? menuItems.length - 1 : currentIndex - 1;
-                        menuItems[prevIndex].focus();
-                    }
-                    break;
-                    
-                case 'Escape':
-                    event.preventDefault();
-                    if (btn.getAttribute('aria-expanded') === 'true') {
-                        closeToolsDropdown();
-                        btn.focus();
-                    }
-                    break;
-                    
-                case 'Enter':
-                case ' ':
-                    if (document.activeElement === btn) {
-                        event.preventDefault();
-                        toggleToolsMenu();
-                    }
-                    break;
-                    
-                case 'Tab':
-                    // Let default tab behavior handle focus movement
-                    if (btn.getAttribute('aria-expanded') === 'true') {
-                        closeToolsDropdown();
-                    }
-                    break;
-            }
-        }
-
-        // Add keyboard navigation for menu items
-        document.addEventListener('keydown', function(e) {
-            var menu = document.getElementById('toolsMenu');
-            if (menu && menu.style.display === 'block') {
-                var menuItems = Array.from(menu.querySelectorAll('[role="menuitem"]'));
-                var currentIndex = menuItems.indexOf(document.activeElement);
-                
-                if (currentIndex !== -1) {
-                    switch (e.key) {
-                        case 'ArrowDown':
-                            e.preventDefault();
-                            var nextIndex = (currentIndex + 1) % menuItems.length;
-                            menuItems[nextIndex].focus();
-                            break;
-                            
-                        case 'ArrowUp':
-                            e.preventDefault();
-                            var prevIndex = currentIndex <= 0 ? menuItems.length - 1 : currentIndex - 1;
-                            menuItems[prevIndex].focus();
-                            break;
-                            
-                        case 'Escape':
-                            e.preventDefault();
-                            closeToolsDropdown();
-                            document.getElementById('toolsBtn').focus();
-                            break;
-                            
-                        case 'Enter':
-                            e.preventDefault();
-                            document.activeElement.click();
-                            break;
-                    }
-                }
             }
         });
     </script>

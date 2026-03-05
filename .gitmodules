@@ -1,0 +1,3 @@
+[submodule "mindfulness"]
+	path = mindfulness
+	url = https://github.com/fli-rpx/mindfulness.git
